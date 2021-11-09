@@ -34,11 +34,12 @@ Route::get('/', function () {
     return view('Newstudent.agreement-newstudentm4');
 } );
 
-//Route::get('/SortNewstudentM1', 'newstudentm1Controller@index');
+
+
 // Route::view('/NewstudentRegisterM1', 'Newstudent.newstudentm1');
 // Route::view('/NewstudentRegisterM4', 'Newstudent.newstudentm4');
-Route::resource('SortNewstudentM1', 'newstudentm1Controller');
- //Route::resource('/SortNewstudentM4', newstudentm4Controller::class);
+Route::resource('/SortNewstudentM1', 'newstudentm1Controller');
+Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 
 // Route::resource('testup', TestUPController::class);
 

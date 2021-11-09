@@ -236,12 +236,12 @@
 								<ul class="nav nav-collapse">
 									<li >
 									<li class="active">
-										<a href="{{ route('SortNewstudentM1.index')}}">
+										<a href="{{ url('SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li>
-										<a href="{{ route('SortNewstudentM4.index')}}">
+										<a href="{{ url('SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
@@ -356,13 +356,13 @@
 														</thead>
 
 														<tbody>
-                                                            @foreach ($datas as $key => $value)
+                                                            @foreach ($datas->all() as $data)
 															<tr>
-                                                                <td>{{$value->prename}}{{$value->fname}} {{$value->nameCen}} {{$value->surname}}</td>
-                                                                <td align="center">{{$value->finalSchool}}</td>
-                                                                <td align="center"><a href="{{ route('SortNewstudentM1.show', $value->id)}}" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
-                                                                <td align="center">{{$value->pic}}</td>
-                                                                <td align="center"><a href="{{ route('SortNewstudentM1.edit', $value->id)}}" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
+                                                                <td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
+                                                                <td align="center">{{$data->finalSchool}}</td>
+                                                                <td align="center"><a href="{{ url('SortNewstudentM1.show', $data->id)}}" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
+                                                                <td align="center">{{$data->pic}}</td>
+                                                                <td align="center"><a href="{{ url('SortNewstudentM1.edit', $data->id)}}" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 															</tr>
                                                             @endforeach
 
