@@ -236,12 +236,12 @@
 								<ul class="nav nav-collapse">
 									<li >
 									<li class="active">
-										<a href="{{ url('SortNewstudentM1')}}">
+										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li>
-										<a href="{{ url('SortNewstudentM4')}}">
+										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>

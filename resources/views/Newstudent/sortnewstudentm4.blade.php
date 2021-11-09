@@ -235,12 +235,12 @@
 							<div class="collapse show" id="agree">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="{{ route('SortNewstudentM1.index')}}">
+										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li class="active">
-										<a href="{{ route('SortNewstudentM4.index')}}">
+										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>

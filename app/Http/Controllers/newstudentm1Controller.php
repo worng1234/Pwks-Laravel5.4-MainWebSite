@@ -12,14 +12,7 @@ use Illuminate\Validation\Validator as ValidationValidator;
 
 class newstudentm1Controller extends Controller
 {
-   function agreementNewstudentm1(){
-       return view('Newstudent.agreement-newstudentm1');
-   }
-
-   function agreementNewstudentm4(){
-        return view('Newstudent.agreement-newstudentm4');
-    }
-
+  
     public function index(){
         $datas = newstudentm1Model::all();
         return view('Newstudent.sortnewstudentm1', compact('datas'));
@@ -35,90 +28,83 @@ class newstudentm1Controller extends Controller
     {
         $post = new newstudentm1Model();
 
-        if($request->hasFile('pic')){
             //pic
-            $completeFileName = $request->file('pic')->getClientOriginalName();
-            $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
-            $ext = $request->file('pic')->getClientOriginalExtension();
-            $compPic = str_replace(' ', '_', $fileNameOnly).'.'. $ext;
-            $path = $request->file('pic')->storeAs('public/newstudentm1PIC', $compPic);
-            //id_number_pic
-            $completeFileNameIDNUMBER = $request->file('id_number_pic')->getClientOriginalName();
-            $fileNameIDNUMBEROnly = pathinfo($completeFileNameIDNUMBER, PATHINFO_FILENAME);
-            $IDNUMBERext = $request->file('id_number_pic')->getClientOriginalExtension();
-            $compIDNUMBER = str_replace(' ', '_', $fileNameIDNUMBEROnly). '.'. $IDNUMBERext;
-            $pathPDF = $request->file('id_number_pic')->storeAs('public/newstudentm1IDNUMBER', $compIDNUMBER);
-            //house_pic
-            $completeFileNameHOUSE = $request->file('house_pic')->getClientOriginalName();
-            $fileNameHOUSEOnly = pathinfo($completeFileNameHOUSE, PATHINFO_FILENAME);
-            $HOUSEext = $request->file('house_pic')->getClientOriginalExtension();
-            $compHOUSE = str_replace(' ', '_', $fileNameHOUSEOnly). '.'. $HOUSEext;
-            $pathPDF = $request->file('house_pic')->storeAs('public/newstudentm1HOUSE', $compHOUSE);
+            // $completeFileName = $request->file('pic')->getClientOriginalName();
+            // $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
+            // $ext = $request->file('pic')->getClientOriginalExtension();
+            // $compPic = str_replace(' ', '_', $fileNameOnly).'.'. $ext;
+            // $path = $request->file('pic')->move(public_path().'public/newstudentm1PIC', $compPic);
+            // //id_number_pic
+            // $completeFileNameIDNUMBER = $request->file('id_number_pic')->getClientOriginalName();
+            // $fileNameIDNUMBEROnly = pathinfo($completeFileNameIDNUMBER, PATHINFO_FILENAME);
+            // $IDNUMBERext = $request->file('id_number_pic')->getClientOriginalExtension();
+            // $compIDNUMBER = str_replace(' ', '_', $fileNameIDNUMBEROnly). '.'. $IDNUMBERext;
+            // $pathPDF = $request->file('id_number_pic')->storeAs('public/newstudentm1IDNUMBER', $compIDNUMBER);
+            // //house_pic
+            // $completeFileNameHOUSE = $request->file('house_pic')->getClientOriginalName();
+            // $fileNameHOUSEOnly = pathinfo($completeFileNameHOUSE, PATHINFO_FILENAME);
+            // $HOUSEext = $request->file('house_pic')->getClientOriginalExtension();
+            // $compHOUSE = str_replace(' ', '_', $fileNameHOUSEOnly). '.'. $HOUSEext;
+            // $pathPDF = $request->file('house_pic')->storeAs('public/newstudentm1HOUSE', $compHOUSE);
             //information
-            $post->pic = $compPic;
-            $post->id_number_pic = $compIDNUMBER;
-            $post->house_pic = $compHOUSE;
-            $post->idNumber = $request['idNumber'];
-            $post->day = $request['day'];
-            $post->mounth = $request['mounth'];
-            $post->year = $request['year'];
-            $post->fname = $request['fname'];
-            $post->prename = $request['prename'];
-            $post->surname = $request['surname'];
-            $post->sex = $request['sex'];
-            $post->religion = $request['religion'];
-            $post->nationality = $request['nationality'];
-            $post->origin = $request['origin'];
-            $post->disabled = $request['disabled'];
-            $post->poorPerson = $request['poorPerson'];
-            $post->etc = $request['etc'];
-            $post->tel = $request['tel'];
-            $post->email = $request['email'];
-            $post->nameCen = $request['nameCen'];
-            $post->father_prename = $request['father_prename'];
-            $post->fatherName = $request['fatherName'];
-            $post->fatherNamecen = $request['fatherNamecen'];
-            $post->fatherSurname = $request['fatherSurname'];
-            $post->fatherId = $request['fatherId'];
-            $post->fatherJob = $request['fatherJob'];
-            $post->fatherTel = $request['fatherTel'];
-            $post->mother_prename = $request['mother_prename'];
-            $post->motherName = $request['motherName'];
-            $post->motherNamecen = $request['motherNamecen'];
-            $post->motherSurname = $request['motherSurname'];
-            $post->motherId = $request['motherId'];
-            $post->motherJob = $request['motherJob'];
-            $post->motherTel = $request['motherTel'];
-            $post->parent = $request['parent'];
-            $post->parent_prename = $request['parent_prename'];
-            $post->parentName = $request['parentName'];
-            $post->parentNamecen = $request['parentNamecen'];
-            $post->parentSurname = $request['parentSurname'];
-            $post->parentId = $request['parentId'];
-            $post->parentJob = $request['parentJob'];
-            $post->parentTel = $request['parentTel'];
-            $post->houseNumber = $request['houseNumber'];
-            $post->street = $request['street'];
-            $post->bloc = $request['bloc'];
-            $post->road = $request['road'];
-            $post->subDistrict = $request['subDistrict'];
-            $post->district = $request['district'];
-            $post->province = $request['province'];
-            $post->post = $request['post'];
+            // $post->pic = $request->input($compPic);
+            // $post->id_number_pic = $request->input($compIDNUMBER);
+            // $post->house_pic = $request->input($compHOUSE);
+            $post->idNumber = $request->input('idNumber');
+            $post->day = $request->input('day');
+            $post->mounth = $request->input('mounth');
+            $post->year = $request->input('year');
+            $post->fname = $request->input('fname');
+            $post->prename = $request->input('prename');
+            $post->surname = $request->input('surname');
+            $post->sex = $request->input('sex');
+            $post->religion = $request->input('religion');
+            $post->nationality = $request->input('nationality');
+            $post->origin = $request->input('origin');
+            $post->disabled = $request->input('disabled');
+            $post->poorPerson = $request->input('poorPerson');
+            $post->etc = $request->input('etc');
+            $post->tel = $request->input('tel');
+            $post->email = $request->input('email');
+            $post->nameCen = $request->input('nameCen');
+            $post->father_prename = $request->input('father_prename');
+            $post->fatherName = $request->input('fatherName');
+            $post->fatherNamecen = $request->input('fatherNamecen');
+            $post->fatherSurname = $request->input('fatherSurname');
+            $post->fatherId = $request->input('fatherId');
+            $post->fatherJob = $request->input('fatherJob');
+            $post->fatherTel = $request->input('fatherTel');
+            $post->mother_prename = $request->input('mother_prename');
+            $post->motherName = $request->input('motherName');
+            $post->motherNamecen = $request->input('motherNamecen');
+            $post->motherSurname = $request->input('motherSurname');
+            $post->motherId = $request->input('motherId');
+            $post->motherJob = $request->input('motherJob');
+            $post->motherTel = $request->input('motherTel');
+            $post->parent = $request->input('parent');
+            $post->parent_prename = $request->input('parent_prename');
+            $post->parentName = $request->input('parentName');
+            $post->parentNamecen = $request->input('parentNamecen');
+            $post->parentSurname = $request->input('parentSurname');
+            $post->parentId = $request->input('parentId');
+            $post->parentJob = $request->input('parentJob');
+            $post->parentTel = $request->input('parentTel');
+            $post->houseNumber = $request->input('houseNumber');
+            $post->street = $request->input('street');
+            $post->bloc = $request->input('bloc');
+            $post->road = $request->input('road');
+            $post->subDistrict = $request->input('subDistrict');
+            $post->district = $request->input('district');
+            $post->province = $request->input('province');
+            $post->post = $request->input('post');
             $post->finalSchool = $request['finalSchool'];
-            $post->finalSchoolSubDistrict = $request['finalSchoolSubDistrict'];
-            $post->finalSchoolDistrict = $request['finalSchoolDistrict'];
-            $post->finalSchoolProvince = $request['finalSchoolProvince'];
-        }
-        if($post->save()){
-            return response()->json([
-                'message' => "Successfully created",
-                'success' => true,
-                'data' => $post
-            ], 200);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
+            $post->finalSchoolSubDistrict = $request->input('finalSchoolSubDistrict');
+            $post->finalSchoolDistrict = $request->input('finalSchoolDistrict');
+            $post->finalSchoolProvince = $request->input('finalSchoolProvince');
+        
+        $post->save();
+        return redirect('/SortNewstudentM1');
+        
 
 
     }
