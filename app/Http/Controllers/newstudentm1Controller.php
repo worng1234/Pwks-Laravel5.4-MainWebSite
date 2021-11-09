@@ -28,26 +28,16 @@ class newstudentm1Controller extends Controller
     {
         $post = new newstudentm1Model();
 
-            //pic
-            // $completeFileName = $request->file('pic')->getClientOriginalName();
-            // $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
-            // $ext = $request->file('pic')->getClientOriginalExtension();
-            // $compPic = str_replace(' ', '_', $fileNameOnly).'.'. $ext;
-            // $path = $request->file('pic')->move(public_path().'public/newstudentm1PIC', $compPic);
-            // //id_number_pic
-            // $completeFileNameIDNUMBER = $request->file('id_number_pic')->getClientOriginalName();
-            // $fileNameIDNUMBEROnly = pathinfo($completeFileNameIDNUMBER, PATHINFO_FILENAME);
-            // $IDNUMBERext = $request->file('id_number_pic')->getClientOriginalExtension();
-            // $compIDNUMBER = str_replace(' ', '_', $fileNameIDNUMBEROnly). '.'. $IDNUMBERext;
-            // $pathPDF = $request->file('id_number_pic')->storeAs('public/newstudentm1IDNUMBER', $compIDNUMBER);
-            // //house_pic
-            // $completeFileNameHOUSE = $request->file('house_pic')->getClientOriginalName();
-            // $fileNameHOUSEOnly = pathinfo($completeFileNameHOUSE, PATHINFO_FILENAME);
-            // $HOUSEext = $request->file('house_pic')->getClientOriginalExtension();
-            // $compHOUSE = str_replace(' ', '_', $fileNameHOUSEOnly). '.'. $HOUSEext;
-            // $pathPDF = $request->file('house_pic')->storeAs('public/newstudentm1HOUSE', $compHOUSE);
-            //information
-            // $post->pic = $request->input($compPic);
+            if($request->hasFile('pic')){
+                $completeFileName = $request->file('pic')->getClientOriginalName();
+            $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
+            $ext = $request->file('pic')->getClientOriginalExtension();
+            $compPic = str_replace(' ', '_', $fileNameOnly).'.'. $ext;
+            $path = $request->file('pic')->move(public_path('newstudentm1PIC'), $compPic);
+            };
+            
+
+            $post->pic = $request->input($compPic);
             // $post->id_number_pic = $request->input($compIDNUMBER);
             // $post->house_pic = $request->input($compHOUSE);
             $post->idNumber = $request->input('idNumber');
@@ -103,7 +93,13 @@ class newstudentm1Controller extends Controller
             $post->finalSchoolProvince = $request->input('finalSchoolProvince');
         
         $post->save();
-        return redirect('/SortNewstudentM1');
+        
+        
+        return $post;
+            //pic
+            
+            //information
+            
         
 
 

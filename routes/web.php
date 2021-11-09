@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\newstudentm1Controller;
  use App\Http\Controllers\newstudentm4Controller;
  use App\Http\Controllers\studentcoreController;
+ use App\Http\Controllers\TestUPController;
 
 // use App\Http\Controllers\TestUPController;
 
@@ -48,5 +49,11 @@ Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 
 //Studentcore
 Route::resource('/StudentCore', studentcoreController::class);
+
+Route::get('/testupload', function () {
+    return view('test');
+} );
+
+Route::post('/upload', 'TestUPController@store');
 
 

@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>1234</h1>
+    
+    <form action="{{url('/upload')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+        {{ method_field('POST') }}
+        <div>
+            <label for="">name</label>
+            <input type="text" name="id_number2" id="id_number2">
+        </div>
+        <div>
+            <input type="file" name="file" id="file">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
 </body>
 </html>

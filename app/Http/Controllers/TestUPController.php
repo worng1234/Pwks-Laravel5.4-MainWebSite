@@ -36,7 +36,18 @@ class TestUPController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $path = $request->file('file')->storeAs('test', 'public');
+
+            $data = new test2([
+                "id_number2" => $request->get('id_number2'),
+                "address" => $request->file('file')->hashName()
+            ]);
+            $data->save();
+            return $data;
+            
+        
+        
+        
     }
 
     /**
