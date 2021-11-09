@@ -123,7 +123,7 @@
                                             <span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
                                             <span class="caret"></span>
                                         </a>
-                                        <div class="collapse" id="#test1">
+                                        <div class="collapse" id="test1">
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
                                                     <a href="{{ route('StudentCore.index') }}">
