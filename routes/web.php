@@ -34,7 +34,7 @@ Route::get('/', function () {
  Route::get('/AgreeMentNewstudentRegisterM4', function () {
     return view('Newstudent.agreement-newstudentm4');
 } );
-
+//studentm1
 Route::resource('/SortNewstudentM1', 'newstudentm1Controller');
 
 Route::get('/NewstudentM1', function () {
@@ -43,7 +43,14 @@ Route::get('/NewstudentM1', function () {
 
 Route::post('/insertnewstudentm1', 'newstudentm1Controller@store');
 
+//studentm4
 Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
+
+Route::get('/NewstudentM4', function () {
+    return view('Newstudent.newstudentm4');
+} );
+
+Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 
 // Route::resource('testup', TestUPController::class);
 

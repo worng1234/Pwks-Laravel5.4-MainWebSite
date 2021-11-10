@@ -26,83 +26,80 @@ class newstudentm1Controller extends Controller
 
     public function store(Request $request)
     {
-        $post = new newstudentm1Model();
-
-            if($request->hasFile('pic')){
-                $completeFileName = $request->file('pic')->getClientOriginalName();
-            $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
-            $ext = $request->file('pic')->getClientOriginalExtension();
-            $compPic = str_replace(' ', '_', $fileNameOnly).'.'. $ext;
-            $path = $request->file('pic')->move(public_path('newstudentm1PIC'), $compPic);
-            };
-            
-
-            $post->pic = $request->input($compPic);
-            // $post->id_number_pic = $request->input($compIDNUMBER);
-            // $post->house_pic = $request->input($compHOUSE);
-            $post->idNumber = $request->input('idNumber');
-            $post->day = $request->input('day');
-            $post->mounth = $request->input('mounth');
-            $post->year = $request->input('year');
-            $post->fname = $request->input('fname');
-            $post->prename = $request->input('prename');
-            $post->surname = $request->input('surname');
-            $post->sex = $request->input('sex');
-            $post->religion = $request->input('religion');
-            $post->nationality = $request->input('nationality');
-            $post->origin = $request->input('origin');
-            $post->disabled = $request->input('disabled');
-            $post->poorPerson = $request->input('poorPerson');
-            $post->etc = $request->input('etc');
-            $post->tel = $request->input('tel');
-            $post->email = $request->input('email');
-            $post->nameCen = $request->input('nameCen');
-            $post->father_prename = $request->input('father_prename');
-            $post->fatherName = $request->input('fatherName');
-            $post->fatherNamecen = $request->input('fatherNamecen');
-            $post->fatherSurname = $request->input('fatherSurname');
-            $post->fatherId = $request->input('fatherId');
-            $post->fatherJob = $request->input('fatherJob');
-            $post->fatherTel = $request->input('fatherTel');
-            $post->mother_prename = $request->input('mother_prename');
-            $post->motherName = $request->input('motherName');
-            $post->motherNamecen = $request->input('motherNamecen');
-            $post->motherSurname = $request->input('motherSurname');
-            $post->motherId = $request->input('motherId');
-            $post->motherJob = $request->input('motherJob');
-            $post->motherTel = $request->input('motherTel');
-            $post->parent = $request->input('parent');
-            $post->parent_prename = $request->input('parent_prename');
-            $post->parentName = $request->input('parentName');
-            $post->parentNamecen = $request->input('parentNamecen');
-            $post->parentSurname = $request->input('parentSurname');
-            $post->parentId = $request->input('parentId');
-            $post->parentJob = $request->input('parentJob');
-            $post->parentTel = $request->input('parentTel');
-            $post->houseNumber = $request->input('houseNumber');
-            $post->street = $request->input('street');
-            $post->bloc = $request->input('bloc');
-            $post->road = $request->input('road');
-            $post->subDistrict = $request->input('subDistrict');
-            $post->district = $request->input('district');
-            $post->province = $request->input('province');
-            $post->post = $request->input('post');
-            $post->finalSchool = $request['finalSchool'];
-            $post->finalSchoolSubDistrict = $request->input('finalSchoolSubDistrict');
-            $post->finalSchoolDistrict = $request->input('finalSchoolDistrict');
-            $post->finalSchoolProvince = $request->input('finalSchoolProvince');
         
+        //student picture
+        $pic = $request->file('pic')->getClientOriginalName();
+        $compPic1 = str_replace(' ', '_', $pic);
+        $path = $request->file('pic')->storeAs('newstudentm1AllPic/newstudentm1PIC', $compPic1);
+        //ID card student picture
+        $id_number_pic = $request->file('id_number_pic')->getClientOriginalName();
+        $compPic2 = str_replace(' ', '_', $id_number_pic);
+        $path = $request->file('id_number_pic')->storeAs('newstudentm1AllPic/newstudentm1IDNUMBER', $compPic2);
+        //House student picture
+        $house_pic = $request->file('house_pic')->getClientOriginalName();
+        $compPic3 = str_replace(' ', '_', $house_pic);
+        $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compPic3);
+            
+        $post = new newstudentm1Model([
+            "pic" => $compPic1,
+            "id_number_pic" => $compPic2,
+            "house_pic" => $compPic3,
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "surname" => $request->get('surname'),
+            "sex" => $request->get('sex'),
+            "idNumber" => $request->get('idNumber'),
+            "day" => $request->get('day'),
+            "mounth" => $request->get('mounth'),
+            "year" => $request->get('year'),
+            "religion" => $request->get('religion'),
+            "nationality" => $request->get('nationality'),
+            "origin" => $request->get('origin'),
+            "disabled" => $request->get('disabled'),
+            "poorPerson" => $request->get('poorPerson'),
+            "etc" => $request->get('etc'),
+            "tel" => $request->get('tel'),
+            "email" => $request->get('email'),
+            "nameCen" => $request->get('nameCen'),
+            "fatherName" => $request->get('fatherName'),
+            "fatherNamecen" => $request->get('fatherNamecen'),
+            "fatherSurname" => $request->get('fatherSurname'),
+            "fatherId" => $request->get('fatherId'),
+            "fatherJob" => $request->get('fatherJob'),
+            "fatherTel" => $request->get('fatherTel'),
+            "motherName" => $request->get('motherName'),
+            "motherNamecen" => $request->get('motherNamecen'),
+            "motherSurname" => $request->get('motherSurname'),
+            "motherId" => $request->get('motherId'),
+            "motherJob" => $request->get('motherJob'),
+            "motherTel" => $request->get('motherTel'),
+            "parent" => $request->get('parent'),
+            "parent_status" => $request->get('parent_status'),
+            "parentName" => $request->get('parentName'),
+            "parentNamecen" => $request->get('parentNamecen'),
+            "parentSurname" => $request->get('parentSurname'),
+            "parentId" => $request->get('parentId'),
+            "parentJob" => $request->get('parentJob'),
+            "parentTel" => $request->get('parentTel'),
+            "father_prename" => $request->get('father_prename'),
+            "mother_prename" => $request->get('mother_prename'),
+            "parent_prename" => $request->get('parent_prename'),
+            "houseNumber" => $request->get('houseNumber'),
+            "street" => $request->get('street'),
+            "bloc" => $request->get('bloc'),
+            "road" => $request->get('road'),
+            "subDistrict" => $request->get('subDistrict'),
+            "district" => $request->get('district'),
+            "province" => $request->get('province'),
+            "post" => $request->get('post'),
+            "finalSchool" => $request->get('finalSchool'),
+            "finalSchoolSubDistrict" => $request->get('finalSchoolSubDistrict'),
+            "finalSchoolDistrict" => $request->get('finalSchoolDistrict'),
+            "finalSchoolProvince" => $request->get('finalSchoolProvince'),
+        ]);
         $post->save();
-        
-        
-        return $post;
-            //pic
+        return redirect('/SortNewstudentM1');
             
-            //information
-            
-        
-
-
     }
 
 

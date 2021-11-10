@@ -186,7 +186,7 @@
                                             <span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
                                         </label>
                                     </div>
-                                    <a type="button" class="btn btn-info" href="NewstudentRegisterM4"><i class="fas fa-file-signature"></i>  สมัครเข้าเรียน</a><br><br>
+                                    <a type="button" class="btn btn-info" href="{{ url('/NewstudentM4')}}"><i class="fas fa-file-signature"></i>  สมัครเข้าเรียน</a><br><br>
                                 </div>
                             </div>
                         </div>

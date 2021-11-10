@@ -164,8 +164,9 @@
 						</div>
 					</div>
 				</div>
-				<form method="post" action="{{ url('/insertnewstudentm1')}}">
+				<form method="post" action="{{ url('/insertnewstudentm1')}}" enctype="multipart/form-data">
 				{{csrf_field()}}
+				{{ method_field('POST') }}
 					<div class="page-inner mt--5">
 						<div class="row mt--2">
 							<div class="col-md-12">
@@ -705,19 +706,19 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-													<input type="file" class="form-control-file" id="exampleFormControlFile1" name="pic">
+													<input type="file" class="form-control-file" id="pic" name="pic">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-													<input type="file" class="form-control-file" id="exampleFormControlFile1" name="id_number_pic">
+													<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-													<input type="file" class="form-control-file" id="exampleFormControlFile1" name="house_pic">
+													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
 												</div>
 											</div>
 										</div><br><br>

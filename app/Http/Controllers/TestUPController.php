@@ -36,11 +36,17 @@ class TestUPController extends Controller
      */
     public function store(Request $request)
     {
-            $path = $request->file('file')->storeAs('test', 'public');
+            $compic1 = $request->file('file')->getClientOriginalName();
+            $compPic = str_replace(' ', '_', $compic1);
+            $path = $request->file('file')->storeAs('test', $compPic);
+
+            $compic2 = $request->file('file2')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $compic2);
+            $path = $request->file('file2')->storeAs('test2', $compPic2);
 
             $data = new test2([
                 "id_number2" => $request->get('id_number2'),
-                "address" => $request->file('file')->hashName()
+                "address" => $compPic
             ]);
             $data->save();
             return $data;

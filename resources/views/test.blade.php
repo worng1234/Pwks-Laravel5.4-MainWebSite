@@ -12,8 +12,7 @@
         {{csrf_field()}}
         {{ method_field('POST') }}
         <div>
-            <label for="">name</label>
-            <input type="text" name="id_number2" id="id_number2">
+            <input type="file" name="file2" id="file2">
         </div>
         <div>
             <input type="file" name="file" id="file">

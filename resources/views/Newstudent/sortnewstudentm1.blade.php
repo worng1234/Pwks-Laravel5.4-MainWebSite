@@ -361,7 +361,7 @@
                                                                 <td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
                                                                 <td align="center">{{$data->finalSchool}}</td>
                                                                 <td align="center"><a href="{{ url('SortNewstudentM1.show', $data->id)}}" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
-                                                                <td align="center">{{$data->pic}}</td>
+                                                                <td align="center"><img src="newstudentm1AllPic/newstudentm1PIC/{{$data->pic}}" width="50" height="50"></td>
                                                                 <td align="center"><a href="{{ url('SortNewstudentM1.edit', $data->id)}}" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 															</tr>
                                                             @endforeach
