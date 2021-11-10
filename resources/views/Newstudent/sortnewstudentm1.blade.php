@@ -12,7 +12,7 @@
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/assets/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -360,7 +360,7 @@
 															<tr>
                                                                 <td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
                                                                 <td align="center">{{$data->finalSchool}}</td>
-                                                                <td align="center"><a href="{{ url('SortNewstudentM1.show', $data->id)}}" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
+                                                                <td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
                                                                 <td align="center"><img src="newstudentm1AllPic/newstudentm1PIC/{{$data->pic}}" width="50" height="50"></td>
                                                                 <td align="center"><a href="{{ url('SortNewstudentM1.edit', $data->id)}}" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 															</tr>

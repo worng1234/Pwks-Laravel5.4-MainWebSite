@@ -11,6 +11,7 @@ class newstudentm1Model extends Model
 
     protected $table = "new_student_register_m1";
     protected $fillable = [
+        'id',
         'prename',
         'fname',
         'nameCen',

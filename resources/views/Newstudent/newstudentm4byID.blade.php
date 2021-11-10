@@ -661,8 +661,8 @@
 
 								</div>
 								<div class="card-footer" align="center">
-                                    <a href="{{ route('SortNewstudentM4.edit', $data->id)}}" class="btn btn-warning"><strong>แก้ไข</strong></a>
-                                    <a href="http://127.0.0.1:8000/SortNewstudentM4" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
+                                    <a href='{{ url("/FixNewstudentM4/{$data->id}" )}}' class="btn btn-warning"><strong>แก้ไข</strong></a>
+                                    <a href="{{ url('SortNewstudentM4')}}" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
 								</div><br>
 
 							</div>

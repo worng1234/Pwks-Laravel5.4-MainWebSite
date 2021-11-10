@@ -133,7 +133,7 @@ class newstudentm4Controller extends Controller
         $newstudentm4Model = newstudentm4Model::find($id);
         $newstudentm4Model->update($request->all());
         // return $newstudentm4Model;
-        return redirect()->route('SortNewstudentM4.index')
+        return redirect('SortNewstudentM4')
         ->with('success', 'Update successfully');
     }
 

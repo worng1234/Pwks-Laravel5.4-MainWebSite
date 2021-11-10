@@ -41,6 +41,10 @@ Route::get('/NewstudentM1', function () {
     return view('Newstudent.newstudentm1');
 } );
 
+Route::get('/SortNewstudentM1/{id}', 'newstudentm1Controller@show');
+Route::get('/FixNewstudentM1/{id}', 'newstudentm1Controller@edit');
+Route::post('/updated/{id}', 'newstudentm1Controller@update');
+
 Route::post('/insertnewstudentm1', 'newstudentm1Controller@store');
 
 //studentm4
@@ -49,6 +53,10 @@ Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 Route::get('/NewstudentM4', function () {
     return view('Newstudent.newstudentm4');
 } );
+
+Route::get('/SortNewstudentM4/{id}', 'newstudentm4Controller@show');
+Route::get('/FixNewstudentM4/{id}', 'newstudentm4Controller@edit');
+Route::post('/updated/{id}', 'newstudentm4Controller@update');
 
 Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 

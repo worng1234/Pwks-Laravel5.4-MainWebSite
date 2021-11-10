@@ -586,8 +586,8 @@
 									</div>
 								</div>
 								<div class="card-footer" align="center">
-                                <a href="{{ route('SortNewstudentM1.edit', $data->id)}}" class="btn btn-warning "><strong>แก้ไขข้อมูล</strong></a>
-									<a href="{{ route('SortNewstudentM1.index')}}" class="btn btn-danger "><strong>ย้อนกลับ</strong></a>
+                                <a href='{{ url("/FixNewstudentM1/{$data->id}" )}}' class="btn btn-warning "><strong>แก้ไขข้อมูล</strong></a>
+									<a href="{{ url('SortNewstudentM1')}}" class="btn btn-danger "><strong>ย้อนกลับ</strong></a>
 								</div><br>
 
 

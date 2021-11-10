@@ -178,10 +178,9 @@
 				</div>
 
 
-                <form action="{{ route('SortNewstudentM1.update', $newstudentm1Model->id)}}" method="post">
-                                        @csrf
-                                        @method('PUT')
-
+                <form action="{{ url('/updated', $newstudentm1Model->id)}}" method="post">
+										{{csrf_field()}}
+                      
 				<div class="page-inner mt--5">
 					<div class="row mt--2">
 						<div class="col-md-12">
@@ -592,7 +591,7 @@
                         </div>
                         <div class="card-footer" align="center">
                             <button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
-                            <a href="http://127.0.0.1:8000/SortNewstudentM1" class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
+                            <a href='{{ url("/SortNewstudentM1/{$newstudentm1Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 						</div><br>
                     </div>
                 </div>

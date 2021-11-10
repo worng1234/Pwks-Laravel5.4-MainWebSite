@@ -127,7 +127,7 @@ class newstudentm1Controller extends Controller
     {
         $newstudentm1Model = newstudentm1Model::find($id);
         $newstudentm1Model->update($request->all());
-        return redirect()->route('SortNewstudentM1.index')
+        return redirect('SortNewstudentM1')
         ->with('success', 'Update successfully');
     }
 

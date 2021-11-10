@@ -176,9 +176,8 @@
 					</div>
 				</div>
 
-                <form action="{{ route('SortNewstudentM4.update', $newstudentm4Model->id)}}" method="post">
-                                        @csrf
-                                        @method('PUT')
+                <form action="{{ url('/updated', $newstudentm4Model->id)}}" method="post">
+				{{csrf_field()}}
 
 				<div class="page-inner mt--5">
 					<div class="row mt--2">
