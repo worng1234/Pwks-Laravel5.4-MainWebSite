@@ -1530,7 +1530,7 @@
                                             </div>
                                         </div>
                                         <div class="card-footer" align="center">
-                                            <a href="{{ url('/FixStudentCore/{$studentcore->id}')}}" class="btn btn-success"><strong>แก้ไขข้อมูล</strong></a>
+                                            <a href='{{ url("/FixStudentCore/{$studentcore->id}")}}' class="btn btn-success"><strong>แก้ไขข้อมูล</strong></a>
                                             <a href="{{ url('/StudentCore')}}" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
                                         </div><br>
                                     </div>

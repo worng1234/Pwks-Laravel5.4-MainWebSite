@@ -282,9 +282,9 @@
                 </div>
 
 
-                <form action="{{ route('StudentCore.update', $studentcore->id,$addressstudent->id,$healtystudent->id,$talentstudent->id,$studentdetail->id,$parentstudentModel->id,)}}" method="post">
-                    @csrf
-                    @method('PUT')
+                <form action="{{ url('/')}}" method="post">
+                    
+                    
                     <!-- ข้อมูลเบื้องต้น -->
                     <div class="step-one">
                         <div class="page-inner mt--5">
