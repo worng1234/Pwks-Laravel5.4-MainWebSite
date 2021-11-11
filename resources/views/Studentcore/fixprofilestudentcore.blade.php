@@ -282,8 +282,8 @@
                 </div>
 
 
-                <form action="{{ url('/')}}" method="post">
-                    
+                <form action="{{ url('/updatedstudentcore' ,$studentcore->id )}}" method="post">
+                {{csrf_field()}}
                     
                     <!-- ข้อมูลเบื้องต้น -->
                     <div class="step-one">
@@ -1533,7 +1533,7 @@
                                         </div>
                                         <div class="card-footer" align="center">
                                             <button type="submit"  class="btn btn-success"><strong>ยืนยันแก้ไขข้อมูล</strong></button>
-                                            <a href="http://127.0.0.1:8000/StudentCore" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
+                                            <a href="{{url('/StudentCore')}}" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
                                         </div><br>
                                     </div>
                                 </div>

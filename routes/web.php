@@ -73,6 +73,7 @@ Route::get('/Addstudentcore', function () {
 
 Route::get('/StudentCore/{id}', 'studentcoreController@show');
 Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');
+Route::post('/updatedstudentcore/{id}', 'studentcoreController@update');
 
 Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 

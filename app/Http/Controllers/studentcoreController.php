@@ -52,7 +52,7 @@ class studentcoreController extends Controller
         $talentstudent->update($request->all());
         $studentdetail->update($request->all());
         $parentstudentModel->update($request->all());
-        return redirect()->route('StudentCore.index')->with('success','Updated Successfully');
+        return redirect('StudentCore')->with('success','Updated Successfully');
     }
 
 
