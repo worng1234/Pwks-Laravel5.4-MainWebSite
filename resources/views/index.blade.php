@@ -126,7 +126,7 @@
                                         <div class="collapse" id="form1">
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
-                                                    <a href="{{ route('StudentCore.index') }}">
+                                                    <a href="{{ url('StudentCore') }}">
                                                         <span class="sub-item">แสดงข้อมูลนักเรียน</span>
                                                     </a>
                                                 </li>

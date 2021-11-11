@@ -65,11 +65,14 @@ Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 // Route::resource('testup', TestUPController::class);
 
 //Studentcore
-Route::resource('/StudentCore', studentcoreController::class);
+Route::resource('/StudentCore', 'studentcoreController');
 
 Route::get('/Addstudentcore', function () {
     return view('Studentcore.addstudentcore');
 } );
+
+Route::get('/StudentCore/{id}', 'studentcoreController@show');
+Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');
 
 Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
