@@ -59,252 +59,142 @@ class studentcoreController extends Controller
 
 
     //Post
-    public function address(Request $request){
+    public function addstudentcore(Request $request){
 
-        $post = new addressstudentModel();
-        $post->student_idcard_a = $request['student_idcard_a'];
-        $post->house_number = $request['house_number'];
-        $post->group = $request['group'];
-        $post->village = $request['village'];
-        $post->alley = $request['alley'];
-        $post->street = $request['street'];
-        $post->subdistrict = $request['subdistrict'];
-        $post->district = $request['district'];
-        $post->province = $request['province'];
-        $post->post = $request['post'];
-        $post->address_now = $request['address_now'];
-        $post->house_number_n = $request['house_number_n'];
-        $post->village_n = $request['village_n'];
-        $post->alley_n = $request['alley_n'];
-        $post->street_n = $request['street_n'];
-        $post->subdistrict_n = $request['subdistrict_n'];
-        $post->district_n = $request['district_n'];
-        $post->province_n = $request['province_n'];
-        $post->post_n = $request['post_n'];
-        $post->group_n = $request['group_n'];
+        $addressstudent = new addressstudentModel([
+            "student_idcard_a" => $request->get('student_idcard_a'),
+            "house_number" => $request->get('house_number'),
+            "group" => $request->get('group'),
+            "village" => $request->get('village'),
+            "alley" => $request->get('alley'),
+            "street" => $request->get('street'),
+            "subdistrict" => $request->get('subdistrict'),
+            "district" => $request->get('district'),
+            "province" => $request->get('province'),
+            "post" => $request->get('post'),
+            "address_now" => $request->get('address_now'),
+            "house_number_n" => $request->get('house_number_n'),
+            "village_n" => $request->get('village_n'),
+            "alley_n" => $request->get('alley_n'),
+            "street_n" => $request->get('street_n'),
+            "subdistrict_n" => $request->get('subdistrict_n'),
+            "district_n" => $request->get('district_n'),
+            "province_n" => $request->get('province_n'),
+            "post_n" => $request->get('post_n'),
+            "group_n" => $request->get('group_n'),
+        ]);
+        
+        $healtystudent = new healtystudentModel([
+            "student_idcard_h" => $request->get('student_idcard_h'),
+            "weight" => $request->get('weight'),
+            "height" => $request->get('height'),
+            "disease" => $request->get('disease'),
+            "medicine_lose" => $request->get('medicine_lose'),
+            "medicine" => $request->get('medicine'),
+            "remedy" => $request->get('remedy'),
+            "glasses" => $request->get('glasses'),
+            "danger" => $request->get('danger'),
+            "unsound" => $request->get('unsound'),
+            "defective" => $request->get('defective'),
+            "sight_eye" => $request->get('sight_eye'),
+        ]);
 
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
+        $parentstudent = new parentstudentModel([
+            "student_idcard_p" => $request->get('student_idcard_p'),
+            "prename_f" => $request->get('prename_f'),
+            "name_f" => $request->get('name_f'),
+            "name_cen_f" => $request->get('name_cen_f'),
+            "surname_f" => $request->get('surname_f'),
+            "id_father" => $request->get('id_father'),
+            "type_card_f" => $request->get('type_card_f'),
+            "age_f" => $request->get('age_f'),
+            "bloodgroup_f" => $request->get('bloodgroup_f'),
+            "job_f" => $request->get('job_f'),
+            "salary_f" => $request->get('salary_f'),
+            "tel_f" => $request->get('tel_f'),
+            "house_number_f" => $request->get('house_number_f'),
+            "group_f" => $request->get('group_f'),
+            "village_f" => $request->get('village_f'),
+            "alley_f" => $request->get('alley_f'),
+            "street_f" => $request->get('street_f'),
+            "subdistrict_f" => $request->get('subdistrict_f'),
+            "district_f" => $request->get('district_f'),
+            "province_f" => $request->get('province_f'),
+            "post_f" => $request->get('post_f'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+            "weight" => $request->get('weight'),
+        ]);
 
-    }
-    public function healty(Request $request){
-
-        $post = new healtystudentModel();
-        $post->student_idcard_h = $request['student_idcard_h'];
-        $post->weight = $request['weight'];
-        $post->height = $request['height'];
-        $post->disease = $request['disease'];
-        $post->medicine_lose = $request['medicine_lose'];
-        $post->medicine = $request['medicine'];
-        $post->remedy = $request['remedy'];
-        $post->sight_eye = $request['sight_eye'];
-        $post->glasses = $request['glasses'];
-        $post->danger = $request['danger'];
-        $post->unsound = $request['unsound'];
-        $post->defective = $request['defective'];
-
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
-    }
-
-    public function parent(Request $request){
-
-        $post = new parentstudentModel();
-        $post->student_idcard_p = $request['student_idcard_p'];
-        $post->prename_f = $request['prename_f'];
-        $post->name_f = $request['name_f'];
-        $post->name_cen_f = $request['name_cen_f'];
-        $post->surname_f = $request['surname_f'];
-        $post->id_father = $request['id_father'];
-        $post->type_card_f = $request['type_card_f'];
-        $post->age_f = $request['age_f'];
-        $post->bloodgroup_f = $request['bloodgroup_f'];
-        $post->job_f = $request['job_f'];
-        $post->salary_f = $request['salary_f'];
-        $post->tel_f = $request['tel_f'];
-        $post->house_number_f = $request['house_number_f'];
-        $post->group_f = $request['group_f'];
-        $post->village_f = $request['village_f'];
-        $post->alley_f = $request['alley_f'];
-        $post->street_f = $request['street_f'];
-        $post->subdistrict_f = $request['subdistrict_f'];
-        $post->district_f = $request['district_f'];
-        $post->province_f = $request['province_f'];
-        $post->post_f = $request['post_f'];
-        $post->prename_m = $request['prename_m'];
-        $post->name_m = $request['name_m'];
-        $post->name_cen_m = $request['name_cen_m'];
-        $post->surname_m = $request['surname_m'];
-        $post->id_mother = $request['id_mother'];
-        $post->type_card_m = $request['type_card_m'];
-        $post->age_m = $request['age_m'];
-        $post->bloodgroup_m = $request['bloodgroup_m'];
-        $post->job_m = $request['job_m'];
-        $post->salary_m = $request['salary_m'];
-        $post->tel_m = $request['tel_m'];
-        $post->house_number_m = $request['house_number_m'];
-        $post->group_m = $request['group_m'];
-        $post->village_m = $request['village_m'];
-        $post->alley_m = $request['alley_m'];
-        $post->street_m = $request['street_m'];
-        $post->subdistrict_m = $request['subdistrict_m'];
-        $post->district_m = $request['district_m'];
-        $post->province_m = $request['province_m'];
-        $post->post_m = $request['post_m'];
-        $post->parent = $request['parent'];
-        $post->prename_p = $request['prename_p'];
-        $post->name_p = $request['name_p'];
-        $post->name_cen_p = $request['name_cen_p'];
-        $post->surname_p = $request['surname_p'];
-        $post->id_parent = $request['id_parent'];
-        $post->type_card_p = $request['type_card_p'];
-        $post->age_p = $request['age_p'];
-        $post->bloodgroup_p = $request['bloodgroup_p'];
-        $post->job_p = $request['job_p'];
-        $post->salary_p = $request['salary_p'];
-        $post->tel_p = $request['tel_p'];
-        $post->house_number_p = $request['house_number_p'];
-        $post->group_p = $request['group_p'];
-        $post->village_p = $request['village_p'];
-        $post->alley_p = $request['alley_p'];
-        $post->street_p = $request['street_p'];
-        $post->subdistrict_p = $request['subdistrict_p'];
-        $post->district_p = $request['district_p'];
-        $post->province_p = $request['province_p'];
-        $post->post_p = $request['post_p'];
-        $post->status_parent = $request['status_parent'];
-        $post->student_parent = $request['student_parent'];
-        $post->no_blood = $request['no_blood'];
-        $post->no_brother = $request['no_brother'];
-        $post->no_son = $request['no_son'];
-        $post->no_sister = $request['no_sister'];
-        $post->no_son2 = $request['no_son2'];
-        $post->no_parent = $request['no_parent'];
-        $post->no_study = $request['no_study'];
-        $post->no_job = $request['no_job'];
-        $post->no_house = $request['no_house'];
-        $post->student_job = $request['student_job'];
-        $post->student_money = $request['student_money'];
-        $post->parent_money = $request['parent_money'];
-        $post->parent_total = $request['parent_total'];
-        $post->parent_house = $request['parent_house'];
-        $post->job_study = $request['job_study'];
-        $post->job_detail = $request['job_detail'];
-        $post->total_study = $request['total_study'];
-
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
-    }
-
-    public function studentdetail(Request $request){
-
-        $post = new studentdetailModel();
-        $post->student_idcard_d = $request['student_idcard_d'];
-        $post->go_school = $request['go_school'];
-        $post->go_school_time = $request['go_school_time'];
-        $post->distance = $request['distance'];
-        $post->long_distance = $request['long_distance'];
-        $post->gadject = $request['gadject'];
-        $post->internet = $request['internet'];
-        $post->disabled = $request['disabled'];
-        $post->unfortuned = $request['unfortuned'];
-        $post->lack = $request['lack'];
-        $post->friend_drug = $request['friend_drug'];
-        $post->sell_drug = $request['sell_drug'];
-        $post->sexual = $request['sexual'];
-        $post->not_parent = $request['not_parent'];
-        $post->dark_travel = $request['dark_travel'];
-        $post->sexual_harrasment = $request['sexual_harrasment'];
-        $post->cute_world = $request['cute_world'];
-        $post->rich_man = $request['rich_man'];
-        $post->good_guy = $request['good_guy'];
-        $post->social_good = $request['social_good'];
-        $post->problem = $request['problem'];
-        $post->help = $request['help'];
-
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
+        
 
     }
-    public function talent(Request $request){
-
-        $post = new talentstudentModel();
-        $post->student_idcard_t = $request['student_idcard_t'];
-        $post->final_school = $request['final_school'];
-        $post->final_class = $request['final_class'];
-        $post->avg_grade = $request['avg_grade'];
-        $post->f_subdistrict = $request['f_subdistrict'];
-        $post->f_district = $request['f_district'];
-        $post->f_province = $request['f_province'];
-        $post->like_subject1 = $request['like_subject1'];
-        $post->like_subject2 = $request['like_subject2'];
-        $post->like_subject3 = $request['like_subject3'];
-        $post->like_subject4 = $request['like_subject4'];
-        $post->unlike_subject1 = $request['unlike_subject1'];
-        $post->unlike_subject2 = $request['unlike_subject2'];
-        $post->unlike_subject3 = $request['unlike_subject3'];
-        $post->unlike_subject4 = $request['unlike_subject4'];
-        $post->talent = $request['talent'];
-        $post->dream_job = $request['dream_job'];
-        $post->because = $request['because'];
-        $post->read_write = $request['read_write'];
-        $post->understand = $request['understand'];
-
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
-    }
-
-    public function studentcore(Request $request){
-
-        $post = new studentcoreModels();
-        $post->studentID = $request['studentID'];
-        $post->student_id_card = $request['student_id_card'];
-        $post->student_major = $request['student_major'];
-        $post->student_class = $request['student_class'];
-        $post->student_room = $request['student_room'];
-        $post->prename = $request['prename'];
-        $post->prename_eng = $request['prename_eng'];
-        $post->name_eng = $request['name_eng'];
-        $post->name_cen_eng = $request['name_cen_eng'];
-        $post->surname_eng = $request['surname_eng'];
-        $post->birth_year = $request['birth_year'];
-        $post->birth_month = $request['birth_month'];
-        $post->birth_day = $request['birth_day'];
-        $post->nickname = $request['nickname'];
-        $post->gender = $request['gender'];
-        $post->bloodgroup = $request['bloodgroup'];
-        $post->religion = $request['religion'];
-        $post->origin = $request['origin'];
-        $post->nationality = $request['nationality'];
-        $post->language = $request['language'];
-        $post->tel_s = $request['tel_s'];
-        $post->email = $request['email'];
-        $post->fname = $request['fname'];
-        $post->name_cen = $request['name_cen'];
-        $post->surname = $request['surname'];
-
-
-        if($post->save()){
-            return response($post);
-        }else {
-            return ['status' => false, 'message' => 'Post Somthing Wented Wrong'];
-        }
-    }
+    
 
     //GetID
     public function studentcoreID($id)

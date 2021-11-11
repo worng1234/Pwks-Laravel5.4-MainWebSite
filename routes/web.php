@@ -67,10 +67,16 @@ Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 //Studentcore
 Route::resource('/StudentCore', studentcoreController::class);
 
+Route::get('/Addstudentcore', function () {
+    return view('Studentcore.addstudentcore');
+} );
+
+Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
+
 Route::get('/testupload', function () {
     return view('test');
 } );
 
-Route::post('/upload', 'TestUPController@store');
+Route::post('/created', 'TestUPController@create');
 
 

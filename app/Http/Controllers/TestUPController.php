@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\test2;
+use App\Models\test;
 
 class TestUPController extends Controller
 {
@@ -23,9 +24,20 @@ class TestUPController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data1 = new test([
+            "name" => $request->get('name'),
+            "surname" => $request->get('surname'),
+        ]);
+
+        $data2 = new test2([
+            "id_number2" => $request->get('id_number2'),
+            "address" => $request->get('address')
+        ]);
+        $data1->save();
+        $data2->save();
+        
     }
 
     /**
