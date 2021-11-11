@@ -346,9 +346,9 @@
                                                                 อันดับ 2 : {{$value->major_name2}} <br>
                                                                 อันดับ 3 : {{$value->major_name3}} <br>
                                                                 อันดับ 4 : {{$value->major_name4}} <br></td>
-                                                            <td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}'class="btn btn-primary btn-xs"><i class="fas fa-file-archive" ></i></a></td>
+                                                            <td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive" ></i></a></td>
                                                             <td><img src="/newstudentm4AllPic/newstudentm4PIC/{{$value->pic}}" width="50" height="50"></td>
-                                                            <td align="center"><a  class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
+                                                            <td align="center"><a  href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
                                                         </tr>
                                                         @endforeach
 														<!-- อะไรไม่รู้ -->

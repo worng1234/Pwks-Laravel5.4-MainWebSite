@@ -143,6 +143,6 @@ class newstudentm1Controller extends Controller
     {
         $newstudentm1 = newstudentm1Model::find($id);
         $newstudentm1->delete();
-        return response()->json(null, 204);
+        return redirect('SortNewstudentM1');
     }
 }

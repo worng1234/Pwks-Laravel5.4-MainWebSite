@@ -147,6 +147,6 @@ class newstudentm4Controller extends Controller
     {
         $newstudentm4 = newstudentm4Model::find($id);
         $newstudentm4->delete();
-        return response()->json(null, 204);
+        return redirect('SortNewstudentM4');
     }
 }
