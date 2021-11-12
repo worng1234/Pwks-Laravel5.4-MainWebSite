@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="/eim/public/assets/img/logo3.png" type="image/x-icon" />
+    <link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
 
     <!-- Fonts and icons -->
-    <script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 
     <script>
         WebFont.load({
@@ -17,7 +17,7 @@
             },
             custom: {
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-                urls: ['/eim/public/assets/css/fonts.min.css']
+                urls: ['/assets/css/fonts.min.css']
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -26,11 +26,11 @@
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="/eim/public/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/eim/public/assets/css/atlantis.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/atlantis.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="/eim/public/assets/css/demo.css">
+    <link rel="stylesheet" href="/assets/css/demo.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             <div class="logo-header" data-background-color="white">
 
                 <a href="index.html" class="logo">
-                    <img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
+                    <img src="/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -119,14 +119,14 @@
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a data-toggle="collapse" href="#test1">
+                                        <a data-toggle="collapse" href="#form1">
                                             <span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
                                             <span class="caret"></span>
                                         </a>
-                                        <div class="collapse" id="test1">
+                                        <div class="collapse" id="form1">
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
-                                                    <a href="{{ route('StudentCore.index') }}">
+                                                    <a href="{{ url('StudentCore') }}">
                                                         <span class="sub-item">แสดงข้อมูลนักเรียน</span>
                                                     </a>
                                                 </li>
@@ -253,12 +253,12 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                     <li>
-                                        <a href="{{ route('SortNewstudentM1.index')}}">
+                                        <a href="{{ url('/SortNewstudentM1')}}">
                                             <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="{{ url('/SortNewstudentM4')}}">
                                             <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
                                         </a>
                                     </li>
@@ -348,43 +348,43 @@
         <!-- สิ้นสุด Footter -->
     </div>
     <!--   Core JS Files   -->
-    <script src="/eim/public/assets/js/core/jquery.3.2.1.min.js"></script>
-    <script src="/eim/public/assets/js/core/popper.min.js"></script>
-    <script src="/eim/public/assets/js/core/bootstrap.min.js"></script>
+    <script src="/assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="/assets/js/core/popper.min.js"></script>
+    <script src="/assets/js/core/bootstrap.min.js"></script>
 
     <!-- jQuery UI -->
-    <script src="/eim/public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="/eim/public/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script src="/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
     <!-- jQuery Scrollbar -->
-    <script src="/eim/public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 
     <!-- Chart JS -->
-    <script src="/eim/public/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="/assets/js/plugin/chart.js/chart.min.js"></script>
 
     <!-- jQuery Sparkline -->
-    <script src="/eim/public/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
     <!-- Chart Circle -->
-    <script src="/eim/public/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="/assets/js/plugin/chart-circle/circles.min.js"></script>
 
     <!-- Datatables -->
-    <script src="/eim/public/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="/assets/js/plugin/datatables/datatables.min.js"></script>
 
     <!-- jQuery Vector Maps -->
-    <script src="/eim/public/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-    <script src="/eim/public/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
     <!-- Sweet Alert -->
-    <script src="/eim/public/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
     <!-- Atlantis JS -->
-    <script src="/eim/public/assets/js/atlantis.min.js"></script>
+    <script src="/assets/js/atlantis.min.js"></script>
 
     <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="/eim/public/assets/js/setting-demo.js"></script>
-    <script src="/eim/public/assets/js/demo.js"></script>
+    <script src="/assets/js/setting-demo.js"></script>
+    <script src="/assets/js/demo.js"></script>
     <script>
         Circles.create({
             id: 'circles-1',

@@ -247,7 +247,7 @@
                             </div>
                         </li>
 
-                        
+
 
                         <li class="nav-item ">
                             <a href="#">
@@ -1530,8 +1530,8 @@
                                             </div>
                                         </div>
                                         <div class="card-footer" align="center">
-                                            <a href="{{ route('StudentCore.edit', $studentcore->id) }}" class="btn btn-success"><strong>แก้ไขข้อมูล</strong></a>
-                                            <a href="http://127.0.0.1:8000/StudentCore" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
+                                            <a href='{{ url("/FixStudentCore/{$studentcore->id}")}}' class="btn btn-success"><strong>แก้ไขข้อมูล</strong></a>
+                                            <a href="{{ url('/StudentCore')}}" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
                                         </div><br>
                                     </div>
                                 </div>

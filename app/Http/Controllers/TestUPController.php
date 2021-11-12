@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\test2;
+use App\Models\test;
 
 class TestUPController extends Controller
 {
@@ -23,9 +24,20 @@ class TestUPController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data1 = new test([
+            "name" => $request->get('name'),
+            "surname" => $request->get('surname'),
+        ]);
+
+        $data2 = new test2([
+            "id_number2" => $request->get('id_number2'),
+            "address" => $request->get('address')
+        ]);
+        $data1->save();
+        $data2->save();
+        
     }
 
     /**
@@ -36,7 +48,24 @@ class TestUPController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $compic1 = $request->file('file')->getClientOriginalName();
+            $compPic = str_replace(' ', '_', $compic1);
+            $path = $request->file('file')->storeAs('test', $compPic);
+
+            $compic2 = $request->file('file2')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $compic2);
+            $path = $request->file('file2')->storeAs('test2', $compPic2);
+
+            $data = new test2([
+                "id_number2" => $request->get('id_number2'),
+                "address" => $compPic
+            ]);
+            $data->save();
+            return $data;
+            
+        
+        
+        
     }
 
     /**
