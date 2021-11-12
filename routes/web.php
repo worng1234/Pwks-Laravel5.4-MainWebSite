@@ -74,8 +74,9 @@ Route::get('/Addstudentcore', function () {
 Route::get('/StudentCore/{id}', 'studentcoreController@show');
 Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');
 Route::post('/updatedstudentcore/{id}', 'studentcoreController@update');
-
+Route::get('/deletestudentcore/{id}', 'studentcoreController@destroy');
 Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
+
 
 Route::get('/testupload', function () {
     return view('test');

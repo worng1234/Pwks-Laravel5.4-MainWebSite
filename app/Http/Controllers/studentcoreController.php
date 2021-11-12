@@ -270,74 +270,25 @@ class studentcoreController extends Controller
     }
     
 
-    //GetID
-    public function studentcoreID($id)
-    {
-        return studentcoreModels::find($id);
-    }
-
-    public function addressstudentID($id)
-    {
-        return addressstudentModel::find($id);
-    }
-
-    public function healtystudentID($id)
-    {
-        return healtystudentModel::find($id);
-    }
-
-    public function parentstudentID($id)
-    {
-        return parentstudentModel::find($id);
-    }
-
-    public function studentdetailID($id)
-    {
-        return studentdetailModel::find($id);
-    }
-
-    public function talentstudentID($id)
-    {
-        return talentstudentModel::find($id);
-    }
-
-//Update
-    public function studentcoreUpdate(Request $request, $id){
+    public function destroy($id){
         $studentcore = studentcoreModels::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
-    }
+        $addressstudent = addressstudentModel::find($id);
+        $healtystudent = healtystudentModel::find($id);
+        $talentstudent = talentstudentModel::find($id);
+        $studentdetail = studentdetailModel::find($id);
+        $parentstudentModel = parentstudentModel::find($id);
 
-    public function addressstudentUpdate(Request $request, $id){
-        $studentcore = addressstudentModel::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
-    }
+        $studentcore->delete();
+        $addressstudent->delete();
+        $healtystudent->delete();
+        $talentstudent->delete();
+        $studentdetail->delete();
+        $parentstudentModel->delete();
 
-    public function healtystudentUpdate(Request $request, $id){
-        $studentcore = healtystudentModel::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
+        return redirect('StudentCore');
     }
+    
 
-    public function parentstudentUpdate(Request $request, $id){
-        $studentcore = parentstudentModel::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
-    }
-
-    public function studentdetailUpdate(Request $request, $id){
-        $studentcore = studentdetailModel::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
-    }
-
-    public function talentstudentUpdate(Request $request, $id){
-        $studentcore = talentstudentModel::find($id);
-        $studentcore->update($request->all());
-        return $studentcore;
-    }
-//////////////////////////////////
     public function joinstudentandbehavior(){
         $data = DB::table('student_information_core')
         ->join('behavior_student', 'student_information_core.student_id', '=', 'behavior_student.B_student_id')
