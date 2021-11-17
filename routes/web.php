@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
  use App\Http\Controllers\newstudentm1Controller;
  use App\Http\Controllers\newstudentm4Controller;
  use App\Http\Controllers\studentcoreController;
@@ -22,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
 
 
 //Route::view('/AddstudentCore','Studentcore.addstudentcore');
@@ -83,5 +83,29 @@ Route::get('/testupload', function () {
 } );
 
 Route::post('/created', 'TestUPController@create');
+
+
+Auth::routes();
+
+//AcademicLogin
+Route::get('/academic', 'AcademicsController@index')->name('academic.dashboard');
+Route::get('/academic/login', 'Auth\AcademicsLoginController@showLogin')->name('academic.login');
+Route::post('/academic/login', 'Auth\AcademicsLoginController@login')->name('academic.login.submit');
+
+//AdminLogin
+Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+Route::get('/admin/login', 'Auth\AdminLoginController@showLogin')->name('admin.login');
+Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//StudentLogin
+Route::get('/student', 'StudentController@index')->name('student.dashboard');
+Route::get('/student/login', 'Auth\StudentLoginController@showLogin')->name('student.login');
+Route::post('/student/login', 'Auth\StudentLoginController@login')->name('student.login.submit');
+//AffairLogin
+Route::get('/affair', 'AffairController@index')->name('affair.dashboard');
+Route::get('/affair/login', 'Auth\AffairLoginController@showLogin')->name('affair.login');
+Route::post('/affair/login', 'Auth\AffairLoginController@login')->name('affair.login.submit');
 
 

@@ -284,7 +284,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ url('/academic/login')}}">
+                            <a href="{{ route('academic.login')}}">
                                 <i class="fas fa-comments"></i>
                                 <p>ฝ่ายวิชาการ</p>
                             </a>

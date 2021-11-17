@@ -111,11 +111,11 @@
 
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#forms">
+                            <!-- <a data-toggle="collapse" href="#forms">
                                 <i class="fas fa-user-graduate"></i>
                                 <p>จัดการข้อมูลนักเรียน</p>
                                 <span class="caret"></span>
-                            </a>
+                            </a> -->
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
@@ -265,36 +265,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item ">
-                            <a href="#">
-                                <i class="fas fa-book-open"></i>
-                                <p>คู่มือการใช้งาน</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('admin.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>Admin</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('affair.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายกิจการนักเรียน</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ url('/academic/login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายวิชาการ</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('student.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>นักเรียน</p>
-                            </a>
-                        </li>
+                        
                         
 
 

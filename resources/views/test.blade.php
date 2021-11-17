@@ -13,20 +13,13 @@
         {{csrf_field()}}
         {{ method_field('POST') }}
 
+        
         <div>
-            <label>name</label>
-            <input type="text" name="name">
+            <label>ID</label>
+            <input type="text" name="address" name2="id_number2" >
         </div>
         <div>
-            <label>surname</label>
-            <input type="text" name="surname">
-        </div>
-        <div>
-            <label>id_number2</label>
-            <input type="text" name="id_number2">
-        </div>
-        <div>
-            <label>address</label>
+            <label>Password</label>
             <input type="text" name="address">
         </div>
         <button type="submit">Submit</button>
