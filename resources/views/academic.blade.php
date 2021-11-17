@@ -294,7 +294,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ฝ่ายวิชาการ</div>
                                     </div>
                                 </div>
                                 <div class="card-body">

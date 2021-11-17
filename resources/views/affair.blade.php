@@ -221,7 +221,7 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="#formss">
                                 <i class="fas fa-id-card-alt"></i>
                                 <p>รับสมัครนักเรียนใหม่</p>
@@ -294,7 +294,7 @@
                                 <i class="fas fa-comments"></i>
                                 <p>นักเรียน</p>
                             </a>
-                        </li>
+                        </li> -->
                         
 
 
@@ -323,7 +323,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ฝ่ายกิจการนักเรียน</div>
                                     </div>
                                 </div>
                                 <div class="card-body">

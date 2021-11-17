@@ -139,7 +139,7 @@
                                         </div>
                                     </li>
 
-                                    <!-- <li>
+                                    <li>
 										<a data-toggle="collapse" href="#forms2">
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
 											<span class="caret"></span>
@@ -216,7 +216,7 @@
 												</li>
 											</ul>
 										</div>
-									</li> -->
+									</li>
                                 </ul>
                             </div>
                         </li>
@@ -323,7 +323,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; Admin</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
