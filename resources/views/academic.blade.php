@@ -265,6 +265,17 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item ">
+                            <a href="{{ route('academic.logout')}}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-book-open"></i>
+                                <p>Logout</p>
+                            </a>
+                            <form id="logout-form" action="{{ route('academic.logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                            </form>
+                        </li>
                         
                         
 

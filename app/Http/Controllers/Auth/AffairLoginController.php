@@ -10,7 +10,7 @@ class AffairLoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest:affair');
+        $this->middleware('guest:affair', ['except' => ['logout']]);
     }
 
     public function showLogin(){
@@ -29,5 +29,11 @@ class AffairLoginController extends Controller
 
         return redirect()->back()->withInput($request->only('username', 'remember'));
         
+    }
+
+    public function logout()
+    {
+        Auth::guard('affair')->logout();
+        return redirect('/');
     }
 }

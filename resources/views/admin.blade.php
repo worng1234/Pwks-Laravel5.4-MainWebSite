@@ -272,29 +272,17 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ route('admin.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>Admin</p>
+                            <a href="{{ route('admin.logout')}}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-book-open"></i>
+                                <p>Logout</p>
                             </a>
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                            </form>
                         </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('affair.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายกิจการนักเรียน</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('academic.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายวิชาการ</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('student.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>นักเรียน</p>
-                            </a>
-                        </li>
+                        
                         
 
 
