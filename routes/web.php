@@ -98,6 +98,11 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 Route::get('/admin/login', 'Auth\AdminLoginController@showLogin')->name('admin.login');
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+//AdminResetPassword
+Route::post('/admin/password/username', 'Auth\AdminForgotPassword@sendResetLinkUsername')->name('admin.password.username');
+Route::get('/admin/password/reset', 'Auth\AdminForgotPassword@showLinkRequestForm')->name('admin.password.request');
+Route::post('/admin/password/reset', 'Auth\AdminResetPassword@reset');
+Route::get('/admin/password/reset/{token}', 'Auth\AdminResetPassword@showResetForm')->name('admin.password.reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
