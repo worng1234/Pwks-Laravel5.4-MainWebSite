@@ -16,7 +16,7 @@ class TestUPController extends Controller
     public function index()
     {
         $data = test2::all();
-        return view('test.index',compact('data'));
+        return view('testall.index',compact('data'));
     }
 
     /**
@@ -24,8 +24,15 @@ class TestUPController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function createview()
+     {
+        return view('test');
+     }
+
     public function create(Request $request)
     {
+        
         
 
         $data2 = new test2([
@@ -72,9 +79,10 @@ class TestUPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( test2 $test )
+    public function show( $id )
     {
-        return view('test.show',compact('test'));
+        $test = test2::find($id);
+        return view('testall.show',compact('test'));
     }
 
     /**
@@ -85,8 +93,8 @@ class TestUPController extends Controller
      */
     public function edit($id)
     {
-        $data = test2::find($id);
-        return view('test.edit',compact('data'));
+        $tttt = test2::findOrFail($id);
+        return view('testall.edit',compact('tttt'));
     }
 
     /**
@@ -101,7 +109,7 @@ class TestUPController extends Controller
 
         $data = test2::find($id);
         $data->update($request->all());
-        return redirect()->route('testup.index')
+        return redirect()->route('testall.index')
             ->with('success', 'Test updated successfully');
     }
 

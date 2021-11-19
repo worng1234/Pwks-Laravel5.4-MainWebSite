@@ -16,13 +16,17 @@
                 <th>2</th>
                 <th>3</th>
             </thead>
-            @foreach ($data as $key => $value)
+            @foreach ($data as $datas)
             <tr>
-                <td>{{$value->id}}</td>
-                <td>{{$value->address}}</td>
-                <td>{{$value->id_number2}}</td>
-                <td><a href="{{ route('testup.edit', $value->id)}}" class="btn btn-primary">Edit</a></td>
-                <td><a href="{{ route('testup.show', $value->id)}}" class="btn btn-primary">Show</a></td>
+                <td>{{$datas->id}}</td>
+                @if ($datas->address == 2)
+                <td>ชาย</td>
+                @else
+                <td>{{$datas->address}}</td>
+                @endif
+                <td>{{$datas->id_number2}}</td>
+                <td><a href='{{ url("/Fixtest/{$datas->id}") }}' class="btn btn-primary">Edit</a></td>
+                <td><a href="{{ url('/showtest/{$datas->id}') }}" class="btn btn-primary">Show</a></td>
             </tr>
             @endforeach
         </table>

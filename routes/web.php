@@ -48,6 +48,12 @@ Route::get('/deletem1/{id}', 'newstudentm1Controller@destroy');
 
 Route::post('/insertnewstudentm1', 'newstudentm1Controller@store');
 
+Route::post('/searchM1', 'newstudentm1Controller@search');
+
+//statusPic
+Route::get('/statuspic/{id}', 'newstudentm1Controller@showStatusPic');
+
+
 //studentm4
 Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 
@@ -61,6 +67,8 @@ Route::post('/updated4/{id}', 'newstudentm4Controller@update');
 Route::get('/deletem4/{id}', 'newstudentm4Controller@destroy');
 
 Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
+
+Route::post('/searchM4', 'newstudentm4Controller@search');
 
 // Route::resource('testup', TestUPController::class);
 
@@ -77,11 +85,15 @@ Route::post('/updatedstudentcore/{id}', 'studentcoreController@update');
 Route::get('/deletestudentcore/{id}', 'studentcoreController@destroy');
 Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
+Route::post('/searchStudent', 'studentcoreController@search');
 
-Route::get('/testupload', function () {
-    return view('test');
-} );
 
+Route::resource('/testall', 'TestUPController');
+Route::get('/Fixtest/{id}', 'TestUPController@edit');
+Route::get('/showtest/{id}', 'TestUPController@show');
+Route::post('/updatedtest/{id}', 'TestUPController@update');
+
+Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
 

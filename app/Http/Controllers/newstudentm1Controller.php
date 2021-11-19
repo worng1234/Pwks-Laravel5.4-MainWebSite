@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Validator as ValidationValidator;
+use Illuminate\Support\Facades\DB;
 
 class newstudentm1Controller extends Controller
 {
@@ -22,6 +23,13 @@ class newstudentm1Controller extends Controller
     {
         $newstudentm1Model = newstudentm1Model::findOrFail($id);
         return view('Newstudent.fixprofilenewstudentm1', compact('newstudentm1Model'));
+    }
+
+    //statusPic
+    public function showStatusPic($id)
+    {
+        $newstudentm1Model = newstudentm1Model::findOrFail($id);
+        return view('Newstudent.StatusPic.status-picM1', compact('newstudentm1Model'));
     }
 
     public function store(Request $request)
@@ -39,11 +47,16 @@ class newstudentm1Controller extends Controller
         $house_pic = $request->file('house_pic')->getClientOriginalName();
         $compPic3 = str_replace(' ', '_', $house_pic);
         $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compPic3);
+        //Grade student picture
+        $grade_pic = $request->file('grade_pic')->getClientOriginalName();
+        $compPic4 = str_replace(' ', '_', $house_pic);
+        $path = $request->file('grade_pic')->storeAs('newstudentm1AllPic/newstudentm1GRADE', $compPic4);
             
         $post = new newstudentm1Model([
             "pic" => $compPic1,
             "id_number_pic" => $compPic2,
             "house_pic" => $compPic3,
+            "grade_pic" => $compPic4,
             "prename" => $request->get('prename'),
             "fname" => $request->get('fname'),
             "surname" => $request->get('surname'),
@@ -96,6 +109,11 @@ class newstudentm1Controller extends Controller
             "finalSchoolSubDistrict" => $request->get('finalSchoolSubDistrict'),
             "finalSchoolDistrict" => $request->get('finalSchoolDistrict'),
             "finalSchoolProvince" => $request->get('finalSchoolProvince'),
+            "status_rigis" => $request->get('status_rigis'),
+            "status_pic" => $request->get('status_pic'),
+            "status_idnumber_pic" => $request->get('status_idnumber_pic'),
+            "status_house_pic" => $request->get('status_house_pic'),
+            "status_grade_pic" => $request->get('status_grade_pic'),
         ]);
         $post->save();
         return redirect('/SortNewstudentM1');
@@ -144,5 +162,17 @@ class newstudentm1Controller extends Controller
         $newstudentm1 = newstudentm1Model::find($id);
         $newstudentm1->delete();
         return redirect('SortNewstudentM1');
+    }
+
+    
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $datas = DB::table('new_student_register_m1')
+        ->where('fname','like', '%' .$search. '%')
+        ->orWhere('surname','like', '%' .$search. '%')
+        ->orWhere('finalSchool','like', '%' .$search. '%')->paginate(10);
+        return view('Newstudent.sortnewstudentm1', ['datas' => $datas]);
     }
 }

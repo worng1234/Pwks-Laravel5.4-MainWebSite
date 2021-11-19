@@ -61,8 +61,6 @@
             <input type="checkbox" class="custom-control-input" id="rememberme">
             <label class="custom-control-label" for="rememberme">Remember Me</label>
           </div>
-
-          <a href="{{ route('admin.password.request')}}" class="link float-right">Forget Password?</a>
         </div>
 
         <div class="form-action mb-3">

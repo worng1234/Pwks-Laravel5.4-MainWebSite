@@ -636,7 +636,7 @@
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
-													<label>ชื่อโรงเรียนเดิม</label>
+													<label>ชื่อโรงเรียนเดิม </label>
 													<input name="finalSchool" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
@@ -721,8 +721,30 @@
 													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
 												</div>
 											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ.</label>
+													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
+												</div>
+											</div>
 										</div><br><br>
-
+										
+										<!-- สถานะการสมัคร -->
+										<div hidden>
+											<input type="text" name="status_rigis" value="ยังไม่ได้ยืนยันการสมัคร">
+										</div>
+										<div hidden>
+											<input type="text" name="status_pic" value="ยังไม่ได้ตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_idnumber_pic" value="ยังไม่ได้ตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_house_pic" value="ยังไม่ได้ตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_grade_pic" value="ยังไม่ได้ตรวจสอบ">
+										</div>
 
 
 

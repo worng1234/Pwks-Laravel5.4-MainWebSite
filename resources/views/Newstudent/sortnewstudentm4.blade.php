@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/assets/css/fonts.min.css']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['/assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -20,7 +26,11 @@
 
 	<style>
 		/* Ensure that the demo table scrolls */
-		th, td { white-space: nowrap; }
+		th,
+		td {
+			white-space: nowrap;
+		}
+
 		div.dataTables_wrapper {
 			margin: 0 auto;
 		}
@@ -28,13 +38,13 @@
 		div.container {
 			width: 80%;
 		}
+
 		.bgimgheader {
 
 			background-repeat: repeat;
 			background-position: center;
 			position: relative;
 		}
-
 	</style>
 
 	<!-- CSS Files -->
@@ -45,6 +55,7 @@
 	<link rel="stylesheet" href="/assets/css/demo.css">
 
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
@@ -72,17 +83,19 @@
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<p class="card-title" style="font-size: 20px;"><b><font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
-							<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
+						<p class="card-title" style="font-size: 20px;"><b>
+								<font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+							</b></p>
+						<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
 					</div>
 
-                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item toggle-nav-search hidden-caret">
-                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-                                <i class="fas fa-school"></i>
-                            </a>
-                        </li>
-                    </ul>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fas fa-school"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
@@ -226,7 +239,7 @@
 							</div>
 						</li> -->
 
-                        <li class="nav-item active submenu">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#agree">
 								<i class="fas fa-id-card-alt"></i>
 								<p>จัดการข้อมูลนักเรียนใหม่</p>
@@ -279,7 +292,7 @@
 						</div>
 					</div>
 				</div>
-                <div class="page-inner mt--5">
+				<div class="page-inner mt--5">
 					<div class="row mt--2">
 						<div class="col-md-12">
 							<div class="card full-height">
@@ -289,85 +302,98 @@
 									</div>
 								</div>
 
-                                <div class="card-body" style="min-height: 400px">
+								<div class="card-body" style="min-height: 400px">
 									<div class="form-group">
-										<form role="form" method="post" action="">
+										<form role="form" method="post" action="{{ url('/searchM4')}}">
+											{{csrf_field()}}
 											<div class="row">
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>ชื่อภาษาไทย</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<input name="search" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>นามสกุลภาษาไทย</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<input name="search" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
 												<div class="col-6 col-md-2">
 													<div class="form-group form-group-default">
 														<label>วิชาเอก</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<input name="search" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>ค้นหาจากชื่อโรงเรียน</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<input name="search" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
-												<button class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
+												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
 									</div>
 
 									<!-- ตารางแสดงข้อมูล-->
 									<div class="table-responsive">
-													<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-														<thead>
-															<tr>
-																<th scope="col" width="30%"><center>ชื่อ-นามสกุล</center></th>
-																<th scope="col" width="15%"><center>โรงเรียน</center></th>
-																<th scope="col" width="15%"><center>วิชาเอก</center></th>
-																<th scope="col" width="13%"><center>ข้อมูลส่วนตัว</center></th>
-																<th scope="col" width="15%"><center>รูปภาพ</center></th>
-																<th scope="col" width="12%"><center>จัดการ</center></th>
+										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th scope="col" width="30%">
+														<center>ชื่อ-นามสกุล</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>โรงเรียน</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>วิชาเอก</center>
+													</th>
+													<th scope="col" width="13%">
+														<center>ข้อมูลส่วนตัว</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>รูปภาพ</center>
+													</th>
+													<th scope="col" width="12%">
+														<center>จัดการ</center>
+													</th>
 
-															</tr>
-														</thead>
-														<tbody>
-														<!-- Modal Show Club Detail -->
-                                                        @foreach ($data as $key => $value)
-                                                        <tr>
-                                                            <td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
-                                                            <td align="center">{{$value->final_school}}</td>
-                                                            <td>อันดับ 1 : {{$value->major_name1}} <br>
-                                                                อันดับ 2 : {{$value->major_name2}} <br>
-                                                                อันดับ 3 : {{$value->major_name3}} <br>
-                                                                อันดับ 4 : {{$value->major_name4}} <br></td>
-                                                            <td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive" ></i></a></td>
-                                                            <td><img src="/newstudentm4AllPic/newstudentm4PIC/{{$value->pic}}" width="50" height="50"></td>
-                                                            <td align="center"><a  href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
-                                                        </tr>
-                                                        @endforeach
-														<!-- อะไรไม่รู้ -->
-														<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-															<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-																<div class="modal-content">
-																<div class="modal-header">
-																	<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												</tr>
+											</thead>
+											<tbody>
+												<!-- Modal Show Club Detail -->
+												@foreach ($data as $key => $value)
+												<tr>
+													<td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
+													<td align="center">{{$value->final_school}}</td>
+													<td>อันดับ 1 : {{$value->major_name1}} <br>
+														อันดับ 2 : {{$value->major_name2}} <br>
+														อันดับ 3 : {{$value->major_name3}} <br>
+														อันดับ 4 : {{$value->major_name4}} <br></td>
+													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
+													<td><img src="/newstudentm4AllPic/newstudentm4PIC/{{$value->pic}}" width="50" height="50"></td>
+													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
+												</tr>
+												@endforeach
+												<!-- อะไรไม่รู้ -->
+												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																	</button>
-																</div>
+																</button>
 															</div>
 														</div>
-														<!-- // Modal Show Club Detail -->
+													</div>
+													<!-- // Modal Show Club Detail -->
 
-														</tbody>
-													</table>
-												<!-- //ตารางแสดงข้อมูล-->
+											</tbody>
+										</table>
+										<!-- //ตารางแสดงข้อมูล-->
 
 									</div>
 								</div>
@@ -437,63 +463,63 @@
 	<script src="/assets/js/setting-demo.js"></script>
 	<script src="/assets/js/demo.js"></script>
 
-    <!-- Date time picker -->
-			<script type="text/javascript">
-                $(document).ready(function() {
-                    $('#basic-datatables').DataTable({
-                        "pageLength": 50,
-                        "language":{
-                            "search": "ค้นหาข้อมูล :"
-                        },
-                                    "ordering": false
-                    });
-                });
-            </script>
+	<!-- Date time picker -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+				"pageLength": 50,
+				"language": {
+					"search": "ค้นหาข้อมูล :"
+				},
+				"ordering": false
+			});
+		});
+	</script>
 
 	<script>
 		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
 			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
 			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
 			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
@@ -502,7 +528,7 @@
 			type: 'bar',
 			data: {
 				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
+				datasets: [{
 					label: "Total Income",
 					backgroundColor: '#ff9e27',
 					borderColor: 'rgb(23, 125, 255)',
@@ -520,22 +546,22 @@
 						ticks: {
 							display: false //this will remove only the label
 						},
-						gridLines : {
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}],
-					xAxes : [ {
-						gridLines : {
+					xAxes: [{
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}]
 				},
 			}
 		});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -546,4 +572,5 @@
 	</script>
 
 </body>
+
 </html>

@@ -12,18 +12,21 @@
     <form action="{{ url('/created')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         {{ method_field('POST') }}
-
-        
         <div>
             <label>ID</label>
-            <input type="text" name="address" name2="id_number2" >
+            <input type="text" name="id_number2" >
         </div>
-        <div>
-            <label>Password</label>
-            <input type="text" name="address">
+        <div >
+            <select name="address">
+                <option value="1">ก</option>
+                <option value="2">ข</option>
+                <option value="3">ค</option>
+            </select>
         </div>
         <button type="submit">Submit</button>
     </form>
+
+    
 </body>
 
 </html>

@@ -20,6 +20,7 @@ class newstudentm1Model extends Model
         'pic',
         'id_number_pic',
         'house_pic',
+        'grade_pic',
         'idNumber',
         'day',
         'mounth',
@@ -66,6 +67,11 @@ class newstudentm1Model extends Model
         'finalSchool',
         'finalSchoolSubDistrict',
         'finalSchoolDistrict',
-        'finalSchoolProvince'
+        'finalSchoolProvince',
+        'status_rigis',
+        'status_pic',
+        'status_idnumber_pic',
+        'status_house_pic',
+        'status_grade_pic'
     ];
 }

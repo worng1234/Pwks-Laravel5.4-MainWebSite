@@ -18,6 +18,18 @@ class studentcoreController extends Controller
         return view('Studentcore.studentcore', compact('data'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $data = DB::table('student_core')
+        ->where('fname','like', '%' .$search. '%')
+        ->orWhere('surname','like', '%' .$search. '%')
+        ->orWhere('student_class','like', '%' .$search. '%')
+        ->orWhere('student_room','like', '%' .$search. '%')
+        ->orWhere('student_number','like', '%' .$search. '%')->paginate(10);
+        return view('Studentcore.studentcore', ['data' => $data]);
+    }
+
     public function show($id){
         $studentcore = studentcoreModels::find($id);
         $addressstudent = addressstudentModel::find($id);

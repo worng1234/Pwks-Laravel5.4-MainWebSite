@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['../assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -20,7 +26,11 @@
 
 	<style>
 		/* Ensure that the demo table scrolls */
-		th, td { white-space: nowrap; }
+		th,
+		td {
+			white-space: nowrap;
+		}
+
 		div.dataTables_wrapper {
 			margin: 0 auto;
 		}
@@ -28,13 +38,13 @@
 		div.container {
 			width: 80%;
 		}
+
 		.bgimgheader {
 
 			background-repeat: repeat;
 			background-position: center;
 			position: relative;
 		}
-
 	</style>
 
 	<!-- CSS Files -->
@@ -44,6 +54,7 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
@@ -71,22 +82,24 @@
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<p class="card-title" style="font-size: 20px;"><b><font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
-							<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่ (สำหรับเจ้าหน้าที่ฝ่ายวิชาการ)</small></label>
+						<p class="card-title" style="font-size: 20px;"><b>
+								<font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+							</b></p>
+						<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่ (สำหรับเจ้าหน้าที่ฝ่ายวิชาการ)</small></label>
 					</div>
 
-                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item toggle-nav-search hidden-caret">
-                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-                                <i class="fas fa-school"></i>
-                            </a>
-                        </li>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fas fa-school"></i>
+							</a>
+						</li>
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" href="index.html" aria-expanded="false">
 								<i class="fas fa-unlock"></i> ออกระบบ
 							</a>
 						</li>
-                    </ul>
+					</ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
@@ -275,19 +288,21 @@
 										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลนักเรียน </div>
 									</div>
 								</div>
-                                <div class="card-body" style="min-height: 370px">
+								<div class="card-body" style="min-height: 370px">
 									<div class="alert alert-info" role="alert" align="center">
-											<h4 class="fw-bold"><i class="far fa-calendar-check"></i> &nbsp;&nbsp; ปีการศึกษาปัจจุบันคือ <font color="red">1/2565</font></h4>
+										<h4 class="fw-bold"><i class="far fa-calendar-check"></i> &nbsp;&nbsp; ปีการศึกษาปัจจุบันคือ <font color="red">1/2565</font>
+										</h4>
 									</div>
 
 									<div class="form-group">
-										<form role="form" method="post"  action="">
+										<form role="form" method="post" action="{{ url('/searchStudent')}}">
+											{{csrf_field()}}
 											<div class="row">
 
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect">
+														<select class="form-control" id="formGroupDefaultSelect" name="search">
 															<option>เลือก</option>
 															<option>ชั้นมัธยมศึกษาปีที่ 1</option>
 															<option>ชั้นมัธยมศึกษาปีที่ 2</option>
@@ -299,7 +314,7 @@
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect">
+														<select class="form-control" id="formGroupDefaultSelect" name="search">
 															<option>เลือก</option>
 															<option>1</option>
 															<option>2</option>
@@ -311,70 +326,86 @@
 												<div class="col-sm-6 col-md-5">
 													<div class="form-group form-group-default">
 														<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<input name="search" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
+												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
 									</div>
 
-									<div class="table-responsive" >
+									<div class="table-responsive">
 
 
-												<!-- ตารางแสดงข้อมูล-->
-													<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-														<thead>
-															<tr>
-																<th scope="col" width="10%"><center>ลำดับ</center></th>
-																<th scope="col" width="14%"><center>เลขประจำตัวนักเรียน</center></th>
-																<th scope="col" width="8%"><center>เลขที่</center></th>
-																<th scope="col" width="26"><center>ชื่อ-นามสกุล</center></th>
-																<th scope="col" width="8%"><center>เพศ</center></th>
-																<th scope="col" width="14%"><center>ชั้นเรียน</center></th>
-																<th scope="col" width="8%"><center>ห้อง</center></th>
-																<th scope="col" width="12%"><center>จัดการ</center></th>
+										<!-- ตารางแสดงข้อมูล-->
+										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th scope="col" width="10%">
+														<center>ลำดับ</center>
+													</th>
+													<th scope="col" width="14%">
+														<center>เลขประจำตัวนักเรียน</center>
+													</th>
+													<th scope="col" width="8%">
+														<center>เลขที่</center>
+													</th>
+													<th scope="col" width="26">
+														<center>ชื่อ-นามสกุล</center>
+													</th>
+													<th scope="col" width="8%">
+														<center>เพศ</center>
+													</th>
+													<th scope="col" width="14%">
+														<center>ชั้นเรียน</center>
+													</th>
+													<th scope="col" width="8%">
+														<center>ห้อง</center>
+													</th>
+													<th scope="col" width="12%">
+														<center>จัดการ</center>
+													</th>
 
-															</tr>
-														</thead>
-														<tbody>
-                                                            @foreach ($data as $key => $value)
-															<tr>
-																<td align="center">{{$value->id}}</td>
-																<td align="center">{{$value->studentID}}</td>
-																<td align="center">{{$value->student_number}}</td>
-																<td>{{$value->prename}} {{$value->fname}}  {{$value->surname}}</td>
-																<td align="center">{{$value->gender}}</td>
-																<td align="center">{{$value->student_class}}</td>
-																<td align="center">{{$value->student_room}}</td>
-																<td align="center">
-																	<form role="form" method="post" action="?r=admin_student_edit">
-																		<a href='{{ url("/StudentCore/{$value->id}")}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a>
-																		<input type="hidden" name="hid" value="1" />
-																		<a href='{{ url("/deletestudentcore/{$value->id}")}}' class="btn btn-danger btn-xs" title="" onclick="return confirm('Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.')"> <i class="fas fa-trash"></i> </a>
-																	</form>
-																</td>
-															</tr>
-                                                            @endforeach
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($data as $key => $value)
+												<tr>
+													<td align="center">{{$value->id}}</td>
+													<td align="center">{{$value->studentID}}</td>
+													<td align="center">{{$value->student_number}}</td>
+													<td>{{$value->prename}} {{$value->fname}} {{$value->surname}}</td>
+													<td align="center">{{$value->gender}}</td>
+													<td align="center">{{$value->student_class}}</td>
+													<td align="center">{{$value->student_room}}</td>
+													<td align="center">
+														<form role="form" method="post" action="?r=admin_student_edit">
+															<a href='{{ url("/StudentCore/{$value->id}")}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a>
+															<input type="hidden" name="hid" value="1" />
+															<a href='{{ url("/deletestudentcore/{$value->id}")}}' class="btn btn-danger btn-xs" title="" onclick="return confirm('Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.')"> <i class="fas fa-trash"></i> </a>
+														</form>
+													</td>
+												</tr>
+												@endforeach
 
-														<!-- Modal Show Club Detail -->
-														<!-- อะไรไม่รู้ -->
-														<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-															<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-																<div class="modal-content">
-																<div class="modal-header">
-																	<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<!-- Modal Show Club Detail -->
+												<!-- อะไรไม่รู้ -->
+												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																	</button>
-																</div>
+																</button>
 															</div>
 														</div>
-														<!-- // Modal Show Club Detail -->
+													</div>
+													<!-- // Modal Show Club Detail -->
 
-														</tbody>
-													</table>
-												<!-- //ตารางแสดงข้อมูล-->
+											</tbody>
+										</table>
+										<!-- //ตารางแสดงข้อมูล-->
 
 									</div>
 								</div>
@@ -448,58 +479,58 @@
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({
 				"pageLength": 50,
-				"language":{
+				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
-							"ordering": false
+				"ordering": false
 			});
 		});
 	</script>
 
 	<script>
 		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
 			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
 			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
 			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
@@ -508,7 +539,7 @@
 			type: 'bar',
 			data: {
 				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
+				datasets: [{
 					label: "Total Income",
 					backgroundColor: '#ff9e27',
 					borderColor: 'rgb(23, 125, 255)',
@@ -526,22 +557,22 @@
 						ticks: {
 							display: false //this will remove only the label
 						},
-						gridLines : {
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}],
-					xAxes : [ {
-						gridLines : {
+					xAxes: [{
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}]
 				},
 			}
 		});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -551,4 +582,5 @@
 		});
 	</script>
 </body>
+
 </html>

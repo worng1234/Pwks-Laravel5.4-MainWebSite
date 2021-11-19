@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\newstudentm4Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class newstudentm4Controller extends Controller
 {
@@ -132,7 +133,6 @@ class newstudentm4Controller extends Controller
     {
         $newstudentm4Model = newstudentm4Model::find($id);
         $newstudentm4Model->update($request->all());
-        // return $newstudentm4Model;
         return redirect('SortNewstudentM4')
         ->with('success', 'Update successfully');
     }
@@ -148,5 +148,18 @@ class newstudentm4Controller extends Controller
         $newstudentm4 = newstudentm4Model::find($id);
         $newstudentm4->delete();
         return redirect('SortNewstudentM4');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $data = DB::table('new_student_register_m4')
+        ->where('fname','like', '%' .$search. '%')
+        ->orWhere('surname','like', '%' .$search. '%')
+        ->orWhere('major_name1','like', '%' .$search. '%')
+        ->orWhere('major_name2','like', '%' .$search. '%')
+        ->orWhere('major_name3','like', '%' .$search. '%')
+        ->orWhere('final_school','like', '%' .$search. '%')->paginate(10);
+        return view('Newstudent.sortnewstudentm4', ['data' => $data]);
     }
 }

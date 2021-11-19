@@ -9,17 +9,19 @@
 <body>
     <h1>Edit</h1>
     <div>
-        <form action="{{ route('testup.update', $data->id)}}" method="POST">
-        @csrf
-        @method('PUT')
-
+        <form action="{{ url('/updatedtest', $tttt->id)}}" method="POST">
+        {{csrf_field()}}
         <div>
             <label>Address</label>
-            <input type="text" name="address" value="{{$data->address}}" placeholder="address">
+            <select name="address">
+                <option>{{$tttt->address}}</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
         </div>
         <div>
             <label>ID</label>
-            <input type="text" name="id_number2" value="{{$data->id_number2}}" placeholder="id_number2">
+            <input type="text" name="id_number2" value="{{$tttt->id_number2}}" placeholder="id_number2">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Submit</button>
