@@ -385,11 +385,7 @@
 													<td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
 													<td align="center">{{$data->finalSchool}}</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
-													<td align="center">
-														<a href='{{ url("/statuspic/{$data->id}" )}}'><img src="newstudentm1AllPic/newstudentm1PIC/{{$data->pic}}" width="40" height="40"></a>
-														<img src="newstudentm1AllPic/newstudentm1IDNUMBER/{{$data->id_number_pic}}" width="40" height="40">
-														<img src="newstudentm1AllPic/newstudentm1HOUSE/{{$data->house_pic}}" width="40" height="40">
-													</td>
+													<td align="center"><a href='{{ url("/statuspic/{$data->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem1/{$data->id}")}}' class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 												</tr>
 												@endforeach

@@ -116,7 +116,7 @@ class newstudentm1Controller extends Controller
             "status_grade_pic" => $request->get('status_grade_pic'),
         ]);
         $post->save();
-        return redirect('/SortNewstudentM1');
+        return redirect('/success/rigisM1');
             
     }
 

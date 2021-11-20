@@ -675,7 +675,7 @@
 														<span class="form-radio-sign">ไม่มี</span>
 													</label><br><br>
 													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio"  value="" name="poorPerson">
+														<input class="form-radio-input" type="radio"  value="ผู้ด้อยโอกาส/ฐานะยากจน" name="poorPerson">
 														<span class="form-radio-sign">ผู้ด้อยโอกาส/ฐานะยากจน</span>
 													</label><br><br>
 													<label class="form-radio-label">

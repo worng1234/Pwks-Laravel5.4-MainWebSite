@@ -49,6 +49,12 @@ Route::get('/deletem1/{id}', 'newstudentm1Controller@destroy');
 Route::post('/insertnewstudentm1', 'newstudentm1Controller@store');
 
 Route::post('/searchM1', 'newstudentm1Controller@search');
+Route::get('/success/rigisM1', function () {
+    return view('Newstudent.success-statuscheck.success-regisM1');
+} );
+Route::get('/check/statusM1', function () {
+    return view('Newstudent.success-statuscheck.check-statusM1');
+} );
 
 //statusPic
 Route::get('/statuspic/{id}', 'newstudentm1Controller@showStatusPic');
@@ -69,6 +75,12 @@ Route::get('/deletem4/{id}', 'newstudentm4Controller@destroy');
 Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 
 Route::post('/searchM4', 'newstudentm4Controller@search');
+Route::get('/success/rigisM4', function () {
+    return view('Newstudent.success-statuscheck.success-regisM4');
+} );
+Route::get('/check/statusM4', function () {
+    return view('Newstudent.success-statuscheck.check-statusM4');
+} );
 
 // Route::resource('testup', TestUPController::class);
 

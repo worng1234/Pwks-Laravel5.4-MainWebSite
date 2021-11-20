@@ -107,7 +107,7 @@ class newstudentm4Controller extends Controller
             "student_id" => $request->get('student_id'),
         ]);
         $post->save();
-        return redirect('/SortNewstudentM4');
+        return redirect('/success/rigisM4');
     }
 
     /**
