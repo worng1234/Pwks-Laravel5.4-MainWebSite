@@ -175,4 +175,14 @@ class newstudentm1Controller extends Controller
         ->orWhere('finalSchool','like', '%' .$search. '%')->paginate(10);
         return view('Newstudent.sortnewstudentm1', ['datas' => $datas]);
     }
+
+    public function searchstatus(Request $request)
+    {
+        $search = $request->get('search');
+        $datas = DB::table('new_student_register_m1')
+        ->where('idNumber','like', '%' .$search. '%')->paginate(10);
+        return view('Newstudent.success-status.check-statusM1-nosubmit', ['datas' => $datas])
+        ->redirect('/check/statusM1/onsubmit');
+
+    }
 }

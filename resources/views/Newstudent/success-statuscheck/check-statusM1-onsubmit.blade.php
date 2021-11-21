@@ -132,14 +132,25 @@
                                 <div class="card text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 1</h5>
-                                        <p class="card-text">*กรอกรหัสบัตรประชาชน 13 หลักเพื่อตรวจสอบสถานะ</p>
-                                        <form action="{{ url('/search/statusM1')}}" method="post">
-                                            {{ csrf_field() }}
-                                            <input type="search" name="search" id="">
-                                            <button type="submit" class="btn btn-primary">ค้นหา</button>
-                                        </form>
                                         <div>
-                                            <p style="color:red;">*ไม่มีข้อมูลในการค้นหา</p>
+                                            <table class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                <th>ชื่อนาม-สกุล</th>
+                                                <th>เลขบัตรประจำตัวประชาชน</th>
+                                                <th>สถานะการสมัคร</th>
+                                                <th>สถานะเอกสารที่เกี่ยวข้อง</th>
+                                                <th>ข้อมูล</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td><a href="#" class="btn btn-primary"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

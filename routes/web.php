@@ -55,6 +55,11 @@ Route::get('/success/rigisM1', function () {
 Route::get('/check/statusM1', function () {
     return view('Newstudent.success-statuscheck.check-statusM1');
 } );
+Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
+
+Route::get('/check/statusM1/onsubmit', function () {
+    return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
+} );
 
 //statusPic
 Route::get('/statuspic/{id}', 'newstudentm1Controller@showStatusPic');
