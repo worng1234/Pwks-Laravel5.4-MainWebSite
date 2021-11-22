@@ -18,6 +18,7 @@ class newstudentm4Model extends Model
         'id_number_pic',
         'house',
         'id_number',
+        'grade_pic',
         'day',
         'mounth',
         'year',
@@ -72,6 +73,11 @@ class newstudentm4Model extends Model
         'onet_math',
         'onet_thai',
         'onet_eng',
-        'student_id'
+        'student_id',
+        'status_rigis',
+        'status_pic',
+        'status_idnumber_pic',
+        'status_house_pic',
+        'status_grade_pic'
     ];
 }

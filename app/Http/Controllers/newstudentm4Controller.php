@@ -19,6 +19,18 @@ class newstudentm4Controller extends Controller
         return view('Newstudent.sortnewstudentm4', compact('data'));
     }
 
+    public function editnewstudentm4($id)
+    {
+        $newstudentm4Model = newstudentm4Model::findOrFail($id);
+        return view('Newstudent.Edit-Newstudent.editprofilenewstudentm4', compact('newstudentm4Model'));
+    }
+
+    public function shownewstudentm4($id)
+    {
+        $data = newstudentm4Model::findOrFail($id);
+        return view('Newstudent.Edit-Newstudent.showprofilenewstudentm4', compact('data'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,11 +51,16 @@ class newstudentm4Controller extends Controller
         $house_pic = $request->file('house_pic')->getClientOriginalName();
         $compPic3 = str_replace(' ', '_', $house_pic);
         $path = $request->file('house_pic')->storeAs('newstudentm4AllPic/newstudentm4HOUSE', $compPic3);
+        //Grade student picture
+        $grade_pic = $request->file('grade_pic')->getClientOriginalName();
+        $compPic4 = str_replace(' ', '_', $house_pic);
+        $path = $request->file('grade_pic')->storeAs('newstudentm4AllPic/newstudentm4GRADE', $compPic4);
 
         $post = new newstudentm4Model([
             "pic" => $compPic1,
             "id_number_pic" => $compPic2,
             "house_pic" => $compPic3,
+            "grade_pic" => $compPic4,
             "prename" => $request->get('prename'),
             "fname" => $request->get('fname'),
             "surname" => $request->get('surname'),
@@ -105,6 +122,11 @@ class newstudentm4Controller extends Controller
             "onet_eng" => $request->get('onet_eng'),
             "name_cen" => $request->get('name_cen'),
             "student_id" => $request->get('student_id'),
+            "status_rigis" => $request->get('status_rigis'),
+            "status_pic" => $request->get('status_pic'),
+            "status_idnumber_pic" => $request->get('status_idnumber_pic'),
+            "status_house_pic" => $request->get('status_house_pic'),
+            "status_grade_pic" => $request->get('status_grade_pic'),
         ]);
         $post->save();
         return redirect('/success/rigisM4');
@@ -161,5 +183,14 @@ class newstudentm4Controller extends Controller
         ->orWhere('major_name3','like', '%' .$search. '%')
         ->orWhere('final_school','like', '%' .$search. '%')->paginate(10);
         return view('Newstudent.sortnewstudentm4', ['data' => $data]);
+    }
+
+    public function searchstatus(Request $request)
+    {
+        $search = $request->get('search');
+        $datas = DB::table('new_student_register_m4')
+        ->where('id_number','like', '%' .$search. '%')->paginate(10);
+        return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', ['datas' => $datas]);
+
     }
 }

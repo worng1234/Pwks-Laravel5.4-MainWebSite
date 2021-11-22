@@ -32,6 +32,18 @@ class newstudentm1Controller extends Controller
         return view('Newstudent.StatusPic.status-picM1', compact('newstudentm1Model'));
     }
 
+    public function editnewstudentm1($id)
+    {
+        $newstudentm1Model = newstudentm1Model::findOrFail($id);
+        return view('Newstudent.Edit-Newstudent.editprofilenewstudentm1', compact('newstudentm1Model'));
+    }
+
+    public function shownewstudentm1($id)
+    {
+        $data = newstudentm1Model::findOrFail($id);
+        return view('Newstudent.Edit-Newstudent.show-newstudentm1byID', compact('data'));
+    }
+
     public function store(Request $request)
     {
         
@@ -181,8 +193,7 @@ class newstudentm1Controller extends Controller
         $search = $request->get('search');
         $datas = DB::table('new_student_register_m1')
         ->where('idNumber','like', '%' .$search. '%')->paginate(10);
-        return view('Newstudent.success-status.check-statusM1-nosubmit', ['datas' => $datas])
-        ->redirect('/check/statusM1/onsubmit');
+        return view('Newstudent.success-statuscheck.check-statusM1-onsubmit', ['datas' => $datas]);
 
     }
 }

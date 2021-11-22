@@ -132,14 +132,27 @@
                                 <div class="card text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 1</h5>
-                                        <p class="card-text">*กรอกรหัสบัตรประชาชน 13 หลักเพื่อตรวจสอบสถานะ</p>
-                                        <form action="{{ url('/search/statusM1')}}" method="post">
-                                            {{ csrf_field() }}
-                                            <input type="search" name="search">
-                                            <button type="submit" href="{{ url('/check/statusM1onsubmit')}}" class="btn btn-primary">ค้นหา</button>
-                                        </form>
                                         <div>
-                                            <p style="color:red;">*ไม่มีข้อมูลในการค้นหา</p>
+                                            <table class="table table-bordered table-striped table-hover">
+                                                <thead>
+                                                    <th>ชื่อนาม-สกุล</th>
+                                                    <th>เลขบัตรประจำตัวประชาชน</th>
+                                                    <th>สถานะการสมัคร</th>
+                                                    <th>สถานะเอกสารที่เกี่ยวข้อง</th>
+                                                    <th>ข้อมูล</th>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($datas as $data)
+                                                    <tr>
+                                                        <td>{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                                        <td>{{$data->id_number}}</td>
+                                                        <td>{{$data->status_rigis}}</td>
+                                                        <td>{{$data->status_pic}}</td>
+                                                        <td><a href='{{ url("/ShowNewstudentM4/{$data->id}" )}}' class="btn btn-primary"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

@@ -135,20 +135,22 @@
                                         <div>
                                             <table class="table table-bordered table-striped table-hover">
                                                 <thead>
-                                                <th>ชื่อนาม-สกุล</th>
-                                                <th>เลขบัตรประจำตัวประชาชน</th>
-                                                <th>สถานะการสมัคร</th>
-                                                <th>สถานะเอกสารที่เกี่ยวข้อง</th>
-                                                <th>ข้อมูล</th>
+                                                    <th>ชื่อนาม-สกุล</th>
+                                                    <th>เลขบัตรประจำตัวประชาชน</th>
+                                                    <th>สถานะการสมัคร</th>
+                                                    <th>สถานะเอกสารที่เกี่ยวข้อง</th>
+                                                    <th>ข้อมูล</th>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach ($datas as $data)
                                                     <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td><a href="#" class="btn btn-primary"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                        <td>{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                                        <td>{{$data->idNumber}}</td>
+                                                        <td>{{$data->status_rigis}}</td>
+                                                        <td>{{$data->status_pic}}</td>
+                                                        <td><a href='{{ url("/ShowNewstudentM1/{$data->id}" )}}' class="btn btn-primary"><i class="fas fa-edit btn-xs"></i></a></td>
                                                     </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

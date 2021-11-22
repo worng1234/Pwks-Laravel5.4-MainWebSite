@@ -536,7 +536,7 @@
 
 												<div class="form-check">
 													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio"  value="บิดา" name="parent">
+														<input class="form-radio-input" type="radio" value="บิดา" name="parent">
 														<span class="form-radio-sign">บิดา</span>
 													</label>
 													<label class="form-radio-label ml-1">
@@ -544,7 +544,7 @@
 														<span class="form-radio-sign">มารดา</span>
 													</label>
 													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio"  value="บุคคลอื่น" name="parent">
+														<input class="form-radio-input" type="radio" value="บุคคลอื่น" name="parent">
 														<span class="form-radio-sign">บุคคลอื่น</span>
 													</label>
 												</div>
@@ -842,7 +842,31 @@
 													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
 												</div>
 											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ.</label>
+													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
+												</div>
+											</div>
 										</div><br><br>
+
+										<!-- สถานะการสมัคร -->
+										<div hidden>
+											<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
+										</div>
+										<div hidden>
+											<input type="text" name="status_pic" value="รอตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_idnumber_pic" value="รอตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_house_pic" value="รอตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_grade_pic" value="รอตรวจสอบ">
+										</div>
+
 									</div>
 									<div class="card-footer" align="center">
 										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>

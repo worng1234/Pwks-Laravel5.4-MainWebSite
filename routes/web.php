@@ -52,14 +52,18 @@ Route::post('/searchM1', 'newstudentm1Controller@search');
 Route::get('/success/rigisM1', function () {
     return view('Newstudent.success-statuscheck.success-regisM1');
 } );
+
 Route::get('/check/statusM1', function () {
     return view('Newstudent.success-statuscheck.check-statusM1');
 } );
 Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 
-Route::get('/check/statusM1/onsubmit', function () {
+Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 } );
+
+Route::get('/EditNewstudentM1/{id}', 'newstudentm1Controller@editnewstudentm1');
+Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
 
 //statusPic
 Route::get('/statuspic/{id}', 'newstudentm1Controller@showStatusPic');
@@ -86,6 +90,15 @@ Route::get('/success/rigisM4', function () {
 Route::get('/check/statusM4', function () {
     return view('Newstudent.success-statuscheck.check-statusM4');
 } );
+
+Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
+
+Route::get('/check/statusM4onsubmit', function () {
+    return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
+} );
+
+Route::get('/EditNewstudentM4/{id}', 'newstudentm4Controller@editnewstudentm4');
+Route::get('/ShowNewstudentM4/{id}', 'newstudentm4Controller@shownewstudentm4');
 
 // Route::resource('testup', TestUPController::class);
 

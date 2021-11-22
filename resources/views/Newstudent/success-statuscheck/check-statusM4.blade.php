@@ -131,12 +131,16 @@
                                 </div>
                                 <div class="card text-center">
                                     <div class="card-body">
-                                        <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 1</h5>
+                                        <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 4</h5>
                                         <p class="card-text">*กรอกรหัสบัตรประชาชน 13 หลักเพื่อตรวจสอบสถานะ</p>
-                                        <form action="" method="post">
-                                            <input type="text" name="" id="">
-                                            <button type="submit" class="btn btn-primary">ค้นหา</button>
+                                        <form action="{{ url('/search/statusM4')}}" method="post">
+                                            {{ csrf_field() }}
+                                            <input type="search" name="search">
+                                            <button type="submit" href="{{ url('/check/statusM4onsubmit')}}" class="btn btn-primary">ค้นหา</button>
                                         </form>
+                                        <div>
+                                            <p style="color:red;">*ไม่มีข้อมูลในการค้นหา</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
