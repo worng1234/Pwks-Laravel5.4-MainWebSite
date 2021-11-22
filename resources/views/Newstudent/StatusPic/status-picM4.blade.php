@@ -21,15 +21,15 @@
         <div>
             <h3>สถานะการสมัคร</h3>
         </div>
-        <form action="{{ url('/updated1', $newstudentm1Model->id)}}" method="post">
+        <form action="{{ url('/updated1', $newstudentm4Model->id)}}" method="post">
             {{csrf_field()}}
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1PIC/{{$newstudentm1Model->pic}}">
+                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4PIC/{{$newstudentm4Model->pic}}">
                 <div class="card-body">
                     <h5 class="card-title">รูปประจำตัว</h5>
                     <div>
                         <select name="status_pic">
-                            <option>{{$newstudentm1Model->status_pic}}</option>
+                            <option>{{$newstudentm4Model->status_pic}}</option>
                             <option>ตรวจสอบแล้ว</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
@@ -38,12 +38,12 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1HOUSE/{{$newstudentm1Model->house_pic}}">
+                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4HOUSE/{{$newstudentm4Model->house_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ทะเบียนบ้าน</h5>
                     <div>
                         <select name="status_house_pic">
-                            <option>{{$newstudentm1Model->status_house_pic}}</option>
+                            <option>{{$newstudentm4Model->status_house_pic}}</option>
                             <option>ตรวจสอบแล้ว</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
@@ -52,12 +52,12 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1IDNUMBER/{{$newstudentm1Model->id_number_pic}}">
+                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4IDNUMBER/{{$newstudentm4Model->id_number_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">สำเนาบัตรประจำตัวประชาชน</h5>
                     <div>
                         <select name="status_idnumber_pic">
-                            <option>{{$newstudentm1Model->status_idnumber_pic}}</option>
+                            <option>{{$newstudentm4Model->status_idnumber_pic}}</option>
                             <option>ตรวจสอบแล้ว</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
@@ -66,12 +66,12 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1GRADE/{{$newstudentm1Model->grade_pic}}">
+                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4GRADE/{{$newstudentm4Model->grade_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ใบ ปพ.</h5>
                     <div>
                         <select name="status_grade_pic">
-                            <option>{{$newstudentm1Model->status_grade_pic}}</option>
+                            <option>{{$newstudentm4Model->status_grade_pic}}</option>
                             <option>ตรวจสอบแล้ว</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
@@ -84,7 +84,7 @@
                     <h5 class="card-title">สถานะการสมัคร</h5>
                     <div>
                     <select name="status_rigis">
-                            <option>{{$newstudentm1Model->status_rigis}}</option>
+                            <option>{{$newstudentm4Model->status_rigis}}</option>
                             <option>ยืนยันการสมัคร</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>

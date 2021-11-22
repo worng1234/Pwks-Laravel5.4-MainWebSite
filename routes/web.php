@@ -63,10 +63,11 @@ Route::get('/check/statusM1onsubmit', function () {
 } );
 
 Route::get('/EditNewstudentM1/{id}', 'newstudentm1Controller@editnewstudentm1');
+Route::post('/updateNewstudentM1/{id}', 'newstudentm1Controller@updatestudent');
 Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
 
 //statusPic
-Route::get('/statuspic/{id}', 'newstudentm1Controller@showStatusPic');
+Route::get('/statusM1pic/{id}', 'newstudentm1Controller@showStatusPic');
 
 
 //studentm4
@@ -98,7 +99,11 @@ Route::get('/check/statusM4onsubmit', function () {
 } );
 
 Route::get('/EditNewstudentM4/{id}', 'newstudentm4Controller@editnewstudentm4');
+Route::post('/updateNewstudentM4/{id}', 'newstudentm4Controller@updatestudent');
 Route::get('/ShowNewstudentM4/{id}', 'newstudentm4Controller@shownewstudentm4');
+
+//statusPic
+Route::get('/statusM4pic/{id}', 'newstudentm4Controller@showStatusPic');
 
 // Route::resource('testup', TestUPController::class);
 
@@ -120,8 +125,10 @@ Route::post('/searchStudent', 'studentcoreController@search');
 
 Route::resource('/testall', 'TestUPController');
 Route::get('/Fixtest/{id}', 'TestUPController@edit');
+Route::get('/Fixfile/{id}', 'TestUPController@editfile');
 Route::get('/showtest/{id}', 'TestUPController@show');
 Route::post('/updatedtest/{id}', 'TestUPController@update');
+Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 
 Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
@@ -146,17 +153,20 @@ Route::get('/admin/password/reset', 'Auth\AdminForgotPassword@showLinkRequestFor
 Route::post('/admin/password/reset', 'Auth\AdminResetPassword@reset');
 Route::get('/admin/password/reset/{token}', 'Auth\AdminResetPassword@showResetForm')->name('admin.password.reset');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 //StudentLogin
 Route::get('/student', 'StudentController@index')->name('student.dashboard');
 Route::get('/student/login', 'Auth\StudentLoginController@showLogin')->name('student.login');
 Route::post('/student/login', 'Auth\StudentLoginController@login')->name('student.login.submit');
 Route::post('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
+
 //AffairLogin
 Route::get('/affair', 'AffairController@index')->name('affair.dashboard');
 Route::get('/affair/login', 'Auth\AffairLoginController@showLogin')->name('affair.login');
 Route::post('/affair/login', 'Auth\AffairLoginController@login')->name('affair.login.submit');
 Route::post('/affair/logout', 'Auth\AffairLoginController@logout')->name('affair.logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 

@@ -176,7 +176,7 @@
 					</div>
 				</div>
 
-                <form action="{{ url('/updated4', $newstudentm4Model->id)}}" method="post">
+                <form action="{{ url('/updateNewstudentM4', $newstudentm4Model->id)}}" method="post">
 				{{csrf_field()}}
 
 				<div class="page-inner mt--5">

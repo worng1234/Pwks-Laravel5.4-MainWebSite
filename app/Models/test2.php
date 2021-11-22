@@ -11,6 +11,7 @@ class test2 extends Model
     protected $fillable = [
         'id',
         'address',
-        'id_number2'
+        'id_number2',
+        'pic'
     ];
 }

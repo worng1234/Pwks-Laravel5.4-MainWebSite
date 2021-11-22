@@ -307,31 +307,11 @@
 										<form role="form" method="post" action="{{ url('/searchM4')}}">
 											{{csrf_field()}}
 											<div class="row">
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ชื่อภาษาไทย</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
+												<div class="col-6 col-md-4">
+													<label>ชื่อ-นามสกุล, โรงเรียน, สถานะการสมัคร(ยืนยันการสมัคร, รอตรวจสอบ)</label>
+													<input type="search" class="form-control" name="search" placeholder="">
 												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>นามสกุลภาษาไทย</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
-												</div>
-												<div class="col-6 col-md-2">
-													<div class="form-group form-group-default">
-														<label>วิชาเอก</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
-												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ค้นหาจากชื่อโรงเรียน</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
-												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+												<button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
 									</div>
@@ -348,7 +328,7 @@
 														<center>โรงเรียน</center>
 													</th>
 													<th scope="col" width="15%">
-														<center>วิชาเอก</center>
+														<center>สถานะการสมัคร</center>
 													</th>
 													<th scope="col" width="13%">
 														<center>ข้อมูลส่วนตัว</center>
@@ -368,12 +348,9 @@
 												<tr>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
 													<td align="center">{{$value->final_school}}</td>
-													<td>อันดับ 1 : {{$value->major_name1}} <br>
-														อันดับ 2 : {{$value->major_name2}} <br>
-														อันดับ 3 : {{$value->major_name3}} <br>
-														อันดับ 4 : {{$value->major_name4}} <br></td>
+													<td>{{$value->status_rigis}}</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
-													<td><img src="/newstudentm4AllPic/newstudentm4PIC/{{$value->pic}}" width="50" height="50"></td>
+													<td><a href='{{ url("/statuspic/{$value->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
 												</tr>
 												@endforeach

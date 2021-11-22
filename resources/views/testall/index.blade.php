@@ -15,17 +15,17 @@
                 <th>1</th>
                 <th>2</th>
                 <th>3</th>
+                <th>4</th>
             </thead>
             @foreach ($data as $datas)
             <tr>
                 <td>{{$datas->id}}</td>
-                @if ($datas->address == 2)
-                <td>ชาย</td>
-                @else
                 <td>{{$datas->address}}</td>
-                @endif
                 <td>{{$datas->id_number2}}</td>
+                <td>{{$datas->pic}}</td>
+                <td>{{$datas->pic2}}</td>
                 <td><a href='{{ url("/Fixtest/{$datas->id}") }}' class="btn btn-primary">Edit</a></td>
+                <td><a href='{{ url("/Fixfile/{$datas->id}") }}' class="btn btn-primary">Edit file</a></td>
                 <td><a href="{{ url('/showtest/{$datas->id}') }}" class="btn btn-primary">Show</a></td>
             </tr>
             @endforeach

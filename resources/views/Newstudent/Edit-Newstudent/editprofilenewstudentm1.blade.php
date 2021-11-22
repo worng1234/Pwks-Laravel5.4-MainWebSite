@@ -187,16 +187,16 @@
 				</div>
 
 
-				<form action="{{ url('/updated1', $newstudentm1Model->id)}}" method="post">
+				<form action="{{ url('/updateNewstudentM1', $newstudentm1Model->id)}}" method="POST" enctype="multipart/form-data">
 					{{csrf_field()}}
-
+					{{ method_field('POST') }}
 					<div class="page-inner mt--5">
 						<div class="row mt--2">
 							<div class="col-md-12">
 								<div class="card full-height">
 									<div class="card-header">
 										<div class="card-head-row">
-											<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียนใหม่ <i class="flaticon-right-arrow"></i> ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</div>
+											<div class="card-title">ข้อมูลประจำตัวของ {{$newstudentm1Model->prename}}{{$newstudentm1Model->fname}} {{$newstudentm1Model->surname}}</div>
 										</div>
 									</div>
 
@@ -597,15 +597,48 @@
 														</div>
 													</div>
 												</div>
+												
+												<!-- อัพโหลดรูปภาพ -->
+												<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+													<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
+												</div>
+												<div class="row">
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group">
+															<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
+															<input type="file" class="form-control-file" id="pic" name="pic" value="{{$newstudentm1Model->pic}}">
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group">
+															<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
+															<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic" value="{{$newstudentm1Model->id_number_pic}}">
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group">
+															<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
+															<input type="file" class="form-control-file" id="house_pic" name="house_pic" value="{{$newstudentm1Model->house_pic}}">
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group">
+															<label for="exampleFormControlFile1">ใบ ปพ.</label>
+															<input type="file" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$newstudentm1Model->grade_pic}}">
+														</div>
+													</div>
+
+												</div>
 											</div>
 										</div>
+
+
+										<div class="card-footer" align="center">
+											<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
+											<a href='{{ url("/ShowNewstudentM1/{$newstudentm1Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
+										</div><br>
 									</div>
-									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
-										<a href='{{ url("/ShowNewstudentM1/{$newstudentm1Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
-									</div><br>
 								</div>
-							</div>
 
 				</form>
 

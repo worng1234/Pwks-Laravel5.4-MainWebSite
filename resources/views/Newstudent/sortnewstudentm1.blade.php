@@ -331,26 +331,11 @@
 										<form role="form" method="post" action="{{ url('/searchM1')}}">
 											{{csrf_field()}}
 											<div class="row">
-
 												<div class="col-6 col-md-4">
-													<div class="form-group form-group-default">
-														<label>ชื่อภาษาไทย</label>
-														<input type="search" class="form-control" name="search" placeholder="">
-													</div>
+													<label>ชื่อ-นามสกุล, โรงเรียน, สถานะการสมัคร(ยืนยันการสมัคร, รอตรวจสอบ)</label>
+													<input type="search" class="form-control" name="search" placeholder="">
 												</div>
-												<div class="col-6 col-md-4">
-													<div class="form-group form-group-default">
-														<label>นามสกุลภาษาไทย</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
-												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ค้นหาจากชื่อโรงเรียน</label>
-														<input name="search" type="search" class="form-control" placeholder="">
-													</div>
-												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+												<button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
 									</div>
@@ -365,6 +350,9 @@
 													</th>
 													<th scope="col" width="20%">
 														<center>โรงเรียน</center>
+													</th>
+													<th scope="col" width="13%">
+														<center>สถานะการสมัคร</center>
 													</th>
 													<th scope="col" width="13%">
 														<center>ข้อมูลส่วนตัว</center>
@@ -384,8 +372,9 @@
 												<tr>
 													<td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
 													<td align="center">{{$data->finalSchool}}</td>
+													<td align="center">{{$data->status_rigis}}</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
-													<td align="center"><a href='{{ url("/statuspic/{$data->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
+													<td align="center"><a href='{{ url("/statusM1pic/{$data->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem1/{$data->id}")}}' class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 												</tr>
 												@endforeach

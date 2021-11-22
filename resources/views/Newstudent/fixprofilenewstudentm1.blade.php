@@ -187,8 +187,9 @@
 				</div>
 
 
-				<form action="{{ url('/updated1', $newstudentm1Model->id)}}" method="post">
+				<form action="{{ url('/updated1', $newstudentm1Model->id)}}" method="post" enctype="multipart/form-data">
 					{{csrf_field()}}
+					{{ method_field('POST') }}
 
 					<div class="page-inner mt--5">
 						<div class="row mt--2">

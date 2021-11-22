@@ -28,7 +28,14 @@ class newstudentm4Controller extends Controller
     public function shownewstudentm4($id)
     {
         $data = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.Edit-Newstudent.showprofilenewstudentm4', compact('data'));
+        return view('Newstudent.Edit-Newstudent.show-newstudentm4byID', compact('data'));
+    }
+
+    //statusPic
+    public function showStatusPic($id)
+    {
+        $newstudentm4Model = newstudentm4Model::findOrFail($id);
+        return view('Newstudent.StatusPic.status-picM4', compact('newstudentm4Model'));
     }
 
     /**
@@ -53,7 +60,7 @@ class newstudentm4Controller extends Controller
         $path = $request->file('house_pic')->storeAs('newstudentm4AllPic/newstudentm4HOUSE', $compPic3);
         //Grade student picture
         $grade_pic = $request->file('grade_pic')->getClientOriginalName();
-        $compPic4 = str_replace(' ', '_', $house_pic);
+        $compPic4 = str_replace(' ', '_', $grade_pic);
         $path = $request->file('grade_pic')->storeAs('newstudentm4AllPic/newstudentm4GRADE', $compPic4);
 
         $post = new newstudentm4Model([
@@ -159,6 +166,14 @@ class newstudentm4Controller extends Controller
         ->with('success', 'Update successfully');
     }
 
+    public function updatestudent(Request $request, $id)
+    {
+        $newstudentm4Model = newstudentm4Model::find($id);
+        $newstudentm4Model->update($request->all());
+        return redirect('/check/statusM4')
+        ->with('success', 'Update successfully');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -178,9 +193,7 @@ class newstudentm4Controller extends Controller
         $data = DB::table('new_student_register_m4')
         ->where('fname','like', '%' .$search. '%')
         ->orWhere('surname','like', '%' .$search. '%')
-        ->orWhere('major_name1','like', '%' .$search. '%')
-        ->orWhere('major_name2','like', '%' .$search. '%')
-        ->orWhere('major_name3','like', '%' .$search. '%')
+        ->orWhere('status_rigis','like', '%' .$search. '%')
         ->orWhere('final_school','like', '%' .$search. '%')->paginate(10);
         return view('Newstudent.sortnewstudentm4', ['data' => $data]);
     }

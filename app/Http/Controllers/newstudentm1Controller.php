@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\DB;
 
 class newstudentm1Controller extends Controller
 {
-  
-    public function index(){
+
+    public function index()
+    {
         $datas = newstudentm1Model::all();
         return view('Newstudent.sortnewstudentm1', compact('datas'));
     }
@@ -46,7 +47,7 @@ class newstudentm1Controller extends Controller
 
     public function store(Request $request)
     {
-        
+
         //student picture
         $pic = $request->file('pic')->getClientOriginalName();
         $compPic1 = str_replace(' ', '_', $pic);
@@ -61,9 +62,9 @@ class newstudentm1Controller extends Controller
         $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compPic3);
         //Grade student picture
         $grade_pic = $request->file('grade_pic')->getClientOriginalName();
-        $compPic4 = str_replace(' ', '_', $house_pic);
+        $compPic4 = str_replace(' ', '_', $grade_pic);
         $path = $request->file('grade_pic')->storeAs('newstudentm1AllPic/newstudentm1GRADE', $compPic4);
-            
+
         $post = new newstudentm1Model([
             "pic" => $compPic1,
             "id_number_pic" => $compPic2,
@@ -122,6 +123,7 @@ class newstudentm1Controller extends Controller
             "finalSchoolDistrict" => $request->get('finalSchoolDistrict'),
             "finalSchoolProvince" => $request->get('finalSchoolProvince'),
             "status_rigis" => $request->get('status_rigis'),
+            "status_picall" => $request->get('status_picall'),
             "status_pic" => $request->get('status_pic'),
             "status_idnumber_pic" => $request->get('status_idnumber_pic'),
             "status_house_pic" => $request->get('status_house_pic'),
@@ -129,7 +131,6 @@ class newstudentm1Controller extends Controller
         ]);
         $post->save();
         return redirect('/success/rigisM1');
-            
     }
 
 
@@ -153,12 +154,98 @@ class newstudentm1Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $newstudentm1Model = newstudentm1Model::find($id);
         $newstudentm1Model->update($request->all());
         return redirect('SortNewstudentM1')
-        ->with('success', 'Update successfully');
+            ->with('success', 'Update successfully');
+    }
+
+    public function updatestudent(Request $request, $id)
+    {
+        $newstudentm1Model = newstudentm1Model::find($id);
+
+        if ($pic = $request->hasFile('pic')) {
+            
+            $file = $request->file('pic');
+            $compic1 = $file->getClientOriginalName();
+            $path = $request->file('pic')->storeAs('newstudentm1AllPic/newstudentm1PIC', $compic1);
+
+            $file2 = $request->file('id_number_pic');
+            $compic2 = $file2->getClientOriginalName();
+            $path = $request->file('id_number_pic')->storeAs('newstudentm1AllPic/newstudentm1IDNUMBER', $compic2);
+
+            $file3 = $request->file('house_pic');
+            $compic3 = $file3->getClientOriginalName();
+            $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compic3);
+
+            $file3 = $request->file('grade_pic');
+            $compic4 = $file3->getClientOriginalName();
+            $path = $request->file('grade_pic')->storeAs('newstudentm1AllPic/newstudentm1GRADE', $compic4);
+
+            $newstudentm1Model->pic = $compic1;
+            $newstudentm1Model->id_number_pic = $compic2;
+            $newstudentm1Model->house_pic = $compic3;
+            $newstudentm1Model->grade_pic = $compic4;
+
+            $newstudentm1Model->prename = $request->prename;
+            $newstudentm1Model->fname = $request->fname;
+            $newstudentm1Model->surname = $request->surname;
+            $newstudentm1Model->sex = $request->sex;
+            $newstudentm1Model->idNumber = $request->idNumber;
+            $newstudentm1Model->day = $request->day;
+            $newstudentm1Model->mounth = $request->mounth;
+            $newstudentm1Model->year = $request->year;
+            $newstudentm1Model->religion = $request->religion;
+            $newstudentm1Model->nationality = $request->nationality;
+            $newstudentm1Model->origin = $request->origin;
+            $newstudentm1Model->disabled = $request->disabled;
+            $newstudentm1Model->poorPerson = $request->poorPerson;
+            $newstudentm1Model->etc = $request->etc;
+            $newstudentm1Model->tel = $request->tel;
+            $newstudentm1Model->email = $request->email;
+            $newstudentm1Model->nameCen = $request->nameCen;
+            $newstudentm1Model->fatherName = $request->fatherName;
+            $newstudentm1Model->fatherNamecen = $request->fatherNamecen;
+            $newstudentm1Model->fatherSurname = $request->fatherSurname;
+            $newstudentm1Model->fatherId = $request->fatherId;
+            $newstudentm1Model->fatherJob = $request->fatherJob;
+            $newstudentm1Model->fatherTel = $request->fatherTel;
+            $newstudentm1Model->motherName = $request->motherName;
+            $newstudentm1Model->motherNamecen = $request->motherNamecen;
+            $newstudentm1Model->motherSurname = $request->motherSurname;
+            $newstudentm1Model->motherId = $request->motherId;
+            $newstudentm1Model->motherJob = $request->motherJob;
+            $newstudentm1Model->motherTel = $request->motherTel;
+            $newstudentm1Model->parent = $request->parent;
+            $newstudentm1Model->parent_status = $request->parent_status;
+            $newstudentm1Model->parentName = $request->parentName;
+            $newstudentm1Model->parentNamecen = $request->parentNamecen;
+            $newstudentm1Model->parentSurname = $request->parentSurname;
+            $newstudentm1Model->parentId = $request->parentId;
+            $newstudentm1Model->parentJob = $request->parentJob;
+            $newstudentm1Model->parentTel = $request->parentTel;
+            $newstudentm1Model->father_prename = $request->father_prename;
+            $newstudentm1Model->mother_prename = $request->mother_prename;
+            $newstudentm1Model->parent_prename = $request->parent_prename;
+            $newstudentm1Model->houseNumber = $request->houseNumber;
+            $newstudentm1Model->street = $request->street;
+            $newstudentm1Model->bloc = $request->bloc;
+            $newstudentm1Model->road = $request->road;
+            $newstudentm1Model->subDistrict = $request->subDistrict;
+            $newstudentm1Model->district = $request->district;
+            $newstudentm1Model->province = $request->province;
+            $newstudentm1Model->post = $request->post;
+            $newstudentm1Model->finalSchool = $request->finalSchool;
+            $newstudentm1Model->finalSchoolSubDistrict = $request->finalSchoolSubDistrict;
+            $newstudentm1Model->finalSchoolDistrict = $request->finalSchoolDistrict;
+            $newstudentm1Model->finalSchoolProvince = $request->finalSchoolProvince;
+        }
+
+        $newstudentm1Model->save();
+        return redirect('/check/statusM1')
+            ->with('success', 'Update successfully');
     }
 
 
@@ -176,15 +263,16 @@ class newstudentm1Controller extends Controller
         return redirect('SortNewstudentM1');
     }
 
-    
+
 
     public function search(Request $request)
     {
         $search = $request->get('search');
         $datas = DB::table('new_student_register_m1')
-        ->where('fname','like', '%' .$search. '%')
-        ->orWhere('surname','like', '%' .$search. '%')
-        ->orWhere('finalSchool','like', '%' .$search. '%')->paginate(10);
+            ->where('fname', 'like', '%' . $search . '%')
+            ->orWhere('surname', 'like', '%' . $search . '%')
+            ->orWhere('status_rigis', 'like', '%' . $search . '%')
+            ->orWhere('finalSchool', 'like', '%' . $search . '%')->paginate(10);
         return view('Newstudent.sortnewstudentm1', ['datas' => $datas]);
     }
 
@@ -192,8 +280,7 @@ class newstudentm1Controller extends Controller
     {
         $search = $request->get('search');
         $datas = DB::table('new_student_register_m1')
-        ->where('idNumber','like', '%' .$search. '%')->paginate(10);
+            ->where('idNumber', 'like', '%' . $search . '%')->paginate(10);
         return view('Newstudent.success-statuscheck.check-statusM1-onsubmit', ['datas' => $datas]);
-
     }
 }

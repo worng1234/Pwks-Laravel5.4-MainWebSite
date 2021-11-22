@@ -734,6 +734,9 @@
 											<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
 										</div>
 										<div hidden>
+											<input type="text" name="status_picall" value="รอตรวจสอบ">
+										</div>
+										<div hidden>
 											<input type="text" name="status_pic" value="รอตรวจสอบ">
 										</div>
 										<div hidden>
