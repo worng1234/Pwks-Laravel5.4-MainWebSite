@@ -188,7 +188,7 @@ class newstudentm1Controller extends Controller
             $newstudentm1Model->id_number_pic = $compic2;
             $newstudentm1Model->house_pic = $compic3;
             $newstudentm1Model->grade_pic = $compic4;
-
+        }  
             $newstudentm1Model->prename = $request->prename;
             $newstudentm1Model->fname = $request->fname;
             $newstudentm1Model->surname = $request->surname;
@@ -241,10 +241,10 @@ class newstudentm1Controller extends Controller
             $newstudentm1Model->finalSchoolSubDistrict = $request->finalSchoolSubDistrict;
             $newstudentm1Model->finalSchoolDistrict = $request->finalSchoolDistrict;
             $newstudentm1Model->finalSchoolProvince = $request->finalSchoolProvince;
-        }
+        
 
         $newstudentm1Model->save();
-        return redirect('/check/statusM1')
+        return redirect('/success/checkM1')
             ->with('success', 'Update successfully');
     }
 

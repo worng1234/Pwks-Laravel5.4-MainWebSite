@@ -113,6 +113,11 @@ class newstudentm4Controller extends Controller
             "major_name2" => $request->get('major_name2'),
             "major_name3" => $request->get('major_name3'),
             "major_name4" => $request->get('major_name4'),
+            "major_name5" => $request->get('major_name5'),
+            "major_name6" => $request->get('major_name6'),
+            "major_name7" => $request->get('major_name7'),
+            "major_name8" => $request->get('major_name8'),
+            "major_name9" => $request->get('major_name9'),
             "email" => $request->get('email'),
             "father_namecen" => $request->get('father_namecen'),
             "mother_namecen" => $request->get('mother_namecen'),
@@ -131,6 +136,7 @@ class newstudentm4Controller extends Controller
             "student_id" => $request->get('student_id'),
             "status_rigis" => $request->get('status_rigis'),
             "status_pic" => $request->get('status_pic'),
+            "status_picall" => $request->get('status_picall'),
             "status_idnumber_pic" => $request->get('status_idnumber_pic'),
             "status_house_pic" => $request->get('status_house_pic'),
             "status_grade_pic" => $request->get('status_grade_pic'),
@@ -169,8 +175,106 @@ class newstudentm4Controller extends Controller
     public function updatestudent(Request $request, $id)
     {
         $newstudentm4Model = newstudentm4Model::find($id);
-        $newstudentm4Model->update($request->all());
-        return redirect('/check/statusM4')
+
+        if ($pic = $request->hasFile('pic')) {
+            
+            $file = $request->file('pic');
+            $compic1 = $file->getClientOriginalName();
+            $path = $request->file('pic')->storeAs('newstudentm4AllPic/newstudentm4PIC', $compic1);
+
+            $file2 = $request->file('id_number_pic');
+            $compic2 = $file2->getClientOriginalName();
+            $path = $request->file('id_number_pic')->storeAs('newstudentm4AllPic/newstudentm4IDNUMBER', $compic2);
+
+            $file3 = $request->file('house_pic');
+            $compic3 = $file3->getClientOriginalName();
+            $path = $request->file('house_pic')->storeAs('newstudentm4AllPic/newstudentm4HOUSE', $compic3);
+
+            $file3 = $request->file('grade_pic');
+            $compic4 = $file3->getClientOriginalName();
+            $path = $request->file('grade_pic')->storeAs('newstudentm4AllPic/newstudentm4GRADE', $compic4);
+
+            $newstudentm4Model->pic = $compic1;
+            $newstudentm4Model->id_number_pic = $compic2;
+            $newstudentm4Model->house_pic = $compic3;
+            $newstudentm4Model->grade_pic = $compic4;
+        }
+            $newstudentm4Model->prename = $request->prename;
+            $newstudentm4Model->fname = $request->fname;
+            $newstudentm4Model->surname = $request->surname ;
+            $newstudentm4Model->sex = $request->sex;
+            $newstudentm4Model->id_number = $request->id_number;
+            $newstudentm4Model->day = $request->day;
+            $newstudentm4Model->mounth = $request->mounth;
+            $newstudentm4Model->year = $request->year;
+            $newstudentm4Model->religion = $request->religion;
+            $newstudentm4Model->nationality = $request->nationality;
+            $newstudentm4Model->origin = $request->origin;
+            $newstudentm4Model->father_name = $request->father_name;
+            $newstudentm4Model->father_id = $request->father_id;
+            $newstudentm4Model->father_job = $request->father_job;
+            $newstudentm4Model->father_tel = $request->father_tel;
+            $newstudentm4Model->mother_name = $request->mother_name;
+            $newstudentm4Model->mother_id = $request->mother_id;
+            $newstudentm4Model->mother_job = $request->mother_job;
+            $newstudentm4Model->mother_tel = $request->mother_tel;
+            $newstudentm4Model->parent = $request->parent;
+            $newstudentm4Model->parent_status = $request->parent_status;
+            $newstudentm4Model->parent_name = $request->parent_name;
+            $newstudentm4Model->parent_id = $request->parent_id;
+            $newstudentm4Model->parent_job = $request->parent_job;
+            $newstudentm4Model->parent_tel = $request->parent_tel;
+            $newstudentm4Model->house_number = $request->house_number;
+            $newstudentm4Model->bloc = $request->bloc;
+            $newstudentm4Model->street = $request->street;
+            $newstudentm4Model->road = $request->road;
+            $newstudentm4Model->sub_district = $request->sub_district;
+            $newstudentm4Model->district = $request->district;
+            $newstudentm4Model->province = $request->province;
+            $newstudentm4Model->post = $request->post;
+            $newstudentm4Model->final_school = $request->final_school;
+            $newstudentm4Model->final_school_sub_district = $request->final_school_sub_district;
+            $newstudentm4Model->final_school_district = $request->final_school_district;
+            $newstudentm4Model->final_school_province = $request->final_school_province;
+            $newstudentm4Model->disabled = $request->disabled;
+            $newstudentm4Model->poor_person = $request->poor_person;
+            $newstudentm4Model->etc = $request->etc;
+            $newstudentm4Model->tel = $request->tel;
+            $newstudentm4Model->major_name1 = $request->major_name1;
+            $newstudentm4Model->major_name2 = $request->major_name2;
+            $newstudentm4Model->major_name3 = $request->major_name3;
+            $newstudentm4Model->major_name4 = $request->major_name4;
+            $newstudentm4Model->major_name5 = $request->major_name5;
+            $newstudentm4Model->major_name6 = $request->major_name6;
+            $newstudentm4Model->major_name7 = $request->major_name7;
+            $newstudentm4Model->major_name8 = $request->major_name8;
+            $newstudentm4Model->major_name9 = $request->major_name9;
+            $newstudentm4Model->email = $request->email;
+            $newstudentm4Model->father_namecen = $request->father_namecen;
+            $newstudentm4Model->mother_namecen = $request->mother_namecen;
+            $newstudentm4Model->parent_namecen = $request->parent_namecen;
+            $newstudentm4Model->father_surname = $request->father_surname;
+            $newstudentm4Model->mother_surname = $request->mother_surname;
+            $newstudentm4Model->parent_surname = $request->parent_surname;
+            $newstudentm4Model->father_prename = $request->father_prename;
+            $newstudentm4Model->mother_prename = $request->mother_prename;
+            $newstudentm4Model->parent_prename = $request->parent_prename;
+            $newstudentm4Model->onet_sci = $request->onet_sci;
+            $newstudentm4Model->onet_math = $request->onet_math;
+            $newstudentm4Model->onet_thai = $request->onet_thai;
+            $newstudentm4Model->onet_eng = $request->onet_eng;
+            $newstudentm4Model->name_cen = $request->name_cen;
+            $newstudentm4Model->student_id = $request->student_id;
+            $newstudentm4Model->status_rigis = $request->status_rigis;
+            $newstudentm4Model->status_pic = $request->status_pic;
+            $newstudentm4Model->status_picall = $request->status_picall;
+            $newstudentm4Model->status_idnumber_pic = $request->status_idnumber_pic;
+            $newstudentm4Model->status_house_pic = $request->status_house_pic;
+            $newstudentm4Model->status_grade_pic = $request->status_grade_pic;
+        
+
+        $newstudentm4Model->save();
+        return redirect('/success/checkM4')
         ->with('success', 'Update successfully');
     }
 

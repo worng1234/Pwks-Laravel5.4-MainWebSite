@@ -565,37 +565,7 @@
 												</div>
 											</div>
 										</div>
-                                        <div class="row">
-											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>ผลสอบ O-NET ระดับชั้นมัธยมศึกษาปีที่ 3 (กรอกเป็นตัวเลขเท่านั้น)</small></label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาคณิตศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_math}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาวิทยาศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_sci}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาไทย</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_thai}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาอังกฤษ</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_eng}}" readonly>
-												</div>
-											</div>
-										</div>
+                                        
 
 
 									<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
@@ -654,6 +624,36 @@
                                                 <div class="form-group form-group-default">
                                                     <label>อันดับที่ 4</label>
                                                     <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name4}}" readonly>
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 5</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name5}}" readonly>
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 6</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name6}}" readonly>
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 7</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name7}}" readonly>
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 8</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name8}}" readonly>
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 9</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name9}}" readonly>
                                                 </div>
                                             </div>
 										</div>

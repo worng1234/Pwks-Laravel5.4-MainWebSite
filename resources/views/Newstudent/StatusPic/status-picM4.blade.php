@@ -30,7 +30,7 @@
                     <div>
                         <select name="status_pic">
                             <option>{{$newstudentm4Model->status_pic}}</option>
-                            <option>ตรวจสอบแล้ว</option>
+                            <option>ผ่าน</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
                         </select>
@@ -44,7 +44,7 @@
                     <div>
                         <select name="status_house_pic">
                             <option>{{$newstudentm4Model->status_house_pic}}</option>
-                            <option>ตรวจสอบแล้ว</option>
+                            <option>ผ่าน</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
                         </select>
@@ -58,7 +58,7 @@
                     <div>
                         <select name="status_idnumber_pic">
                             <option>{{$newstudentm4Model->status_idnumber_pic}}</option>
-                            <option>ตรวจสอบแล้ว</option>
+                            <option>ผ่าน</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
                         </select>
@@ -72,7 +72,7 @@
                     <div>
                         <select name="status_grade_pic">
                             <option>{{$newstudentm4Model->status_grade_pic}}</option>
-                            <option>ตรวจสอบแล้ว</option>
+                            <option>ผ่าน</option>
                             <option>รอตรวจสอบแล้ว</option>
                             <option>ไม่ผ่าน</option>
                         </select>
@@ -87,6 +87,19 @@
                             <option>{{$newstudentm4Model->status_rigis}}</option>
                             <option>ยืนยันการสมัคร</option>
                             <option>รอตรวจสอบแล้ว</option>
+                            <option>ไม่ผ่าน</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                    <h5 class="card-title">สถานะเอกสาร</h5>
+                    <div>
+                        <select name="status_picall">
+                            <option>{{$newstudentm4Model->status_picall}}</option>
+                            <option>ผ่าน</option>
+                            <option>รอตรวจสอบ</option>
                             <option>ไม่ผ่าน</option>
                         </select>
                     </div>

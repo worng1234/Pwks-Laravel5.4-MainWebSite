@@ -62,7 +62,9 @@
             <label class="custom-control-label" for="rememberme">Remember Me</label>
           </div>
         </div>
-
+        <a class="btn btn-link" href="{{ route('admin.password.request') }}">
+                                    Forgot Your Password?
+                                </a>
         <div class="form-action mb-3">
           <button type="submit"class="btn btn-secondary btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold">เข้าสู่ระบบ</button>
         </div>

@@ -62,6 +62,10 @@ Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 } );
 
+Route::get('/success/checkM1', function () {
+    return view('Newstudent.success-statuscheck.success-checkM1');
+} );
+
 Route::get('/EditNewstudentM1/{id}', 'newstudentm1Controller@editnewstudentm1');
 Route::post('/updateNewstudentM1/{id}', 'newstudentm1Controller@updatestudent');
 Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
@@ -96,6 +100,10 @@ Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 
 Route::get('/check/statusM4onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
+} );
+
+Route::get('/success/checkM4', function () {
+    return view('Newstudent.success-statuscheck.success-checkM4');
 } );
 
 Route::get('/EditNewstudentM4/{id}', 'newstudentm4Controller@editnewstudentm4');

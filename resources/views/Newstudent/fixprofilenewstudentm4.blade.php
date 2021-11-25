@@ -573,32 +573,7 @@
 												<label style="margin-bottom: 5px;"><small>ผลสอบ O-NET ระดับชั้นมัธยมศึกษาปีที่ 3 (กรอกเป็นตัวเลขเท่านั้น)</small></label>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาคณิตศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->onet_math}}" name="onet_math">
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาวิทยาศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->onet_sci}}" name="onet_sci">
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาไทย</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->onet_thai}}" name="onet_thai">
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาอังกฤษ</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->onet_eng}}" name="onet_eng">
-												</div>
-											</div>
-										</div>
+										
 
 
 									<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
@@ -657,6 +632,36 @@
                                                 <div class="form-group form-group-default">
                                                     <label>อันดับที่ 4</label>
                                                     <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name4}}" name="major_name4">
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 5</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name5}}" name="major_name5">
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 6</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name6}}" name="major_name6">
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 7</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name7}}" name="major_name7">
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 8</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name8}}" name="major_name8">
+                                                </div>
+                                            </div>
+											<div class="col-6 col-md-6">
+                                                <div class="form-group form-group-default">
+                                                    <label>อันดับที่ 9</label>
+                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name9}}" name="major_name9">
                                                 </div>
                                             </div>
 										</div>

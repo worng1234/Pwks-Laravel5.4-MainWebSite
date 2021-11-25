@@ -597,7 +597,7 @@
 														</div>
 													</div>
 												</div>
-												
+
 												<!-- อัพโหลดรูปภาพ -->
 												<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 													<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
@@ -626,6 +626,26 @@
 															<label for="exampleFormControlFile1">ใบ ปพ.</label>
 															<input type="file" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$newstudentm1Model->grade_pic}}">
 														</div>
+													</div>
+
+													<!-- สถานะการสมัคร -->
+													<div hidden>
+														<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
+													</div>
+													<div hidden>
+														<input type="text" name="status_picall" value="รอตรวจสอบ">
+													</div>
+													<div hidden>
+														<input type="text" name="status_pic" value="รอตรวจสอบ">
+													</div>
+													<div hidden>
+														<input type="text" name="status_idnumber_pic" value="รอตรวจสอบ">
+													</div>
+													<div hidden>
+														<input type="text" name="status_house_pic" value="รอตรวจสอบ">
+													</div>
+													<div hidden>
+														<input type="text" name="status_grade_pic" value="รอตรวจสอบ">
 													</div>
 
 												</div>

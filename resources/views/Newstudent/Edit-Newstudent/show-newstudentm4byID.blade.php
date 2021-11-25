@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/assets/css/fonts.min.css']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['/assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -25,6 +31,7 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
@@ -52,17 +59,19 @@
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<p class="card-title" style="font-size: 20px;"><b><font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
-							<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
+						<p class="card-title" style="font-size: 20px;"><b>
+								<font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+							</b></p>
+						<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
 					</div>
 
-                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item toggle-nav-search hidden-caret">
-                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-                                <i class="fas fa-school"></i>
-                            </a>
-                        </li>
-                    </ul>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fas fa-school"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
@@ -90,7 +99,7 @@
 					<!-- สิ้นสุดโปรไฟล์ -->
 
 					<!-- เริ่มเมนู -->
-					<ul class="nav nav-primary" >
+					<ul class="nav nav-primary">
 
 						<li class="nav-item">
 							<a href="/">
@@ -121,7 +130,7 @@
 								</ul>
 							</div>
 						</li> -->
-                        <li class="nav-item active submenu">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#agree">
 								<i class="fas fa-id-card-alt"></i>
 								<p>จัดการข้อมูลนักเรียนใหม่</p>
@@ -188,480 +197,514 @@
 
 								<!-- ข้อมูลส่วนตัว -->
 								<div class="card-body">
-									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i>
-										กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5></div>
+									<div class="alert alert-info" role="alert" align="center">
+										<h5><i class="fas fa-info-circle"></i>
+											กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
+									</div>
 
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลส่วนตัว</b></p>
-                                    </div>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลส่วนตัว</b></p>
+									</div>
 									<div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->prename}}" readonly>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fname}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->name_cen}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->surname}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <div class="form-group form-group-default">
-                                                <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->id_number}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>ชื่อภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fname}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-2">
+											<div class="form-group form-group-default">
+												<label>ชื่อกลาง</label>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->name_cen}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>นามสกุลภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->surname}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <label style="margin-bottom: 5px;"><small>วัน/เดือน/ปีเกิด ที่ปรากฏในบัตรประชาชน</small></label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-4">
+										<div class="col-sm-6 col-md-12">
+											<div class="form-group form-group-default">
+												<label>เลขประจำตัวประชาชน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->id_number}}" readonly>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>วัน/เดือน/ปีเกิด ที่ปรากฏในบัตรประชาชน</small></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ปี พุทธศักราช:</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->year}}" readonly>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
+										</div>
+										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>เดือน:</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mounth}}" readonly>
 											</div>
-                                        </div>
+										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>วัน:</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->day}}" readonly>
 											</div>
-                                        </div>
-                                    </div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-6 col-md-2">
+										<div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>เพศสภาพ</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->sex}}" readonly>
 											</div>
-                                        </div>
+										</div>
 										<div class="col-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>ศาสนา</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->religion}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>ศาสนา</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->religion}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>เชื้อชาติ</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->origin}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>เชื้อชาติ</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->origin}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>สัญชาติ</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->nationality}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>สัญชาติ</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->nationality}}" readonly>
+											</div>
+										</div>
 										<div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->tel}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->tel}}" readonly>
+											</div>
+										</div>
+									</div>
 
 									<!-- ข้อมูลที่อยู่ตามทะเบียนบ้าน -->
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
-                                    </div>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
+									</div>
 									<div class="row">
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->house_number}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>บ้านเลขที่</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->house_number}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->bloc}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>หมู่</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->bloc}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->street}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>ซอย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->street}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->road}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>ถนน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->road}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->sub_district}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>ตำบล/แขวง</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->sub_district}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->district}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>อำเภอ/เขต</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->district}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->province}}" readonly>
-                                            </div>
-                                        </div>
+											<div class="form-group form-group-default">
+												<label>จังหวัด</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->province}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->post}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>รหัสไปรษณีย์</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->post}}" readonly>
+											</div>
+										</div>
+									</div>
 
 									<!-- ข้อมูลครอบครัว -->
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัว</b></p>
-                                    </div>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัว</b></p>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล บิดา</small></label >
-                                        </div>
-                                    </div>
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล บิดา</small></label>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_prename}}" readonly>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_name}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->father_namecen}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_surname}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>ชื่อภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_name}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-2">
+											<div class="form-group form-group-default">
+												<label>ชื่อกลาง</label>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->father_namecen}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>นามสกุลภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_surname}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <div class="form-group form-group-default">
-                                                <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_id}}" readonly>
-                                            </div>
-                                        </div>
+										<div class="col-sm-6 col-md-5">
+											<div class="form-group form-group-default">
+												<label>เลขประจำตัวประชาชน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_id}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>อาชีพ</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_job}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_tel}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>อาชีพ</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_job}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_tel}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล มารดา</small></label>
-                                        </div>
-                                    </div>
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล มารดา</small></label>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_prename}}" readonly>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_name}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->mother_namecen}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_surname}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>ชื่อภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_name}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-2">
+											<div class="form-group form-group-default">
+												<label>ชื่อกลาง</label>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->mother_namecen}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>นามสกุลภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_surname}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <div class="form-group form-group-default">
-                                                <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_id}}" readonly>
-                                            </div>
-                                        </div>
+										<div class="col-sm-6 col-md-5">
+											<div class="form-group form-group-default">
+												<label>เลขประจำตัวประชาชน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_id}}" readonly>
+											</div>
+										</div>
 										<div class="col-6 col-md-3">
-                                            <div class="form-group form-group-default">
-                                                <label>อาชีพ</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_job}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_tel}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>อาชีพ</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_job}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_tel}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล ผู้ปกครอง</small></label>
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล ผู้ปกครอง</small></label>
 
-                                            <div class="form-group form-group-default">
-                                                <label>ผู้ปกครอง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent}}" readonly>
+											<div class="form-group form-group-default">
+												<label>ผู้ปกครอง</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent}}" readonly>
 
-                                        </div>
-                                        </div>
-                                    </div>
+											</div>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_prename}}" readonly>
 											</div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_name}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-2">
-                                            <div class="form-group form-group-default">
-                                                <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->parent_namecen}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_surname}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>ชื่อภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_name}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-2">
+											<div class="form-group form-group-default">
+												<label>ชื่อกลาง</label>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->parent_namecen}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>นามสกุลภาษาไทย</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_surname}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <div class="form-group form-group-default">
-                                                <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_id}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+										<div class="col-sm-6 col-md-12">
+											<div class="form-group form-group-default">
+												<label>เลขประจำตัวประชาชน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_id}}" readonly>
+											</div>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ความสัมพันธ์ผู้ปกครอง</label>
 												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_status}}" readonly>
 											</div>
-                                        </div>
+										</div>
 										<div class="col-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>อาชีพ</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_job}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="form-group form-group-default">
-                                                <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_tel}}" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+											<div class="form-group form-group-default">
+												<label>อาชีพ</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_job}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_tel}}" readonly>
+											</div>
+										</div>
+									</div>
 
 									<!-- ข้อมูลทางการศึกษา -->
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลทางการศึกษา</b></p>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลทางการศึกษา</b></p>
 									</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</small></label>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</small></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<div class="form-group form-group-default">
+												<label>ชื่อโรงเรียนเดิม</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school}}" readonly>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-group form-group-default">
-													<label>ชื่อโรงเรียนเดิม</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school}}" readonly>
-												</div>
+									</div>
+									<div class="row">
+										<div class="col-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>ตำบล/แขวง</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_sub_district}}" readonly>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ตำบล/แขวง</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_sub_district}}" readonly>
-												</div>
-											</div>
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>อำเภอ/เขต</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_district}}" readonly>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>จังหวัด</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_province}}" readonly>
-												</div>
+										<div class="col-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>อำเภอ/เขต</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_district}}" readonly>
 											</div>
 										</div>
-                                        <div class="row">
-											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>เลขประจำตัวนักเรียน (เฉพาะนักเรียนชั้น ม.3 โรงเรียนพร้าววิทยาคม)</small></label>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group form-group-default">
+												<label>จังหวัด</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_province}}" readonly>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-group form-group-default">
-													<label>เลขประจำตัวนักเรียน</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->student_id}}" readonly>
-												</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>เลขประจำตัวนักเรียน (เฉพาะนักเรียนชั้น ม.3 โรงเรียนพร้าววิทยาคม)</small></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<div class="form-group form-group-default">
+												<label>เลขประจำตัวนักเรียน</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->student_id}}" readonly>
 											</div>
 										</div>
-                                        <div class="row">
-											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>ผลสอบ O-NET ระดับชั้นมัธยมศึกษาปีที่ 3 (กรอกเป็นตัวเลขเท่านั้น)</small></label>
-											</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-12">
+											<label style="margin-bottom: 5px;"><small>ผลสอบ O-NET ระดับชั้นมัธยมศึกษาปีที่ 3 (กรอกเป็นตัวเลขเท่านั้น)</small></label>
 										</div>
-										<div class="row">
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาคณิตศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_math}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาวิทยาศาสตร์</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_sci}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาไทย</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_thai}}" readonly>
-												</div>
-											</div>
-                                            <div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาอังกฤษ</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->onet_eng}}" readonly>
-												</div>
-											</div>
-										</div>
-
-
+									</div>
+					
 									<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p  style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
 									</div>
 									<div class="row">
 										<div class="col-sm-6 col-md-12">
 											<div class="form-check">
-                                            <div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->poor_person}}" readonly>
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
+														<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->poor_person}}" readonly>
+													</div>
 												</div>
-											</div>
-                                            <div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ผู้พิการ/เด็กพิเศษ</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->disabled}}" readonly>
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ผู้พิการ/เด็กพิเศษ</label>
+														<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->disabled}}" readonly>
+													</div>
 												</div>
-											</div>
-                                            <div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>อื่นๆ</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->etc}}" readonly>
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>อื่นๆ</label>
+														<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->etc}}" readonly>
+													</div>
 												</div>
-											</div>
 											</div>
 										</div>
 									</div>
 
-                                    <!-- เลือกเรียนแผนการเรียนรู้ -->
+									<!-- เลือกเรียนแผนการเรียนรู้ -->
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p  style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ  1 - 10  ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
+										<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 10 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
 									</div>
 									<div class="row">
-                                            <div class="col-6 col-md-6">
-                                                <div class="form-group form-group-default">
-                                                    <label>อันดับที่ 1</label>
-                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name1}}" readonly>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-md-6">
-                                                <div class="form-group form-group-default">
-                                                    <label>อันดับที่ 2</label>
-                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name2}}" readonly>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-md-6">
-                                                <div class="form-group form-group-default">
-                                                    <label>อันดับที่ 3</label>
-                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name3}}" readonly>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-md-6">
-                                                <div class="form-group form-group-default">
-                                                    <label>อันดับที่ 4</label>
-                                                    <input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name4}}" readonly>
-                                                </div>
-                                            </div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 1</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name1}}" readonly>
+											</div>
 										</div>
-
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 2</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name2}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 3</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name3}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 4</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name4}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 5</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name5}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 6</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name6}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 7</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name7}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 8</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name8}}" readonly>
+											</div>
+										</div>
+										<div class="col-6 col-md-6">
+											<div class="form-group form-group-default">
+												<label>อันดับที่ 9</label>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name9}}" readonly>
+											</div>
+										</div>
+									</div>
+									<!-- อัพโหลดรูปภาพ -->
+									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+										<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
+									</div>
+									<div class="row">
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group">
+												<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
+												<input type="text" class="form-control-file" id="pic" name="pic" value="{{$data->status_pic}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group">
+												<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
+												<input type="text" class="form-control-file" id="id_number_pic" name="id_number_pic" value="{{$data->status_idnumber_pic}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group">
+												<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
+												<input type="text" class="form-control-file" id="house_pic" name="house_pic" value="{{$data->status_house_pic}}" readonly>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<div class="form-group">
+												<label for="exampleFormControlFile1">ใบ ปพ.</label>
+												<input type="text" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$data->status_grade_pic}}" readonly>
+											</div>
+										</div>
+									</div>
 
 								</div>
 								<div class="card-footer" align="center">
-                                    <a href='{{ url("/EditNewstudentM4/{$data->id}" )}}' class="btn btn-warning"><strong>แก้ไข</strong></a>
+									<a href='{{ url("/EditNewstudentM4/{$data->id}" )}}' class="btn btn-warning"><strong>แก้ไข</strong></a>
 								</div><br>
 
 							</div>
@@ -670,156 +713,157 @@
 				</div>
 				<!-- สิ้นสุดเนื้อหา -->
 
-			<!-- เริ่ม Footer -->
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
+				<!-- เริ่ม Footer -->
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
 
-							<li class="nav-item">
-								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+								<li class="nav-item">
+									<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+						</div>
 					</div>
-				</div>
-			</footer>
+				</footer>
+			</div>
+			<!-- สิ้นสุด Footter -->
 		</div>
-		<!-- สิ้นสุด Footter -->
-	</div>
-	<!--   Core JS Files   -->
-	<script src="/assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="/assets/js/core/popper.min.js"></script>
-	<script src="/assets/js/core/bootstrap.min.js"></script>
+		<!--   Core JS Files   -->
+		<script src="/assets/js/core/jquery.3.2.1.min.js"></script>
+		<script src="/assets/js/core/popper.min.js"></script>
+		<script src="/assets/js/core/bootstrap.min.js"></script>
 
-	<!-- jQuery UI -->
-	<script src="/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<!-- jQuery UI -->
+		<script src="/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-	<!-- jQuery Scrollbar -->
-	<script src="/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+		<!-- jQuery Scrollbar -->
+		<script src="/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 
-	<!-- Chart JS -->
-	<script src="/assets/js/plugin/chart.js/chart.min.js"></script>
+		<!-- Chart JS -->
+		<script src="/assets/js/plugin/chart.js/chart.min.js"></script>
 
-	<!-- jQuery Sparkline -->
-	<script src="/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+		<!-- jQuery Sparkline -->
+		<script src="/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-	<!-- Chart Circle -->
-	<script src="/assets/js/plugin/chart-circle/circles.min.js"></script>
+		<!-- Chart Circle -->
+		<script src="/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-	<!-- Datatables -->
-	<script src="/assets/js/plugin/datatables/datatables.min.js"></script>
+		<!-- Datatables -->
+		<script src="/assets/js/plugin/datatables/datatables.min.js"></script>
 
-	<!-- jQuery Vector Maps -->
-	<script src="/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+		<!-- jQuery Vector Maps -->
+		<script src="/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+		<script src="/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
-	<!-- Sweet Alert -->
-	<script src="/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+		<!-- Sweet Alert -->
+		<script src="/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
-	<!-- Atlantis JS -->
-	<script src="/assets/js/atlantis.min.js"></script>
+		<!-- Atlantis JS -->
+		<script src="/assets/js/atlantis.min.js"></script>
 
-	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="/assets/js/setting-demo.js"></script>
-	<script src="/assets/js/demo.js"></script>
-	<script>
-		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
-			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
+		<!-- Atlantis DEMO methods, don't include it in your project! -->
+		<script src="/assets/js/setting-demo.js"></script>
+		<script src="/assets/js/demo.js"></script>
+		<script>
+			Circles.create({
+				id: 'circles-1',
+				radius: 45,
+				value: 60,
+				maxValue: 100,
+				width: 7,
+				text: 5,
+				colors: ['#f1f1f1', '#FF9E27'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
 
-		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
-			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
+			Circles.create({
+				id: 'circles-2',
+				radius: 45,
+				value: 70,
+				maxValue: 100,
+				width: 7,
+				text: 36,
+				colors: ['#f1f1f1', '#2BB930'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
 
-		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
-			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
+			Circles.create({
+				id: 'circles-3',
+				radius: 45,
+				value: 40,
+				maxValue: 100,
+				width: 7,
+				text: 12,
+				colors: ['#f1f1f1', '#F25961'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
 
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+			var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
 
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
+			var mytotalIncomeChart = new Chart(totalIncomeChart, {
+				type: 'bar',
+				data: {
+					labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+					datasets: [{
+						label: "Total Income",
+						backgroundColor: '#ff9e27',
+						borderColor: 'rgb(23, 125, 255)',
+						data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
 					}],
-					xAxes : [ {
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}]
 				},
-			}
-		});
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					legend: {
+						display: false,
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								display: false //this will remove only the label
+							},
+							gridLines: {
+								drawBorder: false,
+								display: false
+							}
+						}],
+						xAxes: [{
+							gridLines: {
+								drawBorder: false,
+								display: false
+							}
+						}]
+					},
+				}
+			});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
+			$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+				type: 'line',
+				height: '70',
+				width: '100%',
+				lineWidth: '2',
+				lineColor: '#ffa534',
+				fillColor: 'rgba(255, 165, 52, .14)'
+			});
+		</script>
 </body>
+
 </html>

@@ -350,7 +350,7 @@
 													<td align="center">{{$value->final_school}}</td>
 													<td>{{$value->status_rigis}}</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
-													<td><a href='{{ url("/statuspic/{$value->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
+													<td><a href='{{ url("/statusM4pic/{$value->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
 												</tr>
 												@endforeach

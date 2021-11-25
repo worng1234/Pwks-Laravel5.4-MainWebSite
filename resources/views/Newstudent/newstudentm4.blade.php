@@ -191,8 +191,6 @@
 													<label>คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="prename">
 														<option>เลือก</option>
-														<option value="เด็กชาย">เด็กชาย</option>
-														<option value="เด็กหญิง">เด็กหญิง</option>
 														<option value="นาย">นาย</option>
 														<option value="นางสาว">นางสาว</option>
 													</select>
@@ -593,19 +591,7 @@
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ความสัมพันธ์ผู้ปกครอง</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="parent_status">
-														<option>เลือก</option>
-														<option value="พี่ชาย">พี่ชาย</option>
-														<option value="พี่สาว">พี่สาว</option>
-														<option value="ลุง">ลุง</option>
-														<option value="ป้า">ป้า</option>
-														<option value="น้า">น้า</option>
-														<option value="อา">อา</option>
-														<option value="ปู่">ปู่</option>
-														<option value="ย่า">ย่า</option>
-														<option value="ตา">ตา</option>
-														<option value="ยาย">ยาย</option>
-													</select>
+													<input name="parent_status" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
@@ -672,38 +658,6 @@
 												</div>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>ผลสอบ O-NET ระดับชั้นมัธยมศึกษาปีที่ 3 (กรอกเป็นตัวเลขเท่านั้น)</small></label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาคณิตศาสตร์</label>
-													<input name="onet_math" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาวิทยาศาสตร์</label>
-													<input name="onet_sci" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาไทย</label>
-													<input name="onet_thai" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>วิชาภาษาอังกฤษ</label>
-													<input name="onet_eng" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-										</div>
-
 
 										<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
@@ -750,16 +704,15 @@
 													<label>อันดับที่ 1</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name1">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
-														<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
-														<option value="ศิลป์ - จีน">ศิลป์ - จีน</option>
-														<option value="พาณิชย์">พาณิชย์</option>
-														<option value="ศิลป์ - อังกฤษ">ศิลป์ - อังกฤษ</option>
-														<option value="ศิลปะ">ศิลปะ</option>
-														<option value="เกษตร">เกษตร</option>
-														<option value="ปวช.">ปวช.</option>
-														<option value="คหกรรม">คหกรรม</option>
-														<option value="วิทยาศาสตร์ - คอมพิวเตอร์">วิทยาศาสตร์ - คอมพิวเตอร์</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
 													</select>
 												</div>
 											</div>
@@ -768,16 +721,15 @@
 													<label>อันดับที่ 2</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name2">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
-														<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
-														<option value="ศิลป์ - จีน">ศิลป์ - จีน</option>
-														<option value="พาณิชย์">พาณิชย์</option>
-														<option value="ศิลป์ - อังกฤษ">ศิลป์ - อังกฤษ</option>
-														<option value="ศิลปะ">ศิลปะ</option>
-														<option value="เกษตร">เกษตร</option>
-														<option value="ปวช.">ปวช.</option>
-														<option value="คหกรรม">คหกรรม</option>
-														<option value="วิทยาศาสตร์ - คอมพิวเตอร์">วิทยาศาสตร์ - คอมพิวเตอร์</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
 													</select>
 												</div>
 											</div>
@@ -786,16 +738,15 @@
 													<label>อันดับที่ 3</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name3">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
-														<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
-														<option value="ศิลป์ - จีน">ศิลป์ - จีน</option>
-														<option value="พาณิชย์">พาณิชย์</option>
-														<option value="ศิลป์ - อังกฤษ">ศิลป์ - อังกฤษ</option>
-														<option value="ศิลปะ">ศิลปะ</option>
-														<option value="เกษตร">เกษตร</option>
-														<option value="ปวช.">ปวช.</option>
-														<option value="คหกรรม">คหกรรม</option>
-														<option value="วิทยาศาสตร์ - คอมพิวเตอร์">วิทยาศาสตร์ - คอมพิวเตอร์</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
 													</select>
 												</div>
 											</div>
@@ -804,16 +755,100 @@
 													<label>อันดับที่ 4</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name4">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
-														<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
-														<option value="ศิลป์ - จีน">ศิลป์ - จีน</option>
-														<option value="พาณิชย์">พาณิชย์</option>
-														<option value="ศิลป์ - อังกฤษ">ศิลป์ - อังกฤษ</option>
-														<option value="ศิลปะ">ศิลปะ</option>
-														<option value="เกษตร">เกษตร</option>
-														<option value="ปวช.">ปวช.</option>
-														<option value="คหกรรม">คหกรรม</option>
-														<option value="วิทยาศาสตร์ - คอมพิวเตอร์">วิทยาศาสตร์ - คอมพิวเตอร์</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 5</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name5">
+														<option>เลือก</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 6</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name6">
+														<option>เลือก</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 7</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name7">
+														<option>เลือก</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 8</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name8">
+														<option>เลือก</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 9</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name9">
+														<option>เลือก</option>
+														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
+														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
+														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
+														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
+														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
+														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
+														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
+														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
 													</select>
 												</div>
 											</div>
@@ -856,6 +891,9 @@
 										</div>
 										<div hidden>
 											<input type="text" name="status_pic" value="รอตรวจสอบ">
+										</div>
+										<div hidden>
+											<input type="text" name="status_picall" value="รอตรวจสอบ">
 										</div>
 										<div hidden>
 											<input type="text" name="status_idnumber_pic" value="รอตรวจสอบ">

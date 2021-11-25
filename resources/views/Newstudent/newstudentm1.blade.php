@@ -195,8 +195,6 @@
 														<option >เลือก</option>
 														<option value="เด็กชาย">เด็กชาย</option>
 														<option value="เด็กหญิง">เด็กหญิง</option>
-														<option value="นาย">นาย</option>
-														<option value="นางสาว">นางสาว</option>
 													</select>
 												</div>
 											</div>
@@ -595,19 +593,7 @@
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ความสัมพันธ์ผู้ปกครอง</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="parent_status">
-														<option >เลือก</option>
-														<option value="พี่ชาย">พี่ชาย</option>
-														<option value="พี่สาว">พี่สาว</option>
-														<option value="ลุง">ลุง</option>
-														<option value="ป้า">ป้า</option>
-														<option value="น้า">น้า</option>
-														<option value="อา">อา</option>
-														<option value="ปู่">ปู่</option>
-														<option value="ย่า">ย่า</option>
-														<option value="ตา">ตา</option>
-														<option value="ยาย">ยาย</option>
-													</select>
+													<input name="parent_status" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
