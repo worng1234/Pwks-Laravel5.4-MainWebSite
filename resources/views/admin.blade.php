@@ -39,7 +39,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
