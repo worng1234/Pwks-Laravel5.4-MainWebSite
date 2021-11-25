@@ -130,19 +130,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-book-open"></i>
-								<p>คู่มือการใช้งาน</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-comments"></i>
-								<p>ติดต่อเรา</p>
-							</a>
-						</li>
-
+						
 
 					</ul>
 				</div>

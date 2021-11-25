@@ -39,7 +39,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,17 +86,7 @@
                 <div class="sidebar-content">
 
                     <!-- เริ่มโปรไฟล์ -->
-                    <div class="user">
-                        <div class="info">
-
-                            <label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
-                            <label><b>ภาคเรียนที่ :</b> 1/2565</label>
-                            <label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-                            <label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+                    
                     <!-- สิ้นสุดโปรไฟล์ -->
 
                     <!-- เริ่มเมนู -->
@@ -111,11 +101,11 @@
 
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#forms">
+                            <!-- <a data-toggle="collapse" href="#forms">
                                 <i class="fas fa-user-graduate"></i>
                                 <p>จัดการข้อมูลนักเรียน</p>
                                 <span class="caret"></span>
-                            </a>
+                            </a> -->
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
@@ -243,12 +233,34 @@
                             </div>
                         </li>
 
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#formc">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>ตรวจสอบผลการสมัคร</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="formc">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{url('/check/statusM1')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/check/statusM4')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-item ">
-                            <a data-toggle="collapse" href="#agree">
+                            <!-- <a data-toggle="collapse" href="#agree">
                                 <i class="fas fa-id-card-alt"></i>
                                 <p>จัดการข้อมูลนักเรียนใหม่</p>
                                 <span class="caret"></span>
-                            </a>
+                            </a> -->
                             <div class="collapse" id="agree">
                                 <ul class="nav nav-collapse">
                                     <li>
@@ -266,32 +278,32 @@
                             </div>
                         </li>
                         <li class="nav-item ">
-                            <a href="#">
+                            <!-- <a href="#">
                                 <i class="fas fa-book-open"></i>
                                 <p>คู่มือการใช้งาน</p>
-                            </a>
+                            </a> -->
                         </li>
                         <li class="nav-item ">
                             <a href="{{ route('admin.login')}}">
-                                <i class="fas fa-comments"></i>
+                            <i class="fas fa-users-cog"></i>
                                 <p>Admin</p>
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a href="{{ route('affair.login')}}">
-                                <i class="fas fa-comments"></i>
+                                <i class="fas fa-address-card"></i>
                                 <p>ฝ่ายกิจการนักเรียน</p>
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a href="{{ url('/academic/login')}}">
-                                <i class="fas fa-comments"></i>
+                                <i class="fas fa-address-book"></i>
                                 <p>ฝ่ายวิชาการ</p>
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a href="{{ route('student.login')}}">
-                                <i class="fas fa-comments"></i>
+                                <i class="fas fa-user-graduate"></i>
                                 <p>นักเรียน</p>
                             </a>
                         </li>

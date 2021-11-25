@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index-eim');
 });
 
 

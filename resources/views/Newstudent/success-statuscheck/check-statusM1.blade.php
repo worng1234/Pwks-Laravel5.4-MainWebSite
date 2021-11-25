@@ -104,8 +104,25 @@
         <!-- // End main-header -->
 
         <!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
 
-        <!-- สิ้นสุดเมนู -->
+					<!-- เริ่มเมนู -->
+					<ul class="nav nav-primary">
+
+						<li class="nav-item">
+							<a href="/">
+								<i class="fas fa-home"></i>
+								<p>หน้าหลัก</p>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- สิ้นสุดเมนู -->
 
         <!-- เริ่มเนื้อหา-->
         <div class="main-panel">

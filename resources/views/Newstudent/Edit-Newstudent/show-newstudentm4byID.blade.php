@@ -108,64 +108,6 @@
 							</a>
 						</li>
 
-
-						<!-- <li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-id-card-alt"></i>
-								<p>รับสมัครนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="agreement-form-m1.html">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li class="active">
-										<a href="agreement-form-m4.html">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li> -->
-						<li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="agree">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ route('SortNewstudentM1.index')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li class="active">
-										<a href="{{ route('SortNewstudentM4.index')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-book-open"></i>
-								<p>คู่มือการใช้งาน</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-comments"></i>
-								<p>ติดต่อเรา</p>
-							</a>
-						</li>
-
-
-
 					</ul>
 				</div>
 			</div>

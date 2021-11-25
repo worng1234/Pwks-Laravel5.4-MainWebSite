@@ -103,7 +103,7 @@
                     <ul class="nav nav-primary">
 
                         <li class="nav-item active">
-                            <a href="/">
+                            <a href="/academic">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
