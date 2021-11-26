@@ -85,9 +85,17 @@
             <div class="sidebar-wrapper scrollbar scrollbar-inner">
                 <div class="sidebar-content">
 
-                    <!-- เริ่มโปรไฟล์ -->
-                    
-                    <!-- สิ้นสุดโปรไฟล์ -->
+                   <!-- เริ่มโปรไฟล์ -->
+					<div class="user">
+						<div class="info">
+
+							<label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
+							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<!-- สิ้นสุดโปรไฟล์ -->
 
                     <!-- เริ่มเมนู -->
                     <ul class="nav nav-primary">
@@ -318,7 +326,7 @@
 
         <!-- เริ่มเนื้อหา-->
         <div class="main-panel">
-            <div class="content">
+            <div class="container">
                 <div class="panel-header " style="background-color: #8B469B;">
                     <div class="page-inner py-5">
                         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
@@ -370,9 +378,6 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="copyright ml-auto">
-                        Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-                    </div>
                 </div>
             </footer>
         </div>

@@ -91,8 +91,6 @@
 
 							<label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							<label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-							<label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
 
 							<div class="clearfix"></div>
 						</div>
@@ -131,6 +129,28 @@
 								</ul>
 							</div>
 						</li>
+
+						<li class="nav-item">
+                            <a data-toggle="collapse" href="#formc">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>ตรวจสอบผลการสมัคร</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="formc">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{url('/check/statusM1')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/check/statusM4')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 						
 					</ul>
 				</div>
@@ -140,7 +160,7 @@
 
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
-			<div class="content">
+			<div class="container">
 				<div class="panel-header " style="background-color: #8B469B;">
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
@@ -675,25 +695,25 @@
 											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
 										</div>
 										<div class="row">
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
 													<input type="file" class="form-control-file" id="pic" name="pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
 													<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
 													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">ใบ ปพ.</label>
 													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
@@ -753,9 +773,6 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="copyright ml-auto">
-					Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-				</div>
 			</div>
 		</footer>
 	</div>

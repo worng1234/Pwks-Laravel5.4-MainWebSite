@@ -82,8 +82,6 @@
 
 							<label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							<label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-							<label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
 
 							<div class="clearfix"></div>
 						</div>
@@ -123,7 +121,27 @@
                             </div>
                         </li>
 						
-
+						<li class="nav-item">
+                            <a data-toggle="collapse" href="#formc">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>ตรวจสอบผลการสมัคร</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="formc">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{url('/check/statusM1')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/check/statusM4')}}">
+                                            <span class="sub-item">ตรวจสอบผลการสมัครชั้นมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
 					</ul>
@@ -134,7 +152,7 @@
 
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
-			<div class="content">
+			<div class="container">
 				<div class="panel-header " style="background-color: #8B469B;">
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
@@ -194,9 +212,6 @@
 							</li>
 						</ul>
 					</nav>
-					<div class="copyright ml-auto">
-						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-					</div>
 				</div>
 			</footer>
 		</div>
