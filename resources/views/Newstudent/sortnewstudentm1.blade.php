@@ -121,7 +121,7 @@
 					<ul class="nav nav-primary">
 
 						<li class="nav-item">
-							<a href="/academic">
+							<a href="/eim/academic">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>

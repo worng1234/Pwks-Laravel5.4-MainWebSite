@@ -24,7 +24,7 @@
         <form action="{{ url('/updated1', $newstudentm4Model->id)}}" method="post">
             {{csrf_field()}}
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4PIC/{{$newstudentm4Model->pic}}">
+                <img class="card-img-top" src="/eim/public/newstudentm4AllPic/newstudentm4PIC/{{$newstudentm4Model->pic}}">
                 <div class="card-body">
                     <h5 class="card-title">รูปประจำตัว</h5>
                     <div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4HOUSE/{{$newstudentm4Model->house_pic}}">
+                <img class="card-img-top" src="/eim/public/newstudentm4AllPic/newstudentm4HOUSE/{{$newstudentm4Model->house_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ทะเบียนบ้าน</h5>
                     <div>
@@ -52,11 +52,11 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4IDNUMBER/{{$newstudentm4Model->id_number_pic}}">
+                <img class="card-img-top" src="/eim/public/newstudentm4AllPic/newstudentm4IDNUMBER/{{$newstudentm4Model->id_number_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">สำเนาบัตรประจำตัวประชาชน</h5>
                     <div>
-                        <select name="status_idnumber_pic">
+                        <select name="eim/publicstatus_idnumber_pic">
                             <option>{{$newstudentm4Model->status_idnumber_pic}}</option>
                             <option>ผ่าน</option>
                             <option>รอตรวจสอบแล้ว</option>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm4AllPic/newstudentm4GRADE/{{$newstudentm4Model->grade_pic}}">
+                <img class="card-img-top" src="/eim/public/newstudentm4AllPic/newstudentm4GRADE/{{$newstudentm4Model->grade_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ใบ ปพ.</h5>
                     <div>
