@@ -33,12 +33,15 @@ class TestUPController extends Controller
 
     public function create(Request $request)
     {
-
-
+        $day = date('d');
+        $mounth = date('m');
+        $year = date('y');
+        $date = ($year . '/' . $mounth . '/' . $day);
 
         $data2 = new test2([
             "id_number2" => $request->get('id_number2'),
-            "address" => $request->get('address')
+            "address" => $request->get('address'),
+            "date" => $date,
         ]);
         $data2->save();
 
@@ -105,7 +108,7 @@ class TestUPController extends Controller
 
         $data = test2::find($id);
 
-        if($pic = $request->hasFile('pic')){
+        if ($pic = $request->hasFile('pic')) {
             $file = $request->file('pic');
             $fileName = $file->getClientOriginalName();
             $path = $request->file('pic')->storeAs('test', $fileName);
@@ -126,7 +129,7 @@ class TestUPController extends Controller
             ->with('success', 'Test updated successfully');
     }
 
-    
+
 
 
     /**

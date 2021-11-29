@@ -6,14 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/assets/css/fonts.min.css']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['/assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -279,7 +284,7 @@
 							</div>
 						</li> -->
 
-						
+
 
 					</ul>
 				</div>
@@ -449,6 +454,8 @@
 	<script src="/assets/js/setting-demo.js"></script>
 	<script src="/assets/js/demo.js"></script>
 
+	
+
 	<!-- Date time picker -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -458,6 +465,20 @@
 					"search": "ค้นหาข้อมูล :"
 				},
 				"ordering": false
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#student-info').DataTable({
+				dom: 'Bfrtip',
+				buttons: [
+					'copyHtml5',
+					'excelHtml5',
+					'csvHtml5',
+					'pdfHtml5'
+				]
 			});
 		});
 	</script>
