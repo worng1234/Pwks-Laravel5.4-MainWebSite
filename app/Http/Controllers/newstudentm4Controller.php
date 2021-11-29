@@ -46,6 +46,12 @@ class newstudentm4Controller extends Controller
      */
     public function store(Request $request)
     {
+
+        $day = date('d');
+        $mounth = date('m');
+        $year = date('y');
+        $date = ($year . '/' . $mounth . '/' . $day);
+
         //student picture
         $pic = $request->file('pic')->getClientOriginalName();
         $compPic1 = str_replace(' ', '_', $pic);
@@ -140,6 +146,7 @@ class newstudentm4Controller extends Controller
             "status_idnumber_pic" => $request->get('status_idnumber_pic'),
             "status_house_pic" => $request->get('status_house_pic'),
             "status_grade_pic" => $request->get('status_grade_pic'),
+            "date" => $date,
         ]);
         $post->save();
         return redirect('/success/rigisM4');
