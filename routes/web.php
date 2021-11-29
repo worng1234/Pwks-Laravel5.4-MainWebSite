@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
  use App\Http\Controllers\newstudentm1Controller;
@@ -142,11 +143,24 @@ Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
-Route::get('/time', function () {
-    $day = date('d');
-    $mounth = date('m');
-    $year = date('y');
-    echo $date = ($day.'/'.$mounth.'/'.$year);
+Route::get('/testwhere', function () {
+    $data = DB::table('new_student_register_m1')
+    ->where('finalSchool', '=', 'โรงเรียนบ้านป่าไหน่')
+    ->get();
+    $dataCount = $data->count();
+
+    $data2 = DB::table('new_student_register_m1')
+    ->where('finalSchool', '=', 'โรงเรียนบ้านห้วยบง')
+    ->get();
+    $dataCount2 = $data2->count();
+    $sum = $dataCount+$dataCount2;
+
+    $data3 = DB::table('new_student_register_m1')
+    ->get();
+    $dataCount3 = $data3->count();
+    $sum2 = $dataCount3-$dataCount2;
+    //$lan = json_encode($data,JSON_UNESCAPED_UNICODE);
+    return $sum2;
 });
 
 
