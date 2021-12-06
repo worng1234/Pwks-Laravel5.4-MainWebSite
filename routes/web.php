@@ -143,25 +143,7 @@ Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
-Route::get('/testwhere', function () {
-    $data = DB::table('new_student_register_m1')
-    ->where('finalSchool', '=', 'โรงเรียนบ้านป่าไหน่')
-    ->get();
-    $dataCount = $data->count();
-
-    $data2 = DB::table('new_student_register_m1')
-    ->where('finalSchool', '=', 'โรงเรียนบ้านห้วยบง')
-    ->get();
-    $dataCount2 = $data2->count();
-    $sum = $dataCount+$dataCount2;
-
-    $data3 = DB::table('new_student_register_m1')
-    ->get();
-    $dataCount3 = $data3->count();
-    $sum2 = $dataCount3-$dataCount2;
-    //$lan = json_encode($data,JSON_UNESCAPED_UNICODE);
-    return $sum2;
-});
+Route::get('/test/report', 'newstudentm1Controller@reportExel');
 
 
 Auth::routes();
@@ -199,13 +181,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Export file
-Route::get('/export/newstudentm1', function () {
-    return view('Newstudent.Newstudent-report.Newstudentm1-report');
-} );
+Route::get('/export/newstudentm1', 'newstudentm1Controller@reportExel');
+Route::get('/export/newstudentm4', 'newstudentm4Controller@reportExel');
 
-Route::get('/report/newstudentm1', function () {
-    return view('Newstudent.Newstudent-report.test-report');
-} );
+Route::post('/search/reportM1', 'newstudentm1Controller@reportExel');
+Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
 
 
 

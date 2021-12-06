@@ -52,7 +52,7 @@
 
     <div class="card-body" style="min-height: 400px">
         <div class="form-group">
-            <form role="form" method="post" action="{{ url('/search/reportM1')}}">
+            <form role="form" method="post" action="{{ url('/search/reportM4')}}">
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-6 col-md-4">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="container" align="center">
-            <h3>สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</h3>
+            <h3>สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</h3>
         </div>
 
         <table id="example" class="table table-bordered table-hover table-condesed">
@@ -95,19 +95,19 @@
                         <center>ประจำวันที่</center>
                     </th>
                     <th scope="col" width="5%">
-                        <center>ในเขต</center>
+                        <center>ม.3 เดิม</center>
                     </th>
                     <th scope="col" width="5%">
-                        <center>นอกเขต</center>
+                        <center>ม.3 รร. อื่น</center>
                     </th>
                     <th scope="col" width="5%">
                         <center>รวม</center>
                     </th>
                     <th scope="col" width="5%">
-                        <center>ในเขตรวมทั้งหมด</center>
+                        <center>ม.3 เดิมรวมทั้งหมด</center>
                     </th>
                     <th scope="col" width="5%">
-                        <center>นอกเขตรวมทั้งหมด</center>
+                        <center>ม.3 รร. อื่นรวมทั้งหมด</center>
                     </th>
                     <th scope="col" width="5%">
                         <center>รวมทั้งสิ้น</center>
@@ -121,16 +121,16 @@
                         <center>40</center>
                     </td>
                     <td scope="col" width="3%">
-                        <center>7</center>
+                        <center>10</center>
                     </td>
                     <td scope="col" width="5%">
-                        <center>280</center>
+                        <center>400</center>
                     </td>
                     <td scope="col" width="5%">
                         <center>{{$dateM1->date}}</center>
                     </td>
                     <td scope="col" width="5%">
-                        <center>{{$partitionAll}}</center>
+                        <center>{{$partitionCount}}</center>
                     </td>
                     <td scope="col" width="5%">
                         <center>{{$sum}}</center>
@@ -139,7 +139,7 @@
                         <center>{{$dataCountAll}}</center>
                     </td>
                     <td scope="col" width="5%">
-                        <center>{{$partitionAlls}}</center>
+                        <center>{{$partitionAllCount}}</center>
                     </td>
                     <td scope="col" width="5%">
                         <center>{{$sumAll}}</center>

@@ -317,4 +317,62 @@ class newstudentm4Controller extends Controller
         return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', ['datas' => $datas]);
 
     }
+
+    //Report
+    public function reportExel(Request $request)
+    {
+        //โรงเรียนในเขต
+        $search = $request->get('search');
+        
+        $partition = DB::table('new_student_register_m4')
+            ->where('date', 'like', '%' . $search . '%')
+            ->where('final_school', '=', 'โรงเรียนพร้าววิทยาคม')
+            ->get();
+        $partitionCount = $partition->count();
+
+        $dateM1 = DB::table('new_student_register_m4')
+        ->where('date', 'like', '%' . $search . '%')
+        ->first();
+        
+
+        //โรงเรียนทั้งหมด
+        $dataAll = DB::table('new_student_register_m4')
+            ->where('date', 'like', '%' . $search . '%')
+            ->get();
+        $dataCountAll = $dataAll->count();
+
+        //โรงเรียนนอกเขต
+        $sum = $dataCountAll - $partitionCount;
+
+        //ดรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
+       
+
+        $partitionAll = DB::table('new_student_register_m4')
+            ->where('final_school', '=', 'โรงเรียนพร้าววิทยาคม')
+            ->get();
+        $partitionAllCount = $partitionAll->count();
+
+
+        //โรงเรียนทั้งหมด
+        $dataAlls = DB::table('new_student_register_m4')
+            ->get();
+        $dataCountAlls = $dataAlls->count();
+
+        //โรงเรียนนอกเขต
+        $sumAll = $dataCountAlls - $partitionAllCount;
+
+        return view(
+            'Newstudent.Newstudent-report.Newstudentm4-report',
+            [
+                
+                'sum' => $sum,
+                'partitionCount' => $partitionCount,
+                'dataCountAll' => $dataCountAll,
+                'sumAll' => $sumAll,
+                'partitionAllCount' => $partitionAllCount,
+                'dataCountAlls' => $dataCountAlls,
+                'dateM1' => $dateM1
+            ]
+        );
+    }
 }
