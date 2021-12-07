@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
  use App\Http\Controllers\newstudentm1Controller;
@@ -142,12 +143,7 @@ Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
-Route::get('/time', function () {
-    $day = date('d');
-    $mounth = date('m');
-    $year = date('y');
-    echo $date = ($day.'/'.$mounth.'/'.$year);
-});
+Route::get('/test/report', 'newstudentm1Controller@reportExel');
 
 
 Auth::routes();
@@ -185,13 +181,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Export file
-Route::get('/export/newstudentm1', function () {
-    return view('Newstudent.Newstudent-report.Newstudentm1-report');
-} );
+Route::get('/export/newstudentm1', 'newstudentm1Controller@reportExel');
+Route::get('/export/newstudentm4', 'newstudentm4Controller@reportExel');
 
-Route::get('/report/newstudentm1', function () {
-    return view('Newstudent.Newstudent-report.test-report');
-} );
+Route::post('/search/reportM1', 'newstudentm1Controller@reportExel');
+Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
 
 
 
