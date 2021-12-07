@@ -146,6 +146,7 @@
                                         <div class="card-title"></div>
                                     </div>
                                 </div>
+<<<<<<< Updated upstream
                                 <div class="card text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 1</h5>
@@ -161,6 +162,21 @@
                                     </div>
                                 </div>
                             </div>
+=======
+                                    <div class="card-body" style="min-height: 350px">
+                                        <h4 class="card-title" style="text-align:center">ตรวจสอบสถานะการสมัครเข้าเรียน</h4>
+                                        <p style="text-align:center">ตรวจสอบสถานะการสมัครเข้าเรียน</p>
+                                        <p style="text-align:center">*กรอกรหัสบัตรประชาชน 13 หลักเพื่อตรวจสอบสถานะ</p>
+
+                                            <form action="{{ url('/search/statusM1')}}" method="post" style="text-align:center">
+                                                {{ csrf_field() }}
+                                                    <input type="search" name="search">
+                                                <button type="submit" href="{{ url('/check/statusM1onsubmit')}}" class="btn btn-primary">ค้นหา</button>
+                                            </form>
+
+                                    </div>
+                                </div>
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
