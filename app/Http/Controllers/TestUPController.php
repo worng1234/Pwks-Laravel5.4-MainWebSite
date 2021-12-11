@@ -38,16 +38,9 @@ class TestUPController extends Controller
         $mounth = date('m');
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
-
-        $data2 = new test2([
-            "id_number2" => $request->get('id_number2'),
-            "address" => $request->get('address'),
-            "date" => $date,
-        ]);
-
         $data = new test([
             "name" => $request->get('name'),
-            "surname" => $request->get('surname'),
+            "student_id" => $request->get('student_id'),
             "score" => $score = (int)$request->get('score')
         ]);
         $data->save();
