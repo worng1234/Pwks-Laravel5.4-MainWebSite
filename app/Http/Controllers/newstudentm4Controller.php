@@ -203,7 +203,7 @@ class newstudentm4Controller extends Controller
 
             $newstudentm4Model->pic = $compic1;
             $newstudentm4Model->id_number_pic = $compic2;
-            $newstudentm4Model->house_pic = $compic3;
+            $newstudentm4Model->house_pic = $compic3; 
             $newstudentm4Model->grade_pic = $compic4;
         }
             $newstudentm4Model->prename = $request->prename;

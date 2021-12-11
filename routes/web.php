@@ -132,12 +132,12 @@ Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
 Route::post('/searchStudent', 'studentcoreController@search');
 
-
+//test controller
 Route::resource('/testall', 'TestUPController');
 Route::get('/Fixtest/{id}', 'TestUPController@edit');
 Route::get('/Fixfile/{id}', 'TestUPController@editfile');
 Route::get('/showtest/{id}', 'TestUPController@show');
-Route::post('/updatedtest/{id}', 'TestUPController@update');
+Route::post('/updatedtest/{surname}', 'TestUPController@update');
 Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 
 Route::get('/testup', 'TestUPController@createview');

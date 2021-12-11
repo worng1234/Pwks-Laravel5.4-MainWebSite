@@ -11,9 +11,10 @@ class test2 extends Model
     protected $table = "test2";
     protected $fillable = [
         'id',
-        'address',
+        'name',
         'id_number2',
-        'pic',
-        'date'
+        'student_id',
+        'date',
+        'score'
     ];
 }
