@@ -120,9 +120,7 @@ Route::get('/statusM4pic/{id}', 'newstudentm4Controller@showStatusPic');
 //Studentcore
 Route::resource('/StudentCore', 'studentcoreController');
 
-Route::get('/Addstudentcore', function () {
-    return view('Studentcore.addstudentcore');
-} );
+Route::get('/Addstudentcore', 'studentcoreController@create');
 
 Route::get('/StudentCore/{id}', 'studentcoreController@show');
 Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');

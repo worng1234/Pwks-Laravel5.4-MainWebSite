@@ -18,6 +18,11 @@ class studentcoreController extends Controller
         return view('Studentcore.studentcore', compact('data'));
     }
 
+    public function create()
+    {
+        return view('Studentcore.student-info-add-v2');
+    }
+
     public function search(Request $request)
     {
         $search = $request->get('search');
