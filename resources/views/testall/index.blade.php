@@ -13,7 +13,7 @@
             <thead>
                 <th>ID</th>
                 <th>1</th>
-                <th>2</th>
+                <th>คะแนน</th>
                 <th>4</th>
             </thead>
             @foreach ($data as $datas)
@@ -21,13 +21,13 @@
                 <td>{{$datas->student_id}}</td>
                 <td>{{$datas->name}}</td>
                 <td>{{$datas->score}}</td>
-                <td><a href='{{url("/Fixtest/{$datas->id}")}}' class="btn">เพิ่มความประพฤติ</a></td>
+                <td><a href='{{url("/Fixtest/{$datas->id}")}}' class="btn">เพิ่มความประพฤติ(หักคะแนน)</a></td>
             </tr>
             @endforeach
         </table>
     </div>
     <div>
-        <a class="btn" href="{{url('/testup')}}">insert</a>
+        <a class="btn" href="{{url('/testup')}}">เพิ่มข้อมูลนักเรียน</a>
     </div>
 </body>
 </html>
