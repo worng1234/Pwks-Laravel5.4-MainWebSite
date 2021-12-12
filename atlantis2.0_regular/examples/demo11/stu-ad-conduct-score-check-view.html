@@ -205,104 +205,124 @@
 									</div>
 								</div>
                                 <div class="card-body" style="min-height: auto">
-									<div class="form-group">
-										<form role="form" method="post"  action="">
-											<div class="row">
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect">
-															<option>เลือก</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 1</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 2</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 3</option>
-															<option>ปวช.1</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-6 col-sm-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect">
-															<option>เลือก</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-4 col-md-4">
-													<div class="form-group form-group-default">
-														<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
-													</div> 
-												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2" ><i class="fas fa-search"></i> แสดง</button>
+									<div class="row">
+                                        <div class="table-responsive">
+											<div class="form-group">
+                                                <table style="border-spacing: 5px; border-collapse: separate; width: 100%">
+                                                    <tr>
+                                                        <td>
+                                                            <table style="border-spacing: 5px; border-collapse: separate; width: 100%">
+                                                                <tr>
+                                                                    <td style="text-align: left; vertical-align: top; width: 80px;">เลขประจำตัวนักเรียน
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="TextBox1" type="text" value="15240" readonly="readonly" id="TextBox01" class="textboxReadOnly" style="width:100%;"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left; vertical-align: top;">ชื่อ-นามสกุล
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="TextBox2" type="text" value="นางสาว เรียนดี มีเมตตา" readonly="readonly" id="TextBox02" class="textboxReadOnly" style="width:100%;"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left; vertical-align: top;">ชั้นเรียน/ห้อง
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="TextBox3" type="text" value="ชั้นมัธยมศึกษาปีที่ 2/4" readonly="readonly" id="TextBox03" class="textboxReadOnly" style="width:100%;"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left; vertical-align: top;">เลขที่
+                                                                    <td>
+                                                                        <input name="TextBox4" type="text" value="2" readonly="readonly" id="TextBox04" class="textboxReadOnly" style="width:100%;"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left; vertical-align: top;">คะแนนล่าสุด
+                                                                    </td>
+                                                                    <td>
+                                                                        <input name="TextBox5" type="text" value="90" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td style="text-align: left; vertical-align: top; width: 125px">
+                                                            <table style="border-spacing: 5px; border-collapse: separate; width: 100%">
+                                                                <tr>
+                                                                    <td>
+                                                                        <img id="mainContentPlaceHolder_signinImage" src="../assets/img/pro1.jpg" style="height:165px; width:125px;"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
 											</div>
-										</form>
-									</div>
-                                    <div class="table-responsive" >
+										</div>
+                                        <div class="table-responsive" >
 										
-                                        <!-- ตารางแสดงข้อมูล-->
-                                            <table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" width="10%"><center>ลำดับ</center></th>
-                                                        <th scope="col" width="15%"><center>เลขประจำตัวนักเรียน</center></th>
-                                                        <th scope="col" width="9%"><center>เลขที่</center></th>
-                                                        <th scope="col" width="26"><center>ชื่อ-นามสกุล</center></th>
-                                                        <th scope="col" width="10%"><center>ชั้นเรียน/ห้อง</center></th>
-                                                        <th scope="col" width="15%"><center>คะแนนล่าสุด</center></th>
-                                                        <th scope="col" width="15%"><center>จัดการ</center></th>
-                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td align="center">1</td>
-                                                        <td align="center">15239</td>
-                                                        <td align="center">1</td>
-                                                        <td>นาย รสดี  มีเมตตา</td>
-                                                        <td align="center">2/4</td>
-                                                        <td align="center">90</td>
-                                                        <td align="center">
-                                                            <form role="form" method="post" action="?r=admin_student_edit">
-																<a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
-                                                            </form>
-                                                        </td>
-                                                    </tr>		
-                                                    <tr>
-                                                        <td align="center">2</td>
-                                                        <td align="center">15240</td>
-                                                        <td align="center">2</td>
-                                                        <td>นางสาว เรียนดี  มีเมตตา</td>
-                                                        <td align="center">2/4</td>
-                                                        <td align="center">90</td>
-                                                        <td align="center">
-                                                            <form role="form" method="post" action="?r=admin_student_edit">
-																<a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center">3</td>
-                                                        <td align="center">15241</td>
-                                                        <td align="center">3</td>
-                                                        <td>นางสาว ชอบดี  มีเมตตา</td>
-                                                        <td align="center">2/4</td>
-                                                        <td align="center">85</td>
-                                                        <td align="center">
-                                                            <form role="form" method="post" action="?r=admin_student_edit">
-																<a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
-                                                            </form>
-                                                        </td>
-                                                    </tr>									
-                                                </tbody>
-                                            </table>
-                                        <!-- //ตารางแสดงข้อมูล-->
-
-                            </div>
+                                            <!-- ตารางแสดงข้อมูล-->
+                                                <table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" width="10%"><center>ลำดับ</center></th>
+                                                            <th scope="col" width="15%"><center>เลขประจำตัวนักเรียน</center></th>
+                                                            <th scope="col" width="9%"><center>เลขที่</center></th>
+                                                            <th scope="col" width="26"><center>ชื่อ-นามสกุล</center></th>
+                                                            <th scope="col" width="10%"><center>ชั้นเรียน/ห้อง</center></th>
+                                                            <th scope="col" width="15%"><center>คะแนนล่าสุด</center></th>
+                                                            <th scope="col" width="15%"><center>จัดการ</center></th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center">1</td>
+                                                            <td align="center">15239</td>
+                                                            <td align="center">1</td>
+                                                            <td>นาย รสดี  มีเมตตา</td>
+                                                            <td align="center">2/4</td>
+                                                            <td align="center">90</td>
+                                                            <td align="center">
+                                                                <form role="form" method="post" action="?r=admin_student_edit">
+                                                                    <a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
+                                                                </form>
+                                                            </td>
+                                                        </tr>		
+                                                        <tr>
+                                                            <td align="center">2</td>
+                                                            <td align="center">15240</td>
+                                                            <td align="center">2</td>
+                                                            <td>นางสาว เรียนดี  มีเมตตา</td>
+                                                            <td align="center">2/4</td>
+                                                            <td align="center">90</td>
+                                                            <td align="center">
+                                                                <form role="form" method="post" action="?r=admin_student_edit">
+                                                                    <a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center">3</td>
+                                                            <td align="center">15241</td>
+                                                            <td align="center">3</td>
+                                                            <td>นางสาว ชอบดี  มีเมตตา</td>
+                                                            <td align="center">2/4</td>
+                                                            <td align="center">85</td>
+                                                            <td align="center">
+                                                                <form role="form" method="post" action="?r=admin_student_edit">
+                                                                    <a href="stu-ad-conduct-score-check-view.html" class="btn btn-warning btn-xs" type="button"><i class="fas fa-eye"></i></a>
+                                                                </form>
+                                                            </td>
+                                                        </tr>									
+                                                    </tbody>
+                                                </table>
+                                            <!-- //ตารางแสดงข้อมูล-->
+    
+                                </div>
+									</div>
 								</div>
 							</div>
 						</div>
