@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Prompt:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			google: {
+				"families": ["Prompt:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['../assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -26,9 +32,10 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper horizontal-layout-2">
-		
+
 		<div class="main-header" style="background-color: #8B469B;">
 			<div class="nav-top">
 				<div class="container d-flex flex-row">
@@ -40,7 +47,7 @@
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
 					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand" >
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -49,8 +56,12 @@
 
 						<div class="container-fluid p-0">
 							<div class="collapse" id="search-nav">
-								<p class="card-title" style="font-size: 17px;"><b><font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
-								<label><small><font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font></small></label>
+								<p class="card-title" style="font-size: 17px;"><b>
+										<font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+									</b></p>
+								<label><small>
+										<font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font>
+									</small></label>
 							</div>
 							<!-- <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 								<li class="nav-item toggle-nav-search hidden-caret">
@@ -66,12 +77,12 @@
 			</div>
 			<div class="nav-bottom">
 				<div class="container">
-					<h3 class="title-menu d-flex d-lg-none"> 
-						เมนู 
+					<h3 class="title-menu d-flex d-lg-none">
+						เมนู
 						<div class="close-menu"> <i class="flaticon-cross"></i></div>
 					</h3>
 					<ul class="nav page-navigation page-navigation-info bg-white">
-						
+
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/')}}">
 								<i class="link-icon icon-home"></i>
@@ -131,7 +142,7 @@
 								<span class="menu-title">ติดต่อเรา</span>
 							</a>
 						</li>
-						
+
 					</ul>
 				</div>
 			</div>
@@ -140,44 +151,34 @@
 		<div class="main-panel">
 			<div class="container">
 				<div class="page-inner">
-					
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp; คำแนะนำและข้อตกลงการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 4</div>
-									</div>
-								</div>
 								<div class="card-body">
-									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-									</ol>
+									<div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 1</div>
+									<p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน </p>
 								</div>
-                                <div class="card-footer" align="center">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
-                                            <span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
-                                        </label>
-                                    </div>
-                                    <a type="button" class="btn btn-info" href="{{ url('/NewstudentM4')}}"><i class="fas fa-file-signature"></i>  สมัครเข้าเรียน</a><br><br>
-                                </div>
+								<div class="card-footer" align="center"><br>
+									<a type="button" class="btn btn-info" href="{{ url('/check/statusM1')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+								</div>
 							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 4</div>
+									<p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน </p>
+								</div>
+								<div class="card-footer" align="center"><br>
+									<a type="button" class="btn btn-info" href="{{ url('/check/statusM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<footer class="footer">
 			<div class="container">
 				<nav class="pull-left">
@@ -188,8 +189,8 @@
 					</ul>
 				</nav>
 				<div class="copyright ml-auto">
-					พัฒนาโดย PWK40 & CSMJU23 
-				</div>				
+					พัฒนาโดย PWK40 & CSMJU23
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -264,48 +265,48 @@
 	<script src="../assets/js/demo.js"></script>
 	<script>
 		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
 			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
 			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
 			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
@@ -314,7 +315,7 @@
 			type: 'bar',
 			data: {
 				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
+				datasets: [{
 					label: "Total Income",
 					backgroundColor: '#ff9e27',
 					borderColor: 'rgb(23, 125, 255)',
@@ -332,22 +333,22 @@
 						ticks: {
 							display: false //this will remove only the label
 						},
-						gridLines : {
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}],
-					xAxes : [ {
-						gridLines : {
+					xAxes: [{
+						gridLines: {
 							drawBorder: false,
-							display : false
+							display: false
 						}
 					}]
 				},
 			}
 		});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -356,6 +357,7 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
-	
+
 </body>
+
 </html>

@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index-eim');
 });
+Route::get('/check/status', function () {
+    return view('Newstudent.success-statuscheck.form-check-index');
+});
 
 
 //Route::view('/AddstudentCore','Studentcore.addstudentcore');
@@ -55,6 +58,7 @@ Route::get('/success/rigisM1', function () {
     return view('Newstudent.success-statuscheck.success-regisM1');
 } );
 
+//ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM1', function () {
     return view('Newstudent.success-statuscheck.check-statusM1');
 } );
@@ -63,6 +67,7 @@ Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 } );
+//---------------------------------------------------------------------
 
 Route::get('/success/checkM1', function () {
     return view('Newstudent.success-statuscheck.success-checkM1');
@@ -94,6 +99,8 @@ Route::post('/searchM4', 'newstudentm4Controller@search');
 Route::get('/success/rigisM4', function () {
     return view('Newstudent.success-statuscheck.success-regisM4');
 } );
+
+//ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM4', function () {
     return view('Newstudent.success-statuscheck.check-statusM4');
 } );
@@ -103,6 +110,7 @@ Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 Route::get('/check/statusM4onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
 } );
+//---------------------------------------------------------------------
 
 Route::get('/success/checkM4', function () {
     return view('Newstudent.success-statuscheck.success-checkM4');
