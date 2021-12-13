@@ -682,7 +682,7 @@
 	<script src="/eim/public/assets/js/atlantis2.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="./eim/public/assets/js/demo.js"></script>
+	<script src="/eim/public/assets/js/demo.js"></script>
 	<script>
 		Circles.create({
 			id: 'circles-1',

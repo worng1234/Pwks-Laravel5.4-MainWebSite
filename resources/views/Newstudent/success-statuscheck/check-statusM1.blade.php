@@ -154,6 +154,12 @@
                 <div class="page-inner">
                     <div class="row">
                         <div class="col-md-12">
+                            <div class="card full-height">
+                                <div class="card-header">
+                                    <div class="card-head-row">
+                                        <div class="card-title"></div>
+                                    </div>
+                                </div>
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     <div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน</div>
@@ -168,11 +174,25 @@
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary col-sm-6 col-md-2" href="{{ url('/check/statusM1onsubmit')}}"><i class="fas fa-search"></i> แสดง</button>
+
                                         </div>
                                     </form>
 
                                 </div>
                             </div>
+                                    <div class="card-body" style="min-height: 350px">
+                                        <h4 class="card-title" style="text-align:center">ตรวจสอบสถานะการสมัครเข้าเรียน</h4>
+                                        <p style="text-align:center">ตรวจสอบสถานะการสมัครเข้าเรียน</p>
+                                        <p style="text-align:center">*กรอกรหัสบัตรประชาชน 13 หลักเพื่อตรวจสอบสถานะ</p>
+
+                                            <form action="{{ url('/search/statusM1')}}" method="post" style="text-align:center">
+                                                {{ csrf_field() }}
+                                                    <input type="search" name="search">
+                                                <button type="submit" href="{{ url('/check/statusM1onsubmit')}}" class="btn btn-primary">ค้นหา</button>
+                                            </form>
+
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

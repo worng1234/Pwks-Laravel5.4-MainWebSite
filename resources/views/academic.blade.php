@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
     <link rel="icon" href="/eim/public/assets/img/icon2.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
@@ -31,6 +32,7 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="/eim/public/assets/css/demo.css">
+</head>
 
 <body>
     <div class="wrapper">

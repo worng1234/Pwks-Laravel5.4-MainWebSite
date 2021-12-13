@@ -6,9 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-
 	<link rel="icon" href="/eim/public/assets/img/icon2.ico" type="image/x-icon" />
-
 	<!-- Fonts and icons -->
 	<script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
