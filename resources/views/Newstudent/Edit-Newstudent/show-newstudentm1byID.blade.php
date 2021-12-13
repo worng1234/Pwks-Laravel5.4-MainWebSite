@@ -116,16 +116,16 @@
 							<div class="navbar-dropdown animated fadeIn">
 								<ul>
 									<li>
-										<a href="login-stu.html">นักเรียน</a>
+										<a href="{{ url('/student/login')}}">นักเรียน</a>
 									</li>
 									<li>
-										<a href="login-acad.html">ฝ่ายวิชาการ</a>
+										<a href="{{ url('/academic/login')}}">ฝ่ายวิชาการ</a>
 									</li>
 									<li>
-										<a href="login-stu-ad.html">ฝ่ายกิจการนักเรียน</a>
+										<a href="{{ url('/affair/login')}}">ฝ่ายกิจการนักเรียน</a>
 									</li>
 									<li>
-										<a href="login-admin.html">ผู้ดูแลระบบ</a>
+										<a href="{{ url('/admin/login')}}">ผู้ดูแลระบบ</a>
 									</li>
 								</ul>
 							</div>
