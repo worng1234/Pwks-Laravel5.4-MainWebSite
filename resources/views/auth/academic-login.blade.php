@@ -41,7 +41,7 @@
       </div>
       <form class="form-horizontal" method="POST" action="{{ route('academic.login.submit') }}">
         {{ csrf_field() }}
-      <div class="text-center"><b style="font-size: 23px; ">ยินดีต้อนรับเข้าสู่ระบบ</b><br><small> สำหรับเจ้าหน้าที่ฝ่ายวิชาการ</small></div>
+        <div class="text-center"><b style="font-size: 23px; ">ยินดีต้อนรับเข้าสู่ระบบ</b><br><small> สำหรับเจ้าหน้าที่ฝ่ายวิชาการ</small></div>
         <div class="login-form">
           <div class="form-group">
             <label for="username" class="placeholder"><b>ชื่อผู้ใช้</b></label>
@@ -68,7 +68,7 @@
           </div>
         </div>
     </div>
-  </form>
+    </form>
   </div>
   <script src="/eim/public/assets/js/core/jquery.3.2.1.min.js"></script>
   <script src="/eim/public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

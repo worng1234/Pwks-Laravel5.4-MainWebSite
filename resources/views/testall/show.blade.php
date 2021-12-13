@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit</h1>
-    <div>
+    <!-- <div>
         <form action="{{ url('/updatedtest', $test->id)}}" method="post">
         {{csrf_field()}}
         <div>
@@ -23,6 +23,12 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         </form>
+    </div> -->
+
+    <div>
+        <h1>{{$test->score}}</h1>
+        <h1>{{$sumscore}}</h1>
+        <h1>{{$sum1}}</h1>
     </div>
 </body>
 </html>

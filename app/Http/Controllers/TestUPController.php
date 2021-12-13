@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\test2;
 use App\Models\test;
+use Illuminate\Support\Facades\DB;
 
 class TestUPController extends Controller
 {
@@ -16,7 +17,7 @@ class TestUPController extends Controller
      */
     public function index()
     {
-        $data = test2::all();
+        $data = test::all();
         return view('testall.index', compact('data'));
     }
 
@@ -33,16 +34,18 @@ class TestUPController extends Controller
 
     public function create(Request $request)
     {
-
-
-
-        $data2 = new test2([
-            "id_number2" => $request->get('id_number2'),
-            "address" => $request->get('address')
+        $day = date('d');
+        $mounth = date('m');
+        $year = date('y');
+        $date = ($year . '/' . $mounth . '/' . $day);
+        $data = new test([
+            "name" => $request->get('name'),
+            "student_id" => $request->get('student_id'),
+            "score" => $score = (int)$request->get('score')
         ]);
-        $data2->save();
+        $data->save();
 
-        return $data2;
+        return redirect('/testall');
     }
 
     /**
@@ -77,8 +80,12 @@ class TestUPController extends Controller
      */
     public function show($id)
     {
-        $test = test2::find($id);
-        return view('testall.show', compact('test'));
+        $test = test::find($id);
+        $sum = test::find($id);
+        $sumscore = $sum->score;
+
+        $sum1 = $sumscore - 10;
+        return view('testall.show', ['test' => $test, 'sumscore' => $sumscore, 'sum1' => $sum1]);
     }
 
     /**
@@ -89,8 +96,8 @@ class TestUPController extends Controller
      */
     public function edit($id)
     {
-        $tttt = test2::findOrFail($id);
-        return view('testall.edit', compact('tttt'));
+        $student_id = test::find($id);
+        return view('testall.edit', compact('student_id'));
     }
 
     /**
@@ -103,30 +110,30 @@ class TestUPController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = test2::find($id);
+        $day = date('d');
+        $mounth = date('m');
+        $year = date('y');
+        $date = ($year . '/' . $mounth . '/' . $day);
 
-        if($pic = $request->hasFile('pic')){
-            $file = $request->file('pic');
-            $fileName = $file->getClientOriginalName();
-            $path = $request->file('pic')->storeAs('test', $fileName);
+        $data2 = new test2([
+            "id_number2" => $request->get('id_number2'),
+            "name" => $request->get('name'),
+            "student_id" => $request->get('student_id'),
+            "date" => $date,
+            "score" => $request->get('score'),
+        ]);
+        $data2->save();
 
-            $file2 = $request->file('pic2');
-            $fileName2 = $file2->getClientOriginalName();
-            $path = $request->file('pic2')->storeAs('test', $fileName2);
+        $data1 = test::find($id);
+        $sumscore = $data1->score;
+        $sum = (int)$sumscore - (int)$request->score;
+        $data1->score = $sum;
+        $data1->save();
 
-            $data->pic = $fileName;
-            $data->pic2 = $fileName2;
-            $data->address = $request->address;
-            $data->id_number2 = $request->id_number2;
-        }
-        $data->save();
-
-        //$data->update($request->all());
-        return redirect()->route('testall.index')
-            ->with('success', 'Test updated successfully');
+        return redirect('/testall');
     }
 
-    
+
 
 
     /**

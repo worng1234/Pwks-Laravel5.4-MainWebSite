@@ -10,10 +10,7 @@ class test extends Model
     protected $table = "test";
     protected $fillable = [
         'name',
-        'surname',
-        'image',
-        'file_pdf',
-        'CheckBox',
-        'id_number1'
+        'student_id',
+        'score'
     ];
 }

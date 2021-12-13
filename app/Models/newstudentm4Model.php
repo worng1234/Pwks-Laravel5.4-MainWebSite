@@ -84,6 +84,7 @@ class newstudentm4Model extends Model
         'status_picall',
         'status_idnumber_pic',
         'status_house_pic',
-        'status_grade_pic'
+        'status_grade_pic',
+        'date'
     ];
 }

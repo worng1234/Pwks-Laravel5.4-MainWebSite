@@ -18,6 +18,11 @@ class studentcoreController extends Controller
         return view('Studentcore.studentcore', compact('data'));
     }
 
+    public function create()
+    {
+        return view('Studentcore.student-info-add-v2');
+    }
+
     public function search(Request $request)
     {
         $search = $request->get('search');
@@ -160,7 +165,7 @@ class studentcoreController extends Controller
             "id_parent" => $request->get('id_parent'),
             "type_card_p" => $request->get('type_card_p'),
             "age_p" => $request->get('age_p'),
-            "bloodgroup_p" => $request->get('bloodgroup_p'),
+            "relationship_parent" => $request->get('relationship_parent'),
             "job_p" => $request->get('job_p'),
             "salary_p" => $request->get('salary_p'),
             "tel_p" => $request->get('tel_p'),

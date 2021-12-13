@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
  use App\Http\Controllers\newstudentm1Controller;
@@ -22,6 +24,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index-eim');
+});
+Route::get('/check/status', function () {
+    return view('Newstudent.success-statuscheck.form-check-index');
 });
 
 
@@ -53,6 +58,7 @@ Route::get('/success/rigisM1', function () {
     return view('Newstudent.success-statuscheck.success-regisM1');
 } );
 
+//ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM1', function () {
     return view('Newstudent.success-statuscheck.check-statusM1');
 } );
@@ -61,6 +67,7 @@ Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 } );
+//---------------------------------------------------------------------
 
 Route::get('/success/checkM1', function () {
     return view('Newstudent.success-statuscheck.success-checkM1');
@@ -92,6 +99,8 @@ Route::post('/searchM4', 'newstudentm4Controller@search');
 Route::get('/success/rigisM4', function () {
     return view('Newstudent.success-statuscheck.success-regisM4');
 } );
+
+//ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM4', function () {
     return view('Newstudent.success-statuscheck.check-statusM4');
 } );
@@ -101,6 +110,7 @@ Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 Route::get('/check/statusM4onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
 } );
+//---------------------------------------------------------------------
 
 Route::get('/success/checkM4', function () {
     return view('Newstudent.success-statuscheck.success-checkM4');
@@ -118,9 +128,7 @@ Route::get('/statusM4pic/{id}', 'newstudentm4Controller@showStatusPic');
 //Studentcore
 Route::resource('/StudentCore', 'studentcoreController');
 
-Route::get('/Addstudentcore', function () {
-    return view('Studentcore.addstudentcore');
-} );
+Route::get('/Addstudentcore', 'studentcoreController@create');
 
 Route::get('/StudentCore/{id}', 'studentcoreController@show');
 Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');
@@ -130,16 +138,18 @@ Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
 Route::post('/searchStudent', 'studentcoreController@search');
 
-
+//test controller
 Route::resource('/testall', 'TestUPController');
 Route::get('/Fixtest/{id}', 'TestUPController@edit');
 Route::get('/Fixfile/{id}', 'TestUPController@editfile');
 Route::get('/showtest/{id}', 'TestUPController@show');
-Route::post('/updatedtest/{id}', 'TestUPController@update');
+Route::post('/updatedtest/{surname}', 'TestUPController@update');
 Route::post('/updatedfile/{id}', 'TestUPController@updatefile');
 
 Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
+
+Route::get('/test/report', 'newstudentm1Controller@reportExel');
 
 
 Auth::routes();
@@ -174,6 +184,14 @@ Route::post('/affair/login', 'Auth\AffairLoginController@login')->name('affair.l
 Route::post('/affair/logout', 'Auth\AffairLoginController@logout')->name('affair.logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Export file
+Route::get('/export/newstudentm1', 'newstudentm1Controller@reportExel');
+Route::get('/export/newstudentm4', 'newstudentm4Controller@reportExel');
+
+Route::post('/search/reportM1', 'newstudentm1Controller@reportExel');
+Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
 
 
 
