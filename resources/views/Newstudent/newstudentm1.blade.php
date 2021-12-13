@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/eim/public/assets/img/logo3.png" type="image/x-icon" />
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {
-				"families": ["Lato:300,400,700,900"]
+				"families": ["Prompt:300,400,700,900"]
 			},
 			custom: {
 				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-				urls: ['/eim/public/assets/css/fonts.min.css']
+				urls: ['../assets/css/fonts.min.css']
 			},
 			active: function() {
 				sessionStorage.fonts = true;
@@ -25,144 +26,143 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="/eim/public/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/eim/public/assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis2.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="/eim/public/assets/css/demo.css">
-
+	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="main-header">
-			<!-- Logo Header -->
-			<div class="logo-header" data-background-color="white">
+	<div class="wrapper horizontal-layout-2">
 
-				<a href="index.html" class="logo">
-					<img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
-				</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon">
-						<i class="icon-menu"></i>
-					</span>
-				</button>
-				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
-				<div class="nav-toggle">
-					<button class="btn btn-toggle toggle-sidebar">
-						<i class="icon-menu"></i>
+		<div class="main-header" style="background-color: #8B469B;">
+			<div class="nav-top">
+				<div class="container d-flex flex-row">
+					<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon">
+							<i class="icon-menu"></i>
+						</span>
 					</button>
+					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+					<!-- Logo Header -->
+					<a href="index.html" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					</a>
+					<!-- End Logo Header -->
+
+					<!-- Navbar Header -->
+					<nav class="navbar navbar-header navbar-expand-lg p-0">
+
+						<div class="container-fluid p-0">
+							<div class="collapse" id="search-nav">
+								<p class="card-title" style="font-size: 17px;"><b>
+										<font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+									</b></p>
+								<label><small>
+										<font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font>
+									</small></label>
+							</div>
+							<!-- <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+								<li class="nav-item toggle-nav-search hidden-caret">
+									<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+										<i class="fas fa-school"></i>
+									</a>
+								</li>					
+							</ul> -->
+						</div>
+					</nav>
+					<!-- End Navbar -->
 				</div>
 			</div>
-			<!-- End Logo Header -->
-
-			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
-				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<p class="card-title" style="font-size: 20px;"><b>
-								<font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
-							</b></p>
-						<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
-					</div>
-
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-								<i class="fas fa-school"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- End Navbar -->
-
-		</div>
-		<!-- // End main-header -->
-
-		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">
-			<div class="sidebar-wrapper scrollbar scrollbar-inner">
-				<div class="sidebar-content">
-
-					<!-- เริ่มโปรไฟล์ -->
-					<div class="user">
-						<div class="info">
-
-							<label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
-							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							<label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-							<label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<!-- สิ้นสุดโปรไฟล์ -->
-
-					<!-- เริ่มเมนู -->
-					<ul class="nav nav-primary">
+			<div class="nav-bottom">
+				<div class="container">
+					<h3 class="title-menu d-flex d-lg-none">
+						เมนู
+						<div class="close-menu"> <i class="flaticon-cross"></i></div>
+					</h3>
+					<ul class="nav page-navigation page-navigation-info bg-white">
 
 						<li class="nav-item">
-							<a href="/">
-								<i class="fas fa-home"></i>
-								<p>หน้าหลัก</p>
+							<a class="nav-link" href="{{ url('/')}}">
+								<i class="link-icon icon-home"></i>
+								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
-
-
-						<li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#formss">
-								<i class="fas fa-id-card-alt"></i>
-								<p>รับสมัครนักเรียนใหม่</p>
-								<span class="caret"></span>
+						<li class="nav-item submenu active">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-user-follow"></i>
+								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
 							</a>
-							<div class="collapse show" id="formss">
-								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="{{url('/AgreeMentNewstudentRegisterM1')}}">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{ url('/AgreeMentNewstudentRegisterM1')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a>
 									</li>
 									<li>
-										<a href="{{url('/AgreeMentNewstudentRegisterM4')}}">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
+										<a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
+									</li>
+									<li>
+										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
 								</ul>
 							</div>
 						</li>
-						
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-lock"></i>
+								<span class="menu-title">เข้าระบบ</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{ url('/student/login')}}">นักเรียน</a>
+									</li>
+									<li>
+										<a href="{{ url('/academic/login')}}">ฝ่ายวิชาการ</a>
+									</li>
+									<li>
+										<a href="{{ url('/affair/login')}}">ฝ่ายกิจการนักเรียน</a>
+									</li>
+									<li>
+										<a href="{{ url('/admin/login')}}">ผู้ดูแลระบบ</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-book-open"></i>
+								<span class="menu-title">คู่มือการใช้งาน</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-bubbles"></i>
+								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!-- สิ้นสุดเมนู -->
 
-		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
-			<div class="content">
-				<div class="panel-header " style="background-color: #8B469B;">
-					<div class="page-inner py-5">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h3 class="text-white pb-2 fw-bold"></h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<form method="post" action="{{ url('/insertnewstudentm1')}}" enctype="multipart/form-data">
-				{{csrf_field()}}
-				{{ method_field('POST') }}
-					<div class="page-inner mt--5">
-						<div class="row mt--2">
-							<div class="col-md-12">
-								<div class="card full-height">
-									<div class="card-header">
-										<div class="card-head-row">
-											<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; รับสมัครนักเรียนใหม่ <i class="flaticon-right-arrow"></i> สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</div>
-										</div>
-									</div>
+			<div class="container">
+				<div class="page-inner">
 
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; แบบฟอร์มการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 1</div>
+									</div>
+								</div>
+								<form method="post" action="{{ url('/insertnewstudentm1')}}" enctype="multipart/form-data">
+									{{csrf_field()}}
+									{{ method_field('POST') }}
 									<!-- ข้อมูลส่วนตัว -->
 									<div class="card-body">
 										<div class="alert alert-info" role="alert" align="center">
@@ -178,7 +178,7 @@
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="prename">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="เด็กชาย">เด็กชาย</option>
 														<option value="เด็กหญิง">เด็กหญิง</option>
 													</select>
@@ -221,7 +221,7 @@
 												<div class="form-group form-group-default">
 													<label>ปี พุทธศักราช:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="year">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="2540">2540</option>
 														<option value="2541">2541</option>
 														<option value="2542">2542</option>
@@ -250,7 +250,7 @@
 												<div class="form-group form-group-default">
 													<label>เดือน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="มกราคม">มกราคม</option>
 														<option value="กุมภาพันธ์">กุมภาพันธ์</option>
 														<option value="มีนาคม">มีนาคม</option>
@@ -270,7 +270,7 @@
 												<div class="form-group form-group-default">
 													<label>วัน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="day">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
@@ -311,7 +311,7 @@
 												<div class="form-group form-group-default">
 													<label>เพศสภาพ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="sex">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="ชาย">ชาย</option>
 														<option value="หญิง">หญิง</option>
 													</select>
@@ -414,7 +414,7 @@
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="father_prename">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="นาย">นาย</option>
 														<option value="นาง">นาง</option>
 														<option value="นางสาว">นางสาว</option>
@@ -470,7 +470,7 @@
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="mother_prename">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="นาย">นาย</option>
 														<option value="นาง">นาง</option>
 														<option value="นางสาว">นางสาว</option>
@@ -522,15 +522,15 @@
 
 												<div class="form-check">
 													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio"  value="บิดา" name="parent">
+														<input class="form-radio-input" type="radio" value="บิดา" name="parent">
 														<span class="form-radio-sign">บิดา</span>
 													</label>
 													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio"  value="มารดา" name="parent">
+														<input class="form-radio-input" type="radio" value="มารดา" name="parent">
 														<span class="form-radio-sign">มารดา</span>
 													</label>
 													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio"  value="บุคคลอื่น" name="parent">
+														<input class="form-radio-input" type="radio" value="บุคคลอื่น" name="parent">
 														<span class="form-radio-sign">บุคคลอื่น</span>
 													</label>
 												</div>
@@ -541,7 +541,7 @@
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="parent_prename">
-														<option >เลือก</option>
+														<option>เลือก</option>
 														<option value="นาย">นาย</option>
 														<option value="นาง">นาง</option>
 														<option value="นางสาว">นางสาว</option>
@@ -647,7 +647,7 @@
 														<span class="form-radio-sign">ไม่มี</span>
 													</label><br><br>
 													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio"  value="ผู้ด้อยโอกาส/ฐานะยากจน" name="poorPerson">
+														<input class="form-radio-input" type="radio" value="ผู้ด้อยโอกาส/ฐานะยากจน" name="poorPerson">
 														<span class="form-radio-sign">ผู้ด้อยโอกาส/ฐานะยากจน</span>
 													</label><br><br>
 													<label class="form-radio-label">
@@ -675,32 +675,32 @@
 											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
 										</div>
 										<div class="row">
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
 													<input type="file" class="form-control-file" id="pic" name="pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
 													<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
 													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">ใบ ปพ.</label>
 													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
 												</div>
 											</div>
 										</div><br><br>
-										
+
 										<!-- สถานะการสมัคร -->
 										<div hidden>
 											<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
@@ -720,85 +720,104 @@
 										<div hidden>
 											<input type="text" name="status_grade_pic" value="รอตรวจสอบ">
 										</div>
-
-
-
-
-
 									</div>
 									<div class="card-footer" align="center">
 										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
 											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-										<button type="submit" class="btn btn-primary"><strong>ยืนยันข้อมูล</strong></button>
+										<button type="button" class="btn btn-primary" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
 									</div><br>
-
-
-								</div>
 							</div>
-				</form>
-
-
-			</div>
-		</div>
-		<!-- สิ้นสุดเนื้อหา -->
-
-		<!-- เริ่ม Footer -->
-		<footer class="footer">
-			<div class="container-fluid">
-				<nav class="pull-left">
-					<ul class="nav">
-
-						<li class="nav-item">
-							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="copyright ml-auto">
-					Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+						</div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
 	</div>
-	<!-- สิ้นสุด Footter -->
+	<footer class="footer">
+		<div class="container">
+			<nav class="pull-left">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="copyright ml-auto">
+				พัฒนาโดย PWK40 & CSMJU23
+			</div>
+		</div>
+	</footer>
 	</div>
 	<!--   Core JS Files   -->
-	<script src="/eim/public/assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="/eim/public/assets/js/core/popper.min.js"></script>
-	<script src="/eim/public/assets/js/core/bootstrap.min.js"></script>
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
 
 	<!-- jQuery UI -->
-	<script src="/eim/public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="/eim/public/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 	<!-- jQuery Scrollbar -->
-	<script src="/eim/public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
+	<!-- Moment JS -->
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
 
 	<!-- Chart JS -->
-	<script src="/eim/public/assets/js/plugin/chart.js/chart.min.js"></script>
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
 
 	<!-- jQuery Sparkline -->
-	<script src="/eim/public/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 	<!-- Chart Circle -->
-	<script src="/eim/public/assets/js/plugin/chart-circle/circles.min.js"></script>
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
 
 	<!-- Datatables -->
-	<script src="/eim/public/assets/js/plugin/datatables/datatables.min.js"></script>
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Toggle -->
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
 	<!-- jQuery Vector Maps -->
-	<script src="/eim/public/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="/eim/public/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Google Maps Plugin -->
+	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+	<!-- Dropzone -->
+	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+
+	<!-- Fullcalendar -->
+	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- DateTimePicker -->
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Bootstrap Tagsinput -->
+	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+	<!-- jQuery Validation -->
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+	<!-- Summernote -->
+	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 -->
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="/eim/public/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
-	<script src="/eim/public/assets/js/atlantis.min.js"></script>
+	<script src="../assets/js/atlantis2.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="/eim/public/assets/js/setting-demo.js"></script>
-	<script src="/eim/public/assets/js/demo.js"></script>
+	<script src="../assets/js/demo.js"></script>
 	<script>
 		Circles.create({
 			id: 'circles-1',
@@ -893,7 +912,62 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
+	<script>
+		//== Class definition
+		var SweetAlert2Demo = function() {
 
+			//== Demos
+			var initDemos = function() {
+
+				$('#alert_demo_7').click(function(e) {
+					swal({
+						title: 'ยืนยันข้อมูล ?',
+						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+						type: 'warning',
+						buttons: {
+							confirm: {
+								text: 'ตกลง',
+								className: 'btn btn-success'
+							},
+							cancel: {
+								text: 'ย้อนกลับ',
+								visible: true,
+								className: 'btn btn-danger'
+							}
+						}
+					}).then((Delete) => {
+						if (Delete) {
+							swal({
+								title: 'บันทึกข้อมูลเรียบร้อย!',
+								text: 'สามารถติดตามสถานะการสมัครเข้าเรียน ได้ภายใน 1-3 วัน',
+								type: 'success',
+								buttons: {
+									confirm: {
+										className: 'btn btn-success'
+									}
+								}
+							});
+						} else {
+							swal.close();
+						}
+					});
+				})
+
+			};
+
+			return {
+				//== Init
+				init: function() {
+					initDemos();
+				},
+			};
+		}();
+
+		//== Class Initialization
+		jQuery(document).ready(function() {
+			SweetAlert2Demo.init();
+		});
+	</script>
 
 </body>
 

@@ -48,6 +48,11 @@ class newstudentm1Controller extends Controller
     public function store(Request $request)
     {
 
+        $day = date('d');
+        $mounth = date('m');
+        $year = date('y');
+        $date = ($year . '/' . $mounth . '/' . $day);
+
         //student picture
         $pic = $request->file('pic')->getClientOriginalName();
         $compPic1 = str_replace(' ', '_', $pic);
@@ -128,6 +133,7 @@ class newstudentm1Controller extends Controller
             "status_idnumber_pic" => $request->get('status_idnumber_pic'),
             "status_house_pic" => $request->get('status_house_pic'),
             "status_grade_pic" => $request->get('status_grade_pic'),
+            "date" => $date,
         ]);
         $post->save();
         return redirect('/success/rigisM1');
@@ -167,7 +173,7 @@ class newstudentm1Controller extends Controller
         $newstudentm1Model = newstudentm1Model::find($id);
 
         if ($pic = $request->hasFile('pic')) {
-            
+
             $file = $request->file('pic');
             $compic1 = $file->getClientOriginalName();
             $path = $request->file('pic')->storeAs('newstudentm1AllPic/newstudentm1PIC', $compic1);
@@ -188,60 +194,60 @@ class newstudentm1Controller extends Controller
             $newstudentm1Model->id_number_pic = $compic2;
             $newstudentm1Model->house_pic = $compic3;
             $newstudentm1Model->grade_pic = $compic4;
-        }  
-            $newstudentm1Model->prename = $request->prename;
-            $newstudentm1Model->fname = $request->fname;
-            $newstudentm1Model->surname = $request->surname;
-            $newstudentm1Model->sex = $request->sex;
-            $newstudentm1Model->idNumber = $request->idNumber;
-            $newstudentm1Model->day = $request->day;
-            $newstudentm1Model->mounth = $request->mounth;
-            $newstudentm1Model->year = $request->year;
-            $newstudentm1Model->religion = $request->religion;
-            $newstudentm1Model->nationality = $request->nationality;
-            $newstudentm1Model->origin = $request->origin;
-            $newstudentm1Model->disabled = $request->disabled;
-            $newstudentm1Model->poorPerson = $request->poorPerson;
-            $newstudentm1Model->etc = $request->etc;
-            $newstudentm1Model->tel = $request->tel;
-            $newstudentm1Model->email = $request->email;
-            $newstudentm1Model->nameCen = $request->nameCen;
-            $newstudentm1Model->fatherName = $request->fatherName;
-            $newstudentm1Model->fatherNamecen = $request->fatherNamecen;
-            $newstudentm1Model->fatherSurname = $request->fatherSurname;
-            $newstudentm1Model->fatherId = $request->fatherId;
-            $newstudentm1Model->fatherJob = $request->fatherJob;
-            $newstudentm1Model->fatherTel = $request->fatherTel;
-            $newstudentm1Model->motherName = $request->motherName;
-            $newstudentm1Model->motherNamecen = $request->motherNamecen;
-            $newstudentm1Model->motherSurname = $request->motherSurname;
-            $newstudentm1Model->motherId = $request->motherId;
-            $newstudentm1Model->motherJob = $request->motherJob;
-            $newstudentm1Model->motherTel = $request->motherTel;
-            $newstudentm1Model->parent = $request->parent;
-            $newstudentm1Model->parent_status = $request->parent_status;
-            $newstudentm1Model->parentName = $request->parentName;
-            $newstudentm1Model->parentNamecen = $request->parentNamecen;
-            $newstudentm1Model->parentSurname = $request->parentSurname;
-            $newstudentm1Model->parentId = $request->parentId;
-            $newstudentm1Model->parentJob = $request->parentJob;
-            $newstudentm1Model->parentTel = $request->parentTel;
-            $newstudentm1Model->father_prename = $request->father_prename;
-            $newstudentm1Model->mother_prename = $request->mother_prename;
-            $newstudentm1Model->parent_prename = $request->parent_prename;
-            $newstudentm1Model->houseNumber = $request->houseNumber;
-            $newstudentm1Model->street = $request->street;
-            $newstudentm1Model->bloc = $request->bloc;
-            $newstudentm1Model->road = $request->road;
-            $newstudentm1Model->subDistrict = $request->subDistrict;
-            $newstudentm1Model->district = $request->district;
-            $newstudentm1Model->province = $request->province;
-            $newstudentm1Model->post = $request->post;
-            $newstudentm1Model->finalSchool = $request->finalSchool;
-            $newstudentm1Model->finalSchoolSubDistrict = $request->finalSchoolSubDistrict;
-            $newstudentm1Model->finalSchoolDistrict = $request->finalSchoolDistrict;
-            $newstudentm1Model->finalSchoolProvince = $request->finalSchoolProvince;
-        
+        }
+        $newstudentm1Model->prename = $request->prename;
+        $newstudentm1Model->fname = $request->fname;
+        $newstudentm1Model->surname = $request->surname;
+        $newstudentm1Model->sex = $request->sex;
+        $newstudentm1Model->idNumber = $request->idNumber;
+        $newstudentm1Model->day = $request->day;
+        $newstudentm1Model->mounth = $request->mounth;
+        $newstudentm1Model->year = $request->year;
+        $newstudentm1Model->religion = $request->religion;
+        $newstudentm1Model->nationality = $request->nationality;
+        $newstudentm1Model->origin = $request->origin;
+        $newstudentm1Model->disabled = $request->disabled;
+        $newstudentm1Model->poorPerson = $request->poorPerson;
+        $newstudentm1Model->etc = $request->etc;
+        $newstudentm1Model->tel = $request->tel;
+        $newstudentm1Model->email = $request->email;
+        $newstudentm1Model->nameCen = $request->nameCen;
+        $newstudentm1Model->fatherName = $request->fatherName;
+        $newstudentm1Model->fatherNamecen = $request->fatherNamecen;
+        $newstudentm1Model->fatherSurname = $request->fatherSurname;
+        $newstudentm1Model->fatherId = $request->fatherId;
+        $newstudentm1Model->fatherJob = $request->fatherJob;
+        $newstudentm1Model->fatherTel = $request->fatherTel;
+        $newstudentm1Model->motherName = $request->motherName;
+        $newstudentm1Model->motherNamecen = $request->motherNamecen;
+        $newstudentm1Model->motherSurname = $request->motherSurname;
+        $newstudentm1Model->motherId = $request->motherId;
+        $newstudentm1Model->motherJob = $request->motherJob;
+        $newstudentm1Model->motherTel = $request->motherTel;
+        $newstudentm1Model->parent = $request->parent;
+        $newstudentm1Model->parent_status = $request->parent_status;
+        $newstudentm1Model->parentName = $request->parentName;
+        $newstudentm1Model->parentNamecen = $request->parentNamecen;
+        $newstudentm1Model->parentSurname = $request->parentSurname;
+        $newstudentm1Model->parentId = $request->parentId;
+        $newstudentm1Model->parentJob = $request->parentJob;
+        $newstudentm1Model->parentTel = $request->parentTel;
+        $newstudentm1Model->father_prename = $request->father_prename;
+        $newstudentm1Model->mother_prename = $request->mother_prename;
+        $newstudentm1Model->parent_prename = $request->parent_prename;
+        $newstudentm1Model->houseNumber = $request->houseNumber;
+        $newstudentm1Model->street = $request->street;
+        $newstudentm1Model->bloc = $request->bloc;
+        $newstudentm1Model->road = $request->road;
+        $newstudentm1Model->subDistrict = $request->subDistrict;
+        $newstudentm1Model->district = $request->district;
+        $newstudentm1Model->province = $request->province;
+        $newstudentm1Model->post = $request->post;
+        $newstudentm1Model->finalSchool = $request->finalSchool;
+        $newstudentm1Model->finalSchoolSubDistrict = $request->finalSchoolSubDistrict;
+        $newstudentm1Model->finalSchoolDistrict = $request->finalSchoolDistrict;
+        $newstudentm1Model->finalSchoolProvince = $request->finalSchoolProvince;
+
 
         $newstudentm1Model->save();
         return redirect('/success/checkM1')
@@ -282,5 +288,96 @@ class newstudentm1Controller extends Controller
         $datas = DB::table('new_student_register_m1')
             ->where('idNumber', 'like', '%' . $search . '%')->paginate(10);
         return view('Newstudent.success-statuscheck.check-statusM1-onsubmit', ['datas' => $datas]);
+    }
+
+    //Report
+    public function reportExel(Request $request)
+    {
+        //โรงเรียนในเขต
+        $search = $request->get('search');
+        $partition1 = DB::table('new_student_register_m1')
+            ->where('date', 'like', '%' . $search . '%')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านแจ่งกู่เรือง')
+            ->get();
+        $partitionCount1 = $partition1->count();
+
+        $partition2 = DB::table('new_student_register_m1')
+            ->where('date', 'like', '%' . $search . '%')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านป่าตุ้ม')
+            ->get();
+        $partitionCount2 = $partition2->count();
+
+        $partition3 = DB::table('new_student_register_m1')
+            ->where('date', 'like', '%' . $search . '%')
+            ->where('finalSchool', '=', 'โรงเรียนชุมชนสหกรนิคมวิทยา')
+            ->get();
+        $partitionCount3 = $partition3->count();
+
+        $partition4 = DB::table('new_student_register_m1')
+            ->where('date', 'like', '%' . $search . '%')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านห้วยบง')
+            ->get();
+        $partitionCount4 = $partition4->count();
+
+        $dateM1 = DB::table('new_student_register_m1')
+        ->where('date', 'like', '%' . $search . '%')
+        ->first();
+
+        //โรงเรียนในเขตทั้งหมด
+        $partitionAll = $partitionCount1 + $partitionCount2 + $partitionCount3 + $partitionCount4;
+
+        //โรงเรียนทั้งหมด
+        $dataAll = DB::table('new_student_register_m1')
+            ->where('date', 'like', '%' . $search . '%')
+            ->get();
+        $dataCountAll = $dataAll->count();
+
+        //โรงเรียนนอกเขต
+        $sum = $dataCountAll - $partitionAll;
+
+        //ดรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
+        $partitionAll1 = DB::table('new_student_register_m1')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านแจ่งกู่เรือง')
+            ->get();
+        $partitionAllCount1 = $partitionAll1->count();
+
+        $partitionAll2 = DB::table('new_student_register_m1')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านป่าตุ้ม')
+            ->get();
+        $partitionAllCount2 = $partitionAll2->count();
+
+        $partitionAll3 = DB::table('new_student_register_m1')
+            ->where('finalSchool', '=', 'โรงเรียนชุมชนสหกรนิคมวิทยา')
+            ->get();
+        $partitionAllCount3 = $partitionAll3->count();
+
+        $partitionAll4 = DB::table('new_student_register_m1')
+            ->where('finalSchool', '=', 'โรงเรียนบ้านห้วยบง')
+            ->get();
+        $partitionAllCount4 = $partitionAll4->count();
+
+        //โรงเรียนในเขตทั้งหมด
+        $partitionAlls = $partitionAllCount1 + $partitionAllCount2 + $partitionAllCount3 + $partitionAllCount4;
+
+        //โรงเรียนทั้งหมด
+        $dataAlls = DB::table('new_student_register_m1')
+            ->get();
+        $dataCountAlls = $dataAlls->count();
+
+        //โรงเรียนนอกเขต
+        $sumAll = $dataCountAlls - $partitionAlls;
+
+        return view(
+            'Newstudent.Newstudent-report.Newstudentm1-report',
+            [
+                'partitionAll' => $partitionAll,
+                'sum' => $sum,
+                'dataCountAll' => $dataCountAll,
+                'partitionAlls' => $partitionAlls,
+                'sumAll' => $sumAll,
+                'dataCountAlls' => $dataCountAlls,
+                'dateM1' => $dateM1
+            ]
+        );
     }
 }

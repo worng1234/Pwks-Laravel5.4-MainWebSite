@@ -144,7 +144,7 @@ small, .small {
   font-size: 13px; }
 
 b, .b, strong, .strong {
-  font-weight: 600; }
+  font-weight: 500; }
 
 .page-pretitle {
   letter-spacing: .08em;
@@ -214,13 +214,13 @@ label {
 
 /*   Font-weight    */
 .fw-light {
-  font-weight: 300 !important; }
+  font-weight: 200 !important; }
 
 .fw-normal {
-  font-weight: 400 !important; }
+  font-weight: 300 !important; }
 
 .fw-mediumbold {
-  font-weight: 400 !important; }
+  font-weight: 500 !important; }
 
 .fw-bold {
   font-weight: 600 !important; }
@@ -610,7 +610,7 @@ body {
     padding-bottom: 15px;
     padding-top: 10px; }
     .sidebar .nav-collapse li.active > a, .sidebar[data-background-color="white"] .nav-collapse li.active > a {
-      font-weight: 600; }
+      font-weight: 500; }
     .sidebar .nav-collapse li a:before, .sidebar .nav-collapse li a:hover:before, .sidebar[data-background-color="white"] .nav-collapse li a:before, .sidebar[data-background-color="white"] .nav-collapse li a:hover:before {
       opacity: 0 !important; }
     .sidebar .nav-collapse li a, .sidebar[data-background-color="white"] .nav-collapse li a {
@@ -951,7 +951,7 @@ body {
           background: rgba(51, 51, 51, 0.08); }
         .page-with-aside .page-aside .aside-nav .nav > li.active {
           padding: 12px 22px;
-          font-weight: 600; }
+          font-weight: 500; }
           .page-with-aside .page-aside .aside-nav .nav > li.active > a {
             color: #575962 !important; }
         .page-with-aside .page-aside .aside-nav .nav > li > a {
@@ -2577,7 +2577,7 @@ body {
 
 label {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   color: #8d9498;
   margin-bottom: 0px; }
 
@@ -5456,7 +5456,7 @@ label.error {
   .wizard-container.wizard-round {
     border-radius: 5px; }
   .wizard-container .wizard-header {
-    padding: 25px 15px;
+    padding: 5px 20px;
     background-color: transparent; }
     .wizard-container .wizard-header .wizard-title {
       margin: 0;

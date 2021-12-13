@@ -73,6 +73,7 @@ class newstudentm1Model extends Model
         'status_pic',
         'status_idnumber_pic',
         'status_house_pic',
-        'status_grade_pic'
+        'status_grade_pic',
+        'date'
     ];
 }

@@ -58,7 +58,7 @@ class parentstudentModel extends Model
         'id_parent',
         'type_card_p',
         'age_p',
-        'bloodgroup_p',
+        'relationship_parent',
         'job_p',
         'salary_p',
         'tel_p',

@@ -1,19 +1,19 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="th">
 
 <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="/eim/public/assets/img/logo3.png" type="image/x-icon" />
+    <link rel="icon" href="/eim/public/assets/img/icon2.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
-
     <script>
         WebFont.load({
             google: {
-                "families": ["Lato:300,400,700,900"]
+                "families": ["Prompt:300,400,700,900"]
             },
             custom: {
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
@@ -38,8 +38,7 @@
         <div class="main-header">
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
-
-                <a href="/" class="logo">
+                <a href="student-index.html" class="logo">
                     <img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +62,7 @@
                         <p class="card-title" style="font-size: 20px;"><b>
                                 <font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
                             </b></p>
-                        <label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</small></label>
+                        <label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่ (สำหรับนักเรียน)</small></label>
                     </div>
 
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
@@ -71,6 +70,17 @@
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                                 <i class="fas fa-school"></i>
                             </a>
+                        </li>
+
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="dropdown-toggle profile-pic" href="{{ route('student.logout') }}" aria-expanded="false" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="fas fa-unlock"></i> ออกระบบ
+                            </a>
+
+                            <form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -89,10 +99,11 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
+                            <label><b>ชื่อ-นามสกุล :</b> สวัสดี มีเมตตา</label>
+                            <label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
+                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
                             <label><b>ภาคเรียนที่ :</b> 1/2565</label>
-                            <label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-                            <label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
+
 
                             <div class="clearfix"></div>
                         </div>
@@ -103,163 +114,38 @@
                     <ul class="nav nav-primary">
 
                         <li class="nav-item active">
-                            <a href="/">
+                            <a href="student-index.html">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
                         </li>
 
-
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#forms">
-                                <i class="fas fa-user-graduate"></i>
-                                <p>จัดการข้อมูลนักเรียน</p>
+                                <i class="fas fa-file-alt"></i>
+                                <p>ระบบบันทึกข้อมูลพื้นฐาน</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a data-toggle="collapse" href="#form1">
-                                            <span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="form1">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('StudentCore') }}">
-                                                        <span class="sub-item">แสดงข้อมูลนักเรียน</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/AddstudentCore">
-                                                        <span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <!-- <li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-graduated-all.html">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-graduated-all.html">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-move-all.html">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-move-add.html">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-out-all.html">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-out-add.html">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li> -->
-                                </ul>
-                            </div>
-                        </li>
-
-                        <!-- <li class="nav-item">
-                            <a data-toggle="collapse" href="#formss">
-                                <i class="fas fa-id-card-alt"></i>
-                                <p>รับสมัครนักเรียนใหม่</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="formss">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{url('/AgreeMentNewstudentRegisterM1')}}">
-                                            <span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+                                        <a href="student-info-add-1.html">
+                                            <span class="sub-item">เพิ่มข้อมูล</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{url('/AgreeMentNewstudentRegisterM4')}}">
-                                            <span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="nav-item ">
-                            <a data-toggle="collapse" href="#agree">
-                                <i class="fas fa-id-card-alt"></i>
-                                <p>จัดการข้อมูลนักเรียนใหม่</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="agree">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                    <li>
-                                        <a href="{{ url('/SortNewstudentM1')}}">
-                                            <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+                                        <a href="#">
+                                            <span class="sub-item">แก้ไขข้อมูล</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/SortNewstudentM4')}}">
-                                            <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
+                                        <a href="#">
+                                            <span class="sub-item">ตรวจสอบข้อมูล</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="student-info-add-v2.html">
+                                            <span class="sub-item">ทดสอบ</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -272,42 +158,11 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ route('admin.login')}}">
+                            <a href="#">
                                 <i class="fas fa-comments"></i>
-                                <p>Admin</p>
+                                <p>ติดต่อเรา</p>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('affair.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายกิจการนักเรียน</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('academic.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>ฝ่ายวิชาการ</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="{{ route('student.login')}}">
-                                <i class="fas fa-comments"></i>
-                                <p>นักเรียน</p>
-                            </a>
-                        </li> -->
-                        <li class="nav-item ">
-                            <a href="{{ route('student.logout')}}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                <i class="fas fa-book-open"></i>
-                                <p>Logout</p>
-                            </a>
-                            <form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                            </form>
-                        </li>
-                        
-
 
                     </ul>
                 </div>
@@ -317,8 +172,8 @@
 
         <!-- เริ่มเนื้อหา-->
         <div class="main-panel">
-            <div class="content">
-                <div class="panel-header " style="background-color: #8B469B;">
+            <div class="container">
+                <div class="panel-header " style="background-color: #4C3F54;">
                     <div class="page-inner py-5">
                         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                             <div>
@@ -334,7 +189,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; นักเรียน</div>
+                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -369,15 +224,13 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="copyright ml-auto">
-                        Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-                    </div>
                 </div>
             </footer>
         </div>
         <!-- สิ้นสุด Footter -->
     </div>
     <!--   Core JS Files   -->
+
     <script src="/eim/public/assets/js/core/jquery.3.2.1.min.js"></script>
     <script src="/eim/public/assets/js/core/popper.min.js"></script>
     <script src="/eim/public/assets/js/core/bootstrap.min.js"></script>
@@ -509,7 +362,6 @@
             fillColor: 'rgba(255, 165, 52, .14)'
         });
     </script>
-    
 </body>
 
 </html>
