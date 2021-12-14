@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/logo3.png" type="image/x-icon" />
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -132,112 +132,112 @@
 							</a>
 						</li>
 
-						<!-- <li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#forms1">
-											<span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms1">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-info-all.html">
-														<span class="sub-item">แสดงข้อมูลนักเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-info-add.html">
-														<span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-graduated-all.html">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-graduated-add.html">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-move-all.html">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-move-add.html">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="academic-out-all.html">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="academic-out-add.html">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li> -->
+						<li class="nav-item">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-user-graduate"></i>
+                                <p>จัดการข้อมูลนักเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms1">
+                                            <span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms1">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="academic-info-all.html">
+                                                        <span class="sub-item">แสดงข้อมูลนักเรียน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="academic-info-add.html">
+                                                        <span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- <li>
+                                        <a data-toggle="collapse" href="#forms2">
+                                            <span class="sub-item">เลื่อนชั้นเรียน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="">
+                                                        <span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms3">
+                                            <span class="sub-item">จบการศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms3">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="academic-graduated-all.html">
+                                                        <span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="academic-graduated-add.html">
+                                                        <span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms4">
+                                            <span class="sub-item">ย้ายสถานศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms4">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="academic-move-all.html">
+                                                        <span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="academic-move-add.html">
+                                                        <span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms5">
+                                            <span class="sub-item">ออกกลางคัน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms5">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="academic-out-all.html">
+                                                        <span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="academic-out-add.html">
+                                                        <span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </li>
 
 						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#agree">
@@ -262,29 +262,40 @@
 							</div>
 						</li>
 
-						<!-- <li class="nav-item">
-							<a data-toggle="collapse" href="#basic">
-								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="basic">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="academic-basic-info-class-all.html">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li> -->
+						<li class="nav-item">
+                            <a data-toggle="collapse" href="#basic">
+                                <i class="fas fa-sliders-h"></i>
+                                <p>จัดการข้อมูลพื้นฐาน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="basic">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="academic-basic-info-class-all.html">
+                                            <span class="sub-item">กำหนดชั้นเรียน</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="academic-basic-info-year-all.html">
+                                            <span class="sub-item">กำหนดปีการศึกษา</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-
+                        <li class="nav-item ">
+                            <a href="#">
+                                <i class="fas fa-book-open"></i>
+                                <p>คู่มือการใช้งาน</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#">
+                                <i class="fas fa-comments"></i>
+                                <p>ติดต่อเรา</p>
+                            </a>
+                        </li>
 
 					</ul>
 				</div>
@@ -294,7 +305,7 @@
 
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
-			<div class="content">
+			<div class="container">
 				<div class="panel-header " style="background-color: #33658A;">
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
@@ -318,14 +329,16 @@
 								<div class="card-body" style="min-height: 400px">
 									<div class="form-group">
 										<form role="form" method="post" action="{{ url('/searchM1')}}">
-											{{csrf_field()}}
+										{{csrf_field()}}
 											<div class="row">
-												<div class="col-6 col-md-4">
-													<label>ชื่อ-นามสกุล, โรงเรียน, สถานะการสมัคร(ยืนยันการสมัคร, รอตรวจสอบ)</label>
-													<input type="search" class="form-control" name="search" placeholder="">
+												<div class="col-12 col-md-6">
+													<div class="form-group form-group-default">
+														<label>ชื่อ-นามสกุล, โรงเรียน, สถานะการสมัคร (ยืนยันการสมัคร, รอตรวจสอบ)</label>
+														<input type="search" class="form-control" name="search" placeholder="">
+													</div> 
 												</div>
-												<button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-search"></i> แสดง</button>
-												<a href="{{url('/export/newstudentm1')}}" class="btn btn-success" style="margin-left:auto;">Report</a>
+												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
+												<a href="{{url('/export/newstudentm1')}}" class="btn btn-success form-group form-group-default col-sm-6 col-md-1" role="button" style="margin-left:auto;">Report</a>
 											</div>
 										</form>
 									</div>
@@ -335,25 +348,24 @@
 										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 											<thead>
 												<tr>
-													<th scope="col" width="35%">
+													<th scope="col" width="30%">
 														<center>ชื่อ-นามสกุล</center>
 													</th>
-													<th scope="col" width="20%">
+													<th scope="col" width="21%">
 														<center>โรงเรียน</center>
 													</th>
 													<th scope="col" width="13%">
 														<center>สถานะการสมัคร</center>
 													</th>
-													<th scope="col" width="13%">
+													<th scope="col" width="12%">
 														<center>ข้อมูลส่วนตัว</center>
 													</th>
-													<th scope="col" width="20">
+													<th scope="col" width="12%">
 														<center>รูปภาพ</center>
 													</th>
 													<th scope="col" width="12%">
 														<center>จัดการ</center>
 													</th>
-
 												</tr>
 											</thead>
 
@@ -461,11 +473,12 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({
-				"pageLength": 50,
+				"pageLength": 25,
 				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
-				"ordering": false
+				"ordering": false,
+				"searching": false
 			});
 		});
 	</script>

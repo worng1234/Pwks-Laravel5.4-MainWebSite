@@ -151,7 +151,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a data-toggle="collapse" href="#forms2">
                                             <span class="sub-item">เลื่อนชั้นเรียน</span>
                                             <span class="caret"></span>
@@ -225,7 +225,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>
