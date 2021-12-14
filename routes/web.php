@@ -4,10 +4,10 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
- use App\Http\Controllers\newstudentm1Controller;
- use App\Http\Controllers\newstudentm4Controller;
- use App\Http\Controllers\studentcoreController;
- use App\Http\Controllers\TestUPController;
+use App\Http\Controllers\newstudentm1Controller;
+use App\Http\Controllers\newstudentm4Controller;
+use App\Http\Controllers\studentcoreController;
+use App\Http\Controllers\TestUPController;
 
 // use App\Http\Controllers\TestUPController;
 
@@ -22,9 +22,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index-eim');
-});
+Route::get('/', 'indexController@index');
 Route::get('/check/status', function () {
     return view('Newstudent.success-statuscheck.form-check-index');
 });
@@ -33,18 +31,18 @@ Route::get('/check/status', function () {
 //Route::view('/AddstudentCore','Studentcore.addstudentcore');
 
 //NewstudentRegister
- Route::get('/AgreeMentNewstudentRegisterM1', function () {
+Route::get('/AgreeMentNewstudentRegisterM1', function () {
     return view('Newstudent.agreement-newstudentm1');
-} );
- Route::get('/AgreeMentNewstudentRegisterM4', function () {
+});
+Route::get('/AgreeMentNewstudentRegisterM4', function () {
     return view('Newstudent.agreement-newstudentm4');
-} );
+});
 //studentm1
 Route::resource('/SortNewstudentM1', 'newstudentm1Controller');
 
 Route::get('/NewstudentM1', function () {
     return view('Newstudent.newstudentm1');
-} );
+});
 
 Route::get('/SortNewstudentM1/{id}', 'newstudentm1Controller@show');
 Route::get('/FixNewstudentM1/{id}', 'newstudentm1Controller@edit');
@@ -56,22 +54,22 @@ Route::post('/insertnewstudentm1', 'newstudentm1Controller@store');
 Route::post('/searchM1', 'newstudentm1Controller@search');
 Route::get('/success/rigisM1', function () {
     return view('Newstudent.success-statuscheck.success-regisM1');
-} );
+});
 
 //ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM1', function () {
     return view('Newstudent.success-statuscheck.check-statusM1');
-} );
+});
 Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 
 Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
-} );
+});
 //---------------------------------------------------------------------
 
 Route::get('/success/checkM1', function () {
     return view('Newstudent.success-statuscheck.success-checkM1');
-} );
+});
 
 Route::get('/EditNewstudentM1/{id}', 'newstudentm1Controller@editnewstudentm1');
 Route::post('/updateNewstudentM1/{id}', 'newstudentm1Controller@updatestudent');
@@ -86,7 +84,7 @@ Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 
 Route::get('/NewstudentM4', function () {
     return view('Newstudent.newstudentm4');
-} );
+});
 
 Route::get('/SortNewstudentM4/{id}', 'newstudentm4Controller@show');
 Route::get('/FixNewstudentM4/{id}', 'newstudentm4Controller@edit');
@@ -98,23 +96,23 @@ Route::post('/insertnewstudentm4', 'newstudentm4Controller@store');
 Route::post('/searchM4', 'newstudentm4Controller@search');
 Route::get('/success/rigisM4', function () {
     return view('Newstudent.success-statuscheck.success-regisM4');
-} );
+});
 
 //ตรวจสอบสถานะการสมัครเข้าเรียน
 Route::get('/check/statusM4', function () {
     return view('Newstudent.success-statuscheck.check-statusM4');
-} );
+});
 
 Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 
 Route::get('/check/statusM4onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
-} );
+});
 //---------------------------------------------------------------------
 
 Route::get('/success/checkM4', function () {
     return view('Newstudent.success-statuscheck.success-checkM4');
-} );
+});
 
 Route::get('/EditNewstudentM4/{id}', 'newstudentm4Controller@editnewstudentm4');
 Route::post('/updateNewstudentM4/{id}', 'newstudentm4Controller@updatestudent');
@@ -192,7 +190,3 @@ Route::get('/export/newstudentm4', 'newstudentm4Controller@reportExel');
 
 Route::post('/search/reportM1', 'newstudentm1Controller@reportExel');
 Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
-
-
-
-

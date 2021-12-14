@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Prompt:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			google: {
+				"families": ["Prompt:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['../assets/css/fonts.min.css']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -26,9 +32,10 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper horizontal-layout-2">
-		
+
 		<div class="main-header" style="background-color: #8B469B;">
 			<div class="nav-top">
 				<div class="container d-flex flex-row">
@@ -40,7 +47,7 @@
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
 					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand" >
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -49,8 +56,12 @@
 
 						<div class="container-fluid p-0">
 							<div class="collapse" id="search-nav">
-								<p class="card-title" style="font-size: 17px;"><b><font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
-								<label><small><font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font></small></label>
+								<p class="card-title" style="font-size: 17px;"><b>
+										<font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+									</b></p>
+								<label><small>
+										<font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font>
+									</small></label>
 							</div>
 							<!-- <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 								<li class="nav-item toggle-nav-search hidden-caret">
@@ -66,12 +77,12 @@
 			</div>
 			<div class="nav-bottom">
 				<div class="container">
-					<h3 class="title-menu d-flex d-lg-none"> 
-						เมนู 
+					<h3 class="title-menu d-flex d-lg-none">
+						เมนู
 						<div class="close-menu"> <i class="flaticon-cross"></i></div>
 					</h3>
 					<ul class="nav page-navigation page-navigation-info bg-white">
-						
+
 						<li class="nav-item submenu active">
 							<a class="nav-link" href="{{ url('/')}}">
 								<i class="link-icon icon-home"></i>
@@ -131,7 +142,7 @@
 								<span class="menu-title">ติดต่อเรา</span>
 							</a>
 						</li>
-						
+
 					</ul>
 				</div>
 			</div>
@@ -140,7 +151,7 @@
 		<div class="main-panel">
 			<div class="container">
 				<div class="page-inner">
-					
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
@@ -150,196 +161,218 @@
 									</div>
 								</div>
 								<div class="card-body">
-									<p><u><strong>ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</strong></u></p>
-									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-									</ol>
+									<p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
+									<div id="chart-container">
+										<canvas id="lineChart"></canvas>
+									</div>
 								</div>
 							</div>
-						</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<footer class="footer">
-			<div class="container">
-				<nav class="pull-left">
-					<ul class="nav">
-						<li class="nav-item">
-							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="copyright ml-auto">
-					พัฒนาโดย PWK40 & CSMJU23 
-				</div>				
-			</div>
-		</footer>
 	</div>
-		<!--   Core JS Files   -->
-		<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-		<script src="../assets/js/core/popper.min.js"></script>
-		<script src="../assets/js/core/bootstrap.min.js"></script>
-	
-		<!-- jQuery UI -->
-		<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-		<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-	
-		<!-- jQuery Scrollbar -->
-		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-	
-		<!-- Moment JS -->
-		<script src="../assets/js/plugin/moment/moment.min.js"></script>
-	
-		<!-- Chart JS -->
-		<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-	
-		<!-- jQuery Sparkline -->
-		<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-	
-		<!-- Chart Circle -->
-		<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-	
-		<!-- Datatables -->
-		<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-	
-		<!-- Bootstrap Toggle -->
-		<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-	
-		<!-- jQuery Vector Maps -->
-		<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-		<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-	
-		<!-- Google Maps Plugin -->
-		<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
-	
-		<!-- Dropzone -->
-		<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
-	
-		<!-- Fullcalendar -->
-		<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
-	
-		<!-- DateTimePicker -->
-		<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
-	
-		<!-- Bootstrap Tagsinput -->
-		<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-	
-		<!-- Bootstrap Wizard -->
-		<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
-	
-		<!-- jQuery Validation -->
-		<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
-	
-		<!-- Summernote -->
-		<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
-	
-		<!-- Select2 -->
-		<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
-	
-		<!-- Sweet Alert -->
-		<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-	
-		<!-- Atlantis JS -->
-		<script src="../assets/js/atlantis2.min.js"></script>
-	
-		<!-- Atlantis DEMO methods, don't include it in your project! -->
-		<script src="../assets/js/demo.js"></script>
+	<footer class="footer">
+		<div class="container">
+			<nav class="pull-left">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="copyright ml-auto">
+				พัฒนาโดย PWK40 & CSMJU23
+			</div>
+		</div>
+	</footer>
+	</div>
+	<!--   Core JS Files   -->
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+	<!-- Moment JS -->
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Toggle -->
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Google Maps Plugin -->
+	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+	<!-- Dropzone -->
+	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+
+	<!-- Fullcalendar -->
+	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- DateTimePicker -->
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Bootstrap Tagsinput -->
+	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+	<!-- jQuery Validation -->
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+	<!-- Summernote -->
+	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 -->
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="../assets/js/atlantis2.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="../assets/js/demo.js"></script>
 	<script>
 		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
 			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
 			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
 		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
 			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
 		})
 
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+		var lineChart = document.getElementById('lineChart').getContext('2d');
+		var num = {!! json_encode($m1_regis_dayall1) !!};
+		var num2 = {!! json_encode($m1_regis_dayall2) !!};
 
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
+		var num4 = {!! json_encode($m4_regis_dayall1) !!};
+		var num5 = {!! json_encode($m4_regis_dayall2) !!};
+
+		var myLineChart = new Chart(lineChart, {
+			type: 'line',
 			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
+				labels: ["2021-11-28", "2021-11-29", ],
+				datasets: [{
+					label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 1",
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: [num, num2,]
+				},{
+					label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 4",
+					borderColor: "#59d05d",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#59d05d",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: [num4, num5,]
+				}]
 			},
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
 				legend: {
-					display: false,
+					position: 'bottom',
+					labels: {
+						padding: 10,
+						fontColor: '#1d7af3',
+					}
 				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}],
-					xAxes : [ {
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}]
+				tooltips: {
+					bodySpacing: 4,
+					mode: "nearest",
+					intersect: 0,
+					position: "nearest",
+					xPadding: 10,
+					yPadding: 10,
+					caretPadding: 10
 				},
+				layout: {
+					padding: {
+						left: 15,
+						right: 15,
+						top: 15,
+						bottom: 15
+					}
+				}
 			}
 		});
 
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -348,6 +381,9 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
+
 	
+
 </body>
+
 </html>
