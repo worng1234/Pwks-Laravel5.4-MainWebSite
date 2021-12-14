@@ -1,0 +1,78 @@
+<div class="page-inner mt--5">
+    <div class="row mt--2">
+        <div class="col-md-12">
+            <div class="card full-height">
+                <div class="card-header">
+                    <div class="card-head-row">
+                        <div class="card-title"></div>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">ตรวจสอบสถานะการสมัครเข้าเรียนระดับชั้นมัธยมศึกษาปีที่ 1</h5>
+                        <div>
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <th>ชื่อนาม-สกุล</th>
+                                    <th>เลขบัตรประจำตัวประชาชน</th>
+                                    <th>สถานะการสมัคร</th>
+                                    <th>สถานะเอกสารที่เกี่ยวข้อง</th>
+                                    <th>ข้อมูล</th>
+                                </thead>
+                                <tbody>
+                                    @foreach ($datas as $data)
+                                    <tr>
+                                        <td>{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                        <td>{{$data->idNumber}}</td>
+                                        <td>{{$data->status_rigis}}</td>
+                                        <td>{{$data->status_pic}}</td>
+                                        <td><a href='{{ url("/ShowNewstudentM1/{$data->id}" )}}' class="btn btn-primary"><i class="fas fa-edit btn-xs"></i></a></td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<style>
+    /* Ensure that the demo table scrolls */
+    th,
+    td {
+        white-space: nowrap;
+    }
+
+    div.dataTables_wrapper {
+        margin: 0 auto;
+    }
+
+    div.container {
+        width: 80%;
+    }
+
+    .bgimgheader {
+
+        background-repeat: repeat;
+        background-position: center;
+        position: relative;
+    }
+</style>
+
+<!-- Date time picker -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#basic-datatables').DataTable({
+            "pageLength": 50,
+            "language": {
+                "search": "ค้นหาข้อมูล :"
+            },
+            "ordering": false
+        });
+    });
+</script>
