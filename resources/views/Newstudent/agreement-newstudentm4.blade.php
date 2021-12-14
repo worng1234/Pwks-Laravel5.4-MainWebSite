@@ -46,7 +46,7 @@
 					</button>
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
-					<a href="index.html" class="logo d-flex align-items-center">
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
 						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->

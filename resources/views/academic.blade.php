@@ -39,7 +39,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="academic-index.html" class="logo">
+                <a href="{{ url('/academic')}}" class="logo">
                     <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -239,12 +239,12 @@
                             <div class="collapse" id="agree">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="academic-new-info-tables-agree-m1.html">
+                                        <a href="{{ url('/SortNewstudentM1')}}">
                                             <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="academic-new-info-tables-agree-m4.html">
+                                        <a href="{{ url('/SortNewstudentM4')}}">
                                             <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
                                         </a>
                                     </li>

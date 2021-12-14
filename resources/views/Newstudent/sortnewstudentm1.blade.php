@@ -325,6 +325,7 @@
 													<input type="search" class="form-control" name="search" placeholder="">
 												</div>
 												<button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-search"></i> แสดง</button>
+												<a href="{{url('/export/newstudentm1')}}" class="btn btn-success" style="margin-left:auto;">Report</a>
 											</div>
 										</form>
 									</div>
