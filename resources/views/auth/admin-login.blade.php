@@ -66,7 +66,8 @@
                                     Forgot Your Password?
                                 </a>
         <div class="form-action mb-3">
-          <button type="submit"class="btn btn-secondary btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold">เข้าสู่ระบบ</button>
+          <button type="submit"class="btn btn-secondary btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold" style="margin-right:auto;">เข้าสู่ระบบ</button>
+          <a href="{{ url('/')}}" class="btn btn-danger btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold" style="margin-left:auto;"><strong>ย้อนกลับ</strong></a>
         </div>
       </div>
     </div>

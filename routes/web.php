@@ -23,6 +23,7 @@ use App\Http\Controllers\TestUPController;
 */
 
 Route::get('/', 'indexController@index');
+
 Route::get('/check/status', function () {
     return view('Newstudent.success-statuscheck.form-check-index');
 });

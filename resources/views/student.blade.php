@@ -194,18 +194,10 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p><u><strong>ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</strong></u></p>
-                                    <ol>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                    </ol>
+                                    <p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
+                                    <div id="chart-container">
+                                        <canvas id="lineChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,43 +223,74 @@
         <!-- สิ้นสุด Footter -->
     </div>
     <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
 
-    <!-- jQuery UI -->
-    <script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
+	<!-- Moment JS -->
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
 
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+	<!-- Chart JS -->
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
 
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<!-- jQuery Sparkline -->
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+	<!-- Chart Circle -->
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
 
-    <!-- Datatables -->
-    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+	<!-- Datatables -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
 
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<!-- Bootstrap Toggle -->
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
-    <!-- Sweet Alert -->
-    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<!-- jQuery Vector Maps -->
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
-    <!-- Atlantis JS -->
-    <script src="../assets/js/atlantis.min.js"></script>
+	<!-- Google Maps Plugin -->
+	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
 
-    <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="../assets/js/setting-demo.js"></script>
-    <script src="../assets/js/demo.js"></script>
+	<!-- Dropzone -->
+	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+
+	<!-- Fullcalendar -->
+	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- DateTimePicker -->
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Bootstrap Tagsinput -->
+	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+	<!-- jQuery Validation -->
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+	<!-- Summernote -->
+	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 -->
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="../assets/js/atlantis2.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="../assets/js/demo.js"></script>
     <script>
         Circles.create({
             id: 'circles-1',
@@ -314,42 +337,80 @@
             styleText: true
         })
 
-        var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+        var lineChart = document.getElementById('lineChart').getContext('2d');
+        var num = {
+            !!json_encode($m1_regis_dayall1) !!
+        };
+        var num2 = {
+            !!json_encode($m1_regis_dayall2) !!
+        };
 
-        var mytotalIncomeChart = new Chart(totalIncomeChart, {
-            type: 'bar',
+        var num4 = {
+            !!json_encode($m4_regis_dayall1) !!
+        };
+        var num5 = {
+            !!json_encode($m4_regis_dayall2) !!
+        };
+
+        var myLineChart = new Chart(lineChart, {
+            type: 'line',
             data: {
-                labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+                labels: ["2021-11-28", "2021-11-29", ],
                 datasets: [{
-                    label: "Total Income",
-                    backgroundColor: '#ff9e27',
-                    borderColor: 'rgb(23, 125, 255)',
-                    data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-                }],
+                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 1",
+                    borderColor: "#1d7af3",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#1d7af3",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [num, num2, ]
+                }, {
+                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 4",
+                    borderColor: "#59d05d",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#59d05d",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [num4, num5, ]
+                }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 legend: {
-                    display: false,
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#1d7af3',
+                    }
                 },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            display: false //this will remove only the label
-                        },
-                        gridLines: {
-                            drawBorder: false,
-                            display: false
-                        }
-                    }],
-                    xAxes: [{
-                        gridLines: {
-                            drawBorder: false,
-                            display: false
-                        }
-                    }]
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
                 },
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15,
+                        top: 15,
+                        bottom: 15
+                    }
+                }
             }
         });
 
