@@ -39,7 +39,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="academic-index.html" class="logo">
+                <a href="{{ url('/affair')}}" class="logo">
                     <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,13 +128,8 @@
                             <div class="collapse" id="agree">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="stu-ad-conduct-score-all.html">
-                                            <span class="sub-item">บันทึกข้อมูลความประพฤติ</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="stu-ad-conduct-score-check.html">
-                                            <span class="sub-item">ตรวจสอบความประพฤตินักเรียน</span>
+                                        <a href="{{ url('/behavior/index')}}">
+                                            <span class="sub-item">ข้อมูลความประพฤติ</span>
                                         </a>
                                     </li>
                                 </ul>

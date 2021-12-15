@@ -9,12 +9,14 @@ class behaviorstudentModel extends Model
 {
     protected $table = "behavior_student";
     protected $fillable = [
-        'B_student_id',
-        'score',
+        'student_id_behavior',
+        'fullname',
         'behavior_history',
-        'pos_score',
-        'neg_score',
-        'title',
+        'behavior_class',
+        'behavior_room',
+        'minus_score',
+        'plus_score',
+        'etc',
         'behavior_date'
     ];
 }

@@ -373,7 +373,7 @@
 												@foreach ($data as $key => $value)
 												<tr>
 													<td align="center">{{$value->id}}</td>
-													<td align="center">{{$value->studentID}}</td>
+													<td align="center">{{$value->student_id}}</td>
 													<td align="center">{{$value->student_number}}</td>
 													<td>{{$value->prename}} {{$value->fname}} {{$value->surname}}</td>
 													<td align="center">{{$value->gender}}</td>

@@ -133,8 +133,13 @@
 							<div class="collapse show" id="agree">
 								<ul class="nav nav-collapse">
 									<li class="active">
-										<a href="stu-ad-conduct-score-all.html">
+										<a href="{{ url('/behavior/index')}}">
 											<span class="sub-item">ข้อมูลความประพฤติ</span>
+										</a>
+									</li>
+									<li >
+										<a href="{{ url('/behavior/all')}}">
+											<span class="sub-item">ตรวจสอบความประพฤตินักเรียน</span>
 										</a>
 									</li>
 									
@@ -228,19 +233,16 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+													@foreach ($data_student as $key => $value)
                                                     <tr>
-                                                        <td align="center">12811</td>
-                                                        <td>นายณัฐวุฒิ กิติวงค์</td>
-                                                        <td align="center">100</td>
-                                                        <td align="center"><a href="#" class="btn btn-danger btn-xs" type="button"><i class="fas fa-user-minus"></i></a></td>
-                                                        <td align="center"><a href="#" class="btn btn-success btn-xs" type="button"><i class="fas fa-user-plus"></i></a></td>
-                                                        <td align="center">
-                                                            <form role="form" method="post" action="?r=admin_student_edit">
-																<a href="#" class="btn btn-primary btn-xs" type="button"><i class="fas fa-book"></i></a>
-                                                            </form>
-                                                        </td>
+                                                        <td align="center">{{$value->student_id}}</td>
+                                                        <td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
+                                                        <td align="center">{{$value->score}}</td>
+                                                        <td align="center"><a href='{{ url("/behaviorMinus/{$value->id}")}}' class="btn btn-danger btn-xs" type="button"><i class="fas fa-user-minus"></i></a></td>
+                                                        <td align="center"><a href='{{ url("/behaviorPlus/{$value->id}")}}' class="btn btn-success btn-xs" type="button"><i class="fas fa-user-plus"></i></a></td>
+                                                        <td align="center"><a href='{{ url("/behaviorView/{$value->id}")}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-book"></i></a></td>
                                                     </tr>
-                                                    </tr>  
+													@endforeach
                                                 </tbody>
                                             </table>
                                         <!-- //ตารางแสดงข้อมูล-->

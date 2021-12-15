@@ -78,7 +78,7 @@ class studentcoreController extends Controller
     public function addstudentcore(Request $request){
 
         $addressstudent = new addressstudentModel([
-            "student_idcard_a" => $request->get('student_idcard_a'),
+            "student_idcard_a" => $request->get('student_id_card'),
             "house_number" => $request->get('house_number'),
             "group" => $request->get('group'),
             "village" => $request->get('village'),
@@ -101,7 +101,7 @@ class studentcoreController extends Controller
         ]);
         
         $healtystudent = new healtystudentModel([
-            "student_idcard_h" => $request->get('student_idcard_h'),
+            "student_idcard_h" => $request->get('student_id_card'),
             "weight" => $request->get('weight'),
             "height" => $request->get('height'),
             "disease" => $request->get('disease'),
@@ -116,7 +116,7 @@ class studentcoreController extends Controller
         ]);
 
         $parentstudent = new parentstudentModel([
-            "student_idcard_p" => $request->get('student_idcard_p'),
+            "student_idcard_p" => $request->get('student_id_card'),
             "prename_f" => $request->get('prename_f'),
             "name_f" => $request->get('name_f'),
             "name_cen_f" => $request->get('name_cen_f'),
@@ -201,7 +201,7 @@ class studentcoreController extends Controller
 
         $studentcore = new studentcoreModels([
             "student_id_card" => $request->get('student_id_card'),
-            "studentID" => $request->get('studentID'),
+            "student_id" => $request->get('student_id'),
             "student_major" => $request->get('student_major'),
             "student_class" => $request->get('student_class'),
             "student_room" => $request->get('student_room'),
@@ -226,10 +226,11 @@ class studentcoreController extends Controller
             "name_cen" => $request->get('name_cen'),
             "surname" => $request->get('surname'),
             "nickname" => $request->get('nickname'),
+            "score" => $request->get('score'),
         ]);
 
         $studentdetail = new studentdetailModel([
-            "student_idcard_d" => $request->get('student_idcard_d'),
+            "student_idcard_d" => $request->get('student_id_card'),
             "go_school" => $request->get('go_school'),
             "go_school_time" => $request->get('go_school_time'),
             "distance" => $request->get('distance'),
@@ -254,7 +255,7 @@ class studentcoreController extends Controller
         ]);
 
         $talentstudent = new talentstudentModel([
-            "student_idcard_t" => $request->get('student_idcard_t'),
+            "student_idcard_t" => $request->get('student_id_card'),
             "final_school" => $request->get('final_school'),
             "final_class" => $request->get('final_class'),
             "avg_grade" => $request->get('avg_grade'),

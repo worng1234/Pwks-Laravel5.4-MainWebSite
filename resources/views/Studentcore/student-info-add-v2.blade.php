@@ -219,13 +219,13 @@
 										<div class="tab-content">
 											<div class="tab-pane active" id="info">
 												<div class="row">
-													<div class="col-6 col-md-5">
+													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>เลขประจำตัวนักเรียน</label>
-															<input id="Name" type="text" class="form-control" required name="studentID">
+															<input id="Name" type="text" class="form-control" required name="student_id">
 														</div>
 													</div>
-													<div class="col-6 col-md-3">
+													<div class="col-6 col-md-5">
 														<div class="form-group form-group-default">
 															<label>แผนการเรียน (กรอกเฉพาะนักเรียนระดับชั้น ม.4 - ม.6)</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="student_major" required>
@@ -243,7 +243,7 @@
 															</select>
 														</div>
 													</div>
-													<div class="col-6 col-md-2">
+													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ระดับชั้น</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="student_class" required>
@@ -272,6 +272,12 @@
 																<option value="8">8</option>
 																<option value="9">9</option>
 															</select>
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-2">
+														<div class="form-group form-group-default">
+															<label>เลขที่</label>
+															<input id="Name" type="text" class="form-control" name="student_number" required>
 														</div>
 													</div>
 												</div>
@@ -511,6 +517,7 @@
 													</div>
 												</div>
 											</div>
+											<input name="score" value="100" hidden>
 
 											<!-- Step 2 ที่อยู่ -->
 											<div class="tab-pane" id="address">

@@ -303,7 +303,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวนักเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="studentID" value="{{$studentcore->studentID}}" readonly>
+                                                        <input type="text" class="form-control" placeholder="" name="student_id" value="{{$studentcore->student_id}}" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">

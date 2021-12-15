@@ -305,7 +305,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวนักเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="studentID" value="{{$studentcore->studentID}}">
+                                                        <input type="text" class="form-control" placeholder="" name="student_id" value="{{$studentcore->student_id}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">

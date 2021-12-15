@@ -163,7 +163,10 @@
 								<div class="card-body">
 									<p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
 									<div id="chart-container">
-										<canvas id="lineChart"></canvas>
+									<canvas id="barChart"></canvas>
+									</div>
+									<div id="chart-container">
+									<canvas id="barChart2"></canvas>
 									</div>
 								</div>
 							</div>
@@ -303,74 +306,63 @@
 			styleText: true
 		})
 
-		var lineChart = document.getElementById('lineChart').getContext('2d');
+		var barChart = document.getElementById('barChart').getContext('2d');
+		var barChart2 = document.getElementById('barChart2').getContext('2d');
 		var num = {!! json_encode($m1_regis_dayall1) !!};
 		var num2 = {!! json_encode($m1_regis_dayall2) !!};
 
 		var num4 = {!! json_encode($m4_regis_dayall1) !!};
 		var num5 = {!! json_encode($m4_regis_dayall2) !!};
-
-		var myLineChart = new Chart(lineChart, {
-			type: 'line',
+		var dateallsm1 = {!! json_encode($dateallsm1) !!};
+		var dateallsm4 = {!! json_encode($dateallsm4) !!};
+		
+		var myBarChart = new Chart(barChart, {
+			type: 'bar',
 			data: {
-				labels: ["2021-11-28", "2021-11-29", ],
-				datasets: [{
-					label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 1",
-					borderColor: "#1d7af3",
-					pointBorderColor: "#FFF",
-					pointBackgroundColor: "#1d7af3",
-					pointBorderWidth: 2,
-					pointHoverRadius: 4,
-					pointHoverBorderWidth: 1,
-					pointRadius: 4,
-					backgroundColor: 'transparent',
-					fill: true,
-					borderWidth: 2,
-					data: [num, num2,]
-				},{
-					label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 4",
-					borderColor: "#59d05d",
-					pointBorderColor: "#FFF",
-					pointBackgroundColor: "#59d05d",
-					pointBorderWidth: 2,
-					pointHoverRadius: 4,
-					pointHoverBorderWidth: 1,
-					pointRadius: 4,
-					backgroundColor: 'transparent',
-					fill: true,
-					borderWidth: 2,
-					data: [num4, num5,]
+				
+			labels: [dateallsm4, dateallsm1],
+			datasets : [{
+				label: "จำนวนนักเรียนที่มาสมัครระดับชั้นมัธยมศึกษาปีที่ 1",
+				backgroundColor: 'rgb(0, 0, 255)',
+				borderColor: 'rgb(0, 0, 255)',
+				data: [num, num2],
+			}],
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
+					}
 				}]
 			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					position: 'bottom',
-					labels: {
-						padding: 10,
-						fontColor: '#1d7af3',
+		}
+	});
+		var myBarChart2 = new Chart(barChart2, {
+			type: 'bar',
+			data: {
+			labels: [dateallsm4, dateallsm1],
+			datasets : [{
+				label: "จำนวนนักเรียนที่มาสมัครระดับชั้นมัธยมศึกษาปีที่ 4",
+				backgroundColor: 'rgb(255, 0, 0)',
+				borderColor: 'rgb(255, 0, 0)',
+				data: [num4, num5],
+			}],
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
 					}
-				},
-				tooltips: {
-					bodySpacing: 4,
-					mode: "nearest",
-					intersect: 0,
-					position: "nearest",
-					xPadding: 10,
-					yPadding: 10,
-					caretPadding: 10
-				},
-				layout: {
-					padding: {
-						left: 15,
-						right: 15,
-						top: 15,
-						bottom: 15
-					}
-				}
-			}
-		});
+				}]
+			},
+		}
+	});
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
 			type: 'line',

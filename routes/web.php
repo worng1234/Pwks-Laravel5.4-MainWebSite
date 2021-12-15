@@ -191,3 +191,12 @@ Route::get('/export/newstudentm4', 'newstudentm4Controller@reportExel');
 
 Route::post('/search/reportM1', 'newstudentm1Controller@reportExel');
 Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
+
+//behavior
+Route::get('/behavior/index', 'behaviorstudentController@index');
+Route::get('/behavior/all', 'behaviorstudentController@behaviorIndex');
+Route::get('/behaviorMinus/{id}', 'behaviorstudentController@addMinus');
+Route::get('/behaviorPlus/{id}', 'behaviorstudentController@addPlus');
+Route::get('/behaviorView/{id}', 'behaviorstudentController@viewBehaviorID');
+Route::post('/minusinsert/{id}', 'behaviorstudentController@minusInsert');
+Route::post('/plusinsert/{id}', 'behaviorstudentController@plusInsert');
