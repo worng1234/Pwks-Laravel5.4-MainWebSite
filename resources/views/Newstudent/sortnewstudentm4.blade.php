@@ -318,6 +318,14 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียนใหม่ <i class="flaticon-right-arrow"></i> ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</div>
+											<div class="card-tools">
+												<a href="{{url('/export/newstudentm4')}}" class="btn btn-info btn-border btn-round btn-sm">
+													<span class="btn-label">
+														<i class="fas fa-file-alt"></i>
+													</span>
+													Report
+												</a>
+											</div>
 									</div>
 								</div>
 
@@ -333,7 +341,6 @@
 													</div> 
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
-												<a href="{{url('/export/newstudentm4')}}" class="btn btn-success form-group form-group-default col-sm-6 col-md-1" role="button" style="margin-left:auto;">Report</a>
 											</div>
 										</form>
 									</div>
