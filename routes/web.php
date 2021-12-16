@@ -138,7 +138,7 @@ Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 Route::post('/searchStudent', 'studentcoreController@search');
 
 //test controller
-Route::resource('/testall', 'TestUPController');
+Route::get('/testall', 'TestUPController@index')->name('indexTest');
 Route::get('/Fixtest/{id}', 'TestUPController@edit');
 Route::get('/Fixfile/{id}', 'TestUPController@editfile');
 Route::get('/showtest/{id}', 'TestUPController@show');
@@ -149,6 +149,9 @@ Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
 Route::get('/test/report', 'newstudentm1Controller@reportExel');
+Route::get('/testlink', function(){
+    return view('testall.form-m1');
+});
 
 
 Auth::routes();

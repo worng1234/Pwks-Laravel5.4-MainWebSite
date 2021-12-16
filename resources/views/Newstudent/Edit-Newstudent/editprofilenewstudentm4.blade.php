@@ -683,7 +683,7 @@
 										</div>
 
 										<div class="card-footer" align="center">
-											<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
+											<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
 											<a href='{{ url("/ShowNewstudentM4/{$newstudentm4Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 										</div><br>
 									</div>
@@ -882,7 +882,7 @@
 				$('#alert_demo_7').click(function(e) {
 					swal({
 						title: 'ยืนยันข้อมูล ?',
-						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+						text: "ยืนยันการแก้ไขข้อมูล",
 						type: 'warning',
 						buttons: {
 							confirm: {
@@ -899,14 +899,16 @@
 						if (Delete) {
 							swal({
 								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'สามารถติดตามสถานะการสมัครเข้าเรียน ได้ภายใน 1-3 วัน',
+								text: 'สามารถตรวจสอบการแก้ไขข้อมูลได้ที่น้าตรวจสอบข้อมูล',
 								type: 'success',
 								buttons: {
 									confirm: {
 										className: 'btn btn-success'
 									}
 								}
-							});
+							}).then(function() {
+							window.location = '/check/statusM4';
+						});
 						} else {
 							swal.close();
 						}

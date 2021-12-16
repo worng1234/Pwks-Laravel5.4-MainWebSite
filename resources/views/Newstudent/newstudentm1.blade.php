@@ -946,7 +946,9 @@
 										className: 'btn btn-success'
 									}
 								}
-							});
+							}).then(function() {
+							window.location = '/';
+						});
 						} else {
 							swal.close();
 						}

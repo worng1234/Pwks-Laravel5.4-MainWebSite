@@ -913,7 +913,7 @@
 								}
 							}
 						}).then(function() {
-							window.location = 'index.html';
+							window.location = '/';
 						});
 					} else {
 						swal.close();
