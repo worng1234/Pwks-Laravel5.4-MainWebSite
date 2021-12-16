@@ -73,9 +73,14 @@
 							</a>
 						</li>
 						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" href="index.html" aria-expanded="false">
-								<i class="fas fa-unlock"></i> ออกระบบ
-							</a>
+						<a class="dropdown-toggle profile-pic" href="{{ route('affair.logout') }}" aria-expanded="false" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="fas fa-unlock"></i> ออกระบบ
+                            </a>
+
+                            <form id="logout-form" action="{{ route('affair.logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
 						</li>
 					</ul>
 				</div>

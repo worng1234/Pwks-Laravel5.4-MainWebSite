@@ -132,6 +132,11 @@
                                             <span class="sub-item">ข้อมูลความประพฤติ</span>
                                         </a>
                                     </li>
+                                    <li>
+										<a href="{{ url('/behavior/all')}}">
+											<span class="sub-item">ตรวจสอบความประพฤตินักเรียน</span>
+										</a>
+									</li>
                                 </ul>
                             </div>
                         </li>

@@ -96,9 +96,14 @@
 							</a>
 						</li>
 						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" href="index.html" aria-expanded="false">
+							<a class="dropdown-toggle profile-pic" href="{{ route('affair.logout') }}" aria-expanded="false" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 								<i class="fas fa-unlock"></i> ออกระบบ
 							</a>
+
+							<form id="logout-form" action="{{ route('affair.logout') }}" method="POST" style="display: none;">
+								{{ csrf_field() }}
+							</form>
 						</li>
 					</ul>
 				</div>
@@ -167,14 +172,9 @@
 							</a>
 							<div class="collapse" id="year">
 								<ul class="nav nav-collapse">
-									<li >
-										<a href="{{ url('/behavior/index')}}">
-											<span class="sub-item">ข้อมูลความประพฤติ</span>
-										</a>
-									</li>
 									<li>
-										<a href="{{ url('/behavior/all')}}">
-											<span class="sub-item">ตรวจสอบความประพฤตินักเรียน</span>
+										<a href="stu-ad-basic-info-year-all.html">
+											<span class="sub-item">กำหนดปีการศึกษา</span>
 										</a>
 									</li>
 								</ul>
@@ -219,7 +219,9 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน </div>
+										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน 
+									</div>
+									<a href="{{ url('/behavior/index')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: auto">
