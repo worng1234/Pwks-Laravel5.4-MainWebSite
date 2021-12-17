@@ -28,8 +28,6 @@
 
     <script type="text/javascript" class="init">
 	
-
-
     $(document).ready(function() {
         $('#example').DataTable( {
             dom: 'Bfrtip',
@@ -41,8 +39,6 @@
             ]
         } );
     } );
-    
-    
     
         </script>
 

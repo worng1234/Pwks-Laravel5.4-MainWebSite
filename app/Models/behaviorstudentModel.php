@@ -17,6 +17,11 @@ class behaviorstudentModel extends Model
         'minus_score',
         'plus_score',
         'etc',
-        'behavior_date'
+        'behavior_day',
+        'behavior_mount',
+        'behavior_year',
+        'behavior_term',
+        'behavior_study_year',
+        
     ];
 }

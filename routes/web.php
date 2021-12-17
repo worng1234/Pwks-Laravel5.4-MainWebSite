@@ -203,3 +203,15 @@ Route::get('/behaviorPlus/{id}', 'behaviorstudentController@addPlus');
 Route::get('/behaviorView/{id}', 'behaviorstudentController@viewBehaviorID');
 Route::post('/minusinsert/{id}', 'behaviorstudentController@minusInsert');
 Route::post('/plusinsert/{id}', 'behaviorstudentController@plusInsert');
+
+//behavior report
+Route::get('behaviorReport/index', function () {
+    return view('behavior-student.behavior-report.behavior-report-index');
+});
+Route::get('/behaviorReport/studyyear', 'behaviorstudentController@behaviorStudyYear');
+Route::get('/behaviorReport/term', 'behaviorstudentController@behaviorTerm');
+Route::get('/behaviorReport/mount', 'behaviorstudentController@behaviorMount');
+
+Route::post('/search/reportbehavioryear', 'behaviorstudentController@behaviorStudyYear');
+Route::post('/search/reportbehaviorterm', 'behaviorstudentController@behaviorTerm');
+Route::post('/search/reportbehaviormount', 'behaviorstudentController@behaviorMount');

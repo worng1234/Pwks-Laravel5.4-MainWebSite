@@ -54,9 +54,6 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
-
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -153,12 +150,12 @@
 							</a>
 							<div class="collapse show" id="agree">
 								<ul class="nav nav-collapse">
-									<li class="active">
+									<li>
 										<a href="{{ url('/behavior/index')}}">
-											<span class="sub-item">ข้อมูลความประพฤติ</span>
+											<span class="sub-item">บันทึกข้อมูลความประพฤติ</span>
 										</a>
 									</li>
-									<li>
+									<li class="active">
 										<a href="{{ url('/behavior/all')}}">
 											<span class="sub-item">ตรวจสอบความประพฤตินักเรียน</span>
 										</a>
@@ -222,122 +219,24 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน 
-									</div>
-									<a href="{{ url('/behavior/index')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
+										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report </div>
+										<a href="{{ url('/behavior/all')}}" class="btn btn-danger " style="margin-left:auto;"><strong>ย้อนกลับ</strong></a>
 									</div>
 								</div>
-								<div class="card-body" style="min-height: auto">
-									<div class="row">
-										<div class="table-responsive">
-											<div class="form-group">
-												<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
-													<tr>
-														<td>
-															<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
-																<tr>
-																	<td style="text-align: left; vertical-align: top; width: 80px;">เลขประจำตัวนักเรียน
-																	</td>
-																	<td>
-																		<input value="{{$data_student->student_id}}" type="text" readonly="readonly" id="TextBox01" class="textboxReadOnly" style="width:100%;" />
-																	</td>
-																</tr>
-																<tr>
-																	<td style="text-align: left; vertical-align: top;">ชื่อ-นามสกุล
-																	</td>
-																	<td>
-																		<input value="{{$data_student->prename}}{{$data_student->fname}} {{$data_student->surname}}" type="text" readonly="readonly" id="TextBox02" class="textboxReadOnly" style="width:100%;" />
-																	</td>
-																</tr>
-																<tr>
-																	<td style="text-align: left; vertical-align: top;">ชั้นเรียน/ห้อง
-																	</td>
-																	<td>
-																		<input value="{{$data_student->student_class}}/{{$data_student->student_room}}" type="text" readonly="readonly" id="TextBox03" class="textboxReadOnly" style="width:100%;" />
-																	</td>
-																</tr>
-																<tr>
-																	<td style="text-align: left; vertical-align: top;">เลขที่
-																	<td>
-																		<input value="{{$data_student->student_number}}" type="text" readonly="readonly" id="TextBox04" class="textboxReadOnly" style="width:100%;" />
-																	</td>
-																</tr>
-																<tr>
-																	<td style="text-align: left; vertical-align: top;">คะแนนล่าสุด
-																	</td>
-																	<td>
-																		<input value="{{$data_student->score}}" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
-																	</td>
-																</tr>
-															</table>
-														</td>
-														<td style="text-align: left; vertical-align: top; width: 125px">
-															<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
-																<tr>
-																	<td>
-																		<img id="mainContentPlaceHolder_signinImage" src="../assets/img/pro1.jpg" style="height:165px; width:125px;" />
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-											</div>
+								<div class="card-body" style="min-height: auto" >
+									<div class="form-group" >
+										<div class="row" >
+											<a href="{{ url('/behaviorReport/mount')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบรายเดือน</a>
 										</div>
-										<div class="table-responsive">
-
-											<!-- ตารางแสดงข้อมูล-->
-											<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-												<thead>
-													<tr>
-														<th scope="col" width="15%">
-															<center>เลขประจำตัวนักเรียน</center>
-														</th>
-														<th scope="col" width="9%">
-															<center>วัน/เดือน/ปี</center>
-														</th>
-														<th scope="col" width="26">
-															<center>ชื่อ-นามสกุล</center>
-														</th>
-														<th scope="col" width="10%">
-															<center>ชั้นเรียน/ห้อง</center>
-														</th>
-														<th scope="col" width="15%">
-															<center>ประวัติความประพฤติ</center>
-														</th>
-														<th scope="col" width="15%">
-															<center>หักคะแนน</center>
-														</th>
-														<th scope="col" width="15%">
-															<center>เพิ่มคะแนน</center>
-														</th>
-														<th scope="col" width="15%">
-															<center>ภาคเรียน</center>
-														</th>
-														<th scope="col" width="15%">
-															<center>ปีการศึกษา</center>
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													@foreach ($student as $key => $value)
-													<tr>
-														<td align="center">{{$value->student_id}}</td>
-														<td align="center">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
-														<td align="center">{{$value->fullname}}</td>
-														<td align="center">{{$value->behavior_class}}/{{$value->behavior_room}}</td>
-														<td align="center">{{$value->behavior_history}}</td>
-														<td align="center">{{$value->etc}}</td>
-														<td align="center">{{$value->minus_score}}</td>
-														<td align="center">{{$value->plus_score}}</td>
-														<td align="center">{{$value->behavior_term}}</td>
-														<td align="center">{{$value->behavior_study_year}}</td>
-													</tr>
-													@endforeach
-												</tbody>
-											</table>
-											<!-- //ตารางแสดงข้อมูล-->
-
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<a href="{{ url('/behaviorReport/term')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบภาคเรียน</a>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<a href="{{ url('/behaviorReport/studyyear')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบปีการศึกษา</a>
 										</div>
 									</div>
 								</div>
@@ -390,7 +289,7 @@
 	<script src="../assets/js/plugin/moment/moment.min.js"></script>
 
 	<!-- Datatables -->
-	<!-- <script src="../assets/js/plugin/datatables/datatables.min.js"></script> -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
 
 	<!-- DateTimePicker -->
 	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
@@ -420,23 +319,10 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo2.js"></script>
 
-	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-
-
 	<!-- Date time picker -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({
-				dom: 'Bfrtip',
-            	buttons: [
-					'excelHtml5',
-            ],
 				"pageLength": 10,
 				"language": {
 					"search": "ค้นหาข้อมูล :"

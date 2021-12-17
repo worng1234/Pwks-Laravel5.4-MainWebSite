@@ -48,11 +48,18 @@ class behaviorstudentController extends Controller
                 'behavior_student.behavior_room',
                 'behavior_student.behavior_history',
                 'behavior_student.minus_score',
-                'behavior_student.plus_score'
+                'behavior_student.plus_score',
+                'behavior_student.behavior_day',
+                'behavior_student.behavior_mount',
+                'behavior_student.behavior_year',
+                'behavior_student.behavior_study_year',
+                'behavior_student.behavior_term',
+                'behavior_student.etc'
+
             )
-            ->where('student_core.student_id', '=',$stid)
+            ->where('student_core.student_id', '=', $stid)
             ->get();
-        
+
 
         return view(
             'behavior-student.stu-ad-conduct-score-check-view-id',
@@ -68,7 +75,6 @@ class behaviorstudentController extends Controller
         $day = date('d');
         $mounth = date('m');
         $year = date('y');
-        $date = ($year . '/' . $mounth . '/' . $day);
 
         $behavior_minus = new behaviorstudentModel([
             "fullname" => $request->get('fullname'),
@@ -79,7 +85,11 @@ class behaviorstudentController extends Controller
             "minus_score" => $request->get('minus_score'),
             "plus_score" => $request->get('plus_score'),
             "etc" => $request->get('etc'),
-            "behavior_date" => $date,
+            "behavior_day" => $day,
+            "behavior_mount" => $mounth,
+            "behavior_year" => $year,
+            "behavior_term" => $request->get('behavior_term'),
+            "behavior_study_year" => $request->get('behavior_study_year'),
         ]);
 
         $behavior_minus->save();
@@ -109,7 +119,11 @@ class behaviorstudentController extends Controller
             "minus_score" => $request->get('minus_score'),
             "plus_score" => $request->get('plus_score'),
             "etc" => $request->get('etc'),
-            "behavior_date" => $date,
+            "behavior_day" => $day,
+            "behavior_mount" => $mounth,
+            "behavior_year" => $year,
+            "behavior_term" => $request->get('behavior_term'),
+            "behavior_study_year" => $request->get('behavior_study_year'),
         ]);
 
         $behavior_minus->save();
@@ -121,5 +135,38 @@ class behaviorstudentController extends Controller
         $student_score->save();
 
         return redirect('/behavior/index');
+    }
+
+    public function behaviorMount(Request $request)
+    {
+        $search = $request->get('search');
+        $search2 = $request->get('search2');
+        $search3 = $request->get('search3');
+        $data = DB::table('behavior_student')
+            ->where('behavior_mount', 'like', '%' . $search3 . '%')
+            ->where('behavior_term', 'like', '%' . $search2 . '%')
+            ->where('behavior_study_year', 'like', '%' . $search . '%')
+            ->get();
+        return view('behavior-student.behavior-report.behavior-report-mount', ['data' => $data]);
+    }
+
+    public function behaviorTerm(Request $request)
+    {
+        $search = $request->get('search');
+        $search2 = $request->get('search2');
+        $data = DB::table('behavior_student')
+            ->where('behavior_term', 'like', '%' . $search2 . '%')
+            ->where('behavior_study_year', 'like', '%' . $search . '%')
+            ->get();
+        return view('behavior-student.behavior-report.behavior-report-term', ['data' => $data]);
+    }
+
+    public function behaviorStudyYear(Request $request)
+    {
+        $search = $request->get('search');
+        $data = DB::table('behavior_student')
+            ->where('behavior_study_year', 'like', '%' . $search . '%')
+            ->get();
+        return view('behavior-student.behavior-report.behavior-report-study-year', ['data' => $data]);
     }
 }
