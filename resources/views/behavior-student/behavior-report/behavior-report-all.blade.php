@@ -225,20 +225,40 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report <i class="flaticon-right-arrow"></i> ออกเอกสารแบบภาคเรียน</div>
+										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report</div>
 
 									</div>
 								</div>
 								<div class="card-body" style="min-height: auto">
 									<div class="form-group">
-										<form role="form" method="post" action="{{ url('/search/reportbehaviorterm')}}">
+										<form role="form" method="post" action="{{ url('/search/reportbehaviorall')}}">
 											{{csrf_field()}}
 											<div class="row">
+												<div class="col-sm-4 col-md-3">
+													<div class="form-group form-group-default">
+														<label>เดือน</label>
+														<select class="form-control" id="formGroupDefaultSelect" name="search1" type="search">
+															<option value="">เลือก</option>
+															<option value="1">มกราคม</option>
+															<option value="2">กุมภาพันธ์</option>
+															<option value="3">มีนาคม</option>
+															<option value="4">เมษายน</option>
+															<option value="5">พฤษภาคม</option>
+															<option value="6">มิถุนายน</option>
+															<option value="7">กรกฎาคม</option>
+															<option value="8">สิงหาคม</option>
+															<option value="9">กันยายน</option>
+															<option value="10">ตุลาคม</option>
+															<option value="11">พฤษจิกายน</option>
+															<option value="12">ธันวาคม</option>
+														</select>
+													</div>
+												</div>
 												<div class="col-sm-4 col-md-2">
 													<div class="form-group form-group-default">
 														<label>ภาคเรียนที่</label>
 														<select class="form-control" id="formGroupDefaultSelect" name="search2" type="search">
-															<option>เลือก</option>
+															<option value="">เลือก</option>
 															<option value="1"> 1</option>
 															<option value="2"> 2</option>
 														</select>
@@ -247,7 +267,7 @@
 												<div class="col-sm-4 col-md-2">
 													<div class="form-group form-group-default">
 														<label>ปีการศึกษา</label>
-														<input name="search" type="search" class="form-control" placeholder="">
+														<input name="search3" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2"><i class="fas fa-search"></i> แสดง</button>

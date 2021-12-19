@@ -224,7 +224,8 @@
 								</div>
 								<div class="card-body" style="min-height: auto">
 									<div class="form-group">
-										<form role="form" method="post" action="">
+										<form role="form" method="post" action="{{ url('/SearchBehavior/all')}}">
+											{{csrf_field()}}
 											<div class="row">
 												<div class="col-sm-4 col-md-4">
 													<div class="form-group form-group-default">
@@ -233,7 +234,7 @@
 													</div>
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2"><i class="fas fa-search"></i> แสดง</button>
-												<a href="{{ url('behaviorReport/index')}}" class="btn btn-success  form-group form-group-default col-sm-2 col-sm-1" style="margin-left:auto;"><i class="fas fa-sticky-note"></i>Report</a>
+												<a href="{{ url('/behaviorReport/all')}}" class="btn btn-success  form-group form-group-default col-sm-2 col-sm-1" style="margin-left:auto;"><i class="fas fa-sticky-note"></i>Report</a>
 											</div>
 										</form>
 									</div>

@@ -5,32 +5,41 @@ namespace App\Http\Controllers;
 use App\Models\behaviorstudentModel;
 use Illuminate\Http\Request;
 use App\Models\studentcoreModels;
+use App\Models\schoolyearModel;
 use Illuminate\Support\Facades\DB;
 
 class behaviorstudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data_student = studentcoreModels::all();
+        $search = $request->get('search');
+        $data_student = DB::table('student_core')
+            ->where('student_id', 'like', '%' . $search . '%')
+            ->get();
         return view('behavior-student.stu-ad-conduct-score-all', ['data_student' => $data_student]);
     }
 
-    public function behaviorIndex()
+    public function behaviorIndex(Request $request)
     {
-        $data = behaviorstudentModel::all();
+        $search = $request->get('search');
+        $data = DB::table('behavior_student')
+            ->where('student_id_behavior', 'like', '%' . $search . '%')
+            ->get();
         return view('behavior-student.stu-ad-conduct-score-check-all', ['data' => $data]);
     }
 
     public function addMinus($id)
     {
         $data = studentcoreModels::find($id);
-        return view('behavior-student.stu-ad-conduct-score-add-minus', compact('data'));
+        $data2 = schoolyearModel::first();
+        return view('behavior-student.stu-ad-conduct-score-add-minus', compact('data', 'data2'));
     }
 
     public function addPlus($id)
     {
         $data = studentcoreModels::find($id);
-        return view('behavior-student.stu-ad-conduct-score-add-plus', compact('data'));
+        $data2 = schoolyearModel::first();
+        return view('behavior-student.stu-ad-conduct-score-add-plus', compact('data', 'data2'));
     }
 
     public function viewBehaviorID($id)
@@ -137,36 +146,37 @@ class behaviorstudentController extends Controller
         return redirect('/behavior/index');
     }
 
-    public function behaviorMount(Request $request)
+    public function behaviorAll(Request $request)
     {
-        $search = $request->get('search');
-        $search2 = $request->get('search2');
-        $search3 = $request->get('search3');
-        $data = DB::table('behavior_student')
-            ->where('behavior_mount', 'like', '%' . $search3 . '%')
-            ->where('behavior_term', 'like', '%' . $search2 . '%')
-            ->where('behavior_study_year', 'like', '%' . $search . '%')
-            ->get();
-        return view('behavior-student.behavior-report.behavior-report-mount', ['data' => $data]);
-    }
 
-    public function behaviorTerm(Request $request)
-    {
-        $search = $request->get('search');
-        $search2 = $request->get('search2');
-        $data = DB::table('behavior_student')
-            ->where('behavior_term', 'like', '%' . $search2 . '%')
-            ->where('behavior_study_year', 'like', '%' . $search . '%')
-            ->get();
-        return view('behavior-student.behavior-report.behavior-report-term', ['data' => $data]);
-    }
 
-    public function behaviorStudyYear(Request $request)
-    {
-        $search = $request->get('search');
-        $data = DB::table('behavior_student')
-            ->where('behavior_study_year', 'like', '%' . $search . '%')
-            ->get();
-        return view('behavior-student.behavior-report.behavior-report-study-year', ['data' => $data]);
+        if ($request->get('search1') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
+            $search1 = $request->get('search1');
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('behavior_student')
+                ->where('behavior_mount', 'like', '%' . $search1 . '%')
+                ->where('behavior_term', 'like', '%' . $search2 . '%')
+                ->where('behavior_study_year', 'like', '%' . $search3 . '%')
+                ->get();
+            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+        } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('behavior_student')
+                ->where('behavior_term', 'like', '%' . $search2 . '%')
+                ->where('behavior_study_year', 'like', '%' . $search3 . '%')
+                ->get();
+            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+        } elseif ($request->get('search3') !== null) {
+            $search3 = $request->get('search3');
+            $data = DB::table('behavior_student')
+                ->where('behavior_study_year', 'like', '%' . $search3 . '%')
+                ->get();
+            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+        }
+
+        $data = DB::table('behavior_student')->get();
+        return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
     }
 }

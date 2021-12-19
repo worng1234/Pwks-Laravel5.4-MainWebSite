@@ -226,8 +226,22 @@
 											</div>
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group ">
-													<label>ระดับชั้น</label>
+													<label>ห้อง</label>
 													<input name="behavior_room" type="text" class="form-control" placeholder="" value="{{$data->student_room}}" readonly>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group ">
+													<label>ภาคเรียนที่</label>
+													<input name="behavior_term" type="text" class="form-control" placeholder="" value="{{$data2->term}}" readonly>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group ">
+													<label>ปีการศึกษา</label>
+													<input name="behavior_study_year" type="text" class="form-control" placeholder="" value="{{$data2->study_year}}" readonly>
 												</div>
 											</div>
 										</div>

@@ -54,6 +54,12 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
+
+	<!-- Datatable Report -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+
+
 </head>
 
 <body>
@@ -219,25 +225,112 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report </div>
-										<a href="{{ url('/behavior/all')}}" class="btn btn-danger " style="margin-left:auto;"><strong>ย้อนกลับ</strong></a>
+										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report <i class="flaticon-right-arrow"></i> ออกเอกสารแบบรายเดือน</div>
+
 									</div>
 								</div>
-								<div class="card-body" style="min-height: auto" >
-									<div class="form-group" >
-										<div class="row" >
-											<a href="{{ url('/behaviorReport/mount')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบรายเดือน</a>
-										</div>
-									</div>
+								<div class="card-body" style="min-height: auto">
 									<div class="form-group">
-										<div class="row">
-											<a href="{{ url('/behaviorReport/term')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบภาคเรียน</a>
-										</div>
+										<form role="form" method="post" action="{{ url('/search/reportbehaviormount')}}">
+											{{csrf_field()}}
+											<div class="row">
+												<div class="col-sm-4 col-md-3">
+													<div class="form-group form-group-default">
+														<label>เดือน</label>
+														<select class="form-control" id="formGroupDefaultSelect" name="search1" type="search">
+															<option value="">เลือก</option>
+															<option value="1">มกราคม</option>
+															<option value="2">กุมภาพันธ์</option>
+															<option value="3">มีนาคม</option>
+															<option value="4">เมษายน</option>
+															<option value="5">พฤษภาคม</option>
+															<option value="6">มิถุนายน</option>
+															<option value="7">กรกฎาคม</option>
+															<option value="8">สิงหาคม</option>
+															<option value="9">กันยายน</option>
+															<option value="10">ตุลาคม</option>
+															<option value="11">พฤษจิกายน</option>
+															<option value="12">ธันวาคม</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-4 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ภาคเรียนที่</label>
+														<select class="form-control" id="formGroupDefaultSelect" name="search2" type="search">
+															<option value="">เลือก</option>
+															<option value="1"> 1</option>
+															<option value="2"> 2</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-4 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ปีการศึกษา</label>
+														<input name="search3" type="search" class="form-control" placeholder="">
+													</div>
+												</div>
+												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2"><i class="fas fa-search"></i> แสดง</button>
+											</div>
+										</form>
 									</div>
-									<div class="form-group">
-										<div class="row">
-											<a href="{{ url('/behaviorReport/studyyear')}}" class="btn btn-primary form-group form-group-default col-sm-4 col-md-3"><i class="fas fa-sticky-note"></i>ออกเอกสารแบบปีการศึกษา</a>
-										</div>
+									<div class="table-responsive">
+
+										<!-- ตารางแสดงข้อมูล-->
+										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th scope="col" width="5%">
+														<center>เลขประจำตัวนักเรียน</center>
+													</th>
+													<th scope="col" width="5%">
+														<center>วัน/เดือน/ปี</center>
+													</th>
+													<th scope="col" width="26">
+														<center>ชื่อ-นามสกุล</center>
+													</th>
+													<th scope="col" width="10%">
+														<center>ชั้นเรียน/ห้อง</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>ประวัติความประพฤติ</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>หมายเหตุ</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>หักคะแนน</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>เพิ่มคะแนน</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>ภาคเรียน</center>
+													</th>
+													<th scope="col" width="15%">
+														<center>ปีการศึกษา</center>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($data as $key => $value)
+												<tr>
+													<td align="center">{{$value->student_id_behavior}}</td>
+													<td align="center">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
+													<td align="center">{{$value->fullname}}</td>
+													<td align="center">{{$value->behavior_class}}/{{$value->behavior_room}}</td>
+													<td align="center">{{$value->behavior_history}}</td>
+													<td align="center">{{$value->etc}}</td>
+													<td align="center">{{$value->minus_score}}</td>
+													<td align="center">{{$value->plus_score}}</td>
+													<td align="center">{{$value->behavior_term}}</td>
+													<td align="center">{{$value->behavior_study_year}}</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
+										<!-- //ตารางแสดงข้อมูล-->
+
 									</div>
 								</div>
 							</div>
@@ -319,10 +412,24 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo2.js"></script>
 
+	<!-- data table script -->
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+
+
 	<!-- Date time picker -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({
+				dom: 'Bfrtip',
+				buttons: [
+					'excelHtml5',
+				],
 				"pageLength": 10,
 				"language": {
 					"search": "ค้นหาข้อมูล :"

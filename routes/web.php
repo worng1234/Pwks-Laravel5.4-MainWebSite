@@ -197,7 +197,11 @@ Route::post('/search/reportM4', 'newstudentm4Controller@reportExel');
 
 //behavior
 Route::get('/behavior/index', 'behaviorstudentController@index');
+Route::post('/SearchBehavior/index', 'behaviorstudentController@index');
+
 Route::get('/behavior/all', 'behaviorstudentController@behaviorIndex');
+Route::post('/SearchBehavior/all', 'behaviorstudentController@behaviorIndex');
+
 Route::get('/behaviorMinus/{id}', 'behaviorstudentController@addMinus');
 Route::get('/behaviorPlus/{id}', 'behaviorstudentController@addPlus');
 Route::get('/behaviorView/{id}', 'behaviorstudentController@viewBehaviorID');
@@ -208,10 +212,5 @@ Route::post('/plusinsert/{id}', 'behaviorstudentController@plusInsert');
 Route::get('behaviorReport/index', function () {
     return view('behavior-student.behavior-report.behavior-report-index');
 });
-Route::get('/behaviorReport/studyyear', 'behaviorstudentController@behaviorStudyYear');
-Route::get('/behaviorReport/term', 'behaviorstudentController@behaviorTerm');
-Route::get('/behaviorReport/mount', 'behaviorstudentController@behaviorMount');
-
-Route::post('/search/reportbehavioryear', 'behaviorstudentController@behaviorStudyYear');
-Route::post('/search/reportbehaviorterm', 'behaviorstudentController@behaviorTerm');
-Route::post('/search/reportbehaviormount', 'behaviorstudentController@behaviorMount');
+Route::get('/behaviorReport/all', 'behaviorstudentController@behaviorAll');
+Route::post('/search/reportbehaviorall', 'behaviorstudentController@behaviorAll');
