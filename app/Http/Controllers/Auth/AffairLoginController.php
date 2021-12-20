@@ -25,6 +25,8 @@ class AffairLoginController extends Controller
         ]);
         if (Auth::guard('affair')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember)) {
            return redirect()->intended(route('affair.dashboard'));
+        }else {
+            return view('auth.invalid-login.affair-login');
         }
 
         return redirect()->back()->withInput($request->only('username', 'remember'));

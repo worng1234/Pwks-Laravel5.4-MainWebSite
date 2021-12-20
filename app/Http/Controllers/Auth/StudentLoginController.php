@@ -25,6 +25,8 @@ class StudentLoginController extends Controller
         ]);
         if (Auth::guard('student')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember)) {
            return redirect()->intended(route('student.dashboard'));
+        }else {
+            return view('auth.invalid-login.student-login');
         }
 
         return redirect()->back()->withInput($request->only('username', 'remember'));

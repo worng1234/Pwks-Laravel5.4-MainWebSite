@@ -25,6 +25,8 @@ class AcademicsLoginController extends Controller
         ]);
         if (Auth::guard('academic')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember)) {
            return redirect()->intended(route('academic.dashboard'));
+        }else {
+            return view('auth.invalid-login.academic-login');
         }
 
         return redirect()->back()->withInput($request->only('username', 'remember'));
