@@ -20,25 +20,25 @@ class RedirectIfAuthenticated
         switch ($guard) {
             case 'admin':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('admin.dashbord');
+                    return redirect()->route('admin.dashboard');
                 }
                 break;
 
             case 'academic':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('academic.dashbord');
+                    return redirect()->route('academic.dashboard');
                 }
                 break;
 
             case 'affair':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('affair.dashbord');
+                    return redirect()->route('affair.dashboard');
                 }
                 break;
                 
             case 'student':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('student.dashbord');
+                    return redirect()->route('student.dashboard');
                 }
                 break;
 

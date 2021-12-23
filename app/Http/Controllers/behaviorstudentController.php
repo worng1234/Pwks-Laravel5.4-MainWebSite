@@ -148,8 +148,6 @@ class behaviorstudentController extends Controller
 
     public function behaviorAll(Request $request)
     {
-
-
         if ($request->get('search1') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');

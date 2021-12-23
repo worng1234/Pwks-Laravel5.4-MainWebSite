@@ -214,3 +214,36 @@ Route::get('behaviorReport/index', function () {
 });
 Route::get('/behaviorReport/all', 'behaviorstudentController@behaviorAll');
 Route::post('/search/reportbehaviorall', 'behaviorstudentController@behaviorAll');
+
+//academic
+//-->เลื่อนชั้นเรียน
+Route::get('/academic/class', 'AcademicsController@academicClassAll');
+Route::post('/Searchacademic/class', 'AcademicsController@academicClassAll');
+
+Route::get('/academic/classChange', 'AcademicsController@academicClassChange');
+Route::post('/Searchacademic/classChange', 'AcademicsController@academicClassChange');
+Route::post('/academic/classChangeStatus/{id}', 'AcademicsController@academicChangeStatusAndClass');
+
+//-->จบการศึกษา
+Route::get('/academic/final', 'AcademicsController@academicFinalAll');
+Route::post('/Searchacademic/final', 'AcademicsController@academicFinalAll');
+
+Route::get('/academic/finalChange', 'AcademicsController@academicFinalChange');
+Route::post('/Searchacademic/finalChange', 'AcademicsController@academicFinalChange');
+Route::post('/academic/classChangeFinal/{id}', 'AcademicsController@academicChangeFinal');
+
+//-->ย้ายสถานศึกษา
+Route::get('/academic/move', 'AcademicsController@academicMoveAll');
+Route::post('/Searchacademic/move', 'AcademicsController@academicMoveAll');
+
+Route::get('/academic/moveChange', 'AcademicsController@academicMoveChange');
+Route::post('/Searchacademic/moveChange', 'AcademicsController@academicMoveChange');
+Route::post('/academic/classChangeMove/{id}', 'AcademicsController@academicChangeMove');
+
+//-->ออกกลางคัน
+Route::get('/academic/out', 'AcademicsController@academicOutAll');
+Route::post('/Searchacademic/out', 'AcademicsController@academicOutAll');
+
+Route::get('/academic/outChange', 'AcademicsController@academicOutChange');
+Route::post('/Searchacademic/outChange', 'AcademicsController@academicOutChange');
+Route::post('/academic/classChangeOut/{id}', 'AcademicsController@academicChangeOut');

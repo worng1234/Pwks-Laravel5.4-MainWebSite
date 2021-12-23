@@ -227,6 +227,7 @@ class studentcoreController extends Controller
             "surname" => $request->get('surname'),
             "nickname" => $request->get('nickname'),
             "score" => $request->get('score'),
+            "status" => $request->get('status'),
         ]);
 
         $studentdetail = new studentdetailModel([

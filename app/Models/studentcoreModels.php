@@ -39,6 +39,8 @@ class studentcoreModels extends Model
         'name_cen',
         'surname',
         'score',
+        'status',
+        'date',
         'rememberToken',
     ];
 

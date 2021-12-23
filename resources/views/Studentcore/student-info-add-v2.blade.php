@@ -518,6 +518,7 @@
 												</div>
 											</div>
 											<input name="score" value="100" hidden>
+											<input name="status" value="กำลังศึกษาอยู่" hidden>
 
 											<!-- Step 2 ที่อยู่ -->
 											<div class="tab-pane" id="address">

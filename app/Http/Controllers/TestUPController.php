@@ -17,8 +17,7 @@ class TestUPController extends Controller
      */
     public function index()
     {
-        $data = test::all();
-        return view('testall.index', compact('data'));
+        return view('testall.index');
     }
 
     /**
