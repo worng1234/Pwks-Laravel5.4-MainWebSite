@@ -138,7 +138,9 @@ Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 Route::post('/searchStudent', 'studentcoreController@search');
 
 //test controller
-Route::get('/testall', 'TestUPController@index')->name('indexTest');
+Route::get('/testall', 'TestUPController@index');
+Route::post('/testmulti', 'TestUPController@testmultiup');
+
 Route::get('/Fixtest/{id}', 'TestUPController@edit');
 Route::get('/Fixfile/{id}', 'TestUPController@editfile');
 Route::get('/showtest/{id}', 'TestUPController@show');
@@ -152,6 +154,8 @@ Route::get('/test/report', 'newstudentm1Controller@reportExel');
 Route::get('/testlink', function(){
     return view('testall.form-m1');
 });
+
+
 
 
 Auth::routes();
@@ -222,7 +226,7 @@ Route::post('/Searchacademic/class', 'AcademicsController@academicClassAll');
 
 Route::get('/academic/classChange', 'AcademicsController@academicClassChange');
 Route::post('/Searchacademic/classChange', 'AcademicsController@academicClassChange');
-Route::post('/academic/classChangeStatus/{id}', 'AcademicsController@academicChangeStatusAndClass');
+Route::post('/academic/classChangeStatus', 'AcademicsController@academicChangeStatusAndClass');
 
 //-->จบการศึกษา
 Route::get('/academic/final', 'AcademicsController@academicFinalAll');
@@ -230,7 +234,7 @@ Route::post('/Searchacademic/final', 'AcademicsController@academicFinalAll');
 
 Route::get('/academic/finalChange', 'AcademicsController@academicFinalChange');
 Route::post('/Searchacademic/finalChange', 'AcademicsController@academicFinalChange');
-Route::post('/academic/classChangeFinal/{id}', 'AcademicsController@academicChangeFinal');
+Route::post('/academic/classChangeFinal', 'AcademicsController@academicChangeFinal');
 
 //-->ย้ายสถานศึกษา
 Route::get('/academic/move', 'AcademicsController@academicMoveAll');

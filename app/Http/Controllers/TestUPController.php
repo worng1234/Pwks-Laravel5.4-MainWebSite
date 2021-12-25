@@ -17,7 +17,37 @@ class TestUPController extends Controller
      */
     public function index()
     {
-        return view('testall.index');
+        $data = test2::all();
+        return view('testall.index', ['data' => $data]);
+    }
+    public function testmultiup(Request $request){
+
+        
+        //$data1[] = $request->id_number2;
+        
+        for ($i=0; $i < count($request->id_number2); $i++) { 
+            $data1[$i] = $request->id_number2[$i];
+            $data2[$i] = $request->score[$i];
+            $id = $i+1;
+            $data = test2::find($id);
+            $data->update([
+                'id_number2' => $data1[$i],
+                'score' => $data2[$i],
+            ]);
+        }
+        return redirect('/testall');
+        // return redirect('/testall');
+        // $test1 = test2::all();
+        // $c1 = count($request->id_number2);
+        // // return json_encode(gettype($c1));
+
+        // for ($i=1; $i <= $c1; $i++) { 
+        //     //$id = $i;
+        //     //$data = test2::find($id);
+        //     echo $i;
+        // }
+
+        
     }
 
     /**

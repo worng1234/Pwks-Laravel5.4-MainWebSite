@@ -228,7 +228,7 @@
 													<div class="col-6 col-md-5">
 														<div class="form-group form-group-default">
 															<label>แผนการเรียน (กรอกเฉพาะนักเรียนระดับชั้น ม.4 - ม.6)</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="student_major" required>
+															<select class="form-control" id="formGroupDefaultSelect" name="student_major" >
 																<option>เลือก</option>
 																<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
 																<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
@@ -682,7 +682,15 @@
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>จบชั้น</label>
-															<input id="Name" type="text" class="form-control" name="final_class" required>
+															<select class="form-control" id="formGroupDefaultSelect" name="final_class" required>
+																<option>เลือก</option>
+																<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+																<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+																<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+																<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+																<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+																<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">

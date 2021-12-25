@@ -178,9 +178,14 @@
 										</a>
 										<div class="collapse show" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li class="active">
+												<li >
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+												<li class="active">
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
 													</a>
 												</li>
 											</ul>
@@ -261,12 +266,12 @@
 							</a>
 							<div class="collapse " id="agree">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
@@ -389,19 +394,21 @@
 									</form>
 								</div>
 
-								@foreach ($data as $key => $value)
-								<form role="form" method="post" action="{{ url('/academic/classChangeStatus', $value->id)}}">
+								
+								<form id="submit-change" method="post" action="{{ url('/academic/classChangeStatus')}}" enctype="multipart/form-data">
 									{{csrf_field()}}
 									<div align="right">
-										<button type="submit" class="btn btn-success">ยืนยัน</button>
+										<button type="submit" class="btn btn-success" onclick="event.preventDefault(); document.getElementById('submit-change').submit();">ยืนยัน</button>
 									</div>
-									
+
 									<!-- ตารางแสดงข้อมูล-->
 									<div class="table-responsive">
-
 										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 											<thead>
 												<tr>
+													<th scope="col" width="16%">
+														<center>ID</center>
+													</th>
 													<th scope="col" width="16%">
 														<center>เลขประจำตัวนักเรียน</center>
 													</th>
@@ -412,12 +419,12 @@
 														<center>ชั้นเรียน <div>
 																<select id="classSelect">
 																	<option></option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 1">ชั้นมัธยมศึกษาปีที่ 1</option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 2">ชั้นมัธยมศึกษาปีที่ 2</option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 3">ชั้นมัธยมศึกษาปีที่ 3</option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 4">ชั้นมัธยมศึกษาปีที่ 4</option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 5">ชั้นมัธยมศึกษาปีที่ 5</option>
-																	<option value="ชั้นมัธยมศึกษาปีที่ 6">ชั้นมัธยมศึกษาปีที่ 6</option>
+																	<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+																	<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+																	<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+																	<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+																	<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+																	<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
 																</select>
 															</div>
 														</center>
@@ -446,19 +453,22 @@
 												</tr>
 											</thead>
 											<tbody>
+												@foreach ($data as $key => $value)
 												<tr>
+													<td align="center">{{$value->id}}</td>
 													<td align="center">{{$value->student_id}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center"> <select id="inputClass" name="student_class">
+													<td align="center"> <select id="inputClass" name="student_class[]">
 															<option>{{$value->student_class}}</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 1">ชั้นมัธยมศึกษาปีที่ 1</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 2">ชั้นมัธยมศึกษาปีที่ 2</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 3">ชั้นมัธยมศึกษาปีที่ 3</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 4">ชั้นมัธยมศึกษาปีที่ 4</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 5">ชั้นมัธยมศึกษาปีที่ 5</option>
-															<option value="ชั้นมัธยมศึกษาปีที่ 6">ชั้นมัธยมศึกษาปีที่ 6</option>
-														</select></td>
-													<td align="center"> <select id="inputRoom" name="student_room">
+															<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+															<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+															<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+															<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+															<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+															<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+														</select>
+													</td>
+													<td align="center"> <select id="inputRoom" name="student_room[]">
 															<option>{{$value->student_room}}</option>
 															<option value="1">1</option>
 															<option value="2">2</option>
@@ -470,31 +480,30 @@
 															<option value="8">8</option>
 															<option value="9">9</option>
 															<option value="10">10</option>
-														</select> </td>
+														</select>
+													</td>
 													<td align="center">{{$value->status}}</td>
 												</tr>
 												@endforeach
-												<!-- Modal Show Club Detail -->
-												<!-- อะไรไม่รู้ -->
-												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-														<div class="modal-content">
-															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																</button>
-															</div>
-														</div>
-													</div>
-													<!-- // Modal Show Club Detail -->
-											</tbody>
-										</table>
-										<!-- //ตารางแสดงข้อมูล-->
-									</div>
 								</form>
-
-
+								<!-- Modal Show Club Detail -->
+								<!-- อะไรไม่รู้ -->
+								<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // Modal Show Club Detail -->
+									</tbody>
+									</table>
+									<!-- //ตารางแสดงข้อมูล-->
+								</div>
 							</div>
 						</div>
 					</div>

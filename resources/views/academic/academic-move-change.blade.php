@@ -183,6 +183,11 @@
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
 												</li>
+												<li >
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
+													</a>
+												</li>
 											</ul>
 										</div>
 									</li>
@@ -415,13 +420,7 @@
 														<center>ห้อง</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>สถานะ<div>
-																<select id="statuSelect">
-																	<option></option>
-																	<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
-																	<option value="ย้ายสถานศึกษา">ย้ายสถานศึกษา</option>
-																</select>
-															</div></center>
+														<center>สถานะ</center>
 													</th>
 												</tr>
 											</thead>

@@ -178,9 +178,14 @@
 										</a>
 										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
 													</a>
 												</li>
 											</ul>
@@ -261,12 +266,12 @@
 							</a>
 							<div class="collapse " id="agree">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
@@ -336,7 +341,7 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน <i class="flaticon-right-arrow"></i> เลื่อนชั้นเรียน</div>
-										
+
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
@@ -389,74 +394,76 @@
 									</form>
 								</div>
 
-								@foreach ($data as $key => $value)
-								<form role="form" method="post" action="{{ url('/academic/classChangeFinal', $value->id)}}">
-									{{csrf_field()}}
-									<div align="right">
-										<button type="submit" class="btn btn-success">ยืนยัน</button>
-									</div>
-									
-									<!-- ตารางแสดงข้อมูล-->
-									<div class="table-responsive">
+								<form id="submit-change" role="form" method="post" action="{{ url('/academic/classChangeFinal')}}">
+												{{csrf_field()}}
 
-										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-											<thead>
-												<tr>
-													<th scope="col" width="16%">
-														<center>เลขประจำตัวนักเรียน</center>
-													</th>
-													<th scope="col" width="28">
-														<center>ชื่อ-นามสกุล</center>
-													</th>
-													<th scope="col" width="16%">
-														<center>ชั้นเรียน</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>ห้อง</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>สถานะ<div>
-																<select id="statuSelect">
-																	<option></option>
-																	<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
-																	<option value="จบการสึกษา">จบการศึกษา</option>
-																</select>
-															</div></center>
-													</th>
-												</tr>
-											</thead>
-											<tbody>
+								<!-- ตารางแสดงข้อมูล-->
+								<div class="table-responsive">
+									<div align="right">
+										<button type="submit" class="btn btn-success" onclick="event.preventDefault();
+                                                     document.getElementById('submit-change').submit();">ยืนยัน</button>
+									</div>
+									<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+										<thead>
+											<tr>
+												<th scope="col" width="16%">
+													<center>เลขประจำตัวนักเรียน</center>
+												</th>
+												<th scope="col" width="28">
+													<center>ชื่อ-นามสกุล</center>
+												</th>
+												<th scope="col" width="16%">
+													<center>ชั้นเรียน</center>
+												</th>
+												<th scope="col" width="10%">
+													<center>ห้อง</center>
+												</th>
+												<th scope="col" width="10%">
+													<center>สถานะ<div>
+															<select id="statuSelect">
+																<option></option>
+																<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
+																<option value="จบการสึกษา">จบการศึกษา</option>
+															</select>
+														</div>
+													</center>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+												@foreach ($data as $key => $value)
 												<tr>
 													<td align="center">{{$value->student_id}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
 													<td align="center"> {{$value->student_class}}</td>
 													<td align="center">{{$value->student_room}} </td>
-													<td align="center"><select id="inputStatus" name="status">
-																	<option>{{$value->status}}</option>
-																	<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
-																	<option value="จบการศึกษา">จบการศึกษา</option>
-																</select></td>
+													<td align="center"><select id="inputStatus" name="status[]">
+															<option>{{$value->status}}</option>
+															<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
+															<option value="จบการศึกษา">จบการศึกษา</option>
+														</select></td>
 												</tr>
 												@endforeach
-												<!-- Modal Show Club Detail -->
-												<!-- อะไรไม่รู้ -->
-												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-														<div class="modal-content">
-															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																</button>
-															</div>
+											</form>
+											<!-- Modal Show Club Detail -->
+											<!-- อะไรไม่รู้ -->
+											<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+															</button>
 														</div>
 													</div>
-													<!-- // Modal Show Club Detail -->
-											</tbody>
-										</table>
-										<!-- //ตารางแสดงข้อมูล-->
-									</div>
-								</form>
+												</div>
+												<!-- // Modal Show Club Detail -->
+										</tbody>
+									</table>
+									<!-- //ตารางแสดงข้อมูล-->
+								</div>
+
 
 
 							</div>
@@ -638,7 +645,7 @@
 		})
 	</script>
 
-	
+
 
 </body>
 

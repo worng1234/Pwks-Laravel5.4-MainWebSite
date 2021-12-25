@@ -183,6 +183,11 @@
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
 												</li>
+												<li>
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
+													</a>
+												</li>
 											</ul>
 										</div>
 									</li>

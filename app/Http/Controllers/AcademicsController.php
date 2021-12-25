@@ -139,29 +139,34 @@ class AcademicsController extends Controller
         return view('academic.academic-class-change', ['data' => $data]);
     }
 
-    public function academicChangeStatusAndClass(Request $request, $id)
+    public function academicChangeStatusAndClass(Request $request)
     {
-        $day = date('d');
-        $mounth = date('m');
-        $year = date('y');
-        $date = ($year . '/' . $mounth . '/' . $day);
-
-        $change = studentcoreModels::find($id);
-        $change->date = $date;
-        $change->update($request->all());
+        
+        for ($i=0; $i < count($request->student_class); $i++) { 
+            $data1[$i] = $request->student_class[$i];
+            $data2[$i] = $request->student_room[$i];
+            $id = $i+1;
+            $data = studentcoreModels::find($id);
+            $data->update([
+                'student_class' => $data1[$i],
+                'student_room' => $data2[$i],
+            ]);
+        }
         return redirect('/academic/class');
+        
     }
 
-    public function academicChangeFinal(Request $request, $id)
+    public function academicChangeFinal(Request $request)
     {
-        $day = date('d');
-        $mounth = date('m');
-        $year = date('y');
-        $date = ($year . '/' . $mounth . '/' . $day);
-
-        $change = studentcoreModels::find($id);
-        $change->date = $date;
-        $change->update($request->all());
+        for ($i=0; $i < count($request->status); $i++) { 
+            $data1[$i] = $request->status[$i];
+            $id = $i+1;
+            $data = studentcoreModels::find($id);
+            $data->update([
+                'status' => $data1[$i],
+            ]);
+        }
+        
         return redirect('/academic/final');
     }
 

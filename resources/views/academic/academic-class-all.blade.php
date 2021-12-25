@@ -183,6 +183,11 @@
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
 												</li>
+												<li>
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
+													</a>
+												</li>
 											</ul>
 										</div>
 									</li>
@@ -384,7 +389,6 @@
 													</div>
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
-												<a href="{{url('/academic/classChange')}}" class="btn btn-warning form-group form-group-default col-sm-3 col-md-2" style="margin-left:auto;"><i class="fas fa-exchange-alt"></i>เลื่อนชั้นเรียน</a>
 											</div>
 										</form>
 									</div>
