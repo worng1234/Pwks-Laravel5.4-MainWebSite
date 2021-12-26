@@ -254,6 +254,8 @@ Route::post('/academic/classChangeOut/{id}', 'AcademicsController@academicChange
 
 //เพิ่มแอคเค้านักเรียน
 Route::get('/academic/allAccount', 'AcademicsController@showAccountStudent');
+Route::post('/Searchacademic/allAccount', 'AcademicsController@showAccountStudent');
+Route::get('/academicShow/{id}', 'AcademicsController@showAccount');
 
 Route::get('/academic/addAccount', 'AcademicsController@addAccountStudent');
 Route::post('/academic/addAccountInsert', 'AcademicsController@addAccount');

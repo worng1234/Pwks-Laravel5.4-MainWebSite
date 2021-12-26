@@ -333,37 +333,13 @@
 									</div>
 
 									<div class="form-group">
-										<form role="form" method="post"  action="">
+										<form role="form" method="post"  action="{{ url('/Searchacademic/allAccount')}}">
+											{{csrf_field() }}
 											<div class="row">
-												
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect">
-															<option>เลือก</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 1</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 2</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 3</option>
-															<option>ปวช.1</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect">
-															<option>เลือก</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-														</select>
-													</div>
-												</div>
 												<div class="col-sm-6 col-md-5">
 													<div class="form-group form-group-default">
-														<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
-														<input id="Name" type="text" class="form-control" placeholder="">
+														<label>เลขประจำตัวนักเรียน</label>
+														<input id="Name" type="search" class="form-control" placeholder="" name="search">
 													</div> 
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
@@ -380,7 +356,7 @@
 															<tr>
 																<th scope="col" width="5%"><center>เลขประจำตัวนักเรียน</center></th>
 																<th scope="col" width="20%"><center>ชื่อ-นามสกุล</center></th>
-																<th scope="col" width="10%"><center>จัดการ</center></th>
+																<th scope="col" width="10%"><center>ตรวจสอบข้อมูล</center></th>
 																<th scope="col" width="10%"><center>ลบ</center></th>
 																
 															</tr>
@@ -390,7 +366,7 @@
 															<tr>
 																<td align="center">{{$value->student_id}}</td>
 																<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-																<td align="center"><button type="submit" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></button></td>
+																<td align="center"><a href='{{ url("/academicShow/{$value->id}")}}' class="btn btn-primary btn-xs"><i class="fas fa-address-card"></i></a></td>
 																<td align="center">
 																		<a href='{{ url("/academicDelete/{$value->id}")}}' class="btn btn-danger btn-xs" title="" onclick="return confirm('ต้องการจะลบข้อมูลนี้หรือไม่')"> <i class="fas fa-trash"></i> </a>
 																</td>

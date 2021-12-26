@@ -552,8 +552,16 @@ class AcademicsController extends Controller
 
     //เพิ่มแอคเค้านักเรียน
 
-    public function showAccountStudent()
+    public function showAccountStudent(Request $request)
     {
+        if ($request->get('search') !== null) {
+            $search = $request->get('search');
+            $data = DB::table('students')
+                ->where('student_id', 'like', '%' . $search . '%')
+                ->get();
+            return view('academic.academic-student-all', ['data' => $data]);
+        }
+       
         $data = Student::all();
         return view('academic.academic-student-all', ['data' => $data]);
     }
@@ -578,6 +586,13 @@ class AcademicsController extends Controller
         return view('academic.academic-student-all');
     }
 
+    public function showAccount($id)
+    {
+        $data = Student::find($id);
+        return view('academic.academic-student-edit', ['data' => $data]);
+    }
+
+    
     public function destroy($id)
     {
         $student = Student::find($id);

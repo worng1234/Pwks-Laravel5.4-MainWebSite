@@ -315,24 +315,23 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลนักเรียน </div>
+										<a href="{{ url('/academic/allAccount')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
 									</div>
 								</div>
 
-								<form method="post" action="{{ url('/academic/addAccountInsert')}}" enctype="multipart/form-data">
-									{{csrf_field()}}
-									{{ method_field('POST') }}
+								
 									<div class="card-body"><br>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input id="Name" type="text" class="form-control" placeholder="" name="username">
+													<input id="Name" type="text" class="form-control" name="username" value="{{$data->username}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวนักเรียน</label>
-													<input id="Name" type="password" class="form-control" placeholder="" name="password">
+													<input id="Name" type="text" class="form-control" value="{{$data->student_id}}" name="student_id" readonly>
 												</div>
 											</div>
 										</div>
@@ -340,8 +339,8 @@
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="prename">
-														<option>เลือก</option>
+													<select class="form-control" id="formGroupDefaultSelect" name="prename" readonly>
+														<option>{{$data->prename}}</option>
 														<option value="เด็กชาย">เด็กชาย</option>
 														<option value="เด็กหญิง">เด็กหญิง</option>
 														<option value="นาย">นาย</option>
@@ -352,33 +351,26 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input id="Name" type="text" class="form-control" placeholder="" name="fname">
+													<input id="Name" type="text" class="form-control" value="{{$data->fname}}" name="fname" readonly>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ชื่อกลาง</label>
-													<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen">
+													<input id="Name" type="text" class="form-control" value="{{$data->name_cen}}" name="name_cen" readonly>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input id="Name" type="text" class="form-control" placeholder="" name="surname">
+													<input id="Name" type="text" class="form-control" value="{{$data->surname}}" name="surname" readonly>
 												</div>
 											</div>
 										</div>
 
 									</div>
 
-									<div class="card-footer" align="center"><br>
-										<button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> บันทึกข้อมูล</button>&nbsp;
-										
-										
-									</div><br>
-
-
-								</form>
+									
 							</div>
 						</div>
 					</div>
