@@ -383,7 +383,7 @@
 														<form role="form" method="post" action="?r=admin_student_edit">
 															<a href='{{ url("/StudentCore/{$value->id}")}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a>
 															<input type="hidden" name="hid" value="1" />
-															<a href='{{ url("/deletestudentcore/{$value->id}")}}' class="btn btn-danger btn-xs" title="" onclick="return confirm('Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.')"> <i class="fas fa-trash"></i> </a>
+															<a href='{{ url("/deletestudentcore/{$value->id}")}}' class="btn btn-danger btn-xs" title="" onclick="return confirm('ต้องการจะลบข้อมูลนี้หรือไม่')"> <i class="fas fa-trash"></i> </a>
 														</form>
 													</td>
 												</tr>

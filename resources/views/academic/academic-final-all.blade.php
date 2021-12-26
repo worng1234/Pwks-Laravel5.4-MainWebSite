@@ -62,7 +62,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
 
-				<a href="academic-index.html" class="logo">
+				<a href="{{ url('/academic')}}" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -178,14 +178,14 @@
 										</a>
 										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li >
-													<a href="{{ url('/academic/class')}}">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+											<li>
+													<a href="{{ url('/academic/allAccount')}}">
+														<span class="sub-item">แสดงข้อมูลนักเรียน</span>
 													</a>
 												</li>
-												<li>
-													<a href="{{ url('/academic/classChange')}}">
-														<span class="sub-item">เลื่อนชั้นเรียน</span>
+												<li >
+													<a href="{{ url('/academic/addAccount')}}">
+														<span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
 													</a>
 												</li>
 											</ul>

@@ -251,3 +251,10 @@ Route::post('/Searchacademic/out', 'AcademicsController@academicOutAll');
 Route::get('/academic/outChange', 'AcademicsController@academicOutChange');
 Route::post('/Searchacademic/outChange', 'AcademicsController@academicOutChange');
 Route::post('/academic/classChangeOut/{id}', 'AcademicsController@academicChangeOut');
+
+//เพิ่มแอคเค้านักเรียน
+Route::get('/academic/allAccount', 'AcademicsController@showAccountStudent');
+
+Route::get('/academic/addAccount', 'AcademicsController@addAccountStudent');
+Route::post('/academic/addAccountInsert', 'AcademicsController@addAccount');
+Route::get('/academicDelete/{id}', 'AcademicsController@destroy');

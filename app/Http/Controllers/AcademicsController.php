@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\studentcoreModels;
+use App\Student;
 
 class AcademicsController extends Controller
 {
@@ -549,5 +550,38 @@ class AcademicsController extends Controller
         return view('academic.academic-out-change', ['data' => $data]);
     }
 
-    
+    //เพิ่มแอคเค้านักเรียน
+
+    public function showAccountStudent()
+    {
+        $data = Student::all();
+        return view('academic.academic-student-all', ['data' => $data]);
+    }
+
+    public function addAccountStudent()
+    {
+        return view('academic.academic-student-add');
+    }
+
+    public function addAccount(Request $request)
+    {
+        Student::create([
+            'student_id' => $request->get('password'),
+            'prename' => $request->get('prename'),
+            'fname' => $request->get('fname'),
+            'name_cen' => $request->get('name_cen'),
+            'surname' => $request->get('surname'),
+            'username' => $request->get('username'),
+            'password' => bcrypt($request->get('password')),
+        ]);
+
+        return view('academic.academic-student-all');
+    }
+
+    public function destroy($id)
+    {
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('/academic/allAccount');
+    }
 }
