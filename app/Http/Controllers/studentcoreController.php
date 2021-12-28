@@ -336,4 +336,10 @@ class studentcoreController extends Controller
         ->get();
         return response()->json($data, 200);
     }
+
+    public function showStudentByID($id)
+    {
+
+    }
+
 }

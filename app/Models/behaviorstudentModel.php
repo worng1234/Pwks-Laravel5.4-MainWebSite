@@ -16,6 +16,7 @@ class behaviorstudentModel extends Model
         'behavior_room',
         'minus_score',
         'plus_score',
+        'total_score',
         'etc',
         'behavior_day',
         'behavior_mount',

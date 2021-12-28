@@ -8,6 +8,7 @@ use App\Http\Controllers\newstudentm1Controller;
 use App\Http\Controllers\newstudentm4Controller;
 use App\Http\Controllers\studentcoreController;
 use App\Http\Controllers\TestUPController;
+use Illuminate\Routing\RouteGroup;
 
 // use App\Http\Controllers\TestUPController;
 
@@ -137,6 +138,10 @@ Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
 Route::post('/searchStudent', 'studentcoreController@search');
 
+//ข้อมูลนักเรียนพื้นฐาน
+Route::get('/showStudentByID/{id}', 'studentcoreController@showStudentByID');
+
+
 //test controller
 Route::get('/testall', 'TestUPController@index');
 Route::post('/testmulti', 'TestUPController@testmultiup');
@@ -151,7 +156,7 @@ Route::get('/testup', 'TestUPController@createview');
 Route::post('/created', 'TestUPController@create');
 
 Route::get('/test/report', 'newstudentm1Controller@reportExel');
-Route::get('/testlink', function(){
+Route::get('/testlink', function () {
     return view('testall.form-m1');
 });
 
@@ -182,6 +187,7 @@ Route::get('/student', 'StudentController@index')->name('student.dashboard');
 Route::get('/student/login', 'Auth\StudentLoginController@showLogin')->name('student.login');
 Route::post('/student/login', 'Auth\StudentLoginController@login')->name('student.login.submit');
 Route::post('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
+
 
 //AffairLogin
 Route::get('/affair', 'AffairController@index')->name('affair.dashboard');
@@ -218,6 +224,8 @@ Route::get('behaviorReport/index', function () {
 });
 Route::get('/behaviorReport/all', 'behaviorstudentController@behaviorAll');
 Route::post('/search/reportbehaviorall', 'behaviorstudentController@behaviorAll');
+
+Route::get('/behaviorReportID/{id}', 'behaviorstudentController@viewBehaviorIDReport');
 
 //academic
 //-->เลื่อนชั้นเรียน

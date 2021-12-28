@@ -4,22 +4,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Atlantis Bootstrap 4 Admin Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="..../assets/img/icon.ico" type="image/x-icon"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="..../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['..../assets/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
 		});
 	</script>
 
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/atlantis.css">
+	<link rel="stylesheet" href="..../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="..../assets/css/atlantis.css">
 	<link href="assets/styles.css" rel="stylesheet" />
 	<link href="assets/prism.css" rel="stylesheet" />
 </head>
@@ -28,7 +28,7 @@
 		<div class="main-header">
 			<div class="logo-header" data-background-color="light-blue2">
 				<a href="index.html" class="logo">
-					<img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<img src="..../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -378,92 +378,92 @@
 							<p>To start using the UI Kit you will need to import some files in your current project or start from scratch using our template (scroll down in this page to view it).</p>
 							<h5 id="css">CSS</h5>
 							<p>Copy-paste the stylesheet <code class="highlighter-rouge">&lt;link&gt;</code> into your <code class="highlighter-rouge">&lt;head&gt;</code> before all other stylesheets to load our CSS.</p>
-							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/atlantis.css"</span><span class="nt">&gt;</span></code></pre></figure>
+							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"../assets/css/atlantis.css"</span><span class="nt">&gt;</span></code></pre></figure>
 							<p>Or can also use the minimized version</p>
-							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/atlantis.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"../assets/css/atlantis.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
 							<p>If you want to use the horizontal version copy-paste the stylesheet <code>&lt;link&gt;</code> into your <code>&lt;head&gt;</code></p>
-							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/atlantis2.css"</span><span class="nt">&gt;</span></code></pre></figure>
+							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"../assets/css/atlantis2.css"</span><span class="nt">&gt;</span></code></pre></figure>
 							<p>Or can also use the minimized version</p>
-							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/atlantis2.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+							<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"../assets/css/atlantis2.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
 							<h5 id="js">JS</h5>
 							<p>Many of our components require the use of JavaScript to function. Specifically, they require <a href="https://jquery.com">jQuery</a>, <a href="https://popper.js.org/">Popper.js</a>, and our own JavaScript plugins. Place the following <code class="highlighter-rouge">&lt;script&gt;</code>s near the end of your pages, right before the closing <code class="highlighter-rouge">&lt;/body&gt;</code> tag, to enable them. jQuery must come first, then Popper.js, and then our JavaScript plugins.</p>
 							<pre class="language-markup">
 								<code class="language-markup">
 									&lt;!--   Core JS Files   --&gt;
-									&lt;script src="../assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/core/popper.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/popper.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery UI --&gt;
-									&lt;script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Scrollbar --&gt;
-									&lt;script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Moment JS --&gt;
-									&lt;script src="../assets/js/plugin/moment/moment.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/moment/moment.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Chart JS --&gt;
-									&lt;script src="../assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Sparkline --&gt;
-									&lt;script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Chart Circle --&gt;
-									&lt;script src="../assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Datatables --&gt;
-									&lt;script src="../assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Notify --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Toggle --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Vector Maps --&gt;
-									&lt;script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Google Maps Plugin --&gt;
-									&lt;script src="../assets/js/plugin/gmaps/gmaps.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/gmaps/gmaps.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Dropzone --&gt;
-									&lt;script src="../assets/js/plugin/dropzone/dropzone.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/dropzone/dropzone.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Fullcalendar --&gt;
-									&lt;script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- DateTimePicker --&gt;
-									&lt;script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Tagsinput --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Wizard --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Validation --&gt;
-									&lt;script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.validate/jquery.validate.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Summernote --&gt;
-									&lt;script src="../assets/js/plugin/summernote/summernote-bs4.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/summernote/summernote-bs4.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Select2 --&gt;
-									&lt;script src="../assets/js/plugin/select2/select2.full.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/select2/select2.full.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Sweet Alert --&gt;
-									&lt;script src="../assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Owl Carousel --&gt;
-									&lt;script src="../assets/js/plugin/owl-carousel/owl.carousel.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/owl-carousel/owl.carousel.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Magnific Popup --&gt;
-									&lt;script src="../assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Atlantis JS --&gt;
-									&lt;script src="../assets/js/atlantis.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/atlantis.min.js"&gt;&lt;/script&gt;
 								</code>
 							</pre>
 							<h5 id="fonts">Fonts and Icons</h5>
@@ -471,11 +471,11 @@
 							<figure class="highlight">
 								<pre class="language-markup">
 									<code class="language-markup">
-										&lt;script src="../assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
+										&lt;script src="..../assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
 										&lt;script&gt;
 											WebFont.load({
 												google: {"families":["Lato:300,400,700,900"]},
-												custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+												custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['..../assets/css/fonts.min.css']},
 												active: function() {
 													sessionStorage.fonts = true;
 												}
@@ -544,14 +544,14 @@
 									&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
 									&lt;title&gt;Atlantis Bootstrap 4 Admin Dashboard&lt;/title&gt;
 									&lt;meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /&gt;
-									&lt;link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/&gt;
+									&lt;link rel="icon" href="..../assets/img/icon.ico" type="image/x-icon"/&gt;
 
 									&lt;!-- Fonts and icons --&gt;
-									&lt;script src="../assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
 									&lt;script&gt;
 										WebFont.load({
 											google: {"families":["Lato:300,400,700,900"]},
-											custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+											custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['..../assets/css/fonts.min.css']},
 											active: function() {
 												sessionStorage.fonts = true;
 											}
@@ -559,11 +559,11 @@
 									&lt;/script&gt;
 
 									&lt;!-- CSS Files --&gt;
-									&lt;link rel="stylesheet" href="../assets/css/bootstrap.min.css"&gt;
-									&lt;link rel="stylesheet" href="../assets/css/atlantis.css"&gt;
+									&lt;link rel="stylesheet" href="..../assets/css/bootstrap.min.css"&gt;
+									&lt;link rel="stylesheet" href="..../assets/css/atlantis.css"&gt;
 
 									&lt;!-- CSS Just for demo purpose, don't include it in your project --&gt;
-									&lt;link rel="stylesheet" href="../assets/css/demo.css"&gt;
+									&lt;link rel="stylesheet" href="..../assets/css/demo.css"&gt;
 								&lt;/head&gt;
 								&lt;body&gt;
 									&lt;div class="wrapper"&gt;
@@ -572,7 +572,7 @@
 											&lt;div class="logo-header" data-background-color="blue"&gt;
 												
 												&lt;a href="index.html" class="logo"&gt;
-													&lt;img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand"&gt;
+													&lt;img src="..../assets/img/logo.svg" alt="navbar brand" class="navbar-brand"&gt;
 												&lt;/a&gt;
 												&lt;button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation"&gt;
 													&lt;span class="navbar-toggler-icon"&gt;
@@ -626,7 +626,7 @@
 																		&lt;div class="notif-center"&gt;
 																			&lt;a href="#"&gt;
 																				&lt;div class="notif-img"&gt; 
-																					&lt;img src="../assets/img/jm_denis.jpg" alt="Img Profile"&gt;
+																					&lt;img src="..../assets/img/jm_denis.jpg" alt="Img Profile"&gt;
 																				&lt;/div&gt;
 																				&lt;div class="notif-content"&gt;
 																					&lt;span class="subject"&gt;Jimmy Denis&lt;/span&gt;
@@ -638,7 +638,7 @@
 																			&lt;/a&gt;
 																			&lt;a href="#"&gt;
 																				&lt;div class="notif-img"&gt; 
-																					&lt;img src="../assets/img/chadengle.jpg" alt="Img Profile"&gt;
+																					&lt;img src="..../assets/img/chadengle.jpg" alt="Img Profile"&gt;
 																				&lt;/div&gt;
 																				&lt;div class="notif-content"&gt;
 																					&lt;span class="subject"&gt;Chad&lt;/span&gt;
@@ -650,7 +650,7 @@
 																			&lt;/a&gt;
 																			&lt;a href="#"&gt;
 																				&lt;div class="notif-img"&gt; 
-																					&lt;img src="../assets/img/mlane.jpg" alt="Img Profile"&gt;
+																					&lt;img src="..../assets/img/mlane.jpg" alt="Img Profile"&gt;
 																				&lt;/div&gt;
 																				&lt;div class="notif-content"&gt;
 																					&lt;span class="subject"&gt;Jhon Doe&lt;/span&gt;
@@ -662,7 +662,7 @@
 																			&lt;/a&gt;
 																			&lt;a href="#"&gt;
 																				&lt;div class="notif-img"&gt; 
-																					&lt;img src="../assets/img/talha.jpg" alt="Img Profile"&gt;
+																					&lt;img src="..../assets/img/talha.jpg" alt="Img Profile"&gt;
 																				&lt;/div&gt;
 																				&lt;div class="notif-content"&gt;
 																					&lt;span class="subject"&gt;Talha&lt;/span&gt;
@@ -712,7 +712,7 @@
 																			&lt;/a&gt;
 																			&lt;a href="#"&gt;
 																				&lt;div class="notif-img"&gt; 
-																					&lt;img src="../assets/img/profile2.jpg" alt="Img Profile"&gt;
+																					&lt;img src="..../assets/img/profile2.jpg" alt="Img Profile"&gt;
 																				&lt;/div&gt;
 																				&lt;div class="notif-content"&gt;
 																					&lt;span class="block"&gt;
@@ -794,14 +794,14 @@
 														&lt;li class="nav-item dropdown hidden-caret"&gt;
 															&lt;a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"&gt;
 																&lt;div class="avatar-sm"&gt;
-																	&lt;img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
+																	&lt;img src="..../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
 																&lt;/div&gt;
 															&lt;/a&gt;
 															&lt;ul class="dropdown-menu dropdown-user animated fadeIn"&gt;
 																&lt;div class="dropdown-user-scroll scrollbar-outer"&gt;
 																	&lt;li&gt;
 																		&lt;div class="user-box"&gt;
-																			&lt;div class="avatar-lg"&gt;&lt;img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"&gt;&lt;/div&gt;
+																			&lt;div class="avatar-lg"&gt;&lt;img src="..../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"&gt;&lt;/div&gt;
 																			&lt;div class="u-text"&gt;
 																				&lt;h4&gt;Hizrian&lt;/h4&gt;
 																				&lt;p class="text-muted"&gt;hello@example.com&lt;/p&gt;&lt;a href="profile.html" class="btn btn-xs btn-secondary btn-sm"&gt;View Profile&lt;/a&gt;
@@ -838,7 +838,7 @@
 												&lt;div class="sidebar-content"&gt;
 													&lt;div class="user"&gt;
 														&lt;div class="avatar-sm float-left mr-2"&gt;
-															&lt;img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
+															&lt;img src="..../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
 														&lt;/div&gt;
 														&lt;div class="info"&gt;
 															&lt;a data-toggle="collapse" href="#collapseExample" aria-expanded="true"&gt;
@@ -1419,16 +1419,16 @@
 																		&lt;span class="category-title mt-0"&gt;Contacts&lt;/span&gt;
 																		&lt;div class="avatar-group"&gt;
 																			&lt;div class="avatar"&gt;
-																				&lt;img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																				&lt;img src="..../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																			&lt;/div&gt;
 																			&lt;div class="avatar"&gt;
-																				&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																				&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																			&lt;/div&gt;
 																			&lt;div class="avatar"&gt;
-																				&lt;img src="../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																				&lt;img src="..../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																			&lt;/div&gt;
 																			&lt;div class="avatar"&gt;
-																				&lt;img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																				&lt;img src="..../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																			&lt;/div&gt;
 																			&lt;div class="avatar"&gt;
 																				&lt;span class="avatar-title rounded-circle border border-white"&gt;+&lt;/span&gt;
@@ -1439,7 +1439,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-online"&gt;
-																						&lt;img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data"&gt;
 																						&lt;span class="name"&gt;Jimmy Denis&lt;/span&gt;
@@ -1450,7 +1450,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-offline"&gt;
-																						&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data"&gt;
 																						&lt;span class="name"&gt;Chad&lt;/span&gt;
@@ -1461,7 +1461,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-offline"&gt;
-																						&lt;img src="../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data"&gt;
 																						&lt;span class="name"&gt;John Doe&lt;/span&gt;
@@ -1475,7 +1475,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-online"&gt;
-																						&lt;img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data2"&gt;
 																						&lt;span class="name"&gt;Jimmy Denis&lt;/span&gt;
@@ -1486,7 +1486,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-offline"&gt;
-																						&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data2"&gt;
 																						&lt;span class="name"&gt;Chad&lt;/span&gt;
@@ -1497,7 +1497,7 @@
 																			&lt;div class="user"&gt;
 																				&lt;a href="#"&gt;
 																					&lt;div class="avatar avatar-away"&gt;
-																						&lt;img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																						&lt;img src="..../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																					&lt;/div&gt;
 																					&lt;div class="user-data2"&gt;
 																						&lt;span class="name"&gt;Talha&lt;/span&gt;
@@ -1514,7 +1514,7 @@
 															&lt;div class="messages-title"&gt;
 																&lt;div class="user"&gt;
 																	&lt;div class="avatar avatar-offline float-right ml-2"&gt;
-																		&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																		&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																	&lt;/div&gt;
 																	&lt;span class="name"&gt;Chad&lt;/span&gt;
 																	&lt;span class="last-active"&gt;Active 2h ago&lt;/span&gt;
@@ -1527,7 +1527,7 @@
 																&lt;div class="message-content-wrapper"&gt;
 																	&lt;div class="message message-in"&gt;
 																		&lt;div class="avatar avatar-sm"&gt;
-																			&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																			&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																		&lt;/div&gt;
 																		&lt;div class="message-body"&gt;
 																			&lt;div class="message-content"&gt;
@@ -1558,7 +1558,7 @@
 																&lt;div class="message-content-wrapper"&gt;
 																	&lt;div class="message message-in"&gt;
 																		&lt;div class="avatar avatar-sm"&gt;
-																			&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																			&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																		&lt;/div&gt;
 																		&lt;div class="message-body"&gt;
 																			&lt;div class="message-content"&gt;
@@ -1591,7 +1591,7 @@
 																&lt;div class="message-content-wrapper"&gt;
 																	&lt;div class="message message-in"&gt;
 																		&lt;div class="avatar avatar-sm"&gt;
-																			&lt;img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
+																			&lt;img src="..../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle border border-white"&gt;
 																		&lt;/div&gt;
 																		&lt;div class="message-body"&gt;
 																			&lt;div class="message-content"&gt;
@@ -1796,80 +1796,80 @@
 										&lt;/div&gt;
 									&lt;/div&gt;
 									&lt;!--   Core JS Files   --&gt;
-									&lt;script src="../assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/core/popper.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/popper.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery UI --&gt;
-									&lt;script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Scrollbar --&gt;
-									&lt;script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Moment JS --&gt;
-									&lt;script src="../assets/js/plugin/moment/moment.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/moment/moment.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Chart JS --&gt;
-									&lt;script src="../assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Sparkline --&gt;
-									&lt;script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Chart Circle --&gt;
-									&lt;script src="../assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Datatables --&gt;
-									&lt;script src="../assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Notify --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Toggle --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Vector Maps --&gt;
-									&lt;script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
-									&lt;script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Google Maps Plugin --&gt;
-									&lt;script src="../assets/js/plugin/gmaps/gmaps.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/gmaps/gmaps.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Dropzone --&gt;
-									&lt;script src="../assets/js/plugin/dropzone/dropzone.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/dropzone/dropzone.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Fullcalendar --&gt;
-									&lt;script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- DateTimePicker --&gt;
-									&lt;script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Tagsinput --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Bootstrap Wizard --&gt;
-									&lt;script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"&gt;&lt;/script&gt;
 
 									&lt;!-- jQuery Validation --&gt;
-									&lt;script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.validate/jquery.validate.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Summernote --&gt;
-									&lt;script src="../assets/js/plugin/summernote/summernote-bs4.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/summernote/summernote-bs4.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Select2 --&gt;
-									&lt;script src="../assets/js/plugin/select2/select2.full.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/select2/select2.full.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Sweet Alert --&gt;
-									&lt;script src="../assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Owl Carousel --&gt;
-									&lt;script src="../assets/js/plugin/owl-carousel/owl.carousel.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/owl-carousel/owl.carousel.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Magnific Popup --&gt;
-									&lt;script src="../assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"&gt;&lt;/script&gt;
 
 									&lt;!-- Atlantis JS --&gt;
-									&lt;script src="../assets/js/atlantis.min.js"&gt;&lt;/script&gt;
+									&lt;script src="..../assets/js/atlantis.min.js"&gt;&lt;/script&gt;
 								&lt;/body&gt;
 							&lt;/html&gt;
 						</code>
@@ -1883,19 +1883,19 @@
 </div>
 </div>
 </body>
-<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-<script src="../assets/js/core/popper.min.js"></script>
-<script src="../assets/js/core/bootstrap.min.js"></script>
-<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script type="text/javascript" src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-<script type="text/javascript" src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" charset="utf-8"></script>
-<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="../assets/js/atlantis.min.js"></script>
+<script src="..../assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="..../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="..../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script src="..../assets/js/core/popper.min.js"></script>
+<script src="..../assets/js/core/bootstrap.min.js"></script>
+<script src="..../assets/js/plugin/chart.js/chart.min.js"></script>
+<script src="..../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="..../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script type="text/javascript" src="..../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script type="text/javascript" src="..../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" charset="utf-8"></script>
+<script src="..../assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="..../assets/js/atlantis.min.js"></script>
 <script src="assets/prism.js"></script>
 <script src="assets/prism-normalize-whitespace.min.js"></script>
 <script type="text/javascript">

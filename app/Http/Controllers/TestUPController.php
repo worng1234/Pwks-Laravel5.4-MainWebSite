@@ -63,13 +63,22 @@ class TestUPController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            "student_id" => "max:8192"
+        ]);
+
+        $pic = $request->file('student_id')->getClientOriginalName();
+        $compPic1 = str_replace(' ', '_' ,$pic);
+        $path = $request->file('student_id')->storeAs('test', $compPic1);
+
         $day = date('d');
         $mounth = date('m');
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
+
         $data = new test([
             "name" => $request->get('name'),
-            "student_id" => $request->get('student_id'),
+            "student_id" => $compPic1,
             "score" => $score = (int)$request->get('score')
         ]);
         $data->save();

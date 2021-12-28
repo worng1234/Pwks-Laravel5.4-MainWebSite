@@ -53,6 +53,8 @@ class newstudentm1Controller extends Controller
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
 
+        
+
         //student picture
         $pic = $request->file('pic')->getClientOriginalName();
         $compPic1 = str_replace(' ', '_', $pic);

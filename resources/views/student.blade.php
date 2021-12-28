@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
+    <link rel="icon" href="..../assets/img/icon2.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
-    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="..../assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
         WebFont.load({
             google: {
@@ -17,7 +17,7 @@
             },
             custom: {
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-                urls: ['../assets/css/fonts.min.css']
+                urls: ['..../assets/css/fonts.min.css']
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -26,11 +26,11 @@
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/atlantis.min.css">
+    <link rel="stylesheet" href="..../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="..../assets/css/atlantis.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="../assets/css/demo.css">
+    <link rel="stylesheet" href="..../assets/css/demo.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             <div class="logo-header" data-background-color="white">
 
                 <a href="student-index.html" class="logo">
-                    <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
+                    <img src="..../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -100,8 +100,8 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>ชื่อ-นามสกุล :</b> สวัสดี มีเมตตา</label>
-                            <label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
+                            <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
+                            <label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
                             <label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
                             <label><b>ภาคเรียนที่ :</b> 1/2565</label>
 
@@ -140,7 +140,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('/ /{{ Auth::guard('student')->user()->id}}')}}">
                                             <span class="sub-item">ตรวจสอบข้อมูล</span>
                                         </a>
                                     </li>
@@ -194,10 +194,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
-                                    <div id="chart-container">
-                                        <canvas id="lineChart"></canvas>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -223,74 +220,74 @@
         <!-- สิ้นสุด Footter -->
     </div>
     <!--   Core JS Files   -->
-	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
+	<script src="..../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="..../assets/js/core/popper.min.js"></script>
+	<script src="..../assets/js/core/bootstrap.min.js"></script>
 
 	<!-- jQuery UI -->
-	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="..../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="..../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 	<!-- jQuery Scrollbar -->
-	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 	<!-- Moment JS -->
-	<script src="../assets/js/plugin/moment/moment.min.js"></script>
+	<script src="..../assets/js/plugin/moment/moment.min.js"></script>
 
 	<!-- Chart JS -->
-	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+	<script src="..../assets/js/plugin/chart.js/chart.min.js"></script>
 
 	<!-- jQuery Sparkline -->
-	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<script src="..../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 	<!-- Chart Circle -->
-	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+	<script src="..../assets/js/plugin/chart-circle/circles.min.js"></script>
 
 	<!-- Datatables -->
-	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+	<script src="..../assets/js/plugin/datatables/datatables.min.js"></script>
 
 	<!-- Bootstrap Toggle -->
-	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<script src="..../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
 	<!-- jQuery Vector Maps -->
-	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="..../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="..../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 	<!-- Google Maps Plugin -->
-	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+	<script src="..../assets/js/plugin/gmaps/gmaps.js"></script>
 
 	<!-- Dropzone -->
-	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+	<script src="..../assets/js/plugin/dropzone/dropzone.min.js"></script>
 
 	<!-- Fullcalendar -->
-	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+	<script src="..../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
 
 	<!-- DateTimePicker -->
-	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+	<script src="..../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
 
 	<!-- Bootstrap Tagsinput -->
-	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="..../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 
 	<!-- Bootstrap Wizard -->
-	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+	<script src="..../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
 
 	<!-- jQuery Validation -->
-	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+	<script src="..../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
 
 	<!-- Summernote -->
-	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+	<script src="..../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
 
 	<!-- Select2 -->
-	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+	<script src="..../assets/js/plugin/select2/select2.full.min.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<script src="..../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
-	<script src="../assets/js/atlantis2.min.js"></script>
+	<script src="..../assets/js/atlantis2.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="../assets/js/demo.js"></script>
+	<script src="..../assets/js/demo.js"></script>
     <script>
         Circles.create({
             id: 'circles-1',
@@ -336,21 +333,6 @@
             styleWrapper: true,
             styleText: true
         })
-
-        var lineChart = document.getElementById('lineChart').getContext('2d');
-        var num = {
-            !!json_encode($m1_regis_dayall1) !!
-        };
-        var num2 = {
-            !!json_encode($m1_regis_dayall2) !!
-        };
-
-        var num4 = {
-            !!json_encode($m4_regis_dayall1) !!
-        };
-        var num5 = {
-            !!json_encode($m4_regis_dayall2) !!
-        };
 
         var myLineChart = new Chart(lineChart, {
             type: 'line',

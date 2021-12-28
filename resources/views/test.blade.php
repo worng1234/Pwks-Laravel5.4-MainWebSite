@@ -18,7 +18,7 @@
         </div>
         <div >
         <label>ID student</label>
-            <input type="text" name="student_id" >
+        <input type="file" class="form-control-file" id="student_id" name="student_id">
         </div>
         <input name="score" value="100" hidden>
         <button type="submit">Submit</button>
