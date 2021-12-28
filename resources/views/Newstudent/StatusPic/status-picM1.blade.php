@@ -24,7 +24,7 @@
         <form action="{{ url('/updated1', $newstudentm1Model->id)}}" method="post">
             {{csrf_field()}}
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1PIC/{{$newstudentm1Model->pic}}">
+                <img class="card-img-top" src="/ImgAll/profile_img/{{$newstudentm1Model->pic}}">
                 <div class="card-body">
                     <h5 class="card-title">รูปประจำตัว</h5>
                     <div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1HOUSE/{{$newstudentm1Model->house_pic}}">
+                <img class="card-img-top" src="/ImgAll/house_regis/house_student/{{$newstudentm1Model->house_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ทะเบียนบ้าน</h5>
                     <div>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1IDNUMBER/{{$newstudentm1Model->id_number_pic}}">
+                <img class="card-img-top" src="/ImgAll/id_card/id_card_student/{{$newstudentm1Model->id_number_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">สำเนาบัตรประจำตัวประชาชน</h5>
                     <div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="card" style="width: 30rem;">
-                <img class="card-img-top" src="/newstudentm1AllPic/newstudentm1GRADE/{{$newstudentm1Model->grade_pic}}">
+                <img class="card-img-top" src="/ImgAll/student_submit/{{$newstudentm1Model->grade_pic}}">
                 <div class="card-body">
                     <h5 class="card-title">ใบ ปพ.</h5>
                     <div>

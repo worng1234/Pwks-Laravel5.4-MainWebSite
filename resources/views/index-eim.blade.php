@@ -110,6 +110,19 @@
 						</li>
 						<li class="nav-item submenu">
 							<a class="nav-link" href="#">
+								<i class="link-icon icon-user-follow"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="#">เพิ่มข้อมูลนักเรียนพื้นฐาน 1</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
 								<i class="link-icon icon-lock"></i>
 								<span class="menu-title">เข้าระบบ</span>
 							</a>

@@ -46,6 +46,10 @@
 			background-position: center;
 			position: relative;
 		}
+		.saraban {
+			font-family: 'Sarabun', sans-serif;
+		}
+		
 	</style>
 
 
@@ -59,6 +63,10 @@
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -69,7 +77,7 @@
 			<img src="../assets/img/logo3.png" width="20%" height="20%">
 		</div>
 		<div align="center" style="margin-top:20px;">
-			<h2>ประวัติความประพฤติรายบุคคล</h2>
+			<h2 class="saraban">ประวัติความประพฤติรายบุคคล</h2>
 		</div>
 		<div class="wrapper" style="margin-top:10px;">
 			<div class="row">
@@ -80,42 +88,42 @@
 								<td>
 									<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 										<tr>
-											<td style="text-align: left; vertical-align: top; width: 80px;">เลขประจำตัวนักเรียน
+											<td style="text-align: left; vertical-align: top; width: 80px;" class="saraban">เลขประจำตัวนักเรียน
 											</td>
 											<td>
-												<input value="{{$data_student->student_id}}" type="text" readonly="readonly" id="TextBox01" class="textboxReadOnly" style="width:100%;" />
+											{{$data_student->student_id}}
 											</td>
 										</tr>
 										<tr>
-											<td style="text-align: left; vertical-align: top;">ชื่อ-นามสกุล
+											<td style="text-align: left; vertical-align: top;" class="saraban">ชื่อ-นามสกุล
 											</td>
-											<td>
-												<input value="{{$data_student->prename}}{{$data_student->fname}} {{$data_student->surname}}" type="text" readonly="readonly" id="TextBox02" class="textboxReadOnly" style="width:100%;" />
-											</td>
-										</tr>
-										<tr>
-											<td style="text-align: left; vertical-align: top;">ชั้นเรียน/ห้อง
-											</td>
-											<td>
-												<input value="{{$data_student->student_class}}/{{$data_student->student_room}}" type="text" readonly="readonly" id="TextBox03" class="textboxReadOnly" style="width:100%;" />
+											<td class="saraban">
+											{{$data_student->prename}}{{$data_student->fname}} {{$data_student->surname}}
 											</td>
 										</tr>
 										<tr>
-											<td style="text-align: left; vertical-align: top;">เลขที่
-											<td>
-												<input value="{{$data_student->student_number}}" type="text" readonly="readonly" id="TextBox04" class="textboxReadOnly" style="width:100%;" />
+											<td style="text-align: left; vertical-align: top;" class="saraban">ชั้นเรียน/ห้อง
+											</td>
+											<td class="saraban">
+											{{$data_student->student_class}}/{{$data_student->student_room}}
 											</td>
 										</tr>
 										<tr>
-											<td style="text-align: left; vertical-align: top;">คะแนนล่าสุด
+											<td style="text-align: left; vertical-align: top;" class="saraban">เลขที่
+											<td class="saraban">
+											{{$data_student->student_number}}
 											</td>
-											<td>
-												<input value="{{$data_student->score}}" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
+										</tr>
+										<tr>
+											<td style="text-align: left; vertical-align: top;" class="saraban">คะแนนล่าสุด
+											</td>
+											<td class="saraban">
+											{{$data_student->score}}
 											</td>
 										</tr>
 									</table>
 								</td>
-								<td style="text-align: left; vertical-align: top; width: 125px">
+								<td style=" vertical-align: top; width: 125px">
 									<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 										<tr>
 											<td>
@@ -130,28 +138,28 @@
 				</div>
 			</div>
 			<div style="margin-top:30px;">
-				<h4 style="text-align: center;">ประวัติความประพฤติด้านบวก</h4>
+				<h4 style="text-align: center;" class="saraban">ประวัติความประพฤติด้านบวก</h4>
 			</div>
 			<div class="table-responsive">
 				<table style="width:100%; border:1px solid black;">
 					<thead style="border:1px solid black;">
 						<tr>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>วัน/เดือน/ปี</center>
 							</th>
-							<th scope="col" width="10%" style="border:1px solid black;">
+							<th scope="col" width="10%" style="border:1px solid black;" class="saraban">
 								<center>ชื่อ-นามสกุล</center>
 							</th>
-							<th scope="col" width="20%" style="border:1px solid black;">
+							<th scope="col" width="20%" style="border:1px solid black;" class="saraban">
 								<center>ประวัติความประพฤติ</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>เพิ่มคะแนน</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>ภาคเรียน</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>ปีการศึกษา</center>
 							</th>
 						</tr>
@@ -159,12 +167,12 @@
 					<tbody style="border:1px solid black;">
 						@foreach ($student_Plus as $key => $value)
 						<tr>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->fullname}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_history}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->plus_score}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_term}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_study_year}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->fullname}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_history}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->plus_score}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_term}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_study_year}}</td>
 						</tr>
 						@endforeach
 					</tbody>
@@ -172,29 +180,29 @@
 			</div>
 
 			<div style="margin-top:30px;">
-				<h4 style="text-align: center;">ประวัติความประพฤติด้านลบ</h4>
+				<h4 style="text-align: center;" class="saraban">ประวัติความประพฤติด้านลบ</h4>
 			</div>
 
 			<div class="table-responsive" >
 				<table style="width:100%; border:1px solid black;">
 					<thead style="border:1px solid black;">
 						<tr>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>วัน/เดือน/ปี</center>
 							</th>
-							<th scope="col" width="10%" style="border:1px solid black;">
+							<th scope="col" width="10%" style="border:1px solid black;" class="saraban">
 								<center>ชื่อ-นามสกุล</center>
 							</th>
-							<th scope="col" width="20%" style="border:1px solid black;">
+							<th scope="col" width="20%" style="border:1px solid black;" class="saraban">
 								<center>ประวัติความประพฤติ</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>หักคะแนน</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>ภาคเรียน</center>
 							</th>
-							<th scope="col" width="5%" style="border:1px solid black;">
+							<th scope="col" width="5%" style="border:1px solid black;" class="saraban">
 								<center>ปีการศึกษา</center>
 							</th>
 						</tr>
@@ -202,12 +210,12 @@
 					<tbody style="border:1px solid black;">
 					@foreach ($student_Minus as $key => $value)
 						<tr>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->fullname}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_history}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->minus_score}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_term}}</td>
-							<td align="center" style="border:1px solid black;">{{$value->behavior_study_year}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->fullname}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_history}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->minus_score}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_term}}</td>
+							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_study_year}}</td>
 						</tr>
 						@endforeach
 					</tbody>

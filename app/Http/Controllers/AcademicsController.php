@@ -592,7 +592,8 @@ class AcademicsController extends Controller
         return view('academic.academic-student-edit', ['data' => $data]);
     }
 
-    
+   
+
     public function destroy($id)
     {
         $student = Student::find($id);

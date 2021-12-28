@@ -64,7 +64,7 @@ class TestUPController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, [
-            'student_id' => 'max:2042'
+            'student_id' => 'mimes:jpeg,bmp,png,gif|max:8192'
         ]);
 
         $pic = $request->file('student_id')->getClientOriginalName();

@@ -58,19 +58,19 @@ class newstudentm1Controller extends Controller
         //student picture
         $pic = $request->file('pic')->getClientOriginalName();
         $compPic1 = str_replace(' ', '_', $pic);
-        $path = $request->file('pic')->storeAs('newstudentm1AllPic/newstudentm1PIC', $compPic1);
+        $path = $request->file('pic')->storeAs('ImgAll/profile_img', $compPic1);
         //ID card student picture
         $id_number_pic = $request->file('id_number_pic')->getClientOriginalName();
         $compPic2 = str_replace(' ', '_', $id_number_pic);
-        $path = $request->file('id_number_pic')->storeAs('newstudentm1AllPic/newstudentm1IDNUMBER', $compPic2);
+        $path = $request->file('id_number_pic')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
         //House student picture
         $house_pic = $request->file('house_pic')->getClientOriginalName();
         $compPic3 = str_replace(' ', '_', $house_pic);
-        $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compPic3);
+        $path = $request->file('house_pic')->storeAs('ImgAll/house_regis/house_student', $compPic3);
         //Grade student picture
         $grade_pic = $request->file('grade_pic')->getClientOriginalName();
         $compPic4 = str_replace(' ', '_', $grade_pic);
-        $path = $request->file('grade_pic')->storeAs('newstudentm1AllPic/newstudentm1GRADE', $compPic4);
+        $path = $request->file('grade_pic')->storeAs('ImgAll/student_submit', $compPic4);
 
         $post = new newstudentm1Model([
             "pic" => $compPic1,
@@ -178,19 +178,19 @@ class newstudentm1Controller extends Controller
 
             $file = $request->file('pic');
             $compic1 = $file->getClientOriginalName();
-            $path = $request->file('pic')->storeAs('newstudentm1AllPic/newstudentm1PIC', $compic1);
+            $path = $request->file('pic')->storeAs('ImgAll/profile_img', $compic1);
 
             $file2 = $request->file('id_number_pic');
             $compic2 = $file2->getClientOriginalName();
-            $path = $request->file('id_number_pic')->storeAs('newstudentm1AllPic/newstudentm1IDNUMBER', $compic2);
+            $path = $request->file('id_number_pic')->storeAs('ImgAll/id_card/id_card_student', $compic2);
 
             $file3 = $request->file('house_pic');
             $compic3 = $file3->getClientOriginalName();
-            $path = $request->file('house_pic')->storeAs('newstudentm1AllPic/newstudentm1HOUSE', $compic3);
+            $path = $request->file('house_pic')->storeAs('ImgAll/house_regis/house_student', $compic3);
 
             $file3 = $request->file('grade_pic');
             $compic4 = $file3->getClientOriginalName();
-            $path = $request->file('grade_pic')->storeAs('newstudentm1AllPic/newstudentm1GRADE', $compic4);
+            $path = $request->file('grade_pic')->storeAs('ImgAll/student_submit', $compic4);
 
             $newstudentm1Model->pic = $compic1;
             $newstudentm1Model->id_number_pic = $compic2;

@@ -146,26 +146,6 @@
 							</a>
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#forms1">
-											<span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms1">
-											<ul class="nav nav-collapse subnav">
-											<li>
-													<a href="{{ url('/academic/allAccount')}}">
-														<span class="sub-item">แสดงข้อมูลนักเรียน</span>
-													</a>
-												</li>
-												<li >
-													<a href="{{ url('/academic/addAccount')}}">
-														<span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
 
 									<li>
 										<a data-toggle="collapse" href="#forms2">
