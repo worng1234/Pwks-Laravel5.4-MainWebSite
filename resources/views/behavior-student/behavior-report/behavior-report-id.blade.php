@@ -6,10 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="..../assets/img/icon2.ico" type="image/x-icon" />
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="..../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -17,7 +17,7 @@
 			},
 			custom: {
 				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-				urls: ['..../assets/css/fonts.min.css']
+				urls: ['../assets/css/fonts.min.css']
 			},
 			active: function() {
 				sessionStorage.fonts = true;
@@ -51,11 +51,11 @@
 
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="..../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="..../assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="..../assets/css/demo.css">
+	<link rel="stylesheet" href="../assets/css/demo.css">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
@@ -66,7 +66,7 @@
 
 
 		<div align="center" style="margin-top:10px;">
-			<img src="..../assets/img/logo3.png" width="20%" height="20%">
+			<img src="../assets/img/logo3.png" width="20%" height="20%">
 		</div>
 		<div align="center" style="margin-top:20px;">
 			<h2>ประวัติความประพฤติรายบุคคล</h2>
@@ -119,7 +119,7 @@
 									<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 										<tr>
 											<td>
-												<img id="mainContentPlaceHolder_signinImage" src="..../assets/img/pro1.jpg" style="height:165px; width:125px;" />
+												<img id="mainContentPlaceHolder_signinImage" src="../assets/img/pro1.jpg" style="height:165px; width:125px;" />
 											</td>
 										</tr>
 									</table>
@@ -215,59 +215,59 @@
 			</div>
 		</div>
 		<!--   Core JS Files   -->
-		<script src="..../assets/js/core/jquery.3.2.1.min.js"></script>
-		<script src="..../assets/js/core/popper.min.js"></script>
-		<script src="..../assets/js/core/bootstrap.min.js"></script>
+		<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+		<script src="../assets/js/core/popper.min.js"></script>
+		<script src="../assets/js/core/bootstrap.min.js"></script>
 
 		<!-- jQuery UI -->
-		<script src="..../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-		<script src="..../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 		<!-- jQuery Scrollbar -->
-		<script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 		<!-- Chart JS -->
-		<script src="..../assets/js/plugin/chart.js/chart.min.js"></script>
+		<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
 
 		<!-- jQuery Sparkline -->
-		<script src="..../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+		<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 		<!-- Chart Circle -->
-		<script src="..../assets/js/plugin/chart-circle/circles.min.js"></script>
+		<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
 
 		<!-- Moment JS -->
-		<script src="..../assets/js/plugin/moment/moment.min.js"></script>
+		<script src="../assets/js/plugin/moment/moment.min.js"></script>
 
 		<!-- Datatables -->
-		<!-- <script src="..../assets/js/plugin/datatables/datatables.min.js"></script> -->
+		<!-- <script src="../assets/js/plugin/datatables/datatables.min.js"></script> -->
 
 		<!-- DateTimePicker -->
-		<script src="..../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+		<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
 
 		<!-- jQuery Scrollbar -->
-		<script src="..../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 		<!-- Select2 -->
-		<script src="..../assets/js/plugin/select2/select2.full.min.js"></script>
+		<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
 
 		<!-- jQuery Vector Maps -->
-		<script src="..../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-		<script src="..../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+		<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+		<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 		<!-- Sweet Alert -->
-		<script src="..../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+		<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 		<!-- Atlantis JS -->
-		<script src="..../assets/js/atlantis.min.js"></script>
+		<script src="../assets/js/atlantis.min.js"></script>
 
 		<!-- Bootstrap Toggle -->
-		<script src="..../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+		<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
 		<!-- Bootstrap Tagsinput -->
-		<script src="..../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+		<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 
 		<!-- Atlantis DEMO methods, don't include it in your project! -->
-		<script src="..../assets/js/setting-demo2.js"></script>
+		<script src="../assets/js/setting-demo2.js"></script>
 
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>

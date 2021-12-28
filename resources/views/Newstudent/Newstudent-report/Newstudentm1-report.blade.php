@@ -43,7 +43,7 @@
 
     <div class="container">
         <div align="center" style="margin-top:50px;">
-            <img src="..../assets/img/logo3.png" width="20%" height="20%">
+            <img src="../assets/img/logo3.png" width="20%" height="20%">
         </div>
 
         <div class="container" align="center" style="margin-top: 30px;">
