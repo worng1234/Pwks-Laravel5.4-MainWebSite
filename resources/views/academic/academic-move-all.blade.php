@@ -268,15 +268,26 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+									
 									<li>
-										<a href="academic-basic-info-class-all.html">
+										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -341,12 +352,12 @@
 														<label>ระดับชั้น</label>
 														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
 															<option value="">เลือก</option>
-															<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
-															<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
-															<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
-															<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
-															<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
-															<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+															<option value="1">มัธยมศึกษาปีที่ 1</option>
+															<option value="2">มัธยมศึกษาปีที่ 2</option>
+															<option value="3">มัธยมศึกษาปีที่ 3</option>
+															<option value="4">มัธยมศึกษาปีที่ 4</option>
+															<option value="5">มัธยมศึกษาปีที่ 5</option>
+															<option value="6">มัธยมศึกษาปีที่ 6</option>
 														</select>
 													</div>
 												</div>
@@ -401,9 +412,13 @@
 												<tr>
 													<td align="center">{{$value->student_id}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center">{{$value->student_class}}</td>
+													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
 													<td align="center">{{$value->student_room}}</td>
-													<td align="center">{{$value->status}}</td>
+													<td align="center">
+														@if ($value->status == '03')
+														ย้ายสถานศึกษา
+														@endif
+													</td>
 												</tr>
 												@endforeach
 												<!-- Modal Show Club Detail -->

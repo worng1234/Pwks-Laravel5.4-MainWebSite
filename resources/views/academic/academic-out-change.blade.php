@@ -158,7 +158,7 @@
 										</a>
 										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
@@ -184,7 +184,7 @@
 														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
 													</a>
 												</li>
-												<li >
+												<li>
 													<a href="{{ url('/academic/finalChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
 													</a>
@@ -200,12 +200,12 @@
 										</a>
 										<div class="collapse" id="forms4">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/move')}}">
 														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
 													</a>
 												</li>
-												<li >
+												<li>
 													<a href="{{ url('/academic/moveChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
 													</a>
@@ -221,7 +221,7 @@
 										</a>
 										<div class="collapse show" id="forms5">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/out')}}">
 														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
 													</a>
@@ -246,12 +246,12 @@
 							</a>
 							<div class="collapse " id="agree">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
@@ -268,15 +268,26 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+									
 									<li>
-										<a href="academic-basic-info-class-all.html">
+										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -321,7 +332,7 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน <i class="flaticon-right-arrow"></i> เลื่อนชั้นเรียน</div>
-										
+
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
@@ -342,12 +353,12 @@
 														<label>ระดับชั้น</label>
 														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
 															<option value="">เลือก</option>
-															<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
-															<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
-															<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
-															<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
-															<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
-															<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+															<option value="1">มัธยมศึกษาปีที่ 1</option>
+															<option value="2">มัธยมศึกษาปีที่ 2</option>
+															<option value="3">มัธยมศึกษาปีที่ 3</option>
+															<option value="4">มัธยมศึกษาปีที่ 4</option>
+															<option value="5">มัธยมศึกษาปีที่ 5</option>
+															<option value="6">มัธยมศึกษาปีที่ 6</option>
 														</select>
 													</div>
 												</div>
@@ -380,7 +391,7 @@
 									<div align="right">
 										<button type="submit" class="btn btn-success">ยืนยัน</button>
 									</div>
-									
+
 									<!-- ตารางแสดงข้อมูล-->
 									<div class="table-responsive">
 
@@ -408,13 +419,17 @@
 												<tr>
 													<td align="center">{{$value->student_id}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center"> {{$value->student_class}}</td>
+													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
 													<td align="center">{{$value->student_room}} </td>
 													<td align="center"><select id="inputStatus" name="status">
-																	<option>{{$value->status}}</option>
-																	<option value="กำลังศึกษาอยู่">กำลังศึกษาอยู่</option>
-																	<option value="ออกกลางคัน">ออกกลางคัน</option>
-																</select></td>
+															@if ($value->status == '01')
+															<option>กำลังศึกษาอยู่</option>
+															@else
+															<option>ออกกลางคัน</option>
+															@endif
+															<option value="01">กำลังศึกษาอยู่</option>
+															<option value="04">ออกกลางคัน</option>
+														</select></td>
 												</tr>
 												@endforeach
 												<!-- Modal Show Club Detail -->
@@ -617,7 +632,7 @@
 		})
 	</script>
 
-	
+
 
 </body>
 

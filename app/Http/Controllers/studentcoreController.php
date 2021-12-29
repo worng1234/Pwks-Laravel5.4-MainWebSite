@@ -8,6 +8,9 @@ use App\Models\healtystudentModel;
 use App\Models\parentstudentModel;
 use App\Models\studentdetailModel;
 use App\Models\talentstudentModel;
+use App\Models\classroomModel;
+use App\Models\classmajorModel;
+use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +23,12 @@ class studentcoreController extends Controller
 
     public function create()
     {
-        return view('Studentcore.student-info-add-v2');
+        $classroom = classroomModel::all();
+        $classmajor = classmajorModel::all();
+        return view('Studentcore.student.student-core',[
+            'classroom' => $classroom,
+            'classmajor' => $classmajor,
+        ]);
     }
 
     public function search(Request $request)
@@ -277,6 +285,18 @@ class studentcoreController extends Controller
             "read_write" => $request->get('read_write'),
             "understand" => $request->get('understand'),
         ]);
+
+        $studentlogin = new Student([
+            "student_id" => $request->get('student_id'),
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "name_cen" => $request->get('name_cen'),
+            "surname" => $request->get('surname'),
+            "student_class" => $request->get('student_class'),
+            "student_room" => $request->get('student_room'),
+            "username" => $request->get('student_id_card'),
+            "password" => bcrypt($request->get('student_id')),
+        ]);
         
         $addressstudent->save();
         $healtystudent->save();
@@ -284,8 +304,9 @@ class studentcoreController extends Controller
         $studentcore->save();
         $studentdetail->save();
         $talentstudent->save();
+        $studentlogin->save();
 
-        return redirect('StudentCore');
+        return redirect('/');
     }
     
 

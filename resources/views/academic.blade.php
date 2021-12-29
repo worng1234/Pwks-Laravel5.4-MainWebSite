@@ -241,15 +241,26 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+									
 									<li>
-										<a href="academic-basic-info-class-all.html">
+										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>

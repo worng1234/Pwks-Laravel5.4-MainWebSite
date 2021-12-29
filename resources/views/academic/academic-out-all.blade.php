@@ -158,7 +158,7 @@
 										</a>
 										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
@@ -184,7 +184,7 @@
 														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
 													</a>
 												</li>
-												<li >
+												<li>
 													<a href="{{ url('/academic/finalChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
 													</a>
@@ -200,12 +200,12 @@
 										</a>
 										<div class="collapse" id="forms4">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/move')}}">
 														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
 													</a>
 												</li>
-												<li >
+												<li>
 													<a href="{{ url('/academic/moveChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
 													</a>
@@ -246,12 +246,12 @@
 							</a>
 							<div class="collapse " id="agree">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
@@ -268,15 +268,26 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+									
 									<li>
-										<a href="academic-basic-info-class-all.html">
+										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -325,7 +336,7 @@
 								</div>
 								<div class="card-body" style="min-height: 370px">
 
-								<form role="form" method="post" action="{{ url('/Searchacademic/out')}}">
+									<form role="form" method="post" action="{{ url('/Searchacademic/out')}}">
 										{{csrf_field()}}
 										<div class="form-group">
 
@@ -341,12 +352,12 @@
 														<label>ระดับชั้น</label>
 														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
 															<option value="">เลือก</option>
-															<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
-															<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
-															<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
-															<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
-															<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
-															<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+															<option value="1">มัธยมศึกษาปีที่ 1</option>
+															<option value="2">มัธยมศึกษาปีที่ 2</option>
+															<option value="3">มัธยมศึกษาปีที่ 3</option>
+															<option value="4">มัธยมศึกษาปีที่ 4</option>
+															<option value="5">มัธยมศึกษาปีที่ 5</option>
+															<option value="6">มัธยมศึกษาปีที่ 6</option>
 														</select>
 													</div>
 												</div>
@@ -370,85 +381,89 @@
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
-										</form>
-									</div>
+									</form>
+								</div>
 
-									<!-- ตารางแสดงข้อมูล-->
-									<div class="table-responsive">
+								<!-- ตารางแสดงข้อมูล-->
+								<div class="table-responsive">
 
-										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-											<thead>
-												<tr>
-													<th scope="col" width="16%">
-														<center>เลขประจำตัวนักเรียน</center>
-													</th>
-													<th scope="col" width="28">
-														<center>ชื่อ-นามสกุล</center>
-													</th>
-													<th scope="col" width="16%">
-														<center>ชั้นเรียน</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>ห้อง</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>สถานะ</center>
-													</th>
-												</tr>
-											</thead>
-											<tbody>
-												@foreach ($data as $key => $value)
-												<tr>
-													<td align="center">{{$value->student_id}}</td>
-													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center">{{$value->student_class}}</td>
-													<td align="center">{{$value->student_room}}</td>
-													<td align="center">{{$value->status}}</td>
-												</tr>
-												@endforeach
-												<!-- Modal Show Club Detail -->
-												<!-- อะไรไม่รู้ -->
-												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-														<div class="modal-content">
-															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																</button>
-															</div>
+									<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+										<thead>
+											<tr>
+												<th scope="col" width="16%">
+													<center>เลขประจำตัวนักเรียน</center>
+												</th>
+												<th scope="col" width="28">
+													<center>ชื่อ-นามสกุล</center>
+												</th>
+												<th scope="col" width="16%">
+													<center>ชั้นเรียน</center>
+												</th>
+												<th scope="col" width="10%">
+													<center>ห้อง</center>
+												</th>
+												<th scope="col" width="10%">
+													<center>สถานะ</center>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach ($data as $key => $value)
+											<tr>
+												<td align="center">{{$value->student_id}}</td>
+												<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
+												<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
+												<td align="center">{{$value->student_room}}</td>
+												<td align="center">
+													@if ($value->status == '04')
+														ออกกลางคัน
+													@endif
+												</td>
+											</tr>
+											@endforeach
+											<!-- Modal Show Club Detail -->
+											<!-- อะไรไม่รู้ -->
+											<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+															</button>
 														</div>
 													</div>
-													<!-- // Modal Show Club Detail -->
+												</div>
+												<!-- // Modal Show Club Detail -->
 
-											</tbody>
-										</table>
-										<!-- //ตารางแสดงข้อมูล-->
+										</tbody>
+									</table>
+									<!-- //ตารางแสดงข้อมูล-->
 
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
-			<!-- สิ้นสุดเนื้อหา -->
-			<!-- เริ่ม Footer -->
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
 
-							<li class="nav-item">
-								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</footer>
 		</div>
-		<!-- สิ้นสุด Footter -->
+		<!-- สิ้นสุดเนื้อหา -->
+		<!-- เริ่ม Footer -->
+		<footer class="footer">
+			<div class="container-fluid">
+				<nav class="pull-left">
+					<ul class="nav">
+
+						<li class="nav-item">
+							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+	</div>
+	<!-- สิ้นสุด Footter -->
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>

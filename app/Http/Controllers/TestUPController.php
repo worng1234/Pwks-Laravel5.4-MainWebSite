@@ -134,8 +134,8 @@ class TestUPController extends Controller
      */
     public function edit($id)
     {
-        $student_id = test::find($id);
-        return view('testall.edit', compact('student_id'));
+        $data = test2::find($id);
+        return view('testall.edit', ['data' => $data]);
     }
 
     /**
@@ -147,27 +147,16 @@ class TestUPController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $day = date('d');
-        $mounth = date('m');
-        $year = date('y');
-        $date = ($year . '/' . $mounth . '/' . $day);
-
-        $data2 = new test2([
-            "id_number2" => $request->get('id_number2'),
-            "name" => $request->get('name'),
+        $testup = test2::find($id);
+        $dt = $testup->id_number2;
+        
+        $data = DB::table('test2')
+        ->where('id_number2', '=', $dt)
+        ->update([
             "student_id" => $request->get('student_id'),
-            "date" => $date,
-            "score" => $request->get('score'),
+            "name" => $request->get('name'),
         ]);
-        $data2->save();
-
-        $data1 = test::find($id);
-        $sumscore = $data1->score;
-        $sum = (int)$sumscore - (int)$request->score;
-        $data1->score = $sum;
-        $data1->save();
-
+        
         return redirect('/testall');
     }
 

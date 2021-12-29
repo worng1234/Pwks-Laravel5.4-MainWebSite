@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\newstudentm4Model;
+use App\Models\classmajorModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,12 @@ class newstudentm4Controller extends Controller
     public function index(){
         $data = newstudentm4Model::all();
         return view('Newstudent.sortnewstudentm4', compact('data'));
+    }
+
+    public function create()
+    {
+        $data = classmajorModel::all();
+        return view('Newstudent.newstudentm4', ['data' => $data]);
     }
 
     public function editnewstudentm4($id)

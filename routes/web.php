@@ -84,9 +84,7 @@ Route::get('/statusM1pic/{id}', 'newstudentm1Controller@showStatusPic');
 //studentm4
 Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
 
-Route::get('/NewstudentM4', function () {
-    return view('Newstudent.newstudentm4');
-});
+Route::get('/NewstudentM4', 'newstudentm4Controller@create');
 
 Route::get('/SortNewstudentM4/{id}', 'newstudentm4Controller@show');
 Route::get('/FixNewstudentM4/{id}', 'newstudentm4Controller@edit');
@@ -268,3 +266,29 @@ Route::get('/academicShow/{id}', 'AcademicsController@showAccount');
 Route::get('/academic/addAccount', 'AcademicsController@addAccountStudent');
 Route::post('/academic/addAccountInsert', 'AcademicsController@addAccount');
 Route::get('/academicDelete/{id}', 'AcademicsController@destroy');
+
+//จัดการห้องเรียน
+Route::get('/academic/classRoom', 'AcademicsController@classRoom');
+Route::get('/academic/classRoomAdd', 'AcademicsController@classRoomAdd');
+Route::post('/classRoom/Insert', 'AcademicsController@classRoomInsert');
+
+Route::get('/classRoomShow/{id}', 'AcademicsController@classRoomShow');
+Route::post('/classRoomEdit/{id}', 'AcademicsController@classRoomEdit');
+
+Route::get('/classRoomDelete/{id}', 'AcademicsController@deleteClassRoom');
+
+//จัดการสายการเรียน
+Route::get('/academic/classMajor', 'AcademicsController@classMajor');
+Route::get('/academic/classMajorAdd', 'AcademicsController@classMajorAdd');
+Route::post('/classMajor/Insert', 'AcademicsController@classMajorInsert');
+
+Route::get('/classMajorShow/{id}', 'AcademicsController@classMajorShow');
+Route::post('/classMajorEdit/{id}', 'AcademicsController@classMajorEdit');
+
+Route::get('/classMajorDelete/{id}', 'AcademicsController@deleteClassMajor');
+
+//ข้อมูลนักเรียนพื้นฐาน
+Route::get('/showStudentByID/{id}', 'StudentController@showStudentByID');
+
+Route::get('/editStudentByID/{id}', 'StudentController@editStudentByID');
+Route::post('/upStudent/{id}', 'StudentController@upStudentByID');

@@ -232,23 +232,34 @@
 							</div>
 						</li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#basic">
+								<i class="fas fa-sliders-h"></i>
+								<p>จัดการข้อมูลพื้นฐาน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="agree">
+							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+									
 									<li>
-										<a href="{{ url('/SortNewstudentM1')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+										<a data-toggle="collapse" href="#forms6">
+											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li>
-										<a href="{{ url('/SortNewstudentM4')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -332,7 +343,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวนักเรียน</label>
-													<input id="Name" type="password" class="form-control" placeholder="" name="password">
+													<input id="Name" type="text" class="form-control" placeholder="" name="password">
 												</div>
 											</div>
 										</div>

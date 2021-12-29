@@ -89,6 +89,7 @@
 								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
+
 						<li class="nav-item submenu active">
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-user-follow"></i>
@@ -104,6 +105,19 @@
 									</li>
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/Addstudentcore')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
 									</li>
 								</ul>
 							</div>
@@ -692,15 +706,9 @@
 													<label>อันดับที่ 1</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name1">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -709,15 +717,9 @@
 													<label>อันดับที่ 2</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name2">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -726,15 +728,9 @@
 													<label>อันดับที่ 3</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name3">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -743,15 +739,9 @@
 													<label>อันดับที่ 4</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name4">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -760,15 +750,9 @@
 													<label>อันดับที่ 5</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name5">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -777,15 +761,9 @@
 													<label>อันดับที่ 6</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name6">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -794,15 +772,9 @@
 													<label>อันดับที่ 7</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name7">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -811,15 +783,9 @@
 													<label>อันดับที่ 8</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name8">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -828,15 +794,9 @@
 													<label>อันดับที่ 9</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name9">
 														<option>เลือก</option>
-														<option value="วิทยาศาสตร์-คณิตศาสตร์">วิทยาศาสตร์-คณิตศาสตร์</option>
-														<option value="อังกฤษ-อังกฤษ">อังกฤษ-อังกฤษ</option>
-														<option value="อังกฤษ-จีน">อังกฤษ-จีน</option>
-														<option value="ศิลป์ทั่วไป(พาณิชยกรรม)">ศิลป์ทั่วไป(พาณิชยกรรม)</option>
-														<option value="ศิลป์ทั่วไป(ศิลปะ)">ศิลป์ทั่วไป(ศิลปะ)</option>
-														<option value="ศิลป์ทั่วไป(เกษตร)">ศิลป์ทั่วไป(เกษตร)</option>
-														<option value="ศิลป์ทั่วไป(คหกรรม)">ศิลป์ทั่วไป(คหกรรม)</option>
-														<option value="ศิลป์ทั่วไป(พลศึกษา)">ศิลป์ทั่วไป(พลศึกษา)</option>
-														<option value="ปวช.(ช่างเชื่อมโลหะ)">ปวช.(ช่างเชื่อมโลหะ)</option>
+														@foreach ($data as $key => $value)
+														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
@@ -1120,8 +1080,8 @@
 									}
 								}
 							}).then(function() {
-							window.location = '/';
-						});
+								window.location = '/';
+							});
 						} else {
 							swal.close();
 						}

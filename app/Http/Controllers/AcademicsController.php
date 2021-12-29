@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\studentcoreModels;
 use App\Student;
+use App\Models\classroomModel;
+use App\Models\classmajorModel;
 
 class AcademicsController extends Controller
 {
@@ -40,7 +42,7 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-all', ['data' => $data]);
 
@@ -50,7 +52,7 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-all', ['data' => $data]);
 
@@ -58,7 +60,7 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-all', ['data' => $data]);
 
@@ -66,7 +68,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-all', ['data' => $data]);
 
@@ -74,13 +76,13 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-all', ['data' => $data]);
 
         }
         $data = DB::table('student_core')
-        ->where('status', '=', 'กำลังศึกษาอยู่')
+        ->where('status', '=', '01')
         ->get();
         return view('academic.academic-class-all', ['data' => $data]);
     }
@@ -95,7 +97,7 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-change', ['data' => $data]);
 
@@ -105,7 +107,7 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-change', ['data' => $data]);
 
@@ -113,7 +115,7 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-change', ['data' => $data]);
 
@@ -121,7 +123,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-change', ['data' => $data]);
 
@@ -129,13 +131,13 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
+                ->where('status', '=', '01')
                 ->get();
             return view('academic.academic-class-change', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'กำลังศึกษาอยู่')
+        ->where('status', '=', '01')
         ->get();
         return view('academic.academic-class-change', ['data' => $data]);
     }
@@ -148,10 +150,20 @@ class AcademicsController extends Controller
             $data2[$i] = $request->student_room[$i];
             $id = $i+1;
             $data = studentcoreModels::find($id);
+            $datastudent = Student::find($id);
+            $student = $datastudent->student_id;
             $data->update([
                 'student_class' => $data1[$i],
                 'student_room' => $data2[$i],
             ]);
+
+            $upStudent = DB::table('students')
+            ->where('student_id', '=', $student)
+            ->update([
+                'student_class' => $data1[$i],
+                'student_room' => $data2[$i],
+            ]);
+
         }
         return redirect('/academic/class');
         
@@ -210,7 +222,7 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'จบการศึกษา')
+                ->where('status', '=', '02')
                 ->get();
             return view('academic.academic-final-all', ['data' => $data]);
 
@@ -220,7 +232,7 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'จบการศึกษา')
+                ->where('status', '=', '02')
                 ->get();
             return view('academic.academic-final-all', ['data' => $data]);
 
@@ -228,7 +240,7 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'จบการศึกษา')
+                ->where('status', '=', '02')
                 ->get();
             return view('academic.academic-final-all', ['data' => $data]);
 
@@ -236,7 +248,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'จบการศึกษา')
+                ->where('status', '=', '02')
                 ->get();
             return view('academic.academic-final-all', ['data' => $data]);
 
@@ -244,13 +256,13 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'จบการศึกษา')
+                ->where('status', '=', '02')
                 ->get();
             return view('academic.academic-final-all', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'จบการศึกษา')
+        ->where('status', '=', '02')
         ->get();
         return view('academic.academic-final-all', ['data' => $data]);
     }
@@ -265,8 +277,8 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'จบการศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '02')
                 ->get();
             return view('academic.academic-final-change', ['data' => $data]);
 
@@ -276,8 +288,8 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'จบการศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '02')
                 ->get();
             return view('academic.academic-final-change', ['data' => $data]);
 
@@ -285,8 +297,8 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'จบการศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '02')
                 ->get();
             return view('academic.academic-final-change', ['data' => $data]);
 
@@ -294,8 +306,8 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'จบการศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '02')
                 ->get();
             return view('academic.academic-final-change', ['data' => $data]);
 
@@ -303,15 +315,15 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'จบการศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '02')
                 ->get();
             return view('academic.academic-final-change', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'กำลังศึกษาอยู่')
-        ->orWhere('status','=', 'จบการศึกษา')
+        ->where('status', '=', '01')
+        ->orWhere('status','=', '02')
         ->get();
         return view('academic.academic-final-change', ['data' => $data]);
     }
@@ -327,7 +339,7 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '03')
                 ->get();
             return view('academic.academic-move-all', ['data' => $data]);
 
@@ -337,7 +349,7 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '03')
                 ->get();
             return view('academic.academic-move-all', ['data' => $data]);
 
@@ -345,7 +357,7 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '03')
                 ->get();
             return view('academic.academic-move-all', ['data' => $data]);
 
@@ -353,7 +365,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '03')
                 ->get();
             return view('academic.academic-move-all', ['data' => $data]);
 
@@ -361,13 +373,13 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '03')
                 ->get();
             return view('academic.academic-move-all', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'ย้ายสถานศึกษา')
+        ->where('status', '=', '03')
         ->get();
         return view('academic.academic-move-all', ['data' => $data]);
     }
@@ -382,8 +394,8 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '03')
                 ->get();
             return view('academic.academic-move-change', ['data' => $data]);
 
@@ -393,8 +405,8 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '03')
                 ->get();
             return view('academic.academic-move-change', ['data' => $data]);
 
@@ -402,8 +414,8 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '03')
                 ->get();
             return view('academic.academic-move-change', ['data' => $data]);
 
@@ -411,8 +423,8 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '03')
                 ->get();
             return view('academic.academic-move-change', ['data' => $data]);
 
@@ -420,15 +432,15 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ย้ายสถานศึกษา')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '03')
                 ->get();
             return view('academic.academic-move-change', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'กำลังศึกษาอยู่')
-        ->orWhere('status','=', 'ย้ายสถานศึกษา')
+        ->where('status', '=', '01')
+        ->orWhere('status','=', '03')
         ->get();
         return view('academic.academic-move-change', ['data' => $data]);
     }
@@ -444,7 +456,7 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ออกกลางคัน')
+                ->where('status', '=', '04')
                 ->get();
             return view('academic.academic-out-all', ['data' => $data]);
 
@@ -454,7 +466,7 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ออกกลางคัน')
+                ->where('status', '=', '04')
                 ->get();
             return view('academic.academic-out-all', ['data' => $data]);
 
@@ -462,7 +474,7 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'ออกกลางคัน')
+                ->where('status', '=', '04')
                 ->get();
             return view('academic.academic-out-all', ['data' => $data]);
 
@@ -470,7 +482,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'ออกกลางคัน')
+                ->where('status', '=', '04')
                 ->get();
             return view('academic.academic-out-all', ['data' => $data]);
 
@@ -478,13 +490,13 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'ออกกลางคัน')
+                ->where('status', '=', '04')
                 ->get();
             return view('academic.academic-out-all', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'ออกกลางคัน')
+        ->where('status', '=', '04')
         ->get();
         return view('academic.academic-out-all', ['data' => $data]);
     }
@@ -499,8 +511,8 @@ class AcademicsController extends Controller
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ออกกลางคัน')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '04')
                 ->get();
             return view('academic.academic-out-change', ['data' => $data]);
 
@@ -510,8 +522,8 @@ class AcademicsController extends Controller
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ออกกลางคัน')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '04')
                 ->get();
             return view('academic.academic-out-change', ['data' => $data]);
 
@@ -519,8 +531,8 @@ class AcademicsController extends Controller
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ออกกลางคัน')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '04')
                 ->get();
             return view('academic.academic-out-change', ['data' => $data]);
 
@@ -528,8 +540,8 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ออกกลางคัน')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '04')
                 ->get();
             return view('academic.academic-out-change', ['data' => $data]);
             
@@ -537,15 +549,15 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', 'กำลังศึกษาอยู่')
-                ->orWhere('status','=', 'ออกกลางคัน')
+                ->where('status', '=', '01')
+                ->orWhere('status','=', '04')
                 ->get();
             return view('academic.academic-out-change', ['data' => $data]);
         }
 
         $data = DB::table('student_core')
-        ->where('status', '=', 'กำลังศึกษาอยู่')
-        ->orWhere('status','=', 'ออกกลางคัน')
+        ->where('status', '=', '01')
+        ->orWhere('status','=', '04')
         ->get();
         return view('academic.academic-out-change', ['data' => $data]);
     }
@@ -583,7 +595,7 @@ class AcademicsController extends Controller
             'password' => bcrypt($request->get('password')),
         ]);
 
-        return view('academic.academic-student-all');
+        return redirect('/academic/allAccount');
     }
 
     public function showAccount($id)
@@ -592,12 +604,98 @@ class AcademicsController extends Controller
         return view('academic.academic-student-edit', ['data' => $data]);
     }
 
-   
-
     public function destroy($id)
     {
         $student = Student::find($id);
         $student->delete();
         return redirect('/academic/allAccount');
+    }
+
+    //จัดการข้อมูลห้องเรียน
+    public function classRoom()
+    {
+        $data = classroomModel::all();
+        return view('academic.academic-class-room', ['data' => $data]);
+    }
+
+    public function classRoomAdd()
+    {
+        return view('academic.academic-class-room-add');
+    }
+
+    public function classRoomInsert(Request $request)
+    {
+        classroomModel::create([
+            'class_id' => $request->get('class_id'),
+            'class_room' => $request->get('class_room'),
+        ]);
+        return redirect('/academic/classRoom');
+    }
+
+    public function classRoomShow($id)
+    {
+        $data = classroomModel::find($id);
+        return view('academic.academic-class-room-edit', ['data' => $data]);
+    }
+
+    public function classRoomEdit(Request $request, $id)
+    {
+        $data = classroomModel::find($id);
+        $data->update([
+            'class_id' => $request->get('class_id'),
+            'class_room' => $request->get('class_room'),
+        ]);
+        return redirect('/academic/classRoom');
+    }
+
+    public function deleteClassRoom($id)
+    {
+        $student = classroomModel::find($id);
+        $student->delete();
+        return redirect('/academic/classRoom');
+    }
+
+    //จัดการข้อมูลสายการเรียน
+    public function classMajor()
+    {
+        $data = classmajorModel::all();
+        return view('academic.academic-class-major', ['data' => $data]);
+    }
+
+    public function classMajorAdd()
+    {
+        return view('academic.academic-class-major-add');
+    }
+
+    public function classMajorInsert(Request $request)
+    {
+        classmajorModel::create([
+            'class_id' => $request->get('class_id'),
+            'class_major_name' => $request->get('class_major_name'),
+        ]);
+        return redirect('/academic/classMajor');
+    }
+
+    public function classMajorShow($id)
+    {
+        $data = classmajorModel::find($id);
+        return view('academic.academic-class-major-edit', ['data' => $data]);
+    }
+
+    public function classMajorEdit(Request $request, $id)
+    {
+        $data = classmajorModel::find($id);
+        $data->update([
+            'class_id' => $request->get('class_id'),
+            'class_major_name' => $request->get('class_major_name'),
+        ]);
+        return redirect('/academic/classMajor');
+    }
+
+    public function deleteClassMajor($id)
+    {
+        $student = classmajorModel::find($id);
+        $student->delete();
+        return redirect('/academic/classMajor');
     }
 }

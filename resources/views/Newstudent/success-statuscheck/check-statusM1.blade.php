@@ -109,6 +109,19 @@
                             </div>
                         </li>
                         <li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+                                    <li>
+										<a href="{{url('/Addstudentcore')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+                        <li class="nav-item submenu">
                             <a class="nav-link" href="#">
                                 <i class="link-icon icon-lock"></i>
                                 <span class="menu-title">เข้าระบบ</span>

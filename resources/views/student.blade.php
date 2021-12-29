@@ -39,7 +39,7 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="student-index.html" class="logo">
+                <a href="{{ url('/student')}}" class="logo">
                     <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +102,7 @@
 
                             <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
                             <label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
-                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
+                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
                             <label><b>ภาคเรียนที่ :</b> 1/2565</label>
 
 
@@ -115,7 +115,7 @@
                     <ul class="nav nav-primary">
 
                         <li class="nav-item active">
-                            <a href="student-index.html">
+                            <a href="{{ url('/student')}}">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
@@ -124,29 +124,19 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#forms">
                                 <i class="fas fa-file-alt"></i>
-                                <p>ระบบบันทึกข้อมูลพื้นฐาน</p>
+                                <p>ข้อมูลพื้นฐานนักเรียน</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="student-info-add-1.html">
-                                            <span class="sub-item">เพิ่มข้อมูล</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href='{{ url("/editStudentByID", Auth::guard('student')->user()->id )}}'>
                                             <span class="sub-item">แก้ไขข้อมูล</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/ /{{ Auth::guard('student')->user()->id}}')}}">
+                                        <a href='{{ url("/showStudentByID", Auth::guard('student')->user()->id )}}'>
                                             <span class="sub-item">ตรวจสอบข้อมูล</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="student-info-add-v2.html">
-                                            <span class="sub-item">ทดสอบ</span>
                                         </a>
                                     </li>
                                 </ul>

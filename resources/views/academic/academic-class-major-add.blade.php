@@ -62,7 +62,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
 
-				<a href="{{ url('/academic')}}" class="logo">
+				<a href="academic-index.html" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,22 +135,21 @@
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
 
-						<li class="nav-item">
+					<li class="nav-item active">
 							<a href="{{ url('/academic')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>
 						</li>
 
-						<li class="nav-item active submenu">
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="forms">
+							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
-
 									<li>
 										<a data-toggle="collapse" href="#forms2">
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
@@ -171,7 +170,6 @@
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms3">
 											<span class="sub-item">จบการศึกษา</span>
@@ -192,20 +190,19 @@
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms4">
 											<span class="sub-item">ย้ายสถานศึกษา</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse show" id="forms4">
+										<div class="collapse" id="forms4">
 											<ul class="nav nav-collapse subnav">
 												<li>
 													<a href="{{ url('/academic/move')}}">
 														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
 													</a>
 												</li>
-												<li class="active">
+												<li>
 													<a href="{{ url('/academic/moveChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
 													</a>
@@ -213,7 +210,6 @@
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms5">
 											<span class="sub-item">ออกกลางคัน</span>
@@ -244,14 +240,14 @@
 								<p>จัดการข้อมูลนักเรียนใหม่</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="agree">
+							<div class="collapse" id="agree">
 								<ul class="nav nav-collapse">
-									<li>
+									<li >
 										<a href="{{ url('/SortNewstudentM1')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li>
+									<li >
 										<a href="{{ url('/SortNewstudentM4')}}">
 											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
@@ -260,28 +256,28 @@
 							</div>
 						</li>
 
-						<li class="nav-item">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
 								<p>จัดการข้อมูลพื้นฐาน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="basic">
+							<div class="collapse show" id="basic">
 								<ul class="nav nav-collapse">
-									
+
 									<li>
 										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse" id="forms6">
+										<div class="collapse show" id="forms6">
 											<ul class="nav nav-collapse subnav">
 												<li>
 													<a href="{{ url('/academic/classRoom')}}">
 														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 													</a>
 												</li>
-												<li>
+												<li class="active">
 													<a href="{{ url('/academic/classMajor')}}">
 														<span class="sub-item">กำหนดสายการเรียน</span>
 													</a>
@@ -325,155 +321,63 @@
 					</div>
 				</div>
 
-				<div class="page-inner mt--5">
-					<div class="row mt--2">
-						<div class="col-md-12">
-							<div class="card full-height">
-								<div class="card-header">
-									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน <i class="flaticon-right-arrow"></i> เลื่อนชั้นเรียน</div>
-
+				<form method="post" action="{{ url('/classMajor/Insert')}}" enctype="multipart/form-data">
+					{{csrf_field()}}
+					{{ method_field('POST') }}
+					<div class="page-inner mt--5">
+						<div class="row mt--2">
+							<div class="col-md-12">
+								<div class="card full-height">
+									<div class="card-header">
+										<div class="card-head-row">
+											<div class="card-title"><i class="fas fa-sliders-h"></i> &nbsp;&nbsp; จัดการข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลสายการเรียน </div>
+										</div>
 									</div>
-								</div>
-								<div class="card-body" style="min-height: 370px">
-
-									<form role="form" method="post" action="{{ url('/Searchacademic/moveChange')}}">
-										{{csrf_field()}}
-										<div class="form-group">
-
-											<div class="row">
-												<div class="col-sm-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>รหัสนักเรียน</label>
-														<input type="search" class="form-control" placeholder="" name="search1">
-													</div>
+									<div class="card-body"><br>
+										<div class="row">
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>รหัสสายการเรียน</label>
+													<input id="Name" type="text" class="form-control" name="class_id">
 												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
-															<option value="">เลือก</option>
-															<option value="1">มัธยมศึกษาปีที่ 1</option>
-															<option value="2">มัธยมศึกษาปีที่ 2</option>
-															<option value="3">มัธยมศึกษาปีที่ 3</option>
-															<option value="4">มัธยมศึกษาปีที่ 4</option>
-															<option value="5">มัธยมศึกษาปีที่ 5</option>
-															<option value="6">มัธยมศึกษาปีที่ 6</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search3">
-															<option value="">เลือก</option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
-															<option value="6">6</option>
-															<option value="7">7</option>
-															<option value="8">8</option>
-															<option value="9">9</option>
-															<option value="10">10</option>
-														</select>
-													</div>
-												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
-									</form>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>สายการเรียน</label>
+													<input id="Name" type="text" class="form-control" name="class_major_name">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="card-footer" align="center"><br>
+										<button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> บันทึกข้อมูล</button>&nbsp;
+										<a href="{{ url('/academic/classMajor')}}" class="btn btn-danger"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
+									</div><br>
+
+
+
 								</div>
-
-								@foreach ($data as $key => $value)
-								<form role="form" method="post" action="{{ url('/academic/classChangeMove', $value->id)}}">
-									{{csrf_field()}}
-									<div align="right">
-										<button type="submit" class="btn btn-success">ยืนยัน</button>
-									</div>
-
-									<!-- ตารางแสดงข้อมูล-->
-									<div class="table-responsive">
-
-										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
-											<thead>
-												<tr>
-													<th scope="col" width="16%">
-														<center>เลขประจำตัวนักเรียน</center>
-													</th>
-													<th scope="col" width="28">
-														<center>ชื่อ-นามสกุล</center>
-													</th>
-													<th scope="col" width="16%">
-														<center>ชั้นเรียน</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>ห้อง</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>สถานะ</center>
-													</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td align="center">{{$value->student_id}}</td>
-													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
-													<td align="center">{{$value->student_room}}</td>
-													<td align="center"><select id="inputStatus" name="status">
-															@if ($value->status == '01')
-															<option>กำลังศึกษาอยู่</option>
-															@else
-															<option>ย้ายสถานศึกษา</option>
-															@endif
-															<option value="01">กำลังศึกษาอยู่</option>
-															<option value="03">ย้ายสถานศึกษา</option>
-														</select></td>
-												</tr>
-												@endforeach
-												<!-- Modal Show Club Detail -->
-												<!-- อะไรไม่รู้ -->
-												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-														<div class="modal-content">
-															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																</button>
-															</div>
-														</div>
-													</div>
-													<!-- // Modal Show Club Detail -->
-											</tbody>
-										</table>
-										<!-- //ตารางแสดงข้อมูล-->
-									</div>
-								</form>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
+				</form>
 			</div>
-
 		</div>
-		<!-- สิ้นสุดเนื้อหา -->
-		<!-- เริ่ม Footer -->
-		<footer class="footer">
-			<div class="container-fluid">
-				<nav class="pull-left">
-					<ul class="nav">
+	</div>
 
-						<li class="nav-item">
-							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</footer>
+	</div>
+	<!-- สิ้นสุดเนื้อหา -->
+	<!-- เริ่ม Footer -->
+	<footer class="footer">
+		<div class="container-fluid">
+			<nav class="pull-left">
+				<ul class="nav">
+
+					<li class="nav-item">
+						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
 	</div>
 	<!-- สิ้นสุด Footter -->
 	</div>
@@ -516,7 +420,6 @@
 	<script src="../assets/js/setting-demo.js"></script>
 	<script src="../assets/js/demo.js"></script>
 
-	<!-- Date time picker -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({
@@ -524,6 +427,7 @@
 				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
+				"paging": false,
 				"ordering": false
 			});
 		});
@@ -623,17 +527,6 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
-	<script>
-		$(function() {
-			$("#statuSelect").change(function() {
-				var displayClass = $("#statuSelect option:selected").text();
-				$("#inputStatus").val(displayClass);
-			})
-		})
-	</script>
-
-
-
 </body>
 
 </html>

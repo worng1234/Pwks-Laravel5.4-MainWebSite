@@ -55,6 +55,7 @@
                     </select>
                 </div>
             </th>
+            <th>link</th>
         </thead>
         <tbody>
             <form id="submit-change" action="{{ url('/testmulti' )}}" method="POST" enctype="multipart/form-data">
@@ -76,6 +77,9 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select></td>
+                        <td>
+                            <a href='{{ url("/Fixtest/{$value->id}")}}'>link</a>
+                        </td>
                 </tr>
                 @endforeach
             </form>
