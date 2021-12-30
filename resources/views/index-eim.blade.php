@@ -175,12 +175,7 @@
 								</div>
 								<div class="card-body">
 									<p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
-									<div id="chart-container">
-									<canvas id="barChart"></canvas>
-									</div>
-									<div id="chart-container">
-									<canvas id="barChart2"></canvas>
-									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -319,72 +314,7 @@
 			styleText: true
 		})
 
-		var barChart = document.getElementById('barChart').getContext('2d');
-		var barChart2 = document.getElementById('barChart2').getContext('2d');
-		var num = {!! json_encode($m1_regis_dayall1) !!};
-		var num2 = {!! json_encode($m1_regis_dayall2) !!};
-
-		var num4 = {!! json_encode($m4_regis_dayall1) !!};
-		var num5 = {!! json_encode($m4_regis_dayall2) !!};
-		var dateallsm1 = {!! json_encode($dateallsm1) !!};
-		var dateallsm4 = {!! json_encode($dateallsm4) !!};
 		
-		var myBarChart = new Chart(barChart, {
-			type: 'bar',
-			data: {
-				
-			labels: [dateallsm4, dateallsm1],
-			datasets : [{
-				label: "จำนวนนักเรียนที่มาสมัครระดับชั้นมัธยมศึกษาปีที่ 1",
-				backgroundColor: 'rgb(0, 0, 255)',
-				borderColor: 'rgb(0, 0, 255)',
-				data: [num, num2],
-			}],
-		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: false,
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero:true
-					}
-				}]
-			},
-		}
-	});
-		var myBarChart2 = new Chart(barChart2, {
-			type: 'bar',
-			data: {
-			labels: [dateallsm4, dateallsm1],
-			datasets : [{
-				label: "จำนวนนักเรียนที่มาสมัครระดับชั้นมัธยมศึกษาปีที่ 4",
-				backgroundColor: 'rgb(255, 0, 0)',
-				borderColor: 'rgb(255, 0, 0)',
-				data: [num4, num5],
-			}],
-		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: false,
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero:true
-					}
-				}]
-			},
-		}
-	});
-
-		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
 	</script>
 
 	

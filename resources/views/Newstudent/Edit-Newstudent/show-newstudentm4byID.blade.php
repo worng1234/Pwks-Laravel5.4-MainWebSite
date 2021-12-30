@@ -655,27 +655,59 @@
 									<div class="row">
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group">
-												<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-												<input type="text" class="form-control-file" id="pic" name="pic" value="{{$data->status_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-												<input type="text" class="form-control-file" id="id_number_pic" name="id_number_pic" value="{{$data->status_idnumber_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-												<input type="text" class="form-control-file" id="house_pic" name="house_pic" value="{{$data->status_house_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">ใบ ปพ.</label>
-												<input type="text" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$data->status_grade_pic}}" readonly>
-											</div>
+														<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
+														<p>
+															@if ($data->status_pic == '01')
+																ผ่าน
+															@elseif ($data->status_pic == '02')
+																รอตรวจสอบ
+															@else
+																ไม่ผ่าน
+															@endif
+														</p>
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group">
+														<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
+														<p>
+															@if ($data->status_idnumber_pic == '01')
+																ผ่าน
+															@elseif ($data->status_idnumber_pic == '02')
+																รอตรวจสอบ
+															@else
+																ไม่ผ่าน
+															@endif
+														</p>
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group">
+														<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
+														<p>
+															@if ($data->status_house_pic == '01')
+																ผ่าน
+															@elseif ($data->status_house_pic == '02')
+																รอตรวจสอบ
+															@else
+																ไม่ผ่าน
+															@endif
+														</p>
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group">
+														<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
+														<p>
+															@if ($data->status_grade_pic == '01')
+																ผ่าน
+															@elseif ($data->status_grade_pic == '02')
+																รอตรวจสอบ
+															@else
+																ไม่ผ่าน
+															@endif
+														</p>
+													</div>
 										</div>
 									</div>
 								</div>

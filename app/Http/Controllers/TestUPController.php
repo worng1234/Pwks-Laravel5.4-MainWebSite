@@ -155,6 +155,7 @@ class TestUPController extends Controller
         ->update([
             "student_id" => $request->get('student_id'),
             "name" => $request->get('name'),
+            "score" => $request->get('score'),
         ]);
         
         return redirect('/testall');

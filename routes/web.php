@@ -79,6 +79,12 @@ Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
 
 //statusPic
 Route::get('/statusM1pic/{id}', 'newstudentm1Controller@showStatusPic');
+Route::post('/updatePic/{id}', 'newstudentm1Controller@updatePic');
+
+Route::get('/ProfileStudent/{id}', 'newstudentm1Controller@profileStudent');
+Route::get('/IdCardStudent/{id}', 'newstudentm1Controller@IdCardStudent');
+Route::get('/HouseStudent/{id}', 'newstudentm1Controller@HouseStudent');
+Route::get('/SubmitStudent/{id}', 'newstudentm1Controller@SubmitStudent');
 
 
 //studentm4

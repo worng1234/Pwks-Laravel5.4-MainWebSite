@@ -14,11 +14,7 @@ class newstudentm4Model extends Model
         'name_cen',
         'surname',
         'sex',
-        'pic',
-        'id_number_pic',
-        'house_pic',
         'id_number',
-        'grade_pic',
         'day',
         'mounth',
         'year',
@@ -74,10 +70,6 @@ class newstudentm4Model extends Model
         'major_name7',
         'major_name8',
         'major_name9',
-        'onet_sci',
-        'onet_math',
-        'onet_thai',
-        'onet_eng',
         'student_id',
         'status_rigis',
         'status_pic',
@@ -85,6 +77,8 @@ class newstudentm4Model extends Model
         'status_idnumber_pic',
         'status_house_pic',
         'status_grade_pic',
+        'status_report',
+        'status_tranfer',
         'date'
     ];
 }

@@ -652,47 +652,47 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-													<input type="file" class="form-control-file" id="pic" name="pic">
+													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-													<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic">
+													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
+													<input type="file" class="form-control-file" id="house_student" name="house_student">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ.</label>
-													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
+													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
+													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
 												</div>
 											</div>
 										</div><br><br>
 
 										<!-- สถานะการสมัคร -->
 										<div hidden>
-											<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
+											<input type="text" name="status_rigis" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_picall" value="รอตรวจสอบ">
+											<input type="text" name="status_picall" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_pic" value="รอตรวจสอบ">
+											<input type="text" name="status_pic" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_idnumber_pic" value="รอตรวจสอบ">
+											<input type="text" name="status_idnumber_pic" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_house_pic" value="รอตรวจสอบ">
+											<input type="text" name="status_house_pic" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_grade_pic" value="รอตรวจสอบ">
+											<input type="text" name="status_grade_pic" value="02">
 										</div>
 
 										<div class="card-footer" align="center">
@@ -900,7 +900,8 @@
 						buttons: {
 							confirm: {
 								text: 'ตกลง',
-								className: 'btn btn-success'
+								className: 'btn btn-success',
+								type: 'submit'
 							},
 							cancel: {
 								text: 'ย้อนกลับ',

@@ -204,8 +204,24 @@
                                                     <tr>
                                                         <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
-                                                        <td align="center">{{$data->status_rigis}}</td>
-                                                        <td align="center">{{$data->status_pic}}</td>
+                                                        <td align="center">
+                                                            @if ($data->status_rigis == '01')
+                                                                ยืนยันการสมัครแล้ว
+                                                            @elseif ($data->status_rigis == '02')
+                                                                รอตรวจสอบ
+                                                            @else
+                                                                ไม่ผ่าน
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($data->status_picall == '01')
+                                                                ผ่าน
+                                                            @elseif ($data->status_picall == '02')
+                                                                รอตรวจสอบ
+                                                            @else
+                                                                ไม่ผ่าน
+                                                            @endif
+                                                        </td>
                                                         <td align="center"><a href='{{ url("/ShowNewstudentM4/{$data->id}" )}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
                                                     </tr>
                                                     @endforeach

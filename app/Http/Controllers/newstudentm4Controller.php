@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\newstudentm4Model;
+use App\Models\photostudentModel;
 use App\Models\classmajorModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -59,28 +60,92 @@ class newstudentm4Controller extends Controller
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
 
-        //student picture
-        $pic = $request->file('pic')->getClientOriginalName();
-        $compPic1 = str_replace(' ', '_', $pic);
-        $path = $request->file('pic')->storeAs('ImgAll/profile_img', $compPic1);
-        //ID card student picture
-        $id_number_pic = $request->file('id_number_pic')->getClientOriginalName();
-        $compPic2 = str_replace(' ', '_', $id_number_pic);
-        $path = $request->file('id_number_pic')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-        //House student picture
-        $house_pic = $request->file('house_pic')->getClientOriginalName();
-        $compPic3 = str_replace(' ', '_', $house_pic);
-        $path = $request->file('house_pic')->storeAs('ImgAll/house_regis/house_student', $compPic3);
-        //Grade student picture
-        $grade_pic = $request->file('grade_pic')->getClientOriginalName();
-        $compPic4 = str_replace(' ', '_', $grade_pic);
-        $path = $request->file('grade_pic')->storeAs('ImgAll/student_submit', $compPic4);
+        if (
+            $request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null
+            && $request->hasFile('house_student') !== null && $request->hasFile('student_submit') !== null
+        ) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
+            $house_student = $request->file('house_student')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_student);
+            $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
+
+            $student_submit = $request->file('student_submit')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $student_submit);
+            $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic4);
+
+            $pic2 = new photostudentModel([
+                "student_idcard" => $request->get('id_number'),
+                "profile_img" => $compPic1,
+                "id_card_student" => $compPic2,
+                "house_student" => $compPic3,
+                "student_submit" => $compPic4,
+            ]);
+            $pic2->save();
+
+        } elseif (
+            $request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null
+            && $request->hasFile('house_student') !== null
+        ) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
+            $house_student = $request->file('house_student')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_student);
+            $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
+
+            $pic2 = new photostudentModel([
+                "student_idcard" => $request->get('id_number'),
+                "profile_img" => $compPic1,
+                "id_card_student" => $compPic2,
+                "house_student" => $compPic3,
+            ]);
+            $pic2->save();
+
+        } elseif ($request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
+            $pic2 = new photostudentModel([
+                "student_idcard" => $request->get('id_number'),
+                "profile_img" => $compPic1,
+                "id_card_student" => $compPic2,
+            ]);
+            $pic2->save();
+
+        } elseif ($request->hasFile('profile_img') !== null) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $pic1 = new photostudentModel([
+                "student_idcard" => $request->get('id_number'),
+                "profile_img" => $compPic1,
+            ]);
+            $pic1->save();
+        }
 
         $post = new newstudentm4Model([
-            "pic" => $compPic1,
-            "id_number_pic" => $compPic2,
-            "house_pic" => $compPic3,
-            "grade_pic" => $compPic4,
             "prename" => $request->get('prename'),
             "fname" => $request->get('fname'),
             "surname" => $request->get('surname'),
@@ -156,7 +221,7 @@ class newstudentm4Controller extends Controller
             "date" => $date,
         ]);
         $post->save();
-        return redirect('/success/rigisM4');
+        return redirect('/check/status');
     }
 
     /**
@@ -189,30 +254,90 @@ class newstudentm4Controller extends Controller
     public function updatestudent(Request $request, $id)
     {
         $newstudentm4Model = newstudentm4Model::find($id);
+        $photo = photostudentModel::find($id);
 
-        if ($pic = $request->hasFile('pic')) {
-            
-            $file = $request->file('pic');
-            $compic1 = $file->getClientOriginalName();
-            $path = $request->file('pic')->storeAs('ImgAll/profile_img', $compic1);
+        if (
+            $request->get('profile_img') !== null && $request->get('id_card_student') !== null
+            && $request->get('house_student') !== null && $request->get('student_submit') !== null
+        ) {
 
-            $file2 = $request->file('id_number_pic');
-            $compic2 = $file2->getClientOriginalName();
-            $path = $request->file('id_number_pic')->storeAs('ImgAll/id_card/id_card_student', $compic2);
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
-            $file3 = $request->file('house_pic');
-            $compic3 = $file3->getClientOriginalName();
-            $path = $request->file('house_pic')->storeAs('ImgAll/house_regis/house_student', $compic3);
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
-            $file3 = $request->file('grade_pic');
-            $compic4 = $file3->getClientOriginalName();
-            $path = $request->file('grade_pic')->storeAs('ImgAll/student_submit', $compic4);
+            $house_student = $request->file('house_student')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_student);
+            $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
-            $newstudentm4Model->pic = $compic1;
-            $newstudentm4Model->id_number_pic = $compic2;
-            $newstudentm4Model->house_pic = $compic3; 
-            $newstudentm4Model->grade_pic = $compic4;
+            $student_submit = $request->file('student_submit')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $student_submit);
+            $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic4);
+
+            $photo->student_idcard = $request->id_number;
+            $photo->profile_img = $compPic1;
+            $photo->id_card_student = $compPic2;
+            $photo->house_student = $compPic3;
+            $photo->student_submit = $compPic4;
+
+            $photo->save();
+
+        } elseif (
+            $request->get('profile_img') !== null && $request->get('id_card_student') !== null
+            && $request->get('house_student') !== null
+        ) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
+            $house_student = $request->file('house_student')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_student);
+            $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
+
+            $photo->student_idcard = $request->id_number;
+            $photo->profile_img = $compPic1;
+            $photo->id_card_student = $compPic2;
+            $photo->house_student = $compPic3;
+
+            $photo->save();
+
+        } elseif ($request->get('profile_img') !== null && $request->get('id_card_student') !== null) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
+            $photo->student_idcard = $request->id_number;
+            $photo->profile_img = $compPic1;
+            $photo->id_card_student = $compPic2;
+
+            $photo->save();
+
+        } elseif ($request->get('profile_img') !== null) {
+
+            $profile_img = $request->file('profile_img')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $profile_img);
+            $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+            $photo->student_idcard = $request->id_number;
+            $photo->profile_img = $compPic1;
+
+            $photo->save();
         }
+
+
             $newstudentm4Model->prename = $request->prename;
             $newstudentm4Model->fname = $request->fname;
             $newstudentm4Model->surname = $request->surname ;
@@ -273,10 +398,6 @@ class newstudentm4Controller extends Controller
             $newstudentm4Model->father_prename = $request->father_prename;
             $newstudentm4Model->mother_prename = $request->mother_prename;
             $newstudentm4Model->parent_prename = $request->parent_prename;
-            $newstudentm4Model->onet_sci = $request->onet_sci;
-            $newstudentm4Model->onet_math = $request->onet_math;
-            $newstudentm4Model->onet_thai = $request->onet_thai;
-            $newstudentm4Model->onet_eng = $request->onet_eng;
             $newstudentm4Model->name_cen = $request->name_cen;
             $newstudentm4Model->student_id = $request->student_id;
             $newstudentm4Model->status_rigis = $request->status_rigis;
@@ -288,8 +409,7 @@ class newstudentm4Controller extends Controller
         
 
         $newstudentm4Model->save();
-        return redirect('/success/checkM4')
-        ->with('success', 'Update successfully');
+        return redirect('/check/status');
     }
 
     /**

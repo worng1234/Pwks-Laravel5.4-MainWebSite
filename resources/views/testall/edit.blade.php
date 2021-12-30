@@ -21,6 +21,7 @@
             <label>ชื่อ</label>
             <input type="text" name="name" value="{{$data->name}}">
         </div>
+        <input type="text" name="score" value="10">
         <div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

@@ -17,10 +17,6 @@ class newstudentm1Model extends Model
         'nameCen',
         'surname',
         'sex',
-        'pic',
-        'id_number_pic',
-        'house_pic',
-        'grade_pic',
         'idNumber',
         'day',
         'mounth',
@@ -74,6 +70,8 @@ class newstudentm1Model extends Model
         'status_idnumber_pic',
         'status_house_pic',
         'status_grade_pic',
+        'status_report',
+        'status_tranfer',
         'date'
     ];
 }
