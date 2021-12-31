@@ -124,6 +124,9 @@
                                     <li>
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
+                                    <li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
                                 </ul>
                             </div>
                         </li>
@@ -201,7 +204,7 @@
                                                 <tbody>
                                                     @foreach ($datas as $data)
                                                     <tr>
-                                                        <td align="center">{{$data->idNumber}}</td>
+                                                        <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
                                                         <td align="center">
                                                             @if ($data->status_report == '01')

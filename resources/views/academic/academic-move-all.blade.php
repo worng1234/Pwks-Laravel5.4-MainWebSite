@@ -260,6 +260,28 @@
 							</div>
 						</li>
 
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#move">
+								<i class="fas fa-id-card-alt"></i>
+								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="move">
+								<ul class="nav nav-collapse">
+									<li >
+										<a href="{{ url('/documentIndex/M1')}}">
+											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
+										</a>
+									</li>
+									<li >
+										<a href="{{ url('/')}}">
+											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>

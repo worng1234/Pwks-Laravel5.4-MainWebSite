@@ -105,6 +105,9 @@
                                     <li>
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
+                                    <li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
                                 </ul>
                             </div>
                         </li>
@@ -168,10 +171,10 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
-                                    <div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน</div>
-                                    <p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน ระดับชั้นมัธยมศึกษาปีที่ 4 โรงเรียนพร้าววิทยาคม</p><br><br>
+                                <div class="card-title fw-mediumbold">กรอกเลขประจำตัวประชาชน</div>
+                                    <p class="card-category">เพื่อตรวจสอบสิทธิ์ในการยื่นเอกสารรายงานตัวเพื่อเข้าเป็นนักเรียนในระดับชั้นมัธยมศึกษาปีที่ 4</p><br><br>
 
-                                    <form action="{{ url('/search/statusM4')}}" method="post">
+                                    <form action="{{ url('/search/documentM4')}}" method="post">
                                         {{ csrf_field() }}
                                         <div class="card-title" align="center">
                                             <div class="form-group col-sm-6 col-md-5">
@@ -179,7 +182,7 @@
                                                     <input type="search" name="search" class="form-control" placeholder="กรอกเลขประจำตัวประชาชน">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary col-sm-6 col-md-2" href="{{ url('/check/statusM4onsubmit')}}"><i class="fas fa-search"></i> แสดง</button>
+                                            <button type="submit" class="btn btn-primary col-sm-6 col-md-2" href="{{ url('/Newstudent/documentM4onsubmit')}}"><i class="fas fa-search"></i> แสดง</button>
                                         </div>
                                     </form>
 

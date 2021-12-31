@@ -197,7 +197,7 @@
 									<p class="card-category">6.เอกสารทั้งหมดที่ใช้รายงานตัวเพื่อยืนยันความประสงค์ที่จะเข้าศึกษาต่อให้ถ่ายเป็นรูป นามสกุลไฟล์ .jpg หรือ .pngโดยแต่ละรูปขนาดของไฟล์ไม่เกิน 2 mb (megabyte)</p>
 								</div>
 								<div class="card-footer" align="center"><br>
-									<a type="button" class="btn btn-info" href="{{ url('/check/statusM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+									<a type="button" class="btn btn-info" href="{{ url('/Newstudent/documentM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
 								</div>
 							</div>
 						</div>

@@ -124,6 +124,9 @@
                                     <li>
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
+                                    <li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
                                 </ul>
                             </div>
                         </li>
@@ -187,17 +190,16 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
-                                    <div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน</div>
-                                    <p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน ระดับชั้นมัธยมศึกษาปีที่ 4 โรงเรียนพร้าววิทยาคม</p><br><br>
+                                <div class="card-title fw-mediumbold">กรอกเลขประจำตัวประชาชน</div>
+                                    <p class="card-category">เพื่อตรวจสอบสิทธิ์ในการยื่นเอกสารรายงานตัวเพื่อเข้าเป็นนักเรียนในระดับชั้นมัธยมศึกษาปีที่ 4</p><br><br><br><br>
                                    
                                     <div class="table-responsive" >
                                             <table class="table table-bordered table-striped table-hover" style="width:100%">
                                                 <thead>
                                                     <th><center>เลขบัตรประจำตัวประชาชน</center></th>
                                                     <th><center>ชื่อนาม-สกุล</center></th>
-                                                    <th><center>สถานะการสมัคร</center></th>
-                                                    <th><center>สถานะเอกสารที่เกี่ยวข้อง</center></th>
-                                                    <th><center>ข้อมูล</center></th>
+                                                    <th><center>สถานะเอกสารรายงานตัว</center></th>
+                                                    <th><center>ส่งเอกสาร</center></th>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($datas as $data)
@@ -205,24 +207,15 @@
                                                         <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
                                                         <td align="center">
-                                                            @if ($data->status_rigis == '01')
-                                                                ยืนยันการสมัครแล้ว
-                                                            @elseif ($data->status_rigis == '02')
-                                                                รอตรวจสอบ
+                                                            @if ($data->status_report == '01')
+                                                                ส่งเอกสารแล้ว
+                                                            @elseif ($data->status_report == '02')
+                                                                ยังไม่ได้ส่งเอกสาร
                                                             @else
                                                                 ไม่ผ่าน
                                                             @endif
                                                         </td>
-                                                        <td align="center">
-                                                            @if ($data->status_picall == '01')
-                                                                ผ่าน
-                                                            @elseif ($data->status_picall == '02')
-                                                                รอตรวจสอบ
-                                                            @else
-                                                                ไม่ผ่าน
-                                                            @endif
-                                                        </td>
-                                                        <td align="center"><a href='{{ url("/ShowNewstudentM4/{$data->id}" )}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                        <td align="center"><a href='{{ url("/documentM4/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

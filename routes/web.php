@@ -48,6 +48,19 @@ Route::get('/Newstudent/documentM1onsubmit', function () {
 Route::get('/documentM1/{id}', 'newstudentm1Controller@documentM1');
 Route::post('/editDocumentM1/{id}', 'newstudentm1Controller@editDocument');
 
+//ส่งเอกสารรายงานตัว ม.4
+Route::get('/Newstudent/documentM4', function () {
+    return view('Newstudent.Newstudent-document.document-statusM4');
+});
+Route::post('/search/documentM4', 'newstudentm4Controller@searchdocument');
+
+Route::get('/Newstudent/documentM4onsubmit', function () {
+    return view('Newstudent.Newstudent-document.document-statusM4-onsubmit');
+});
+
+Route::get('/documentM4/{id}', 'newstudentm4Controller@documentM4');
+Route::post('/editDocumentM4/{id}', 'newstudentm4Controller@editDocument');
+
 
 //Route::view('/AddstudentCore','Studentcore.addstudentcore');
 
@@ -104,6 +117,16 @@ Route::get('/ProfileStudentM1/{id}', 'newstudentm1Controller@profileStudent');
 Route::get('/IdCardStudentM1/{id}', 'newstudentm1Controller@IdCardStudent');
 Route::get('/HouseStudentM1/{id}', 'newstudentm1Controller@HouseStudent');
 Route::get('/SubmitStudentM1/{id}', 'newstudentm1Controller@SubmitStudent');
+Route::get('/IdCardFatherM1/{id}', 'newstudentm1Controller@IdCardFather');
+Route::get('/IdCardMotherM1/{id}', 'newstudentm1Controller@IdCardMother');
+Route::get('/IdCardParentM1/{id}', 'newstudentm1Controller@IdCardParent');
+Route::get('/HouseFatherM1/{id}', 'newstudentm1Controller@HouseFather');
+Route::get('/HouseMotherM1/{id}', 'newstudentm1Controller@HouseMother');
+Route::get('/HouseParentM1/{id}', 'newstudentm1Controller@HouseParent');
+Route::get('/FrontGradeM1/{id}', 'newstudentm1Controller@FrontGrade');
+Route::get('/BackGradeM1/{id}', 'newstudentm1Controller@BackGrade');
+Route::get('/BirthCertificateM1/{id}', 'newstudentm1Controller@BirthCertificate');
+Route::get('/DisabilityCertificateM1/{id}', 'newstudentm1Controller@DisabilityCertificate');
 
 
 //studentm4
@@ -323,3 +346,13 @@ Route::get('/showStudentByID/{id}', 'StudentController@showStudentByID');
 
 Route::get('/editStudentByID/{id}', 'StudentController@editStudentByID');
 Route::post('/upStudent/{id}', 'StudentController@upStudentByID');
+
+//รายงานตัวและย้ายข้อมูล
+Route::get('/documentIndex/M1', 'AcademicsController@documentIndexM1');
+Route::post('/Searchdocument/M1', 'AcademicsController@documentIndexM1');
+
+Route::get('/documentM1/{id}', 'AcademicsController@documentAllM1');
+
+Route::get('/tranferM1/{id}', 'AcademicsController@tranferM1');
+Route::post('/tranferM1Insert/{id}', 'AcademicsController@tranferM1Insert');
+

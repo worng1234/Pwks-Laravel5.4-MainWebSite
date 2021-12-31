@@ -105,6 +105,9 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
+									<li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -173,7 +176,7 @@
 										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 									</div>
 								</div>
-								<form action="{{ url('/editDocumentM1', $data->id)}}" method="POST" enctype="multipart/form-data">
+								<form action="{{ url('/editDocumentM4', $data->id)}}" method="POST" enctype="multipart/form-data">
 									{{csrf_field()}}
 									{{ method_field('POST') }}
 									<!-- ข้อมูลส่วนตัว -->
@@ -510,7 +513,7 @@
 									}
 								}
 							}).then(function() {
-								window.location = '/Newstudent/documentM1';
+								window.location = '/Newstudent/documentM4';
 							});
 						} else {
 							swal.close();

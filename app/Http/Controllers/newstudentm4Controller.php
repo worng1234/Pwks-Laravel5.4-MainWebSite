@@ -33,6 +33,193 @@ class newstudentm4Controller extends Controller
         return view('Newstudent.Edit-Newstudent.editprofilenewstudentm4', compact('newstudentm4Model'));
     }
 
+    //ส่งเอกสารรายงานตัว
+    public function documentM4($id)
+    {
+        $data = newstudentm4Model::findOrFail($id);
+        return view('Newstudent.Newstudent-document.send-document.send-document-m4', ['data' => $data]);
+    }
+
+    public function editDocument(Request $request, $id)
+    {
+        $data = newstudentm4Model::find($id);
+        $photo = photostudentModel::find($id);
+
+        if (
+            $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
+            && $request->hasFile('house_father')  && $request->hasFile('house_mother')
+            && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
+            && $request->hasFile('birth_certificate')
+        ) {
+
+            $id_card_father = $request->file('id_card_father')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $id_card_father);
+            $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic1);
+
+            $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_mother);
+            $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic2);
+
+            $house_father = $request->file('house_father')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_father);
+            $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic3);
+
+            $house_mother = $request->file('house_mother')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $house_mother);
+            $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic4);
+
+            $front_grade = $request->file('front_grade')->getClientOriginalName();
+            $compPic5 = str_replace(' ', '_', $front_grade);
+            $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic5);
+
+            $back_grade = $request->file('back_grade')->getClientOriginalName();
+            $compPic6 = str_replace(' ', '_', $back_grade);
+            $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic6);
+
+            $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+            $compPic7 = str_replace(' ', '_', $birth_certificate);
+            $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic7);
+
+
+            $photo->id_card_father = $compPic1;
+            $photo->id_card_mother = $compPic2;
+            $photo->house_father = $compPic3;
+            $photo->house_mother = $compPic4;
+            $photo->front_grade = $compPic5;
+            $photo->back_grade = $compPic6;
+            $photo->birth_certificate = $compPic7;
+
+            $photo->save();
+        } elseif (
+            $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
+            && $request->hasFile('house_father')  && $request->hasFile('house_mother')
+            && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
+            && $request->hasFile('birth_certificate')  && $request->hasFile('disability_certificate')
+        ) {
+
+            $id_card_father = $request->file('id_card_father')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $id_card_father);
+            $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic1);
+
+            $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $id_card_mother);
+            $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic2);
+
+            $house_father = $request->file('house_father')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $house_father);
+            $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic3);
+
+            $house_mother = $request->file('house_mother')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $house_mother);
+            $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic4);
+
+            $front_grade = $request->file('front_grade')->getClientOriginalName();
+            $compPic5 = str_replace(' ', '_', $front_grade);
+            $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic5);
+
+            $back_grade = $request->file('back_grade')->getClientOriginalName();
+            $compPic6 = str_replace(' ', '_', $back_grade);
+            $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic6);
+
+            $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+            $compPic7 = str_replace(' ', '_', $birth_certificate);
+            $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic7);
+
+            $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
+            $compPic8 = str_replace(' ', '_', $disability_certificate);
+            $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic8);
+
+
+            $photo->id_card_father = $compPic1;
+            $photo->id_card_mother = $compPic2;
+            $photo->house_father = $compPic3;
+            $photo->house_mother = $compPic4;
+            $photo->front_grade = $compPic5;
+            $photo->back_grade = $compPic6;
+            $photo->birth_certificate = $compPic7;
+            $photo->disability_certificate = $compPic8;
+
+            $photo->save();
+        } elseif (
+            $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
+            && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
+            && $request->hasFile('birth_certificate')
+        ) {
+
+            $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $id_card_parent);
+            $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic1);
+
+            $house_parent = $request->file('house_parent')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $house_parent);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+
+            $front_grade = $request->file('front_grade')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $front_grade);
+            $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic3);
+
+            $back_grade = $request->file('back_grade')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $back_grade);
+            $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic4);
+
+            $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+            $compPic5 = str_replace(' ', '_', $birth_certificate);
+            $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic5);
+
+            $photo->id_card_parent = $compPic1;
+            $photo->house_parent = $compPic2;
+            $photo->front_grade = $compPic3;
+            $photo->back_grade = $compPic4;
+            $photo->birth_certificate = $compPic5;
+
+            $photo->save();
+        } elseif (
+            $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
+            && $request->hasFile('front_grade') && $request->hasFile('back_grade')
+            && $request->hasFile('birth_certificate')  && $request->hasFile('disability_certificate')
+        ) {
+            
+            $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
+            $compPic1 = str_replace(' ', '_', $id_card_parent);
+            $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic1);
+
+            $house_parent = $request->file('house_parent')->getClientOriginalName();
+            $compPic2 = str_replace(' ', '_', $house_parent);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+
+            $front_grade = $request->file('front_grade')->getClientOriginalName();
+            $compPic3 = str_replace(' ', '_', $front_grade);
+            $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic3);
+
+            $back_grade = $request->file('back_grade')->getClientOriginalName();
+            $compPic4 = str_replace(' ', '_', $back_grade);
+            $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic4);
+
+            $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+            $compPic5 = str_replace(' ', '_', $birth_certificate);
+            $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic5);
+
+            $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
+            $compPic6 = str_replace(' ', '_', $disability_certificate);
+            $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic6);
+
+            $photo->id_card_parent = $compPic1;
+            $photo->house_parent = $compPic2;
+            $photo->front_grade = $compPic3;
+            $photo->back_grade = $compPic4;
+            $photo->birth_certificate = $compPic5;
+            $photo->disability_certificate = $compPic6;
+
+            $photo->save();
+        }
+
+        $data->status_report = $request->status_report;
+        $data->status_tranfer = $request->status_tranfer;
+
+        $data->save();
+        return redirect('/Newstudent/documentM4');
+    }
+
     public function shownewstudentm4($id)
     {
         $data = newstudentm4Model::findOrFail($id);
@@ -467,6 +654,15 @@ class newstudentm4Controller extends Controller
         ->where('id_number','like', '%' .$search. '%')->paginate(10);
         return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', ['datas' => $datas]);
 
+    }
+
+    //ส่งเอกสารรายงานตัว
+    public function searchdocument(Request $request)
+    {
+        $search = $request->get('search');
+        $datas = DB::table('new_student_register_m4')
+            ->where('id_number', 'like', '%' . $search . '%')->paginate(10);
+        return view('Newstudent.Newstudent-document.document-statusM4-onsubmit', ['datas' => $datas]);
     }
 
     //Report

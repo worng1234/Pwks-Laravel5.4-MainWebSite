@@ -766,4 +766,114 @@ class newstudentm1Controller extends Controller
             ->first();
         return view('Newstudent.photo-student.photoM1.student-submit', ['data' => $data]);
     }
+
+    public function IdCardFather($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.id-card-father', ['data' => $data]);
+    }
+
+    public function IdCardMother($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.id-card-mother', ['data' => $data]);
+    }
+
+    public function IdCardParent($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.id-card-parent', ['data' => $data]);
+    }
+
+    public function HouseFather($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.house-father', ['data' => $data]);
+    }
+
+    public function HouseMother($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.house-mother', ['data' => $data]);
+    }
+
+    public function HouseParent($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.house-parent', ['data' => $data]);
+    }
+
+    public function FrontGrade($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.front-grade', ['data' => $data]);
+    }
+
+    public function BackGrade($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.back-grade', ['data' => $data]);
+    }
+
+    public function BirthCertificate($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.birth-certificate', ['data' => $data]);
+    }
+
+    public function DisabilityCertificate($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+
+        $pic = $data1->idNumber;
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $pic)
+            ->first();
+        return view('Newstudent.photo-student.photoM1.disability-certificate', ['data' => $data]);
+    }
 }

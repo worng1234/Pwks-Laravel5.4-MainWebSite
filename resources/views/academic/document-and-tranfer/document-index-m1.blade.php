@@ -142,13 +142,13 @@
 							</a>
 						</li>
 
-						<li class="nav-item active submenu">
+						<li class="nav-item ">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="forms">
+							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 
 									<li>
@@ -156,9 +156,9 @@
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse show" id="forms2">
+										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li class="active">
+												<li >
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
@@ -260,15 +260,15 @@
 							</div>
 						</li>
 
-						<li class="nav-item ">
+                        <li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#move">
 								<i class="fas fa-id-card-alt"></i>
 								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="move">
+							<div class="collapse show" id="move">
 								<ul class="nav nav-collapse">
-									<li >
+									<li class="active">
 										<a href="{{ url('/documentIndex/M1')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
 										</a>
@@ -353,54 +353,22 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน </div>
+										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; ตรวจสอบเอกสารรายงานตัวในระดับมัธยมศึกษาปีที่ 1</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
 
-								<form role="form" method="post" action="{{ url('/Searchacademic/class')}}">
+								<form role="form" method="post" action="{{ url('/Searchdocument/M1')}}">
 										{{csrf_field()}}
 										<div class="form-group">
-
 											<div class="row">
-												<div class="col-sm-4 col-md-2">
+												<div class="col-sm-4 col-md-4">
 													<div class="form-group form-group-default">
-														<label>รหัสนักเรียน</label>
-														<input type="search" class="form-control" placeholder="" name="search1">
+														<label>รหัสบัตรประจำตัวประชาชน</label>
+														<input type="search" class="form-control" placeholder="" name="search">
 													</div>
 												</div>
-												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
-															<option value="">เลือก</option>
-															<option value="1">มัธยมศึกษาปีที่ 1</option>
-															<option value="2">มัธยมศึกษาปีที่ 2</option>
-															<option value="3">มัธยมศึกษาปีที่ 3</option>
-															<option value="4">มัธยมศึกษาปีที่ 4</option>
-															<option value="5">มัธยมศึกษาปีที่ 5</option>
-															<option value="6">มัธยมศึกษาปีที่ 6</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search3">
-															<option value="">เลือก</option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-															<option value="4">4</option>
-															<option value="5">5</option>
-															<option value="6">6</option>
-															<option value="7">7</option>
-															<option value="8">8</option>
-															<option value="9">9</option>
-															<option value="10">10</option>
-														</select>
-													</div>
-												</div>
+												
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
@@ -413,33 +381,40 @@
 											<thead>
 												<tr>
 													<th scope="col" width="16%">
-														<center>เลขประจำตัวนักเรียน</center>
+														<center>รหัสบัตรประจำตัวประชาชน</center>
 													</th>
 													<th scope="col" width="28">
 														<center>ชื่อ-นามสกุล</center>
 													</th>
 													<th scope="col" width="16%">
-														<center>ชั้นเรียน</center>
+														<center>สถานะรายงานตัว</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>ห้อง</center>
+														<center>โอนย้ายข้อมูล</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>สถานะ</center>
+														<center>ตรวจสอบเอกสารและ</br>โอนย้ายข้อมูล</center>
 													</th>
 												</tr>
 											</thead>
 											<tbody>
 												@foreach ($data as $key => $value)
 												<tr>
-													<td align="center">{{$value->student_id}}</td>
+													<td align="center">{{$value->idNumber}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
-													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
-													<td align="center">{{$value->student_room}}</td>
 													<td align="center">
-														@if ($value->status == '03')
-															จบการศึกษา
-														@endif
+                                                        @if ($value->status_report == '01')
+                                                            ส่งเอกสารแล้ว
+                                                        @endif
+                                                    </td>
+													<td align="center">
+                                                        @if ($value->status_tranfer == '01')
+                                                            โอนย้ายแล้ว
+                                                        @elseif ($value->status_tranfer == '02')
+                                                            ยังไม่ได้โอนย้าย
+                                                        @endif</td>
+													<td align="center">
+                                                        <a href='{{ url("/documentM1/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-file-invoice"></i></a>
 													</td>
 												</tr>
 												@endforeach
