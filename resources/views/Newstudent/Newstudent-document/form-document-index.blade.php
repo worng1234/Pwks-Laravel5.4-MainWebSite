@@ -83,13 +83,13 @@
 					</h3>
 					<ul class="nav page-navigation page-navigation-info bg-white">
 
-						<li class="nav-item submenu active">
+						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/')}}">
 								<i class="link-icon icon-home"></i>
 								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
-						<li class="nav-item submenu">
+						<li class="nav-item submenu active">
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-user-follow"></i>
 								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
@@ -167,18 +167,37 @@
 		<div class="main-panel">
 			<div class="container">
 				<div class="page-inner">
-
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i>&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
-									</div>
-								</div>
 								<div class="card-body">
-									<p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
+									<div class="card-title fw-mediumbold">ส่งเอกสารรายงานตัว ชั้นมัธยมศึกษาปีที่ 1</div>
+									<p class="card-category">1.สำเนาบัตรประจำตัวประชาชนของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
+									<p class="card-category">2.สำเนาทะเบียนบ้านของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
+									<p class="card-category">3.ใบสูติบัตร </p>
+									<p class="card-category">4.ใบ ปพ.1 (ถ่ายรูปทั้งด้านหน้าและด้านหลัง) </p>
+									<p class="card-category">5.หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าเป็นผู้พิการจริง)</p>
+									<p class="card-category">6.เอกสารทั้งหมดที่ใช้รายงานตัวเพื่อยืนยันความประสงค์ที่จะเข้าศึกษาต่อให้ถ่ายเป็นรูป นามสกุลไฟล์ .jpg หรือ .png โดยแต่ละรูปขนาดของไฟล์ไม่เกิน 2 mb (megabyte)</p>
 									
+								</div>
+								<div class="card-footer" align="center"><br>
+									<a type="button" class="btn btn-info" href="{{ url('/Newstudent/documentM1')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-title fw-mediumbold">ส่งเอกสารรายงานตัว ชั้นมัธยมศึกษาปีที่ 4</div>
+									<p class="card-category">1.สำเนาบัตรประจำตัวประชาชนของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
+									<p class="card-category">2.สำเนาทะเบียนบ้านของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
+									<p class="card-category">3.ใบสูติบัตร </p>
+									<p class="card-category">4.ใบ ปพ.1 (ถ่ายรูปทั้งด้านหน้าและด้านหลัง) </p>
+									<p class="card-category">5.หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าเป็นผู้พิการจริง)</p>
+									<p class="card-category">6.เอกสารทั้งหมดที่ใช้รายงานตัวเพื่อยืนยันความประสงค์ที่จะเข้าศึกษาต่อให้ถ่ายเป็นรูป นามสกุลไฟล์ .jpg หรือ .pngโดยแต่ละรูปขนาดของไฟล์ไม่เกิน 2 mb (megabyte)</p>
+								</div>
+								<div class="card-footer" align="center"><br>
+									<a type="button" class="btn btn-info" href="{{ url('/check/statusM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
 								</div>
 							</div>
 						</div>
@@ -186,21 +205,21 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<footer class="footer">
-		<div class="container">
-			<nav class="pull-left">
-				<ul class="nav">
-					<li class="nav-item">
-						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="copyright ml-auto">
-				พัฒนาโดย PWK40 & CSMJU23
+
+		<footer class="footer">
+			<div class="container">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="copyright ml-auto">
+					พัฒนาโดย PWK40 & CSMJU23
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
@@ -317,10 +336,54 @@
 			styleText: true
 		})
 
-		
-	</script>
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
 
-	
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
 
 </body>
 

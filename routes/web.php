@@ -25,9 +25,28 @@ use Illuminate\Routing\RouteGroup;
 
 Route::get('/', 'indexController@index');
 
+//ตรวจสอบสถานะการสมัครเข้าเรียน(หน้าหลัก)
 Route::get('/check/status', function () {
     return view('Newstudent.success-statuscheck.form-check-index');
 });
+
+//ส่งเอกสารรายงานตัว(หน้าหลัก)
+Route::get('/Newstudent/documentIndex', function () {
+    return view('Newstudent.Newstudent-document.form-document-index');
+});
+
+//ส่งเอกสารรายงานตัว ม.1
+Route::get('/Newstudent/documentM1', function () {
+    return view('Newstudent.Newstudent-document.document-statusM1');
+});
+Route::post('/search/documentM1', 'newstudentm1Controller@searchdocument');
+
+Route::get('/Newstudent/documentM1onsubmit', function () {
+    return view('Newstudent.Newstudent-document.document-statusM1-onsubmit');
+});
+
+Route::get('/documentM1/{id}', 'newstudentm1Controller@documentM1');
+Route::post('/editDocumentM1/{id}', 'newstudentm1Controller@editDocument');
 
 
 //Route::view('/AddstudentCore','Studentcore.addstudentcore');
@@ -79,7 +98,7 @@ Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
 
 //statusPic
 Route::get('/statusM1pic/{id}', 'newstudentm1Controller@showStatusPic');
-Route::post('/updatePicM1/{id}', 'newstudentm1Controller@updatePic');
+Route::post('/updatePicM1/{id}', 'newstudentm1Controller@updateStatusPic');
 
 Route::get('/ProfileStudentM1/{id}', 'newstudentm1Controller@profileStudent');
 Route::get('/IdCardStudentM1/{id}', 'newstudentm1Controller@IdCardStudent');

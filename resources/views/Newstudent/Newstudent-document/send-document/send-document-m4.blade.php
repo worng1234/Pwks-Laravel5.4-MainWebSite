@@ -83,13 +83,13 @@
 					</h3>
 					<ul class="nav page-navigation page-navigation-info bg-white">
 
-						<li class="nav-item submenu active">
+						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/')}}">
 								<i class="link-icon icon-home"></i>
 								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
-						<li class="nav-item submenu">
+						<li class="nav-item submenu active">
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-user-follow"></i>
 								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
@@ -104,9 +104,6 @@
 									</li>
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
-									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
 									</li>
 								</ul>
 							</div>
@@ -173,19 +170,131 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i>&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 									</div>
 								</div>
-								<div class="card-body">
-									<p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
-									
-								</div>
+								<form action="{{ url('/editDocumentM1', $data->id)}}" method="POST" enctype="multipart/form-data">
+									{{csrf_field()}}
+									{{ method_field('POST') }}
+									<!-- ข้อมูลส่วนตัว -->
+									<div class="card-body">
+										<!-- อัพโหลดรูปภาพ -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp; ขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนบิดา</label>
+													<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
+													<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
+													<input type="file" class="form-control-file" id="house_father" name="house_father">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
+													<input type="file" class="form-control-file" id="house_mother" name="house_mother">
+												</div>
+											</div>
+										</div>
+
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านผู้ปกครอง</label>
+													<input type="file" class="form-control-file" id="house_parent" name="house_parent">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนผู้ปกครอง</label>
+													<input type="file" class="form-control-file" id="id_card_parent" name="id_card_parent">
+												</div>
+											</div>
+										</div>
+
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหน้า)</label>
+													<input type="file" class="form-control-file" id="front_grade" name="front_grade">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหลัง)</label>
+													<input type="file" class="form-control-file" id="back_grade" name="back_grade">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สูติบัตร</label>
+													<input type="file" class="form-control-file" id="birth_certificate" name="birth_certificate">
+												</div>
+											</div>
+										</div>
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-4 col-md-4">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">หนังสือรับรองความพิการ</label>
+													<input type="file" class="form-control-file" id="disability_certificate" name="disability_certificate">
+												</div>
+											</div>
+										</div>
+									<!-- สถานะการสมัคร -->
+									<div hidden>
+										<input type="text" name="status_report" value="01">
+									</div>
+									<div hidden>
+										<input type="text" name="status_tranfer" value="02">
+									</div>
+
+									<div class="card-footer" align="center">
+										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
+										<a href='{{ url("/Newstudent/documentM1" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
+									</div><br>
 							</div>
+							</form>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
@@ -317,10 +426,113 @@
 			styleText: true
 		})
 
-		
-	</script>
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
 
-	
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+	<script>
+		//== Class definition
+		var SweetAlert2Demo = function() {
+
+			//== Demos
+			var initDemos = function() {
+
+				$('#alert_demo_7').click(function(e) {
+					swal({
+						title: 'ยืนยันข้อมูล ?',
+						text: "ยืนยันการแก้ไขข้อมูล",
+						type: 'warning',
+						buttons: {
+							confirm: {
+								text: 'ตกลง',
+								className: 'btn btn-success',
+								type: 'submit'
+							},
+							cancel: {
+								text: 'ย้อนกลับ',
+								visible: true,
+								className: 'btn btn-danger'
+							}
+						}
+					}).then((Delete) => {
+						if (Delete) {
+							swal({
+								title: 'บันทึกข้อมูลเรียบร้อย!',
+								text: 'สามารถตรวจสอบการแก้ไขข้อมูลได้ที่น้าตรวจสอบข้อมูล',
+								type: 'success',
+								buttons: {
+									confirm: {
+										className: 'btn btn-success'
+									}
+								}
+							}).then(function() {
+								window.location = '/Newstudent/documentM1';
+							});
+						} else {
+							swal.close();
+						}
+					});
+				})
+
+			};
+
+			return {
+				//== Init
+				init: function() {
+					initDemos();
+				},
+			};
+		}();
+
+		//== Class Initialization
+		jQuery(document).ready(function() {
+			SweetAlert2Demo.init();
+		});
+	</script>
 
 </body>
 
