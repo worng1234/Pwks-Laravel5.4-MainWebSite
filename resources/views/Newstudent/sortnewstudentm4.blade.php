@@ -374,7 +374,15 @@
 												<tr>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
 													<td align="center">{{$value->final_school}}</td>
-													<td align="center">{{$value->status_rigis}}</td>
+													<td align="center">
+														@if ($value->status_rigis == '01')
+															ยืนยันการสมัคร
+														@elseif ($value->status_rigis == '02')
+															รอตรวจสอบ
+														@else
+															ไม่ผ่าน
+														@endif
+													</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
 													<td align="center"><a href='{{ url("/statusM4pic/{$value->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>

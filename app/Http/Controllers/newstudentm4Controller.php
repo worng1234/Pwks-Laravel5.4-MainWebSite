@@ -42,8 +42,32 @@ class newstudentm4Controller extends Controller
     //statusPic
     public function showStatusPic($id)
     {
-        $newstudentm4Model = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.StatusPic.status-picM4', compact('newstudentm4Model'));
+        $data1 = newstudentm4Model::findOrFail($id);
+
+        $pic = $data1->id_number;
+        $data2 = DB::table('photo_student')
+        ->where('student_idcard', '=', $pic)
+        ->first();
+        return view('Newstudent.StatusPic.status-picM4', [
+            'data1' => $data1,
+            'data2' => $data2
+        ]);
+    }
+
+    public function updatePic(Request $request, $id)
+    {
+        $newstudentm1Model = newstudentm4Model::find($id);
+        $newstudentm1Model->update([
+            'status_pic' => $request->get('status_pic'),
+            'status_idnumber_pic' => $request->get('status_idnumber_pic'),
+            'status_house_pic' => $request->get('status_house_pic'),
+            'status_grade_pic' => $request->get('status_grade_pic'),
+            'status_rigis' => $request->get('status_rigis'),
+            'status_picall' => $request->get('status_picall'),
+            'status_report' => $request->get('status_report'),
+        ]);
+
+        return redirect('/SortNewstudentM1');
     }
 
     /**
@@ -501,5 +525,50 @@ class newstudentm4Controller extends Controller
                 'dateM1' => $dateM1
             ]
         );
+    }
+
+    //รูปภาพทั้งหมด
+    public function profileStudent($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+
+        $pic = $data1->id_number;
+        $data = DB::table('photo_student')
+        ->where('student_idcard', '=', $pic)
+        ->first();
+        return view('Newstudent.photo-student.photoM4.profile-student', ['data' => $data]);
+    }
+
+    public function IdCardStudent($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+        
+        $pic = $data1->id_number;
+        $data = DB::table('photo_student')
+        ->where('student_idcard', '=', $pic)
+        ->first();
+        return view('Newstudent.photo-student.photoM4.id-card-student', ['data' => $data]);
+    }
+
+    public function HouseStudent($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+        
+        $pic = $data1->id_number;
+        $data = DB::table('photo_student')
+        ->where('student_idcard', '=', $pic)
+        ->first();
+        return view('Newstudent.photo-student.photoM4.house-student', ['data' => $data]);
+    }
+
+    public function SubmitStudent($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+        
+        $pic = $data1->id_number;
+        $data = DB::table('photo_student')
+        ->where('student_idcard', '=', $pic)
+        ->first();
+        return view('Newstudent.photo-student.photoM4.student-submit', ['data' => $data]);
     }
 }

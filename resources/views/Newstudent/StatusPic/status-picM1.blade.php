@@ -325,7 +325,7 @@
                                     </div>
                                 </div>
 
-                                <form method="post" action="{{ url('/updatePic', $data1->id)}}" enctype="multipart/form-data">
+                                <form method="post" action="{{ url('/updatePicM1', $data1->id)}}" enctype="multipart/form-data">
 									{{csrf_field()}}
                                 <div class="card-body" style="min-height: 400px">
                                 <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
@@ -334,7 +334,7 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/ProfileStudent/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
+                                                <a href='{{ url("/ProfileStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -357,7 +357,7 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardStudent/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
+                                                <a href='{{ url("/IdCardStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -380,7 +380,7 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseStudent/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
+                                                <a href='{{ url("/HouseStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -403,7 +403,7 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/SubmitStudent/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
+                                                <a href='{{ url("/SubmitStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -469,13 +469,13 @@
                                     </div>
 
                                     <div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
+										<button type="submit" class="btn btn-success" ><strong>ยืนยันข้อมูล</strong></button>
                                         <a href="{{url('/SortNewstudentM1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
 									</div><br>
                                 </div>
-
+                                </form>
                             </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>

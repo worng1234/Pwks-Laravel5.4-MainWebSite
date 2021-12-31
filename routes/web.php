@@ -79,12 +79,12 @@ Route::get('/ShowNewstudentM1/{id}', 'newstudentm1Controller@shownewstudentm1');
 
 //statusPic
 Route::get('/statusM1pic/{id}', 'newstudentm1Controller@showStatusPic');
-Route::post('/updatePic/{id}', 'newstudentm1Controller@updatePic');
+Route::post('/updatePicM1/{id}', 'newstudentm1Controller@updatePic');
 
-Route::get('/ProfileStudent/{id}', 'newstudentm1Controller@profileStudent');
-Route::get('/IdCardStudent/{id}', 'newstudentm1Controller@IdCardStudent');
-Route::get('/HouseStudent/{id}', 'newstudentm1Controller@HouseStudent');
-Route::get('/SubmitStudent/{id}', 'newstudentm1Controller@SubmitStudent');
+Route::get('/ProfileStudentM1/{id}', 'newstudentm1Controller@profileStudent');
+Route::get('/IdCardStudentM1/{id}', 'newstudentm1Controller@IdCardStudent');
+Route::get('/HouseStudentM1/{id}', 'newstudentm1Controller@HouseStudent');
+Route::get('/SubmitStudentM1/{id}', 'newstudentm1Controller@SubmitStudent');
 
 
 //studentm4
@@ -126,6 +126,12 @@ Route::get('/ShowNewstudentM4/{id}', 'newstudentm4Controller@shownewstudentm4');
 
 //statusPic
 Route::get('/statusM4pic/{id}', 'newstudentm4Controller@showStatusPic');
+Route::post('/updatePicM4/{id}', 'newstudentm4Controller@updatePic');
+
+Route::get('/ProfileStudentM4/{id}', 'newstudentm4Controller@profileStudent');
+Route::get('/IdCardStudentM4/{id}', 'newstudentm4Controller@IdCardStudent');
+Route::get('/HouseStudentM4/{id}', 'newstudentm4Controller@HouseStudent');
+Route::get('/SubmitStudentM4/{id}', 'newstudentm4Controller@SubmitStudent');
 
 // Route::resource('testup', TestUPController::class);
 
