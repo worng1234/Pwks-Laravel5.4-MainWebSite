@@ -287,7 +287,7 @@
 
 									<div class="card-footer" align="center">
 										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
-										<a href='{{ url("/Newstudent/documentM1" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
+										<a href='{{ url("/Newstudent/documentM4" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 									</div><br>
 							</div>
 							</form>

@@ -215,7 +215,7 @@
                                                                 ไม่ผ่าน
                                                             @endif
                                                         </td>
-                                                        <td align="center"><a href='{{ url("/documentM1/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
+                                                        <td align="center"><a href='{{ url("/documentPhotoM1/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

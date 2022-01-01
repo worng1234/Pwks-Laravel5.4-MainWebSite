@@ -39,8 +39,8 @@ class StudentController extends Controller
 
     public function showStudentByID($id)
     {
-        $data1 = studentcoreModels::find($id);
-        $studentcore = $data1->student_id_card;
+        $data1 = Student::find($id);
+        $studentcore = $data1->username;
 
         $data = DB::table('student_core')
             ->join('address_student', 'address_student.student_idcard_a', '=', 'student_core.student_id_card')
@@ -63,8 +63,8 @@ class StudentController extends Controller
     {
         $classmajor = classmajorModel::all();
 
-        $data1 = studentcoreModels::find($id);
-        $studentcore = $data1->student_id_card;
+        $data1 = Student::find($id);
+        $studentcore = $data1->username;
 
         $data = DB::table('student_core')
             ->join('address_student', 'address_student.student_idcard_a', '=', 'student_core.student_id_card')

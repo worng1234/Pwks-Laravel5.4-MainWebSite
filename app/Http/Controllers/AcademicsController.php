@@ -849,4 +849,148 @@ class AcademicsController extends Controller
 
         return redirect('/documentIndex/M1');
     }
+
+    public function documentIndexM4(Request $request)
+    {
+        if($request->get('search') !== null){
+            $search = $request->get('search');
+            $data = DB::table('new_student_register_m4')
+            ->where('id_number', 'like', '%' . $search . '%')
+            ->where('status_tranfer', '=', '02')
+            ->get();
+
+            return view('academic.document-and-tranfer.document-index-m4', ['data' => $data]);
+        }
+
+        $data = DB::table('new_student_register_m4')
+        ->where('status_tranfer', '=', '02')
+        ->get();
+
+        return view('academic.document-and-tranfer.document-index-m4', ['data' => $data]);
+    }
+
+    public function documentAllM4($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+        $findID = $data1->id_number;
+
+        $data2 = DB::table('photo_student')
+        ->where('student_idcard', '=', $findID)
+        ->first();
+
+
+        return view('academic.document-and-tranfer.document-all-m4', [
+            'data1' => $data1,
+            'data2' => $data2
+        ]);
+    }
+
+    public function tranferM4($id)
+    {
+        $data = newstudentm4Model::find($id);
+        $data2 = classroomModel::all();
+        $data3 = classmajorModel::all();
+        return view('academic.document-and-tranfer.tranfer-m4', [
+            'data' => $data,
+            'data2' => $data2,
+            'data3' => $data3
+        ]);
+    }
+
+    public function tranferM4Insert(Request $request, $id)
+    {
+        $data = newstudentm4Model::find($id);
+        $data->update([
+            "status_tranfer" => $request->get('status_tranfer'),
+        ]);
+
+        studentcoreModels::create([
+            "student_id_card" => $request->get('student_id_card'),
+            "student_id" => $request->get('student_id'),
+            "student_major" => $request->get('student_major'),
+            "student_class" => $request->get('student_class'),
+            "student_room" => $request->get('student_room'),
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "name_cen" => $request->get('name_cen'),
+            "surname" => $request->get('surname'),
+            "birth_year" => $request->get('birth_year'),
+            "birth_month" => $request->get('birth_month'),
+            "birth_day" => $request->get('birth_day'),
+            "gender" => $request->get('gender'),
+            "religion" => $request->get('religion'),
+            "origin" => $request->get('origin'),
+            "nationality" => $request->get('nationality'),
+            "tel_s" => $request->get('tel_s'),
+        ]);
+
+        addressstudentModel::create([
+            "student_idcard_a" => $request->get('student_id_card'),
+            "house_number" => $request->get('house_number'),
+            "group" => $request->get('group'),
+            "alley" => $request->get('alley'),
+            "street" => $request->get('street'),
+            "subdistrict" => $request->get('subdistrict'),
+            "district" => $request->get('district'),
+            "province" => $request->get('province'),
+            "post" => $request->get('post'),
+        ]);
+
+        studentdetailModel::create([
+            "student_idcard_d" => $request->get('student_id_card'),
+        ]);
+
+        talentstudentModel::create([
+            "student_idcard_t" => $request->get('student_id_card'),
+            "final_school" => $request->get('final_school'),
+            "f_subdistrict" => $request->get('f_subdistrict'),
+            "f_district" => $request->get('f_district'),
+            "f_province" => $request->get('f_province'),
+        ]);
+
+        healtystudentModel::create([
+            "student_idcard_h" => $request->get('student_id_card'),
+        ]);
+
+        parentstudentModel::create([
+            "student_idcard_p" => $request->get('student_id_card'),
+            "prename_f" => $request->get('prename_f'),
+            "name_f" => $request->get('name_f'),
+            "name_cen_f" => $request->get('name_cen_f'),
+            "surname_f" => $request->get('surname_f'),
+            "id_father" => $request->get('id_father'),
+            "job_f" => $request->get('job_f'),
+            "tel_f" => $request->get('tel_f'),
+            "prename_m" => $request->get('prename_m'),
+            "name_m" => $request->get('name_m'),
+            "name_cen_m" => $request->get('name_cen_m'),
+            "surname_m" => $request->get('surname_m'),
+            "id_mother" => $request->get('id_mother'),
+            "job_m" => $request->get('job_m'),
+            "tel_m" => $request->get('tel_m'),
+            "parent" => $request->get('parent'),
+            "prename_p" => $request->get('prename_p'),
+            "name_p" => $request->get('name_p'),
+            "name_cen_p" => $request->get('name_cen_p'),
+            "surname_p" => $request->get('surname_p'),
+            "id_parent" => $request->get('id_parent'),
+            "status_parent" => $request->get('status_parent'),
+            "job_p" => $request->get('job_p'),
+            "tel_p" => $request->get('tel_p'),
+        ]);
+
+        Student::create([
+            'student_id' => $request->get('student_id'),
+            'prename' => $request->get('prename'),
+            'fname' => $request->get('fname'),
+            'name_cen' => $request->get('name_cen'),
+            'surname' => $request->get('surname'),
+            "student_class" => $request->get('student_class'),
+            "student_room" => $request->get('student_room'),
+            'username' => $request->get('student_id_card'),
+            'password' => bcrypt($request->get('student_id')),
+        ]);
+
+        return redirect('/documentIndex/M4');
+    }
 }

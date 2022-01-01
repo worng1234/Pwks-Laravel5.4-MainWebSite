@@ -45,7 +45,7 @@ Route::get('/Newstudent/documentM1onsubmit', function () {
     return view('Newstudent.Newstudent-document.document-statusM1-onsubmit');
 });
 
-Route::get('/documentM1/{id}', 'newstudentm1Controller@documentM1');
+Route::get('/documentPhotoM1/{id}', 'newstudentm1Controller@documentM1');
 Route::post('/editDocumentM1/{id}', 'newstudentm1Controller@editDocument');
 
 //ส่งเอกสารรายงานตัว ม.4
@@ -58,7 +58,7 @@ Route::get('/Newstudent/documentM4onsubmit', function () {
     return view('Newstudent.Newstudent-document.document-statusM4-onsubmit');
 });
 
-Route::get('/documentM4/{id}', 'newstudentm4Controller@documentM4');
+Route::get('/documentPhotoM4/{id}', 'newstudentm4Controller@documentM4');
 Route::post('/editDocumentM4/{id}', 'newstudentm4Controller@editDocument');
 
 
@@ -174,6 +174,16 @@ Route::get('/ProfileStudentM4/{id}', 'newstudentm4Controller@profileStudent');
 Route::get('/IdCardStudentM4/{id}', 'newstudentm4Controller@IdCardStudent');
 Route::get('/HouseStudentM4/{id}', 'newstudentm4Controller@HouseStudent');
 Route::get('/SubmitStudentM4/{id}', 'newstudentm4Controller@SubmitStudent');
+Route::get('/IdCardFatherM4/{id}', 'newstudentm4Controller@IdCardFather');
+Route::get('/IdCardMotherM4/{id}', 'newstudentm4Controller@IdCardMother');
+Route::get('/IdCardParentM4/{id}', 'newstudentm4Controller@IdCardParent');
+Route::get('/HouseFatherM4/{id}', 'newstudentm4Controller@HouseFather');
+Route::get('/HouseMotherM4/{id}', 'newstudentm4Controller@HouseMother');
+Route::get('/HouseParentM4/{id}', 'newstudentm4Controller@HouseParent');
+Route::get('/FrontGradeM4/{id}', 'newstudentm4Controller@FrontGrade');
+Route::get('/BackGradeM4/{id}', 'newstudentm4Controller@BackGrade');
+Route::get('/BirthCertificateM4/{id}', 'newstudentm4Controller@BirthCertificate');
+Route::get('/DisabilityCertificateM4/{id}', 'newstudentm4Controller@DisabilityCertificate');
 
 // Route::resource('testup', TestUPController::class);
 
@@ -355,4 +365,13 @@ Route::get('/documentM1/{id}', 'AcademicsController@documentAllM1');
 
 Route::get('/tranferM1/{id}', 'AcademicsController@tranferM1');
 Route::post('/tranferM1Insert/{id}', 'AcademicsController@tranferM1Insert');
+
+//ม.4
+Route::get('/documentIndex/M4', 'AcademicsController@documentIndexM4');
+Route::post('/Searchdocument/M4', 'AcademicsController@documentIndexM4');
+
+Route::get('/documentM4/{id}', 'AcademicsController@documentAllM4');
+
+Route::get('/tranferM4/{id}', 'AcademicsController@tranferM4');
+Route::post('/tranferM4Insert/{id}', 'AcademicsController@tranferM4Insert');
 

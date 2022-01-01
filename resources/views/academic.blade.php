@@ -252,7 +252,7 @@
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/')}}">
+										<a href="{{ url('/documentIndex/M4')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>

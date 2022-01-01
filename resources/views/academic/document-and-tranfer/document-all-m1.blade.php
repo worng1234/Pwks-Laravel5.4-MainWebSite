@@ -274,7 +274,7 @@
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/')}}">
+										<a href="{{ url('/documentIndex/M4')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
@@ -443,7 +443,7 @@
 
                                     <div class="card-footer" align="center">
                                     <a href='{{ url("/tranferM1/{$data1->id}")}}' class="btn btn-primary" style="margin-left: auto;">โอนย้ายข้อมูล</a>
-                                        <a href="{{url('/SortNewstudentM1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+                                        <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
 									</div><br>
                                 </div>
                                 </form>
