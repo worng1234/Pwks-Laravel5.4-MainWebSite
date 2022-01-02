@@ -153,6 +153,13 @@
                         </li>
 
 						<li class="nav-item ">
+                            <a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-file-alt"></i>
+                                <p>เอกสารประจำตัว</p>
+                            </a>
+                        </li>
+
+						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
 								<p>คู่มือการใช้งาน</p>
@@ -230,9 +237,40 @@
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
-														<div class="form-group form-group-default">
-															<label>รหัสนักตัวนักเรียน</label>
-															<input id="Name" type="text" class="form-control"  name="student_major" value="{{$data->student_major}}" readonly>
+													<div class="form-group form-group-default">
+															<label>แผนการเรียน (กรอกเฉพาะนักเรียนระดับชั้น ม.4 - ม.6)</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="student_major" readonly>
+																@if ($data->student_major == '01')
+																<option>วิทยาศาสตร์-คณิตศาสตร์</option>
+
+																@elseif ($data->student_major == '02')
+																<option>ภาษาอังกฤษ-ภาษาอังกฤษ</option>
+
+																@elseif ($data->student_major == '03')
+																<option>ภาษาอังกฤษ-ภาษาจีน</option>
+
+																@elseif ($data->student_major == '04')
+																<option>ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+
+																@elseif ($data->student_major == '05')
+																<option>ศิลป์ทั่วไป(ศิลปะ)</option>
+
+																@elseif ($data->student_major == '06')
+																<option>ศิลป์ทั่วไป(เกษตร)</option>
+
+																@elseif ($data->student_major == '07')
+																<option>ศิลป์ทั่วไป(คหกรรม)</option>
+
+																@elseif ($data->student_major == '08')
+																<option>ศิลป์ทั่วไป(พลศึกษา)</option>
+
+																@elseif ($data->student_major == '09')
+																<option>ปวช.(ช่างเชื่อมโลหะ)</option>
+
+																@else
+																<option>-</option>
+																@endif
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-3">

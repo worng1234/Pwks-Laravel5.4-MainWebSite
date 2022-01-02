@@ -148,7 +148,7 @@
 								<p>จัดการข้อมูลนักเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="forms">
+							<div class="collapse " id="forms">
 								<ul class="nav nav-collapse">
 
 									<li>
@@ -156,9 +156,9 @@
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse" id="forms2">
+										<div class="collapse " id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
@@ -260,7 +260,7 @@
 							</div>
 						</li>
 
-                        <li class="nav-item active submenu">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#move">
 								<i class="fas fa-id-card-alt"></i>
 								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
@@ -273,19 +273,19 @@
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li class="active">
+									<li >
 										<a href="{{ url('/documentIndex/M4')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
-									<li >
-										<a href="{{ url('/tranferAllM1')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
+									<li class="active">
+										<a href="{{ url('tranferAllM1')}}">
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/tranferAllM4')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
+										<a href="{{ url('tranferAllM4')}}">
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
 								</ul>
@@ -363,22 +363,22 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; ตรวจสอบเอกสารรายงานตัวในระดับมัธยมศึกษาปีที่ 4</div>
+										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; รายชื่อนักเรียนที่โอนย้ายข้อมูลแล้ว</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
 
-								<form role="form" method="post" action="{{ url('/Searchdocument/M4')}}">
+								<form role="form" method="post" action="{{ url('/search/tranferAllM1')}}">
 										{{csrf_field()}}
 										<div class="form-group">
+
 											<div class="row">
 												<div class="col-sm-4 col-md-4">
 													<div class="form-group form-group-default">
-														<label>รหัสบัตรประจำตัวประชาชน</label>
-														<input type="search" class="form-control" placeholder="" name="search">
+														<label>เลขประจำตัวประชาชน</label>
+														<input type="search" class="form-control" placeholder="" name="search1">
 													</div>
 												</div>
-												
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
@@ -391,40 +391,31 @@
 											<thead>
 												<tr>
 													<th scope="col" width="16%">
-														<center>รหัสบัตรประจำตัวประชาชน</center>
+														<center>เลขประจำตัวประชาชน</center>
 													</th>
 													<th scope="col" width="28">
 														<center>ชื่อ-นามสกุล</center>
 													</th>
-													<th scope="col" width="16%">
-														<center>สถานะรายงานตัว</center>
+													<th scope="col" width="10%">
+														<center>สถานะ</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>โอนย้ายข้อมูล</center>
-													</th>
-													<th scope="col" width="10%">
-														<center>ตรวจสอบเอกสารและ</br>โอนย้ายข้อมูล</center>
+														<center>เอกสารทั้งหมด</center>
 													</th>
 												</tr>
 											</thead>
 											<tbody>
 												@foreach ($data as $key => $value)
 												<tr>
-													<td align="center">{{$value->id_number}}</td>
+													<td align="center">{{$value->idNumber}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
 													<td align="center">
-                                                        @if ($value->status_report == '01')
-                                                            ส่งเอกสารแล้ว
-                                                        @endif
-                                                    </td>
+														@if ($value->status_tranfer == '01')
+															โอนย้ายแล้ว
+														@endif
+													</td>
 													<td align="center">
-                                                        @if ($value->status_tranfer == '01')
-                                                            โอนย้ายแล้ว
-                                                        @elseif ($value->status_tranfer == '02')
-                                                            ยังไม่ได้โอนย้าย
-                                                        @endif</td>
-													<td align="center">
-                                                        <a href='{{ url("/documentM4/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-file-invoice"></i></a>
+														<a href='{{ url("/AllDocumentM1/{$value->id}")}}' class="btn btn-secondary btn-sm"><i class="fa fa-file-alt"></i></a>
 													</td>
 												</tr>
 												@endforeach

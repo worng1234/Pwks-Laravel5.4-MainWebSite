@@ -151,6 +151,13 @@
                         </li>
 
                         <li class="nav-item ">
+                            <a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-file-alt"></i>
+                                <p>เอกสารประจำตัว</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
                             <a href="#">
                                 <i class="fas fa-book-open"></i>
                                 <p>คู่มือการใช้งาน</p>

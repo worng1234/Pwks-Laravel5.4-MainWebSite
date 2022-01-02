@@ -270,8 +270,18 @@
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/')}}">
+										<a href="{{ url('/documentIndex/M4')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
+										</a>
+									</li>
+									<li >
+										<a href="{{ url('/tranferAllM1')}}">
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
+										</a>
+									</li>
+									<li >
+										<a href="{{ url('/tranferAllM4')}}">
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
 										</a>
 									</li>
 								</ul>

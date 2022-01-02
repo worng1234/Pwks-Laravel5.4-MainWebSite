@@ -993,4 +993,73 @@ class AcademicsController extends Controller
 
         return redirect('/documentIndex/M4');
     }
+
+    //โอนย้ายข้อมูลแล้ว
+    public function tranferM1All(Request $request)
+    {
+        if ($request->get('search') !== null ) {
+            $search = $request->get('search');
+            $data = DB::table('new_student_register_m1')
+            ->where('idNumber', 'like', '%' . $search . '%')
+            ->where('status_tranfer', '=', '01')
+            ->get();
+
+            return view('academic.document-and-tranfer.tranfer-all-m1', ['data' => $data]);
+        }
+
+        $data = DB::table('new_student_register_m1')
+        ->where('status_tranfer', '=', '01')
+        ->get();
+    
+        return view('academic.document-and-tranfer.tranfer-all-m1', ['data' => $data]);
+    }
+
+    public function AllDocumentM1($id)
+    {
+        $data1 = newstudentm1Model::find($id);
+        $findID = $data1->idNumber;
+
+        $data2 = DB::table('photo_student')
+        ->where('student_idcard', '=', $findID)
+        ->first();
+
+        return view('academic.document-and-tranfer.all-document-tranfer-m1', [
+            'data1' => $data1,
+            'data2' => $data2
+        ]);
+    }
+
+    public function tranferM4All(Request $request)
+    {
+        if ($request->get('search') !== null ) {
+            $search = $request->get('search');
+            $data = DB::table('new_student_register_m4')
+            ->where('id_number', 'like', '%' . $search . '%')
+            ->where('status_tranfer', '=', '01')
+            ->get();
+
+            return view('academic.document-and-tranfer.tranfer-all-m4', ['data' => $data]);
+        }
+
+        $data = DB::table('new_student_register_m4')
+        ->where('status_tranfer', '=', '01')
+        ->get();
+    
+        return view('academic.document-and-tranfer.tranfer-all-m4', ['data' => $data]);
+    }
+
+    public function AllDocumentM4($id)
+    {
+        $data1 = newstudentm4Model::find($id);
+        $findID = $data1->id_number;
+
+        $data2 = DB::table('photo_student')
+        ->where('student_idcard', '=', $findID)
+        ->first();
+
+        return view('academic.document-and-tranfer.all-document-tranfer-m4', [
+            'data1' => $data1,
+            'data2' => $data2
+        ]);
+    }
 }

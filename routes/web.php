@@ -378,3 +378,30 @@ Route::get('/documentM4/{id}', 'AcademicsController@documentAllM4');
 Route::get('/tranferM4/{id}', 'AcademicsController@tranferM4');
 Route::post('/tranferM4Insert/{id}', 'AcademicsController@tranferM4Insert');
 
+//โอนย้ายข้อมูลแล้ว
+Route::get('/tranferAllM1', 'AcademicsController@tranferM1All');
+Route::post('/search/tranferAllM1', 'AcademicsController@tranferM1All');
+Route::get('/AllDocumentM1/{id}', 'AcademicsController@AllDocumentM1');
+
+Route::get('/tranferAllM4', 'AcademicsController@tranferM4All');
+Route::post('/search/tranferAllM4', 'AcademicsController@tranferMAll');
+Route::get('/AllDocumentM4/{id}', 'AcademicsController@AllDocumentM4');
+
+//เอกสารประจำตัวนักเรียน
+Route::get('/DocumentStudentAll/{id}', 'StudentController@DocumentStudentAll');
+
+Route::get('/ProfileStudentAll/{id}', 'StudentController@profileStudent');
+Route::get('/IdCardStudentAll/{id}', 'StudentController@IdCardStudent');
+Route::get('/HouseStudentAll/{id}', 'StudentController@HouseStudent');
+Route::get('/SubmitStudentAll/{id}', 'StudentController@SubmitStudent');
+Route::get('/IdCardFatherAll/{id}', 'StudentController@IdCardFather');
+Route::get('/IdCardMotherAll/{id}', 'StudentController@IdCardMother');
+Route::get('/IdCardParentAll/{id}', 'StudentController@IdCardParent');
+Route::get('/HouseFatherAll/{id}', 'StudentController@HouseFather');
+Route::get('/HouseMotherAll/{id}', 'StudentController@HouseMother');
+Route::get('/HouseParentAll/{id}', 'StudentController@HouseParent');
+Route::get('/FrontGradeAll/{id}', 'StudentController@FrontGrade');
+Route::get('/BackGradeAll/{id}', 'StudentController@BackGrade');
+Route::get('/BirthCertificateAll/{id}', 'StudentController@BirthCertificate');
+Route::get('/DisabilityCertificateAll/{id}', 'StudentController@DisabilityCertificate');
+

@@ -246,7 +246,7 @@
                             </a>
                             <div class="collapse" id="agree">
                                 <ul class="nav nav-collapse">
-                                    <li >
+                                    <li>
                                         <a href="{{ url('/SortNewstudentM1')}}">
                                             <span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
                                         </a>
@@ -261,36 +261,36 @@
                         </li>
 
                         <li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#move">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="move">
-								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="{{ url('/documentIndex/M1')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li >
-										<a href="{{ url('/documentIndex/M4')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-									<li >
+                            <a data-toggle="collapse" href="#move">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse show" id="move">
+                                <ul class="nav nav-collapse">
+                                    <li >
+                                        <a href="{{ url('/documentIndex/M1')}}">
+                                            <span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/documentIndex/M4')}}">
+                                            <span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                    <li >
 										<a href="{{ url('/tranferAllM1')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+                                    <li class="active">
 										<a href="{{ url('/tranferAllM4')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
+											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
-								</ul>
-							</div>
-						</li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#basic">
@@ -352,113 +352,143 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; เอกสารประกอบการสมัครเรียนของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
-                                        
+                                        <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; เอกสารประจำตัวของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
+
                                     </div>
                                 </div>
                                 <div class="card-body" style="min-height: 400px">
-                                <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชน บิดา มารดา</b></p>
-								</div>
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                <a href='{{ url("/IdCardFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนบิดา</a>
-                                            </div>
-                                        </div>
-                                        
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>รูประจำตัว หนังสือรับรอง สำเนาบัตรประชาชนและสำเนาทะเบียนบ้านของผู้เรียน</b></p>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนมารดา</a>
+                                                <a href='{{ url("/ProfileStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/IdCardStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/HouseStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/SubmitStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชน บิดา มารดา</b></p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/IdCardFatherM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนบิดา</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/IdCardMotherM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนมารดา</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้าน บิดา มารดา</b></p>
-								    </div>
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้าน บิดา มารดา</b></p>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านบิดา</a>
+                                                <a href='{{ url("/HouseFatherM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านบิดา</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านมารดา</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนผู้ปกครอง (ในกรณีที่ไม่ได้อยู่กับบิดา มารดา)</b></p>
-								    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                <a href='{{ url("/IdCardParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                <a href='{{ url("/HouseParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
+                                                <a href='{{ url("/HouseMotherM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านมารดา</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร </b></p>
-								    </div>
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนผู้ปกครอง (ในกรณีที่ไม่ได้อยู่กับบิดา มารดา)</b></p>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/FrontGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
+                                                <a href='{{ url("/IdCardParentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/BackGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                <a href='{{ url("/BirthCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px;"></i>ใบสูติบัตร</a>
+                                                <a href='{{ url("/HouseParentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง) </b></p>
-								    </div>
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร </b></p>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/DisabilityCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px;"></i>หนังสือรับรองความพิการ</a>
+                                                <a href='{{ url("/FrontGradeM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/BackGradeM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/BirthCertificateM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px;"></i>ใบสูติบัตร</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง) </b></p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                <a href='{{ url("/DisabilityCertificateM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px;"></i>หนังสือรับรองความพิการ</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="card-footer" align="center">
-                                    <a href='{{ url("/tranferM1/{$data1->id}")}}' class="btn btn-primary" style="margin-left: auto;">โอนย้ายข้อมูล</a>
-                                        <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
-									</div><br>
+                                        <a href="{{url('/tranferAllM4')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+                                    </div><br>
                                 </div>
                                 </form>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
