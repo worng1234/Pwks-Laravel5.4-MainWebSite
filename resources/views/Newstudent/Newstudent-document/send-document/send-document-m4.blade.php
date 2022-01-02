@@ -108,6 +108,9 @@
 									<li>
 										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
 									</li>
+									<li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
 								</ul>
 							</div>
 						</li>

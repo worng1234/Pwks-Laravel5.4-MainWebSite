@@ -357,6 +357,9 @@ Route::get('/showStudentByID/{id}', 'StudentController@showStudentByID');
 Route::get('/editStudentByID/{id}', 'StudentController@editStudentByID');
 Route::post('/upStudent/{id}', 'StudentController@upStudentByID');
 
+Route::get('/increaseStudent/{id}', 'StudentController@studentIncrease');
+Route::post('/increaseStudentAdd/{id}', 'StudentController@increaseStudentAdd');
+
 //รายงานตัวและย้ายข้อมูล
 Route::get('/documentIndex/M1', 'AcademicsController@documentIndexM1');
 Route::post('/Searchdocument/M1', 'AcademicsController@documentIndexM1');

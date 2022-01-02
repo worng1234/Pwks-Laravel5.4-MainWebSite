@@ -142,6 +142,14 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <li class="nav-item ">
+                            <a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-pencil-alt"></i>
+                                <p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item ">
                             <a href="#">
                                 <i class="fas fa-book-open"></i>

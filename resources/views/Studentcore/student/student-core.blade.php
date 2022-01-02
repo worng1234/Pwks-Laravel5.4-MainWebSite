@@ -214,7 +214,7 @@
 												<div class="row">
 													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
-															<label>รหัสนักตัวนักเรียน</label>
+															<label>รหัสนักเรียน</label>
 															<input id="Name" type="text" class="form-control" required name="student_id">
 														</div>
 													</div>
