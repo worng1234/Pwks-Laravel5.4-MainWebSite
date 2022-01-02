@@ -25,12 +25,41 @@
 		});
 	</script>
 
+	<style>
+		/* Ensure that the demo table scrolls */
+		th,
+		td {
+			white-space: nowrap;
+		}
+
+		div.dataTables_wrapper {
+			margin: 0 auto;
+		}
+
+		div.container {
+			width: 80%;
+		}
+
+		.bgimgheader {
+
+			background-repeat: repeat;
+			background-position: center;
+			position: relative;
+		}
+	</style>
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
+
+	<!-- Datatable Report -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+
+	
 </head>
 
 <body>
@@ -112,29 +141,30 @@
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
 
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a href="{{ url('/academic')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>
 						</li>
 
-						<li class="nav-item">
+						<li class="nav-item ">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="forms">
+							<div class="collapse " id="forms">
 								<ul class="nav nav-collapse">
+
 									<li>
 										<a data-toggle="collapse" href="#forms2">
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse" id="forms2">
+										<div class="collapse " id="forms2">
 											<ul class="nav nav-collapse subnav">
-												<li>
+												<li >
 													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
 													</a>
@@ -147,6 +177,7 @@
 											</ul>
 										</div>
 									</li>
+
 									<li>
 										<a data-toggle="collapse" href="#forms3">
 											<span class="sub-item">จบการศึกษา</span>
@@ -167,6 +198,7 @@
 											</ul>
 										</div>
 									</li>
+
 									<li>
 										<a data-toggle="collapse" href="#forms4">
 											<span class="sub-item">ย้ายสถานศึกษา</span>
@@ -187,6 +219,7 @@
 											</ul>
 										</div>
 									</li>
+
 									<li>
 										<a data-toggle="collapse" href="#forms5">
 											<span class="sub-item">ออกกลางคัน</span>
@@ -217,7 +250,7 @@
 								<p>จัดการข้อมูลนักเรียนใหม่</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="agree">
+							<div class="collapse " id="agree">
 								<ul class="nav nav-collapse">
 									<li >
 										<a href="{{ url('/SortNewstudentM1')}}">
@@ -235,7 +268,7 @@
 
 						<li class="nav-item ">
 							<a data-toggle="collapse" href="#move">
-								<i class="fas fa-file-alt"></i>
+								<i class="fas fa-id-card-alt"></i>
 								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
 								<span class="caret"></span>
 							</a>
@@ -298,13 +331,13 @@
 							</div>
 						</li>
 
-						<li class="nav-item ">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#files">
 							<i class="fas fa-folder-open"></i>
 								<p>ออกเอกสารทั้งหมด</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="files">
+							<div class="collapse show" id="files">
 								<ul class="nav nav-collapse">
 									<li >
 										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
@@ -316,8 +349,8 @@
 											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
-									<li >
-										<a href="{{ url('/AcademicReport/StudentAll')}}">
+									<li class="active">
+										<a href="{{ url('/')}}">
 											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
 										</a>
 									</li>
@@ -373,23 +406,108 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน </div>
 									</div>
 								</div>
+								<div class="card-body" style="min-height: 370px">
 
-								<div class="card-body">
-									<p><u><strong>ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</strong></u></p>
-									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-									</ol>
+								<form role="form" method="post" action="{{ url('/SearchAcademicReport/StudentAll')}}">
+										{{csrf_field()}}
+										<div class="form-group">
+
+											<div class="row">
+												<div class="col-sm-4 col-md-2">
+													<div class="form-group form-group-default">
+														<label>รหัสนักเรียน</label>
+														<input type="search" class="form-control" placeholder="" name="search1">
+													</div>
+												</div>
+												<div class="col-6 col-md-3">
+													<div class="form-group form-group-default">
+														<label>ระดับชั้น</label>
+														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
+															<option value="">เลือก</option>
+															<option value="1">มัธยมศึกษาปีที่ 1</option>
+															<option value="2">มัธยมศึกษาปีที่ 2</option>
+															<option value="3">มัธยมศึกษาปีที่ 3</option>
+															<option value="4">มัธยมศึกษาปีที่ 4</option>
+															<option value="5">มัธยมศึกษาปีที่ 5</option>
+															<option value="6">มัธยมศึกษาปีที่ 6</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-4 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ลำดับห้อง</label>
+														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search3">
+															<option value="">เลือก</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+														</select>
+													</div>
+												</div>
+												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+											</div>
+										</form>
+									</div>
+
+									<!-- ตารางแสดงข้อมูล-->
+									<div class="table-responsive">
+
+										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th scope="col" width="16%">
+														<center>เลขประจำตัวนักเรียน</center>
+													</th>
+													<th scope="col" width="28">
+														<center>ชื่อ-นามสกุล</center>
+													</th>
+													<th scope="col" width="16%">
+														<center>ชั้นเรียน</center>
+													</th>
+													<th scope="col" width="10%">
+														<center>ห้อง</center>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($data as $key => $value)
+												<tr>
+													<td align="center">{{$value->student_id}}</td>
+													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
+													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
+													<td align="center">{{$value->student_room}}</td>
+												</tr>
+												@endforeach
+												<!-- Modal Show Club Detail -->
+												<!-- อะไรไม่รู้ -->
+												<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+																</button>
+															</div>
+														</div>
+													</div>
+													<!-- // Modal Show Club Detail -->
+
+											</tbody>
+										</table>
+										<!-- //ตารางแสดงข้อมูล-->
+
+									</div>
 								</div>
 							</div>
 						</div>
@@ -452,6 +570,33 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo.js"></script>
 	<script src="../assets/js/demo.js"></script>
+
+	<!-- data table script -->
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+
+	<!-- Date time picker -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+				dom: 'Bfrtip',
+				buttons: [
+					'excelHtml5',
+				],
+				"pageLength": 50,
+				"language": {
+					"search": "ค้นหาข้อมูล :"
+				},
+				"ordering": false
+			});
+		});
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',
@@ -497,6 +642,54 @@
 			styleWrapper: true,
 			styleText: true
 		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
 	</script>
 </body>
 

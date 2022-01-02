@@ -1062,4 +1062,51 @@ class AcademicsController extends Controller
             'data2' => $data2
         ]);
     }
+
+    //ออกเอกสาร
+
+    public function ReportStudentAll(Request $request)
+    {
+
+        if ($request->get('search1') !== null ) {
+            $search1 = $request->get('search1');
+            $data = DB::table('student_core')
+            ->where('student_id', 'like', '%' . $search1 . '%')
+            ->get();
+
+            return view('academic.academic-report.academic-report-student-all', ['data' => $data]);
+
+        } elseif ($request->get('search2') !== null ) {
+            $search2 = $request->get('search2');
+            $data = DB::table('student_core')
+            ->where('student_class', 'like', '%' . $search2 . '%')
+            ->get();
+
+            return view('academic.academic-report.academic-report-student-all', ['data' => $data]);
+
+        } elseif ($request->get('search3') !== null ) {
+            $search3 = $request->get('search3');
+            $data = DB::table('student_')
+            ->where('student_room', 'like', '%' . $search3 . '%')
+            ->get();
+
+            return view('academic.academic-report.academic-report-student-all', ['data' => $data]);
+
+        } elseif ($request->get('search2') !== null && $request->get('search3') !== null ) {
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('student_')
+            ->where('student_class', 'like', '%' . $search2 . '%')
+            ->where('student_room', 'like', '%' . $search3 . '%')
+            ->get();
+
+            return view('academic.academic-report.academic-report-student-all', ['data' => $data]);
+        }
+
+        $data = studentcoreModels::all();
+
+        return view('academic.academic-report.academic-report-student-all', [
+            'data' => $data,
+        ]);
+    }
 }

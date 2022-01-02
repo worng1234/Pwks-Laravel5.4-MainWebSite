@@ -405,3 +405,7 @@ Route::get('/BackGradeAll/{id}', 'StudentController@BackGrade');
 Route::get('/BirthCertificateAll/{id}', 'StudentController@BirthCertificate');
 Route::get('/DisabilityCertificateAll/{id}', 'StudentController@DisabilityCertificate');
 
+//ออกเอกสารฝ่ายวิชาการ
+Route::get('/AcademicReport/StudentAll', 'AcademicsController@ReportStudentAll');
+Route::post('/SearchAcademicReport/StudentAll', 'AcademicsController@ReportStudentAll');
+
