@@ -322,12 +322,12 @@
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/')}}">
+										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
 											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
 										</a>
 									</li>
 									<li >
-										<a href="{{ url('/')}}">
+										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
 											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
 										</a>
 									</li>

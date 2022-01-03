@@ -409,3 +409,8 @@ Route::get('/DisabilityCertificateAll/{id}', 'StudentController@DisabilityCertif
 Route::get('/AcademicReport/StudentAll', 'AcademicsController@ReportStudentAll');
 Route::post('/SearchAcademicReport/StudentAll', 'AcademicsController@ReportStudentAll');
 
+Route::get('/AcademicReport/ReportStudyM4', 'AcademicsController@ReportStudyM4');
+Route::post('/SearchAcademicReport/ReportStudyM4', 'AcademicsController@ReportStudyM4');
+
+Route::get('/AcademicReport/StatStudent', 'AcademicsController@StatStudent');
+
