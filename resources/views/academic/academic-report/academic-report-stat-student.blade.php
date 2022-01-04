@@ -50,6 +50,11 @@
         .saraban {
             font-family: 'Sarabun', sans-serif;
         }
+
+        table,th,td {
+            text-align: center;
+            font-family: 'Sarabun', sans-serif;
+        }
     </style>
 
 </head>
@@ -62,7 +67,7 @@
         </div>
 
         <div class="container" align="center" style="margin-top: 30px;">
-            <h3 class="saraban">เอกสารประกอบการคัดนักเรียนตามสายการเรียนที่เลือกแต่ละอันดับ ม.4</h3>
+            <h3 class="saraban">จำนวนนักเรียนทั้งหมดปีการศึกษา {{$school_year->study_year}}</h3>
         </div>
         
 
@@ -87,164 +92,1033 @@
                     <!-- ม.1 -->
                     <tr>
                         <td>ม.1/1</td>
-                        @if ($m1_1_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_1_m_all != 0)
                         <td>{{$m1_1_m_all}}</td>
-                        @endif
-                        @if ($m1_1_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_1_fm_all != 0)
                         <td>{{$m1_1_fm_all}}</td>
-                        @endif
-                        @if ($m1_1_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_1_all_sum != 0)
                         <td>{{$m1_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/2</td>
-                        @if ($m1_2_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_2_m_all != 0)
                         <td>{{$m1_2_m_all}}</td>
-                        @endif
-                        @if ($m1_2_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_2_fm_all != 0)
                         <td>{{$m1_2_fm_all}}</td>
-                        @endif
-                        @if ($m1_2_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_2_all_sum != 0)
                         <td>{{$m1_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/3</td>
-                        @if ($m1_3_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_3_m_all != 0)
                         <td>{{$m1_3_m_all}}</td>
-                        @endif
-                        @if ($m1_3_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_3_fm_all != 0)
                         <td>{{$m1_3_fm_all}}</td>
-                        @endif
-                        @if ($m1_3_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_3_all_sum != 0)
                         <td>{{$m1_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/4</td>
-                        @if ($m1_4_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_4_m_all != 0)
                         <td>{{$m1_4_m_all}}</td>
-                        @endif
-                        @if ($m1_4_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_4_fm_all != 0)
                         <td>{{$m1_4_fm_all}}</td>
-                        @endif
-                        @if ($m1_4_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_4_all_sum != 0)
                         <td>{{$m1_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/5</td>
-                        @if ($m1_5_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_5_m_all != 0)
                         <td>{{$m1_5_m_all}}</td>
-                        @endif
-                        @if ($m1_5_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_5_fm_all != 0)
                         <td>{{$m1_5_fm_all}}</td>
-                        @endif
-                        @if ($m1_5_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_5_all_sum != 0)
                         <td>{{$m1_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/6</td>
-                        @if ($m1_6_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_6_m_all != 0)
                         <td>{{$m1_6_m_all}}</td>
-                        @endif
-                        @if ($m1_6_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_6_fm_all != 0)
                         <td>{{$m1_6_fm_all}}</td>
-                        @endif
-                        @if ($m1_6_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_6_all_sum != 0)
                         <td>{{$m1_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/7</td>
-                        @if ($m1_7_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_7_m_all != 0)
                         <td>{{$m1_7_m_all}}</td>
-                        @endif
-                        @if ($m1_7_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_7_fm_all != 0)
                         <td>{{$m1_7_fm_all}}</td>
-                        @endif
-                        @if ($m1_7_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_7_all_sum != 0)
                         <td>{{$m1_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr>
                         <td>ม.1/8</td>
-                        @if ($m1_8_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_8_m_all != 0)
                         <td>{{$m1_8_m_all}}</td>
-                        @endif
-                        @if ($m1_8_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_8_fm_all != 0)
                         <td>{{$m1_8_fm_all}}</td>
-                        @endif
-                        @if ($m1_8_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_8_all_sum != 0)
                         <td>{{$m1_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                     <tr class="bg-success" style="color:white;">
                         <td>ม.1</td>
-                        @if ($m1_m_all = 0)
-                        <td>0</td>
-                        @else
+                        @if ($m1_m_all != 0)
                         <td>{{$m1_m_all}}</td>
-                        @endif
-                        @if ($m1_fm_all = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_fm_all != 0)
                         <td>{{$m1_fm_all}}</td>
-                        @endif
-                        @if ($m1_all_sum = 0)
-                        <td>0</td>
                         @else
+                        <td>0</td>
+                        @endif
+                        @if ($m1_all_sum != 0)
                         <td>{{$m1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <!-- ม.2 -->
+                    <tr>
+                        <td>ม.2/1</td>
+                        @if ($m2_1_m_all != 0)
+                        <td>{{$m2_1_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_1_fm_all != 0)
+                        <td>{{$m2_1_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_1_all_sum != 0)
+                        <td>{{$m2_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/2</td>
+                        @if ($m2_2_m_all != 0)
+                        <td>{{$m2_2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_2_fm_all != 0)
+                        <td>{{$m2_2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_2_all_sum != 0)
+                        <td>{{$m2_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/3</td>
+                        @if ($m2_3_m_all != 0)
+                        <td>{{$m2_3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_3_fm_all != 0)
+                        <td>{{$m2_3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_3_all_sum != 0)
+                        <td>{{$m2_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/4</td>
+                        @if ($m2_4_m_all != 0)
+                        <td>{{$m2_4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_4_fm_all != 0)
+                        <td>{{$m2_4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_4_all_sum != 0)
+                        <td>{{$m2_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/5</td>
+                        @if ($m2_5_m_all != 0)
+                        <td>{{$m2_5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_5_fm_all != 0)
+                        <td>{{$m2_5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_5_all_sum != 0)
+                        <td>{{$m2_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/6</td>
+                        @if ($m2_6_m_all != 0)
+                        <td>{{$m2_6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_6_fm_all != 0)
+                        <td>{{$m2_6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_6_all_sum != 0)
+                        <td>{{$m2_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/7</td>
+                        @if ($m2_7_m_all != 0)
+                        <td>{{$m2_7_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_7_fm_all != 0)
+                        <td>{{$m2_7_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_7_all_sum != 0)
+                        <td>{{$m2_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.2/8</td>
+                        @if ($m2_8_m_all != 0)
+                        <td>{{$m2_8_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_8_fm_all != 0)
+                        <td>{{$m2_8_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_8_all_sum != 0)
+                        <td>{{$m2_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr class="bg-success" style="color:white;">
+                        <td>ม.2</td>
+                        @if ($m2_m_all != 0)
+                        <td>{{$m2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_fm_all != 0)
+                        <td>{{$m2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m2_all_sum != 0)
+                        <td>{{$m2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <!-- ม.3 -->
+                    <tr>
+                        <td>ม.3/1</td>
+                        @if ($m3_1_m_all != 0)
+                        <td>{{$m3_1_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_1_fm_all != 0)
+                        <td>{{$m3_1_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_1_all_sum != 0)
+                        <td>{{$m3_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/2</td>
+                        @if ($m3_2_m_all != 0)
+                        <td>{{$m3_2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_2_fm_all != 0)
+                        <td>{{$m3_2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_2_all_sum != 0)
+                        <td>{{$m3_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/3</td>
+                        @if ($m3_3_m_all != 0)
+                        <td>{{$m3_3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_3_fm_all != 0)
+                        <td>{{$m3_3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_3_all_sum != 0)
+                        <td>{{$m3_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/4</td>
+                        @if ($m3_4_m_all != 0)
+                        <td>{{$m3_4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_4_fm_all != 0)
+                        <td>{{$m3_4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_4_all_sum != 0)
+                        <td>{{$m3_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/5</td>
+                        @if ($m3_5_m_all != 0)
+                        <td>{{$m3_5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_5_fm_all != 0)
+                        <td>{{$m3_5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_5_all_sum != 0)
+                        <td>{{$m3_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/6</td>
+                        @if ($m3_6_m_all != 0)
+                        <td>{{$m3_6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_6_fm_all != 0)
+                        <td>{{$m3_6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_6_all_sum != 0)
+                        <td>{{$m3_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/7</td>
+                        @if ($m3_7_m_all != 0)
+                        <td>{{$m3_7_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_7_fm_all != 0)
+                        <td>{{$m3_7_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_7_all_sum != 0)
+                        <td>{{$m3_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.3/8</td>
+                        @if ($m3_8_m_all != 0)
+                        <td>{{$m3_8_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_8_fm_all != 0)
+                        <td>{{$m3_8_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_8_all_sum != 0)
+                        <td>{{$m3_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr class="bg-success" style="color:white;">
+                        <td>ม.3</td>
+                        @if ($m3_m_all != 0)
+                        <td>{{$m3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_fm_all != 0)
+                        <td>{{$m3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m3_all_sum != 0)
+                        <td>{{$m3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <!-- ม.4 -->
+                    <tr>
+                        <td>ม.4/1</td>
+                        @if ($m4_1_m_all != 0)
+                        <td>{{$m4_1_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_1_fm_all != 0)
+                        <td>{{$m4_1_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_1_all_sum != 0)
+                        <td>{{$m4_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/2</td>
+                        @if ($m4_2_m_all != 0)
+                        <td>{{$m4_2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_2_fm_all != 0)
+                        <td>{{$m4_2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_2_all_sum != 0)
+                        <td>{{$m4_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/3</td>
+                        @if ($m4_3_m_all != 0)
+                        <td>{{$m4_3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_3_fm_all != 0)
+                        <td>{{$m4_3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_3_all_sum != 0)
+                        <td>{{$m4_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/4</td>
+                        @if ($m4_4_m_all != 0)
+                        <td>{{$m4_4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_4_fm_all != 0)
+                        <td>{{$m4_4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_4_all_sum != 0)
+                        <td>{{$m4_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/5</td>
+                        @if ($m4_5_m_all != 0)
+                        <td>{{$m4_5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_5_fm_all != 0)
+                        <td>{{$m4_5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_5_all_sum != 0)
+                        <td>{{$m4_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/6</td>
+                        @if ($m4_6_m_all != 0)
+                        <td>{{$m4_6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_6_fm_all != 0)
+                        <td>{{$m4_6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_6_all_sum != 0)
+                        <td>{{$m4_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/7</td>
+                        @if ($m4_7_m_all != 0)
+                        <td>{{$m4_7_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_7_fm_all != 0)
+                        <td>{{$m4_7_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_7_all_sum != 0)
+                        <td>{{$m4_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.4/8</td>
+                        @if ($m4_8_m_all != 0)
+                        <td>{{$m4_8_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_8_fm_all != 0)
+                        <td>{{$m4_8_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_8_all_sum != 0)
+                        <td>{{$m4_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ปวช.1</td>
+                        @if ($m4_9_m_all != 0)
+                        <td>{{$m4_9_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_9_fm_all != 0)
+                        <td>{{$m4_9_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_9_all_sum != 0)
+                        <td>{{$m4_9_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr class="bg-success" style="color:white;">
+                        <td>ม.4</td>
+                        @if ($m4_m_all != 0)
+                        <td>{{$m4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_fm_all != 0)
+                        <td>{{$m4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m4_all_sum != 0)
+                        <td>{{$m4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <!-- ม.5 -->
+                    <tr>
+                        <td>ม.5/1</td>
+                        @if ($m5_1_m_all != 0)
+                        <td>{{$m5_1_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_1_fm_all != 0)
+                        <td>{{$m5_1_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_1_all_sum != 0)
+                        <td>{{$m5_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/2</td>
+                        @if ($m5_2_m_all != 0)
+                        <td>{{$m5_2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_2_fm_all != 0)
+                        <td>{{$m5_2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_2_all_sum != 0)
+                        <td>{{$m5_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/3</td>
+                        @if ($m5_3_m_all != 0)
+                        <td>{{$m5_3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_3_fm_all != 0)
+                        <td>{{$m5_3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_3_all_sum != 0)
+                        <td>{{$m5_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/4</td>
+                        @if ($m5_4_m_all != 0)
+                        <td>{{$m5_4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_4_fm_all != 0)
+                        <td>{{$m5_4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_4_all_sum != 0)
+                        <td>{{$m5_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/5</td>
+                        @if ($m5_5_m_all != 0)
+                        <td>{{$m5_5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_5_fm_all != 0)
+                        <td>{{$m5_5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_5_all_sum != 0)
+                        <td>{{$m5_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/6</td>
+                        @if ($m5_6_m_all != 0)
+                        <td>{{$m5_6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_6_fm_all != 0)
+                        <td>{{$m5_6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_6_all_sum != 0)
+                        <td>{{$m5_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/7</td>
+                        @if ($m5_7_m_all != 0)
+                        <td>{{$m5_7_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_7_fm_all != 0)
+                        <td>{{$m5_7_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_7_all_sum != 0)
+                        <td>{{$m5_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.5/8</td>
+                        @if ($m5_8_m_all != 0)
+                        <td>{{$m5_8_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_8_fm_all != 0)
+                        <td>{{$m5_8_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_8_all_sum != 0)
+                        <td>{{$m5_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ปวช.2</td>
+                        @if ($m5_9_m_all != 0)
+                        <td>{{$m5_9_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_9_fm_all != 0)
+                        <td>{{$m5_9_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_9_all_sum != 0)
+                        <td>{{$m5_9_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr class="bg-success" style="color:white;">
+                        <td>ม.5</td>
+                        @if ($m5_m_all != 0)
+                        <td>{{$m5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_fm_all != 0)
+                        <td>{{$m5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m5_all_sum != 0)
+                        <td>{{$m5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <!-- ม.6 -->
+                    <tr>
+                        <td>ม.6/1</td>
+                        @if ($m6_1_m_all != 0)
+                        <td>{{$m6_1_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_1_fm_all != 0)
+                        <td>{{$m6_1_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_1_all_sum != 0)
+                        <td>{{$m6_1_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/2</td>
+                        @if ($m6_2_m_all != 0)
+                        <td>{{$m6_2_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_2_fm_all != 0)
+                        <td>{{$m6_2_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_2_all_sum != 0)
+                        <td>{{$m6_2_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/3</td>
+                        @if ($m6_3_m_all != 0)
+                        <td>{{$m6_3_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_3_fm_all != 0)
+                        <td>{{$m6_3_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_3_all_sum != 0)
+                        <td>{{$m6_3_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/4</td>
+                        @if ($m6_4_m_all != 0)
+                        <td>{{$m6_4_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_4_fm_all != 0)
+                        <td>{{$m6_4_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_4_all_sum != 0)
+                        <td>{{$m6_4_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/5</td>
+                        @if ($m6_5_m_all != 0)
+                        <td>{{$m6_5_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_5_fm_all != 0)
+                        <td>{{$m6_5_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_5_all_sum != 0)
+                        <td>{{$m6_5_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/6</td>
+                        @if ($m6_6_m_all != 0)
+                        <td>{{$m6_6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_6_fm_all != 0)
+                        <td>{{$m6_6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_6_all_sum != 0)
+                        <td>{{$m6_6_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/7</td>
+                        @if ($m6_7_m_all != 0)
+                        <td>{{$m6_7_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_7_fm_all != 0)
+                        <td>{{$m6_7_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_7_all_sum != 0)
+                        <td>{{$m6_7_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.6/8</td>
+                        @if ($m6_8_m_all != 0)
+                        <td>{{$m6_8_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_8_fm_all != 0)
+                        <td>{{$m6_8_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_8_all_sum != 0)
+                        <td>{{$m6_8_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ปวช.3</td>
+                        @if ($m6_9_m_all != 0)
+                        <td>{{$m6_9_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_9_fm_all != 0)
+                        <td>{{$m6_9_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_9_all_sum != 0)
+                        <td>{{$m6_9_all_sum}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                    </tr>
+                    <tr class="bg-success" style="color:white;">
+                        <td>ม.6</td>
+                        @if ($m6_m_all != 0)
+                        <td>{{$m6_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_fm_all != 0)
+                        <td>{{$m6_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m6_all_sum != 0)
+                        <td>{{$m6_all_sum}}</td>
+                        @else
+                        <td>0</td>
                         @endif
                     </tr>
                 </tbody>
