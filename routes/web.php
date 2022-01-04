@@ -203,6 +203,10 @@ Route::post('/searchStudent', 'studentcoreController@search');
 //ข้อมูลนักเรียนพื้นฐาน
 Route::get('/showStudentByID/{id}', 'studentcoreController@showStudentByID');
 
+Route::get('/agreement/student', function () {
+    return view('Studentcore.student.agreement-student-core');
+});
+
 
 //test controller
 Route::get('/testall', 'TestUPController@index');

@@ -108,9 +108,6 @@
 									<li>
 										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
 								</ul>
 							</div>
 						</li>
@@ -176,131 +173,43 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-thumbtack"></i>&nbsp; คำแนะนำและข้อตกลงการกรอกข้อมูลพื้นฐานนักเรียน</div>
 									</div>
 								</div>
-								<form action="{{ url('/editDocumentM4', $data->id)}}" method="POST" enctype="multipart/form-data">
-									{{csrf_field()}}
-									{{ method_field('POST') }}
-									<!-- ข้อมูลส่วนตัว -->
-									<div class="card-body">
-										<!-- อัพโหลดรูปภาพ -->
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp; ขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนบิดา</label>
-													<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
-													<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-													<input type="file" class="form-control-file" id="house_father" name="house_father">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
-													<input type="file" class="form-control-file" id="house_mother" name="house_mother">
-												</div>
-											</div>
-										</div>
-
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านผู้ปกครอง</label>
-													<input type="file" class="form-control-file" id="house_parent" name="house_parent">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนผู้ปกครอง</label>
-													<input type="file" class="form-control-file" id="id_card_parent" name="id_card_parent">
-												</div>
-											</div>
-										</div>
-
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหน้า)</label>
-													<input type="file" class="form-control-file" id="front_grade" name="front_grade">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหลัง)</label>
-													<input type="file" class="form-control-file" id="back_grade" name="back_grade">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สูติบัตร</label>
-													<input type="file" class="form-control-file" id="birth_certificate" name="birth_certificate">
-												</div>
-											</div>
-										</div>
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">หนังสือรับรองความพิการ</label>
-													<input type="file" class="form-control-file" id="disability_certificate" name="disability_certificate">
-												</div>
-											</div>
-										</div>
-									<!-- สถานะการสมัคร -->
-									<div hidden>
-										<input type="text" name="status_report" value="01">
+								<div class="card-body">
+									<ol>
+										<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของตัวนักเรียนเอง</li>
+										<li>เอกสารที่ใช้ประกอบข้อมูลพื้นฐานนักเรียนให้ใช้เป็นไฟล์ .jpg หรือ .png โดยมีขนาดไฟล์ไม่เกิน 2 mb (2 megabyte) หากขนาดไฟล์เกินกว่านั้นระบบจะไม่บันทึกข้อมูล</li>
+										<li>เอกสารที่ใช้ประกอบข้อมูลพื้นฐานมีดังนี้
+											</br>&nbsp;- ไฟล์รูปหน้าตรงขนาด 2 นิ้ว
+											</br>&nbsp;- ไฟล์รูปสำเนาบัตรประจำตัวประชาชนของนักเรียน
+											</br>&nbsp;- ไฟล์รูปสำเนาทะเบียนบ้านของนักเรียน
+											</br>&nbsp;- ไฟล์รูปใบ ปพ.1 (ด้านหน้าและด้านหลัง)ของนักเรียน
+											</br>&nbsp;- ไฟล์รูปสำเนาบัตรประจำตัวประชาชนของบิดา มารดา
+											</br>&nbsp;- ไฟล์รูปสำเนาทะเบียนบ้านของบิดา มารดา
+											</br>&nbsp;- ไฟล์รูปสำเนาบัตรประจำตัวประชาชนของผู้ปกครอง(ในกรณีไม่ได้อยู่กับบิดา มารดา)
+											</br>&nbsp;- ไฟล์รูปสำเนาทะเบียนบ้านของผู้ปกครอง(ในกรณีไม่ได้อยู่กับบิดา มารดา)
+											</br>&nbsp;- ไฟล์รูปใบสูติบัตรของนักเรียน
+											</br>&nbsp;- ไฟล์รูปใบรับรองความพิการ(ในกรณีที่เป็นผู้พิการด้านต่างๆ *เอกสารต้องถูกรับรองโดยแพทย์เท่านั้น)
+										</li>
+										
+									</ol>
+								</div>
+								<div class="card-footer" align="center">
+									<div class="form-check">
+										<label class="form-check-label">
+											<input class="form-check-input" type="checkbox">
+											<span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
+										</label>
 									</div>
-									<div hidden>
-										<input type="text" name="status_tranfer" value="02">
-									</div>
-
-									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
-										<a href='{{ url("/Newstudent/documentM4" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
-									</div><br>
+									<a type="button" class="btn btn-info" href="{{ url('/Addstudentcore')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+								</div>
 							</div>
-							</form>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
@@ -478,65 +387,6 @@
 			lineWidth: '2',
 			lineColor: '#ffa534',
 			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
-	<script>
-		//== Class definition
-		var SweetAlert2Demo = function() {
-
-			//== Demos
-			var initDemos = function() {
-
-				$('#alert_demo_7').click(function(e) {
-					swal({
-						title: 'ยืนยันข้อมูล ?',
-						text: "ยืนยันการแก้ไขข้อมูล",
-						type: 'warning',
-						buttons: {
-							confirm: {
-								text: 'ตกลง',
-								className: 'btn btn-success',
-								type: 'submit'
-							},
-							cancel: {
-								text: 'ย้อนกลับ',
-								visible: true,
-								className: 'btn btn-danger'
-							}
-						}
-					}).then((Delete) => {
-						if (Delete) {
-							swal({
-								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'สามารถตรวจสอบการแก้ไขข้อมูลได้ที่น้าตรวจสอบข้อมูล',
-								type: 'success',
-								buttons: {
-									confirm: {
-										className: 'btn btn-success'
-									}
-								}
-							}).then(function() {
-								window.location = '/Newstudent/documentM4';
-							});
-						} else {
-							swal.close();
-						}
-					});
-				})
-
-			};
-
-			return {
-				//== Init
-				init: function() {
-					initDemos();
-				},
-			};
-		}();
-
-		//== Class Initialization
-		jQuery(document).ready(function() {
-			SweetAlert2Demo.init();
 		});
 	</script>
 

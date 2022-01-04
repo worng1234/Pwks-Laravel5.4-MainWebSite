@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เอกสารสายการเรียน ม.4</title>
+    <title>จำนวนนักเรียนทั้งหมด</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,12 +46,30 @@
         });
     </script>
 
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#sumAll').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5',
+                ],
+                "pageLength": 20,
+                "language": {
+                    "search": "ค้นหาข้อมูล :"
+                },
+                "ordering": false
+            });
+        });
+    </script>
+
     <style>
         .saraban {
             font-family: 'Sarabun', sans-serif;
         }
 
-        table,th,td {
+        table,
+        th,
+        td {
             text-align: center;
             font-family: 'Sarabun', sans-serif;
         }
@@ -69,14 +87,88 @@
         <div class="container" align="center" style="margin-top: 30px;">
             <h3 class="saraban">จำนวนนักเรียนทั้งหมดปีการศึกษา {{$school_year->study_year}}</h3>
         </div>
-        
+
+        <div style="margin-top: 30px;">
+            <table id="sumAll" class="table table-bordered table-hover table-condesed">
+                <thead>
+                    <th width="5%" class="saraban">
+                        <center>ระดับชั้น</center>
+                    </th>
+                    <th width="5%" class="saraban">
+                        <center>ชาย</center>
+                    </th>
+                    <th width="5%" class="saraban">
+                        <center>หญิง</center>
+                    </th>
+                    <th width="5%" class="saraban">
+                        <center>รวม</center>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ม.ต้น</td>
+                        @if ($m123_m != 0)
+                        <td>{{$m123_m}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m123_fm != 0)
+                        <td>{{$m123_fm}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m123_all != 0)
+                        <td class="bg-success" style="color:white;">{{$m123_all}}</td>
+                        @else
+                        <td class="bg-success" style="color:white;">0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.ปลาย</td>
+                        @if ($m456_m != 0)
+                        <td>{{$m456_m}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m456_fm != 0)
+                        <td>{{$m456_fm}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m456_all != 0)
+                        <td class="bg-success" style="color:white;">{{$m456_all}}</td>
+                        @else
+                        <td class="bg-success" style="color:white;">0</td>
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>ม.ต้น + ม.ปลาย</td>
+                        @if ($m_m_all != 0)
+                        <td>{{$m_m_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m_fm_all != 0)
+                        <td>{{$m_fm_all}}</td>
+                        @else
+                        <td>0</td>
+                        @endif
+                        @if ($m_all != 0)
+                        <td class="bg-success" style="color:white;">{{$m_all}}</td>
+                        @else
+                        <td class="bg-success" style="color:white;">0</td>
+                        @endif
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
         <div style="margin-top: 30px;">
             <table id="example" class="table table-bordered table-hover table-condesed">
                 <thead>
                     <th width="5%" class="saraban">
-                        <center>ชั้น</center>
+                        <center>ระดับชั้น</center>
                     </th>
                     <th width="5%" class="saraban">
                         <center>ชาย</center>

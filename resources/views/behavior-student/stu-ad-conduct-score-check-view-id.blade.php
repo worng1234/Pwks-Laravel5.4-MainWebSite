@@ -275,7 +275,7 @@
 															<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 																<tr>
 																	<td>
-																		<img id="mainContentPlaceHolder_signinImage" src="../assets/img/pro1.jpg" style="height:165px; width:125px;" />
+																		<img id="mainContentPlaceHolder_signinImage" src="../ImgAll/profile_img/{{$photo->profile_img}}" style="height:165px; width:125px;" />
 																	</td>
 																</tr>
 															</table>

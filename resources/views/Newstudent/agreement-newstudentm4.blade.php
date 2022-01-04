@@ -119,7 +119,7 @@
 							<div class="navbar-dropdown animated fadeIn">
 								<ul>
 									<li>
-										<a href="{{url('/Addstudentcore')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
 									</li>
 								</ul>
 							</div>
@@ -178,15 +178,14 @@
 								</div>
 								<div class="card-body">
 									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
+									<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของผู้สมัครเอง</li>
+										<li>เอกสารที่ใช้ประกอบการสมัครให้ใช้เป็นไฟล์ .jpg หรือ .png โดยมีขนาดไฟล์ไม่เกิน 2 mb (2 megabyte) หากขนาดไฟล์เกินกว่านั้นระบบจะไม่บันทึกข้อมูล</li>
+										<li>เอกสารที่ใช้ประกอบการสมัครมีดังนี้
+											</br>&nbsp;- ไฟล์รูปหน้าตรงขนาด 2 นิ้ว
+											</br>&nbsp;- ไฟล์รูปสำเนาบัตรประจำตัวประชาชนของผู้สมัคร
+											</br>&nbsp;- ไฟล์รูปสำเนาทะเบียนบ้านของผู้สมัคร
+											</br>&nbsp;- ไฟล์รูปใบ ปพ.1(ด้านหน้า) หรือหนังสือรับรองการเป็นนักเรียนของผู้สมัคร
+										</li>
 									</ol>
 								</div>
 								<div class="card-footer" align="center">

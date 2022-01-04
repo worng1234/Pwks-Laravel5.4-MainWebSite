@@ -761,6 +761,8 @@
                                         <div hidden>
                                             <input type="text" name="status_tranfer" value="01">
                                         </div>
+                                        <input name="score" value="100" hidden>
+										<input name="status" value="01" hidden>
 
 
 

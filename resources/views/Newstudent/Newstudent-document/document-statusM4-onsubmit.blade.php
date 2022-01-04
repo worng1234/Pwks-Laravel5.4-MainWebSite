@@ -138,7 +138,7 @@
 							<div class="navbar-dropdown animated fadeIn">
 								<ul>
                                     <li>
-										<a href="{{url('/Addstudentcore')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
 									</li>
 								</ul>
 							</div>

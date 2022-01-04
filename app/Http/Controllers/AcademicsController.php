@@ -743,6 +743,8 @@ class AcademicsController extends Controller
             "origin" => $request->get('origin'),
             "nationality" => $request->get('nationality'),
             "tel_s" => $request->get('tel_s'),
+            "score" => $request->get('score'),
+            "status" => $request->get('status'),
         ]);
 
         addressstudentModel::create([
@@ -887,6 +889,8 @@ class AcademicsController extends Controller
             "origin" => $request->get('origin'),
             "nationality" => $request->get('nationality'),
             "tel_s" => $request->get('tel_s'),
+            "score" => $request->get('score'),
+            "status" => $request->get('status'),
         ]);
 
         addressstudentModel::create([
@@ -1152,1202 +1156,1216 @@ class AcademicsController extends Controller
     {
         //ปีการศึกษา
         $school_year = DB::table('school_year')
-        ->first();
+            ->first();
         //ม.1/1
         $m1_1_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_1_m_all = count($m1_1_m);
 
         $m1_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_1_fm_all = count($m1_1_fm);
 
         $m1_1_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '1')
+            ->first();
         $m1_1_all_sum = count($m1_1_all);
 
         //ม.1/2
         $m1_2_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_2_m_all = count($m1_2_m);
 
         $m1_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_2_fm_all = count($m1_2_fm);
 
         $m1_2_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '2')
+            ->first();
         $m1_2_all_sum = count($m1_2_all);
 
         //ม.1/3
         $m1_3_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_3_m_all = count($m1_3_m);
 
         $m1_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_3_fm_all = count($m1_3_fm);
 
         $m1_3_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '3')
+            ->first();
         $m1_3_all_sum = count($m1_3_all);
 
         //ม.1/4
         $m1_4_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_4_m_all = count($m1_4_m);
 
         $m1_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_4_fm_all = count($m1_4_fm);
 
         $m1_4_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '4')
+            ->first();
         $m1_4_all_sum = count($m1_4_all);
 
         //ม.1/5
         $m1_5_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_5_m_all = count($m1_5_m);
 
         $m1_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_5_fm_all = count($m1_5_fm);
 
         $m1_5_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '5')
+            ->first();
         $m1_5_all_sum = count($m1_5_all);
 
         //ม.1/6
         $m1_6_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_6_m_all = count($m1_6_m);
 
         $m1_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_6_fm_all = count($m1_6_fm);
 
         $m1_6_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '6')
+            ->first();
         $m1_6_all_sum = count($m1_6_all);
 
         //ม.1/7
         $m1_7_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_7_m_all = count($m1_7_m);
 
         $m1_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_7_fm_all = count($m1_7_fm);
 
         $m1_7_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '7')
+            ->first();
         $m1_7_all_sum = count($m1_7_all);
 
         //ม.1/8
         $m1_8_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_8_m_all = count($m1_8_m);
 
         $m1_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_8_fm_all = count($m1_8_fm);
 
         $m1_8_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('student_room', '=', '8')
+            ->first();
         $m1_8_all_sum = count($m1_8_all);
 
         //ม.1 ทั้งหมด
         $m1_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m1_m_all = count($m1_m);
 
         $m1_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m1_fm_all = count($m1_fm);
 
         $m1_all = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->first();
+            ->where('student_class', '=', '1')
+            ->first();
         $m1_all_sum = count($m1_all);
 
         //ม.2/1
         $m2_1_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_1_m_all = count($m2_1_m);
 
         $m2_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_1_fm_all = count($m2_1_fm);
 
         $m2_1_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '1')
+            ->first();
         $m2_1_all_sum = count($m2_1_all);
 
         //ม.2/2
         $m2_2_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_2_m_all = count($m2_2_m);
 
         $m2_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_2_fm_all = count($m2_2_fm);
 
         $m2_2_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '2')
+            ->first();
         $m2_2_all_sum = count($m2_2_all);
 
         //ม.2/3
         $m2_3_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_3_m_all = count($m2_3_m);
 
         $m2_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_3_fm_all = count($m2_3_fm);
 
         $m2_3_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '3')
+            ->first();
         $m2_3_all_sum = count($m2_3_all);
 
         //ม.2/4
         $m2_4_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_4_m_all = count($m2_4_m);
 
         $m2_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_4_fm_all = count($m2_4_fm);
 
         $m2_4_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '4')
+            ->first();
         $m2_4_all_sum = count($m2_4_all);
 
         //ม.2/5
         $m2_5_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_5_m_all = count($m2_5_m);
 
         $m2_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_5_fm_all = count($m2_5_fm);
 
         $m2_5_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '5')
+            ->first();
         $m2_5_all_sum = count($m2_5_all);
 
         //ม.2/6
         $m2_6_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_6_m_all = count($m2_6_m);
 
         $m2_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_6_fm_all = count($m2_6_fm);
 
         $m2_6_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '6')
+            ->first();
         $m2_6_all_sum = count($m2_6_all);
 
         //ม.2/7
         $m2_7_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_7_m_all = count($m2_7_m);
 
         $m2_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_7_fm_all = count($m2_7_fm);
 
         $m2_7_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '7')
+            ->first();
         $m2_7_all_sum = count($m2_7_all);
 
         //ม.2/8
         $m2_8_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_8_m_all = count($m2_8_m);
 
         $m2_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_8_fm_all = count($m2_8_fm);
 
         $m2_8_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('student_room', '=', '8')
+            ->first();
         $m2_8_all_sum = count($m2_8_all);
 
         //ม.2 ทั้งหมด
         $m2_m = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m2_m_all = count($m2_m);
 
         $m2_fm = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m2_fm_all = count($m2_fm);
 
         $m2_all = DB::table('student_core')
-        ->where('student_class', '=', '2')
-        ->first();
+            ->where('student_class', '=', '2')
+            ->first();
         $m2_all_sum = count($m2_all);
 
         //ม.3/1
         $m3_1_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_1_m_all = count($m3_1_m);
 
         $m3_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_1_fm_all = count($m3_1_fm);
 
         $m3_1_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '1')
+            ->first();
         $m3_1_all_sum = count($m3_1_all);
 
         //ม.3/2
         $m3_2_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_2_m_all = count($m3_2_m);
 
         $m3_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_2_fm_all = count($m3_2_fm);
 
         $m3_2_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '2')
+            ->first();
         $m3_2_all_sum = count($m3_2_all);
 
         //ม.3/3
         $m3_3_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_3_m_all = count($m3_3_m);
 
         $m3_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_3_fm_all = count($m3_3_fm);
 
         $m3_3_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '3')
+            ->first();
         $m3_3_all_sum = count($m3_3_all);
 
         //ม.3/4
         $m3_4_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_4_m_all = count($m3_4_m);
 
         $m3_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_4_fm_all = count($m3_4_fm);
 
         $m3_4_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '4')
+            ->first();
         $m3_4_all_sum = count($m3_4_all);
 
         //ม.3/5
         $m3_5_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_5_m_all = count($m3_5_m);
 
         $m3_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_5_fm_all = count($m3_5_fm);
 
         $m3_5_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '5')
+            ->first();
         $m3_5_all_sum = count($m3_5_all);
 
         //ม.3/6
         $m3_6_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_6_m_all = count($m3_6_m);
 
         $m3_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_6_fm_all = count($m3_6_fm);
 
         $m3_6_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '6')
+            ->first();
         $m3_6_all_sum = count($m3_6_all);
 
         //ม.3/7
         $m3_7_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_7_m_all = count($m3_7_m);
 
         $m3_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_7_fm_all = count($m3_7_fm);
 
         $m3_7_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '7')
+            ->first();
         $m3_7_all_sum = count($m3_7_all);
 
         //ม.3/8
         $m3_8_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_8_m_all = count($m3_8_m);
 
         $m3_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_8_fm_all = count($m3_8_fm);
 
         $m3_8_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('student_room', '=', '8')
+            ->first();
         $m3_8_all_sum = count($m3_8_all);
 
         //ม.3 ทั้งหมด
         $m3_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m3_m_all = count($m3_m);
 
         $m3_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m3_fm_all = count($m3_fm);
 
         $m3_all = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->first();
+            ->where('student_class', '=', '3')
+            ->first();
         $m3_all_sum = count($m3_all);
 
         //ม.4/1
         $m4_1_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_1_m_all = count($m4_1_m);
 
         $m4_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_1_fm_all = count($m4_1_fm);
 
         $m4_1_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '1')
+            ->first();
         $m4_1_all_sum = count($m4_1_all);
 
         //ม.4/2
         $m4_2_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_2_m_all = count($m4_2_m);
 
         $m4_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_2_fm_all = count($m4_2_fm);
 
         $m4_2_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '2')
+            ->first();
         $m4_2_all_sum = count($m4_2_all);
 
         //ม.4/3
         $m4_3_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_3_m_all = count($m4_3_m);
 
         $m4_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_3_fm_all = count($m4_3_fm);
 
         $m4_3_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '3')
+            ->first();
         $m4_3_all_sum = count($m4_3_all);
 
         //ม.4/4
         $m4_4_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_4_m_all = count($m4_4_m);
 
         $m4_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_4_fm_all = count($m4_4_fm);
 
         $m4_4_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '4')
+            ->first();
         $m4_4_all_sum = count($m4_4_all);
 
         //ม.4/5
         $m4_5_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_5_m_all = count($m4_5_m);
 
         $m4_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_5_fm_all = count($m4_5_fm);
 
         $m4_5_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '5')
+            ->first();
         $m4_5_all_sum = count($m4_5_all);
 
         //ม.4/6
         $m4_6_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_6_m_all = count($m4_6_m);
 
         $m4_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_6_fm_all = count($m4_6_fm);
 
         $m4_6_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '6')
+            ->first();
         $m4_6_all_sum = count($m4_6_all);
 
         //ม.4/7
         $m4_7_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_7_m_all = count($m4_7_m);
 
         $m4_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_7_fm_all = count($m4_7_fm);
 
         $m4_7_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '7')
+            ->first();
         $m4_7_all_sum = count($m4_7_all);
 
         //ม.4/8
         $m4_8_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_8_m_all = count($m4_8_m);
 
         $m4_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_8_fm_all = count($m4_8_fm);
 
         $m4_8_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '8')
+            ->first();
         $m4_8_all_sum = count($m4_8_all);
 
         //ม.4/9
         $m4_9_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '9')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '9')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_9_m_all = count($m4_9_m);
 
         $m4_9_fm = DB::table('student_core')
-        ->where('student_class', '=', '9')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '9')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_9_fm_all = count($m4_9_fm);
 
         $m4_9_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '9')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '9')
+            ->first();
         $m4_9_all_sum = count($m4_9_all);
 
         //ม.4 ทั้งหมด
         $m4_m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m4_m_all = count($m4_m);
 
         $m4_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m4_fm_all = count($m4_fm);
 
         $m4_all = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->first();
         $m4_all_sum = count($m4_all);
 
         //ม.5/1
         $m5_1_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_1_m_all = count($m5_1_m);
 
         $m5_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_1_fm_all = count($m5_1_fm);
 
         $m5_1_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '1')
+            ->first();
         $m5_1_all_sum = count($m5_1_all);
 
         //ม.5/2
         $m5_2_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_2_m_all = count($m5_2_m);
 
         $m5_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '4')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_2_fm_all = count($m5_2_fm);
 
         $m5_2_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '2')
+            ->first();
         $m5_2_all_sum = count($m5_2_all);
 
         //ม.5/3
         $m5_3_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_3_m_all = count($m5_3_m);
 
         $m5_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_3_fm_all = count($m5_3_fm);
 
         $m5_3_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '3')
+            ->first();
         $m5_3_all_sum = count($m5_3_all);
 
         //ม.5/4
         $m5_4_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_4_m_all = count($m5_4_m);
 
         $m5_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_4_fm_all = count($m5_4_fm);
 
         $m5_4_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '4')
+            ->first();
         $m5_4_all_sum = count($m5_4_all);
 
         //ม.5/5
         $m5_5_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_5_m_all = count($m5_5_m);
 
         $m5_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_5_fm_all = count($m5_5_fm);
 
         $m5_5_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '5')
+            ->first();
         $m5_5_all_sum = count($m5_5_all);
 
         //ม.5/6
         $m5_6_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_6_m_all = count($m5_6_m);
 
         $m5_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_6_fm_all = count($m5_6_fm);
 
         $m5_6_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '6')
+            ->first();
         $m5_6_all_sum = count($m5_6_all);
 
         //ม.5/7
         $m5_7_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_7_m_all = count($m5_7_m);
 
         $m5_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_7_fm_all = count($m5_7_fm);
 
         $m5_7_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '7')
+            ->first();
         $m5_7_all_sum = count($m5_7_all);
 
         //ม.5/8
         $m5_8_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_8_m_all = count($m5_8_m);
 
         $m5_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_8_fm_all = count($m5_8_fm);
 
         $m5_8_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '8')
+            ->first();
         $m5_8_all_sum = count($m5_8_all);
 
         //ม.5/9
         $m5_9_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '9')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '9')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_9_m_all = count($m5_9_m);
 
         $m5_9_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_9_fm_all = count($m5_9_fm);
 
         $m5_9_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('student_room', '=', '9')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('student_room', '=', '9')
+            ->first();
         $m5_9_all_sum = count($m5_9_all);
 
         //ม.5 ทั้งหมด
         $m5_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m5_m_all = count($m5_m);
 
         $m5_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m5_fm_all = count($m5_fm);
 
         $m5_all = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->first();
+            ->where('student_class', '=', '5')
+            ->first();
         $m5_all_sum = count($m5_all);
 
         //ม.6/1
         $m6_1_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_1_m_all = count($m6_1_m);
 
         $m6_1_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '1')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_1_fm_all = count($m6_1_fm);
 
         $m6_1_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '1')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '1')
+            ->first();
         $m6_1_all_sum = count($m6_1_all);
 
         //ม.6/2
         $m6_2_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_2_m_all = count($m6_2_m);
 
         $m6_2_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '2')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_2_fm_all = count($m6_2_fm);
 
         $m6_2_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '2')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '2')
+            ->first();
         $m6_2_all_sum = count($m6_2_all);
 
         //ม.6/3
         $m6_3_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_3_m_all = count($m6_3_m);
 
         $m6_3_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '3')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_3_fm_all = count($m6_3_fm);
 
         $m6_3_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '3')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '3')
+            ->first();
         $m6_3_all_sum = count($m6_3_all);
 
         //ม.6/4
         $m6_4_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_4_m_all = count($m6_4_m);
 
         $m6_4_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '4')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_4_fm_all = count($m6_4_fm);
 
         $m6_4_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '4')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '4')
+            ->first();
         $m6_4_all_sum = count($m6_4_all);
 
         //ม.6/5
         $m6_5_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_5_m_all = count($m6_5_m);
 
         $m6_5_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '5')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_5_fm_all = count($m6_5_fm);
 
         $m6_5_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '5')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '5')
+            ->first();
         $m6_5_all_sum = count($m6_5_all);
 
         //ม.6/6
         $m6_6_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_6_m_all = count($m6_6_m);
 
         $m6_6_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_6_fm_all = count($m6_6_fm);
 
         $m6_6_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '6')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '6')
+            ->first();
         $m6_6_all_sum = count($m6_6_all);
 
         //ม.6/7
         $m6_7_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_7_m_all = count($m6_7_m);
 
         $m6_7_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '7')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '7')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_7_fm_all = count($m6_7_fm);
 
         $m6_7_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '7')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '7')
+            ->first();
         $m6_7_all_sum = count($m6_7_all);
 
         //ม.6/8
         $m6_8_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_8_m_all = count($m6_8_m);
 
         $m6_8_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_8_fm_all = count($m6_8_fm);
 
         $m6_8_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '8')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '8')
+            ->first();
         $m6_8_all_sum = count($m6_8_all);
 
         //ม.6/9
         $m6_9_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '9')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '9')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_9_m_all = count($m6_9_m);
 
         $m6_9_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '8')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '8')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_9_fm_all = count($m6_9_fm);
 
         $m6_9_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_room', '=', '9')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('student_room', '=', '9')
+            ->first();
         $m6_9_all_sum = count($m6_9_all);
 
         //ม.6 ทั้งหมด
         $m6_m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('gender' ,'=', 'ชาย')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->first();
         $m6_m_all = count($m6_m);
 
         $m6_fm = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('gender' ,'=', 'หญิง')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->first();
         $m6_fm_all = count($m6_fm);
 
         $m6_all = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->first();
+            ->where('student_class', '=', '6')
+            ->first();
         $m6_all_sum = count($m6_all);
 
         //รวม ม.ต้น
-        $m123_m = $m1_m_all+$m2_m_all+$m3_m_all;
-        $m123_fm = $m1_fm_all+$m2_fm_all+$m3_fm_all;
-        $m123_all = $m1_all_sum+$m2_all_sum+$m3_all_sum;
+        $m123_m = $m1_m_all + $m2_m_all + $m3_m_all;
+        $m123_fm = $m1_fm_all + $m2_fm_all + $m3_fm_all;
+        $m123_all = $m1_all_sum + $m2_all_sum + $m3_all_sum;
 
         //รวม ม.ปลาย
-        $m456_m = $m4_m_all+$m5_m_all+$m6_m_all;
-        $m456_fm = $m4_fm_all+$m5_fm_all+$m6_fm_all;
-        $m456_all = $m4_all_sum+$m5_all_sum+$m6_all_sum;
+        $m456_m = $m4_m_all + $m5_m_all + $m6_m_all;
+        $m456_fm = $m4_fm_all + $m5_fm_all + $m6_fm_all;
+        $m456_all = $m4_all_sum + $m5_all_sum + $m6_all_sum;
 
         //ม.ต้น + ม.ปลาย
+        $m_m_all = $m1_m_all + $m2_m_all + $m3_m_all + $m4_m_all + $m5_m_all + $m6_m_all;
+        $m_fm_all = $m1_fm_all + $m2_fm_all + $m3_fm_all + $m4_fm_all + $m5_fm_all + $m6_fm_all;
+        $m_all = $m1_all_sum + $m2_all_sum + $m3_all_sum + $m4_all_sum + $m5_all_sum + $m6_all_sum;
 
-        return view('academic.academic-report.academic-report-stat-student',[
+        return view('academic.academic-report.academic-report-stat-student', [
 
             //ปีการศึกษา
             'school_year' => $school_year,
+
+            //รวม
+            'm123_m' => $m123_m,
+            'm123_fm' => $m123_fm,
+            'm123_all' => $m123_all,
+            'm456_m' => $m456_m,
+            'm456_fm' => $m456_fm,
+            'm456_all' => $m456_all,
+            'm_m_all' => $m_m_all,
+            'm_fm_all' => $m_fm_all,
+            'm_all' => $m_all,
 
             //ม.1/1
             'm1_1_m_all' => $m1_1_m_all,

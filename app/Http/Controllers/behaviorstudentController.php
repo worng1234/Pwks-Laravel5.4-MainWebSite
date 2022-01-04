@@ -46,6 +46,7 @@ class behaviorstudentController extends Controller
     {
         $data_student = studentcoreModels::find($id);
         $stid = $data_student->student_id;
+        $photo_id = $data_student->student_id_card;
         $student_Plus = DB::table('student_core')
             ->join('behavior_student', 'student_core.student_id', '=', 'behavior_student.student_id_behavior')
             ->select(
@@ -90,12 +91,19 @@ class behaviorstudentController extends Controller
             ->whereNotNull('behavior_student.minus_score')
             ->get();
 
+            $photo = DB::table('student_core')
+            ->join('photo_student', 'student_core.student_id_card', '=' ,'photo_student.student_idcard')
+            ->select('photo_student.profile_img')
+            ->where('student_core.student_id_card','=', $photo_id)
+            ->first();
+
             return view(
                 'behavior-student.behavior-report.behavior-report-id',
                 [
                     "data_student" => $data_student,
                     "student_Plus" => $student_Plus,
-                    "student_Minus" => $student_Minus
+                    "student_Minus" => $student_Minus,
+                    "photo" => $photo
                 ]
             );
     }
@@ -104,6 +112,7 @@ class behaviorstudentController extends Controller
     {
         $data_student = studentcoreModels::find($id);
         $stid = $data_student->student_id;
+        $photo_id = $data_student->student_id_card;
 
         $student = DB::table('student_core')
             ->join('behavior_student', 'student_core.student_id', '=', 'behavior_student.student_id_behavior')
@@ -127,12 +136,19 @@ class behaviorstudentController extends Controller
             ->where('student_core.student_id', '=', $stid)
             ->get();
 
+            $photo = DB::table('student_core')
+            ->join('photo_student', 'student_core.student_id_card', '=' ,'photo_student.student_idcard')
+            ->select('photo_student.profile_img')
+            ->where('student_core.student_id_card','=', $photo_id)
+            ->first();
+
 
         return view(
             'behavior-student.stu-ad-conduct-score-check-view-id',
             [
                 "data_student" => $data_student,
                 "student" => $student,
+                "photo" => $photo
             ]
         );
     }
