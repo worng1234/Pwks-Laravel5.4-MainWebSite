@@ -99,9 +99,9 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-                            <label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-                            <label><b>ภาคเรียนที่ :</b> 1/2565</label>
+                            <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('affair')->user()->prename}}{{ Auth::guard('affair')->user()->fname}} </br>{{ Auth::guard('affair')->user()->surname}}</label>
+                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
                             <div class="clearfix"></div>
@@ -113,7 +113,7 @@
                     <ul class="nav nav-primary">
 
                         <li class="nav-item active">
-                            <a href="stu-ad-index.html">
+                            <a href="{{ url('/affair')}}">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
@@ -201,10 +201,189 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <p><u><strong>กราฟแสดงจำนวนผู้สมัครในแต่ละวัน</strong></u></p>
-                                    <div id="chart-container">
-                                        <canvas id="lineChart"></canvas>
-                                    </div>
+                                <h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u></h3>
+									<div style="margin-top: 30px;">
+										<table class="table table-bordered table-hover table-condesed">
+											<thead class="bg-info">
+												<th width="5%" class="saraban">
+													<center>ระดับชั้น</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>ชาย</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>หญิง</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>รวม</center>
+												</th>
+											</thead>
+											<tbody>
+												<tr>
+													<td align="center" class="table-secondary">ม.1</td>
+													@if ($m1_m_all != 0)
+													<td align="center">{{$m1_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m1_fm_all != 0)
+													<td align="center">{{$m1_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m1_all != 0)
+													<td align="center" class="table-success">{{$m1_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.2</td>
+													@if ($m2_m_all != 0)
+													<td align="center">{{$m2_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m2_fm_all != 0)
+													<td align="center">{{$m2_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m2_all != 0)
+													<td align="center" class="table-success">{{$m2_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.3</td>
+													@if ($m3_m_all != 0)
+													<td align="center">{{$m3_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m3_fm_all != 0)
+													<td align="center">{{$m3_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m3_all != 0)
+													<td align="center" class="table-success">{{$m3_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.4</td>
+													@if ($m4_m_all != 0)
+													<td align="center">{{$m4_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m4_fm_all != 0)
+													<td align="center">{{$m4_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m4_all != 0)
+													<td align="center" class="table-success">{{$m4_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.5</td>
+													@if ($m5_m_all != 0)
+													<td align="center">{{$m5_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m5_fm_all != 0)
+													<td align="center">{{$m5_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m5_all != 0)
+													<td align="center" class="table-success">{{$m5_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.6</td>
+													@if ($m6_m_all != 0)
+													<td align="center">{{$m6_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m6_fm_all != 0)
+													<td align="center">{{$m6_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m6_all != 0)
+													<td align="center" class="table-success">{{$m6_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-warning">ม.ต้น</td>
+													@if ($m123_m_all != 0)
+													<td align="center" class="table-warning">{{$m123_m_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m123_fm_all != 0)
+													<td align="center" class="table-warning">{{$m123_fm_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m123_all != 0)
+													<td align="center" class="table-primary">{{$m123_all}}</td>
+													@else
+													<td align="center" class="table-primary">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-warning">ม.ปลาย</td>
+													@if ($m456_m_all != 0)
+													<td align="center" class="table-warning">{{$m456_m_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m456_fm_all != 0)
+													<td align="center" class="table-warning">{{$m456_fm_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m456_all != 0)
+													<td align="center" class="table-primary">{{$m456_all}}</td>
+													@else
+													<td align="center" class="table-primary">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
+													@if ($m_m_all != 0)
+													<td align="center" class="table-danger">{{$m_m_all}}</td>
+													@else
+													<td align="center" class="table-danger">0</td>
+													@endif
+													@if ($m_fm_all != 0)
+													<td align="center" class="table-danger">{{$m_fm_all}}</td>
+													@else
+													<td align="center" class="table-danger">0</td>
+													@endif
+													@if ($m_all != 0)
+													<td align="center" class="bg-danger">{{$m_all}}</td>
+													@else
+													<td align="center" class="bg-danger">0</td>
+													@endif
+												</tr>
+											</tbody>
+										</table>
+									</div>
                                 </div>
                             </div>
                         </div>
@@ -344,91 +523,7 @@
             styleText: true
         })
 
-        var lineChart = document.getElementById('lineChart').getContext('2d');
-        var num = {
-            !!json_encode($m1_regis_dayall1) !!
-        };
-        var num2 = {
-            !!json_encode($m1_regis_dayall2) !!
-        };
-
-        var num4 = {
-            !!json_encode($m4_regis_dayall1) !!
-        };
-        var num5 = {
-            !!json_encode($m4_regis_dayall2) !!
-        };
-
-        var myLineChart = new Chart(lineChart, {
-            type: 'line',
-            data: {
-                labels: ["2021-11-28", "2021-11-29", ],
-                datasets: [{
-                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 1",
-                    borderColor: "#1d7af3",
-                    pointBorderColor: "#FFF",
-                    pointBackgroundColor: "#1d7af3",
-                    pointBorderWidth: 2,
-                    pointHoverRadius: 4,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 4,
-                    backgroundColor: 'transparent',
-                    fill: true,
-                    borderWidth: 2,
-                    data: [num, num2, ]
-                }, {
-                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 4",
-                    borderColor: "#59d05d",
-                    pointBorderColor: "#FFF",
-                    pointBackgroundColor: "#59d05d",
-                    pointBorderWidth: 2,
-                    pointHoverRadius: 4,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 4,
-                    backgroundColor: 'transparent',
-                    fill: true,
-                    borderWidth: 2,
-                    data: [num4, num5, ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        padding: 10,
-                        fontColor: '#1d7af3',
-                    }
-                },
-                tooltips: {
-                    bodySpacing: 4,
-                    mode: "nearest",
-                    intersect: 0,
-                    position: "nearest",
-                    xPadding: 10,
-                    yPadding: 10,
-                    caretPadding: 10
-                },
-                layout: {
-                    padding: {
-                        left: 15,
-                        right: 15,
-                        top: 15,
-                        bottom: 15
-                    }
-                }
-            }
-        });
-
-        $('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-            type: 'line',
-            height: '70',
-            width: '100%',
-            lineWidth: '2',
-            lineColor: '#ffa534',
-            fillColor: 'rgba(255, 165, 52, .14)'
-        });
+       
     </script>
 </body>
 

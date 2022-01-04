@@ -12,34 +12,72 @@ class behaviorstudentController extends Controller
 {
     public function index(Request $request)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         $search = $request->get('search');
         $data_student = DB::table('student_core')
             ->where('student_id', 'like', '%' . $search . '%')
             ->get();
-        return view('behavior-student.stu-ad-conduct-score-all', ['data_student' => $data_student]);
+        return view('behavior-student.stu-ad-conduct-score-all', [
+            //ปีการศึกษา
+            'school_year' => $school_year,
+
+            'data_student' => $data_student,
+        ]);
     }
 
     public function behaviorIndex(Request $request)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         $search = $request->get('search');
         $data = DB::table('behavior_student')
             ->where('student_id_behavior', 'like', '%' . $search . '%')
             ->get();
-        return view('behavior-student.stu-ad-conduct-score-check-all', ['data' => $data]);
+        return view('behavior-student.stu-ad-conduct-score-check-all', [
+           //ปีการศึกษา
+           'school_year' => $school_year,
+
+            'data' => $data,
+        ]);
     }
 
     public function addMinus($id)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data = studentcoreModels::find($id);
         $data2 = schoolyearModel::first();
-        return view('behavior-student.stu-ad-conduct-score-add-minus', compact('data', 'data2'));
+        return view('behavior-student.stu-ad-conduct-score-add-minus', [
+            //ปีการศึกษา
+            'school_year' => $school_year,
+
+            'data' => $data, 
+            'data2' => $data2
+        ]);
     }
 
     public function addPlus($id)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data = studentcoreModels::find($id);
         $data2 = schoolyearModel::first();
-        return view('behavior-student.stu-ad-conduct-score-add-plus', compact('data', 'data2'));
+        return view('behavior-student.stu-ad-conduct-score-add-plus', [
+            //ปีการศึกษา
+            'school_year' => $school_year,
+
+            'data' => $data, 
+            'data2' => $data2
+        ]);
     }
 
     public function viewBehaviorIDReport($id)
@@ -110,6 +148,10 @@ class behaviorstudentController extends Controller
 
     public function viewBehaviorID($id)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data_student = studentcoreModels::find($id);
         $stid = $data_student->student_id;
         $photo_id = $data_student->student_id_card;
@@ -146,6 +188,9 @@ class behaviorstudentController extends Controller
         return view(
             'behavior-student.stu-ad-conduct-score-check-view-id',
             [
+                //ปีการศึกษา
+                'school_year' => $school_year,
+
                 "data_student" => $data_student,
                 "student" => $student,
                 "photo" => $photo
@@ -224,6 +269,10 @@ class behaviorstudentController extends Controller
 
     public function behaviorAll(Request $request)
     {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
         if ($request->get('search1') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
@@ -251,6 +300,11 @@ class behaviorstudentController extends Controller
         }
 
         $data = DB::table('behavior_student')->get();
-        return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+        return view('behavior-student.behavior-report.behavior-report-all', [
+            //ปีการศึกษา
+            'school_year' => $school_year,
+
+            'data' => $data,
+        ]);
     }
 }

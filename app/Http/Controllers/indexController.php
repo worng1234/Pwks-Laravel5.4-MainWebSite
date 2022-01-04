@@ -148,8 +148,8 @@ class indexController extends Controller
             'm456_fm_all' => $m456_fm_all,
             'm456_all' => $m456_all,
 
-            'm_m_all' => $m456_all,
-            'm_fm_all' => $m456_all,
+            'm_m_all' => $m_m_all,
+            'm_fm_all' => $m_fm_all,
             'm_all' => $m_all,
 
             //ม.1

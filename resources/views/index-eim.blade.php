@@ -177,7 +177,7 @@
 									</div>
 								</div>
 								<div class="card-body">
-									<h3><u><strong>จำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u></้>
+									<h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u></h3>
 									<div style="margin-top: 30px;">
 										<table class="table table-bordered table-hover table-condesed">
 											<thead class="bg-info">

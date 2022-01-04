@@ -68,7 +68,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
 
-				<a href="stu-ad-index.html" class="logo">
+				<a href="{{ url('/affair')}}" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,9 +128,9 @@
 					<div class="user">
 						<div class="info">
 
-							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+						<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('affair')->user()->prename}}{{ Auth::guard('affair')->user()->fname}} </br>{{ Auth::guard('affair')->user()->surname}}</label>
+                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -142,7 +142,7 @@
 					<ul class="nav nav-primary">
 
 						<li class="nav-item">
-							<a href="stu-ad-index.html">
+							<a href="{{ url('/affair')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>

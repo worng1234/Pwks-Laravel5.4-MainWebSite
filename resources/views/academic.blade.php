@@ -99,9 +99,9 @@
 					<div class="user">
 						<div class="info">
 
-							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
+							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -378,18 +378,189 @@
 								</div>
 
 								<div class="card-body">
-									<p><u><strong>ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</strong></u></p>
-									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-									</ol>
+								<h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u><h3>
+									<div style="margin-top: 30px;">
+										<table class="table table-bordered table-hover table-condesed">
+											<thead class="bg-info">
+												<th width="5%" class="saraban">
+													<center>ระดับชั้น</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>ชาย</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>หญิง</center>
+												</th>
+												<th width="5%" class="saraban">
+													<center>รวม</center>
+												</th>
+											</thead>
+											<tbody>
+												<tr>
+													<td align="center" class="table-secondary">ม.1</td>
+													@if ($m1_m_all != 0)
+													<td align="center">{{$m1_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m1_fm_all != 0)
+													<td align="center">{{$m1_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m1_all != 0)
+													<td align="center" class="table-success">{{$m1_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.2</td>
+													@if ($m2_m_all != 0)
+													<td align="center">{{$m2_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m2_fm_all != 0)
+													<td align="center">{{$m2_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m2_all != 0)
+													<td align="center" class="table-success">{{$m2_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.3</td>
+													@if ($m3_m_all != 0)
+													<td align="center">{{$m3_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m3_fm_all != 0)
+													<td align="center">{{$m3_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m3_all != 0)
+													<td align="center" class="table-success">{{$m3_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.4</td>
+													@if ($m4_m_all != 0)
+													<td align="center">{{$m4_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m4_fm_all != 0)
+													<td align="center">{{$m4_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m4_all != 0)
+													<td align="center" class="table-success">{{$m4_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.5</td>
+													@if ($m5_m_all != 0)
+													<td align="center">{{$m5_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m5_fm_all != 0)
+													<td align="center">{{$m5_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m5_all != 0)
+													<td align="center" class="table-success">{{$m5_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-secondary">ม.6</td>
+													@if ($m6_m_all != 0)
+													<td align="center">{{$m6_m_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m6_fm_all != 0)
+													<td align="center">{{$m6_fm_all}}</td>
+													@else
+													<td align="center">0</td>
+													@endif
+													@if ($m6_all != 0)
+													<td align="center" class="table-success">{{$m6_all}}</td>
+													@else
+													<td align="center" class="table-success">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-warning">ม.ต้น</td>
+													@if ($m123_m_all != 0)
+													<td align="center" class="table-warning">{{$m123_m_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m123_fm_all != 0)
+													<td align="center" class="table-warning">{{$m123_fm_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m123_all != 0)
+													<td align="center" class="table-primary">{{$m123_all}}</td>
+													@else
+													<td align="center" class="table-primary">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-warning">ม.ปลาย</td>
+													@if ($m456_m_all != 0)
+													<td align="center" class="table-warning">{{$m456_m_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m456_fm_all != 0)
+													<td align="center" class="table-warning">{{$m456_fm_all}}</td>
+													@else
+													<td align="center" class="table-warning">0</td>
+													@endif
+													@if ($m456_all != 0)
+													<td align="center" class="table-primary">{{$m456_all}}</td>
+													@else
+													<td align="center" class="table-primary">0</td>
+													@endif
+												</tr>
+												<tr>
+													<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
+													@if ($m_m_all != 0)
+													<td align="center" class="table-danger">{{$m_m_all}}</td>
+													@else
+													<td align="center" class="table-danger">0</td>
+													@endif
+													@if ($m_fm_all != 0)
+													<td align="center" class="table-danger">{{$m_fm_all}}</td>
+													@else
+													<td align="center" class="table-danger">0</td>
+													@endif
+													@if ($m_all != 0)
+													<td align="center" class="bg-danger">{{$m_all}}</td>
+													@else
+													<td align="center" class="bg-danger">0</td>
+													@endif
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>
