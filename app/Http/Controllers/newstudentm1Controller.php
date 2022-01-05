@@ -17,7 +17,9 @@ class newstudentm1Controller extends Controller
 
     public function index()
     {
-        $datas = newstudentm1Model::all();
+        $datas = DB::table('new_student_register_m1')
+        ->where('status_rigis', '=', '02')
+        ->get();
         return view('Newstudent.sortnewstudentm1', compact('datas'));
     }
 
@@ -460,7 +462,7 @@ class newstudentm1Controller extends Controller
         ]);
         $post->save();
 
-        return redirect('/check/status');
+        return redirect('/check/statusM1');
     }
 
 

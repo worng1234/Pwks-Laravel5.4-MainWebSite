@@ -17,7 +17,9 @@ class newstudentm4Controller extends Controller
     }
 
     public function index(){
-        $data = newstudentm4Model::all();
+        $data =  $datas = DB::table('new_student_register_m4')
+        ->where('status_rigis', '=', '02')
+        ->get();
         return view('Newstudent.sortnewstudentm4', compact('data'));
     }
 
@@ -320,8 +322,8 @@ class newstudentm4Controller extends Controller
         $date = ($year . '/' . $mounth . '/' . $day);
 
         if (
-            $request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null
-            && $request->hasFile('house_student') !== null && $request->hasFile('student_submit') !== null
+            $request->hasFile('profile_img') && $request->hasFile('id_card_student') 
+            && $request->hasFile('house_student') && $request->hasFile('student_submit') 
         ) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
@@ -350,8 +352,8 @@ class newstudentm4Controller extends Controller
             $pic2->save();
 
         } elseif (
-            $request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null
-            && $request->hasFile('house_student') !== null
+            $request->hasFile('profile_img') && $request->hasFile('id_card_student') 
+            && $request->hasFile('house_student') 
         ) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
@@ -374,7 +376,7 @@ class newstudentm4Controller extends Controller
             ]);
             $pic2->save();
 
-        } elseif ($request->hasFile('profile_img') !== null && $request->hasFile('id_card_student') !== null) {
+        } elseif ($request->hasFile('profile_img') && $request->hasFile('id_card_student') ) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
             $compPic1 = str_replace(' ', '_', $profile_img);
@@ -391,7 +393,7 @@ class newstudentm4Controller extends Controller
             ]);
             $pic2->save();
 
-        } elseif ($request->hasFile('profile_img') !== null) {
+        } elseif ($request->hasFile('profile_img')) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
             $compPic1 = str_replace(' ', '_', $profile_img);

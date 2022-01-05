@@ -418,3 +418,13 @@ Route::post('/SearchAcademicReport/ReportStudyM4', 'AcademicsController@ReportSt
 
 Route::get('/AcademicReport/StatStudent', 'AcademicsController@StatStudent');
 
+//admin page
+Route::get('/AdminAll/Academic', 'AdminController@AcademicAccountIndex');
+Route::get('/AdminAdd/Academic', 'AdminController@Addacademic');
+Route::post('/AdminAdd/AcademicInsert', 'AdminController@AddacademicInsert');
+
+Route::get('/AdminShowID/{id}', 'AdminController@AcademicAccountShow');
+Route::post('/AdminEditID/{id}', 'AdminController@AcademicAccountEdit');
+
+Route::get('/AcademicAccountDelete/{id}', 'AdminController@AcademicAccountDelete');
+

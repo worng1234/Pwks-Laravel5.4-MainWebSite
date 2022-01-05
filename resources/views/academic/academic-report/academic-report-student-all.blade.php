@@ -406,7 +406,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลเลื่อนชั้นเรียน </div>
+										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; รายชื่อนักเรียนทั้งหมด</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
