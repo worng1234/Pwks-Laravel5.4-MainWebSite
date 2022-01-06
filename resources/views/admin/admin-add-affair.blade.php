@@ -102,22 +102,22 @@
                     <!-- เริ่มเมนู -->
                     <ul class="nav nav-primary">
 
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <a href="{{ url('/admin')}}">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a data-toggle="collapse" href="#academic">
                                 <i class="fas fa-user-graduate"></i>
                                 <p>จัดการแอคเค้าท์ </br> ฝ่ายวิชาการ</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="academic">
+                            <div class="collapse " id="academic">
                                 <ul class="nav nav-collapse">
-                                    <li>
+                                    <li >
                                         <a href="{{url('/AdminAdd/Academic')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
@@ -131,20 +131,20 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item active submenu">
                             <a data-toggle="collapse" href="#affair">
                                 <i class="fas fa-user-edit"></i>
                                 <p>จัดการแอคเค้าท์ </br> ฝ่ายกิจการนักเรียน</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="affair">
+                            <div class="collapse show" id="affair">
                                 <ul class="nav nav-collapse">
-                                    <li>
+                                    <li class="active">
                                         <a href="{{url('/AdminAdd/Affair')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li >
                                         <a href="{{url('/AdminAll/Affair')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
@@ -182,7 +182,7 @@
                             </a>
                         </li>
 
-                       
+
                         <li class="nav-item ">
                             <a href="#">
                                 <i class="fas fa-book-open"></i>
@@ -190,18 +190,17 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ route('admin.logout')}}"
-                                onclick="event.preventDefault();
+                            <a href="{{ route('admin.logout')}}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                 <i class="fas fa-power-off"></i>
                                 <p>Logout</p>
                             </a>
                             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
+                                {{ csrf_field() }}
                             </form>
                         </li>
-                        
-                        
+
+
 
 
                     </ul>
@@ -229,198 +228,71 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; Admin</div>
+                                        <div class="card-title"><i class="fas fa-user-plus"></i> &nbsp;&nbsp; เพิ่มแอคเค้าท์ฝ่ายกิจการ</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                <h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u></h3>
-									<div style="margin-top: 30px;">
-										<table class="table table-bordered table-hover table-condesed">
-											<thead class="bg-info">
-												<th width="5%" class="saraban">
-													<center>ระดับชั้น</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>ชาย</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>หญิง</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>รวม</center>
-												</th>
-											</thead>
-											<tbody>
-												<tr>
-													<td align="center" class="table-secondary">ม.1</td>
-													@if ($m1_m_all != 0)
-													<td align="center">{{$m1_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m1_fm_all != 0)
-													<td align="center">{{$m1_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m1_all != 0)
-													<td align="center" class="table-success">{{$m1_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.2</td>
-													@if ($m2_m_all != 0)
-													<td align="center">{{$m2_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m2_fm_all != 0)
-													<td align="center">{{$m2_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m2_all != 0)
-													<td align="center" class="table-success">{{$m2_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.3</td>
-													@if ($m3_m_all != 0)
-													<td align="center">{{$m3_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m3_fm_all != 0)
-													<td align="center">{{$m3_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m3_all != 0)
-													<td align="center" class="table-success">{{$m3_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.4</td>
-													@if ($m4_m_all != 0)
-													<td align="center">{{$m4_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m4_fm_all != 0)
-													<td align="center">{{$m4_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m4_all != 0)
-													<td align="center" class="table-success">{{$m4_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.5</td>
-													@if ($m5_m_all != 0)
-													<td align="center">{{$m5_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m5_fm_all != 0)
-													<td align="center">{{$m5_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m5_all != 0)
-													<td align="center" class="table-success">{{$m5_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.6</td>
-													@if ($m6_m_all != 0)
-													<td align="center">{{$m6_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m6_fm_all != 0)
-													<td align="center">{{$m6_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m6_all != 0)
-													<td align="center" class="table-success">{{$m6_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-warning">ม.ต้น</td>
-													@if ($m123_m_all != 0)
-													<td align="center" class="table-warning">{{$m123_m_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m123_fm_all != 0)
-													<td align="center" class="table-warning">{{$m123_fm_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m123_all != 0)
-													<td align="center" class="table-primary">{{$m123_all}}</td>
-													@else
-													<td align="center" class="table-primary">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-warning">ม.ปลาย</td>
-													@if ($m456_m_all != 0)
-													<td align="center" class="table-warning">{{$m456_m_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m456_fm_all != 0)
-													<td align="center" class="table-warning">{{$m456_fm_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m456_all != 0)
-													<td align="center" class="table-primary">{{$m456_all}}</td>
-													@else
-													<td align="center" class="table-primary">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
-													@if ($m_m_all != 0)
-													<td align="center" class="table-danger">{{$m_m_all}}</td>
-													@else
-													<td align="center" class="table-danger">0</td>
-													@endif
-													@if ($m_fm_all != 0)
-													<td align="center" class="table-danger">{{$m_fm_all}}</td>
-													@else
-													<td align="center" class="table-danger">0</td>
-													@endif
-													@if ($m_all != 0)
-													<td align="center" class="bg-danger">{{$m_all}}</td>
-													@else
-													<td align="center" class="bg-danger">0</td>
-													@endif
-												</tr>
-											</tbody>
-										</table>
-									</div>
+                                    <form method="post" action="{{ url('/AdminAdd/AffairInsert')}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        {{ method_field('POST') }}
+                                        <div class="card-body"><br>
+                                            <div class="row">
+                                                <div class="col-6 col-md-6">
+                                                    <div class="form-group form-group-default">
+                                                        <label>ชื่อผู้ใช้</label>
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="username">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-6">
+                                                    <div class="form-group form-group-default">
+                                                        <label>รหัส</label>
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-2">
+                                                    <div class="form-group form-group-default">
+                                                        <label>คำนำหน้าชื่อ</label>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename">
+                                                            <option>เลือก</option>
+                                                            <option value="นาย">นาย</option>
+                                                            <option value="นาง">นาง</option>
+                                                            <option value="นางสาว">นางสาว</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group form-group-default">
+                                                        <label>ชื่อภาษาไทย</label>
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="fname">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group form-group-default">
+                                                        <label>นามสกุลภาษาไทย</label>
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="surname">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer" align="center"><br>
+                                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> บันทึกข้อมูล</button>&nbsp;
+
+
+                                        </div><br>
+
+
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+            </div>
 
             <!-- สิ้นสุดเนื้อหา -->
             <!-- เริ่ม Footer -->
@@ -574,7 +446,7 @@
             fillColor: 'rgba(255, 165, 52, .14)'
         });
     </script>
-    
+
 </body>
 
 </html>

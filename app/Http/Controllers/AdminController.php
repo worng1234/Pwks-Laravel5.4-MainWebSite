@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Academic;
+use App\Affair;
+use App\Admin;
+use App\Models\schoolyearModel;
 
 class AdminController extends Controller
 {
@@ -198,9 +201,16 @@ class AdminController extends Controller
         ]);
     }
 
+    //ฝ่ายวิชาการ
     public function Addacademic()
     {
-        return view('admin.admin-add-academic');
+        $school_year = DB::table('school_year')
+            ->first();
+
+        return view('admin.admin-add-academic',[
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
     }
 
     public function AddacademicInsert(Request $request)
@@ -212,23 +222,39 @@ class AdminController extends Controller
             'username' => $request->get('username'),
             'password' => bcrypt($request->get('password')),
         ]);
+
+        return redirect('/AdminAll/Academic');
     }
 
     public function AcademicAccountIndex()
     {
-        $data = academic::all();
-        return view('admin.admin-all-academic', ['data' => $data]);
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Academic::all();
+        return view('admin.admin-all-academic', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
     }
 
     public function AcademicAccountShow($id)
     {
-        $data = academic::find($id);
-        return view('admin.admin-edit-academic', ['data' => $data]);
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Academic::find($id);
+        return view('admin.admin-edit-academic', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
     }
 
     public function AcademicAccountEdit(Request $request, $id)
     {
-        $data = academic::find($id);
+        $data = Academic::find($id);
         $data->update($request->all());
 
         return redirect('/AdminAll/Academic');
@@ -236,8 +262,161 @@ class AdminController extends Controller
 
     public function AcademicAccountDelete(Request $request, $id)
     {
-        $newstudentm1 = academic::find($id);
+        $newstudentm1 = Academic::find($id);
         $newstudentm1->delete();
         return redirect('/AdminAll/Academic');
+    }
+
+    //ฝ่ายกิจการ
+    public function Addaffair()
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        return view('admin.admin-add-affair',[
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+    }
+
+    public function AddaffairInsert(Request $request)
+    {
+        Affair::create([
+            'prename' => $request->get('prename'),
+            'fname' => $request->get('fname'),
+            'surname' => $request->get('surname'),
+            'username' => $request->get('username'),
+            'password' => bcrypt($request->get('password')),
+        ]);
+        return redirect('/AdminAll/Affair');
+    }
+
+    public function AffairAccountIndex()
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Affair::all();
+        return view('admin.admin-all-affair', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+        
+    }
+
+    public function AffairAccountShow($id)
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Affair::find($id);
+        return view('admin.admin-edit-affair', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+    }
+
+    public function AffairAccountEdit(Request $request, $id)
+    {
+        $data = Affair::find($id);
+        $data->update($request->all());
+
+        return redirect('/AdminAll/Affair');
+    }
+
+    public function AffairAccountDelete(Request $request, $id)
+    {
+        $newstudentm1 = Affair::find($id);
+        $newstudentm1->delete();
+        return redirect('/AdminAll/Affair');
+    }
+
+    //แอดมิน
+    public function Addadmin()
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        return view('admin.admin-add',[
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+    }
+
+    public function AddadminInsert(Request $request)
+    {
+        Admin::create([
+            'prename' => $request->get('prename'),
+            'fname' => $request->get('fname'),
+            'surname' => $request->get('surname'),
+            'username' => $request->get('username'),
+            'password' => bcrypt($request->get('password')),
+        ]);
+        return redirect('/AdminAll/Admin');
+    }
+
+    public function AdminAccountIndex()
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Admin::all();
+        return view('admin.admin-all', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+        
+    }
+
+    public function AdminAccountShow($id)
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data = Admin::find($id);
+        return view('admin.admin-edit', [
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+    }
+
+    public function AdminAccountEdit(Request $request, $id)
+    {
+        $data = Admin::find($id);
+        $data->update($request->all());
+
+        return redirect('/AdminAll/Admin');
+    }
+
+    public function AdminAccountDelete(Request $request, $id)
+    {
+        $newstudentm1 = Admin::find($id);
+        $newstudentm1->delete();
+        return redirect('/AdminAll/Admin');
+    }
+
+    public function EditSchoolYear($id)
+    {
+        $school_year = DB::table('school_year')
+            ->first();
+            
+        $data = schoolyearModel::find($id);
+        return view('admin.admin-edit-school-year',[
+            'data' => $data,
+            //ปีการศึกษา
+            'school_year' => $school_year,
+        ]);
+    }
+
+    public function EditSchoolYearUp(Request $request, $id)
+    {
+        $data = schoolyearModel::find($id);
+        $data->update($request->all());
+
+        return redirect('/admin');
     }
 }

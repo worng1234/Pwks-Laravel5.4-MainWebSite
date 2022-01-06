@@ -423,8 +423,29 @@ Route::get('/AdminAll/Academic', 'AdminController@AcademicAccountIndex');
 Route::get('/AdminAdd/Academic', 'AdminController@Addacademic');
 Route::post('/AdminAdd/AcademicInsert', 'AdminController@AddacademicInsert');
 
-Route::get('/AdminShowID/{id}', 'AdminController@AcademicAccountShow');
-Route::post('/AdminEditID/{id}', 'AdminController@AcademicAccountEdit');
+Route::get('/AdminAcademicShowID/{id}', 'AdminController@AcademicAccountShow');
+Route::post('/AdminAcademicEditID/{id}', 'AdminController@AcademicAccountEdit');
 
 Route::get('/AcademicAccountDelete/{id}', 'AdminController@AcademicAccountDelete');
+
+Route::get('/AdminAll/Affair', 'AdminController@AffairAccountIndex');
+Route::get('/AdminAdd/Affair', 'AdminController@Addaffair');
+Route::post('/AdminAdd/AffairInsert', 'AdminController@AddaffairInsert');
+
+Route::get('/AdminAffairShowID/{id}', 'AdminController@AffairAccountShow');
+Route::post('/AdminAffairEditID/{id}', 'AdminController@AffairAccountEdit');
+
+Route::get('/AffairAccountDelete/{id}', 'AdminController@AffairAccountDelete');
+
+Route::get('/AdminAll/Admin', 'AdminController@AdminAccountIndex');
+Route::get('/AdminAdd/Admin', 'AdminController@Addadmin');
+Route::post('/AdminAdd/AdminInsert', 'AdminController@AddadminInsert');
+
+Route::get('/AdminShowID/{id}', 'AdminController@AdminAccountShow');
+Route::post('/AdminEditID/{id}', 'AdminController@AdminAccountEdit');
+
+Route::get('/AdminAccountDelete/{id}', 'AdminController@AdminAccountDelete');
+
+Route::get('/AdminSchoolYear/{id}', 'AdminController@EditSchoolYear');
+Route::post('/EditSchoolYearUp/{id}', 'AdminController@EditSchoolYearUp');
 

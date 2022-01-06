@@ -140,12 +140,12 @@
                             <div class="collapse" id="affair">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="{{url('/')}}">
+                                        <a href="{{url('/AdminAdd/Affair')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{url('/')}}">
+                                        <a href="{{url('/AdminAll/Affair')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
                                     </li>
@@ -162,12 +162,12 @@
                             <div class="collapse" id="admin">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="{{url('/')}}">
+                                        <a href="{{url('/AdminAdd/Admin')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{url('/')}}">
+                                        <a href="{{url('/AdminAll/Admin')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
                                     </li>
@@ -176,8 +176,8 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a href="#">
-                                <i class="fas fa-book"></i>
+                            <a href='{{ url("/AdminSchoolYear/{$school_year->id}")}}'>
+                            <i class="fas fa-book"></i>
                                 <p>กำหนดปีการศึกษา</p>
                             </a>
                         </li>
@@ -256,9 +256,8 @@
                                                         <label>คำนำหน้าชื่อ</label>
                                                         <select class="form-control" id="formGroupDefaultSelect" name="prename">
                                                             <option>เลือก</option>
-                                                            <option value="เด็กชาย">เด็กชาย</option>
-                                                            <option value="เด็กหญิง">เด็กหญิง</option>
                                                             <option value="นาย">นาย</option>
+                                                            <option value="นาง">นาง</option>
                                                             <option value="นางสาว">นางสาว</option>
                                                         </select>
                                                     </div>

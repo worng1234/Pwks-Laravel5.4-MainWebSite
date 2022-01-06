@@ -109,20 +109,20 @@
                             </a>
                         </li>
 
-                        <li class="nav-item active submenu">
+                        <li class="nav-item ">
                             <a data-toggle="collapse" href="#academic">
                                 <i class="fas fa-user-graduate"></i>
                                 <p>จัดการแอคเค้าท์ </br> ฝ่ายวิชาการ</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse show" id="academic">
+                            <div class="collapse " id="academic">
                                 <ul class="nav nav-collapse">
                                     <li >
                                         <a href="{{url('/AdminAdd/Academic')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
-                                    <li class="active">
+                                    <li >
                                         <a href="{{url('/AdminAll/Academic')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
@@ -131,21 +131,21 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a data-toggle="collapse" href="#affair">
                                 <i class="fas fa-user-edit"></i>
                                 <p>จัดการแอคเค้าท์ </br> ฝ่ายกิจการนักเรียน</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="affair">
+                            <div class="collapse " id="affair">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="{{url('/AdminAdd/Affair')}}">
+                                        <a href="{{url('/')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="{{url('/AdminAll/Affair')}}">
+                                    <li >
+                                        <a href="{{url('/')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
                                     </li>
@@ -153,20 +153,20 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item active submenu">
                             <a data-toggle="collapse" href="#admin">
                                 <i class="fas fa-user-lock"></i>
                                 <p>จัดการแอคเค้าท์ </br> แอดมิน</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="admin">
+                            <div class="collapse show" id="admin">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="{{url('/AdminAdd/Admin')}}">
                                             <span class="sub-item">เพิ่มแอคเค้าท์</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="active">
                                         <a href="{{url('/AdminAll/Admin')}}">
                                             <span class="sub-item">แอคเค้าท์ทั้งหมด</span>
                                         </a>
@@ -228,7 +228,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-user"></i> &nbsp;&nbsp; แอคเค้าท์ทั้งหมดฝ่ายวิชาการ</div>
+                                        <div class="card-title"><i class="fas fa-user"></i> &nbsp;&nbsp; แอคเค้าท์ทั้งหมดแอดมิน</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -257,10 +257,10 @@
                                                     <td align="center">{{$value->username}}</td>
                                                     <td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
                                                     <td align="center">
-                                                        <a href='{{ url("/AdminAcademicShowID/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-edit"></i></a>
+                                                        <a href='{{ url("/AdminShowID/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-edit"></i></a>
                                                     </td>
                                                     <td align="center">
-                                                        <a href='{{ url("/AcademicAccountDelete/{$value->id}")}}' class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a>
+                                                        <a href='{{ url("/AdminAccountDelete/{$value->id}")}}' class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
