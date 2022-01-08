@@ -85,32 +85,32 @@ class newstudentm1Controller extends Controller
             && $request->hasFile('birth_certificate')
         ) {
 
-            $id_card_father = $request->file('id_card_father')->getClientOriginalName();
-            $compPic1 = str_replace(' ', '_', $id_card_father);
+            $id_card_father = $request->file('id_card_father');
+            $compPic1 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic1);
 
-            $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
-            $compPic2 = str_replace(' ', '_', $id_card_mother);
+            $id_card_mother = $request->file('id_card_mother');
+            $compPic2 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic2);
 
-            $house_father = $request->file('house_father')->getClientOriginalName();
-            $compPic3 = str_replace(' ', '_', $house_father);
+            $house_father = $request->file('house_father');
+            $compPic3 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic3);
 
-            $house_mother = $request->file('house_mother')->getClientOriginalName();
-            $compPic4 = str_replace(' ', '_', $house_mother);
+            $house_mother = $request->file('house_mother');
+            $compPic4 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic4);
 
-            $front_grade = $request->file('front_grade')->getClientOriginalName();
-            $compPic5 = str_replace(' ', '_', $front_grade);
+            $front_grade = $request->file('front_grade');
+            $compPic5 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic5);
 
-            $back_grade = $request->file('back_grade')->getClientOriginalName();
-            $compPic6 = str_replace(' ', '_', $back_grade);
+            $back_grade = $request->file('back_grade');
+            $compPic6 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic6);
 
-            $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
-            $compPic7 = str_replace(' ', '_', $birth_certificate);
+            $birth_certificate = $request->file('birth_certificate');
+            $compPic7 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic7);
 
             $photo = DB::table('photo_student')
@@ -125,16 +125,6 @@ class newstudentm1Controller extends Controller
                 "birth_certificate" => $compPic7,
             ]);
 
-            // $photo->id_card_father = $compPic1;
-            // $photo->id_card_mother = $compPic2;
-            // $photo->house_father = $compPic3;
-            // $photo->house_mother = $compPic4;
-            // $photo->front_grade = $compPic5;
-            // $photo->back_grade = $compPic6;
-            // $photo->birth_certificate = $compPic7;
-
-            // $photo->save();
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -143,35 +133,35 @@ class newstudentm1Controller extends Controller
         ) {
 
             $id_card_father = $request->file('id_card_father')->getClientOriginalName();
-            $compPic1 = str_replace(' ', '_', $id_card_father);
+            $compPic1 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic1);
 
             $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
-            $compPic2 = str_replace(' ', '_', $id_card_mother);
+            $compPic2 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic2);
 
             $house_father = $request->file('house_father')->getClientOriginalName();
-            $compPic3 = str_replace(' ', '_', $house_father);
+            $compPic3 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic3);
 
             $house_mother = $request->file('house_mother')->getClientOriginalName();
-            $compPic4 = str_replace(' ', '_', $house_mother);
+            $compPic4 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic4);
 
             $front_grade = $request->file('front_grade')->getClientOriginalName();
-            $compPic5 = str_replace(' ', '_', $front_grade);
+            $compPic5 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic5);
 
             $back_grade = $request->file('back_grade')->getClientOriginalName();
-            $compPic6 = str_replace(' ', '_', $back_grade);
+            $compPic6 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic6);
 
             $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
-            $compPic7 = str_replace(' ', '_', $birth_certificate);
+            $compPic7 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic7);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
-            $compPic8 = str_replace(' ', '_', $disability_certificate);
+            $compPic8 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic8);
 
 
@@ -206,23 +196,23 @@ class newstudentm1Controller extends Controller
         ) {
 
             $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
-            $compPic1 = str_replace(' ', '_', $id_card_parent);
+            $compPic1 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic1);
 
             $house_parent = $request->file('house_parent')->getClientOriginalName();
-            $compPic2 = str_replace(' ', '_', $house_parent);
+            $compPic2 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalName();
-            $compPic3 = str_replace(' ', '_', $front_grade);
+            $compPic3 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic3);
 
             $back_grade = $request->file('back_grade')->getClientOriginalName();
-            $compPic4 = str_replace(' ', '_', $back_grade);
+            $compPic4 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic4);
 
             $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
-            $compPic5 = str_replace(' ', '_', $birth_certificate);
+            $compPic5 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic5);
 
             $photo = DB::table('photo_student')
@@ -250,27 +240,27 @@ class newstudentm1Controller extends Controller
         ) {
             
             $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
-            $compPic1 = str_replace(' ', '_', $id_card_parent);
+            $compPic1 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic1);
 
             $house_parent = $request->file('house_parent')->getClientOriginalName();
-            $compPic2 = str_replace(' ', '_', $house_parent);
+            $compPic2 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalName();
-            $compPic3 = str_replace(' ', '_', $front_grade);
+            $compPic3 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic3);
 
             $back_grade = $request->file('back_grade')->getClientOriginalName();
-            $compPic4 = str_replace(' ', '_', $back_grade);
+            $compPic4 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic4);
 
             $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
-            $compPic5 = str_replace(' ', '_', $birth_certificate);
+            $compPic5 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic5);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
-            $compPic6 = str_replace(' ', '_', $disability_certificate);
+            $compPic6 = str_replace(' ', '_', $data->idNumber);
             $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic6);
 
             $photo = DB::table('photo_student')
@@ -294,10 +284,11 @@ class newstudentm1Controller extends Controller
             // $photo->save();
         }
 
-        $data->status_report = $request->status_report;
-        $data->status_tranfer = $request->status_tranfer;
+        $data->update([
+            "status_report" => $request->get('status_report'),
+            "status_tranfer" => $request->get('status_tranfer'),
+        ]);
 
-        $data->save();
         return redirect('/Newstudent/documentM1');
     }
 
@@ -323,19 +314,19 @@ class newstudentm1Controller extends Controller
         ) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
-            $compPic1 = str_replace(' ', '_', $profile_img);
+            $compPic1 = str_replace(' ', '_', $request->idNumber);
             $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
             $id_card_student = $request->file('id_card_student')->getClientOriginalName();
-            $compPic2 = str_replace(' ', '_', $id_card_student);
+            $compPic2 = str_replace(' ', '_', $request->idNumber);
             $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
             $house_student = $request->file('house_student')->getClientOriginalName();
-            $compPic3 = str_replace(' ', '_', $house_student);
+            $compPic3 = str_replace(' ', '_', $request->idNumber);
             $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
             $student_submit = $request->file('student_submit')->getClientOriginalName();
-            $compPic4 = str_replace(' ', '_', $student_submit);
+            $compPic4 = str_replace(' ', '_', $request->idNumber);
             $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic4);
 
             $pic2 = new photostudentModel([
@@ -399,7 +390,7 @@ class newstudentm1Controller extends Controller
             $pic1->save();
         }
 
-        $post = new newstudentm1Model([
+        newstudentm1Model::create([
             "prename" => $request->get('prename'),
             "fname" => $request->get('fname'),
             "surname" => $request->get('surname'),
@@ -460,9 +451,8 @@ class newstudentm1Controller extends Controller
             "status_grade_pic" => $request->get('status_grade_pic'),
             "date" => $date,
         ]);
-        $post->save();
 
-        return redirect('/check/statusM1');
+        return redirect('/check/status');
     }
 
 
@@ -565,7 +555,7 @@ class newstudentm1Controller extends Controller
             $photo->id_card_student = $compPic2;
 
             $photo->save();
-        } elseif ($request->hasFile('profile_img') !== null) {
+        } elseif ($request->hasFile('profile_img')) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalName();
             $compPic1 = str_replace(' ', '_', $profile_img);
@@ -577,62 +567,61 @@ class newstudentm1Controller extends Controller
             $photo->save();
         }
 
+        $newstudentm1Model->update([
+            "prename" => $request->get('prename'),
+            "prename" => $request->get('fname'),
+            "prename" => $request->get('surname'),
+            "prename" => $request->get('sex'),
+            "prename" => $request->get('idNumber'),
+            "prename" => $request->get('day'),
+            "prename" => $request->get('mounth'),
+            "prename" => $request->get('year'),
+            "prename" => $request->get('religion'),
+            "prename" => $request->get('nationality'),
+            "prename" => $request->get('origin'),
+            "prename" => $request->get('disabled'),
+            "prename" => $request->get('poorPerson'),
+            "prename" => $request->get('etc'),
+            "prename" => $request->get('tel'),
+            "prename" => $request->get('email'),
+            "prename" => $request->get('nameCen'),
+            "prename" => $request->get('fatherName'),
+            "prename" => $request->get('fatherNamecen'),
+            "prename" => $request->get('fatherSurname'),
+            "prename" => $request->get('fatherId'),
+            "prename" => $request->get('fatherJob'),
+            "prename" => $request->get('fatherTel'),
+            "prename" => $request->get('motherName'),
+            "prename" => $request->get('motherNamecen'),
+            "prename" => $request->get('motherSurname'),
+            "prename" => $request->get('motherId'),
+            "prename" => $request->get('motherJob'),
+            "prename" => $request->get('parent'),
+            "prename" => $request->get('parent_status'),
+            "prename" => $request->get('parentName'),
+            "prename" => $request->get('parentNamecen'),
+            "prename" => $request->get('parentSurname'),
+            "prename" => $request->get('parentId'),
+            "prename" => $request->get('parentJob'),
+            "prename" => $request->get('parentTel'),
+            "prename" => $request->get('father_prename'),
+            "prename" => $request->get('mother_prename'),
+            "prename" => $request->get('parent_prename'),
+            "prename" => $request->get('houseNumber'),
+            "prename" => $request->get('street'),
+            "prename" => $request->get('bloc'),
+            "prename" => $request->get('road'),
+            "prename" => $request->get('subDistrict'),
+            "prename" => $request->get('district'),
+            "prename" => $request->get('province'),
+            "prename" => $request->get('post'),
+            "prename" => $request->get('finalSchool'),
+            "prename" => $request->get('finalSchoolSubDistrict'),
+            "prename" => $request->get('finalSchoolDistrict'),
+            "prename" => $request->get('finalSchoolProvince'),
+        ]);
 
-        $newstudentm1Model->prename = $request->prename;
-        $newstudentm1Model->fname = $request->fname;
-        $newstudentm1Model->surname = $request->surname;
-        $newstudentm1Model->sex = $request->sex;
-        $newstudentm1Model->idNumber = $request->idNumber;
-        $newstudentm1Model->day = $request->day;
-        $newstudentm1Model->mounth = $request->mounth;
-        $newstudentm1Model->year = $request->year;
-        $newstudentm1Model->religion = $request->religion;
-        $newstudentm1Model->nationality = $request->nationality;
-        $newstudentm1Model->origin = $request->origin;
-        $newstudentm1Model->disabled = $request->disabled;
-        $newstudentm1Model->poorPerson = $request->poorPerson;
-        $newstudentm1Model->etc = $request->etc;
-        $newstudentm1Model->tel = $request->tel;
-        $newstudentm1Model->email = $request->email;
-        $newstudentm1Model->nameCen = $request->nameCen;
-        $newstudentm1Model->fatherName = $request->fatherName;
-        $newstudentm1Model->fatherNamecen = $request->fatherNamecen;
-        $newstudentm1Model->fatherSurname = $request->fatherSurname;
-        $newstudentm1Model->fatherId = $request->fatherId;
-        $newstudentm1Model->fatherJob = $request->fatherJob;
-        $newstudentm1Model->fatherTel = $request->fatherTel;
-        $newstudentm1Model->motherName = $request->motherName;
-        $newstudentm1Model->motherNamecen = $request->motherNamecen;
-        $newstudentm1Model->motherSurname = $request->motherSurname;
-        $newstudentm1Model->motherId = $request->motherId;
-        $newstudentm1Model->motherJob = $request->motherJob;
-        $newstudentm1Model->motherTel = $request->motherTel;
-        $newstudentm1Model->parent = $request->parent;
-        $newstudentm1Model->parent_status = $request->parent_status;
-        $newstudentm1Model->parentName = $request->parentName;
-        $newstudentm1Model->parentNamecen = $request->parentNamecen;
-        $newstudentm1Model->parentSurname = $request->parentSurname;
-        $newstudentm1Model->parentId = $request->parentId;
-        $newstudentm1Model->parentJob = $request->parentJob;
-        $newstudentm1Model->parentTel = $request->parentTel;
-        $newstudentm1Model->father_prename = $request->father_prename;
-        $newstudentm1Model->mother_prename = $request->mother_prename;
-        $newstudentm1Model->parent_prename = $request->parent_prename;
-        $newstudentm1Model->houseNumber = $request->houseNumber;
-        $newstudentm1Model->street = $request->street;
-        $newstudentm1Model->bloc = $request->bloc;
-        $newstudentm1Model->road = $request->road;
-        $newstudentm1Model->subDistrict = $request->subDistrict;
-        $newstudentm1Model->district = $request->district;
-        $newstudentm1Model->province = $request->province;
-        $newstudentm1Model->post = $request->post;
-        $newstudentm1Model->finalSchool = $request->finalSchool;
-        $newstudentm1Model->finalSchoolSubDistrict = $request->finalSchoolSubDistrict;
-        $newstudentm1Model->finalSchoolDistrict = $request->finalSchoolDistrict;
-        $newstudentm1Model->finalSchoolProvince = $request->finalSchoolProvince;
-
-
-        $newstudentm1Model->save();
+        
         return redirect('/check/status');
     }
 
