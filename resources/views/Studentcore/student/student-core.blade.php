@@ -570,17 +570,18 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
 																<div class="form-check">
-																	<label class="form-radio-label">
-																		<input class="form-radio-input" type="radio" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now" required>
-																		<span class="form-radio-sign">ที่อยู่ตามทะเบียนบ้าน</span>
+																	<label class="form-check-label">
+																		<input class="form-check-input" type="checkbox" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now" required>
+																		<span class="form-check-sign">ที่อยู่ตามทะเบียนบ้าน</span>
 																	</label>
-																	<label class="form-radio-label ml-1">
-																		<input class="form-radio-input" type="radio" value="ที่อยู่อื่น" name="address_now" required>
-																		<span class="form-radio-sign">ที่อยู่อื่น (โปรดระบุ)*</span>
+																	<label class="form-check-label ml-1">
+																		<input class="form-check-input" type="checkbox" value="ที่อยู่อื่น" name="address_now" id="chkaddress" required>
+																		<span class="form-check-sign">ที่อยู่อื่น (โปรดระบุ)*</span>
 																	</label>
 																</div>
 															</div>
 														</div>
+														<div id="dvaddress" style="display: none">
 														<div class="row">
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
@@ -638,6 +639,7 @@
 																	<input id="Name" type="text" class="form-control" name="post_n">
 																</div>
 															</div>
+														</div>
 														</div>
 													</div>
 
@@ -2382,6 +2384,19 @@
 
 		<!-- Atlantis DEMO methods, don't include it in your project! -->
 		<script src="../assets/js/demo.js"></script>
+
+		<script type="text/javascript">
+		$(function() {
+			$("#chkaddress").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvaddress").show();
+				} else {
+					$("#dvaddress").hide();
+				}
+			});
+		});
+	</script>
+
 		<script>
 			Circles.create({
 				id: 'circles-1',

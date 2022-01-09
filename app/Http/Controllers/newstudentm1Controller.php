@@ -44,6 +44,7 @@ class newstudentm1Controller extends Controller
         $data3 = DB::table('status_pic')
         ->where('student_idcard', '=', $pic)
         ->first();
+
         return view('Newstudent.StatusPic.status-picM1', [
             'data1' => $data1,
             'data2' => $data2,
@@ -530,8 +531,6 @@ class newstudentm1Controller extends Controller
 
         $data = newstudentm1Model::all();
 
-        if ($request->get('idNumber') !== $data->idNumber) {
-
             if (
                 $request->hasFile('profile_img') && $request->hasFile('id_card_student')
                 && $request->hasFile('house_student')  && $request->hasFile('student_submit')
@@ -705,20 +704,18 @@ class newstudentm1Controller extends Controller
                 "date" => $date,
             ]);
 
-            statuspicModel::create([
+            $datastatus  = new statuspicModel([
+                "student_idcard" => $request->get('idNumber'),
                 "status_profile" => $request->get('status_profile'),
                 "status_idcard_student" => $request->get('status_idcard_student'),
                 "status_house_student" => $request->get('status_house_student'),
                 "status_submit_student" => $request->get('status_submit_student'),
             ]);
 
+            $datastatus->save();
+
             return redirect('/check/status');
 
-        } else {
-            echo "มีข้อมูลอยู่แล้ว";
-        }
-
-        
     }
 
 

@@ -537,77 +537,79 @@
 												<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล ผู้ปกครอง</small></label>
 
 												<div class="form-check">
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" value="บิดา" name="parent">
-														<span class="form-radio-sign">บิดา</span>
+													<label class="form-check-label">
+														<input class="form-check-input" type="checkbox" value="บิดา" name="parent">
+														<span class="form-check-sign">บิดา</span>
 													</label>
-													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio" value="มารดา" name="parent">
-														<span class="form-radio-sign">มารดา</span>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="มารดา" name="parent">
+														<span class="form-check-sign">มารดา</span>
 													</label>
-													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio" value="บุคคลอื่น" name="parent">
-														<span class="form-radio-sign">บุคคลอื่น</span>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="บุคคลอื่น" name="parent" id="chkparent">
+														<span class="form-check-sign">บุคคลอื่น</span>
 													</label>
 												</div>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-2">
-												<div class="form-group form-group-default">
-													<label>คำนำหน้าชื่อ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="parent_prename">
-														<option>เลือก</option>
-														<option value="นาย">นาย</option>
-														<option value="นาง">นาง</option>
-														<option value="นางสาว">นางสาว</option>
-													</select>
+										<div id="dvparent" style="display: none">
+											<div class="row">
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>คำนำหน้าชื่อ</label>
+														<select class="form-control" id="formGroupDefaultSelect" name="parent_prename">
+															<option>เลือก</option>
+															<option value="นาย">นาย</option>
+															<option value="นาง">นาง</option>
+															<option value="นางสาว">นางสาว</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ชื่อภาษาไทย</label>
+														<input name="parentName" type="text" class="form-control" placeholder="">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ชื่อกลาง</label>
+														<input name="parentNamecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>นามสกุลภาษาไทย</label>
+														<input name="parentSurname" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ชื่อภาษาไทย</label>
-													<input name="parentName" type="text" class="form-control" placeholder="">
+											<div class="row">
+												<div class="col-sm-6 col-md-12">
+													<div class="form-group form-group-default">
+														<label>เลขประจำตัวประชาชน</label>
+														<input name="parentId" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-2">
-												<div class="form-group form-group-default">
-													<label>ชื่อกลาง</label>
-													<input name="parentNamecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+											<div class="row">
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ความสัมพันธ์ผู้ปกครอง</label>
+														<input name="parent_status" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>นามสกุลภาษาไทย</label>
-													<input name="parentSurname" type="text" class="form-control" placeholder="">
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>อาชีพ</label>
+														<input name="parentJob" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-group form-group-default">
-													<label>เลขประจำตัวประชาชน</label>
-													<input name="parentId" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ความสัมพันธ์ผู้ปกครอง</label>
-													<input name="parent_status" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>อาชีพ</label>
-													<input name="parentJob" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="parentTel" type="text" class="form-control" placeholder="">
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+														<input name="parentTel" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
 										</div>
@@ -707,18 +709,24 @@
 													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
 													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
 													<input type="file" class="form-control-file" id="house_student" name="house_student">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
@@ -844,6 +852,18 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chkparent").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvparent").show();
+				} else {
+					$("#dvparent").hide();
+				}
+			});
+		});
+	</script>
 	<script>
 		Circles.create({
 			id: 'circles-1',

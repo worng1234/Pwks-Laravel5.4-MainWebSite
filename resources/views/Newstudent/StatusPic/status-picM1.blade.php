@@ -339,17 +339,14 @@
                                         </div>
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_pic">
-                                                    @if ($data3->status_profile == '01')
-                                                    <option>ผ่าน</option>
-                                                    @elseif ($data3->status_profile == '02')
-                                                    <option>รอตรวจสอบ</option>
-                                                    @else
-                                                    <option>ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
+                                                <select class="form-control" id="formGroupDefaultSelect" name="status_profile">
+                                                    @foreach ($data3 as $key => $value)
+                                                    <option value="01" {{ old('$data3->status_profile') == '$key' ? 'selected' : '01' }}>ผ่าน</option>
+                                                    @endforeach
+                                                    
+                                                    <option value="02" {{ old('$data3->status_profile') == '$key' ? 'selected' : '' }}>รอตรวจสอบ</option>
+                                                    <option value="03" {{ old('$data3->status_profile') == '$key' ? 'selected' : '' }}>ไม่ผ่าน</option>
+                                                    <option ></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -362,7 +359,7 @@
                                         </div>
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_idnumber_pic">
+                                                <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_student">
                                                     @if ($data3->status_idcard_student == '01')
                                                     <option>ผ่าน</option>
                                                     @elseif ($data3->status_idcard_student == '02')
@@ -385,7 +382,7 @@
                                         </div>
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_pic">
+                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_student">
                                                     @if ($data3->status_house_student == '01')
                                                     <option>ผ่าน</option>
                                                     @elseif ($data3->status_house_student == '02')
@@ -408,7 +405,7 @@
                                         </div>
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_grade_pic">
+                                                <select class="form-control" id="formGroupDefaultSelect" name="status_submit_student">
                                                     @if ($data3->status_submit_student == '01')
                                                     <option>ผ่าน</option>
                                                     @elseif ($data3->status_submit_student == '02')

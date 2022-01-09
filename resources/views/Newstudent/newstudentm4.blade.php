@@ -538,77 +538,79 @@
 												<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล ผู้ปกครอง</small></label>
 
 												<div class="form-check">
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" value="บิดา" name="parent">
-														<span class="form-radio-sign">บิดา</span>
+													<label class="form-check-label">
+														<input class="form-check-input" type="checkbox" value="บิดา" name="parent">
+														<span class="form-check-sign">บิดา</span>
 													</label>
-													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio" value="มารดา" name="parent">
-														<span class="form-radio-sign">มารดา</span>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="มารดา" name="parent">
+														<span class="form-check-sign">มารดา</span>
 													</label>
-													<label class="form-radio-label ml-1">
-														<input class="form-radio-input" type="radio" value="บุคคลอื่น" name="parent">
-														<span class="form-radio-sign">บุคคลอื่น</span>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="บุคคลอื่น" name="parent" id="chkparent">
+														<span class="form-check-sign">บุคคลอื่น</span>
 													</label>
 												</div>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-2">
-												<div class="form-group form-group-default">
-													<label>คำนำหน้าชื่อ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="parent_prename">
-														<option>เลือก</option>
-														<option value="นาย">นาย</option>
-														<option value="นาง">นาง</option>
-														<option value="นางสาว">นางสาว</option>
-													</select>
+										<div id="dvparent" style="display: none">
+											<div class="row">
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>คำนำหน้าชื่อ</label>
+														<select class="form-control" id="formGroupDefaultSelect" name="parent_prename">
+															<option>เลือก</option>
+															<option value="นาย">นาย</option>
+															<option value="นาง">นาง</option>
+															<option value="นางสาว">นางสาว</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ชื่อภาษาไทย</label>
+														<input name="parent_name" type="text" class="form-control" placeholder="">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ชื่อกลาง</label>
+														<input name="parent_namecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>นามสกุลภาษาไทย</label>
+														<input name="parent_surname" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ชื่อภาษาไทย</label>
-													<input name="parent_name" type="text" class="form-control" placeholder="">
+											<div class="row">
+												<div class="col-sm-6 col-md-12">
+													<div class="form-group form-group-default">
+														<label>เลขประจำตัวประชาชน</label>
+														<input name="parent_id" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 col-md-2">
-												<div class="form-group form-group-default">
-													<label>ชื่อกลาง</label>
-													<input name="parent_namecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+											<div class="row">
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ความสัมพันธ์ผู้ปกครอง</label>
+														<input name="parent_status" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>นามสกุลภาษาไทย</label>
-													<input name="parent_surname" type="text" class="form-control" placeholder="">
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>อาชีพ</label>
+														<input name="parent_job" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-group form-group-default">
-													<label>เลขประจำตัวประชาชน</label>
-													<input name="parent_id" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>ความสัมพันธ์ผู้ปกครอง</label>
-													<input name="parent_status" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>อาชีพ</label>
-													<input name="parent_job" type="text" class="form-control" placeholder="">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group form-group-default">
-													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="parent_tel" type="text" class="form-control" placeholder="">
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+														<input name="parent_tel" type="text" class="form-control" placeholder="">
+													</div>
 												</div>
 											</div>
 										</div>
@@ -669,32 +671,42 @@
 											<p style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
 										</div>
 										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-check">
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">ไม่มี</span>
-													</label><br><br>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="ผู้ด้อยโอกาส/ฐานะยากจน" name="poor_person">
-														<span class="form-radio-sign">ผู้ด้อยโอกาส/ฐานะยากจน</span>
-													</label><br><br>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">ผู้พิการ/เด็กพิเศษ</span>
-													</label>
-													<div class="form-group form-group-default">
-														<label>โปรดระบุประเภทความพิเศษ</label>
-														<input name="disabled" type="text" class="form-control" placeholder="">
-													</div>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">อื่นๆ</span>
-													</label>
-													<div class="form-group form-group-default">
-														<label>โปรดระบุ</label>
-														<input name="etc" type="text" class="form-control" placeholder="">
-													</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>ความพิการ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="การมองเห็น">การมองเห็น</option>
+														<option value="การได้ยิน">การได้ยิน</option>
+														<option value="สติปัญญา">สติปัญญา</option>
+														<option value="ร่างกาย/สุขภาพ">ร่างกาย/สุขภาพ</option>
+														<option value="การเรียนรู้">การเรียนรู้</option>
+														<option value="การพูด/ภาษา">การพูด/ภาษา</option>
+														<option value="พฤติกรรม/อารมณ์">พฤติกรรม/อารมณ์</option>
+														<option value="ออทิสติค">ออทิสติค</option>
+														<option value="พิการซ้ำซ้อน">พิการซ้ำซ้อน</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>ความด้อยโอกาส</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson">
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
+														<option value="อยู่ในธุรกิจทางเพศ">อยู่ในธุรกิจทางเพศ</option>
+														<option value="ถูกทอดทิ้ง">ถูกทอดทิ้ง</option>
+														<option value="เด็กเร่ร่อน">เด็กเร่ร่อน</option>
+														<option value="ได้รับผลกระทบจากเอดส์">ได้รับผลกระทบจากเอดส์</option>
+														<option value="ชนกลุ่มน้อย">ชนกลุ่มน้อย</option>
+														<option value="ถูกทำร้ายทารุณ">ถูกทำร้ายทารุณ</option>
+														<option value="เด็กยากจน">เด็กยากจน</option>
+														<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด">เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+														<option value="เด็กกำพร้า">เด็กกำพร้า</option>
+														<option value="ทำงานรับผิดชอบตนเองและครอบครัว">ทำงานรับผิดชอบตนเองและครอบครัว</option>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -816,59 +828,65 @@
 													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
 													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
 													<input type="file" class="form-control-file" id="house_student" name="house_student">
 												</div>
 											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
 													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
 												</div>
 											</div>
-										</div><br><br>
+									</div><br><br>
 
-										<!-- สถานะการสมัคร -->
-										<div hidden>
-											<input type="text" name="status_rigis" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_pic" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_picall" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_idnumber_pic" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_house_pic" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_grade_pic" value="02">
-										</div>
-
+									<!-- สถานะการสมัคร -->
+									<div hidden>
+										<input type="text" name="status_rigis" value="02">
 									</div>
-									<div class="card-footer" align="center">
-										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
-											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-										<button type="submit" class="btn btn-primary" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
-									</div><br>
+									<div hidden>
+										<input type="text" name="status_pic" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_picall" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_idnumber_pic" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_house_pic" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_grade_pic" value="02">
+									</div>
+
 							</div>
+							<div class="card-footer" align="center">
+								<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
+									เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+								<button type="submit" class="btn btn-primary" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
+							</div><br>
 						</div>
-						</form>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
@@ -954,6 +972,19 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chkparent").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvparent").show();
+				} else {
+					$("#dvparent").hide();
+				}
+			});
+		});
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',
