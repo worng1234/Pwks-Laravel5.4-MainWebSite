@@ -66,10 +66,6 @@ class newstudentm1Model extends Model
         'finalSchoolProvince',
         'status_rigis',
         'status_picall',
-        'status_pic',
-        'status_idnumber_pic',
-        'status_house_pic',
-        'status_grade_pic',
         'status_report',
         'status_tranfer',
         'date'

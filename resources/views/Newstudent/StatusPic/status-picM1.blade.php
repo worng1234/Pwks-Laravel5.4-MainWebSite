@@ -340,9 +340,9 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_pic">
-                                                    @if ($data1->status_pic == '01')
+                                                    @if ($data3->status_profile == '01')
                                                     <option>ผ่าน</option>
-                                                    @elseif ($data1->status_pic == '02')
+                                                    @elseif ($data3->status_profile == '02')
                                                     <option>รอตรวจสอบ</option>
                                                     @else
                                                     <option>ไม่ผ่าน</option>
@@ -363,9 +363,9 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_idnumber_pic">
-                                                    @if ($data1->status_idnumber_pic == '01')
+                                                    @if ($data3->status_idcard_student == '01')
                                                     <option>ผ่าน</option>
-                                                    @elseif ($data1->status_idnumber_pic == '02')
+                                                    @elseif ($data3->status_idcard_student == '02')
                                                     <option>รอตรวจสอบ</option>
                                                     @else
                                                     <option>ไม่ผ่าน</option>
@@ -386,9 +386,9 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_house_pic">
-                                                    @if ($data1->status_house_pic == '01')
+                                                    @if ($data3->status_house_student == '01')
                                                     <option>ผ่าน</option>
-                                                    @elseif ($data1->status_house_pic == '02')
+                                                    @elseif ($data3->status_house_student == '02')
                                                     <option>รอตรวจสอบ</option>
                                                     @else
                                                     <option>ไม่ผ่าน</option>
@@ -409,9 +409,9 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_grade_pic">
-                                                    @if ($data1->status_grade_pic == '01')
+                                                    @if ($data3->status_submit_student == '01')
                                                     <option>ผ่าน</option>
-                                                    @elseif ($data1->status_grade_pic == '02')
+                                                    @elseif ($data3->status_submit_student == '02')
                                                     <option>รอตรวจสอบ</option>
                                                     @else
                                                     <option>ไม่ผ่าน</option>

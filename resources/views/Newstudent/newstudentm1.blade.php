@@ -656,32 +656,42 @@
 											<p style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
 										</div>
 										<div class="row">
-											<div class="col-sm-6 col-md-12">
-												<div class="form-check">
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">ไม่มี</span>
-													</label><br><br>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" value="ผู้ด้อยโอกาส/ฐานะยากจน" name="poorPerson">
-														<span class="form-radio-sign">ผู้ด้อยโอกาส/ฐานะยากจน</span>
-													</label><br><br>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">ผู้พิการ/เด็กพิเศษ</span>
-													</label>
-													<div class="form-group form-group-default">
-														<label>โปรดระบุประเภทความพิเศษ</label>
-														<input name="disabled" type="text" class="form-control" placeholder="">
-													</div>
-													<label class="form-radio-label">
-														<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-														<span class="form-radio-sign">อื่นๆ</span>
-													</label>
-													<div class="form-group form-group-default">
-														<label>โปรดระบุ</label>
-														<input name="etc" type="text" class="form-control" placeholder="">
-													</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>ความพิการ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="การมองเห็น">การมองเห็น</option>
+														<option value="การได้ยิน">การได้ยิน</option>
+														<option value="สติปัญญา">สติปัญญา</option>
+														<option value="ร่างกาย/สุขภาพ">ร่างกาย/สุขภาพ</option>
+														<option value="การเรียนรู้">การเรียนรู้</option>
+														<option value="การพูด/ภาษา">การพูด/ภาษา</option>
+														<option value="พฤติกรรม/อารมณ์">พฤติกรรม/อารมณ์</option>
+														<option value="ออทิสติค">ออทิสติค</option>
+														<option value="พิการซ้ำซ้อน">พิการซ้ำซ้อน</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>ความด้อยโอกาส</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson">
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
+														<option value="อยู่ในธุรกิจทางเพศ">อยู่ในธุรกิจทางเพศ</option>
+														<option value="ถูกทอดทิ้ง">ถูกทอดทิ้ง</option>
+														<option value="เด็กเร่ร่อน">เด็กเร่ร่อน</option>
+														<option value="ได้รับผลกระทบจากเอดส์">ได้รับผลกระทบจากเอดส์</option>
+														<option value="ชนกลุ่มน้อย">ชนกลุ่มน้อย</option>
+														<option value="ถูกทำร้ายทารุณ">ถูกทำร้ายทารุณ</option>
+														<option value="เด็กยากจน">เด็กยากจน</option>
+														<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด">เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+														<option value="เด็กกำพร้า">เด็กกำพร้า</option>
+														<option value="ทำงานรับผิดชอบตนเองและครอบครัว">ทำงานรับผิดชอบตนเองและครอบครัว</option>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -725,16 +735,16 @@
 											<input type="text" name="status_picall" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_pic" value="02">
+											<input type="text" name="status_profile" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_idnumber_pic" value="02">
+											<input type="text" name="status_idcard_student" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_house_pic" value="02">
+											<input type="text" name="status_house_student" value="02">
 										</div>
 										<div hidden>
-											<input type="text" name="status_grade_pic" value="02">
+											<input type="text" name="status_submit_student" value="02">
 										</div>
 									</div>
 									<div class="card-footer" align="center">
@@ -965,8 +975,8 @@
 									}
 								}
 							}).then(function() {
-							window.location = '/check/status';
-						});
+								window.location = '/check/status';
+							});
 						} else {
 							swal.close();
 						}
