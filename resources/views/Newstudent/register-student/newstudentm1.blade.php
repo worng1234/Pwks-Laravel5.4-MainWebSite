@@ -758,7 +758,7 @@
 									<div class="card-footer" align="center">
 										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
 											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-										<button type="submit" class="btn btn-primary" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
+										<button type="submit" class="btn btn-primary" ><strong>ยืนยันข้อมูล</strong></button>
 									</div><br>
 							</div>
 						</div>

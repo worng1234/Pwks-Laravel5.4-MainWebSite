@@ -571,62 +571,13 @@
 														</div>
 													</div>
 												</div>
-
-												<!-- อัพโหลดรูปภาพ -->
-												<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-													<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
-												</div>
-												<div class="row">
-													<div class="col-sm-6 col-md-4">
-														<div class="form-group">
-															<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-															<input type="file" class="form-control-file" id="profile_img" name="profile_img" >
-														</div>
-													</div>
-													<div class="col-sm-6 col-md-4">
-														<div class="form-group">
-															<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-															<input type="file" class="form-control-file" id="id_card_student" name="id_card_student" >
-														</div>
-													</div>
-													<div class="col-sm-6 col-md-4">
-														<div class="form-group">
-															<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-															<input type="file" class="form-control-file" id="house_student" name="house_student" >
-														</div>
-													</div>
-													<div class="col-sm-6 col-md-4">
-														<div class="form-group">
-															<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
-															<input type="file" class="form-control-file" id="student_submit" name="student_submit">
-														</div>
-													</div>
-
-													<!-- สถานะการสมัคร -->
-													<div hidden>
-														<input type="text" name="status_rigis" value="02">
-													</div>
-													<div hidden>
-														<input type="text" name="status_picall" value="02">
-													</div>
-													<div hidden>
-														<input type="text" name="status_pic" value="02">
-													</div>
-													<div hidden>
-														<input type="text" name="status_idnumber_pic" value="02">
-													</div>
-													<div hidden>
-														<input type="text" name="status_house_pic" value="02">
-													</div>
-													<div hidden>
-														<input type="text" name="status_grade_pic" value="02">
-													</div>
-												</div>
 											</div>
 										</div>
 									</div>
 									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
+										<p style="text-align:center">หากทำการแก้ไขข้อมูลเรียบร้อยแล้ว<br>
+											ให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+										<button type="submit" class="btn btn-success" ><strong>ยืนยัน</strong></button>
 										<a href='{{ url("/ShowNewstudentM1/{$newstudentm1Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 									</div><br>
 							</div>

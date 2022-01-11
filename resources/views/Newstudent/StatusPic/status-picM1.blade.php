@@ -334,19 +334,22 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/ProfileStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
+                                                <a href='{{ url("/ProfileStudentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_profile">
-                                                    @foreach ($data3 as $key => $value)
-                                                    <option value="01" {{ old('$data3->status_profile') == '$key' ? 'selected' : '01' }}>ผ่าน</option>
-                                                    @endforeach
-                                                    
-                                                    <option value="02" {{ old('$data3->status_profile') == '$key' ? 'selected' : '' }}>รอตรวจสอบ</option>
-                                                    <option value="03" {{ old('$data3->status_profile') == '$key' ? 'selected' : '' }}>ไม่ผ่าน</option>
-                                                    <option ></option>
+                                                    @if ($data3->status_profile == '01')
+                                                    <option>ผ่าน</option>
+                                                    @elseif ($data3->status_profile == '02')
+                                                    <option>รอตรวจสอบ</option>
+                                                    @else
+                                                    <option>ไม่ผ่าน</option>
+                                                    @endif
+                                                    <option value="01">ผ่าน</option>
+                                                    <option value="02">รอตรวจสอบ</option>
+                                                    <option value="03">ไม่ผ่าน</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -419,50 +422,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>สถานะการสมัคร</b></p>
-										</div>
-                                    <div class="row" >
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <label>สถานะเอกสารทั้งหมด</label>
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_picall">
-                                                    @if ($data1->status_picall == '01')
-                                                    <option>ผ่าน</option>
-                                                    @elseif ($data1->status_picall == '02')
-                                                    <option>รอตรวจสอบ</option>
-                                                    @else
-                                                    <option>ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                            <label>สถานะการสมัคร</label>
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_rigis">
-                                                    @if ($data1->status_rigis == '01')
-                                                    <option>ยืนยันการสมัคร</option>
-                                                    @elseif ($data1->status_rigis == '02')
-                                                    <option>รอตรวจสอบ</option>
-                                                    @else
-                                                    <option>ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ยืนยันการสมัคร</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <input type="text" name="status_report" value="02" hidden>
                                     </div>
 
                                     <div class="card-footer" align="center">

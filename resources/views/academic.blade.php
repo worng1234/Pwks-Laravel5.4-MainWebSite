@@ -119,6 +119,58 @@
 							</a>
 						</li>
 
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#agree">
+								<i class="fas fa-id-card-alt"></i>
+								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="agree">
+								<ul class="nav nav-collapse">
+									<li>
+										<a data-toggle="collapse" href="#formob1">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob1">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob2">
+											<span class="sub-item">ตรวจสอบแล้ว</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
@@ -212,28 +264,6 @@
 						</li>
 
 						<li class="nav-item ">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="agree">
-								<ul class="nav nav-collapse">
-									<li >
-										<a href="{{ url('/SortNewstudentM1')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li >
-										<a href="{{ url('/SortNewstudentM4')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="nav-item ">
 							<a data-toggle="collapse" href="#move">
 								<i class="fas fa-file-alt"></i>
 								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
@@ -241,22 +271,22 @@
 							</a>
 							<div class="collapse" id="move">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/documentIndex/M1')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/documentIndex/M4')}}">
 											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/tranferAllM1')}}">
 											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/tranferAllM4')}}">
 											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
 										</a>
@@ -273,7 +303,7 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-									
+
 									<li>
 										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
@@ -300,33 +330,33 @@
 
 						<li class="nav-item ">
 							<a data-toggle="collapse" href="#files">
-							<i class="fas fa-folder-open"></i>
+								<i class="fas fa-folder-open"></i>
 								<p>ออกเอกสารทั้งหมด</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="files">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
 											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
 											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/AcademicReport/StudentAll')}}">
 											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
 											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
 										</a>
 									</li>
-									<li >
+									<li>
 										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
 											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
 										</a>
@@ -378,189 +408,190 @@
 								</div>
 
 								<div class="card-body">
-								<h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u><h3>
-									<div style="margin-top: 30px;">
-										<table class="table table-bordered table-hover table-condesed">
-											<thead class="bg-info">
-												<th width="5%" class="saraban">
-													<center>ระดับชั้น</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>ชาย</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>หญิง</center>
-												</th>
-												<th width="5%" class="saraban">
-													<center>รวม</center>
-												</th>
-											</thead>
-											<tbody>
-												<tr>
-													<td align="center" class="table-secondary">ม.1</td>
-													@if ($m1_m_all != 0)
-													<td align="center">{{$m1_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m1_fm_all != 0)
-													<td align="center">{{$m1_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m1_all != 0)
-													<td align="center" class="table-success">{{$m1_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.2</td>
-													@if ($m2_m_all != 0)
-													<td align="center">{{$m2_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m2_fm_all != 0)
-													<td align="center">{{$m2_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m2_all != 0)
-													<td align="center" class="table-success">{{$m2_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.3</td>
-													@if ($m3_m_all != 0)
-													<td align="center">{{$m3_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m3_fm_all != 0)
-													<td align="center">{{$m3_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m3_all != 0)
-													<td align="center" class="table-success">{{$m3_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.4</td>
-													@if ($m4_m_all != 0)
-													<td align="center">{{$m4_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m4_fm_all != 0)
-													<td align="center">{{$m4_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m4_all != 0)
-													<td align="center" class="table-success">{{$m4_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.5</td>
-													@if ($m5_m_all != 0)
-													<td align="center">{{$m5_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m5_fm_all != 0)
-													<td align="center">{{$m5_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m5_all != 0)
-													<td align="center" class="table-success">{{$m5_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-secondary">ม.6</td>
-													@if ($m6_m_all != 0)
-													<td align="center">{{$m6_m_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m6_fm_all != 0)
-													<td align="center">{{$m6_fm_all}}</td>
-													@else
-													<td align="center">0</td>
-													@endif
-													@if ($m6_all != 0)
-													<td align="center" class="table-success">{{$m6_all}}</td>
-													@else
-													<td align="center" class="table-success">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-warning">ม.ต้น</td>
-													@if ($m123_m_all != 0)
-													<td align="center" class="table-warning">{{$m123_m_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m123_fm_all != 0)
-													<td align="center" class="table-warning">{{$m123_fm_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m123_all != 0)
-													<td align="center" class="table-primary">{{$m123_all}}</td>
-													@else
-													<td align="center" class="table-primary">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-warning">ม.ปลาย</td>
-													@if ($m456_m_all != 0)
-													<td align="center" class="table-warning">{{$m456_m_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m456_fm_all != 0)
-													<td align="center" class="table-warning">{{$m456_fm_all}}</td>
-													@else
-													<td align="center" class="table-warning">0</td>
-													@endif
-													@if ($m456_all != 0)
-													<td align="center" class="table-primary">{{$m456_all}}</td>
-													@else
-													<td align="center" class="table-primary">0</td>
-													@endif
-												</tr>
-												<tr>
-													<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
-													@if ($m_m_all != 0)
-													<td align="center" class="table-danger">{{$m_m_all}}</td>
-													@else
-													<td align="center" class="table-danger">0</td>
-													@endif
-													@if ($m_fm_all != 0)
-													<td align="center" class="table-danger">{{$m_fm_all}}</td>
-													@else
-													<td align="center" class="table-danger">0</td>
-													@endif
-													@if ($m_all != 0)
-													<td align="center" class="bg-danger">{{$m_all}}</td>
-													@else
-													<td align="center" class="bg-danger">0</td>
-													@endif
-												</tr>
-											</tbody>
-										</table>
-									</div>
+									<h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u>
+										<h3>
+											<div style="margin-top: 30px;">
+												<table class="table table-bordered table-hover table-condesed">
+													<thead class="bg-info">
+														<th width="5%" class="saraban">
+															<center>ระดับชั้น</center>
+														</th>
+														<th width="5%" class="saraban">
+															<center>ชาย</center>
+														</th>
+														<th width="5%" class="saraban">
+															<center>หญิง</center>
+														</th>
+														<th width="5%" class="saraban">
+															<center>รวม</center>
+														</th>
+													</thead>
+													<tbody>
+														<tr>
+															<td align="center" class="table-secondary">ม.1</td>
+															@if ($m1_m_all != 0)
+															<td align="center">{{$m1_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m1_fm_all != 0)
+															<td align="center">{{$m1_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m1_all != 0)
+															<td align="center" class="table-success">{{$m1_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-secondary">ม.2</td>
+															@if ($m2_m_all != 0)
+															<td align="center">{{$m2_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m2_fm_all != 0)
+															<td align="center">{{$m2_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m2_all != 0)
+															<td align="center" class="table-success">{{$m2_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-secondary">ม.3</td>
+															@if ($m3_m_all != 0)
+															<td align="center">{{$m3_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m3_fm_all != 0)
+															<td align="center">{{$m3_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m3_all != 0)
+															<td align="center" class="table-success">{{$m3_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-secondary">ม.4</td>
+															@if ($m4_m_all != 0)
+															<td align="center">{{$m4_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m4_fm_all != 0)
+															<td align="center">{{$m4_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m4_all != 0)
+															<td align="center" class="table-success">{{$m4_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-secondary">ม.5</td>
+															@if ($m5_m_all != 0)
+															<td align="center">{{$m5_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m5_fm_all != 0)
+															<td align="center">{{$m5_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m5_all != 0)
+															<td align="center" class="table-success">{{$m5_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-secondary">ม.6</td>
+															@if ($m6_m_all != 0)
+															<td align="center">{{$m6_m_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m6_fm_all != 0)
+															<td align="center">{{$m6_fm_all}}</td>
+															@else
+															<td align="center">0</td>
+															@endif
+															@if ($m6_all != 0)
+															<td align="center" class="table-success">{{$m6_all}}</td>
+															@else
+															<td align="center" class="table-success">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-warning">ม.ต้น</td>
+															@if ($m123_m_all != 0)
+															<td align="center" class="table-warning">{{$m123_m_all}}</td>
+															@else
+															<td align="center" class="table-warning">0</td>
+															@endif
+															@if ($m123_fm_all != 0)
+															<td align="center" class="table-warning">{{$m123_fm_all}}</td>
+															@else
+															<td align="center" class="table-warning">0</td>
+															@endif
+															@if ($m123_all != 0)
+															<td align="center" class="table-primary">{{$m123_all}}</td>
+															@else
+															<td align="center" class="table-primary">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-warning">ม.ปลาย</td>
+															@if ($m456_m_all != 0)
+															<td align="center" class="table-warning">{{$m456_m_all}}</td>
+															@else
+															<td align="center" class="table-warning">0</td>
+															@endif
+															@if ($m456_fm_all != 0)
+															<td align="center" class="table-warning">{{$m456_fm_all}}</td>
+															@else
+															<td align="center" class="table-warning">0</td>
+															@endif
+															@if ($m456_all != 0)
+															<td align="center" class="table-primary">{{$m456_all}}</td>
+															@else
+															<td align="center" class="table-primary">0</td>
+															@endif
+														</tr>
+														<tr>
+															<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
+															@if ($m_m_all != 0)
+															<td align="center" class="table-danger">{{$m_m_all}}</td>
+															@else
+															<td align="center" class="table-danger">0</td>
+															@endif
+															@if ($m_fm_all != 0)
+															<td align="center" class="table-danger">{{$m_fm_all}}</td>
+															@else
+															<td align="center" class="table-danger">0</td>
+															@endif
+															@if ($m_all != 0)
+															<td align="center" class="bg-danger">{{$m_all}}</td>
+															@else
+															<td align="center" class="bg-danger">0</td>
+															@endif
+														</tr>
+													</tbody>
+												</table>
+											</div>
 								</div>
 							</div>
 						</div>

@@ -27,7 +27,11 @@
 
     <style>
         /* Ensure that the demo table scrolls */
-        th, td { white-space: nowrap; }
+        th,
+        td {
+            white-space: nowrap;
+        }
+
         div.dataTables_wrapper {
             margin: 0 auto;
         }
@@ -35,13 +39,13 @@
         div.container {
             width: 100%;
         }
+
         .bgimgheader {
-            
+
             background-repeat: repeat;
-            background-position: center; 
+            background-position: center;
             position: relative;
         }
-        
     </style>
 
     <!-- CSS Files -->
@@ -125,24 +129,24 @@
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
                                     <li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
+                                        <a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item submenu">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-folder-alt"></i>
-								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
-							</a>
-							<div class="navbar-dropdown animated fadeIn">
-								<ul>
+                            <a class="nav-link" href="#">
+                                <i class="link-icon icon-folder-alt"></i>
+                                <span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+                            </a>
+                            <div class="navbar-dropdown animated fadeIn">
+                                <ul>
                                     <li>
-										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+                                        <a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="nav-item submenu">
                             <a class="nav-link" href="#">
                                 <i class="link-icon icon-lock"></i>
@@ -192,45 +196,127 @@
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     <div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน</div>
                                     <p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน ระดับชั้นมัธยมศึกษาปีที่ 1 โรงเรียนพร้าววิทยาคม</p><br><br>
-                                   
-                                    <div class="table-responsive" >
-                                            <table class="table table-bordered table-striped table-hover" style="width:100%">
-                                                <thead>
-                                                    <th><center>เลขบัตรประจำตัวประชาชน</center></th>
-                                                    <th><center>ชื่อนาม-สกุล</center></th>
-                                                    <th><center>สถานะการสมัคร</center></th>
-                                                    <th><center>สถานะเอกสารที่เกี่ยวข้อง</center></th>
-                                                    <th><center>ข้อมูล</center></th>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($datas as $data)
-                                                    <tr>
-                                                        <td align="center">{{$data->idNumber}}</td>
-                                                        <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
-                                                        <td align="center">
-                                                            @if ($data->status_rigis == '01')
-                                                                ยืนยันการสมัครแล้ว
-                                                            @elseif ($data->status_rigis == '02')
-                                                                รอตรวจสอบ
-                                                            @else
-                                                                ไม่ผ่าน
-                                                            @endif
-                                                        </td>
-                                                        <td align="center">
-                                                            @if ($data->status_picall == '01')
-                                                                ผ่าน
-                                                            @elseif ($data->status_picall == '02')
-                                                                รอตรวจสอบ
-                                                            @else
-                                                                ไม่ผ่าน
-                                                            @endif
-                                                        </td>
-                                                        <td align="center"><a href='{{ url("/ShowNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
+
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover" style="width:100%">
+                                            <thead>
+                                                <th>
+                                                    <center>เลขบัตรประจำตัวประชาชน</center>
+                                                </th>
+                                                <th>
+                                                    <center>ชื่อนาม-สกุล</center>
+                                                </th>
+                                                <th>
+                                                    <center>สถานะ</center>
+                                                </th>
+                                                <th>
+                                                    <center>ข้อมูล</center>
+                                                </th>
+                                                <th>
+                                                    <center>แก้ไขข้อมูล</center>
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($datas as $data)
+                                                <tr>
+                                                    <td align="center">{{$data->idNumber}}</td>
+                                                    <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                                    <td align="center">
+                                                        @if ($data->status_rigis == '01')
+                                                        <p style="color:green;">มีสิทธิ์สอบ</p>
+                                                        @elseif ($data->status_rigis == '02')
+                                                        <p style="color:blue;">รอตรวจสอบ</p>
+                                                        @else
+                                                        <p style="color:red;">ไม่ผ่าน</p>
+                                                        @endif
+                                                    </td>
+                                                    <td align="center"><a href='{{ url("/ShowNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-file-alt btn-xs"></i></a></td>
+                                                    <td align="center"><a href='{{ url("/EditNewstudentM1/{$data->id}" )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </br>
+                                    </br>
+                                    <div class="card-title fw-mediumbold">สถานะหลักฐานการสมัคร</div>
+                                    </br>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover" style="width:100%">
+                                            <thead>
+                                                <th>
+                                                    <center>หลักฐาน</center>
+                                                </th>
+                                                <th>
+                                                    <center>รปูประจำตัว</center>
+                                                </th>
+                                                <th>
+                                                    <center>สำเนาบัตรประชาชน</center>
+                                                </th>
+                                                <th>
+                                                    <center>สำเนาทะเบียนบ้าน</center>
+                                                </th>
+                                                <th>
+                                                    <center>ใบ ปพ.1 หรือหนังสือรับรอง</br>การเป็นนักเรียน</center>
+                                                </th>
+                                                <th>
+                                                    <center>แก้ไขหลักฐาน</center>
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <td align="center">
+                                                    @if ($data->status_picall == '01')
+                                                    <p style="color:green;">ผ่าน</p>
+                                                    @elseif ($data->status_picall == '02')
+                                                    <p style="color:blue;">รอตรวจสอบ</p>
+                                                    @else
+                                                    <p style="color:red;">ไม่ผ่าน</p>
+                                                    @endif
+                                                </td>
+                                                <td align="center">
+                                                    @if ($status->status_profile == '01')
+                                                    <p style="color:green;">ผ่าน</p>
+                                                    @elseif ($status->status_profile == '02')
+                                                    <p style="color:blue;">รอตรวจสอบ</p>
+                                                    @else
+                                                    <p style="color:red;">ไม่ผ่าน</p>
+                                                    @endif
+                                                </td>
+                                                <td align="center">
+                                                    @if ($status->status_idcard_student == '01')
+                                                    <p style="color:green;">ผ่าน</p>
+                                                    @elseif ($status->status_idcard_student == '02')
+                                                    <p style="color:blue;">รอตรวจสอบ</p>
+                                                    @else
+                                                    <p style="color:red;">ไม่ผ่าน</p>
+                                                    @endif
+                                                </td>
+                                                <td align="center">
+                                                    @if ($status->status_house_student == '01')
+                                                    <p style="color:green;">ผ่าน</p>
+                                                    @elseif ($status->status_house_student == '02')
+                                                    <p style="color:blue;">รอตรวจสอบ</p>
+                                                    @else
+                                                    <p style="color:red;">ไม่ผ่าน</p>
+                                                    @endif
+                                                </td>
+                                                <td align="center">
+                                                    @if ($status->status_submit_student == '01')
+                                                    <p style="color:green;">ผ่าน</p>
+                                                    @elseif ($status->status_submit_student == '02')
+                                                    <p style="color:blue;">รอตรวจสอบ</p>
+                                                    @else
+                                                    <p style="color:red;">ไม่ผ่าน</p>
+                                                    @endif
+                                                </td>
+                                                <td align="center"><a href='{{ url("/EditObjectM1/{$data->id}" )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
 
                                 </div>
                             </div>
@@ -326,7 +412,7 @@
     <script src="../assets/js/demo.js"></script>
 
     <!-- Date time picker -->
-	
+
 
     <script>
         Circles.create({

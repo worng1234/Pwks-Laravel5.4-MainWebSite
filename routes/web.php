@@ -68,15 +68,14 @@ Route::post('/editDocumentM4/{id}', 'newstudentm4Controller@editDocument');
 Route::get('/AgreeMentNewstudentRegisterM1', function () {
     return view('Newstudent.agreement-newstudentm1');
 });
+Route::get('/NewstudentM1', 'newstudentm1Controller@creteStudent');
+
 Route::get('/AgreeMentNewstudentRegisterM4', function () {
     return view('Newstudent.agreement-newstudentm4');
 });
 //studentm1
-Route::resource('/SortNewstudentM1', 'newstudentm1Controller');
-
-Route::get('/NewstudentM1', function () {
-    return view('Newstudent.newstudentm1');
-});
+Route::get('/UnsubmitObject/M1', 'newstudentm1Controller@index');
+Route::get('/SubmitObject/M1', 'newstudentm1Controller@submitObjectM1');
 
 Route::get('/SortNewstudentM1/{id}', 'newstudentm1Controller@show');
 Route::get('/FixNewstudentM1/{id}', 'newstudentm1Controller@edit');
@@ -100,6 +99,10 @@ Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 });
 //---------------------------------------------------------------------
+
+//แก้ไขหลักฐานการสมัคร
+Route::get('/EditObjectM1/{id}', 'newstudentm1Controller@editOblect');
+Route::post('/upEditObjectM1/{id}', 'newstudentm1Controller@upObjectM1');
 
 Route::get('/success/checkM1', function () {
     return view('Newstudent.success-statuscheck.success-checkM1');
@@ -130,7 +133,8 @@ Route::get('/DisabilityCertificateM1/{id}', 'newstudentm1Controller@DisabilityCe
 
 
 //studentm4
-Route::resource('/SortNewstudentM4', 'newstudentm4Controller');
+Route::get('/UnsubmitObject/M4', 'newstudentm4Controller@index');
+Route::get('/SubmitObject/M4', 'newstudentm4Controller@submitObjectM4');
 
 Route::get('/NewstudentM4', 'newstudentm4Controller@create');
 

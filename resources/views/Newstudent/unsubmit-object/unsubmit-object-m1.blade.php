@@ -142,141 +142,53 @@
 							</a>
 						</li>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-
-									<li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li >
-													<a href="{{ url('/academic/class')}}">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classChange')}}">
-														<span class="sub-item">เลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/final')}}">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li >
-													<a href="{{ url('/academic/finalChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li >
-													<a href="{{ url('/academic/move')}}">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li >
-													<a href="{{ url('/academic/moveChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li >
-													<a href="{{ url('/academic/out')}}">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/outChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-
 						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#agree">
 								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
+								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse show" id="agree">
 								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="{{ url('/SortNewstudentM1')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+									<li >
+										<a data-toggle="collapse" href="#formob1">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
 										</a>
+										<div class="collapse show" id="formob1">
+											<ul class="nav nav-collapse subnav">
+												<li class="active">
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 									<li>
-										<a href="{{ url('/SortNewstudentM4')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
+										<a data-toggle="collapse" href="#formob2">
+											<span class="sub-item">ตรวจสอบแล้ว</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#basic">
-								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="basic">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="academic-basic-info-class-all.html">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-										</a>
-									</li>
-									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
+										<div class="collapse" id="formob2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -320,7 +232,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียนใหม่ <i class="flaticon-right-arrow"></i> ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; หลักฐานและข้อมูลการสมัครเข้าเรียน <i class="flaticon-right-arrow"></i> ยังไม่ได้ตรวจสอบ <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
 											<div class="card-tools">
 												<a href="{{url('/export/newstudentm1')}}" class="btn btn-info btn-border btn-round btn-sm" target="_blank">
 													<span class="btn-label">
@@ -339,7 +251,7 @@
 											<div class="row">
 												<div class="col-12 col-md-6">
 													<div class="form-group form-group-default">
-														<label>ชื่อ-นามสกุล, โรงเรียน, สถานะการสมัคร (ยืนยันการสมัคร, รอตรวจสอบ)</label>
+														<label>ชื่อ-นามสกุล, โรงเรียน, สถานะหลักฐาน ( รอตรวจสอบ )</label>
 														<input type="search" class="form-control" name="search" placeholder="">
 													</div> 
 												</div>
@@ -360,13 +272,13 @@
 														<center>โรงเรียน</center>
 													</th>
 													<th scope="col" width="13%">
-														<center>สถานะการสมัคร</center>
+														<center>สถานะหลักฐาน</center>
 													</th>
 													<th scope="col" width="12%">
 														<center>ข้อมูลส่วนตัว</center>
 													</th>
 													<th scope="col" width="12%">
-														<center>รูปภาพ</center>
+														<center>หลักฐาน</center>
 													</th>
 													<th scope="col" width="12%">
 														<center>จัดการ</center>
@@ -380,9 +292,9 @@
 													<td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
 													<td align="center">{{$data->finalSchool}}</td>
 													<td align="center">
-														@if ($data->status_rigis == '01')
-															ยืนยันการสมัคร
-														@elseif ($data->status_rigis == '02')
+														@if ($data->status_picall == '01')
+															ผ่าน
+														@elseif ($data->status_picall == '02')
 															รอตรวจสอบ
 														@else
 															ไม่ผ่าน

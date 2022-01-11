@@ -18,9 +18,16 @@ class newstudentm4Controller extends Controller
 
     public function index(){
         $data =  $datas = DB::table('new_student_register_m4')
-        ->where('status_rigis', '=', '02')
+        ->where('status_picall', '=', '02')
         ->get();
-        return view('Newstudent.sortnewstudentm4', compact('data'));
+        return view('Newstudent.unsubmit-object.unsubmit-object-m4', compact('data'));
+    }
+
+    public function submitObjectM4(){
+        $data =  $datas = DB::table('new_student_register_m4')
+        ->where('status_picall', '=', '01')
+        ->get();
+        return view('Newstudent.submit-object.submit-object-m4', compact('data'));
     }
 
     public function create()
