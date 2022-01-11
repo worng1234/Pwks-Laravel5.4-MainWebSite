@@ -293,11 +293,11 @@
 													<td align="center">{{$data->finalSchool}}</td>
 													<td align="center">
 														@if ($data->status_picall == '01')
-															ผ่าน
+															<p style="color:green;">ผ่าน</p>
 														@elseif ($data->status_picall == '02')
-															รอตรวจสอบ
+															<p style="color:blue;">รอตรวจสอบ</p>
 														@else
-															ไม่ผ่าน
+															<p style="color:red;">ไม่ผ่าน</p>
 														@endif
 													</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>

@@ -341,11 +341,11 @@
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_profile">
                                                     @if ($data3->status_profile == '01')
-                                                    <option>ผ่าน</option>
+                                                    <option value="01">ผ่าน</option>
                                                     @elseif ($data3->status_profile == '02')
-                                                    <option>รอตรวจสอบ</option>
+                                                    <option value="02">รอตรวจสอบ</option>
                                                     @else
-                                                    <option>ไม่ผ่าน</option>
+                                                    <option value="03">ไม่ผ่าน</option>
                                                     @endif
                                                     <option value="01">ผ่าน</option>
                                                     <option value="02">รอตรวจสอบ</option>
@@ -364,11 +364,11 @@
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_student">
                                                     @if ($data3->status_idcard_student == '01')
-                                                    <option>ผ่าน</option>
+                                                    <option value="01">ผ่าน</option>
                                                     @elseif ($data3->status_idcard_student == '02')
-                                                    <option>รอตรวจสอบ</option>
+                                                    <option value="02">รอตรวจสอบ</option>
                                                     @else
-                                                    <option>ไม่ผ่าน</option>
+                                                    <option value="03">ไม่ผ่าน</option>
                                                     @endif
                                                     <option value="01">ผ่าน</option>
                                                     <option value="02">รอตรวจสอบ</option>
@@ -387,11 +387,11 @@
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_house_student">
                                                     @if ($data3->status_house_student == '01')
-                                                    <option>ผ่าน</option>
+                                                    <option value="01">ผ่าน</option>
                                                     @elseif ($data3->status_house_student == '02')
-                                                    <option>รอตรวจสอบ</option>
+                                                    <option value="02">รอตรวจสอบ</option>
                                                     @else
-                                                    <option>ไม่ผ่าน</option>
+                                                    <option value="03">ไม่ผ่าน</option>
                                                     @endif
                                                     <option value="01">ผ่าน</option>
                                                     <option value="02">รอตรวจสอบ</option>
@@ -410,11 +410,11 @@
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_submit_student">
                                                     @if ($data3->status_submit_student == '01')
-                                                    <option>ผ่าน</option>
+                                                    <option value="01">ผ่าน</option>
                                                     @elseif ($data3->status_submit_student == '02')
-                                                    <option>รอตรวจสอบ</option>
+                                                    <option value="02">รอตรวจสอบ</option>
                                                     @else
-                                                    <option>ไม่ผ่าน</option>
+                                                    <option value="03">ไม่ผ่าน</option>
                                                     @endif
                                                     <option value="01">ผ่าน</option>
                                                     <option value="02">รอตรวจสอบ</option>
@@ -426,7 +426,7 @@
 
                                     <div class="card-footer" align="center">
 										<button type="submit" class="btn btn-success" ><strong>ยืนยันข้อมูล</strong></button>
-                                        <a href="{{url('/SortNewstudentM1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+                                        <a href="{{url('/UnsubmitObject/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
 									</div><br>
                                 </div>
                                 </form>

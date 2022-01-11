@@ -277,12 +277,47 @@
 												</div>
 											</div>
 										</div>
+
+										<div hidden>
+											<input type="text" name="idNumber" value="{{$data->idNumber}}">
+										</div>
+
 									<!-- สถานะการสมัคร -->
 									<div hidden>
-										<input type="text" name="status_report" value="01">
+										<input type="text" name="status_report" value="02">
 									</div>
 									<div hidden>
 										<input type="text" name="status_tranfer" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_front_grade" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_back_grade" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_birth_certificate" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_disability_certificate" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_idcard_father" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_idcard_mother" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_idcard_parent" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_house_father" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_house_mother" value="02">
+									</div>
+									<div hidden>
+										<input type="text" name="status_house_parent" value="02">
 									</div>
 
 									<div class="card-footer" align="center">

@@ -73,6 +73,10 @@ Route::get('/NewstudentM1', 'newstudentm1Controller@creteStudent');
 Route::get('/AgreeMentNewstudentRegisterM4', function () {
     return view('Newstudent.agreement-newstudentm4');
 });
+
+//success Register
+Route::get('/Success/RegisterM1', 'newstudentm1Controller@successRegiter');
+
 //studentm1
 Route::get('/UnsubmitObject/M1', 'newstudentm1Controller@index');
 Route::get('/SubmitObject/M1', 'newstudentm1Controller@submitObjectM1');
