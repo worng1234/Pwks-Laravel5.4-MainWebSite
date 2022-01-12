@@ -330,6 +330,9 @@
                                         <a href='{{ url("/tranferM1/{$data1->id}")}}' class="btn btn-primary" style="margin-left: auto;">โอนย้ายข้อมูล</a>
                                     </div>
                                 </div>
+
+                                <form method="post" action="{{ url('/upDocumentStatusM1', $data1->id)}}" enctype="multipart/form-data">
+									{{csrf_field()}}
                                 <div class="card-body" style="min-height: 400px">
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                         <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชน บิดา มารดา</b></p>
@@ -346,7 +349,7 @@
                                         </div>
                                         <div class="col-sm-1 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนบิดา</a>
+                                                <a href='{{ url("/IdCardFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนบิดา</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -374,7 +377,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนมารดา</a>
+                                                <a href='{{ url("/IdCardMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนมารดา</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -404,7 +407,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านบิดา</a>
+                                                <a href='{{ url("/HouseFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านบิดา</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -430,7 +433,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านมารดา</a>
+                                                <a href='{{ url("/HouseMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านมารดา</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -461,7 +464,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
+                                                <a href='{{ url("/IdCardParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -487,7 +490,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
+                                                <a href='{{ url("/HouseParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -518,7 +521,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/FrontGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
+                                                <a href='{{ url("/FrontGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px; width:10%;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -544,7 +547,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/BackGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
+                                                <a href='{{ url("/BackGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px; width:10%;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -570,7 +573,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/BirthCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px;"></i>ใบสูติบัตร</a>
+                                                <a href='{{ url("/BirthCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px; width:10%;"></i>ใบสูติบัตร</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -601,7 +604,7 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/DisabilityCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px;"></i>หนังสือรับรองความพิการ</a>
+                                                <a href='{{ url("/DisabilityCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px; width:10%;"></i>หนังสือรับรองความพิการ</a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -615,16 +618,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div hidden>
+                                        <input type="text" name="idNumber" value="{{$data1->idNumber}}">
+                                    </div>
 
                                     <div class="card-footer" align="center">
                                         <button type="submit" class="btn btn-success" style="margin-right: 20px;">ยืนยัน</button>
                                         <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
                                     </div><br>
                                 </div>
-                                </form>
                             </div>
-
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

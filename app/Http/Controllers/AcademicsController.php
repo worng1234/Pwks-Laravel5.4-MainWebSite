@@ -885,6 +885,400 @@ class AcademicsController extends Controller
         ]);
     }
 
+    public function upDocumentStatusM1(Request $request, $id)
+    {
+        if ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif (
+        $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif (
+        $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
+        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
+        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+        && $request->get('status_birth_certificate') == '01' ){
+
+            $status = DB::table('tatus_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('newstudent_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+                    'status_tranfer' =>$status_tranfer,
+                ]);
+
+        }
+    }
+
     public function tranferM1($id)
     {
         $data = newstudentm1Model::find($id);

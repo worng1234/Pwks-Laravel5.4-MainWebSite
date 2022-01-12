@@ -375,6 +375,7 @@ Route::post('/increaseStudentAdd/{id}', 'StudentController@increaseStudentAdd');
 //รายงานตัวและย้ายข้อมูล
 Route::get('/documentUnsubmit/M1', 'AcademicsController@documentUnsubmitM1');
 Route::post('/Searchdocument/M1', 'AcademicsController@documentIndexM1');
+Route::post('/upDocumentStatus/M1', 'AcademicsController@upDocumentStatusM1');
 
 Route::get('/documentM1/{id}', 'AcademicsController@documentAllM1');
 
