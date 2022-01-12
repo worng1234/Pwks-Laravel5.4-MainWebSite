@@ -846,7 +846,7 @@ class AcademicsController extends Controller
 
     //เอกสารรายงานตัวและโอนย้ายข้อมูล
 
-    public function documentIndexM1(Request $request)
+    public function documentUnsubmitM1(Request $request)
     {
         if ($request->get('search') !== null) {
             $search = $request->get('search');
@@ -855,14 +855,14 @@ class AcademicsController extends Controller
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
-            return view('academic.document-and-tranfer.document-index-m1', ['data' => $data]);
+            return view('academic.document-and-tranfer.unsubmit-document.document-unsubmit-m1', ['data' => $data]);
         }
 
         $data = DB::table('new_student_register_m1')
             ->where('status_tranfer', '=', '02')
             ->get();
 
-        return view('academic.document-and-tranfer.document-index-m1', ['data' => $data]);
+        return view('academic.document-and-tranfer.unsubmit-document.document-unsubmit-m1', ['data' => $data]);
     }
 
     public function documentAllM1($id)
@@ -874,9 +874,14 @@ class AcademicsController extends Controller
             ->where('student_idcard', '=', $findID)
             ->first();
 
+        $data3 = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID)
+            ->first();
+
         return view('academic.document-and-tranfer.document-all-m1', [
             'data1' => $data1,
-            'data2' => $data2
+            'data2' => $data2,
+            'data3' => $data3
         ]);
     }
 

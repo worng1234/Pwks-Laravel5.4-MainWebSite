@@ -243,6 +243,7 @@
                                     </br>
                                     </br>
                                     <div class="card-title fw-mediumbold">สถานะหลักฐานการสมัคร</div>
+                                    <p class="card-category">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานชิ้นนั้นใหม่</p><br><br>
                                     </br>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover" style="width:100%">

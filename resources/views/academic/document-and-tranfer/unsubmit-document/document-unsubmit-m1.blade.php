@@ -143,150 +143,124 @@
 						</li>
 
 						<li class="nav-item ">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-
-									<li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li >
-													<a href="{{ url('/academic/class')}}">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classChange')}}">
-														<span class="sub-item">เลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/final')}}">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/finalChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/move')}}">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/moveChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/out')}}">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/outChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="nav-item ">
 							<a data-toggle="collapse" href="#agree">
 								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
+								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse " id="agree">
+							<div class="collapse" id="agree">
 								<ul class="nav nav-collapse">
-									<li >
-										<a href="{{ url('/SortNewstudentM1')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+									<li>
+										<a data-toggle="collapse" href="#formob1">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
 										</a>
+										<div class="collapse" id="formob1">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
-									<li >
-										<a href="{{ url('/SortNewstudentM4')}}">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
+									<li>
+										<a data-toggle="collapse" href="#formob2">
+											<span class="sub-item">ตรวจสอบแล้ว</span>
+											<span class="caret"></span>
 										</a>
+										<div class="collapse" id="formob2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
 						</li>
 
-                        <li class="nav-item active submenu">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#move">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
+								<i class="fas fa-file-alt"></i>
+								<p>หลักฐานรายงานตัวและ</br>โอนย้ายข้อมูล</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse show" id="move">
 								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="{{ url('/documentIndex/M1')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
+									<li>
+										<a data-toggle="collapse" href="#formob3">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
 										</a>
+										<div class="collapse show" id="formob3">
+											<ul class="nav nav-collapse subnav">
+												<li class="active">
+													<a href="{{ url('/documentUnsubmit/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
-									<li >
-										<a href="{{ url('/documentIndex/M4')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
+									<li>
+										<a data-toggle="collapse" href="#formob4">
+											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
+											<span class="caret"></span>
 										</a>
+										<div class="collapse" id="formob4">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
-									<li >
-										<a href="{{ url('/tranferAllM1')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
+									<li>
+										<a data-toggle="collapse" href="#formob5">
+											<span class="sub-item">โอนย้ายแล้ว</span>
+											<span class="caret"></span>
 										</a>
-									</li>
-									<li >
-										<a href="{{ url('/tranferAllM4')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
-										</a>
+										<div class="collapse" id="formob5">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -363,7 +337,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; ตรวจสอบเอกสารรายงานตัวในระดับมัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-file-alt"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> ยังไม่ได้ตรวจสอบ <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
@@ -403,7 +377,7 @@
 														<center>โอนย้ายข้อมูล</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>ตรวจสอบเอกสารและ</br>โอนย้ายข้อมูล</center>
+														<center>ตรวจสอบหลักฐานและ</br>โอนย้ายข้อมูล</center>
 													</th>
 												</tr>
 											</thead>
@@ -413,15 +387,15 @@
 													<td align="center">{{$value->idNumber}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
 													<td align="center">
-                                                        @if ($value->status_report == '01')
-                                                            ส่งเอกสารแล้ว
+                                                        @if ($value->status_report == '02')
+                                                            <p style="color:blue;">ส่งเอกสารแล้ว</p> 
                                                         @endif
                                                     </td>
 													<td align="center">
                                                         @if ($value->status_tranfer == '01')
-                                                            โอนย้ายแล้ว
+															<p style="color:green;">โอนย้ายแล้ว</p> 
                                                         @elseif ($value->status_tranfer == '02')
-                                                            ยังไม่ได้โอนย้าย
+															<p style="color:red;">ยังไม่ได้โอนย้าย</p> 
                                                         @endif</td>
 													<td align="center">
                                                         <a href='{{ url("/documentM1/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-file-invoice"></i></a>

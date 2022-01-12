@@ -198,8 +198,8 @@
                                                 <thead>
                                                     <th><center>เลขบัตรประจำตัวประชาชน</center></th>
                                                     <th><center>ชื่อนาม-สกุล</center></th>
-                                                    <th><center>สถานะเอกสารรายงานตัว</center></th>
-                                                    <th><center>ส่งเอกสาร</center></th>
+                                                    <th><center>หลักฐานรายงานตัว</center></th>
+                                                    <th><center>ส่งหลักฐาน</center></th>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($datas as $data)
@@ -208,16 +208,170 @@
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
                                                         <td align="center">
                                                             @if ($data->status_report == '01')
-                                                                ส่งเอกสารแล้ว
+                                                                <p style="color:green;">ผ่าน</p>
                                                             @elseif ($data->status_report == '02')
-                                                                ยังไม่ได้ส่งเอกสาร
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($data->status_report == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
                                                             @else
-                                                                ไม่ผ่าน
+                                                                ยังไม่ได้ส่งหลักฐาน
                                                             @endif
                                                         </td>
                                                         <td align="center"><a href='{{ url("/documentPhotoM1/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
                                                     </tr>
                                                     @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </br>
+                                    </br>
+                                    <div class="card-title fw-mediumbold">สถานะหลักฐานการรายงานตัว</div>
+                                    <p class="card-category">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานที่ไม่ผ่านใหม่</p><br><br>
+                                    </br>
+
+
+                                        <div class="table-responsive" >
+                                            <table class="table table-bordered table-striped table-hover" style="width:100%">
+                                                <thead>
+                                                    <th><center>สถานะหลักฐาน</center></th>
+                                                    <th><center>สำเนาบัตรประชาชนบิดา</center></th>
+                                                    <th><center>สำเนาบัตรประชาชนมารดา</center></th>
+                                                    <th><center>สำเนาทะเบียนบ้านบิดา</center></th>
+                                                    <th><center>สำเนาทะเบียนบ้านมารดา</center></th>
+                                                    <th><center>สำเนาบัตรประชาชนผู้ปกครอง</center></th>
+                                                    <th><center>สำเนาทะเบียนบ้านผู้ปกครอง</center></th>
+                                                    <th><center>ใบ ปพ.1 (ด้านหน้า)</center></th>
+                                                    <th><center>ใบ ปพ.1 (ด้านหลัง)</center></th>
+                                                    <th><center>ใบสูติบัตร</center></th>
+                                                    <th><center>ใบรับรองความพิการ</center></th>
+                                                    <th><center>แก้ไขหลักฐาน</center></th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="center">
+                                                            @if ($data->status_report == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($data->status_report == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($data->status_report == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_idcard_father == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_idcard_father == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_idcard_father == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_idcard_mother == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_idcard_mother == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_idcard_mother == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_house_father == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_house_father == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_house_father == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_house_mother == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_house_mother == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_house_mother == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_idcard_parent == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_idcard_parent == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_idcard_parent == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_house_parent == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_house_parent == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_house_parent == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_front_grade == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_front_grade == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_front_grade == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_back_grade == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_back_grade == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_back_grade == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_birth_certificate == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_birth_certificate == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_birth_certificate == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center">
+                                                            @if ($status->status_disability_certificate == '01')
+                                                                <p style="color:green;">ผ่าน</p>
+                                                            @elseif ($status->status_disability_certificate == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($status->status_disability_certificate == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td align="center"><a href='{{ url("/documentPhotoM1/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>

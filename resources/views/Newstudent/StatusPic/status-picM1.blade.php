@@ -332,6 +332,15 @@
 											<p style="margin-left: 25px;  font-size: 15px;"><b>เอกสาร</b></p>
 										</div>
                                     <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data3->status_profile == "02")
+                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_profile == NULL)
+                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
                                                 <a href='{{ url("/ProfileStudentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
@@ -340,21 +349,24 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_profile">
-                                                    @if ($data3->status_profile == '01')
-                                                    <option value="01">ผ่าน</option>
-                                                    @elseif ($data3->status_profile == '02')
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    @else
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
+                                                    <option value="01" <?php if($data3->status_profile == "01"){?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                    <option value="02" <?php if($data3->status_profile == "02"){?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                    <option value="03" <?php if($data3->status_profile == "03"){?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                    <option value="NULL" <?php if ($data3->status_profile == NULL) { ?> selected="selected" <?php } ?>></option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data3->status_idcard_student == "02")
+                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_idcard_student == NULL)
+                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
                                                 <a href='{{ url("/IdCardStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
@@ -363,21 +375,24 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_student">
-                                                    @if ($data3->status_idcard_student == '01')
-                                                    <option value="01">ผ่าน</option>
-                                                    @elseif ($data3->status_idcard_student == '02')
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    @else
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
+                                                    <option value="01" <?php if($data3->status_idcard_student == "01"){?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                    <option value="02" <?php if($data3->status_idcard_student == "02"){?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                    <option value="03" <?php if($data3->status_idcard_student == "03"){?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                    <option value="NULL" <?php if ($data3->status_idcard_student == NULL) { ?> selected="selected" <?php } ?>></option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data3->status_house_student == "02")
+                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_student == NULL)
+                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
                                                 <a href='{{ url("/HouseStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
@@ -386,21 +401,24 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_house_student">
-                                                    @if ($data3->status_house_student == '01')
-                                                    <option value="01">ผ่าน</option>
-                                                    @elseif ($data3->status_house_student == '02')
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    @else
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
+                                                    <option value="01" <?php if($data3->status_house_student == "01"){?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                    <option value="02" <?php if($data3->status_house_student == "02"){?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                    <option value="03" <?php if($data3->status_house_student == "03"){?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                    <option value="NULL" <?php if ($data3->status_house_student == NULL) { ?> selected="selected" <?php } ?>></option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data3->status_submit_student == "02")
+                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_submit_student == NULL)
+                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
                                                 <a href='{{ url("/SubmitStudentM1/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
@@ -409,16 +427,10 @@
                                         <div class="col-md-3 col-md-3">
                                             <div class="form-group">
                                                 <select class="form-control" id="formGroupDefaultSelect" name="status_submit_student">
-                                                    @if ($data3->status_submit_student == '01')
-                                                    <option value="01">ผ่าน</option>
-                                                    @elseif ($data3->status_submit_student == '02')
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    @else
-                                                    <option value="03">ไม่ผ่าน</option>
-                                                    @endif
-                                                    <option value="01">ผ่าน</option>
-                                                    <option value="02">รอตรวจสอบ</option>
-                                                    <option value="03">ไม่ผ่าน</option>
+                                                    <option value="01" <?php if($data3->status_submit_student == "01"){?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                    <option value="02" <?php if($data3->status_submit_student == "02"){?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                    <option value="03" <?php if($data3->status_submit_student == "03"){?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                    <option value="NULL" <?php if ($data3->status_submit_student == NULL) { ?> selected="selected" <?php } ?>></option>
                                                 </select>
                                             </div>
                                         </div>

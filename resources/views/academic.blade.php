@@ -171,6 +171,78 @@
 							</div>
 						</li>
 
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#move">
+								<i class="fas fa-file-alt"></i>
+								<p>หลักฐานรายงานตัวและ</br>โอนย้ายข้อมูล</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="move">
+								<ul class="nav nav-collapse">
+								<li>
+										<a data-toggle="collapse" href="#formob3">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse " id="formob3">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/documentUnsubmit/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob4">
+											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob4">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob5">
+											<span class="sub-item">โอนย้ายแล้ว</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob5">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
@@ -263,37 +335,7 @@
 							</div>
 						</li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#move">
-								<i class="fas fa-file-alt"></i>
-								<p>จัดการเอกสารรายงานตัว</br>และโอนย้ายข้อมูล</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="move">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ url('/documentIndex/M1')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/documentIndex/M4')}}">
-											<span class="sub-item">ตรวจสอบเอกสารรายงานตัวและโอนย้ายข้อมูลมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/tranferAllM1')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 1 </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/tranferAllM4')}}">
-											<span class="sub-item">รายชื่อที่โอนย้ายแล้วชั้นมัธยมศึกษาปีที่ 4 </span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+
 
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">

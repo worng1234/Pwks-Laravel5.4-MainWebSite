@@ -183,7 +183,7 @@
 									<div class="card-body">
 										<!-- อัพโหลดรูปภาพ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp; ขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-4 col-md-4">
@@ -321,13 +321,13 @@
 									</div>
 
 									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
+										<button type="submit" class="btn btn-success" ><strong>ยืนยัน</strong></button>
 										<a href='{{ url("/Newstudent/documentM1" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 									</div><br>
 							</div>
-							</form>
 						</div>
 					</div>
+					</form>
 
 				</div>
 			</div>
