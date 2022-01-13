@@ -77,6 +77,9 @@ Route::get('/AgreeMentNewstudentRegisterM4', function () {
 //success Register
 Route::get('/Success/RegisterM1', 'newstudentm1Controller@successRegiter');
 
+//Unsuccess Register
+Route::get('/Unsuccess/RegisterM1', 'newstudentm1Controller@UnsuccessRegiter');
+
 //studentm1
 Route::get('/UnsubmitObject/M1', 'newstudentm1Controller@index');
 Route::get('/SubmitObject/M1', 'newstudentm1Controller@submitObjectM1');
@@ -375,9 +378,12 @@ Route::post('/increaseStudentAdd/{id}', 'StudentController@increaseStudentAdd');
 //รายงานตัวและย้ายข้อมูล
 Route::get('/documentUnsubmit/M1', 'AcademicsController@documentUnsubmitM1');
 Route::post('/Searchdocument/M1', 'AcademicsController@documentIndexM1');
-Route::post('/upDocumentStatus/M1', 'AcademicsController@upDocumentStatusM1');
-
 Route::get('/documentM1/{id}', 'AcademicsController@documentAllM1');
+Route::post('/upDocumentStatusM1/{id}', 'AcademicsController@upDocumentStatusM1');
+
+Route::get('/submitNotTranfer/M1', 'AcademicsController@submitNotTranferM1');
+Route::post('/SearchsubmitNotTranferM1', 'AcademicsController@submitNotTranferM1');
+
 
 Route::get('/tranferM1/{id}', 'AcademicsController@tranferM1');
 Route::post('/tranferM1Insert/{id}', 'AcademicsController@tranferM1Insert');
@@ -390,6 +396,10 @@ Route::get('/documentM4/{id}', 'AcademicsController@documentAllM4');
 
 Route::get('/tranferM4/{id}', 'AcademicsController@tranferM4');
 Route::post('/tranferM4Insert/{id}', 'AcademicsController@tranferM4Insert');
+
+//เปลี่ยนปีการศึกษาสำหรับสมัครเข้าเรียน
+Route::get('/RegisterYear/{id}', 'AcademicsController@RegisterYear');
+Route::post('/EditRegisterYear/{id}', 'AcademicsController@EditRegisterYear');
 
 //โอนย้ายข้อมูลแล้ว
 Route::get('/tranferAllM1', 'AcademicsController@tranferM1All');

@@ -12,6 +12,7 @@ use App\Models\studentdetailModel;
 use App\Models\talentstudentModel;
 use App\Models\newstudentm1Model;
 use App\Models\newstudentm4Model;
+use App\Models\registeryearModel;
 use App\Student;
 use App\Models\classroomModel;
 use App\Models\classmajorModel;
@@ -209,6 +210,21 @@ class AcademicsController extends Controller
              'm6_all' => $m6_all,
 
         ]);
+    }
+
+    //กำหนดปีการศึกษาที่ใช้สมัครเรียน
+    public function RegisterYear($id)
+    {
+        $data = registeryearModel::find($id);
+        return view('academic.register-year.register-year-edit', ['data' => $data]);
+    }
+
+    public function EditRegisterYear(Request $request, $id)
+    {
+        $data = registeryearModel::find($id);
+        $data->update($request->all());
+
+        return redirect('/RegisterYear/1');
     }
 
     //เลื่อนชั้นเรียน
@@ -887,13 +903,15 @@ class AcademicsController extends Controller
 
     public function upDocumentStatusM1(Request $request, $id)
     {
+        $data1 = newstudentm1Model::find($id);
+
         if ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
         && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
         && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -910,7 +928,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -923,7 +941,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -939,7 +957,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -951,7 +969,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -966,7 +984,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -978,7 +996,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -992,7 +1010,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1005,7 +1023,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -1021,7 +1039,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1033,7 +1051,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
@@ -1046,7 +1064,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1058,7 +1076,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
@@ -1070,7 +1088,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1082,7 +1100,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1097,7 +1115,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1109,7 +1127,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1123,7 +1141,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1134,7 +1152,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1147,7 +1165,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1158,7 +1176,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1170,7 +1188,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1182,7 +1200,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -1196,7 +1214,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1208,7 +1226,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -1222,7 +1240,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1233,7 +1251,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -1246,7 +1264,7 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
@@ -1257,7 +1275,7 @@ class AcademicsController extends Controller
         && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
         && $request->get('status_birth_certificate') == '01' ){
 
-            $status = DB::table('tatus_pic')
+            $status = DB::table('status_pic')
                 ->where('student_idcard', '=' ,$request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
@@ -1269,14 +1287,101 @@ class AcademicsController extends Controller
 
             $status_report = "01";
             $status_tranfer = "02";
-            $data = DB::table('newstudent_register_m1')
+            $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
                     'status_report' =>$status_report,
                     'status_tranfer' =>$status_tranfer,
                 ]);
 
+        } else {
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+            ]);
+
+            $status_report = "03";
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' =>$status_report,
+            ]);
         }
+
+        return redirect('/submitNotTranfer/M1');
+    }
+
+    public function submitNotTranferM1(Request $request)
+    {
+        if ($request->get('search') !== null) {
+            $search = $request->get('search');
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
+
+        } elseif ($request->get('search2') !== null) {
+            $search2 = $request->get('search2');
+            $data = DB::table('new_student_register_m1')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
+
+        } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m1')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
+
+        } elseif ($request->get('search3') !== null) {
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m1')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
+
+        } elseif ($request->get('search') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
+            $search = $request->get('search');
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
+        }
+
+        $data = DB::table('new_student_register_m1')
+            ->where('status_tranfer', '=', '02')
+            ->where('status_report', '=', '01')
+            ->orWhere('status_report', '=', '03')
+            ->get();
+
+        return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
     }
 
     public function tranferM1($id)
@@ -1543,14 +1648,14 @@ class AcademicsController extends Controller
                 ->where('status_tranfer', '=', '01')
                 ->get();
 
-            return view('academic.document-and-tranfer.tranfer-all-m1', ['data' => $data]);
+            return view('academic.document-and-tranfer.tranfers.tranfer-all-m1', ['data' => $data]);
         }
 
         $data = DB::table('new_student_register_m1')
             ->where('status_tranfer', '=', '01')
             ->get();
 
-        return view('academic.document-and-tranfer.tranfer-all-m1', ['data' => $data]);
+        return view('academic.document-and-tranfer.tranfers.tranfer-all-m1', ['data' => $data]);
     }
 
     public function AllDocumentM1($id)

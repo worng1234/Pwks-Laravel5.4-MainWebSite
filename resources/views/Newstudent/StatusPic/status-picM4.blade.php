@@ -469,8 +469,8 @@
                                     </div>
 
                                     <div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
-                                        <a href="{{url('/SortNewstudentM4')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+                                        <a href="{{url('/SortNewstudentM4')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-times"></i> ย้อนกลับ</a>
 									</div><br>
                                 </div>
 

@@ -778,8 +778,8 @@
 
 
                                         <div class="card-footer" align="center">
-                                            <button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
-                                            <a href='{{ url("/documentAllM1/{$data->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
+                                            <button type="submit" class="btn btn-success"><strong><i class="fas fa-save"></i> ยืนยัน</strong></button>
+                                            <a href='{{ url("/documentAllM1/{$data->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong><i class="fas fa-times"></i> ย้อนกลับ</strong></a>
                                         </div><br>
                                     </div>
                                 </div>

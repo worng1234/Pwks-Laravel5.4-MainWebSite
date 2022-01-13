@@ -623,8 +623,8 @@
                                     </div>
 
                                     <div class="card-footer" align="center">
-                                        <button type="submit" class="btn btn-success" style="margin-right: 20px;">ยืนยัน</button>
-                                        <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+                                        <button type="submit" class="btn btn-success" style="margin-right: 20px;"><i class="fas fa-save"></i>  ยืนยัน</button>
+                                        <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-times"></i> ย้อนกลับ</a>
                                     </div><br>
                                 </div>
                             </div>

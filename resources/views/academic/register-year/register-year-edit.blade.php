@@ -99,9 +99,9 @@
 					<div class="user">
 						<div class="info">
 
-							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('academic')->user()->prename}}{{ Auth::guard('academic')->user()->fname}} </br>{{ Auth::guard('academic')->user()->surname}}</label>
-							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
-							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
+							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
+							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
 
 
 							<div class="clearfix"></div>
@@ -112,14 +112,14 @@
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
 
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a href="{{ url('/academic')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>
 						</li>
 
-						<li class="nav-item ">
+						<li class="nav-item active">
 							<a href='{{ url("/RegisterYear/1")}}'>
 								<i class="fas fa-calendar-alt"></i>
 								<p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
@@ -186,7 +186,7 @@
 							</a>
 							<div class="collapse" id="move">
 								<ul class="nav nav-collapse">
-								<li>
+									<li>
 										<a data-toggle="collapse" href="#formob3">
 											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
@@ -343,7 +343,6 @@
 						</li>
 
 
-
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
@@ -352,62 +351,14 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
+										<a href="academic-basic-info-class-all.html">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#files">
-								<i class="fas fa-folder-open"></i>
-								<p>ออกเอกสารทั้งหมด</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="files">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li>
-										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StudentAll')}}">
-											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
-											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
-											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
+										<a href="academic-basic-info-year-all.html">
+											<span class="sub-item">กำหนดปีการศึกษา</span>
 										</a>
 									</li>
 								</ul>
@@ -452,218 +403,61 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i> &nbsp;&nbsp; ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</div>
+										<div class="card-title"><i class="fas fa-calendar-alt"></i> &nbsp;&nbsp; กำหนดปีการศึกษาสำหรับสมัครเข้าเรียน</div>
+
 									</div>
 								</div>
 
-								<div class="card-body">
-									<h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u>
-										<h3>
-											<div style="margin-top: 30px;">
-												<table class="table table-bordered table-hover table-condesed">
-													<thead class="bg-info">
-														<th width="5%" class="saraban">
-															<center>ระดับชั้น</center>
-														</th>
-														<th width="5%" class="saraban">
-															<center>ชาย</center>
-														</th>
-														<th width="5%" class="saraban">
-															<center>หญิง</center>
-														</th>
-														<th width="5%" class="saraban">
-															<center>รวม</center>
-														</th>
-													</thead>
-													<tbody>
-														<tr>
-															<td align="center" class="table-secondary">ม.1</td>
-															@if ($m1_m_all != 0)
-															<td align="center">{{$m1_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m1_fm_all != 0)
-															<td align="center">{{$m1_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m1_all != 0)
-															<td align="center" class="table-success">{{$m1_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-secondary">ม.2</td>
-															@if ($m2_m_all != 0)
-															<td align="center">{{$m2_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m2_fm_all != 0)
-															<td align="center">{{$m2_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m2_all != 0)
-															<td align="center" class="table-success">{{$m2_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-secondary">ม.3</td>
-															@if ($m3_m_all != 0)
-															<td align="center">{{$m3_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m3_fm_all != 0)
-															<td align="center">{{$m3_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m3_all != 0)
-															<td align="center" class="table-success">{{$m3_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-secondary">ม.4</td>
-															@if ($m4_m_all != 0)
-															<td align="center">{{$m4_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m4_fm_all != 0)
-															<td align="center">{{$m4_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m4_all != 0)
-															<td align="center" class="table-success">{{$m4_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-secondary">ม.5</td>
-															@if ($m5_m_all != 0)
-															<td align="center">{{$m5_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m5_fm_all != 0)
-															<td align="center">{{$m5_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m5_all != 0)
-															<td align="center" class="table-success">{{$m5_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-secondary">ม.6</td>
-															@if ($m6_m_all != 0)
-															<td align="center">{{$m6_m_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m6_fm_all != 0)
-															<td align="center">{{$m6_fm_all}}</td>
-															@else
-															<td align="center">0</td>
-															@endif
-															@if ($m6_all != 0)
-															<td align="center" class="table-success">{{$m6_all}}</td>
-															@else
-															<td align="center" class="table-success">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-warning">ม.ต้น</td>
-															@if ($m123_m_all != 0)
-															<td align="center" class="table-warning">{{$m123_m_all}}</td>
-															@else
-															<td align="center" class="table-warning">0</td>
-															@endif
-															@if ($m123_fm_all != 0)
-															<td align="center" class="table-warning">{{$m123_fm_all}}</td>
-															@else
-															<td align="center" class="table-warning">0</td>
-															@endif
-															@if ($m123_all != 0)
-															<td align="center" class="table-primary">{{$m123_all}}</td>
-															@else
-															<td align="center" class="table-primary">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-warning">ม.ปลาย</td>
-															@if ($m456_m_all != 0)
-															<td align="center" class="table-warning">{{$m456_m_all}}</td>
-															@else
-															<td align="center" class="table-warning">0</td>
-															@endif
-															@if ($m456_fm_all != 0)
-															<td align="center" class="table-warning">{{$m456_fm_all}}</td>
-															@else
-															<td align="center" class="table-warning">0</td>
-															@endif
-															@if ($m456_all != 0)
-															<td align="center" class="table-primary">{{$m456_all}}</td>
-															@else
-															<td align="center" class="table-primary">0</td>
-															@endif
-														</tr>
-														<tr>
-															<td align="center" class="table-danger">ม.ต้น + ม.ปลาย</td>
-															@if ($m_m_all != 0)
-															<td align="center" class="table-danger">{{$m_m_all}}</td>
-															@else
-															<td align="center" class="table-danger">0</td>
-															@endif
-															@if ($m_fm_all != 0)
-															<td align="center" class="table-danger">{{$m_fm_all}}</td>
-															@else
-															<td align="center" class="table-danger">0</td>
-															@endif
-															@if ($m_all != 0)
-															<td align="center" class="bg-danger">{{$m_all}}</td>
-															@else
-															<td align="center" class="bg-danger">0</td>
-															@endif
-														</tr>
-													</tbody>
-												</table>
+								<form role="form" method="post" action="{{ url('EditRegisterYear', $data->id)}}">
+									{{csrf_field()}}
+									<div class="card-body"><br>
+										<div class="container">
+											<p>*กำหนดปีการศึกษา เพื่อใช้สำหรับในการรับสมัครนักเรียนใหม่เท่านั้น</p>
+											<div class="row">
+												<div class="col-2 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ปีการศึกษาปัจุบัน</label>
+														<input type="text" class="form-control"  value="{{$data->register_year}}" readonly>
+													</div>
+												</div>
+												<div class="col-2 col-md-2">
+													<div class="form-group form-group-default">
+														<label>แก้ไข</label>
+														<input type="text" class="form-control" name="register_year" value="{{$data->register_year}}">
+													</div>
+												</div>
+												<div>
+													<div class="form-group ">
+														<button type="submit" class="btn btn-success">ยืนยัน</button>
+													</div>
+												</div>
 											</div>
-								</div>
+								</form>
 							</div>
 						</div>
+
 					</div>
 				</div>
-
 			</div>
-			<!-- สิ้นสุดเนื้อหา -->
-			<!-- เริ่ม Footer -->
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-
-							<li class="nav-item">
-								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</footer>
 		</div>
-		<!-- สิ้นสุด Footter -->
+
+	</div>
+	<!-- สิ้นสุดเนื้อหา -->
+	<!-- เริ่ม Footer -->
+	<footer class="footer">
+		<div class="container-fluid">
+			<nav class="pull-left">
+				<ul class="nav">
+
+					<li class="nav-item">
+						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+	</div>
+	<!-- สิ้นสุด Footter -->
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
@@ -703,6 +497,20 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo.js"></script>
 	<script src="../assets/js/demo.js"></script>
+
+	<!-- Date time picker -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+				"pageLength": 50,
+				"language": {
+					"search": "ค้นหาข้อมูล :"
+				},
+				"ordering": false
+			});
+		});
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',
@@ -748,6 +556,54 @@
 			styleWrapper: true,
 			styleText: true
 		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
 	</script>
 </body>
 

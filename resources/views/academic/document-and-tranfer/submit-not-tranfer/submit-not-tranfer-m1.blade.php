@@ -207,9 +207,9 @@
 											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse show" id="formob3">
+										<div class="collapse " id="formob3">
 											<ul class="nav nav-collapse subnav">
-												<li class="active">
+												<li >
 													<a href="{{ url('/documentUnsubmit/M1')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
 													</a>
@@ -227,10 +227,10 @@
 											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse" id="formob4">
+										<div class="collapse show" id="formob4">
 											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/UnsubmitObject/M1')}}">
+												<li class="active">
+													<a href="{{ url('/submitNotTranfer/M1')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
 													</a>
 												</li>
@@ -337,21 +337,38 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-file-alt"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> ยังไม่ได้ตรวจสอบ <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-file-alt"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
 
-								<form role="form" method="post" action="{{ url('/Searchdocument/M1')}}">
+								<form role="form" method="post" action="{{ url('/SearchsubmitNotTranferM1')}}">
 										{{csrf_field()}}
 										<div class="form-group">
 											<div class="row">
-												<div class="col-sm-4 col-md-4">
+												<div class="col-sm-4 col-md-3">
 													<div class="form-group form-group-default">
 														<label>รหัสบัตรประจำตัวประชาชน</label>
 														<input type="search" class="form-control" placeholder="" name="search">
 													</div>
 												</div>
+												<div class="col-sm-2 col-md-2">
+													<div class="form-group form-group-default">
+														<label>สถานะรายงานตัว</label>
+														<select name="search2" type="search" class="form-control" id="formGroupDefaultSelect">
+															<option></option>
+															<option value="01">ผ่าน</option>
+															<option value="03">ไม่ผ่าน</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-2 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ปีการศึกษา</label>
+														<input type="search" class="form-control" placeholder="" name="search3">
+													</div>
+												</div>
+												
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
 										</form>
@@ -364,19 +381,22 @@
 											<thead>
 												<tr>
 													<th scope="col" width="16%">
-														<center>รหัสบัตรประจำตัวประชาชน</center>
+														<center>เลขประจำตัว</br>ประชาชน</center>
 													</th>
-													<th scope="col" width="28">
+													<th scope="col" width="15%">
 														<center>ชื่อ-นามสกุล</center>
 													</th>
+													<th scope="col" width="15%">
+														<center>ปีการศึกษา</center>
+													</th>
 													<th scope="col" width="16%">
-														<center>สถานะรายงานตัว</center>
+														<center>สถานะ</br>รายงานตัว</center>
 													</th>
 													<th scope="col" width="10%">
 														<center>โอนย้ายข้อมูล</center>
 													</th>
 													<th scope="col" width="10%">
-														<center>ตรวจสอบหลักฐานและ</br>โอนย้ายข้อมูล</center>
+														<center>โอนย้ายข้อมูล</center>
 													</th>
 												</tr>
 											</thead>
@@ -384,10 +404,13 @@
 												@foreach ($data as $key => $value)
 												<tr>
 													<td align="center">{{$value->idNumber}}</td>
-													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
+													<td align="center">{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
+													<td align="center">{{$value->student_year}}</td>
 													<td align="center">
-                                                        @if ($value->status_report == '02')
-                                                            <p style="color:blue;">ส่งเอกสารแล้ว</p> 
+														@if ($value->status_report == '01')
+                                                            <p style="color:green;">ผ่าน</p>
+														@elseif ($value->status_report == '03')
+                                                            <p style="color:red;">ไม่ผ่าน</p>   
                                                         @endif
                                                     </td>
 													<td align="center">
@@ -397,7 +420,7 @@
 															<p style="color:red;">ยังไม่ได้โอนย้าย</p> 
                                                         @endif</td>
 													<td align="center">
-                                                        <a href='{{ url("/documentM1/{$value->id}")}}' class="btn btn-secondary btn-xs"><i class="fas fa-file-invoice"></i></a>
+														<a href='{{ url("/tranferM1/{$value->id}")}}' class="btn btn-secondary btn-sm" style="margin-left: auto;"><i class="fas fa-paste"></i></a>
 													</td>
 												</tr>
 												@endforeach

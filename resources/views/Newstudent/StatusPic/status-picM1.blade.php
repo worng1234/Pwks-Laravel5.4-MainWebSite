@@ -437,8 +437,8 @@
                                     </div>
 
                                     <div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" ><strong>ยืนยันข้อมูล</strong></button>
-                                        <a href="{{url('/UnsubmitObject/M1')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+										<button type="submit" class="btn btn-success" ><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+                                        <a href="{{url('/UnsubmitObject/M1')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-times"></i> ย้อนกลับ</a>
 									</div><br>
                                 </div>
                                 </form>
