@@ -128,9 +128,9 @@
 					<div class="user">
 						<div class="info">
 
-							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('academic')->user()->prename}}{{ Auth::guard('academic')->user()->fname}} </br>{{ Auth::guard('academic')->user()->surname}}</label>
+							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>

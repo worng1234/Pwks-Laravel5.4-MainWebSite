@@ -13,24 +13,42 @@ class newstudentm4Controller extends Controller
 {
     public function edit($id)
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $newstudentm4Model = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.fixprofilenewstudentm4', compact('newstudentm4Model'));
+        return view('Newstudent.fixprofilenewstudentm4', [
+            'newstudentm4Model' => $newstudentm4Model,
+            'school_year' => $school_year,
+        ]);
     }
 
     public function index()
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data =  $datas = DB::table('new_student_register_m4')
             ->where('status_picall', '=', '02')
             ->get();
-        return view('Newstudent.unsubmit-object.unsubmit-object-m4', compact('data'));
+        return view('Newstudent.unsubmit-object.unsubmit-object-m4', [
+            'datas' => $datas,
+            'school_year' => $school_year,
+        ]);
     }
 
     public function submitObjectM4()
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data =  $datas = DB::table('new_student_register_m4')
             ->where('status_picall', '=', '01')
             ->get();
-        return view('Newstudent.submit-object.submit-object-m4', compact('data'));
+        return view('Newstudent.submit-object.submit-object-m4', [
+            'datas' => $datas,
+            'school_year' => $school_year,
+        ]);
     }
 
     public function create()
@@ -1183,13 +1201,22 @@ class newstudentm4Controller extends Controller
 
     public function shownewstudentm4($id)
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.Edit-Newstudent.show-newstudentm4byID', compact('data'));
+        return view('Newstudent.Edit-Newstudent.show-newstudentm4byID', [
+            'data' => $data,
+            'school_year' => $school_year,
+        ]);
     }
 
     //statusPic
     public function showStatusPic($id)
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $data1 = newstudentm4Model::findOrFail($id);
 
         $pic = $data1->id_number;
@@ -1205,7 +1232,8 @@ class newstudentm4Controller extends Controller
         return view('Newstudent.StatusPic.status-picM4', [
             'data1' => $data1,
             'data2' => $data2,
-            'data3' => $data3
+            'data3' => $data3,
+            'school_year' => $school_year,
         ]);
     }
 
