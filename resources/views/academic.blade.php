@@ -167,7 +167,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/SubmitObject/M1')}}">
+													<a href="{{ url('/SubmitObject/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -239,7 +239,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('tranferAllM1')}}">
+													<a href="{{ url('/tranferAllM4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
