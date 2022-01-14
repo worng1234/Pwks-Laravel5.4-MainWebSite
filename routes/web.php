@@ -393,10 +393,13 @@ Route::get('/tranferM1/{id}', 'AcademicsController@tranferM1');
 Route::post('/tranferM1Insert/{id}', 'AcademicsController@tranferM1Insert');
 
 //ม.4
-Route::get('/documentIndex/M4', 'AcademicsController@documentIndexM4');
+Route::get('/documentUnsubmit/M4', 'AcademicsController@documentUnsubmitM4');
 Route::post('/Searchdocument/M4', 'AcademicsController@documentIndexM4');
-
 Route::get('/documentM4/{id}', 'AcademicsController@documentAllM4');
+Route::post('/upDocumentStatusM4/{id}', 'AcademicsController@upDocumentStatusM4');
+
+Route::get('/submitNotTranfer/M4', 'AcademicsController@submitNotTranferM4');
+Route::post('/SearchsubmitNotTranferM4', 'AcademicsController@submitNotTranferM4');
 
 Route::get('/tranferM4/{id}', 'AcademicsController@tranferM4');
 Route::post('/tranferM4Insert/{id}', 'AcademicsController@tranferM4Insert');

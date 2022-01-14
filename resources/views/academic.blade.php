@@ -199,7 +199,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('/documentUnsubmit/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -219,7 +219,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('/submitNotTranfer/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -239,7 +239,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('tranferAllM1')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>

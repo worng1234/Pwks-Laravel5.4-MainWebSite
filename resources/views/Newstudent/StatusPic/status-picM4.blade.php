@@ -335,9 +335,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_profile == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_profile == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_profile == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -361,9 +363,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_idcard_student == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_idcard_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_idcard_student == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -387,9 +391,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_house_student == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_house_student == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -413,9 +419,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_submit_student == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_submit_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_submit_student == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>

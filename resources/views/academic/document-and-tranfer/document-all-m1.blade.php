@@ -341,9 +341,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_idcard_father == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_idcard_father == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_idcard_father == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -369,9 +371,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_idcard_mother == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_idcard_mother == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_idcard_mother == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -399,9 +403,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_house_father == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_father == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_house_father == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -425,9 +431,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_house_mother == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_mother == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_house_mother == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -456,9 +464,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_idcard_parent == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_idcard_parent == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_idcard_parent == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -482,9 +492,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_house_parent == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_parent == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_house_parent == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -513,9 +525,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_front_grade == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_front_grade == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_front_grade == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -539,9 +553,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_back_grade == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_back_grade == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_back_grade == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -565,9 +581,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_birth_certificate == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_birth_certificate == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_birth_certificate == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>
@@ -596,9 +614,11 @@
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
                                                 @if($data3->status_disability_certificate == "02")
-                                                <p><i class="fas fa-check-circle" style="color:green;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_disability_certificate == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
                                                 @elseif($data3->status_disability_certificate == NULL)
-                                                <p><i class="fas fa-times-circle" style="color:red;"></i></p>
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
                                                 @endif
                                             </div>
                                         </div>

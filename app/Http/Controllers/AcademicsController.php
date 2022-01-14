@@ -44,123 +44,123 @@ class AcademicsController extends Controller
 
         //ม.1
         $m1_m = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('gender', '=', 'ชาย')
-        ->get();
+            ->where('student_class', '=', '1')
+            ->where('gender', '=', 'ชาย')
+            ->get();
         $m1_m_all = count($m1_m);
 
         $m1_fm = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->where('gender', '=', 'หญิง')
-        ->get();
+            ->where('student_class', '=', '1')
+            ->where('gender', '=', 'หญิง')
+            ->get();
         $m1_fm_all = count($m1_fm);
 
         $m1 = DB::table('student_core')
-        ->where('student_class', '=', '1')
-        ->get();
+            ->where('student_class', '=', '1')
+            ->get();
         $m1_all = count($m1);
 
-         //ม.2
-         $m2_m = DB::table('student_core')
-         ->where('student_class', '=', '2')
-         ->where('gender', '=', 'ชาย')
-         ->get();
-         $m2_m_all = count($m2_m);
- 
-         $m2_fm = DB::table('student_core')
-         ->where('student_class', '=', '2')
-         ->where('gender', '=', 'หญิง')
-         ->get();
-         $m2_fm_all = count($m2_fm);
- 
-         $m2 = DB::table('student_core')
-         ->where('student_class', '=', '2')
-         ->get();
-         $m2_all = count($m2);
+        //ม.2
+        $m2_m = DB::table('student_core')
+            ->where('student_class', '=', '2')
+            ->where('gender', '=', 'ชาย')
+            ->get();
+        $m2_m_all = count($m2_m);
 
-          //ม.3
+        $m2_fm = DB::table('student_core')
+            ->where('student_class', '=', '2')
+            ->where('gender', '=', 'หญิง')
+            ->get();
+        $m2_fm_all = count($m2_fm);
+
+        $m2 = DB::table('student_core')
+            ->where('student_class', '=', '2')
+            ->get();
+        $m2_all = count($m2);
+
+        //ม.3
         $m3_m = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('gender', '=', 'ชาย')
-        ->get();
+            ->where('student_class', '=', '3')
+            ->where('gender', '=', 'ชาย')
+            ->get();
         $m3_m_all = count($m3_m);
 
         $m3_fm = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->where('gender', '=', 'หญิง')
-        ->get();
+            ->where('student_class', '=', '3')
+            ->where('gender', '=', 'หญิง')
+            ->get();
         $m3_fm_all = count($m3_fm);
 
         $m3 = DB::table('student_core')
-        ->where('student_class', '=', '3')
-        ->get();
+            ->where('student_class', '=', '3')
+            ->get();
         $m3_all = count($m3);
 
-         //ม.4
-         $m4_m = DB::table('student_core')
-         ->where('student_class', '=', '4')
-         ->where('gender', '=', 'ชาย')
-         ->get();
-         $m4_m_all = count($m4_m);
- 
-         $m4_fm = DB::table('student_core')
-         ->where('student_class', '=', '4')
-         ->where('gender', '=', 'หญิง')
-         ->get();
-         $m4_fm_all = count($m4_fm);
- 
-         $m4 = DB::table('student_core')
-         ->where('student_class', '=', '4')
-         ->get();
-         $m4_all = count($m4);
+        //ม.4
+        $m4_m = DB::table('student_core')
+            ->where('student_class', '=', '4')
+            ->where('gender', '=', 'ชาย')
+            ->get();
+        $m4_m_all = count($m4_m);
 
-          //ม.5
+        $m4_fm = DB::table('student_core')
+            ->where('student_class', '=', '4')
+            ->where('gender', '=', 'หญิง')
+            ->get();
+        $m4_fm_all = count($m4_fm);
+
+        $m4 = DB::table('student_core')
+            ->where('student_class', '=', '4')
+            ->get();
+        $m4_all = count($m4);
+
+        //ม.5
         $m5_m = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('gender', '=', 'ชาย')
-        ->get();
+            ->where('student_class', '=', '5')
+            ->where('gender', '=', 'ชาย')
+            ->get();
         $m5_m_all = count($m5_m);
 
         $m5_fm = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->where('gender', '=', 'หญิง')
-        ->get();
+            ->where('student_class', '=', '5')
+            ->where('gender', '=', 'หญิง')
+            ->get();
         $m5_fm_all = count($m5_fm);
 
         $m5 = DB::table('student_core')
-        ->where('student_class', '=', '5')
-        ->get();
+            ->where('student_class', '=', '5')
+            ->get();
         $m5_all = count($m5);
 
-         //ม.6
-         $m6_m = DB::table('student_core')
-         ->where('student_class', '=', '6')
-         ->where('gender', '=', 'ชาย')
-         ->get();
-         $m6_m_all = count($m6_m);
- 
-         $m6_fm = DB::table('student_core')
-         ->where('student_class', '=', '6')
-         ->where('gender', '=', 'หญิง')
-         ->get();
-         $m6_fm_all = count($m6_fm);
- 
-         $m6 = DB::table('student_core')
-         ->where('student_class', '=', '6')
-         ->get();
-         $m6_all = count($m6);
+        //ม.6
+        $m6_m = DB::table('student_core')
+            ->where('student_class', '=', '6')
+            ->where('gender', '=', 'ชาย')
+            ->get();
+        $m6_m_all = count($m6_m);
 
-         $m123_m_all = $m1_m_all+$m2_m_all+$m3_m_all;
-         $m123_fm_all = $m1_fm_all+$m2_fm_all+$m3_fm_all;
-         $m123_all = $m123_m_all + $m123_fm_all;
+        $m6_fm = DB::table('student_core')
+            ->where('student_class', '=', '6')
+            ->where('gender', '=', 'หญิง')
+            ->get();
+        $m6_fm_all = count($m6_fm);
 
-         $m456_m_all = $m4_m_all+$m5_fm_all+$m6_m_all;
-         $m456_fm_all = $m4_fm_all+$m5_fm_all + $m6_fm_all;
-         $m456_all = $m456_m_all + $m456_fm_all;
+        $m6 = DB::table('student_core')
+            ->where('student_class', '=', '6')
+            ->get();
+        $m6_all = count($m6);
 
-         $m_m_all = $m1_m_all+$m2_m_all+$m3_m_all+$m4_m_all+$m5_fm_all+$m6_m_all;
-         $m_fm_all = $m1_fm_all+$m2_fm_all+$m3_fm_all+$m4_fm_all+$m5_fm_all + $m6_fm_all;
-         $m_all = $m123_all + $m456_all;
+        $m123_m_all = $m1_m_all + $m2_m_all + $m3_m_all;
+        $m123_fm_all = $m1_fm_all + $m2_fm_all + $m3_fm_all;
+        $m123_all = $m123_m_all + $m123_fm_all;
+
+        $m456_m_all = $m4_m_all + $m5_fm_all + $m6_m_all;
+        $m456_fm_all = $m4_fm_all + $m5_fm_all + $m6_fm_all;
+        $m456_all = $m456_m_all + $m456_fm_all;
+
+        $m_m_all = $m1_m_all + $m2_m_all + $m3_m_all + $m4_m_all + $m5_fm_all + $m6_m_all;
+        $m_fm_all = $m1_fm_all + $m2_fm_all + $m3_fm_all + $m4_fm_all + $m5_fm_all + $m6_fm_all;
+        $m_all = $m123_all + $m456_all;
 
         return view('academic', [
             //ปีการศึกษา
@@ -170,7 +170,7 @@ class AcademicsController extends Controller
             'm123_m_all' => $m123_m_all,
             'm123_fm_all' => $m123_fm_all,
             'm123_all' => $m123_all,
-            
+
             'm456_m_all' => $m456_m_all,
             'm456_fm_all' => $m456_fm_all,
             'm456_all' => $m456_all,
@@ -184,30 +184,30 @@ class AcademicsController extends Controller
             'm1_fm_all' => $m1_fm_all,
             'm1_all' => $m1_all,
 
-             //ม.2
-             'm2_m_all' => $m2_m_all,
-             'm2_fm_all' => $m2_fm_all,
-             'm2_all' => $m2_all,
+            //ม.2
+            'm2_m_all' => $m2_m_all,
+            'm2_fm_all' => $m2_fm_all,
+            'm2_all' => $m2_all,
 
-              //ม.3
+            //ม.3
             'm3_m_all' => $m3_m_all,
             'm3_fm_all' => $m3_fm_all,
             'm3_all' => $m3_all,
 
-             //ม.4
-             'm4_m_all' => $m4_m_all,
-             'm4_fm_all' => $m4_fm_all,
-             'm4_all' => $m4_all,
+            //ม.4
+            'm4_m_all' => $m4_m_all,
+            'm4_fm_all' => $m4_fm_all,
+            'm4_all' => $m4_all,
 
-              //ม.5
+            //ม.5
             'm5_m_all' => $m5_m_all,
             'm5_fm_all' => $m5_fm_all,
             'm5_all' => $m5_all,
 
-             //ม.6
-             'm6_m_all' => $m6_m_all,
-             'm6_fm_all' => $m6_fm_all,
-             'm6_all' => $m6_all,
+            //ม.6
+            'm6_m_all' => $m6_m_all,
+            'm6_fm_all' => $m6_fm_all,
+            'm6_all' => $m6_all,
 
         ]);
     }
@@ -905,14 +905,16 @@ class AcademicsController extends Controller
     {
         $data1 = newstudentm1Model::find($id);
 
-        if ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
-        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+        if (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -931,135 +933,29 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
-        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
-
-            $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
-                ->update([
-                    'status_idcard_father' => $request->get('status_idcard_father'),
-                    'status_idcard_mother' => $request->get('status_idcard_mother'),
-                    'status_house_father' => $request->get('status_house_father'),
-                    'status_house_mother' => $request->get('status_house_mother'),
-                    'status_idcard_parent' => $request->get('status_idcard_parent'),
-                    'status_house_parent' => $request->get('status_house_parent'),
-                    'status_front_grade' => $request->get('status_front_grade'),
-                    'status_back_grade' => $request->get('status_back_grade'),
-                    'status_birth_certificate' => $request->get('status_birth_certificate'),
-                ]);
-
-            $status_report = "01";
-            $status_tranfer = "02";
-            $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
-                ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
-                ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
-        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
-
-            $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
-                ->update([
-                    'status_idcard_father' => $request->get('status_idcard_father'),
-                    'status_idcard_mother' => $request->get('status_idcard_mother'),
-                    'status_house_father' => $request->get('status_house_father'),
-                    'status_house_mother' => $request->get('status_house_mother'),
-                    'status_front_grade' => $request->get('status_front_grade'),
-                    'status_back_grade' => $request->get('status_back_grade'),
-                    'status_birth_certificate' => $request->get('status_birth_certificate'),
-                    'status_disability_certificate' => $request->get('status_disability_certificate'),
-                ]);
-
-            $status_report = "01";
-            $status_tranfer = "02";
-            $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
-                ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
-                ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
-        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
-
-            $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
-                ->update([
-                    'status_idcard_father' => $request->get('status_idcard_father'),
-                    'status_idcard_mother' => $request->get('status_idcard_mother'),
-                    'status_house_father' => $request->get('status_house_father'),
-                    'status_house_mother' => $request->get('status_house_mother'),
-                    'status_front_grade' => $request->get('status_front_grade'),
-                    'status_back_grade' => $request->get('status_back_grade'),
-                    'status_birth_certificate' => $request->get('status_birth_certificate'),
-                ]);
-
-            $status_report = "01";
-            $status_tranfer = "02";
-            $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
-                ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
-                ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
-        && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
-
-            $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
-                ->update([
-                    'status_idcard_father' => $request->get('status_idcard_father'),
-                    'status_idcard_mother' => $request->get('status_idcard_mother'),
-                    'status_house_father' => $request->get('status_house_father'),
-                    'status_house_mother' => $request->get('status_house_mother'),
-                    'status_idcard_parent' => $request->get('status_idcard_parent'),
-                    'status_house_parent' => $request->get('status_house_parent'),
-                    'status_front_grade' => $request->get('status_front_grade'),
-                    'status_back_grade' => $request->get('status_back_grade'),
-                    'status_birth_certificate' => $request->get('status_birth_certificate'),
-                ]);
-
-            $status_report = "01";
-            $status_tranfer = "02";
-            $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
-                ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
-                ]);
-
         } elseif (
-        $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
                     'status_house_parent' => $request->get('status_house_parent'),
                     'status_front_grade' => $request->get('status_front_grade'),
                     'status_back_grade' => $request->get('status_back_grade'),
                     'status_birth_certificate' => $request->get('status_birth_certificate'),
-                    'status_disability_certificate' => $request->get('status_disability_certificate'),
                 ]);
 
             $status_report = "01";
@@ -1067,17 +963,127 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
         } elseif (
-        $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->update([
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m1')
+                ->where('idNumber', '=', $request->get('idNumber'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
                     'status_house_parent' => $request->get('status_house_parent'),
@@ -1091,17 +1097,18 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1118,17 +1125,18 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1144,16 +1152,17 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1168,16 +1177,17 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1191,17 +1201,18 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1217,17 +1228,18 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
-        && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1243,16 +1255,17 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'){
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1267,16 +1280,17 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
-        } elseif ($request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01' 
-        && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
-        && $request->get('status_birth_certificate') == '01' ){
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1290,13 +1304,12 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-                    'status_tranfer' =>$status_tranfer,
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
                 ]);
-
         } else {
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=' ,$request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1308,14 +1321,14 @@ class AcademicsController extends Controller
                     'status_back_grade' => $request->get('status_back_grade'),
                     'status_birth_certificate' => $request->get('status_birth_certificate'),
                     'status_disability_certificate' => $request->get('status_disability_certificate'),
-            ]);
+                ]);
 
             $status_report = "03";
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', '=', $request->get('idNumber'))
                 ->update([
-                    'status_report' =>$status_report,
-            ]);
+                    'status_report' => $status_report,
+                ]);
         }
 
         return redirect('/submitNotTranfer/M1');
@@ -1331,7 +1344,6 @@ class AcademicsController extends Controller
                 ->get();
 
             return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
-
         } elseif ($request->get('search2') !== null) {
             $search2 = $request->get('search2');
             $data = DB::table('new_student_register_m1')
@@ -1340,7 +1352,6 @@ class AcademicsController extends Controller
                 ->get();
 
             return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
-
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -1351,7 +1362,6 @@ class AcademicsController extends Controller
                 ->get();
 
             return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
-
         } elseif ($request->get('search3') !== null) {
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m1')
@@ -1360,7 +1370,6 @@ class AcademicsController extends Controller
                 ->get();
 
             return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m1', ['data' => $data]);
-
         } elseif ($request->get('search') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
             $search = $request->get('search');
             $search2 = $request->get('search2');
@@ -1492,7 +1501,7 @@ class AcademicsController extends Controller
         return redirect('/documentIndex/M1');
     }
 
-    public function documentIndexM4(Request $request)
+    public function documentUnsubmitM4(Request $request)
     {
         if ($request->get('search') !== null) {
             $search = $request->get('search');
@@ -1501,14 +1510,14 @@ class AcademicsController extends Controller
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
-            return view('academic.document-and-tranfer.document-index-m4', ['data' => $data]);
+            return view('academic.document-and-tranfer.unsubmit-document.document-unsubmit-m4', ['data' => $data]);
         }
 
         $data = DB::table('new_student_register_m4')
             ->where('status_tranfer', '=', '02')
             ->get();
 
-        return view('academic.document-and-tranfer.document-index-m4', ['data' => $data]);
+        return view('academic.document-and-tranfer.unsubmit-document.document-unsubmit-m4', ['data' => $data]);
     }
 
     public function documentAllM4($id)
@@ -1520,11 +1529,508 @@ class AcademicsController extends Controller
             ->where('student_idcard', '=', $findID)
             ->first();
 
+        $data3 = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID)
+            ->first();
+
 
         return view('academic.document-and-tranfer.document-all-m4', [
             'data1' => $data1,
-            'data2' => $data2
+            'data2' => $data2,
+            'data3' => $data3,
         ]);
+    }
+
+    public function upDocumentStatusM4(Request $request, $id)
+    {
+        $data1 = newstudentm4Model::find($id);
+
+        if (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_idcard_mother') == '01'
+            && $request->get('status_house_father') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_mother') == '01' && $request->get('status_house_mother') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_idcard_parent') == '01' && $request->get('status_house_parent') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01' && $request->get('status_disability_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } elseif (
+            $request->get('status_idcard_father') == '01' && $request->get('status_house_father') == '01'
+            && $request->get('status_front_grade') == '01' && $request->get('status_back_grade') == '01'
+            && $request->get('status_birth_certificate') == '01'
+        ) {
+
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                ]);
+
+            $status_report = "01";
+            $status_tranfer = "02";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                    'status_tranfer' => $status_tranfer,
+                ]);
+        } else {
+            $status = DB::table('status_pic')
+                ->where('student_idcard', '=', $request->get('id_number'))
+                ->update([
+                    'status_idcard_father' => $request->get('status_idcard_father'),
+                    'status_idcard_mother' => $request->get('status_idcard_mother'),
+                    'status_house_father' => $request->get('status_house_father'),
+                    'status_house_mother' => $request->get('status_house_mother'),
+                    'status_idcard_parent' => $request->get('status_idcard_parent'),
+                    'status_house_parent' => $request->get('status_house_parent'),
+                    'status_front_grade' => $request->get('status_front_grade'),
+                    'status_back_grade' => $request->get('status_back_grade'),
+                    'status_birth_certificate' => $request->get('status_birth_certificate'),
+                    'status_disability_certificate' => $request->get('status_disability_certificate'),
+                ]);
+
+            $status_report = "03";
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', '=', $request->get('id_number'))
+                ->update([
+                    'status_report' => $status_report,
+                ]);
+        }
+
+        return redirect('/submitNotTranfer/M4');
+    }
+
+    public function submitNotTranferM4(Request $request)
+    {
+        if ($request->get('search') !== null) {
+            $search = $request->get('search');
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', 'like', '%' . $search . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
+        } elseif ($request->get('search2') !== null) {
+            $search2 = $request->get('search2');
+            $data = DB::table('new_student_register_m4')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
+        } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m4')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
+        } elseif ($request->get('search3') !== null) {
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m4')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
+        } elseif ($request->get('search') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
+            $search = $request->get('search');
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $data = DB::table('new_student_register_m4')
+                ->where('id_number', 'like', '%' . $search . '%')
+                ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_tranfer', '=', '02')
+                ->get();
+
+            return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
+        }
+
+        $data = DB::table('new_student_register_m4')
+            ->where('status_tranfer', '=', '02')
+            ->where('status_report', '=', '01')
+            ->orWhere('status_report', '=', '03')
+            ->get();
+
+        return view('academic.document-and-tranfer.submit-not-tranfer.submit-not-tranfer-m4', ['data' => $data]);
     }
 
     public function tranferM4($id)
@@ -1682,14 +2188,14 @@ class AcademicsController extends Controller
                 ->where('status_tranfer', '=', '01')
                 ->get();
 
-            return view('academic.document-and-tranfer.tranfer-all-m4', ['data' => $data]);
+            return view('academic.document-and-tranfer.tranfers.tranfer-all-m4', ['data' => $data]);
         }
 
         $data = DB::table('new_student_register_m4')
             ->where('status_tranfer', '=', '01')
             ->get();
 
-        return view('academic.document-and-tranfer.tranfer-all-m4', ['data' => $data]);
+        return view('academic.document-and-tranfer.tranfers.tranfer-all-m4', ['data' => $data]);
     }
 
     public function AllDocumentM4($id)
