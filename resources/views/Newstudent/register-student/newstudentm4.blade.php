@@ -185,7 +185,10 @@
 										<div class="alert alert-info" role="alert" align="center">
 											<h5><i class="fas fa-info-circle"></i>
 												กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
 										</div>
+
 
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลส่วนตัว</b></p>
@@ -852,41 +855,41 @@
 													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
 												</div>
 											</div>
-									</div><br><br>
+										</div><br><br>
 
-									<!-- สถานะการสมัคร -->
-									<div hidden>
-										<input type="text" name="status_rigis" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_pic" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_picall" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_idnumber_pic" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_house_pic" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_grade_pic" value="02">
-									</div>
+										<!-- สถานะการสมัคร -->
+										<div hidden>
+											<input type="text" name="status_rigis" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_picall" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_profile" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_idcard_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_house_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_submit_student" value="02">
+										</div>
 
+									</div>
+									<div class="card-footer" align="center">
+										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
+											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+										<button type="submit" class="btn btn-primary" ><strong>ยืนยันข้อมูล</strong></button>
+									</div><br>
 							</div>
-							<div class="card-footer" align="center">
-								<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
-									เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-								<button type="submit" class="btn btn-primary" id="alert_demo_7"><strong>ยืนยันข้อมูล</strong></button>
-							</div><br>
 						</div>
+						</form>
 					</div>
-					</form>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
@@ -1079,66 +1082,7 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
-	<script>
-		//== Class definition
-		var SweetAlert2Demo = function() {
-
-			//== Demos
-			var initDemos = function() {
-
-				$('#alert_demo_7').click(function(e) {
-					swal({
-						title: 'ยืนยันข้อมูล ?',
-						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
-						type: 'warning',
-						buttons: {
-							confirm: {
-								text: 'ตกลง',
-								className: 'btn btn-success',
-								type: 'submit'
-							},
-							cancel: {
-								text: 'ย้อนกลับ',
-								visible: true,
-								className: 'btn btn-danger'
-							}
-						}
-					}).then((Delete) => {
-						if (Delete) {
-							swal({
-								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'สามารถติดตามสถานะการสมัครเข้าเรียน ได้ภายใน 1-3 วัน',
-								type: 'success',
-								buttons: {
-									confirm: {
-										className: 'btn btn-success',
-										type: 'submit'
-									}
-								}
-							}).then(function() {
-								window.location = '/check/status';
-							});
-						} else {
-							swal.close();
-						}
-					});
-				})
-
-			};
-
-			return {
-				//== Init
-				init: function() {
-					initDemos();
-				},
-			};
-		}();
-
-		//== Class Initialization
-		jQuery(document).ready(function() {
-			SweetAlert2Demo.init();
-		});
-	</script>
+	
 </body>
 
 </html>

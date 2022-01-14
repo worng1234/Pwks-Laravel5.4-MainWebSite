@@ -108,9 +108,6 @@
 									<li>
 										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
 								</ul>
 							</div>
 						</li>
@@ -176,165 +173,90 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-file-alt"></i>&nbsp; แก้ไขหลักฐานการสมัครของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 									</div>
 								</div>
-								<form action="{{ url('/editDocumentM4', $data->id)}}" method="POST" enctype="multipart/form-data">
+								<form action="{{ url('/upEditObjectM4', $data->id)}}" method="POST" enctype="multipart/form-data">
 									{{csrf_field()}}
 									{{ method_field('POST') }}
 									<!-- ข้อมูลส่วนตัว -->
 									<div class="card-body">
+
 										<!-- อัพโหลดรูปภาพ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
 										</div>
 										<div class="row">
-											<div class="col-sm-4 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนบิดา</label>
-													<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
+													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
+													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
 												</div>
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-sm-4 col-md-4">
+											<div class="col-sm-6 col-md-3">
 												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
-													<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
+													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
+													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
 												</div>
 											</div>
 										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
+													<input type="file" class="form-control-file" id="house_student" name="house_student">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
+													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
+												</div>
+											</div>
 
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-													<input type="file" class="form-control-file" id="house_father" name="house_father">
-												</div>
+											<div hidden>
+												<input type="text" name="idNumber" value="{{$data->idNumber}}">
 											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
-													<input type="file" class="form-control-file" id="house_mother" name="house_mother">
-												</div>
-											</div>
-										</div>
 
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านผู้ปกครอง</label>
-													<input type="file" class="form-control-file" id="house_parent" name="house_parent">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชนผู้ปกครอง</label>
-													<input type="file" class="form-control-file" id="id_card_parent" name="id_card_parent">
-												</div>
-											</div>
-										</div>
 
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหน้า)</label>
-													<input type="file" class="form-control-file" id="front_grade" name="front_grade">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหลัง)</label>
-													<input type="file" class="form-control-file" id="back_grade" name="back_grade">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สูติบัตร</label>
-													<input type="file" class="form-control-file" id="birth_certificate" name="birth_certificate">
-												</div>
-											</div>
-										</div>
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-4 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">หนังสือรับรองความพิการ</label>
-													<input type="file" class="form-control-file" id="disability_certificate" name="disability_certificate">
-												</div>
-											</div>
-										</div>
 
+										<!-- สถานะการสมัคร -->
 										<div hidden>
-											<input type="text" name="idNumber" value="{{$data->id_number}}">
+											<input type="text" name="status_rigis" value="02">
 										</div>
-
-									<!-- สถานะการสมัคร -->
-									<div hidden>
-										<input type="text" name="status_report" value="02">
+										<div hidden>
+											<input type="text" name="status_picall" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_profile" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_idcard_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_house_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_submit_student" value="02">
+										</div>
 									</div>
-									<div hidden>
-										<input type="text" name="status_tranfer" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_front_grade" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_back_grade" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_birth_certificate" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_disability_certificate" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_idcard_father" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_idcard_mother" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_idcard_parent" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_house_father" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_house_mother" value="02">
-									</div>
-									<div hidden>
-										<input type="text" name="status_house_parent" value="02">
-									</div>
-
-									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
-										<a href='{{ url("/Newstudent/documentM4" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
-									</div><br>
-							</div>
-							</form>
 						</div>
+						<div class="card-footer" align="center">
+							<p style="text-align:center">หากทำการอัพโหลดหลักฐานเรียบร้อย<br>
+											ให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+							<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
+						</div><br>
 					</div>
-
 				</div>
 			</div>
+			</form>
 		</div>
+	</div>
+	</div>
 	</div>
 	</div>
 	<footer class="footer">
@@ -551,7 +473,7 @@
 									}
 								}
 							}).then(function() {
-								window.location = '/Newstudent/documentM4';
+								window.location = '/check/statusM1';
 							});
 						} else {
 							swal.close();

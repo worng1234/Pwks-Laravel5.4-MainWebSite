@@ -273,8 +273,10 @@
                                                     <p style="color:green;">ผ่าน</p>
                                                     @elseif ($data->status_picall == '02')
                                                     <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @else
+                                                    @elseif ($data->status_picall == '03')
                                                     <p style="color:red;">ไม่ผ่าน</p>
+                                                    @else
+                                                        -
                                                     @endif
                                                 </td>
                                                 <td align="center">
@@ -282,8 +284,10 @@
                                                     <p style="color:green;">ผ่าน</p>
                                                     @elseif ($status->status_profile == '02')
                                                     <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @else
+                                                    @elseif ($status->status_profile == '03')
                                                     <p style="color:red;">ไม่ผ่าน</p>
+                                                    @else
+                                                        -
                                                     @endif
                                                 </td>
                                                 <td align="center">
@@ -291,8 +295,10 @@
                                                     <p style="color:green;">ผ่าน</p>
                                                     @elseif ($status->status_idcard_student == '02')
                                                     <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @else
+                                                    @elseif ($status->status_idcard_student == '03')
                                                     <p style="color:red;">ไม่ผ่าน</p>
+                                                    @else
+                                                        -
                                                     @endif
                                                 </td>
                                                 <td align="center">
@@ -300,8 +306,10 @@
                                                     <p style="color:green;">ผ่าน</p>
                                                     @elseif ($status->status_house_student == '02')
                                                     <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @else
+                                                    @elseif ($status->status_house_student == '03')
                                                     <p style="color:red;">ไม่ผ่าน</p>
+                                                    @else
+                                                        -
                                                     @endif
                                                 </td>
                                                 <td align="center">
@@ -309,8 +317,10 @@
                                                     <p style="color:green;">ผ่าน</p>
                                                     @elseif ($status->status_submit_student == '02')
                                                     <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @else
+                                                    @elseif ($status->status_submit_student == '03')
                                                     <p style="color:red;">ไม่ผ่าน</p>
+                                                    @else
+                                                        -
                                                     @endif
                                                 </td>
                                                 <td align="center"><a href='{{ url("/EditObjectM1/{$data->id}" )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>

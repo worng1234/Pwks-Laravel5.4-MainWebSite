@@ -300,7 +300,7 @@
 															<p style="color:red;">ไม่ผ่าน</p>
 														@endif
 													</td>
-													<td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a></td>
+													<td align="center"><a href='{{ url("/SortNewstudentM1/{$data->id}" )}}' class="btn btn-primary btn-xs"><i class="fas file-archive"></i></a></td>
 													<td align="center"><a href='{{ url("/statusM1pic/{$data->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
 													<td align="center"><a href='{{ url("/deletem1/{$data->id}")}}' class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></a></td>
 												</tr>

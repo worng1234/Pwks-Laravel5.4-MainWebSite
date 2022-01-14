@@ -169,6 +169,10 @@ Route::get('/check/statusM4onsubmit', function () {
 });
 //---------------------------------------------------------------------
 
+//แก้ไขหลักฐานการสมัคร
+Route::get('/EditObjectM4/{id}', 'newstudentm4Controller@editOblect');
+Route::post('/upEditObjectM4/{id}', 'newstudentm4Controller@upObjectM4');
+
 Route::get('/success/checkM4', function () {
     return view('Newstudent.success-statuscheck.success-checkM4');
 });

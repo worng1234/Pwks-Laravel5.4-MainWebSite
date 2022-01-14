@@ -184,6 +184,8 @@
 										<div class="alert alert-info" role="alert" align="center">
 											<h5><i class="fas fa-info-circle"></i>
 												กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
 										</div>
 
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">

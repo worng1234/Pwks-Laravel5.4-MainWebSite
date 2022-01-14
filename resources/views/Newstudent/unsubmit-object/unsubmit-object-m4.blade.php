@@ -287,12 +287,12 @@
 													<td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
 													<td align="center">{{$value->final_school}}</td>
 													<td align="center">
-														@if ($value->status_picall == '01')
-															ผ่าน
-														@elseif ($value->status_picall == '02')
-															รอตรวจสอบ
+														@if ($data->status_picall == '01')
+															<p style="color:green;">ผ่าน</p>
+														@elseif ($data->status_picall == '02')
+															<p style="color:blue;">รอตรวจสอบ</p>
 														@else
-															ไม่ผ่าน
+															<p style="color:red;">ไม่ผ่าน</p>
 														@endif
 													</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
