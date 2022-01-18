@@ -142,22 +142,7 @@
 							</div>
 						</li>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#year">
-								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="year">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="stu-ad-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+						
 
 						<li class="nav-item ">
 							<a href="#">

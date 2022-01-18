@@ -83,7 +83,7 @@
 			<div class="row">
 				<div class="table-responsive">
 					<div class="form-group">
-						<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
+						<table style="border-spacing: 5px; border-collapse: separate; width: 50%">
 							<tr>
 								<td>
 									<table style="border-spacing: 5px; border-collapse: separate; width: 100%">

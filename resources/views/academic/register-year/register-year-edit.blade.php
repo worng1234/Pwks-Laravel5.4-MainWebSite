@@ -167,7 +167,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/SubmitObject/M1')}}">
+													<a href="{{ url('/SubmitObject/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -186,7 +186,7 @@
 							</a>
 							<div class="collapse" id="move">
 								<ul class="nav nav-collapse">
-									<li>
+								<li>
 										<a data-toggle="collapse" href="#formob3">
 											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
@@ -199,7 +199,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('/documentUnsubmit/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -219,7 +219,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('/submitNotTranfer/M4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -239,7 +239,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
+													<a href="{{ url('/tranferAllM4')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
@@ -343,6 +343,7 @@
 						</li>
 
 
+
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
@@ -351,14 +352,62 @@
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
+
 									<li>
-										<a href="academic-basic-info-class-all.html">
+										<a data-toggle="collapse" href="#forms6">
 											<span class="sub-item">กำหนดชั้นเรียน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms6">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/classRoom')}}">
+														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classMajor')}}">
+														<span class="sub-item">กำหนดสายการเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#files">
+								<i class="fas fa-folder-open"></i>
+								<p>ออกเอกสารทั้งหมด</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="files">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
+											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
 										</a>
 									</li>
 									<li>
-										<a href="academic-basic-info-year-all.html">
-											<span class="sub-item">กำหนดปีการศึกษา</span>
+										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
+											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/StudentAll')}}">
+											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
+											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
+											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
 										</a>
 									</li>
 								</ul>
