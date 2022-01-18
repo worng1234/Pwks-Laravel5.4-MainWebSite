@@ -530,14 +530,14 @@
 											</thead>
 
 											<tbody>
-											@foreach ($data as $key => $value)
+											@foreach ($datas as $key => $value)
 												<tr>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->name_cen}} {{$value->surname}}</td>
 													<td align="center">{{$value->final_school}}</td>
 													<td align="center">
-														@if ($data->status_picall == '01')
+														@if ($value->status_picall == '01')
 															<p style="color:green;">ผ่าน</p>
-														@elseif ($data->status_picall == '02')
+														@elseif ($value->status_picall == '02')
 															<p style="color:blue;">รอตรวจสอบ</p>
 														@else
 															<p style="color:red;">ไม่ผ่าน</p>

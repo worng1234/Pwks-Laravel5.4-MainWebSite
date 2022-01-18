@@ -251,7 +251,11 @@
 																	<td style="text-align: left; vertical-align: top;">คะแนนล่าสุด
 																	</td>
 																	<td>
+																		@if ($data_student->score !== NULL || $data_student->score != 0)
 																		<input value="{{$data_student->score}}" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
+																		@else 
+																		<input value="-" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
+																		@endif
 																	</td>
 																</tr>
 															</table>
@@ -260,7 +264,11 @@
 															<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 																<tr>
 																	<td>
+																		@if ($photo !== NULL)
 																		<img id="mainContentPlaceHolder_signinImage" src="../ImgAll/profile_img/{{$photo->profile_img}}" style="height:165px; width:125px;" />
+																		@else
+																		<img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" style="height:165px; width:125px;" />
+																		@endif
 																	</td>
 																</tr>
 															</table>

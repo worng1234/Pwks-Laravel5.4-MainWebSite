@@ -68,6 +68,7 @@ class newstudentm1Model extends Model
         'status_picall',
         'status_report',
         'status_tranfer',
+        'date',
         'student_year'
     ];
 }

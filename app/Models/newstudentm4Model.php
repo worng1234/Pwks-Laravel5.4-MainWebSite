@@ -79,6 +79,7 @@ class newstudentm4Model extends Model
         'status_grade_pic',
         'status_report',
         'status_tranfer',
+        'date',
         'student_year'
     ];
 }

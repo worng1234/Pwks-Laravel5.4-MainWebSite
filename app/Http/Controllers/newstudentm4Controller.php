@@ -28,7 +28,7 @@ class newstudentm4Controller extends Controller
         $school_year = DB::table('school_year')
             ->first();
 
-        $data =  $datas = DB::table('new_student_register_m4')
+        $datas =  $datas = DB::table('new_student_register_m4')
             ->where('status_picall', '=', '02')
             ->get();
         return view('Newstudent.unsubmit-object.unsubmit-object-m4', [
@@ -42,7 +42,7 @@ class newstudentm4Controller extends Controller
         $school_year = DB::table('school_year')
             ->first();
 
-        $data =  $datas = DB::table('new_student_register_m4')
+        $datas =  $datas = DB::table('new_student_register_m4')
             ->where('status_picall', '=', '01')
             ->get();
         return view('Newstudent.submit-object.submit-object-m4', [
@@ -1694,6 +1694,11 @@ class newstudentm4Controller extends Controller
                 $datastatus->save();
             }
 
+            $day = date('d');
+            $mounth = date('m');
+            $year = date('y');
+            $date = ($year . '/' . $mounth . '/' . $day);
+
             $post = new newstudentm4Model([
                 "prename" => $request->get('prename'),
                 "fname" => $request->get('fname'),
@@ -1760,6 +1765,7 @@ class newstudentm4Controller extends Controller
                 "status_rigis" => $request->get('status_rigis'),
                 "status_picall" => $request->get('status_picall'),
                 "student_year" => $register_year->register_year,
+                "date" => $date
             ]);
             $post->save();
             return redirect('/Success/RegisterM1');
@@ -2196,7 +2202,7 @@ class newstudentm4Controller extends Controller
             ->get();
         $partitionCount = $partition->count();
 
-        $dateM1 = DB::table('new_student_register_m4')
+        $dateM4 = DB::table('new_student_register_m4')
             ->where('date', 'like', '%' . $search . '%')
             ->first();
 
@@ -2237,7 +2243,7 @@ class newstudentm4Controller extends Controller
                 'sumAll' => $sumAll,
                 'partitionAllCount' => $partitionAllCount,
                 'dataCountAlls' => $dataCountAlls,
-                'dateM1' => $dateM1
+                'dateM4' => $dateM4
             ]
         );
     }

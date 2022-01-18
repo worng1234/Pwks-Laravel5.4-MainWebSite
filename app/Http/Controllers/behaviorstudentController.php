@@ -39,8 +39,8 @@ class behaviorstudentController extends Controller
             ->where('student_id_behavior', 'like', '%' . $search . '%')
             ->get();
         return view('behavior-student.stu-ad-conduct-score-check-all', [
-           //ปีการศึกษา
-           'school_year' => $school_year,
+            //ปีการศึกษา
+            'school_year' => $school_year,
 
             'data' => $data,
         ]);
@@ -58,7 +58,7 @@ class behaviorstudentController extends Controller
             //ปีการศึกษา
             'school_year' => $school_year,
 
-            'data' => $data, 
+            'data' => $data,
             'data2' => $data2
         ]);
     }
@@ -75,7 +75,7 @@ class behaviorstudentController extends Controller
             //ปีการศึกษา
             'school_year' => $school_year,
 
-            'data' => $data, 
+            'data' => $data,
             'data2' => $data2
         ]);
     }
@@ -107,7 +107,7 @@ class behaviorstudentController extends Controller
             ->whereNotNull('behavior_student.plus_score')
             ->get();
 
-            $student_Minus = DB::table('student_core')
+        $student_Minus = DB::table('student_core')
             ->join('behavior_student', 'student_core.student_id', '=', 'behavior_student.student_id_behavior')
             ->select(
                 'student_core.student_id',
@@ -129,21 +129,21 @@ class behaviorstudentController extends Controller
             ->whereNotNull('behavior_student.minus_score')
             ->get();
 
-            $photo = DB::table('student_core')
-            ->join('photo_student', 'student_core.student_id_card', '=' ,'photo_student.student_idcard')
+        $photo = DB::table('student_core')
+            ->join('photo_student', 'student_core.student_id_card', '=', 'photo_student.student_idcard')
             ->select('photo_student.profile_img')
-            ->where('student_core.student_id_card','=', $photo_id)
+            ->where('student_core.student_id_card', '=', $photo_id)
             ->first();
 
-            return view(
-                'behavior-student.behavior-report.behavior-report-id',
-                [
-                    "data_student" => $data_student,
-                    "student_Plus" => $student_Plus,
-                    "student_Minus" => $student_Minus,
-                    "photo" => $photo
-                ]
-            );
+        return view(
+            'behavior-student.behavior-report.behavior-report-id',
+            [
+                "data_student" => $data_student,
+                "student_Plus" => $student_Plus,
+                "student_Minus" => $student_Minus,
+                "photo" => $photo
+            ]
+        );
     }
 
     public function viewBehaviorID($id)
@@ -178,11 +178,16 @@ class behaviorstudentController extends Controller
             ->where('student_core.student_id', '=', $stid)
             ->get();
 
+        if ($photo_id !== NULL) {
             $photo = DB::table('student_core')
-            ->join('photo_student', 'student_core.student_id_card', '=' ,'photo_student.student_idcard')
-            ->select('photo_student.profile_img')
-            ->where('student_core.student_id_card','=', $photo_id)
-            ->first();
+                ->join('photo_student', 'student_core.student_id_card', '=', 'photo_student.student_idcard')
+                ->select('photo_student.profile_img')
+                ->where('student_core.student_id_card', '=', $photo_id)
+                ->first();
+        } else {
+            $photo = $photo_id;
+        }
+
 
 
         return view(

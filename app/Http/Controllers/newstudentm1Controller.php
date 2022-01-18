@@ -1744,6 +1744,11 @@ class newstudentm1Controller extends Controller
         
                 $datastatus->save();
             }
+
+            $day = date('d');
+            $mounth = date('m');
+            $year = date('y');
+            $date = ($year . '/' . $mounth . '/' . $day);
     
             newstudentm1Model::create([
                 "prename" => $request->get('prename'),
@@ -1801,6 +1806,7 @@ class newstudentm1Controller extends Controller
                 "status_rigis" => $request->get('status_rigis'),
                 "status_picall" => $request->get('status_picall'),
                 "student_year" => $register_year->register_year,
+                "date" => $date
             ]);
     
             return redirect('/Success/RegisterM1');

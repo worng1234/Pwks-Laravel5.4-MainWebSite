@@ -130,25 +130,53 @@
                             <center>280</center>
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($dateM1->date !== NULL)
                             <center>{{$dateM1->date}}</center>
+                            @else 
+                            <p align="center">-</p>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($partitionAll != 0)
                             <center>{{$partitionAll}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($sum != 0)
                             <center>{{$sum}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($dataCountAll != 0)
                             <center>{{$dataCountAll}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($partitionAlls != 0)
                             <center>{{$partitionAlls}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($sumAll != 0)
                             <center>{{$sumAll}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
+                            @if ($dataCountAlls != 0)
                             <center>{{$dataCountAlls}}</center>
+                            @else 
+                            <center>0</center>
+                            @endif
                         </td>
                     </tr>
                 </tbody>

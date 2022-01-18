@@ -46,10 +46,10 @@
 			background-position: center;
 			position: relative;
 		}
+
 		.saraban {
 			font-family: 'Sarabun', sans-serif;
 		}
-		
 	</style>
 
 
@@ -79,7 +79,7 @@
 		<div align="center" style="margin-top:20px;">
 			<h2 class="saraban">ประวัติความประพฤติรายบุคคล</h2>
 		</div>
-		<div class="wrapper" style="margin-top:10px;">
+		<div class="wrapper" style="margin-top:10px;" align="center">
 			<div class="row">
 				<div class="table-responsive">
 					<div class="form-group">
@@ -91,34 +91,34 @@
 											<td style="text-align: left; vertical-align: top; width: 80px;" class="saraban">เลขประจำตัวนักเรียน
 											</td>
 											<td>
-											{{$data_student->student_id}}
+												{{$data_student->student_id}}
 											</td>
 										</tr>
 										<tr>
 											<td style="text-align: left; vertical-align: top;" class="saraban">ชื่อ-นามสกุล
 											</td>
 											<td class="saraban">
-											{{$data_student->prename}}{{$data_student->fname}} {{$data_student->surname}}
+												{{$data_student->prename}}{{$data_student->fname}} {{$data_student->surname}}
 											</td>
 										</tr>
 										<tr>
 											<td style="text-align: left; vertical-align: top;" class="saraban">ชั้นเรียน/ห้อง
 											</td>
 											<td class="saraban">
-											{{$data_student->student_class}}/{{$data_student->student_room}}
+												{{$data_student->student_class}}/{{$data_student->student_room}}
 											</td>
 										</tr>
 										<tr>
 											<td style="text-align: left; vertical-align: top;" class="saraban">เลขที่
 											<td class="saraban">
-											{{$data_student->student_number}}
+												{{$data_student->student_number}}
 											</td>
 										</tr>
 										<tr>
 											<td style="text-align: left; vertical-align: top;" class="saraban">คะแนนล่าสุด
 											</td>
 											<td class="saraban">
-											{{$data_student->score}}
+												{{$data_student->score}}
 											</td>
 										</tr>
 									</table>
@@ -127,7 +127,11 @@
 									<table style="border-spacing: 5px; border-collapse: separate; width: 100%">
 										<tr>
 											<td>
+												@if ($photo !== NULL)
 												<img id="mainContentPlaceHolder_signinImage" src="../ImgAll/profile_img/{{$photo->profile_img}}" style="height:165px; width:125px;" />
+												@else
+												<img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" style="height:165px; width:125px;" />
+												@endif
 											</td>
 										</tr>
 									</table>
@@ -183,7 +187,7 @@
 				<h4 style="text-align: center;" class="saraban">ประวัติความประพฤติด้านลบ</h4>
 			</div>
 
-			<div class="table-responsive" >
+			<div class="table-responsive">
 				<table style="width:100%; border:1px solid black;">
 					<thead style="border:1px solid black;">
 						<tr>
@@ -208,7 +212,7 @@
 						</tr>
 					</thead>
 					<tbody style="border:1px solid black;">
-					@foreach ($student_Minus as $key => $value)
+						@foreach ($student_Minus as $key => $value)
 						<tr>
 							<td align="center" style="border:1px solid black;" class="saraban">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
 							<td align="center" style="border:1px solid black;" class="saraban">{{$value->fullname}}</td>
