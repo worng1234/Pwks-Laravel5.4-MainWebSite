@@ -228,13 +228,15 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-user-cog"></i> &nbsp;&nbsp; จัดการแอคเค้าท์ฝ่ายวิชาการ</div>
+                                        <div class="card-title"><i class="fas fa-book"></i> &nbsp;&nbsp; กำหนดปีการศึกษา</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <form method="post" action="{{ url('/EditSchoolYearUp', $data->id)}}" enctype="multipart/form-data">
                                         {{csrf_field()}}
-                                        <div class="card-body"><br>
+                                        <div class="card-body">
+                                            <p>*ใช้เพื่อกำหนดปีการศึกษาและกำหนดภาคเรียนเท่านั้น</p>
+                                            <br>
                                             <div class="row">
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">

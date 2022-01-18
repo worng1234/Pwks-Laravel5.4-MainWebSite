@@ -140,9 +140,50 @@ class AdminController extends Controller
          ->get();
          $m6_all = count($m6);
 
+         //ปวช.1
+         $m4_9m = DB::table('student_core')
+         ->where('student_class', '=', '4')
+         ->where('student_major', '=', '09')
+         ->get();
+         $m4_9m_all = count($m4_9m);
+ 
+         $m4_9 = DB::table('student_core')
+         ->where('student_class', '=', '4')
+         ->get();
+         $m4_9_all = count($m4_9);
+
+         //ปวช.2
+        $m5_9m = DB::table('student_core')
+        ->where('student_class', '=', '5')
+        ->where('student_major', '=', '09')
+        ->get();
+        $m5_9m_all = count($m5_9m);
+
+        $m5_9 = DB::table('student_core')
+        ->where('student_class', '=', '5')
+        ->get();
+        $m5_9_all = count($m5_9);
+
+         //ปวช.3
+         $m6_9m = DB::table('student_core')
+         ->where('student_class', '=', '6')
+         ->where('student_major', '=', '09')
+         ->get();
+         $m6_9m_all = count($m6_9m);
+ 
+         $m6_9 = DB::table('student_core')
+         ->where('student_class', '=', '6')
+         ->get();
+         $m6_9_all = count($m6_9);
+
          $m123_m_all = $m1_m_all+$m2_m_all+$m3_m_all;
          $m123_fm_all = $m1_fm_all+$m2_fm_all+$m3_fm_all;
          $m123_all = $m123_m_all + $m123_fm_all;
+
+         //จำนวนผูชายที่เอา ปวช. ออกแล้ว
+         $m4_m_all_09 = $m4_m_all - $m4_9m_all; 
+         $m5_m_all_09 = $m5_m_all - $m5_9m_all; 
+         $m6_m_all_09 = $m6_m_all - $m6_9m_all; 
 
          $m456_m_all = $m4_m_all+$m5_fm_all+$m6_m_all;
          $m456_fm_all = $m4_fm_all+$m5_fm_all + $m6_fm_all;
@@ -185,19 +226,28 @@ class AdminController extends Controller
             'm3_all' => $m3_all,
 
              //ม.4
-             'm4_m_all' => $m4_m_all,
+             'm4_m_all_09' => $m4_m_all_09,
              'm4_fm_all' => $m4_fm_all,
              'm4_all' => $m4_all,
 
               //ม.5
-            'm5_m_all' => $m5_m_all,
+            'm5_m_all_09' => $m5_m_all_09,
             'm5_fm_all' => $m5_fm_all,
             'm5_all' => $m5_all,
 
              //ม.6
-             'm6_m_all' => $m6_m_all,
+             'm6_m_all_09' => $m6_m_all_09,
              'm6_fm_all' => $m6_fm_all,
              'm6_all' => $m6_all,
+
+             //ปวช.
+             'm4_9m_all' => $m4_9m_all,
+             'm5_9m_all' => $m5_9m_all,
+             'm6_9m_all' => $m6_9m_all,
+
+             'm4_9_all' => $m4_9_all,
+             'm5_9_all' => $m5_9_all,
+             'm6_9_all' => $m6_9_all,
         ]);
     }
 
