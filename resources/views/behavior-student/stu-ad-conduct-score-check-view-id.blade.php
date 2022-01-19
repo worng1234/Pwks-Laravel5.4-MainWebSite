@@ -213,6 +213,10 @@
 									</div>
 								</div>
 								<div class="card-body" style="min-height: auto">
+								
+								<div>
+											<a href='{{ url("/behaviorReportID/{$data_student->id}") }}' class="btn btn-dark" target="_blank"><i class="fas fa-print" style="margin-right:5px;"></i>พิมพ์เอกสาร</a>
+										</div>
 									<div class="row">
 										<div class="table-responsive">
 											<div class="form-group">
@@ -276,9 +280,6 @@
 													</tr>
 												</table>
 											</div>
-										</div>
-										<div>
-											<a href='{{ url("/behaviorReportID/{$data_student->id}") }}' class="btn btn-dark" target="_blank"><i class="fas fa-print" style="margin-right:5px;"></i>พิมพ์เอกสาร</a>
 										</div>
 										<div class="table-responsive">
 

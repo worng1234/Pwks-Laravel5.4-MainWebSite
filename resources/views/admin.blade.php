@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="../assets/img/logo3.png" type="image/x-icon" />
+    <link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
@@ -402,57 +402,57 @@
                                                     @endif
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" style="background-color:#ff9900; color:white;">ม.ต้น</td>
+                                                    <td align="center" style="background-color:#00b36b; color:white;">ม.ต้น</td>
                                                     @if ($m123_m_all != 0)
-                                                    <td align="center" style="background-color:#ffe0b3; ">{{$m123_m_all}}</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m123_m_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ffe0b3; ">0</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
                                                     @endif
                                                     @if ($m123_fm_all != 0)
-                                                    <td align="center" style="background-color:#ffe0b3; ">{{$m123_fm_all}}</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m123_fm_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ffe0b3; ">0</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
                                                     @endif
                                                     @if ($m123_all != 0)
-                                                    <td align="center" style="background-color:#ff704d; color:white;">{{$m123_all}}</td>
+                                                    <td align="center" style="background-color:#669999; color:white;">{{$m123_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ff704d; color:white;">0</td>
+                                                    <td align="center" style="background-color:#669999; color:white;">0</td>
                                                     @endif
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" style="background-color:#ff9900; color:white;">ม.ปลาย</td>
+                                                    <td align="center" style="background-color:#00b36b; color:white;">ม.ปลาย</td>
                                                     @if ($m456_m_all != 0)
-                                                    <td align="center" style="background-color:#ffe0b3; ">{{$m456_m_all}}</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m456_m_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ffe0b3; ">0</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
                                                     @endif
                                                     @if ($m456_fm_all != 0)
-                                                    <td align="center" style="background-color:#ffe0b3; ">{{$m456_fm_all}}</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m456_fm_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ffe0b3; ">0</td>
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
                                                     @endif
                                                     @if ($m456_all != 0)
-                                                    <td align="center" style="background-color:#ff704d; color:white;">{{$m456_all}}</td>
+                                                    <td align="center" style="background-color:#669999; color:white;">{{$m456_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ff704d; color:white;">0</td>
+                                                    <td align="center" style="background-color:#669999; color:white;">0</td>
                                                     @endif
                                                 </tr>
                                                 <tr>
-                                                    <td align="center" style="background-color:#ff3333; color:white;">ม.ต้น + ม.ปลาย</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">ม.ต้น + ม.ปลาย</td>
                                                     @if ($m_m_all != 0)
-                                                    <td align="center" style="background-color:#ff3333; color:white;">{{$m_m_all}}</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_m_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ff3333; color:white;">0</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
                                                     @endif
                                                     @if ($m_fm_all != 0)
-                                                    <td align="center" style="background-color:#ff3333; color:white;">{{$m_fm_all}}</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_fm_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ff3333; color:white;">0</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
                                                     @endif
                                                     @if ($m_all != 0)
-                                                    <td align="center" style="background-color:#ff3333; color:white;">{{$m_all}}</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_all}}</td>
                                                     @else
-                                                    <td align="center" style="background-color:#ff3333; color:white;">0</td>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
                                                     @endif
                                                 </tr>
                                             </tbody>
