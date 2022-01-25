@@ -178,7 +178,7 @@
 								</div>
 								<div class="card-body">
 									<ol>
-									<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของผู้สมัครเอง</li>
+										<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของผู้สมัครเอง</li>
 										<li>เอกสารที่ใช้ประกอบการสมัครให้ใช้เป็นไฟล์ .jpg หรือ .png </li>
 										<li>เอกสารที่ใช้ประกอบการสมัครมีดังนี้
 											</br>&nbsp;- ไฟล์รูปหน้าตรงขนาด 2 นิ้ว
@@ -191,11 +191,13 @@
 								<div class="card-footer" align="center">
 									<div class="form-check">
 										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox">
+											<input class="form-check-input" type="checkbox" id="chkagreement">
 											<span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
 										</label>
 									</div>
-									<a type="button" class="btn btn-info" href="{{ url('/NewstudentM4')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+									<div id="dvagreement" style="display: none">
+										<a type="button" class="btn btn-info" href="{{ url('/NewstudentM4')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -288,6 +290,19 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chkagreement").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvagreement").show();
+				} else {
+					$("#dvagreement").hide();
+				}
+			});
+		});
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',

@@ -207,6 +207,14 @@ Route::resource('/StudentCore', 'studentcoreController');
 
 Route::get('/Addstudentcore', 'studentcoreController@create');
 
+Route::get('/success/Addstudentcore', function () {
+    return view('Studentcore.student.success-submit.success-submit');
+});
+
+Route::get('/Unsuccess/Addstudentcore', function () {
+    return view('Studentcore.student.success-submit.unsuccess-submit');
+});
+
 Route::get('/StudentCore/{id}', 'studentcoreController@show');
 Route::get('/FixStudentCore/{id}', 'studentcoreController@edit');
 Route::post('/updatedstudentcore/{id}', 'studentcoreController@update');

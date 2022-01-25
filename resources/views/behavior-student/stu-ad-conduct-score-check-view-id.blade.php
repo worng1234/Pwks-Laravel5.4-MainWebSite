@@ -242,7 +242,7 @@
 																	<td style="text-align: left; vertical-align: top;">ชั้นเรียน/ห้อง
 																	</td>
 																	<td>
-																		<input value="{{$data_student->student_class}}/{{$data_student->student_room}}" type="text" readonly="readonly" id="TextBox03" class="textboxReadOnly" style="width:100%;" />
+																		<input value="มัธยมศึกษาปีที่ {{$data_student->student_class}}/{{$data_student->student_room}}" type="text" readonly="readonly" id="TextBox03" class="textboxReadOnly" style="width:100%;" />
 																	</td>
 																</tr>
 																<tr>

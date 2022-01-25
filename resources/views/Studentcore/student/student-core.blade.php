@@ -188,7 +188,7 @@
 												<div class="row">
 													<ul class="wizard-menu nav nav-pills nav-primary">
 														<li class="step">
-															<a class="nav-link active" href="#info" data-toggle="tab" aria-expanded="true"><i class="fa fa-user mr-0"></i> ข้อมูลเบื้องต้น</a>
+															<a class="nav-link active" href="#info" data-toggle="tab" aria-expanded="true"><i class="fa fa-user mr-0"></i> ข้อมูล</br>เบื้องต้น</a>
 														</li>
 														<li class="step">
 															<a class="nav-link" href="#address" data-toggle="tab"><i class="fa fa-home mr-2"></i> ที่อยู่</a>
@@ -197,13 +197,16 @@
 															<a class="nav-link" href="#ability" data-toggle="tab"><i class="fa fa-award mr-2"></i> ความสามารถ</a>
 														</li>
 														<li class="step">
-															<a class="nav-link" href="#infostu" data-toggle="tab"><i class="fa fa-clipboard mr-2"></i> รายละเอียดนักเรียน</a>
+															<a class="nav-link" href="#infostu" data-toggle="tab"><i class="fa fa-clipboard mr-2"></i> รายละเอียด</br>นักเรียน</a>
 														</li>
 														<li class="step">
 															<a class="nav-link" href="#health" data-toggle="tab"><i class="fas fa-heart mr-2"></i> สุขภาพ</a>
 														</li>
 														<li class="step">
 															<a class="nav-link" href="#family" data-toggle="tab"><i class="fa fa-users mr-2"></i> ครอบครัว</a>
+														</li>
+														<li class="step">
+															<a class="nav-link" href="#photo" data-toggle="tab"><i class="fa fa-file-alt mr-0"></i> หลักฐาน</br>ประจำตัว</a>
 														</li>
 													</ul>
 												</div>
@@ -215,7 +218,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>รหัสนักเรียน</label>
-																	<input id="Name" type="text" class="form-control" required name="student_id">
+																	<input id="Name" type="text" class="form-control" name="student_id" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-4">
@@ -492,7 +495,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>อีเมล์ (name@example.com)</label>
-																	<input id="Name" type="text" class="form-control" name="email" required>
+																	<input id="Name" type="text" class="form-control" name="email">
 																</div>
 															</div>
 														</div>
@@ -526,13 +529,13 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ซอย</label>
-																	<input id="Name" type="text" class="form-control" name="alley" required>
+																	<input id="Name" type="text" class="form-control" name="alley">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ถนน</label>
-																	<input id="Name" type="text" class="form-control" name="street" required>
+																	<input id="Name" type="text" class="form-control" name="street">
 																</div>
 															</div>
 														</div>
@@ -571,75 +574,75 @@
 															<div class="col-sm-6 col-md-12">
 																<div class="form-check">
 																	<label class="form-check-label">
-																		<input class="form-check-input" type="checkbox" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now" required>
+																		<input class="form-check-input" type="checkbox" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now" >
 																		<span class="form-check-sign">ที่อยู่ตามทะเบียนบ้าน</span>
 																	</label>
 																	<label class="form-check-label ml-1">
-																		<input class="form-check-input" type="checkbox" value="ที่อยู่อื่น" name="address_now" id="chkaddress" required>
+																		<input class="form-check-input" type="checkbox" value="ที่อยู่อื่น" name="address_now" id="chkaddress">
 																		<span class="form-check-sign">ที่อยู่อื่น (โปรดระบุ)*</span>
 																	</label>
 																</div>
 															</div>
 														</div>
 														<div id="dvaddress" style="display: none">
-														<div class="row">
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>บ้านเลขที่</label>
-																	<input id="Name" type="text" class="form-control" name="house_number_n">
+															<div class="row">
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>บ้านเลขที่</label>
+																		<input id="Name" type="text" class="form-control" name="house_number_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>หมู่</label>
+																		<input id="Name" type="text" class="form-control" name="group_n">
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ชื่อหมู่บ้าน</label>
+																		<input id="Name" type="text" class="form-control" name="village_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>ซอย</label>
+																		<input id="Name" type="text" class="form-control" name="alley_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ถนน</label>
+																		<input id="Name" type="text" class="form-control" name="street_n">
+																	</div>
 																</div>
 															</div>
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>หมู่</label>
-																	<input id="Name" type="text" class="form-control" name="group_n">
+															<div class="row">
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ตำบล/แขวง</label>
+																		<input id="Name" type="text" class="form-control" name="subdistrict_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>อำเภอ/เขต</label>
+																		<input id="Name" type="text" class="form-control" name="district_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>จังหวัด</label>
+																		<input id="Name" type="text" class="form-control" name="province_n">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>รหัสไปรษณีย์</label>
+																		<input id="Name" type="text" class="form-control" name="post_n">
+																	</div>
 																</div>
 															</div>
-															<div class="col-sm-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" name="village_n">
-																</div>
-															</div>
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>ซอย</label>
-																	<input id="Name" type="text" class="form-control" name="alley_n">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ถนน</label>
-																	<input id="Name" type="text" class="form-control" name="street_n">
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" name="subdistrict_n">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" name="district_n">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" name="province_n">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>รหัสไปรษณีย์</label>
-																	<input id="Name" type="text" class="form-control" name="post_n">
-																</div>
-															</div>
-														</div>
 														</div>
 													</div>
 
@@ -773,26 +776,26 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>อยากประกอบอาชีพอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="dream_job" required>
+																	<input id="Name" type="text" class="form-control" name="dream_job">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>เพราะอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="because" required>
+																	<input id="Name" type="text" class="form-control" name="because">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>ความสามารถพิเศษ</label>
-																	<input id="Name" type="text" class="form-control" name="talent" required>
+																	<input id="Name" type="text" class="form-control" name="talent">
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-6">
 																<label style="margin-bottom: 5px;"><small>การอ่านเขียน (เลือก 1 หัวข้อ)</small></label>
-																<div class="form-group" required>
+																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
 																			<input type="radio" name="read_write" value="อ่านเขียนคล่อง" class="selectgroup-input">
@@ -815,7 +818,7 @@
 															</div>
 															<div class="col-sm-6 col-md-6">
 																<label style="margin-bottom: 5px;"><small>นักเรียนไม่เข้าใจบทเรียนทุกวิชา (เลือก 1 หัวข้อ)</small></label>
-																<div class="form-group" required>
+																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
 																			<input type="radio" name="understand" value="ใช่" class="selectgroup-input">
@@ -838,9 +841,9 @@
 														</div>
 														<div class="row">
 															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default" required>
+																<div class="form-group form-group-default">
 																	<label>การเดินทางมาโรงเรียน</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="go_school">
+																	<select class="form-control" id="formGroupDefaultSelect" name="go_school" required>
 																		<option>เลือก</option>
 																		<option value="เดินเท้า">เดินเท้า</option>
 																		<option value="รถจักรยาน">รถจักรยาน</option>
@@ -853,19 +856,19 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ระยะเวลาเดินทาง (นาที)</label>
-																	<input id="Name" type="text" class="form-control" name="go_school_time" required>
+																	<input id="Name" type="text" class="form-control" name="go_school_time">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ระยะห่างจาก ร.ร. (ลูกรัง) เมตร</label>
-																	<input id="Name" type="text" class="form-control" name="distance" required>
+																	<input id="Name" type="text" class="form-control" name="distance">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ระยะห่างจาก ร.ร. (ลาดยาง) เมตร</label>
-																	<input id="Name" type="text" class="form-control" name="long_distance" required>
+																	<input id="Name" type="text" class="form-control" name="long_distance">
 																</div>
 															</div>
 														</div>
@@ -875,7 +878,7 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-6">
 																<label style="margin-bottom: 5px;"><small>อุปกรณ์ที่มี (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
-																<div class="form-group" required>
+																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
 																			<input type="checkbox" name="gadject" value="มือถือ/สมาร์ทโฟน" class="selectgroup-input">
@@ -898,7 +901,7 @@
 															</div>
 															<div class="col-sm-6 col-md-6">
 																<label style="margin-bottom: 5px;"><small>อินเตอร์เน็ตที่ใช้ (เลือก 1 หัวข้อ)</small></label>
-																<div class="form-group" required>
+																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
 																			<input type="radio" name="internet" value="อินเตอร์เน็ตไร้สาย" class="selectgroup-input">
@@ -919,7 +922,7 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>ความพิการ</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+																	<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
 																		<option>เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
 																		<option value="การมองเห็น">การมองเห็น</option>
@@ -937,7 +940,7 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>ความด้อยโอกาส</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="unfortuned">
+																	<select class="form-control" id="formGroupDefaultSelect" name="unfortuned" required>
 																		<option>เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
 																		<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
@@ -1216,13 +1219,13 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>น้ำหนัก</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="weight">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="weight" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>ส่วนสูง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="height">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="height" required>
 																</div>
 															</div>
 														</div>
@@ -1695,21 +1698,23 @@
 															<div class="col-sm-6 col-md-12">
 
 																<div class="form-check">
-																	<label class="form-radio-label">
-																		<input class="form-radio-input" type="radio" value="บิดา" name="parent">
-																		<span class="form-radio-sign">บิดา</span>
+																	<label class="form-check-label">
+																		<input class="form-check-input" type="checkbox" value="บิดา" name="parent">
+																		<span class="form-check-sign">บิดา</span>
 																	</label>
-																	<label class="form-radio-label ml-1">
-																		<input class="form-radio-input" type="radio" value="มารดา" name="parent">
-																		<span class="form-radio-sign">มารดา</span>
+																	<label class="form-check-label ml-1">
+																		<input class="form-check-input" type="checkbox" value="มารดา" name="parent">
+																		<span class="form-check-sign">มารดา</span>
 																	</label>
-																	<label class="form-radio-label ml-1">
-																		<input class="form-radio-input" type="radio" value="บุคคลอื่น" name="parent">
-																		<span class="form-radio-sign">บุคคลอื่น</span>
+																	<label class="form-check-label ml-1">
+																		<input class="form-check-input" type="checkbox" value="บุคคลอื่น" name="parent" id="chkparent">
+																		<span class="form-check-sign">บุคคลอื่น (*โปรดระบุ)</span>
 																	</label>
 																</div>
 															</div>
 														</div>
+
+														<div id="dvparent" style="display: none">
 														<div class="row">
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
@@ -1867,6 +1872,7 @@
 																</div>
 															</div>
 														</div>
+														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 															<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัวเบื้องต้น</b></p>
@@ -1883,31 +1889,12 @@
 																	</select>
 																</div>
 															</div>
-															<div class="col-6 col-md-4">
-																<div class="form-group form-group-default">
-																	<label>สถานะผู้ปกครองนักเรียน</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="student_parent">
-																		<option>เลือก</option>
-																		<option value="0">0</option>
-																		<option value="1">1</option>
-																		<option value="2">2</option>
-																		<option value="3">3</option>
-																		<option value="4">4</option>
-																		<option value="5">5</option>
-																		<option value="6">6</option>
-																		<option value="7">7</option>
-																		<option value="8">8</option>
-																		<option value="9">9</option>
-																		<option value="10">10</option>
-																	</select>
-																</div>
-															</div>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่น้อง ร่วมสายโลหิต</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_blood">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_blood" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -1926,7 +1913,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่ชาย</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_brother">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_brother" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -1945,7 +1932,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>จำนวนน้องชาย</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_son">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_son" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -1964,7 +1951,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่สาว</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_sister">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_sister" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -1983,7 +1970,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>จำนวนน้องสาว</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_son2">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_son2" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -2004,7 +1991,7 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>นักเรียนเป็นบุตรคนที่</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_parent">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_parent" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -2023,7 +2010,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่น้องที่ศึกษาอยู่ (ไม่นับรวมนักเรียน)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_study">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_study" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -2042,7 +2029,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่น้องที่ประกอบอาชีพแล้ว</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_job">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_job" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -2061,7 +2048,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="no_house">
+																	<select class="form-control" id="formGroupDefaultSelect" name="no_house" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
 																		<option value="1">1</option>
@@ -2160,122 +2147,126 @@
 																</div>
 															</div>
 														</div>
-														<!-- อัพโหลดรูปภาพ -->
-													<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-														<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ ( นามสกุลไฟล์ภาพ .jpg หรือ.pngขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
-													</div>
-													<div class="row">
-													<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">รูปประจำตัวรักเรียน</label>
-																<input type="file" class="form-control-file" id="profile_img" name="profile_img">
-															</div>
-														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาบัตรประชาชนของนกเรียน</label>
-																<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
-															</div>
-														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาทะเบียนของนักเรียน</label>
-																<input type="file" class="form-control-file" id="house_student" name="house_student">
-															</div>
-														</div>
 													</div>
 
-													<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-														<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา มารดา</b></p>
-													</div>
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาบัตรประชาชนบิดา</label>
-																<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
+													<!-- อัพโหลดรูปภาพ -->
+													<div class="tab-pane" id="photo">
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ ( นามสกุลไฟล์ภาพ .jpg หรือ.pngขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">รูปประจำตัวรักเรียน</label>
+																	<input type="file" class="form-control-file" id="profile_img" name="profile_img" required>
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนของนกเรียน</label>
+																	<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนของนักเรียน</label>
+																	<input type="file" class="form-control-file" id="house_student" name="house_student">
+																</div>
 															</div>
 														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
-																<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
+
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา มารดา</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนบิดา</label>
+																	<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
+																	<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
+																</div>
 															</div>
 														</div>
+
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
+																	<input type="file" class="form-control-file" id="house_father" name="house_father">
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
+																	<input type="file" class="form-control-file" id="house_mother" name="house_mother">
+																</div>
+															</div>
+														</div>
+
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านผู้ปกครอง</label>
+																	<input type="file" class="form-control-file" id="house_parent" name="house_parent">
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนผู้ปกครอง</label>
+																	<input type="file" class="form-control-file" id="id_card_parent" name="id_card_parent">
+																</div>
+															</div>
+														</div>
+
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหน้า)</label>
+																	<input type="file" class="form-control-file" id="front_grade" name="front_grade">
+																</div>
+															</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหลัง)</label>
+																	<input type="file" class="form-control-file" id="back_grade" name="back_grade">
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สูติบัตร</label>
+																	<input type="file" class="form-control-file" id="birth_certificate" name="birth_certificate">
+																</div>
+															</div>
+														</div>
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">หนังสือรับรองความพิการ</label>
+																	<input type="file" class="form-control-file" id="disability_certificate" name="disability_certificate">
+																</div>
+															</div>
+														</div>
+
+
+
 													</div>
 
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-																<input type="file" class="form-control-file" id="house_father" name="house_father">
-															</div>
-														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
-																<input type="file" class="form-control-file" id="house_mother" name="house_mother">
-															</div>
-														</div>
-													</div>
-
-													<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-														<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
-													</div>
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านผู้ปกครอง</label>
-																<input type="file" class="form-control-file" id="house_parent" name="house_parent">
-															</div>
-														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สำเนาบัตรประชาชนผู้ปกครอง</label>
-																<input type="file" class="form-control-file" id="id_card_parent" name="id_card_parent">
-															</div>
-														</div>
-													</div>
-
-													<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-														<p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร</b></p>
-													</div>
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหน้า)</label>
-																<input type="file" class="form-control-file" id="front_grade" name="front_grade">
-															</div>
-														</div>
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">ใบ ปพ. (ด้านหลัง)</label>
-																<input type="file" class="form-control-file" id="back_grade" name="back_grade">
-															</div>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">สูติบัตร</label>
-																<input type="file" class="form-control-file" id="birth_certificate" name="birth_certificate">
-															</div>
-														</div>
-													</div>
-													<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-														<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
-													</div>
-													<div class="row">
-														<div class="col-sm-4 col-md-4">
-															<div class="form-group">
-																<label for="exampleFormControlFile1">หนังสือรับรองความพิการ</label>
-																<input type="file" class="form-control-file" id="disability_certificate" name="disability_certificate">
-															</div>
-														</div>
-													</div>
-
-
-													</div>
-													
 												</div>
 											</div>
 										</div>
@@ -2289,103 +2280,104 @@
 											<div class="pull-right">
 												<input type="button" class="btn btn-next btn-info" name="next" value="ถัดไป">
 												<!-- <input type="submit" class="btn btn-finish btn-info" name="finish" value="ยืนยัน" style="display: none;"> -->
-												<button type="submit" class="btn btn-finish btn-info" name="finish" value="ยืนยัน" style="display: none;" id="alert_demo_7">ยืนยัน</button>
+												<button type="submit" class="btn btn-finish btn-info" name="finish" value="ยืนยัน" style="display: none;">ยืนยัน</button>
 											</div>
 											<div class="clearfix"></div>
 										</div>
-									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				</form>
 			</div>
-			<footer class="footer">
-				<div class="container">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						พัฒนาโดย PWK40 & CSMJU23
-					</div>
-				</div>
-			</footer>
 		</div>
-		<!--   Core JS Files   -->
-		<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-		<script src="../assets/js/core/popper.min.js"></script>
-		<script src="../assets/js/core/bootstrap.min.js"></script>
+		<footer class="footer">
+			<div class="container">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="copyright ml-auto">
+					พัฒนาโดย PWK40 & CSMJU23
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!--   Core JS Files   -->
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
 
-		<!-- jQuery UI -->
-		<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-		<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-		<!-- jQuery Scrollbar -->
-		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
-		<!-- Moment JS -->
-		<script src="../assets/js/plugin/moment/moment.min.js"></script>
+	<!-- Moment JS -->
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
 
-		<!-- Chart JS -->
-		<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+	<!-- Chart JS -->
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
 
-		<!-- jQuery Sparkline -->
-		<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<!-- jQuery Sparkline -->
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-		<!-- Chart Circle -->
-		<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+	<!-- Chart Circle -->
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
 
-		<!-- Datatables -->
-		<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+	<!-- Datatables -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
 
-		<!-- Bootstrap Toggle -->
-		<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<!-- Bootstrap Toggle -->
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
-		<!-- jQuery Vector Maps -->
-		<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-		<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<!-- jQuery Vector Maps -->
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
-		<!-- Google Maps Plugin -->
-		<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+	<!-- Google Maps Plugin -->
+	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
 
-		<!-- Dropzone -->
-		<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+	<!-- Dropzone -->
+	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
 
-		<!-- Fullcalendar -->
-		<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+	<!-- Fullcalendar -->
+	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
 
-		<!-- DateTimePicker -->
-		<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+	<!-- DateTimePicker -->
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
 
-		<!-- Bootstrap Tagsinput -->
-		<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<!-- Bootstrap Tagsinput -->
+	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 
-		<!-- Bootstrap Wizard -->
-		<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+	<!-- Bootstrap Wizard -->
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
 
-		<!-- jQuery Validation -->
-		<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+	<!-- jQuery Validation -->
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
 
-		<!-- Summernote -->
-		<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+	<!-- Summernote -->
+	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
 
-		<!-- Select2 -->
-		<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+	<!-- Select2 -->
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
 
-		<!-- Sweet Alert -->
-		<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<!-- Sweet Alert -->
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
-		<!-- Atlantis JS -->
-		<script src="../assets/js/atlantis2.min.js"></script>
+	<!-- Atlantis JS -->
+	<script src="../assets/js/atlantis2.min.js"></script>
 
-		<!-- Atlantis DEMO methods, don't include it in your project! -->
-		<script src="../assets/js/demo.js"></script>
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="../assets/js/demo.js"></script>
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 		$(function() {
 			$("#chkaddress").click(function() {
 				if ($(this).is(":checked")) {
@@ -2397,158 +2389,170 @@
 		});
 	</script>
 
-		<script>
-			Circles.create({
-				id: 'circles-1',
-				radius: 45,
-				value: 60,
-				maxValue: 100,
-				width: 7,
-				text: 5,
-				colors: ['#f1f1f1', '#FF9E27'],
-				duration: 400,
-				wrpClass: 'circles-wrp',
-				textClass: 'circles-text',
-				styleWrapper: true,
-				styleText: true
-			})
-
-			Circles.create({
-				id: 'circles-2',
-				radius: 45,
-				value: 70,
-				maxValue: 100,
-				width: 7,
-				text: 36,
-				colors: ['#f1f1f1', '#2BB930'],
-				duration: 400,
-				wrpClass: 'circles-wrp',
-				textClass: 'circles-text',
-				styleWrapper: true,
-				styleText: true
-			})
-
-			Circles.create({
-				id: 'circles-3',
-				radius: 45,
-				value: 40,
-				maxValue: 100,
-				width: 7,
-				text: 12,
-				colors: ['#f1f1f1', '#F25961'],
-				duration: 400,
-				wrpClass: 'circles-wrp',
-				textClass: 'circles-text',
-				styleWrapper: true,
-				styleText: true
-			})
-
-			var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-			var mytotalIncomeChart = new Chart(totalIncomeChart, {
-				type: 'bar',
-				data: {
-					labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-					datasets: [{
-						label: "Total Income",
-						backgroundColor: '#ff9e27',
-						borderColor: 'rgb(23, 125, 255)',
-						data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-					}],
-				},
-				options: {
-					responsive: true,
-					maintainAspectRatio: false,
-					legend: {
-						display: false,
-					},
-					scales: {
-						yAxes: [{
-							ticks: {
-								display: false //this will remove only the label
-							},
-							gridLines: {
-								drawBorder: false,
-								display: false
-							}
-						}],
-						xAxes: [{
-							gridLines: {
-								drawBorder: false,
-								display: false
-							}
-						}]
-					},
+<script type="text/javascript">
+		$(function() {
+			$("#chkparent").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvparent").show();
+				} else {
+					$("#dvparent").hide();
 				}
 			});
+		});
+	</script>
 
-			$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-				type: 'line',
-				height: '70',
-				width: '100%',
-				lineWidth: '2',
-				lineColor: '#ffa534',
-				fillColor: 'rgba(255, 165, 52, .14)'
-			});
-		</script>
-		<script>
-			//== Class definition
-			var SweetAlert2Demo = function() {
+	<script>
+		Circles.create({
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
+			text: 5,
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
 
-				//== Demos
-				var initDemos = function() {
+		Circles.create({
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
+			text: 36,
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
 
-					$('#alert_demo_7').click(function(e) {
-						swal({
-							title: 'ยืนยันข้อมูล ?',
-							text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
-							type: 'warning',
-							buttons: {
-								confirm: {
-									text: 'ตกลง',
-									className: 'btn btn-success'
-								},
-								cancel: {
-									text: 'ย้อนกลับ',
-									visible: true,
-									className: 'btn btn-danger'
-								}
+		Circles.create({
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
+			text: 12,
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+	<script>
+		//== Class definition
+		var SweetAlert2Demo = function() {
+
+			//== Demos
+			var initDemos = function() {
+
+				$('#alert_demo_7').click(function(e) {
+					swal({
+						title: 'ยืนยันข้อมูล ?',
+						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+						type: 'warning',
+						buttons: {
+							confirm: {
+								text: 'ตกลง',
+								className: 'btn btn-success'
+							},
+							cancel: {
+								text: 'ย้อนกลับ',
+								visible: true,
+								className: 'btn btn-danger'
 							}
-						}).then((Delete) => {
-							if (Delete) {
-								swal({
-									title: 'บันทึกข้อมูลเรียบร้อย!',
-									text: 'กลับไปสู่หน้าหลัก',
-									type: 'success',
-									buttons: {
-										confirm: {
-											className: 'btn btn-success'
-										}
+						}
+					}).then((Delete) => {
+						if (Delete) {
+							swal({
+								title: 'บันทึกข้อมูลเรียบร้อย!',
+								text: 'กลับไปสู่หน้าหลัก',
+								type: 'success',
+								buttons: {
+									confirm: {
+										className: 'btn btn-success'
 									}
-								}).then(function() {
-									window.location = '/';
-								});
-							} else {
-								swal.close();
-							}
-						});
-					})
+								}
+							}).then(function() {
+								window.location = '/';
+							});
+						} else {
+							swal.close();
+						}
+					});
+				})
 
-				};
+			};
 
-				return {
-					//== Init
-					init: function() {
-						initDemos();
-					},
-				};
-			}();
+			return {
+				//== Init
+				init: function() {
+					initDemos();
+				},
+			};
+		}();
 
-			//== Class Initialization
-			jQuery(document).ready(function() {
-				SweetAlert2Demo.init();
-			});
-		</script>
+		//== Class Initialization
+		jQuery(document).ready(function() {
+			SweetAlert2Demo.init();
+		});
+	</script>
 
 </body>
 

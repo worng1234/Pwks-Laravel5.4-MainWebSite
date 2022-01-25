@@ -105,7 +105,7 @@
 											<td style="text-align: left; vertical-align: top;" class="saraban">ชั้นเรียน/ห้อง
 											</td>
 											<td class="saraban">
-												{{$data_student->student_class}}/{{$data_student->student_room}}
+												มัธยมศึกษาปีที่ {{$data_student->student_class}}/{{$data_student->student_room}}
 											</td>
 										</tr>
 										<tr>

@@ -2237,7 +2237,19 @@ class newstudentm1Controller extends Controller
     public function destroy(Request $request, $id)
     {
         $newstudentm1 = newstudentm1Model::find($id);
+
+        $findIdCard = $newstudentm1->idNumber;
+
+        $status_pic = DB::table('status_pic')
+            ->where('student_idcard', '=', $findIdCard);
+        
+        $photo_student = DB::table('photo_student')
+            ->where('student_idcard', '=', $findIdCard);
+
         $newstudentm1->delete();
+        $status_pic->delete();
+        $photo_student->delete();
+        
         return redirect('SortNewstudentM1');
     }
 

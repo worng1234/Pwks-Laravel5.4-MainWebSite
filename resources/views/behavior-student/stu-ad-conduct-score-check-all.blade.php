@@ -271,7 +271,7 @@
 													<td align="center">{{$value->student_id_behavior}}</td>
 													<td align="center">{{$value->behavior_day}}/{{$value->behavior_mount}}/20{{$value->behavior_year}}</td>
 													<td align="center">{{$value->fullname}}</td>
-													<td align="center">{{$value->behavior_class}}/{{$value->behavior_room}}</td>
+													<td align="center">มัธยมศึกษาปีที่ {{$value->behavior_class}}/{{$value->behavior_room}}</td>
 													<td align="center">{{$value->behavior_history}}</td>
 													<td align="center">{{$value->etc}}</td>
 													<td align="center">{{$value->minus_score}}</td>
