@@ -500,7 +500,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/ProfileStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
+                                                @if ($data2->profile_img !== NULL)
+                                                <a href='{{ url("/ProfileStudentM4/{$data1->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/profile_img/{{$data2->profile_img}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -528,7 +534,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
+                                                @if ($data2->id_card_student !== NULL)
+                                                <a href='{{ url("/IdCardStudentM4/{$data1->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_student/{{$data2->id_card_student}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -556,7 +568,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
+                                                @if ($data2->house_student !== NULL)
+                                                <a href='{{ url("/HouseStudentM4/{$data1->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_student/{{$data2->house_student}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -584,7 +602,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/SubmitStudentM4/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
+                                                @if ($data2->student_submit !== NULL)
+                                                <a href='{{ url("/SubmitStudentM4/{$data1->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/student_submit/{{$data2->student_submit}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">

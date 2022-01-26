@@ -484,7 +484,7 @@
 									{{csrf_field()}}
                                     <div class="card-body" style="min-height: 400px">
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชน บิดา มารดา</b></p>
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้าน บิดา </b></p>
                                     </div>
                                     <div class="row">
                                         <div align="center" style="margin-left:20px;">
@@ -500,7 +500,13 @@
                                         </div>
                                         <div class="col-sm-1 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนบิดา</a>
+                                                @if ($data2->id_card_father !== NULL)
+                                                <a href='{{ url("/IdCardFatherM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_father/{{$data2->id_card_father}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -513,8 +519,47 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data3->status_house_father == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_father == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data3->status_house_father == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data2->house_father !== NULL)
+                                                <a href='{{ url("/HouseFatherM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_father/{{$data2->house_father}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-md-3">
+                                            <div class="form-group">
+                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_father">
+                                                    <option value="01" <?php if ($data3->status_house_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                    <option value="02" <?php if ($data3->status_house_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                    <option value="03" <?php if ($data3->status_house_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                    <option value="NULL" <?php if ($data3->status_house_father == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้าน มารดา</b></p>
                                     </div>
                                     <div class="row">
                                         <div align="center" style="margin-left:20px;">
@@ -530,7 +575,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนมารดา</a>
+                                                @if ($data2->id_card_mother !== NULL)
+                                                <a href='{{ url("/IdCardMotherM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_mother/{{$data2->id_card_mother}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -545,37 +596,6 @@
                                         </div>
                                     </div>
 
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้าน บิดา มารดา</b></p>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_house_father == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_father == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_father == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                <a href='{{ url("/HouseFatherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านบิดา</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_father">
-                                                    <option value="01" <?php if ($data3->status_house_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_house_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_house_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_house_father == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
@@ -590,7 +610,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseMotherM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านมารดา</a>
+                                                @if ($data2->house_mother !== NULL)
+                                                <a href='{{ url("/HouseMotherM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_mother/{{$data2->house_mother}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -623,7 +649,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px; width:10%;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
+                                                @if ($data2->id_card_parent !== NULL)
+                                                <a href='{{ url("/IdCardParentM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_parent/{{$data2->id_card_parent}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -651,7 +683,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseParentM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px; width:10%;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
+                                                @if ($data2->house_parent !== NULL)
+                                                <a href='{{ url("/HouseParentM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_parent/{{$data->house_parent}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -684,7 +722,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/FrontGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px; width:10%;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
+                                                @if ($data2->front_grade !== NULL)
+                                                <a href='{{ url("/FrontGradeM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/front_grade/{{$data2->front_grade}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -712,7 +756,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/BackGradeM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px; width:10%;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
+                                                @if ($data2->back_grade !== NULL)
+                                                <a href='{{ url("/BackGradeM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/back_grade/{{$data2->back_grade}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -740,7 +790,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/BirthCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px; width:10%;"></i>ใบสูติบัตร</a>
+                                                @if ($data2->birth_certificate !== NULL)
+                                                <a href='{{ url("/BirthCertificateM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/birth_certificate/{{$data2->birth_certificate}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">
@@ -773,7 +829,13 @@
                                         </div>
                                         <div class="col-sm-3 col-md-3">
                                             <div class="form-group">
-                                                <a href='{{ url("/DisabilityCertificateM1/{$data2->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px; width:10%;"></i>หนังสือรับรองความพิการ</a>
+                                                @if ($data2->disability_certificate !== NULL)
+                                                <a href='{{ url("/DisabilityCertificateM4/{$data2->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/disability_certificate/{{$data2->disability_certificate}}"  width="70" height="80"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-md-3">

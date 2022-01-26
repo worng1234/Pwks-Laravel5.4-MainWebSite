@@ -89,10 +89,9 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>สถานะระบบ :</b> เปิดลงทะเบียน</label>
-                            <label><b>ภาคเรียนที่ :</b> 1/2565</label>
-                            <label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
-                            <label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
+                            <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('admin')->user()->prename}}{{ Auth::guard('admin')->user()->fname}} </br>{{ Auth::guard('admin')->user()->surname}}</label>
+							<label><b>ตำแหน่ง :</b> Admin คนสวย ^^</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
                             <div class="clearfix"></div>
                         </div>
