@@ -29,6 +29,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/atlantis2.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../assets/css/demo.css">
+
 
     <script type="text/javascript" class="init">
         $(document).ready(function() {
@@ -126,11 +132,7 @@
                             <center>400</center>
                         </td>
                         <td scope="col" width="5%" class="saraban">
-                            @if ($dateM4 !== NULL)
                             <center>{{$dateM4}}</center>
-                            @else 
-                            <p align="center">-</p>
-                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
                             @if ($partitionCount != 0)
