@@ -126,8 +126,8 @@
                             <center>400</center>
                         </td>
                         <td scope="col" width="5%" class="saraban">
-                            @if ($dateM4->date !== NULL)
-                            <center>{{$dateM4->date}}</center>
+                            @if ($dateM4 !== NULL)
+                            <center>{{$dateM4}}</center>
                             @else 
                             <p align="center">-</p>
                             @endif

@@ -130,8 +130,8 @@
                             <center>280</center>
                         </td>
                         <td scope="col" width="5%" class="saraban">
-                            @if ($dateM1->date !== NULL)
-                            <center>{{$dateM1->date}}</center>
+                            @if ($dateM1 !== NULL)
+                            <center>{{$dateM1}}</center>
                             @else 
                             <p align="center">-</p>
                             @endif
