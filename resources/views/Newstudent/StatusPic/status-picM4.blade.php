@@ -46,6 +46,11 @@
             background-position: center;
             position: relative;
         }
+        .bor{
+            border: 3px solid ;
+            border-color: #cd8fff;
+            border-radius: 3px;
+        }
     </style>
 
     <!-- CSS Files -->
@@ -502,10 +507,10 @@
                                             <div class="form-group">
                                                 @if ($data2->profile_img !== NULL)
                                                 <a href='{{ url("/ProfileStudentM4/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/profile_img/{{$data2->profile_img}}"  width="70" height="80"> 
+                                                    <img src="../ImgAll/profile_img/{{$data2->profile_img}}"  width="70" height="80" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
                                                 @endif
                                             </div>
                                         </div>
@@ -536,10 +541,10 @@
                                             <div class="form-group">
                                                 @if ($data2->id_card_student !== NULL)
                                                 <a href='{{ url("/IdCardStudentM4/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/id_card/id_card_student/{{$data2->id_card_student}}"  width="70" height="80"> 
+                                                    <img src="../ImgAll/id_card/id_card_student/{{$data2->id_card_student}}"  width="70" height="80" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
                                                 @endif
                                             </div>
                                         </div>
@@ -570,10 +575,10 @@
                                             <div class="form-group">
                                                 @if ($data2->house_student !== NULL)
                                                 <a href='{{ url("/HouseStudentM4/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_student/{{$data2->house_student}}"  width="70" height="80"> 
+                                                    <img src="../ImgAll/house_regis/house_student/{{$data2->house_student}}"  width="70" height="80" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
                                                 @endif
                                             </div>
                                         </div>
@@ -604,10 +609,10 @@
                                             <div class="form-group">
                                                 @if ($data2->student_submit !== NULL)
                                                 <a href='{{ url("/SubmitStudentM4/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/student_submit/{{$data2->student_submit}}"  width="70" height="80"> 
+                                                    <img src="../ImgAll/student_submit/{{$data2->student_submit}}"  width="70" height="80" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" >
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
                                                 @endif
                                             </div>
                                         </div>
