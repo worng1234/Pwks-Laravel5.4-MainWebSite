@@ -109,43 +109,43 @@ class studentcoreController extends Controller
                 && $request->hasFile('birth_certificate')
             ) {
 
-                $profile_img = $request->file('profile_img')->getClientOriginalName();
+                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
-                $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
-                $house_student = $request->file('house_student')->getClientOriginalName();
+                $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
-                $id_card_father = $request->file('id_card_father')->getClientOriginalName();
+                $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic4);
 
-                $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
+                $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic5);
 
-                $house_father = $request->file('house_father')->getClientOriginalName();
+                $house_father = $request->file('house_father')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic6);
 
-                $house_mother = $request->file('house_mother')->getClientOriginalName();
+                $house_mother = $request->file('house_mother')->getClientOriginalExtension();
                 $compPic7 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic7);
 
-                $front_grade = $request->file('front_grade')->getClientOriginalName();
+                $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic8 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic8);
 
-                $back_grade = $request->file('back_grade')->getClientOriginalName();
+                $back_grade = $request->file('back_grade')->getClientOriginalExtension();
                 $compPic9 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic9);
 
-                $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+                $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
                 $compPic10 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic10);
 
@@ -173,47 +173,47 @@ class studentcoreController extends Controller
                 && $request->hasFile('birth_certificate')  && $request->hasFile('disability_certificate')
             ) {
 
-                $profile_img = $request->file('profile_img')->getClientOriginalName();
+                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
-                $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
-                $house_student = $request->file('house_student')->getClientOriginalName();
+                $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
-                $id_card_father = $request->file('id_card_father')->getClientOriginalName();
+                $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_father')->storeAs('ImgAll/id_card/id_card_father', $compPic4);
 
-                $id_card_mother = $request->file('id_card_mother')->getClientOriginalName();
+                $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_mother')->storeAs('ImgAll/id_card/id_card_mother', $compPic5);
 
-                $house_father = $request->file('house_father')->getClientOriginalName();
+                $house_father = $request->file('house_father')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_father')->storeAs('ImgAll/house_regis/house_father', $compPic6);
 
-                $house_mother = $request->file('house_mother')->getClientOriginalName();
+                $house_mother = $request->file('house_mother')->getClientOriginalExtension();
                 $compPic7 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_mother')->storeAs('ImgAll/house_regis/house_mother', $compPic7);
 
-                $front_grade = $request->file('front_grade')->getClientOriginalName();
+                $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic8 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic8);
 
-                $back_grade = $request->file('back_grade')->getClientOriginalName();
+                $back_grade = $request->file('back_grade')->getClientOriginalExtension();
                 $compPic9 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic9);
 
-                $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+                $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
                 $compPic10 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic10);
 
-                $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
+                $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
                 $compPic11 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic11);
 
@@ -242,35 +242,35 @@ class studentcoreController extends Controller
                 && $request->hasFile('birth_certificate')
             ) {
 
-                $profile_img = $request->file('profile_img')->getClientOriginalName();
+                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
-                $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
-                $house_student = $request->file('house_student')->getClientOriginalName();
+                $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
-                $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
+                $id_card_parent = $request->file('id_card_parent')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic4);
 
-                $house_parent = $request->file('house_parent')->getClientOriginalName();
+                $house_parent = $request->file('house_parent')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic5);
 
-                $front_grade = $request->file('front_grade')->getClientOriginalName();
+                $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic6);
 
-                $back_grade = $request->file('back_grade')->getClientOriginalName();
+                $back_grade = $request->file('back_grade')->getClientOriginalExtension();
                 $compPic7 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic7);
 
-                $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+                $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
                 $compPic8 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic8);
 
@@ -296,39 +296,39 @@ class studentcoreController extends Controller
                 && $request->hasFile('birth_certificate')  && $request->hasFile('disability_certificate')
             ) {
 
-                $profile_img = $request->file('profile_img')->getClientOriginalName();
+                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
 
-                $id_card_student = $request->file('id_card_student')->getClientOriginalName();
+                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
 
-                $house_student = $request->file('house_student')->getClientOriginalName();
+                $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
 
-                $id_card_parent = $request->file('id_card_parent')->getClientOriginalName();
+                $id_card_parent = $request->file('id_card_parent')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('id_card_parent')->storeAs('ImgAll/id_card/id_card_parent', $compPic4);
 
-                $house_parent = $request->file('house_parent')->getClientOriginalName();
+                $house_parent = $request->file('house_parent')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic5);
 
-                $front_grade = $request->file('front_grade')->getClientOriginalName();
+                $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('front_grade')->storeAs('ImgAll/front_grade', $compPic6);
 
-                $back_grade = $request->file('back_grade')->getClientOriginalName();
+                $back_grade = $request->file('back_grade')->getClientOriginalExtension();
                 $compPic7 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('back_grade')->storeAs('ImgAll/back_grade', $compPic7);
 
-                $birth_certificate = $request->file('birth_certificate')->getClientOriginalName();
+                $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
                 $compPic8 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('birth_certificate')->storeAs('ImgAll/birth_certificate', $compPic8);
 
-                $disability_certificate = $request->file('disability_certificate')->getClientOriginalName();
+                $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
                 $compPic9 = str_replace(' ', '_', $request->student_id_card);
                 $path = $request->file('disability_certificate')->storeAs('ImgAll/disability_certificate', $compPic9);
 

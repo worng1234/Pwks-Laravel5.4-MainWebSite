@@ -132,7 +132,11 @@
                             <center>400</center>
                         </td>
                         <td scope="col" width="5%" class="saraban">
-                            <center>{{$dateM4}}</center>
+                            @if ($dateM4 == NULL)
+                            <p align="center">-</p>
+                            @else
+                            <center>{{$dateM4->date}}</center>
+                            @endif
                         </td>
                         <td scope="col" width="5%" class="saraban">
                             @if ($partitionCount != 0)

@@ -1829,7 +1829,13 @@ class newstudentm1Controller extends Controller
     public function show($id)
     {
         $data = newstudentm1Model::findOrFail($id);
-        return view('Newstudent.newstudentm1byID', compact('data'));
+        $school_year = DB::table('school_year')
+            ->first();
+
+        return view('Newstudent.newstudentm1byID', [
+            'data' => $data,
+            'school_year' => $school_year,
+        ]);
     }
 
     /**

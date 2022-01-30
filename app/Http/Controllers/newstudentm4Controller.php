@@ -1783,7 +1783,13 @@ class newstudentm4Controller extends Controller
     public function show($id)
     {
         $data = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.newstudentm4byID', compact('data'));
+        $school_year = DB::table('school_year')
+            ->first();
+            
+        return view('Newstudent.newstudentm4byID', [
+            'data' => $data,
+            'school_year' => $school_year,
+        ]);
     }
 
     /**

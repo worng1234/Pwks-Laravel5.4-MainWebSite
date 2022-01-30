@@ -282,7 +282,7 @@
 										</div>
 
 										<div hidden>
-											<input type="text" name="idNumber" value="{{$data->id_number}}">
+											<input type="text" name="id_number" value="{{$data->id_number}}">
 										</div>
 
 									<!-- สถานะการสมัคร -->
@@ -324,7 +324,7 @@
 									</div>
 
 									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-success" id="alert_demo_7"><strong>ยืนยัน</strong></button>
+										<button type="submit" class="btn btn-success" ><strong>ยืนยัน</strong></button>
 										<a href='{{ url("/Newstudent/documentM4" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 									</div><br>
 							</div>
