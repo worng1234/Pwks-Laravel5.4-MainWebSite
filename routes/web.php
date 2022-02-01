@@ -221,6 +221,11 @@ Route::post('/updatedstudentcore/{id}', 'studentcoreController@update');
 Route::get('/deletestudentcore/{id}', 'studentcoreController@destroy');
 Route::post('/addstudentcore', 'studentcoreController@addstudentcore');
 
+Route::get('/BehaviorStudent/{id}', 'behaviorstudentController@viewStudentBehaviorID');
+
+Route::get('/DocumentStudent/{id}', 'studentcoreController@showStudentDocument');
+Route::post('/EditDocumentStudent/{id}', 'studentcoreController@editStudentDocument');
+
 Route::post('/searchStudent', 'studentcoreController@search');
 
 //ข้อมูลนักเรียนพื้นฐาน

@@ -2176,7 +2176,7 @@
 														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา มารดา</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-4 col-md-4">
@@ -2185,6 +2185,17 @@
 																	<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
 																</div>
 															</div>
+															<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
+																	<input type="file" class="form-control-file" id="house_father" name="house_father">
+																</div>
+															</div>
+															<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+																<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
+															</div>
+
 															<div class="col-sm-4 col-md-4">
 																<div class="form-group">
 																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
@@ -2193,13 +2204,7 @@
 															</div>
 														</div>
 
-														<div class="row">
-															<div class="col-sm-4 col-md-4">
-																<div class="form-group">
-																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-																	<input type="file" class="form-control-file" id="house_father" name="house_father">
-																</div>
-															</div>
+														
 															<div class="col-sm-4 col-md-4">
 																<div class="form-group">
 																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>

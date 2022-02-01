@@ -476,7 +476,7 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียนใหม่ <i class="flaticon-right-arrow"></i> ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</div>
-										<a href="{{url('/SortNewstudentM4')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
+										<a href="{{url('/UnsubmitObject/M4')}}" class="btn btn-danger" style="margin-left: auto;">ย้อนกลับ</a>
 									</div>
 								</div>
 

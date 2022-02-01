@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\studentcoreModels;
 use App\Models\schoolyearModel;
 use Illuminate\Support\Facades\DB;
+use App\Student;
 
 class behaviorstudentController extends Controller
 {
@@ -192,6 +193,64 @@ class behaviorstudentController extends Controller
 
         return view(
             'behavior-student.stu-ad-conduct-score-check-view-id',
+            [
+                //ปีการศึกษา
+                'school_year' => $school_year,
+
+                "data_student" => $data_student,
+                "student" => $student,
+                "photo" => $photo
+            ]
+        );
+    }
+
+    //นักเรียน
+    public function viewStudentBehaviorID($id)
+    {
+        //ปีการศึกษา
+        $school_year = DB::table('school_year')
+            ->first();
+
+        $data_student = Student::find($id);
+        $stid = $data_student->username;
+        $photo_id = $data_student->student_id_card;
+
+        $student = DB::table('student_core')
+            ->join('behavior_student', 'student_core.student_id', '=', 'behavior_student.student_id_behavior')
+            ->select(
+                'student_core.student_id',
+                'student_core.student_number',
+                'behavior_student.fullname',
+                'behavior_student.behavior_class',
+                'behavior_student.behavior_room',
+                'behavior_student.behavior_history',
+                'behavior_student.minus_score',
+                'behavior_student.plus_score',
+                'behavior_student.behavior_day',
+                'behavior_student.behavior_mount',
+                'behavior_student.behavior_year',
+                'behavior_student.behavior_study_year',
+                'behavior_student.behavior_term',
+                'behavior_student.etc'
+
+            )
+            ->where('student_core.student_id', '=', $stid)
+            ->get();
+
+        if ($photo_id !== NULL) {
+            $photo = DB::table('student_core')
+                ->join('photo_student', 'student_core.student_id_card', '=', 'photo_student.student_idcard')
+                ->select('photo_student.profile_img')
+                ->where('student_core.student_id_card', '=', $photo_id)
+                ->first();
+        } else {
+            $photo = $photo_id;
+        }
+
+
+
+        return view(
+            'Studentcore.student.student-behavior-id',
             [
                 //ปีการศึกษา
                 'school_year' => $school_year,

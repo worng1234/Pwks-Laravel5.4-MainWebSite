@@ -198,6 +198,7 @@
                                                 <thead>
                                                     <th><center>เลขบัตรประจำตัวประชาชน</center></th>
                                                     <th><center>ชื่อนาม-สกุล</center></th>
+                                                    <th><center>โอนย้ายข้อมูล</center></th>
                                                     <th><center>สถานะเอกสารรายงานตัว</center></th>
                                                     <th><center>ส่งเอกสาร</center></th>
                                                 </thead>
@@ -206,6 +207,17 @@
                                                     <tr>
                                                         <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                                        <td align="center">
+                                                            @if ($data->status_tranfer == '01')
+                                                                <p style="color:green;">โอนย้ายแล้ว</p>
+                                                            @elseif ($data->status_tranfer == '02')
+                                                                <p style="color:blue;">รอตรวจสอบ</p>
+                                                            @elseif ($data->status_tranfer == '03')
+                                                                <p style="color:red;">ไม่ผ่าน</p>
+                                                            @else
+                                                                 รอตรวจสอบ
+                                                            @endif
+                                                        </td>
                                                         <td align="center">
                                                             @if ($data->status_report == '01')
                                                                 <p style="color:green;">ผ่าน</p>
