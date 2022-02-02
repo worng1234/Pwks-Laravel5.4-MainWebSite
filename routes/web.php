@@ -203,7 +203,8 @@ Route::get('/DisabilityCertificateM4/{id}', 'newstudentm4Controller@DisabilityCe
 // Route::resource('testup', TestUPController::class);
 
 //Studentcore
-Route::resource('/StudentCore', 'studentcoreController');
+Route::get('/StudentCore', 'studentcoreController@index');
+Route::post('/search/StudentCore', 'studentcoreController@index');
 
 Route::get('/Addstudentcore', 'studentcoreController@create');
 
@@ -226,7 +227,6 @@ Route::get('/BehaviorStudent/{id}', 'behaviorstudentController@viewStudentBehavi
 Route::get('/DocumentStudent/{id}', 'studentcoreController@showStudentDocument');
 Route::post('/EditDocumentStudent/{id}', 'studentcoreController@editStudentDocument');
 
-Route::post('/searchStudent', 'studentcoreController@search');
 
 //ข้อมูลนักเรียนพื้นฐาน
 Route::get('/showStudentByID/{id}', 'studentcoreController@showStudentByID');

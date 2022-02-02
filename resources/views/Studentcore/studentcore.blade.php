@@ -117,9 +117,9 @@
 					<div class="user">
 						<div class="info">
 
-							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('academic')->user()->prename}}{{ Auth::guard('academic')->user()->fname}} </br>{{ Auth::guard('academic')->user()->surname}}</label>
+							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -131,42 +131,159 @@
 					<ul class="nav nav-primary">
 
 						<li class="nav-item">
-							<a href="/">
+							<a href="{{ url('/academic')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>
 						</li>
 
-						<li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
+						<li class="nav-item ">
+							<a href='{{ url("/RegisterYear/1")}}'>
+								<i class="fas fa-calendar-alt"></i>
+								<p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#agree">
+								<i class="fas fa-id-card-alt"></i>
+								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="forms">
+							<div class="collapse" id="agree">
 								<ul class="nav nav-collapse">
 									<li>
-										<a data-toggle="collapse" href="#forms1">
-											<span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
+										<a data-toggle="collapse" href="#formob1">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse show" id="forms1">
+										<div class="collapse" id="formob1">
 											<ul class="nav nav-collapse subnav">
-												<li class="active">
-													<a href="{{ route('StudentCore.index') }}">
-														<span class="sub-item">แสดงข้อมูลนักเรียน</span>
+												<li>
+													<a href="{{ url('/UnsubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
 													</a>
 												</li>
 												<li>
-													<a href="/AddstudentCore">
-														<span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
+													<a href="{{ url('/UnsubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
 													</a>
 												</li>
 											</ul>
 										</div>
 									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob2">
+											<span class="sub-item">ตรวจสอบแล้ว</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/SubmitObject/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/SubmitObject/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
 
-									<!-- <li>
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#move">
+								<i class="fas fa-file-alt"></i>
+								<p>หลักฐานรายงานตัวและ</br>โอนย้ายข้อมูล</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="move">
+								<ul class="nav nav-collapse">
+									<li>
+										<a data-toggle="collapse" href="#formob3">
+											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse " id="formob3">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/documentUnsubmit/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/documentUnsubmit/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob4">
+											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob4">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/submitNotTranfer/M1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/submitNotTranfer/M4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#formob5">
+											<span class="sub-item">โอนย้ายแล้ว</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="formob5">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/tranferAllM1')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/tranferAllM4')}}">
+														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="nav-item active">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#forms">
+								<i class="fas fa-user-graduate"></i>
+								<p>จัดการข้อมูลนักเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="forms">
+								<ul class="nav nav-collapse">
+									<li>
 										<a data-toggle="collapse" href="#forms2">
 											<span class="sub-item">เลื่อนชั้นเรียน</span>
 											<span class="caret"></span>
@@ -174,14 +291,18 @@
 										<div class="collapse" id="forms2">
 											<ul class="nav nav-collapse subnav">
 												<li>
-													<a href="#">
+													<a href="{{ url('/academic/class')}}">
 														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
 													</a>
 												</li>
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms3">
 											<span class="sub-item">จบการศึกษา</span>
@@ -190,19 +311,18 @@
 										<div class="collapse" id="forms3">
 											<ul class="nav nav-collapse subnav">
 												<li>
-													<a href="academic-graduated-all.html">
+													<a href="{{ url('/academic/final')}}">
 														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
 													</a>
 												</li>
 												<li>
-													<a href="academic-graduated-all.html">
+													<a href="{{ url('/academic/finalChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
 													</a>
 												</li>
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms4">
 											<span class="sub-item">ย้ายสถานศึกษา</span>
@@ -211,19 +331,18 @@
 										<div class="collapse" id="forms4">
 											<ul class="nav nav-collapse subnav">
 												<li>
-													<a href="academic-move-all.html">
+													<a href="{{ url('/academic/move')}}">
 														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
 													</a>
 												</li>
 												<li>
-													<a href="academic-move-add.html">
+													<a href="{{ url('/academic/moveChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
 													</a>
 												</li>
 											</ul>
 										</div>
 									</li>
-
 									<li>
 										<a data-toggle="collapse" href="#forms5">
 											<span class="sub-item">ออกกลางคัน</span>
@@ -232,18 +351,79 @@
 										<div class="collapse" id="forms5">
 											<ul class="nav nav-collapse subnav">
 												<li>
-													<a href="academic-out-all.html">
+													<a href="{{ url('/academic/out')}}">
 														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
 													</a>
 												</li>
 												<li>
-													<a href="academic-out-add.html">
+													<a href="{{ url('/academic/outChange')}}">
 														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
 													</a>
 												</li>
 											</ul>
 										</div>
-									</li> -->
+									</li>
+								</ul>
+							</div>
+						</li>
+
+
+
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#basic">
+								<i class="fas fa-sliders-h"></i>
+								<p>กำหนดชั้นเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="basic">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="nav-item ">
+							<a data-toggle="collapse" href="#files">
+								<i class="fas fa-folder-open"></i>
+								<p>ออกเอกสารทั้งหมด</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="files">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
+											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
+											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/StudentAll')}}">
+											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
+											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
+											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -286,54 +466,54 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลนักเรียน </div>
+										<div class="card-title"><i class="fas fa-file-archive"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน </div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
 									<div class="alert alert-info" role="alert" align="center">
-										<h4 class="fw-bold"><i class="far fa-calendar-check"></i> &nbsp;&nbsp; ปีการศึกษาปัจจุบันคือ <font color="red">1/2565</font>
+										<h4 class="fw-bold"><i class="far fa-calendar-check"></i> &nbsp;&nbsp; ปีการศึกษาปัจจุบันคือ <font color="red">{{$school_year->term}}/{{$school_year->study_year}}</font>
 										</h4>
 									</div>
 
 									<div class="form-group">
-										<form role="form" method="post" action="{{ url('/searchStudent')}}">
+										<form role="form" method="post" action="{{ url('/search/StudentCore')}}">
 											{{csrf_field()}}
 											<div class="row">
-
 												<div class="col-6 col-md-3">
 													<div class="form-group form-group-default">
 														<label>ระดับชั้น</label>
-														<select class="form-control" id="formGroupDefaultSelect" name="search">
-															<option>เลือก</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 1</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 2</option>
-															<option>ชั้นมัธยมศึกษาปีที่ 3</option>
-															<option>ปวช.1</option>
+														<select class="form-control" id="formGroupDefaultSelect" name="search1" type="search">
+															<option value="">เลือก</option>
+															<option value="1">ชั้นมัธยมศึกษาปีที่ 1</option>
+															<option value="2">ชั้นมัธยมศึกษาปีที่ 2</option>
+															<option value="3">ชั้นมัธยมศึกษาปีที่ 3</option>
+															<option value="4">ชั้นมัธยมศึกษาปีที่ 4</option>
+															<option value="5">ชั้นมัธยมศึกษาปีที่ 5</option>
+															<option value="6">ชั้นมัธยมศึกษาปีที่ 6</option>
 														</select>
 													</div>
 												</div>
-												<div class="col-6 col-md-3">
+												<div class="col-4 col-md-2">
 													<div class="form-group form-group-default">
 														<label>ลำดับห้อง</label>
-														<select class="form-control" id="formGroupDefaultSelect" name="search">
-															<option>เลือก</option>
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
+														<select class="form-control" id="formGroupDefaultSelect" name="search2" type="search">
+															<option value="">เลือก</option>
+															@foreach ($class_room as $key => $value)
+																<option value="{{$value->class_room}}">{{$value->class_room}}</option>
+															@endforeach
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-5">
 													<div class="form-group form-group-default">
 														<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
-														<input name="search" type="search" class="form-control" placeholder="">
+														<input name="search3" type="search" class="form-control" placeholder="">
 													</div>
 												</div>
 												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
 											</div>
-										</form>
 									</div>
+									</form>
 
 									<div class="table-responsive">
 
@@ -342,22 +522,19 @@
 										<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 											<thead>
 												<tr>
-													<th scope="col" width="10%">
-														<center>ลำดับ</center>
-													</th>
-													<th scope="col" width="14%">
-														<center>เลขประจำตัวนักเรียน</center>
+													<th scope="col" width="5%">
+														<center>เลขประจำตัว</br>นักเรียน</center>
 													</th>
 													<th scope="col" width="8%">
 														<center>เลขที่</center>
 													</th>
-													<th scope="col" width="26">
+													<th scope="col" width="20%">
 														<center>ชื่อ-นามสกุล</center>
 													</th>
 													<th scope="col" width="8%">
 														<center>เพศ</center>
 													</th>
-													<th scope="col" width="14%">
+													<th scope="col" width="8%">
 														<center>ชั้นเรียน</center>
 													</th>
 													<th scope="col" width="8%">
@@ -372,12 +549,11 @@
 											<tbody>
 												@foreach ($data as $key => $value)
 												<tr>
-													<td align="center">{{$value->id}}</td>
 													<td align="center">{{$value->student_id}}</td>
 													<td align="center">{{$value->student_number}}</td>
 													<td>{{$value->prename}} {{$value->fname}} {{$value->surname}}</td>
 													<td align="center">{{$value->gender}}</td>
-													<td align="center">{{$value->student_class}}</td>
+													<td align="center">ม.{{$value->student_class}}</td>
 													<td align="center">{{$value->student_room}}</td>
 													<td align="center">
 														<form role="form" method="post" action="?r=admin_student_edit">

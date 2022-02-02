@@ -17,10 +17,22 @@ use Illuminate\Support\Facades\DB;
 
 class studentcoreController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = studentcoreModels::all();
-        return view('Studentcore.studentcore', compact('data'));
+        
+        $data = DB::table('student_core')
+            ->where('status', '=', '01')
+            ->get();
+        $school_year = DB::table('school_year')
+            ->first();
+        $class_room = DB::table('class_room')
+            ->get();
+
+        return view('Studentcore.studentcore', [
+            'data' => $data,
+            'school_year' => $school_year,
+            'class_room' => $class_room
+        ]);
     }
 
     public function create()
@@ -35,14 +47,8 @@ class studentcoreController extends Controller
 
     public function search(Request $request)
     {
-        $search = $request->get('search');
-        $data = DB::table('student_core')
-            ->where('fname', 'like', '%' . $search . '%')
-            ->orWhere('surname', 'like', '%' . $search . '%')
-            ->orWhere('student_class', 'like', '%' . $search . '%')
-            ->orWhere('student_room', 'like', '%' . $search . '%')
-            ->orWhere('student_number', 'like', '%' . $search . '%')->paginate(10);
-        return view('Studentcore.studentcore', ['data' => $data]);
+
+        
     }
 
     public function show($id)
@@ -571,7 +577,6 @@ class studentcoreController extends Controller
             $studentlogin->save();
 
             return redirect('/success/Addstudentcore');
-
         } else {
             return redirect('/Unsuccess/Addstudentcore');
         }
@@ -591,7 +596,7 @@ class studentcoreController extends Controller
 
         $status_pic = DB::table('status_pic')
             ->where('student_idcard', '=', $findIdCard);
-        
+
         $photo_student = DB::table('photo_student')
             ->where('student_idcard', '=', $findIdCard);
 
@@ -717,17 +722,17 @@ class studentcoreController extends Controller
             $compPic11 = str_replace(' ', '_', $request->get('username') . '.' . $profile_img);
             $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic11);
 
-                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
-                $compPic12 = str_replace(' ', '_', $request->get('username') . '.' . $id_card_student);
-                $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic12);
+            $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
+            $compPic12 = str_replace(' ', '_', $request->get('username') . '.' . $id_card_student);
+            $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic12);
 
-                $house_student = $request->file('house_student')->getClientOriginalExtension();
-                $compPic13 = str_replace(' ', '_', $request->get('username') . '.' . $house_student);
-                $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic13);
+            $house_student = $request->file('house_student')->getClientOriginalExtension();
+            $compPic13 = str_replace(' ', '_', $request->get('username') . '.' . $house_student);
+            $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic13);
 
-                $student_submit = $request->file('student_submit')->getClientOriginalExtension();
-                $compPic14 = str_replace(' ', '_', $request->get('username') . '.' . $student_submit);
-                $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic14);
+            $student_submit = $request->file('student_submit')->getClientOriginalExtension();
+            $compPic14 = str_replace(' ', '_', $request->get('username') . '.' . $student_submit);
+            $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic14);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('username'))
@@ -747,7 +752,6 @@ class studentcoreController extends Controller
                     "house_student" => $compPic13,
                     "student_submit" => $compPic14,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -804,7 +808,6 @@ class studentcoreController extends Controller
                     "id_card_parent" => $compPic8,
                     "house_parent" => $compPic9,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -851,7 +854,6 @@ class studentcoreController extends Controller
                     "back_grade" => $compPic6,
                     "birth_certificate" => $compPic7,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -904,7 +906,6 @@ class studentcoreController extends Controller
                     "birth_certificate" => $compPic7,
                     "disability_certificate" => $compPic8,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -940,7 +941,6 @@ class studentcoreController extends Controller
                     "back_grade" => $compPic4,
                     "birth_certificate" => $compPic5,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
             && $request->hasFile('front_grade') && $request->hasFile('back_grade')
@@ -981,7 +981,6 @@ class studentcoreController extends Controller
                     "birth_certificate" => $compPic5,
                     "disability_certificate" => $compPic6,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1032,7 +1031,6 @@ class studentcoreController extends Controller
                     "house_parent" => $compPic9,
                     "disability_certificate" => $compPic10,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1085,7 +1083,6 @@ class studentcoreController extends Controller
                     "house_parent" => $compPic9,
                     "disability_certificate" => $compPic10,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1131,7 +1128,6 @@ class studentcoreController extends Controller
                     "id_card_parent" => $compPic8,
                     "house_parent" => $compPic9,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1178,7 +1174,6 @@ class studentcoreController extends Controller
                     "id_card_parent" => $compPic8,
                     "house_parent" => $compPic9,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1218,7 +1213,6 @@ class studentcoreController extends Controller
                     "birth_certificate" => $compPic7,
                     "disability_certificate" => $compPic10,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1259,7 +1253,6 @@ class studentcoreController extends Controller
                     "birth_certificate" => $compPic7,
                     "disability_certificate" => $compPic10,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_father') && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1294,7 +1287,6 @@ class studentcoreController extends Controller
                     "back_grade" => $compPic6,
                     "birth_certificate" => $compPic7,
                 ]);
-
         } elseif (
             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -1330,7 +1322,6 @@ class studentcoreController extends Controller
                     "back_grade" => $compPic6,
                     "birth_certificate" => $compPic7,
                 ]);
-
         } elseif ($request->hasFile('front_grade') && $request->hasFile('back_grade')) {
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
@@ -1347,7 +1338,6 @@ class studentcoreController extends Controller
                     "front_grade" => $compPic1,
                     "back_grade" => $compPic2,
                 ]);
-
         } elseif ($request->hasFile('id_card_father')) {
 
             $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
@@ -1359,7 +1349,6 @@ class studentcoreController extends Controller
                 ->update([
                     "id_card_father" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('id_card_mother')) {
 
             $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
@@ -1371,7 +1360,6 @@ class studentcoreController extends Controller
                 ->update([
                     "id_card_mother" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('house_father')) {
 
             $house_father = $request->file('house_father')->getClientOriginalExtension();
@@ -1383,7 +1371,6 @@ class studentcoreController extends Controller
                 ->update([
                     "house_father" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('house_mother')) {
 
             $house_mother = $request->file('house_mother')->getClientOriginalExtension();
@@ -1395,7 +1382,6 @@ class studentcoreController extends Controller
                 ->update([
                     "house_mother" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('front_grade')) {
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
@@ -1407,7 +1393,6 @@ class studentcoreController extends Controller
                 ->update([
                     "front_grade" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('back_grade')) {
 
             $back_grade = $request->file('back_grade')->getClientOriginalExtension();
@@ -1419,7 +1404,6 @@ class studentcoreController extends Controller
                 ->update([
                     "back_grade" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('birth_certificate')) {
 
             $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
@@ -1431,7 +1415,6 @@ class studentcoreController extends Controller
                 ->update([
                     "birth_certificate" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('id_card_parent')) {
 
             $id_card_parent = $request->file('id_card_parent')->getClientOriginalExtension();
@@ -1443,7 +1426,6 @@ class studentcoreController extends Controller
                 ->update([
                     "id_card_parent" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('house_parent')) {
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
@@ -1455,7 +1437,6 @@ class studentcoreController extends Controller
                 ->update([
                     "house_parent" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('disability_certificate')) {
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
@@ -1467,7 +1448,6 @@ class studentcoreController extends Controller
                 ->update([
                     "disability_certificate" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('profile_img')) {
 
             $profile_img = $request->file('profile_img')->getClientOriginalExtension();
@@ -1479,7 +1459,6 @@ class studentcoreController extends Controller
                 ->update([
                     "profile_img" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('id_card_student')) {
 
             $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
@@ -1491,7 +1470,6 @@ class studentcoreController extends Controller
                 ->update([
                     "id_card_student" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('house_student')) {
 
             $house_student = $request->file('house_student')->getClientOriginalExtension();
@@ -1503,7 +1481,6 @@ class studentcoreController extends Controller
                 ->update([
                     "house_student" => $compPic1
                 ]);
-
         } elseif ($request->hasFile('student_submit')) {
 
             $student_submit = $request->file('student_submit')->getClientOriginalExtension();
