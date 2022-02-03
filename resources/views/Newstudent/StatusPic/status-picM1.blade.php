@@ -491,7 +491,7 @@
                                 <div class="card-body" style="min-height: 400px">
                                 <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 											<p style="margin-left: 25px;  font-size: 15px;"><b>เอกสาร</b></p>
-										</div>
+								</div>
                                     <div class="row">
                                         <div align="center" style="margin-left:20px;">
                                             <div class="form-group">

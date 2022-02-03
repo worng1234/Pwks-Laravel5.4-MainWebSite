@@ -12,7 +12,7 @@
     <script>
         WebFont.load({
             google: {
-                "families": ["Lato:300,400,700,900"]
+                "families": ["Prompt:300,400,700,900"]
             },
             custom: {
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
@@ -44,6 +44,11 @@
             background-repeat: repeat;
             background-position: center;
             position: relative;
+        }
+        .bor{
+            border: 3px solid ;
+            border-color: #cd8fff;
+            border-radius: 3px;
         }
     </style>
 
@@ -95,9 +100,14 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown hidden-caret">
-                            <a class="dropdown-toggle profile-pic" href="index.html" aria-expanded="false">
+                            <a class="dropdown-toggle profile-pic" href="{{ route('academic.logout') }}" aria-expanded="false" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                 <i class="fas fa-unlock"></i> ออกระบบ
                             </a>
+
+                            <form id="logout-form" action="{{ route('academic.logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -116,9 +126,9 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
-                            <label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
-                            <label><b>ภาคเรียนที่ :</b> 1/2565</label>
+                            <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('academic')->user()->prename}}{{ Auth::guard('academic')->user()->fname}} </br>{{ Auth::guard('academic')->user()->surname}}</label>
+                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
                             <div class="clearfix"></div>
@@ -129,316 +139,316 @@
                     <!-- เริ่มเมนู -->
                     <ul class="nav nav-primary">
 
-                    <li class="nav-item">
-							<a href="{{ url('/academic')}}">
-								<i class="fas fa-home"></i>
-								<p>หน้าหลัก</p>
-							</a>
-						</li>
+                        <li class="nav-item">
+                            <a href="{{ url('/academic')}}">
+                                <i class="fas fa-home"></i>
+                                <p>หน้าหลัก</p>
+                            </a>
+                        </li>
 
-						<li class="nav-item ">
-							<a href='{{ url("/RegisterYear/1")}}'>
-								<i class="fas fa-calendar-alt"></i>
-								<p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
-							</a>
-						</li>
+                        <li class="nav-item ">
+                            <a href='{{ url("/RegisterYear/1")}}'>
+                                <i class="fas fa-calendar-alt"></i>
+                                <p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
+                            </a>
+                        </li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="agree">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#formob1">
-											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob1">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/UnsubmitObject/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob2">
-											<span class="sub-item">ตรวจสอบแล้ว</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/SubmitObject/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/SubmitObject/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="#agree">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="agree">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob1">
+                                            <span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob1">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/UnsubmitObject/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/UnsubmitObject/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob2">
+                                            <span class="sub-item">ตรวจสอบแล้ว</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/SubmitObject/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/SubmitObject/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#move">
-								<i class="fas fa-file-alt"></i>
-								<p>หลักฐานรายงานตัวและ</br>โอนย้ายข้อมูล</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="move">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#formob3">
-											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse " id="formob3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/documentUnsubmit/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/documentUnsubmit/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob4">
-											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/submitNotTranfer/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/submitNotTranfer/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob5">
-											<span class="sub-item">โอนย้ายแล้ว</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/tranferAllM1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/tranferAllM4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="#move">
+                                <i class="fas fa-file-alt"></i>
+                                <p>หลักฐานรายงานตัวและ</br>โอนย้ายข้อมูล</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="move">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob3">
+                                            <span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse " id="formob3">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/documentUnsubmit/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/documentUnsubmit/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob4">
+                                            <span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob4">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/submitNotTranfer/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/submitNotTranfer/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob5">
+                                            <span class="sub-item">โอนย้ายแล้ว</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob5">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/tranferAllM1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/tranferAllM4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item active">
-							<a href="{{ url('/StudentCore')}}">
-								<i class="fas fa-file-archive"></i>
-								<p>ข้อมูลพื้นฐานนักเรียน</p>
-							</a>
-						</li>
+                        <li class="nav-item active">
+                            <a href="{{ url('/StudentCore')}}">
+                                <i class="fas fa-file-archive"></i>
+                                <p>ข้อมูลพื้นฐานนักเรียน</p>
+                            </a>
+                        </li>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/class')}}">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classChange')}}">
-														<span class="sub-item">เลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/final')}}">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/finalChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/move')}}">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/moveChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/out')}}">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/outChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-user-graduate"></i>
+                                <p>จัดการข้อมูลนักเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms2">
+                                            <span class="sub-item">เลื่อนชั้นเรียน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/class')}}">
+                                                        <span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/classChange')}}">
+                                                        <span class="sub-item">เลื่อนชั้นเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms3">
+                                            <span class="sub-item">จบการศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms3">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/final')}}">
+                                                        <span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/finalChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms4">
+                                            <span class="sub-item">ย้ายสถานศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms4">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/move')}}">
+                                                        <span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/moveChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms5">
+                                            <span class="sub-item">ออกกลางคัน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms5">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/out')}}">
+                                                        <span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/outChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#basic">
-								<i class="fas fa-sliders-h"></i>
-								<p>กำหนดชั้นเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="basic">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ url('/academic/classRoom')}}">
-											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/academic/classMajor')}}">
-											<span class="sub-item">กำหนดสายการเรียน</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#basic">
+                                <i class="fas fa-sliders-h"></i>
+                                <p>กำหนดชั้นเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="basic">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ url('/academic/classRoom')}}">
+                                            <span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/academic/classMajor')}}">
+                                            <span class="sub-item">กำหนดสายการเรียน</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#files">
-								<i class="fas fa-folder-open"></i>
-								<p>ออกเอกสารทั้งหมด</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="files">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StudentAll')}}">
-											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
-											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
-											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="#files">
+                                <i class="fas fa-folder-open"></i>
+                                <p>ออกเอกสารทั้งหมด</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="files">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ url('/export/newstudentm1')}}" target="_blank">
+                                            <span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/export/newstudentm4')}}" target="_blank">
+                                            <span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/StudentAll')}}">
+                                            <span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
+                                            <span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
+                                            <span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-book-open"></i>
-								<p>คู่มือการใช้งาน</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-comments"></i>
-								<p>ติดต่อเรา</p>
-							</a>
-						</li>
+                        <li class="nav-item ">
+                            <a href="#">
+                                <i class="fas fa-book-open"></i>
+                                <p>คู่มือการใช้งาน</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#">
+                                <i class="fas fa-comments"></i>
+                                <p>ติดต่อเรา</p>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -460,52 +470,110 @@
                 </div>
 
 
-                <form>
-                    <!-- ข้อมูลเบื้องต้น -->
-                    <div class="step-one">
-                        <div class="page-inner mt--5">
-                            <div class="row mt--2">
-                                <div class="col-md-12">
-                                    <div class="card full-height">
-                                        <div class="card-header">
-                                            <div class="card-head-row">
-                                                <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> ข้อมูลประจำตัวของ {{$studentcore->prename}}{{$studentcore->fname}} {{$studentcore->surname}}</div>
-                                            </div>
-                                        </div>
 
-                                        <div class="card-body">
-                                            <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                                <p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลเบื้องต้น</b></p>
-                                            </div>
+
+                <div class="page-inner mt--5">
+                    <div class="row mt--2">
+                        <div class="col-md-12">
+                            <div class="wizard-container wizard-round ">
+                                <div class="wizard-header">
+                                    <div class="card-title"><i class="fas fa-file-archive"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> ข้อมูลประจำตัวของ {{$studentcore->prename}}{{$studentcore->fname}} {{$studentcore->surname}}</div>
+                                </div>
+
+                                <div class="wizard-body">
+                                    <div class="row">
+                                        <ul class="wizard-menu nav nav-pills nav-primary">
+                                            <li class="step">
+                                                <a class="nav-link active" href="#info" data-toggle="tab" aria-expanded="true"><i class="fa fa-user mr-0"></i> ข้อมูลเบื้องต้น</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#address" data-toggle="tab"><i class="fa fa-home mr-2"></i> ที่อยู่</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#ability" data-toggle="tab"><i class="fa fa-award mr-2"></i> ความสามารถ</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#infostu" data-toggle="tab"><i class="fa fa-clipboard mr-2"></i> รายละเอียดนักเรียน</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#health" data-toggle="tab"><i class="fas fa-heart mr-2"></i> สุขภาพ</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#family" data-toggle="tab"><i class="fa fa-users mr-2"></i> ครอบครัว</a>
+                                            </li>
+                                            <li class="step">
+                                                <a class="nav-link" href="#photo" data-toggle="tab"><i class="fa fa-file-alt mr-0"></i> เอกสาร</br>ประจำตัว</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Step 1 ข้อมูลเบื้องต้น -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="info">
                                             <div class="row">
-                                                <div class="col-6 col-md-3">
+                                                <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวนักเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_id" value="{{$studentcore->student_id}}" readonly>
+                                                        <input readonly type="text" class="form-control" name="student_id" value="{{$studentcore->student_id}}" readonly>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 col-md-3">
+                                                <div class="col-6 col-md-5">
                                                     <div class="form-group form-group-default">
-                                                        <label>แผนการเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_major" value="{{$studentcore->student_major}}" readonly>
+                                                        <label>แผนการเรียน (กรอกเฉพาะนักเรียนระดับชั้น ม.4 - ม.6)</label>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="student_major" readonly>
+                                                            @if ($studentcore->student_major == '01')
+                                                            <option>วิทยาศาสตร์-คณิตศาสตร์</option>
+
+                                                            @elseif ($studentcore->student_major == '02')
+                                                            <option>ภาษาอังกฤษ-ภาษาอังกฤษ</option>
+
+                                                            @elseif ($studentcore->student_major == '03')
+                                                            <option>ภาษาอังกฤษ-ภาษาจีน</option>
+
+                                                            @elseif ($studentcore->student_major == '04')
+                                                            <option>ศิลป์ทั่วไป(พาณิชยกรรม)</option>
+
+                                                            @elseif ($studentcore->student_major == '05')
+                                                            <option>ศิลป์ทั่วไป(ศิลปะ)</option>
+
+                                                            @elseif ($studentcore->student_major == '06')
+                                                            <option>ศิลป์ทั่วไป(เกษตร)</option>
+
+                                                            @elseif ($studentcore->student_major == '07')
+                                                            <option>ศิลป์ทั่วไป(คหกรรม)</option>
+
+                                                            @elseif ($studentcore->student_major == '08')
+                                                            <option>ศิลป์ทั่วไป(พลศึกษา)</option>
+
+                                                            @elseif ($studentcore->student_major == '09')
+                                                            <option>ปวช.(ช่างเชื่อมโลหะ)</option>
+
+                                                            @else
+                                                            <option>-</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ระดับชั้น</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_class" value="{{$studentcore->student_class}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="student_class" readonly>
+                                                            <option>มัธยมศึกษาปีที่ {{$studentcore->student_class}}</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
-                                                        <label>ลำดับห้อง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_room" value="{{$studentcore->student_room}}" readonly>
+                                                        <label>ห้อง</label>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="student_room" readonly>
+                                                            <option>{{$studentcore->student_room}}</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-5 col-md-1">
+                                                <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_number" value="{{$studentcore->student_number}}" readonly>
+                                                        <input value="{{$studentcore->student_number}}" type="text" class="form-control" name="student_number" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -513,7 +581,7 @@
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวประชาชน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_id_card" value="{{$studentcore->student_id_card}}" readonly>
+                                                        <input value="{{$studentcore->student_id_card}}" type="text" class="form-control" name="student_id_card" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -521,25 +589,31 @@
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>คำนำหน้าชื่อ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="prename" value="{{$studentcore->prename}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename" readonly>
+                                                            <option>{{$studentcore->prename}}</option>
+                                                            <option value="เด็กชาย">เด็กชาย</option>
+                                                            <option value="เด็กหญิง">เด็กหญิง</option>
+                                                            <option value="นาย">นาย</option>
+                                                            <option value="นางสาว">นางสาว</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="fname" value="{{$studentcore->fname}}" readonly>
+                                                        <input value="{{$studentcore->fname}}" type="text" class="form-control" name="fname" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อกลาง</label>
-                                                        <input type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen" value="{{$studentcore->name_cen}}" readonly>
+                                                        <input value="{{$studentcore->name_cen}}" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุลภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="surname" value="{{$studentcore->surname}}" readonly>
+                                                        <input value="{{$studentcore->surname}}" type="text" class="form-control" name="surname" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -547,25 +621,30 @@
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="prename_eng" value="{{$studentcore->prename_eng}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename_eng" readonly>
+                                                            <option>{{$studentcore->prename_eng}}</option>
+                                                            <option value="mr">Mr.</option>
+                                                            <option value="mrs">Mrs.</option>
+                                                            <option value="miss">Miss</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อ(ภาษาอังกฤษ)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="name_eng" value="{{$studentcore->name_eng}}" readonly>
+                                                        <input value="{{$studentcore->name_eng}}" type="text" class="form-control" name="name_eng" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อกลาง(ภาษาอังกฤษ)</label>
-                                                        <input type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_eng" value="{{$studentcore->name_cen_eng}}" readonly>
+                                                        <input value="{{$studentcore->name_cen_eng}}" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_eng" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุล(ภาษาอังกฤษ)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="surname_eng" value="{{$studentcore->surname_eng}}" readonly>
+                                                        <input value="{{$studentcore->surname_eng}}" type="text" class="form-control" name="surname_eng" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -579,19 +658,89 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ปี พุทธศักราช:</label>
-                                                        <input type="text" class="form-control" placeholder="" name="birth_year" value="{{$studentcore->birth_year}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="birth_year" readonly>
+                                                            <option>{{$studentcore->birth_year}}</option>
+                                                            <option value="2540">2540</option>
+                                                            <option value="2541">2541</option>
+                                                            <option value="2542">2542</option>
+                                                            <option value="2543">2543</option>
+                                                            <option value="2544">2544</option>
+                                                            <option value="2545">2545</option>
+                                                            <option value="2546">2546</option>
+                                                            <option value="2547">2547</option>
+                                                            <option value="2548">2548</option>
+                                                            <option value="2549">2549</option>
+                                                            <option value="2550">2550</option>
+                                                            <option value="2551">2551</option>
+                                                            <option value="2552">2552</option>
+                                                            <option value="2553">2553</option>
+                                                            <option value="2554">2554</option>
+                                                            <option value="2555">2555</option>
+                                                            <option value="2556">2556</option>
+                                                            <option value="2557">2557</option>
+                                                            <option value="2558">2558</option>
+                                                            <option value="2559">2559</option>
+                                                            <option value="2560">2560</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>เดือน:</label>
-                                                        <input type="text" class="form-control" placeholder="" name="birth_month" value="{{$studentcore->birth_month}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="birth_month" readonly>
+                                                            <option>{{$studentcore->birth_month}}</option>
+                                                            <option value="มกราคม">มกราคม</option>
+                                                            <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+                                                            <option value="มีนาคม">มีนาคม</option>
+                                                            <option value="เมษายน">เมษายน</option>
+                                                            <option value="พฤษภาคม">พฤษภาคม</option>
+                                                            <option value="มิถุนายน">มิถุนายน</option>
+                                                            <option value="กรกฎาคม">กรกฎาคม</option>
+                                                            <option value="สิงหาคม">สิงหาคม</option>
+                                                            <option value="กันยายน">กันยายน</option>
+                                                            <option value="ตุลาคม">ตุลาคม</option>
+                                                            <option value="พฤษจิกายน">พฤษจิกายน</option>
+                                                            <option value="ธันวาคม">ธันวาคม</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>วัน:</label>
-                                                        <input type="text" class="form-control" placeholder="" name="birth_day" value="{{$studentcore->birth_day}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="birth_day" readonly>
+                                                            <option>{{$studentcore->birth_day}}</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                            <option value="24">24</option>
+                                                            <option value="25">25</option>
+                                                            <option value="26">26</option>
+                                                            <option value="27">27</option>
+                                                            <option value="28">28</option>
+                                                            <option value="29">29</option>
+                                                            <option value="30">30</option>
+                                                            <option value="31">31</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -599,37 +748,47 @@
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อเล่น</label>
-                                                        <input type="text" class="form-control" placeholder="" name="nickname" value="{{$studentcore->nickname}}" readonly>
+                                                        <input value="{{$studentcore->nickname}}" type="text" class="form-control" name="nickname" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>เพศสภาพ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="gender" value="{{$studentcore->gender}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="gender" readonly>
+                                                            <option>{{$studentcore->gender}}</option>
+                                                            <option value="ชาย">ชาย</option>
+                                                            <option value="หญิง">หญิง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่เลือด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="bloodgroup" value="{{$studentcore->bloodgroup}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="bloodgroup" readonly>
+                                                            <option>{{$studentcore->bloodgroup}}</option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="AB">AB</option>
+                                                            <option value="O">O</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ศาสนา</label>
-                                                        <input type="text" class="form-control" placeholder="" name="religion" value="{{$studentcore->religion}}" readonly>
+                                                        <input value="{{$studentcore->religion}}" type="text" class="form-control" name="religion" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>เชื้อชาติ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="origin" value="{{$studentcore->origin}}" readonly>
+                                                        <input value="{{$studentcore->origin}}" type="text" class="form-control" name="origin" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>สัญชาติ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="nationality" value="{{$studentcore->nationality}}" readonly>
+                                                        <input value="{{$studentcore->nationality}}" type="text" class="form-control" name="nationality" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -637,54 +796,58 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น</label>
-                                                        <input type="text" class="form-control" placeholder="" name="language" value="{{$studentcore->language}}" readonly>
+                                                        <input value="{{$studentcore->language}}" type="text" class="form-control" name="language" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                        <input type="text" class="form-control" placeholder="" name="tel_s" value="{{$studentcore->tel_s}}" readonly>
+                                                        <input value="{{$studentcore->tel_s}}" type="text" class="form-control" name="tel_s" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>อีเมล์ (name@example.com)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="email" value="{{$studentcore->email}}" readonly>
+                                                        <input value="{{$studentcore->email}}" type="text" class="form-control" name="email" readonly>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- Step 2 ที่อยู่ -->
+                                        <div class="tab-pane" id="address">
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                                <p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
+                                                <p style="margin-left: 25px;  font-size: 15px;"><b>ที่อยู่ตามทะเบียนบ้าน</b></p>
                                             </div>
                                             <div class="row">
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>บ้านเลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="house_number" value="{{$addressstudent->house_number}}" readonly>
+                                                        <input value="{{$addressstudent->house_number}}" type="text" class="form-control" name="house_number" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="group" value="{{$addressstudent->group}}" readonly>
+                                                        <input value="{{$addressstudent->group}}" type="text" class="form-control" name="group" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อหมู่บ้าน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="village" value="{{$addressstudent->village}}" readonly>
+                                                        <input value="{{$addressstudent->village}}" type="text" class="form-control" name="village" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ซอย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="alley" value="{{$addressstudent->alley}}" readonly>
+                                                        <input value="{{$addressstudent->alley}}" type="text" class="form-control" name="alley" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ถนน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="street" value="{{$addressstudent->street}}" readonly>
+                                                        <input value="{{$addressstudent->street}}" type="text" class="form-control" name="street" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -692,39 +855,37 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict" value="{{$addressstudent->subdistrict}}" readonly>
+                                                        <input value="{{$addressstudent->subdistrict}}" type="text" class="form-control" name="subdistrict" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="district" value="{{$addressstudent->district}}" readonly>
+                                                        <input value="{{$addressstudent->district}}" type="text" class="form-control" name="district" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="province" value="{{$addressstudent->province}}" readonly>
+                                                        <input value="{{$addressstudent->province}}" type="text" class="form-control" name="province" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัสไปรษณีย์</label>
-                                                        <input type="text" class="form-control" placeholder="" name="post" value="{{$addressstudent->post}}" readonly>
+                                                        <input value="{{$addressstudent->post}}" type="text" class="form-control" name="post" readonly>
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                             <!-- ข้อมูลที่อยู่ปัจจุบัน -->
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                                <p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ปัจจุบัน</b></p>
+                                                <p style="margin-left: 25px;  font-size: 15px;"><b>ที่อยู่ปัจจุบัน</b></p>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-6 col-md-12">
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
-                                                        <label>ที่อยู่ปัจจุบัน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="address_now" value="{{$addressstudent->address_now}}" readonly>
+                                                        <input value="{{$addressstudent->address_now}}" type="text" class="form-control" name="address_now" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -732,31 +893,31 @@
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>บ้านเลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="house_number_n" value="{{$addressstudent->house_number_n}}" readonly>
+                                                        <input value="{{$addressstudent->house_number_n}}" type="text" class="form-control" name="house_number_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="group_n" value="{{$addressstudent->group_n}}" readonly>
+                                                        <input value="{{$addressstudent->group_n}}" type="text" class="form-control" name="group_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อหมู่บ้าน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="village_n" value="{{$addressstudent->village_n}}" readonly>
+                                                        <input value="{{$addressstudent->village_n}}" type="text" class="form-control" name="village_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ซอย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="alley_n" value="{{$addressstudent->alley_n}}" readonly>
+                                                        <input value="{{$addressstudent->alley_n}}" type="text" class="form-control" name="alley_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ถนน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="street_n" value="{{$addressstudent->street_n}}" readonly>
+                                                        <input value="{{$addressstudent->street_n}}" type="text" class="form-control" name="street_n" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -764,28 +925,32 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_n" value="{{$addressstudent->subdistrict_n}}" readonly>
+                                                        <input value="{{$addressstudent->subdistrict_n}}" type="text" class="form-control" name="subdistrict_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="district_n" value="{{$addressstudent->district_n}}" readonly>
+                                                        <input value="{{$addressstudent->district_n}}" type="text" class="form-control" name="district_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="province_n" value="{{$addressstudent->province_n}}" readonly>
+                                                        <input value="{{$addressstudent->province_n}}" type="text" class="form-control" name="province_n" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัสไปรษณีย์</label>
-                                                        <input type="text" class="form-control" placeholder="" name="post_n" value="{{$addressstudent->post_n}}" readonly>
+                                                        <input value="{{$addressstudent->post_n}}" type="text" class="form-control" name="post_n" readonly>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- Step 3 ความสามารถ -->
+                                        <div class="tab-pane" id="ability">
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                                 <p style="margin-left: 25px;  font-size: 15px;"><b>ด้านความสามารถ</b></p>
                                             </div>
@@ -798,19 +963,27 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อโรงเรียนเดิม</label>
-                                                        <input type="text" class="form-control" placeholder="" name="final_school" value="{{$talentstudent->final_school}}" readonly>
+                                                        <input value="{{$talentstudent->final_school}}" type="text" class="form-control" name="final_school" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>จบชั้น</label>
-                                                        <input type="text" class="form-control" placeholder="" name="final_class" value="{{$talentstudent->final_class}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="final_class" readonly>
+                                                            <option>{{$talentstudent->final_class}}</option>
+                                                            <option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+                                                            <option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+                                                            <option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+                                                            <option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+                                                            <option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+                                                            <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ผลการเรียนเฉลี่ย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="avg_grade" value="{{$talentstudent->avg_grade}}" readonly>
+                                                        <input value="{{$talentstudent->avg_grade}}" type="text" class="form-control" name="avg_grade" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -818,19 +991,19 @@
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="f_subdistrict" value="{{$talentstudent->f_subdistrict}}" readonly>
+                                                        <input value="{{$talentstudent->f_subdistrict}}" type="text" class="form-control" name="f_subdistrict" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="f_district" value="{{$talentstudent->f_district}}" readonly>
+                                                        <input value="{{$talentstudent->f_district}}" type="text" class="form-control" name="f_district" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="f_province" value="{{$talentstudent->f_province}}" readonly>
+                                                        <input value="{{$talentstudent->f_province}}" type="text" class="form-control" name="f_province" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -844,25 +1017,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>1)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="like_subject1" value="{{$talentstudent->like_subject1}}" readonly>
+                                                        <input value="{{$talentstudent->like_subject1}}" type="text" class="form-control" name="like_subject1" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>2)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="like_subject2" value="{{$talentstudent->like_subject2}}" readonly>
+                                                        <input value="{{$talentstudent->like_subject2}}" type="text" class="form-control" name="like_subject2" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>3)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="like_subject3" value="{{$talentstudent->like_subject3}}" readonly>
+                                                        <input value="{{$talentstudent->like_subject3}}" type="text" class="form-control" name="like_subject3" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>4)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="like_subject4" value="{{$talentstudent->like_subject4}}" readonly>
+                                                        <input value="{{$talentstudent->like_subject4}}" type="text" class="form-control" name="like_subject4" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -875,25 +1048,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>1)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unlike_subject1" value="{{$talentstudent->unlike_subject1}}" readonly>
+                                                        <input value="{{$talentstudent->unlike_subject1}}" type="text" class="form-control" name="unlike_subject1" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>2)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unlike_subject2" value="{{$talentstudent->unlike_subject2}}" readonly>
+                                                        <input value="{{$talentstudent->unlike_subject2}}" type="text" class="form-control" name="unlike_subject2" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>3)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unlike_subject3" value="{{$talentstudent->unlike_subject3}}" readonly>
+                                                        <input value="{{$talentstudent->unlike_subject3}}" type="text" class="form-control" name="unlike_subject3" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>4)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unlike_subject4" value="{{$talentstudent->unlike_subject4}}" readonly>
+                                                        <input value="{{$talentstudent->unlike_subject4}}" type="text" class="form-control" name="unlike_subject4" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -906,19 +1079,19 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>อยากประกอบอาชีพอะไร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="dream_job" value="{{$talentstudent->dream_job}}" readonly>
+                                                        <input value="{{$talentstudent->dream_job}}" type="text" class="form-control" name="dream_job" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>เพราะอะไร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="because" value="{{$talentstudent->because}}" readonly>
+                                                        <input value="{{$talentstudent->because}}" type="text" class="form-control" name="because" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ความสามารถพิเศษ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="talent" value="{{$talentstudent->talent}}" readonly>
+                                                        <input value="{{$talentstudent->talent}}" type="text" class="form-control" name="talent" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -926,16 +1099,20 @@
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>การอ่านเขียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="read_write" value="{{$talentstudent->read_write}}" readonly>
+                                                        <input type="text" name="read_write" value="{{$talentstudent->read_write}}" class="form-control" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนไม่เข้าใจบทเรียนทุกวิชา</label>
-                                                        <input type="text" class="form-control" placeholder="" name="understand" value="{{$talentstudent->understand}}" readonly>
+                                                        <input type="text" name="understand" value="{{$talentstudent->understand}}" class="form-control" readonly>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- Step 4 รายละเอียด -->
+                                        <div class="tab-pane" id="infostu">
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                                 <p style="margin-left: 25px;  font-size: 15px;"><b>การเดินทาง</b></p>
                                             </div>
@@ -943,25 +1120,32 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>การเดินทางมาโรงเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="go_school" value="{{$studentdetail->go_school}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="go_school" readonly>
+                                                            <option>{{$studentdetail->go_school}}</option>
+                                                            <option value="เดินเท้า">เดินเท้า</option>
+                                                            <option value="รถจักรยาน">รถจักรยาน</option>
+                                                            <option value="รถจักรยานยนต์">รถจักรยานยนต์</option>
+                                                            <option value="รถโดยสารประจำทาง">รถโดยสารประจำทาง</option>
+                                                            <option value="พ่อแม่หรือญาติมาส่ง">พ่อแม่หรือญาติมาส่ง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ระยะเวลาเดินทาง (นาที)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="go_school_time" value="{{$studentdetail->go_school_time}}" readonly>
+                                                        <input value="{{$studentdetail->go_school_time}}" type="text" class="form-control" name="go_school_time" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ระยะห่างจาก ร.ร. (ลูกรัง) เมตร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="distance" value="{{$studentdetail->distance}}" readonly>
+                                                        <input value="{{$studentdetail->distance}}" type="text" class="form-control" name="distance" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ระยะห่างจาก ร.ร. (ลาดยาง) เมตร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="long_distance" value="{{$studentdetail->long_distance}}" readonly>
+                                                        <input value="{{$studentdetail->long_distance}}" type="text" class="form-control" name="long_distance" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -971,14 +1155,14 @@
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="form-group form-group-default">
-                                                        <label>อุปกรณ์ที่มี </label>
-                                                        <input type="text" class="form-control" placeholder="" name="gadject" value="{{$studentdetail->gadject}}" readonly>
+                                                        <label>อุปกรณ์ที่มี</label>
+                                                        <input value="{{$studentdetail->gadject}}" type="text" class="form-control" name="gadject" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="form-group form-group-default">
-                                                        <label>อินเตอร์เน็ตที่ใช้ </label>
-                                                        <input type="text" class="form-control" placeholder="" name="internet" value="{{$studentdetail->internet}}" readonly>
+                                                        <label>อินเตอร์เน็ตที่ใช้</label>
+                                                        <input value="{{$studentdetail->internet}}" type="text" class="form-control" name="internet" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -989,13 +1173,39 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>ความพิการ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="disabled" value="{{$studentdetail->disabled}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="disabled" readonly>
+                                                            <option>{{$studentdetail->disabled}}</option>
+                                                            <option value="ไม่มี">ไม่มี</option>
+                                                            <option value="การมองเห็น">การมองเห็น</option>
+                                                            <option value="การได้ยิน">การได้ยิน</option>
+                                                            <option value="สติปัญญา">สติปัญญา</option>
+                                                            <option value="ร่างกาย/สุขภาพ">ร่างกาย/สุขภาพ</option>
+                                                            <option value="การเรียนรู้">การเรียนรู้</option>
+                                                            <option value="การพูด/ภาษา">การพูด/ภาษา</option>
+                                                            <option value="พฤติกรรม/อารมณ์">พฤติกรรม/อารมณ์</option>
+                                                            <option value="ออทิสติค">ออทิสติค</option>
+                                                            <option value="พิการซ้ำซ้อน">พิการซ้ำซ้อน</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>ความด้อยโอกาส</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unfortuned" value="{{$studentdetail->unfortuned}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="unfortuned" readonly>
+                                                            <option>{{$studentdetail->unfortuned}}</option>
+                                                            <option value="ไม่มี">ไม่มี</option>
+                                                            <option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
+                                                            <option value="อยู่ในธุรกิจทางเพศ">อยู่ในธุรกิจทางเพศ</option>
+                                                            <option value="ถูกทอดทิ้ง">ถูกทอดทิ้ง</option>
+                                                            <option value="เด็กเร่ร่อน">เด็กเร่ร่อน</option>
+                                                            <option value="ได้รับผลกระทบจากเอดส์">ได้รับผลกระทบจากเอดส์</option>
+                                                            <option value="ชนกลุ่มน้อย">ชนกลุ่มน้อย</option>
+                                                            <option value="ถูกทำร้ายทารุณ">ถูกทำร้ายทารุณ</option>
+                                                            <option value="เด็กยากจน">เด็กยากจน</option>
+                                                            <option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด">เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+                                                            <option value="เด็กกำพร้า">เด็กกำพร้า</option>
+                                                            <option value="ทำงานรับผิดชอบตนเองและครอบครัว">ทำงานรับผิดชอบตนเองและครอบครัว</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1003,7 +1213,7 @@
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
                                                         <label>ความขาดแคลน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="lack" value="{{$studentdetail->lack}}" readonly>
+                                                        <input value="{{$studentdetail->lack}}" type="text" class="form-control" name="lack" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1011,37 +1221,37 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนคบเพื่อนที่เกี่ยวข้องกับสิ่งเสพติด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="friend_drug" value="{{$studentdetail->friend_drug}}" readonly>
+                                                        <input value="{{$studentdetail->friend_drug}}" type="text" class="form-control" name="friend_drug" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีพฤติกรรมเสพยาหรือจำหน่ายสิ่งเสพติด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="sell_drug" value="{{$studentdetail->sell_drug}}" readonly>
+                                                        <input value="{{$studentdetail->sell_drug}}" type="text" class="form-control" name="sell_drug" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีพฤติกรรมส่อไปในทางชู้สาว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="sexual" value="{{$studentdetail->sexual}}" readonly>
+                                                        <input value="{{$studentdetail->sexual}}" type="text" class="form-control" name="sexual" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนพักหรืออาศัยอยู่กับเพื่อนต่างเพศที่มิใช่ญาติพี่น้อง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="not_parent" value="{{$studentdetail->not_parent}}" readonly>
+                                                        <input value="{{$studentdetail->not_parent}}" type="text" class="form-control" name="not_parent" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนชอบเที่ยวกลางคืน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="dark_travel" value="{{$studentdetail->dark_travel}}" readonly>
+                                                        <input value="{{$studentdetail->dark_travel}}" type="text" class="form-control" name="dark_travel" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนเคยถูกล่วงละเมิดทางเพศ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="sexual_harrasment" value="{{$studentdetail->sexual_harrasment}}" readonly>
+                                                        <input value="{{$studentdetail->sexual_harrasment}}" type="text" class="form-control" name="sexual_harrasment" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1049,13 +1259,13 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนรู้สึกว่าโลกนี้</label>
-                                                        <input type="text" class="form-control" placeholder="" name="cute_world" value="{{$studentdetail->cute_world}}" readonly>
+                                                        <input value="{{$studentdetail->cute_world}}" type="text" class="form-control" name="cute_world" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนรู้สึกว่าตัวเอง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="rich_man" value="{{$studentdetail->rich_man}}" readonly>
+                                                        <input value="{{$studentdetail->rich_man}}" type="text" class="form-control" name="rich_man" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1063,13 +1273,13 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="good_guy" value="{{$studentdetail->good_guy}}" readonly>
+                                                        <input value="{{$studentdetail->good_guy}}" type="text" class="form-control" name="good_guy" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="social_good" value="{{$studentdetail->social_good}}" readonly>
+                                                        <input value="{{$studentdetail->social_good}}" type="text" class="form-control" name="social_good" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1077,7 +1287,7 @@
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
                                                         <label>ปัญหาเรื่องใด ที่นักเรียนกำลังประสบอยู่ในขณะนี้</label>
-                                                        <input type="text" class="form-control" placeholder="" name="problem" value="{{$studentdetail->problem}}" readonly>
+                                                        <input value="{{$studentdetail->problem}}" type="text" class="form-control" name="problem" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1085,10 +1295,14 @@
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
                                                         <label>ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษา จากใคร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="help" value="{{$studentdetail->help}}" readonly>
+                                                        <input value="{{$studentdetail->help}}" type="text" class="form-control" name="help" readonly>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- Step 5 สุขภาพ -->
+                                        <div class="tab-pane" id="health">
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                                 <p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลสุขภาพ</b></p>
                                             </div>
@@ -1097,13 +1311,13 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>น้ำหนัก</label>
-                                                        <input type="text" class="form-control" placeholder="" name="weight" value="{{$healtystudent->weight}}" readonly>
+                                                        <input value="{{$healtystudent->weight}}" type="text" class="form-control" placeholder="" name="weight" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>ส่วนสูง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="height" value="{{$healtystudent->height}}" readonly>
+                                                        <input value="{{$healtystudent->height}}" type="text" class="form-control" placeholder="" name="height" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1111,25 +1325,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>โรคประจำตัว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="disease" value="{{$healtystudent->disease}}" readonly>
+                                                        <input value="{{$healtystudent->disease}}" type="text" class="form-control" placeholder="" name="disease" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ยาที่แพ้</label>
-                                                        <input type="text" class="form-control" placeholder="" name="medicine_lose" value="{{$healtystudent->medicine_lose}}" readonly>
+                                                        <input value="{{$healtystudent->medicine_lose}}" type="text" class="form-control" placeholder="" name="medicine_lose" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ยาที่ต้องรับประทานประจำ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="medicine" value="{{$healtystudent->medicine}}" readonly>
+                                                        <input value="{{$healtystudent->medicine}}" type="text" class="form-control" placeholder="" name="medicine" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>วิธีแก้ไขเมื่อเกิดอาการ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="remedy" value="{{$healtystudent->remedy}}" readonly>
+                                                        <input value="{{$healtystudent->remedy}}" type="text" class="form-control" placeholder="" name="remedy" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1137,7 +1351,7 @@
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีภาวะทางสายตา</label>
-                                                        <input type="text" class="form-control" placeholder="" name="glasses" value="{{$healtystudent->glasses}}" readonly>
+                                                        <input value="{{$healtystudent->sight_eye}}" type="text" class="form-control" placeholder="" name="sight_eye" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1145,28 +1359,32 @@
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนสวมแว่นตา</label>
-                                                        <input type="text" class="form-control" placeholder="" name="danger" value="{{$healtystudent->danger}}" readonly>
+                                                        <input value="{{$healtystudent->glasses}}" type="text" class="form-control" name="glasses" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="unsound" value="{{$healtystudent->unsound}}" readonly>
+                                                        <input value="{{$healtystudent->danger}}" type="text" class="form-control" name="danger" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีความบกพร่องทางการได้ยิน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="defective" value="{{$healtystudent->defective}}" readonly>
+                                                        <input value="{{$healtystudent->unsound}}" type="text" class="form-control" name="unsound" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีความบกพร่องทางร่างกาย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="sight_eye" value="{{$healtystudent->sight_eye}}" readonly>
+                                                        <input value="{{$healtystudent->defective}}" type="text" class="form-control" name="defective" readonly>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- Step 6 ครอบครัว -->
+                                        <div class="tab-pane" id="family">
                                             <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                                 <p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลบิดา</b></p>
                                             </div>
@@ -1175,51 +1393,67 @@
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>คำนำหน้าชื่อ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="prename_f" value="{{$parentstudentModel->prename_f}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename_f" readonly>
+                                                            <option>{{$parentstudent->prename_f}}</option>
+                                                            <option value="นาย">นาย</option>
+                                                            <option value="นางสาว">นางสาว</option>
+                                                            <option value="นาง">นาง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="name_f" value="{{$parentstudentModel->name_f}}" readonly>
+                                                        <input value="{{$parentstudent->name_f}}" type="text" class="form-control" placeholder="" name="name_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อกลาง</label>
-                                                        <input type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_f" value="{{$parentstudentModel->name_cen_f}}" readonly>
+                                                        <input value="{{$parentstudent->name_cen_f}}" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุลภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="surname_f" value="{{$parentstudentModel->surname_f}}" readonly>
+                                                        <input value="{{$parentstudent->surname_f}}" type="text" class="form-control" placeholder="" name="surname_f" readonly>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-4 col-md-4">
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวประชาชน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="id_father" value="{{$parentstudentModel->id_father}}" readonly>
+                                                        <input value="{{$parentstudent->id_father}}" type="text" class="form-control" placeholder="" name="id_father" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชนิดของบัตร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="type_card_f" value="{{$parentstudentModel->type_card_f}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="type_card_f" readonly>
+                                                            <option>{{$parentstudent->type_card_f}}</option>
+                                                            <option value="บัตรประจำตัวประชาชน">บัตรประจำตัวประชาชน</option>
+                                                            <option value="บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย">บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย</option>
+                                                            <option value="บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน">บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>อายุ</label>
-                                                        <input id="age_f" type="text" class="form-control" placeholder="" name="age_f" value="{{$parentstudentModel->age_f}}" readonly>
+                                                        <input value="{{$parentstudent->age_f}}" type="text" class="form-control" placeholder="" name="age_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่เลือด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="bloodgroup_f" value="{{$parentstudentModel->bloodgroup_f}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="bloodgroup_f" readonly>
+                                                            <option>{{$parentstudent->bloodgroup_f}}</option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="O">O</option>
+                                                            <option value="AB">AB</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1227,19 +1461,36 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>การประกอบอาชีพ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="job_f" value="{{$parentstudentModel->job_f}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="job_f" readonly>
+                                                            <option>{{$parentstudent->job_f}}</option>
+                                                            <option value="รับราชกาล">รับราชกาล</option>
+                                                            <option value="ค้าขาย">ค้าขาย</option>
+                                                            <option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
+                                                            <option value="เกษตรกร">เกษตรกร</option>
+                                                            <option value="ลูกจ้าง">ลูกจ้าง</option>
+                                                            <option value="อิสระ">อิสระ</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รายได้ต่อเดือน (บาท)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="salary_f" value="{{$parentstudentModel->salary_f}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="salary_f" readonly>
+                                                            <option>{{$parentstudent->salary_f}}</option>
+                                                            <option value="0 - 9000">0 - 9000</option>
+                                                            <option value="9,001 - 15,000">9,001 - 15,000</option>
+                                                            <option value="15,001 - 30,000">15,001 - 30,000</option>
+                                                            <option value="30,001 - 50,000">30,001 - 50,000</option>
+                                                            <option value="50,001 - 100,000">50,001 - 100,000</option>
+                                                            <option value="100,001 - 300,000">100,001 - 300,000</option>
+                                                            <option value="มากกว่า 300,000">มากกว่า 300,000</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                        <input type="text" class="form-control" name="tel_f" value="{{$parentstudentModel->tel_f}}" readonly>
+                                                        <input value="{{$parentstudent->tel_f}}" type="text" class="form-control" name="tel_f" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1247,31 +1498,31 @@
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>บ้านเลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="house_number_f" value="{{$parentstudentModel->house_number_f}}" readonly>
+                                                        <input value="{{$parentstudent->house_number_f}}" type="text" class="form-control" placeholder="" name="house_number_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="group_f" value="{{$parentstudentModel->group_f}}" readonly>
+                                                        <input value="{{$parentstudent->group_f}}" type="text" class="form-control" placeholder="" name="group_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อหมู่บ้าน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="village_f" value="{{$parentstudentModel->village_f}}" readonly>
+                                                        <input value="{{$parentstudent->village_f}}" type="text" class="form-control" placeholder="" name="village_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ซอย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="alley_f" value="{{$parentstudentModel->alley_f}}" readonly>
+                                                        <input value="{{$parentstudent->alley_f}}" type="text" class="form-control" placeholder="" name="alley_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ถนน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="street_f" value="{{$parentstudentModel->street_f}}" readonly>
+                                                        <input value="{{$parentstudent->street_f}}" type="text" class="form-control" placeholder="" name="street_f" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1279,25 +1530,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_f" value="{{$parentstudentModel->subdistrict_f}}" readonly>
+                                                        <input value="{{$parentstudent->subdistrict_f}}" type="text" class="form-control" placeholder="" name="subdistrict_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="district_f" value="{{$parentstudentModel->district_f}}" readonly>
+                                                        <input value="{{$parentstudent->district_f}}" type="text" class="form-control" placeholder="" name="district_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="province_f" value="{{$parentstudentModel->province_f}}" readonly>
+                                                        <input value="{{$parentstudent->province_f}}" type="text" class="form-control" placeholder="" name="province_f" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัสไปรษณีย์</label>
-                                                        <input type="text" class="form-control" placeholder="" name="post_f" value="{{$parentstudentModel->post_f}}" readonly>
+                                                        <input value="{{$parentstudent->post_f}}" type="text" class="form-control" placeholder="" name="post_f" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1310,51 +1561,67 @@
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>คำนำหน้าชื่อ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="prename_m" value="{{$parentstudentModel->prename_m}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename_m" readonly>
+                                                            <option>{{$parentstudent->prename_m}}</option>
+                                                            <option value="นาย">นาย</option>
+                                                            <option value="นางสาว">นางสาว</option>
+                                                            <option value="นาง">นาง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="name_m" value="{{$parentstudentModel->name_m}}" readonly>
+                                                        <input value="{{$parentstudent->name_m}}" type="text" class="form-control" placeholder="" name="name_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อกลาง</label>
-                                                        <input type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_m" value="{{$parentstudentModel->name_cen_m}}" readonly>
+                                                        <input value="{{$parentstudent->name_cen_m}}" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุลภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="surname_m" value="{{$parentstudentModel->surname_m}}" readonly>
+                                                        <input value="{{$parentstudent->surname_m}}" type="text" class="form-control" placeholder="" name="surname_m" readonly>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-4 col-md-4">
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวประชาชน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="id_mother" value="{{$parentstudentModel->id_mother}}" readonly>
+                                                        <input value="{{$parentstudent->id_mother}}" type="text" class="form-control" placeholder="" name="id_mother" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชนิดของบัตร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="type_card_m" value="{{$parentstudentModel->type_card_m}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="type_card_m" readonly>
+                                                            <option>{{$parentstudent->type_card_m}}</option>
+                                                            <option value="บัตรประจำตัวประชาชน">บัตรประจำตัวประชาชน</option>
+                                                            <option value="บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย">บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย</option>
+                                                            <option value="บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน">บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>อายุ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="age_m" value="{{$parentstudentModel->age_m}}" readonly>
+                                                        <input value="{{$parentstudent->age_m}}" type="text" class="form-control" placeholder="" name="age_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่เลือด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="bloodgroup_m" value="{{$parentstudentModel->bloodgroup_m}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="bloodgroup_m" readonly>
+                                                            <option>{{$parentstudent->bloodgroup_m}}</option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="O">O</option>
+                                                            <option value="AB">AB</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1362,19 +1629,36 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>การประกอบอาชีพ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="job_m" value="{{$parentstudentModel->job_m}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="job_m" readonly>
+                                                            <option>{{$parentstudent->job_m}}</option>
+                                                            <option value="รับราชกาล">รับราชกาล</option>
+                                                            <option value="ค้าขาย">ค้าขาย</option>
+                                                            <option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
+                                                            <option value="เกษตรกร">เกษตรกร</option>
+                                                            <option value="ลูกจ้าง">ลูกจ้าง</option>
+                                                            <option value="อิสระ">อิสระ</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รายได้ต่อเดือน (บาท)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="salary_m" value="{{$parentstudentModel->salary_m}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="salary_m" readonly>
+                                                            <option>{{$parentstudent->salary_m}}</option>
+                                                            <option value="0 - 9000">0 - 9000</option>
+                                                            <option value="9,001 - 15,000">9,001 - 15,000</option>
+                                                            <option value="15,001 - 30,000">15,001 - 30,000</option>
+                                                            <option value="30,001 - 50,000">30,001 - 50,000</option>
+                                                            <option value="50,001 - 100,000">50,001 - 100,000</option>
+                                                            <option value="100,001 - 300,000">100,001 - 300,000</option>
+                                                            <option value="มากกว่า 300,000">มากกว่า 300,000</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                        <input type="text" class="form-control" name="tel_m" value="{{$parentstudentModel->tel_m}}" readonly>
+                                                        <input value="{{$parentstudent->tel_m}}" type="text" class="form-control" name="tel_m" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1382,31 +1666,31 @@
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>บ้านเลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="house_number_m" value="{{$parentstudentModel->house_number_m}}" readonly>
+                                                        <input value="{{$parentstudent->house_number_m}}" type="text" class="form-control" placeholder="" name="house_number_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="group_m" value="{{$parentstudentModel->group_m}}" readonly>
+                                                        <input value="{{$parentstudent->group_m}}" type="text" class="form-control" placeholder="" name="group_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อหมู่บ้าน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="village_m" value="{{$parentstudentModel->village_m}}" readonly>
+                                                        <input value="{{$parentstudent->village_m}}" type="text" class="form-control" placeholder="" name="village_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ซอย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="alley_m" value="{{$parentstudentModel->alley_m}}" readonly>
+                                                        <input value="{{$parentstudent->alley_m}}" type="text" class="form-control" placeholder="" name="alley_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ถนน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="street_m" value="{{$parentstudentModel->street_m}}" readonly>
+                                                        <input value="{{$parentstudent->street_m}}" type="text" class="form-control" placeholder="" name="street_m" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1414,25 +1698,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_m" value="{{$parentstudentModel->subdistrict_m}}" readonly>
+                                                        <input value="{{$parentstudent->subdistrict_m}}" type="text" class="form-control" placeholder="" name="subdistrict_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="district_m" value="{{$parentstudentModel->district_m}}" readonly>
+                                                        <input value="{{$parentstudent->district_m}}" type="text" class="form-control" placeholder="" name="district_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="province_m" value="{{$parentstudentModel->province_m}}" readonly>
+                                                        <input value="{{$parentstudent->province_m}}" type="text" class="form-control" placeholder="" name="province_m" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัสไปรษณีย์</label>
-                                                        <input type="text" class="form-control" placeholder="" name="post_m" value="{{$parentstudentModel->post_m}}" readonly>
+                                                        <input value="{{$parentstudent->post_m}}" type="text" class="form-control" placeholder="" name="post_m" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1444,8 +1728,8 @@
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-12">
                                                     <div class="form-group form-group-default">
-                                                        <label>ผู้ปกครอง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="parent" value="{{$parentstudentModel->parent}}" readonly>
+                                                        <label>รหัสไปรษณีย์</label>
+                                                        <input value="{{$parentstudent->parent}}" type="text" class="form-control" name="parent" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1453,51 +1737,61 @@
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>คำนำหน้าชื่อ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="prename_p" value="{{$parentstudentModel->prename_p}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="prename_p" readonly>
+                                                            <option>{{$parentstudent->prename_p}}</option>
+                                                            <option value="นาย">นาย</option>
+                                                            <option value="นางสาว">นางสาว</option>
+                                                            <option value="นาง">นาง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="name_p" value="{{$parentstudentModel->name_p}}" readonly>
+                                                        <input value="{{$parentstudent->name_p}}" type="text" class="form-control" placeholder="" name="name_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อกลาง</label>
-                                                        <input type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_p" value="{{$parentstudentModel->name_cen_p}}" readonly>
+                                                        <input value="{{$parentstudent->name_cen_p}}" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุลภาษาไทย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="surname_p" value="{{$parentstudentModel->surname_p}}" readonly>
+                                                        <input value="{{$parentstudent->surname_p}}" type="text" class="form-control" placeholder="" name="surname_p" readonly>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-4 col-md-4">
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>เลขประจำตัวประชาชน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="id_parent" value="{{$parentstudentModel->id_parent}}" readonly>
+                                                        <input value="{{$parentstudent->id_parent}}" type="text" class="form-control" placeholder="" name="id_parent" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชนิดของบัตร</label>
-                                                        <input type="text" class="form-control" placeholder="" name="type_card_p" value="{{$parentstudentModel->type_card_p}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="type_card_p" readonly>
+                                                            <option>{{$parentstudent->type_card_p}}</option>
+                                                            <option value="บัตรประจำตัวประชาชน">บัตรประจำตัวประชาชน</option>
+                                                            <option value="บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย">บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย</option>
+                                                            <option value="บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน">บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>อายุ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="age_p" value="{{$parentstudentModel->age_p}}" readonly>
+                                                        <input value="{{$parentstudent->age_p}}" type="text" class="form-control" placeholder="" name="age_p" readonly>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-md-2">
+                                                <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ความสัมพันธ์ผู้ปกครอง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="bloodgroup_p" value="{{$parentstudentModel->bloodgroup_p}}" readonly>
+                                                        <input value="{{$parentstudent->relationship_parent}}" type="text" class="form-control" placeholder="" name="relationship_parent" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1505,19 +1799,36 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>การประกอบอาชีพ</label>
-                                                        <input type="text" class="form-control" placeholder="" name="job_p" value="{{$parentstudentModel->job_p}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="job_p" readonly>
+                                                            <option>{{$parentstudent->job_p}}</option>
+                                                            <option value="รับราชกาล">รับราชกาล</option>
+                                                            <option value="ค้าขาย">ค้าขาย</option>
+                                                            <option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
+                                                            <option value="เกษตรกร">เกษตรกร</option>
+                                                            <option value="ลูกจ้าง">ลูกจ้าง</option>
+                                                            <option value="อิสระ">อิสระ</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รายได้ต่อเดือน (บาท)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="salary_p" value="{{$parentstudentModel->salary_p}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="salary_p" readonly>
+                                                            <option>{{$parentstudent->salary_p}}</option>
+                                                            <option value="0 - 9000">0 - 9000</option>
+                                                            <option value="9,001 - 15,000">9,001 - 15,000</option>
+                                                            <option value="15,001 - 30,000">15,001 - 30,000</option>
+                                                            <option value="30,001 - 50,000">30,001 - 50,000</option>
+                                                            <option value="50,001 - 100,000">50,001 - 100,000</option>
+                                                            <option value="100,001 - 300,000">100,001 - 300,000</option>
+                                                            <option value="มากกว่า 300,000">มากกว่า 300,000</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                        <input type="text" class="form-control" name="tel_p" value="{{$parentstudentModel->tel_p}}" readonly>
+                                                        <input value="{{$parentstudent->tel_p}}" type="text" class="form-control" name="tel_p" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1525,31 +1836,31 @@
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>บ้านเลขที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="house_number_p" value="{{$parentstudentModel->house_number_p}}" readonly>
+                                                        <input value="{{$parentstudent->house_number_p}}" type="text" class="form-control" placeholder="" name="house_number_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>หมู่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="group_p" value="{{$parentstudentModel->group_p}}" readonly>
+                                                        <input value="{{$parentstudent->group_p}}" type="text" class="form-control" placeholder="" name="group_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อหมู่บ้าน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="village_p" value="{{$parentstudentModel->village_p}}" readonly>
+                                                        <input value="{{$parentstudent->village_p}}" type="text" class="form-control" placeholder="" name="village_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>ซอย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="alley_p" value="{{$parentstudentModel->alley_p}}" readonly>
+                                                        <input value="{{$parentstudent->alley_p}}" type="text" class="form-control" placeholder="" name="alley_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ถนน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="street_p" value="{{$parentstudentModel->street_p}}" readonly>
+                                                        <input value="{{$parentstudent->street_p}}" type="text" class="form-control" placeholder="" name="street_p" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1557,25 +1868,25 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_p" value="{{$parentstudentModel->subdistrict_p}}" readonly>
+                                                        <input value="{{$parentstudent->subdistrict_p}}" type="text" class="form-control" placeholder="" name="subdistrict_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>อำเภอ/เขต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="district_p" value="{{$parentstudentModel->district_p}}" readonly>
+                                                        <input value="{{$parentstudent->district_p}}" type="text" class="form-control" placeholder="" name="district_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จังหวัด</label>
-                                                        <input type="text" class="form-control" placeholder="" name="province_p" value="{{$parentstudentModel->province_p}}" readonly>
+                                                        <input value="{{$parentstudent->province_p}}" type="text" class="form-control" placeholder="" name="province_p" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัสไปรษณีย์</label>
-                                                        <input type="text" class="form-control" placeholder="" name="post_p" value="{{$parentstudentModel->post_p}}" readonly>
+                                                        <input value="{{$parentstudent->post_p}}" type="text" class="form-control" placeholder="" name="post_p" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1588,13 +1899,30 @@
                                                 <div class="col-6 col-md-8">
                                                     <div class="form-group form-group-default">
                                                         <label>สถานภาพสมรสของบิดามารดา</label>
-                                                        <input type="text" class="form-control" placeholder="" name="status_parent" value="{{$parentstudentModel->status_parent}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="status_parent" readonly>
+                                                            <option>{{$parentstudent->status_parent}}</option>
+                                                            <option value="สมรส">สมรส</option>
+                                                            <option value="หย่าร้าง">หย่าร้าง</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>สถานะผู้ปกครองนักเรียน</label>
-                                                        <input type="text" class="form-control" placeholder="" name="student_parent" value="{{$parentstudentModel->student_parent}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="student_parent" readonly>
+                                                            <option>{{$parentstudent->student_parent}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1602,31 +1930,96 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่น้อง ร่วมสายโลหิต</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_blood" value="{{$parentstudentModel->no_blood}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_blood" readonly>
+                                                            <option>{{$parentstudent->no_blood}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่ชาย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_brother" value="{{$parentstudentModel->no_brother}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_brother" readonly>
+                                                            <option>{{$parentstudent->no_brother}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนน้องชาย</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_son" value="{{$parentstudentModel->no_son}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_son" readonly>
+                                                            <option>{{$parentstudent->no_son}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่สาว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_sister" value="{{$parentstudentModel->no_sister}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_sister" readonly>
+                                                            <option>{{$parentstudent->no_sister}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนน้องสาว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_son2" value="{{$parentstudentModel->no_son2}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_son2" readonly>
+                                                            <option>{{$parentstudent->no_son2}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1634,25 +2027,77 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนเป็นบุตรคนที่</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_parent" value="{{$parentstudentModel->no_parent}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_parent" readonly>
+                                                            <option>{{$parentstudent->no_parent}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่น้องที่ศึกษาอยู่ (ไม่นับรวมนักเรียน)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_study" value="{{$parentstudentModel->no_study}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_study" readonly>
+                                                            <option>{{$parentstudent->no_study}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่น้องที่ประกอบอาชีพแล้ว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_job" value="{{$parentstudentModel->no_job}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_job" readonly>
+                                                            <option>{{$parentstudent->no_job}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว</label>
-                                                        <input type="text" class="form-control" placeholder="" name="no_house" value="{{$parentstudentModel->no_house}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="no_house" readonly>
+                                                            <option>{{$parentstudent->no_house}}</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1660,13 +2105,21 @@
                                                 <div class="col-sm-6 col-md-9">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนมีหน้าที่รับผิดชอบภายในบ้าน นอกเหนือจากการเรียน</label>
-                                                        <input type="text" class="form-control" name="student_job" value="{{$parentstudentModel->student_job}}" readonly>
+                                                        <input value="{{$parentstudent->student_job}}" type="text" class="form-control" name="student_job" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>นักเรียนนำเงินมาโรงเรียนวันละ (บาท)</label>
-                                                        <input type="text" class="form-control" name="student_money" value="{{$parentstudentModel->student_money}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="student_money" readonly>
+                                                            <option>{{$parentstudent->student_money}}</option>
+                                                            <option value="0 - 20">0 - 20</option>
+                                                            <option value="21 - 40">21 - 40</option>
+                                                            <option value="41 - 60">41 - 60</option>
+                                                            <option value="61 - 80">61 - 80</option>
+                                                            <option value="81 - 100">81 - 100</option>
+                                                            <option value="มากกว่า 100">มากกว่า 100</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1674,51 +2127,445 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>รายได้ของครอบครัวต่อเดือน (รายได้รวมกัน)</label>
-                                                        <input type="text" class="form-control" placeholder="" name="parent_money" value="{{$parentstudentModel->parent_money}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="parent_money" readonly>
+                                                            <option>{{$parentstudent->parent_money}}</option>
+                                                            <option value="0 - 9000">0 - 9000</option>
+                                                            <option value="9,001 - 15,000">9,001 - 15,000</option>
+                                                            <option value="15,001 - 30,000">15,001 - 30,000</option>
+                                                            <option value="30,001 - 50,000">30,001 - 50,000</option>
+                                                            <option value="50,001 - 100,000">50,001 - 100,000</option>
+                                                            <option value="100,001 - 300,000">100,001 - 300,000</option>
+                                                            <option value="มากกว่า 300,000">มากกว่า 300,000</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>ผู้ออกค่าใช้จ่ายให้นักเรียน (ชื่อ-นามสกุล)</label>
-                                                        <input type="text" class="form-control" name="parent_total" value="{{$parentstudentModel->parent_total}}" readonly>
+                                                        <input value="{{$parentstudent->parent_total}}" type="text" class="form-control" name="parent_total" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>เกี่ยวข้องเป็น</label>
-                                                        <input type="text" class="form-control" placeholder="" name="parent_house" value="{{$parentstudentModel->parent_house}}" readonly>
+                                                        <input value="{{$parentstudent->parent_house}}" type="text" class="form-control" name="parent_house" readonly>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-6 col-md-12">
+                                                <div class="col-sm-6 col-md-2">
                                                     <div class="form-group form-group-default">
                                                         <label>การหารายได้ด้วยตนเอง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="job_study" value="{{$parentstudentModel->job_study}}" readonly>
+                                                        <input value="{{$parentstudent->job_study}}" type="text" class="form-control" name="job_study" readonly>
                                                     </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>โปรดระบุ (หารายได้จากอะไร)</label>
-                                                        <input type="text" class="form-control" name="job_detail" value="{{$parentstudentModel->job_detail}}" readonly>
+                                                        <input value="{{$parentstudent->job_detail}}" type="text" class="form-control" name="job_detail" readonly>
                                                     </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>รายได้เฉลี่ยวันละ (บาท)</label>
-                                                        <input type="text" class="form-control" name="total_study" value="{{$parentstudentModel->total_study}}" readonly>
+                                                        <select class="form-control" id="formGroupDefaultSelect" name="total_study" readonly>
+                                                            <option>{{$parentstudent->total_study}}</option>
+                                                            <option value="0 - 100">0 - 100</option>
+                                                            <option value="101 - 150">101 - 150</option>
+                                                            <option value="151 - 200">151 - 200</option>
+                                                            <option value="201 - 250">201 - 250</option>
+                                                            <option value="251 - 300">251 - 300</option>
+                                                            <option value="มากกว่า 300">มากกว่า 300</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer" align="center">
-                                            <a href='{{ url("/FixStudentCore/{$studentcore->id}")}}' class="btn btn-success"><strong>แก้ไขข้อมูล</strong></a>
-                                            <a href="{{ url('/StudentCore')}}" type="button" class="btn btn-danger"><strong>ย้อนกลับ</strong></a>
-                                        </div><br>
+
+                                    <div class="tab-pane" id="photo">
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>รูปประจำตัว สำเนาบัตรประชาชน สำเนาทะเบียนบ้าน ใบปพ.1 หรือหนังสือรับรองการเป็นนักเรียน</b></p>
+								</div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_profile == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_profile == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_profile == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                @if ($data->profile_img !== NULL)
+                                                <a href='{{ url("/ProfileStudentM1/{$data->id}")}}' target="_blank" > 
+                                                    <img src="../ImgAll/profile_img/{{$data->profile_img}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_idcard_student == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_student == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->id_card_student !== NULL)
+                                                <a href='{{ url("/IdCardStudentM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_student/{{$data->id_card_student}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_house_student == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_student == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->house_student !== NULL)
+                                                <a href='{{ url("/HouseStudentM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_student/{{$data->house_student}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_submit_student == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_submit_student == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_submit_student == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->student_submit !== NULL)
+                                                <a href='{{ url("/SubmitStudentM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/student_submit/{{$data->student_submit}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ บิดา</b></p>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_idcard_father == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_father == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_father == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->id_card_father !== NULL)
+                                                <a href='{{ url("/IdCardFatherM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_father/{{$data->id_card_father}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_house_father == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_father == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_father == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->house_father !== NULL)
+                                                <a href='{{ url("/HouseFatherM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_father/{{$data->house_father}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ มารดา</b></p>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_idcard_mother == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_mother == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_mother == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->id_card_mother !== NULL)
+                                                <a href='{{ url("/IdCardMotherM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_mother/{{$data->id_card_mother}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_house_mother == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_mother == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_mother == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->house_mother !== NULL)
+                                                <a href='{{ url("/HouseMotherM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_mother/{{$data->house_mother}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนผู้ปกครอง (ในกรณีที่ไม่ได้อยู่กับบิดา มารดา)</b></p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_idcard_parent == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_parent == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_idcard_parent == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->id_card_parent !== NULL)
+                                                <a href='{{ url("/IdCardParentM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/id_card/id_card_parent/{{$data->id_card_parent}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_house_parent == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_parent == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_house_parent == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->house_parent !== NULL)
+                                                <a href='{{ url("/HouseParentM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/house_regis/house_parent/{{$data->house_parent}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร </b></p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_front_grade == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_front_grade == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_front_grade == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->front_grade !== NULL)
+                                                <a href='{{ url("/FrontGradeM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/front_grade/{{$data->front_grade}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_back_grade == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_back_grade == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_back_grade == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->back_grade !== NULL)
+                                                <a href='{{ url("/BackGradeM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/back_grade/{{$data->back_grade}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_birth_certificate == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_birth_certificate == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_birth_certificate == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->birth_certificate !== NULL)
+                                                <a href='{{ url("/BirthCertificateM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/birth_certificate/{{$data->birth_certificate}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                        <p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง) </b></p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div align="center" style="margin-left:20px;">
+                                            <div class="form-group">
+                                                @if($data2->status_disability_certificate == "02")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_disability_certificate == "01")
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @elseif($data2->status_disability_certificate == NULL)
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group">
+                                                @if ($data->disability_certificate !== NULL)
+                                                <a href='{{ url("/DisabilityCertificateM1/{$data->id}")}}' target="_blank"> 
+                                                    <img src="../ImgAll/disability_certificate/{{$data->disability_certificate}}"  width="70" height="80" class="bor"> 
+                                                </a>
+                                                @else
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="wizard-action">
+                                        <div class="pull-left">
+                                            <input type="button" class="btn btn-previous btn-fill btn-black" name="previous" value="ย้อนกลับ">
+                                        </div>
+                                        <div class="pull-right">
+                                            <input type="button" class="btn btn-next btn-info" name="next" value="ถัดไป">
+
+                                        </div>
+                                        <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </form>
-
+                    </div>
+                </div>
             </div>
-
         </div>
         <!-- สิ้นสุดเนื้อหา -->
         <!-- เริ่ม Footer -->
@@ -1744,55 +2591,40 @@
     <script src="../assets/js/core/jquery.3.2.1.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
-
     <!-- jQuery UI -->
     <script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-
+    <!-- Moment JS -->
+    <script src="../assets/js/plugin/moment/moment.min.js"></script>
+    <!-- Bootstrap Toggle -->
+    <script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
     <!-- jQuery Scrollbar -->
     <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
-    <!-- Datatables -->
-    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-    <!-- Sweet Alert -->
-    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-
+    <!-- DateTimePicker -->
+    <script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+    <!-- Select2 -->
+    <script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+    <!-- Bootstrap Wizard -->
+    <script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+    <!-- jQuery Validation -->
+    <script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
     <!-- Atlantis JS -->
     <script src="../assets/js/atlantis.min.js"></script>
-
     <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="../assets/js/setting-demo.js"></script>
-    <script src="../assets/js/demo.js"></script>
+    <script src="../assets/js/setting-demo2.js"></script>
 
     <!-- Date time picker -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#basic-datatables').DataTable({
-                "pageLength": 50,
-                "language": {
-                    "search": "ค้นหาข้อมูล :"
-                },
-                "ordering": false
-            });
-        });
-    </script>
-
     <script>
+        var $validator = $('.wizard-container form').validate({
+            validClass: "success",
+            highlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function(element) {
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+            }
+        })
+
         Circles.create({
             id: 'circles-1',
             radius: 45,

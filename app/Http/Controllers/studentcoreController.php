@@ -19,7 +19,113 @@ class studentcoreController extends Controller
 {
     public function index(Request $request)
     {
-        
+        if (
+            $request->get('search1') !== null
+            && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
+
+            $school_year = DB::table('school_year')
+                ->first();
+            $class_room = DB::table('class_room')
+                ->get();
+
+            $search1 = $request->get('search1');
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+
+            $data = DB::table('student_core')
+                ->where('student_class', 'like', '%' . $search1 . '%')
+                ->where('student_room', 'like', '%' . $search2 . '%')
+                ->orWhere('student_id', 'like', '%' . $search3 . '%')
+                ->orWhere('fname', 'like', '%' . $search3 . '%')
+                ->orWhere('surname', 'like', '%' . $search3 . '%')
+                ->get();
+
+            return view('Studentcore.studentcore', [
+                'data' => $data,
+                'school_year' => $school_year,
+                'class_room' => $class_room
+            ]);
+        } elseif (
+            $request->get('search1') !== null
+            && $request->get('search2') !== null
+        ) {
+
+            $school_year = DB::table('school_year')
+                ->first();
+            $class_room = DB::table('class_room')
+                ->get();
+
+            $search1 = $request->get('search1');
+            $search2 = $request->get('search2');
+            $data = DB::table('student_core')
+                ->where('student_class', 'like', '%' . $search1 . '%')
+                ->where('student_room', 'like', '%' . $search2 . '%')
+                ->get();
+
+            return view('Studentcore.studentcore', [
+                'data' => $data,
+                'school_year' => $school_year,
+                'class_room' => $class_room
+            ]);
+        } elseif ($request->get('search1') !== null) {
+
+            $school_year = DB::table('school_year')
+                ->first();
+            $class_room = DB::table('class_room')
+                ->get();
+
+            $search1 = $request->get('search1');
+            $data = DB::table('student_core')
+                ->where('student_class', 'like', '%' . $search1 . '%')
+                ->get();
+
+            return view('Studentcore.studentcore', [
+                'data' => $data,
+                'school_year' => $school_year,
+                'class_room' => $class_room
+            ]);
+        } elseif ($request->get('search2') !== null) {
+
+            $school_year = DB::table('school_year')
+                ->first();
+            $class_room = DB::table('class_room')
+                ->get();
+
+
+            $search2 = $request->get('search2');
+            $data = DB::table('student_core')
+                ->where('student_room', 'like', '%' . $search2 . '%')
+                ->get();
+
+            return view('Studentcore.studentcore', [
+                'data' => $data,
+                'school_year' => $school_year,
+                'class_room' => $class_room
+            ]);
+        } elseif ($request->get('search3') !== null) {
+
+            $school_year = DB::table('school_year')
+                ->first();
+            $class_room = DB::table('class_room')
+                ->get();
+
+
+            $search3 = $request->get('search3');
+            $data = DB::table('student_core')
+                ->where('student_id', 'like', '%' . $search3 . '%')
+                ->orWhere('fname', 'like', '%' . $search3 . '%')
+                ->orWhere('surname', 'like', '%' . $search3 . '%')
+                ->get();
+
+            return view('Studentcore.studentcore', [
+                'data' => $data,
+                'school_year' => $school_year,
+                'class_room' => $class_room
+            ]);
+        }
+
         $data = DB::table('student_core')
             ->where('status', '=', '01')
             ->get();
@@ -47,47 +153,121 @@ class studentcoreController extends Controller
 
     public function search(Request $request)
     {
-
-        
     }
 
     public function show($id)
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $studentcore = studentcoreModels::find($id);
-        $addressstudent = addressstudentModel::find($id);
-        $healtystudent = healtystudentModel::find($id);
-        $talentstudent = talentstudentModel::find($id);
-        $studentdetail = studentdetailModel::find($id);
-        $parentstudentModel = parentstudentModel::find($id);
-        return view('Studentcore.studentcorebyID', compact('studentcore', 'addressstudent', 'healtystudent', 'talentstudent', 'studentdetail', 'parentstudentModel'));
+        $findID = $studentcore->student_id_card;
+
+        $addressstudent = DB::table('address_student')
+            ->where('student_idcard_a', '=', $findID)
+            ->first();
+
+        $healtystudent = DB::table('healty_student')
+            ->where('student_idcard_h', '=', $findID)
+            ->first();
+
+        $talentstudent = DB::table('talent_student')
+            ->where('student_idcard_t', '=', $findID)
+            ->first();
+
+        $studentdetail = DB::table('student_detail')
+            ->where('student_idcard_d', '=', $findID)
+            ->first();
+
+        $parentstudent = DB::table('parent_student')
+            ->where('student_idcard_p', '=', $findID)
+            ->first();
+        
+        $data = DB::table('photo_student')
+            ->where('student_idcard', '=', $findID)
+            ->first();
+
+        $data2 = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID)
+            ->first(); 
+
+        return view('Studentcore.studentcorebyID', [
+            'school_year' => $school_year,
+            'studentcore' => $studentcore,
+            'addressstudent' => $addressstudent,
+            'healtystudent' => $healtystudent,
+            'talentstudent' => $talentstudent,
+            'studentdetail' => $studentdetail,
+            'parentstudent' => $parentstudent,
+            'data' => $data,
+            'data2' => $data2,
+        ]);
     }
 
     public function edit($id)
     {
+        $school_year = DB::table('school_year')
+            ->first();
+
         $studentcore = studentcoreModels::find($id);
-        $addressstudent = addressstudentModel::find($id);
-        $healtystudent = healtystudentModel::find($id);
-        $talentstudent = talentstudentModel::find($id);
-        $studentdetail = studentdetailModel::find($id);
-        $parentstudentModel = parentstudentModel::find($id);
-        return view('Studentcore.fixprofilestudentcore', compact('studentcore', 'addressstudent', 'healtystudent', 'talentstudent', 'studentdetail', 'parentstudentModel'));
+        $findID = $studentcore->student_id_card;
+
+        $addressstudent = DB::table('address_student')
+            ->where('student_idcard_a', '=', $findID)
+            ->first();
+
+        $healtystudent = DB::table('healty_student')
+            ->where('student_idcard_h', '=', $findID)
+            ->first();
+
+        $talentstudent = DB::table('talent_student')
+            ->where('student_idcard_t', '=', $findID)
+            ->first();
+
+        $studentdetail = DB::table('student_detail')
+            ->where('student_idcard_d', '=', $findID)
+            ->first();
+
+        $parentstudent = DB::table('parent_student')
+            ->where('student_idcard_p', '=', $findID)
+            ->first();
+        return view('Studentcore.fixprofilestudentcore', [
+            'school_year' => $school_year,
+            'studentcore' => $studentcore,
+            'addressstudent' => $addressstudent,
+            'healtystudent' => $healtystudent,
+            'talentstudent' => $talentstudent,
+            'studentdetail' => $studentdetail,
+            'parentstudent' => $parentstudent
+        ]);
     }
 
     public function update(Request $request, $id)
     {
         $studentcore = studentcoreModels::find($id);
-        $addressstudent = addressstudentModel::find($id);
-        $healtystudent = healtystudentModel::find($id);
-        $talentstudent = talentstudentModel::find($id);
-        $studentdetail = studentdetailModel::find($id);
-        $parentstudentModel = parentstudentModel::find($id);
+        $findID = $studentcore->student_id_card;
 
-        $studentcore->update($request->all());
-        $addressstudent->update($request->all());
-        $healtystudent->update($request->all());
-        $talentstudent->update($request->all());
-        $studentdetail->update($request->all());
-        $parentstudentModel->update($request->all());
+        $addressstudent = DB::table('address_student')
+            ->where('student_idcard_a', '=', $request->get('student_id_card'))
+            ->update($request->all());
+
+        $healtystudent = DB::table('healty_student')
+            ->where('student_idcard_h', '=', $request->get('student_id_card'))
+            ->update($request->all());
+
+        $talentstudent = DB::table('talent_student')
+            ->where('student_idcard_t', '=', $request->get('student_id_card'))
+            ->update($request->all());
+
+        $studentdetail = DB::table('student_detail')
+            ->where('student_idcard_d', '=', $request->get('student_id_card'))
+            ->update($request->all());
+
+        $parentstudent = DB::table('parent_student')
+            ->where('student_idcard_p', '=', $request->get('student_id_card'))
+            ->update($request->all());
+
+        
         return redirect('StudentCore')->with('success', 'Updated Successfully');
     }
 

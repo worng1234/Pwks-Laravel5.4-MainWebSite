@@ -689,7 +689,7 @@
                                             <div class="form-group">
                                                 @if ($data2->house_parent !== NULL)
                                                 <a href='{{ url("/HouseParentM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_parent/{{$data->house_parent}}"  width="70" height="80" class="bor"> 
+                                                    <img src="../ImgAll/house_regis/house_parent/{{$data2->house_parent}}"  width="70" height="80" class="bor"> 
                                                 </a>
                                                 @else
                                                 <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">

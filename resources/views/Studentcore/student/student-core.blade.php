@@ -574,7 +574,7 @@
 															<div class="col-sm-6 col-md-12">
 																<div class="form-check">
 																	<label class="form-check-label">
-																		<input class="form-check-input" type="checkbox" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now" >
+																		<input class="form-check-input" type="checkbox" value="ที่อยู่ตามทะเบียนบ้าน" name="address_now">
 																		<span class="form-check-sign">ที่อยู่ตามทะเบียนบ้าน</span>
 																	</label>
 																	<label class="form-check-label ml-1">
@@ -1715,163 +1715,163 @@
 														</div>
 
 														<div id="dvparent" style="display: none">
-														<div class="row">
-															<div class="col-sm-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>คำนำหน้าชื่อ</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="prename_p">
-																		<option>เลือก</option>
-																		<option value="นาย">นาย</option>
-																		<option value="นางสาว">นางสาว</option>
-																		<option value="นาง">นาง</option>
-																	</select>
+															<div class="row">
+																<div class="col-sm-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>คำนำหน้าชื่อ</label>
+																		<select class="form-control" id="formGroupDefaultSelect" name="prename_p">
+																			<option>เลือก</option>
+																			<option value="นาย">นาย</option>
+																			<option value="นางสาว">นางสาว</option>
+																			<option value="นาง">นาง</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-4">
+																	<div class="form-group form-group-default">
+																		<label>ชื่อภาษาไทย</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="name_p">
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>ชื่อกลาง</label>
+																		<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_p">
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-4">
+																	<div class="form-group form-group-default">
+																		<label>นามสกุลภาษาไทย</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="surname_p">
+																	</div>
 																</div>
 															</div>
-															<div class="col-sm-6 col-md-4">
-																<div class="form-group form-group-default">
-																	<label>ชื่อภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="name_p">
+															<div class="row">
+																<div class="col-sm-6 col-md-4">
+																	<div class="form-group form-group-default">
+																		<label>เลขประจำตัวประชาชน</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="id_parent">
+																	</div>
+																</div>
+																<div class="col-6 col-md-4">
+																	<div class="form-group form-group-default">
+																		<label>ชนิดของบัตร</label>
+																		<select class="form-control" id="formGroupDefaultSelect" name="type_card_p">
+																			<option>เลือก</option>
+																			<option value="บัตรประจำตัวประชาชน">บัตรประจำตัวประชาชน</option>
+																			<option value="บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย">บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย</option>
+																			<option value="บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน">บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>อายุ</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="age_p">
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ความสัมพันธ์ผู้ปกครอง</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="relationship_parent">
+																	</div>
 																</div>
 															</div>
-															<div class="col-sm-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>ชื่อกลาง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" name="name_cen_p">
+															<div class="row">
+																<div class="col-6 col-md-6">
+																	<div class="form-group form-group-default">
+																		<label>การประกอบอาชีพ</label>
+																		<select class="form-control" id="formGroupDefaultSelect" name="job_p">
+																			<option>เลือก</option>
+																			<option value="รับราชกาล">รับราชกาล</option>
+																			<option value="ค้าขาย">ค้าขาย</option>
+																			<option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
+																			<option value="เกษตรกร">เกษตรกร</option>
+																			<option value="ลูกจ้าง">ลูกจ้าง</option>
+																			<option value="อิสระ">อิสระ</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>รายได้ต่อเดือน (บาท)</label>
+																		<select class="form-control" id="formGroupDefaultSelect" name="salary_p">
+																			<option>เลือก</option>
+																			<option value="0 - 9000">0 - 9000</option>
+																			<option value="9,001 - 15,000">9,001 - 15,000</option>
+																			<option value="15,001 - 30,000">15,001 - 30,000</option>
+																			<option value="30,001 - 50,000">30,001 - 50,000</option>
+																			<option value="50,001 - 100,000">50,001 - 100,000</option>
+																			<option value="100,001 - 300,000">100,001 - 300,000</option>
+																			<option value="มากกว่า 300,000">มากกว่า 300,000</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+																		<input id="Name" type="text" class="form-control" name="tel_p">
+																	</div>
 																</div>
 															</div>
-															<div class="col-sm-6 col-md-4">
-																<div class="form-group form-group-default">
-																	<label>นามสกุลภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="surname_p">
+															<div class="row">
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>บ้านเลขที่</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="house_number_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>หมู่</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="group_p">
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ชื่อหมู่บ้าน</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="village_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-2">
+																	<div class="form-group form-group-default">
+																		<label>ซอย</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="alley_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ถนน</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="street_p">
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div class="row">
-															<div class="col-sm-6 col-md-4">
-																<div class="form-group form-group-default">
-																	<label>เลขประจำตัวประชาชน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="id_parent">
+															<div class="row">
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>ตำบล/แขวง</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="subdistrict_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>อำเภอ/เขต</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="district_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>จังหวัด</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="province_p">
+																	</div>
+																</div>
+																<div class="col-6 col-md-3">
+																	<div class="form-group form-group-default">
+																		<label>รหัสไปรษณีย์</label>
+																		<input id="Name" type="text" class="form-control" placeholder="" name="post_p">
+																	</div>
 																</div>
 															</div>
-															<div class="col-6 col-md-4">
-																<div class="form-group form-group-default">
-																	<label>ชนิดของบัตร</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="type_card_p">
-																		<option>เลือก</option>
-																		<option value="บัตรประจำตัวประชาชน">บัตรประจำตัวประชาชน</option>
-																		<option value="บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย">บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย</option>
-																		<option value="บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน">บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน</option>
-																	</select>
-																</div>
-															</div>
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>อายุ</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="age_p">
-																</div>
-															</div>
-															<div class="col-sm-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ความสัมพันธ์ผู้ปกครอง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="relationship_parent">
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-6 col-md-6">
-																<div class="form-group form-group-default">
-																	<label>การประกอบอาชีพ</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="job_p">
-																		<option>เลือก</option>
-																		<option value="รับราชกาล">รับราชกาล</option>
-																		<option value="ค้าขาย">ค้าขาย</option>
-																		<option value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว</option>
-																		<option value="เกษตรกร">เกษตรกร</option>
-																		<option value="ลูกจ้าง">ลูกจ้าง</option>
-																		<option value="อิสระ">อิสระ</option>
-																	</select>
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>รายได้ต่อเดือน (บาท)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="salary_p">
-																		<option>เลือก</option>
-																		<option value="0 - 9000">0 - 9000</option>
-																		<option value="9,001 - 15,000">9,001 - 15,000</option>
-																		<option value="15,001 - 30,000">15,001 - 30,000</option>
-																		<option value="30,001 - 50,000">30,001 - 50,000</option>
-																		<option value="50,001 - 100,000">50,001 - 100,000</option>
-																		<option value="100,001 - 300,000">100,001 - 300,000</option>
-																		<option value="มากกว่า 300,000">มากกว่า 300,000</option>
-																	</select>
-																</div>
-															</div>
-															<div class="col-sm-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-																	<input id="Name" type="text" class="form-control" name="tel_p">
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>บ้านเลขที่</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="house_number_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>หมู่</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="group_p">
-																</div>
-															</div>
-															<div class="col-sm-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="village_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-2">
-																<div class="form-group form-group-default">
-																	<label>ซอย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="alley_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ถนน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="street_p">
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="subdistrict_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="district_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="province_p">
-																</div>
-															</div>
-															<div class="col-6 col-md-3">
-																<div class="form-group form-group-default">
-																	<label>รหัสไปรษณีย์</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="post_p">
-																</div>
-															</div>
-														</div>
 														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
@@ -2186,25 +2186,25 @@
 																</div>
 															</div>
 															<div class="row">
-															<div class="col-sm-4 col-md-4">
-																<div class="form-group">
-																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-																	<input type="file" class="form-control-file" id="house_father" name="house_father">
+																<div class="col-sm-4 col-md-4">
+																	<div class="form-group">
+																		<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
+																		<input type="file" class="form-control-file" id="house_father" name="house_father">
+																	</div>
+																</div>
+																<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+																	<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
+																</div>
+
+																<div class="col-sm-4 col-md-4">
+																	<div class="form-group">
+																		<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
+																		<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
+																	</div>
 																</div>
 															</div>
-															<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-																<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
-															</div>
 
-															<div class="col-sm-4 col-md-4">
-																<div class="form-group">
-																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
-																	<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
-																</div>
-															</div>
-														</div>
 
-														
 															<div class="col-sm-4 col-md-4">
 																<div class="form-group">
 																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
@@ -2394,7 +2394,7 @@
 		});
 	</script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(function() {
 			$("#chkparent").click(function() {
 				if ($(this).is(":checked")) {
