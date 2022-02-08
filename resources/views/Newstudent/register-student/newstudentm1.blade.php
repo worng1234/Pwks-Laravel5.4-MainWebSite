@@ -195,7 +195,7 @@
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="prename">
+													<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
 														<option>เลือก</option>
 														<option value="เด็กชาย">เด็กชาย</option>
 														<option value="เด็กหญิง">เด็กหญิง</option>
@@ -205,7 +205,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input name="fname" type="text" class="form-control" placeholder="">
+													<input name="fname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
@@ -217,7 +217,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input name="surname" type="text" class="form-control" placeholder="">
+													<input name="surname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -225,7 +225,7 @@
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input name="idNumber" type="text" class="form-control" placeholder="">
+													<input name="idNumber" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -328,7 +328,7 @@
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>เพศสภาพ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="sex">
+													<select class="form-control" id="formGroupDefaultSelect" name="sex" required>
 														<option>เลือก</option>
 														<option value="ชาย">ชาย</option>
 														<option value="หญิง">หญิง</option>
@@ -356,7 +356,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="tel" type="text" class="form-control" placeholder="">
+													<input name="tel" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>

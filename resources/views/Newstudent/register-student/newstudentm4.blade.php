@@ -197,7 +197,7 @@
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="prename">
+													<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
 														<option>เลือก</option>
 														<option value="นาย">นาย</option>
 														<option value="นางสาว">นางสาว</option>
@@ -207,7 +207,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input name="fname" type="text" class="form-control" placeholder="">
+													<input name="fname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
@@ -219,7 +219,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input name="surname" type="text" class="form-control" placeholder="">
+													<input name="surname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -227,7 +227,7 @@
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input name="id_number" type="text" class="form-control" placeholder="">
+													<input name="id_number" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -330,7 +330,7 @@
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>เพศสภาพ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="sex">
+													<select class="form-control" id="formGroupDefaultSelect" name="sex" required>
 														<option>เลือก</option>
 														<option value="ชาย">ชาย</option>
 														<option value="หญิง">หญิง</option>
@@ -358,7 +358,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="tel" type="text" class="form-control" placeholder="">
+													<input name="tel" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -722,7 +722,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 1</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name1">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name1" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -733,7 +733,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 2</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name2">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name2" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -744,7 +744,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 3</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name3">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name3" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -755,7 +755,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 4</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name4">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name4" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -766,7 +766,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 5</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name5">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name5" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -777,7 +777,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 6</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name6">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name6" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -788,7 +788,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 7</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name7">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name7" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -799,7 +799,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 8</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name8">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name8" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -810,7 +810,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 9</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name9">
+													<select class="form-control" id="formGroupDefaultSelect" name="major_name9" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
