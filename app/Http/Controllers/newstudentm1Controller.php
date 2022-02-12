@@ -44,7 +44,7 @@ class newstudentm1Controller extends Controller
         ]);
     }
 
-    public function creteStudent ()
+    public function creteStudent()
     {
         return view('Newstudent.register-student.newstudentm1');
     }
@@ -409,13 +409,12 @@ class newstudentm1Controller extends Controller
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_father" => $request->get('status_house_father'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -485,13 +484,12 @@ class newstudentm1Controller extends Controller
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_father" => $request->get('status_house_father'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -549,13 +547,12 @@ class newstudentm1Controller extends Controller
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_house_father" => $request->get('status_house_father'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
             $request->hasFile('id_card_father')  && $request->hasFile('id_card_mother')
             && $request->hasFile('house_father')  && $request->hasFile('house_mother')
@@ -620,13 +617,12 @@ class newstudentm1Controller extends Controller
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_house_father" => $request->get('status_house_father'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
             $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
@@ -671,13 +667,12 @@ class newstudentm1Controller extends Controller
                     "status_house_parent" => $request->get('status_house_parent'),
                     "status_birth_certificate" => $request->get('status_birth_certificate'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
             $request->hasFile('id_card_parent')  && $request->hasFile('house_parent')
             && $request->hasFile('front_grade') && $request->hasFile('back_grade')
@@ -728,15 +723,14 @@ class newstudentm1Controller extends Controller
                     "status_birth_certificate" => $request->get('status_birth_certificate'),
                     "status_disability_certificate" => $request->get('status_disability_certificate'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
-            $request->hasFile('id_card_father')  && $request->hasFile('house_father')   
+            $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('id_card_parent')
             && $request->hasFile('house_parent') && $request->hasFile('disability_certificate')
@@ -797,20 +791,19 @@ class newstudentm1Controller extends Controller
                     "status_idcard_father" => $request->get('status_idcard_father'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_father" => $request->get('status_house_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
-             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
+            $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('id_card_parent')
             && $request->hasFile('house_parent') && $request->hasFile('disability_certificate')
         ) {
-            
+
 
             $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('idNumber') . '.' . $id_card_mother);
@@ -868,18 +861,17 @@ class newstudentm1Controller extends Controller
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
-        }elseif (
-            $request->hasFile('id_card_father')  && $request->hasFile('house_father')  
+        } elseif (
+            $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('id_card_parent')
-            && $request->hasFile('house_parent') 
+            && $request->hasFile('house_parent')
         ) {
             $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
             $compPic1 = str_replace(' ', '_', $request->get('idNumber') . '.' . $id_card_father);
@@ -931,15 +923,14 @@ class newstudentm1Controller extends Controller
                     "status_idcard_father" => $request->get('status_idcard_father'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_father" => $request->get('status_house_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif (
-            $request->hasFile('id_card_mother')&& $request->hasFile('house_mother')
+            $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('id_card_parent')
             && $request->hasFile('house_parent')
@@ -995,15 +986,14 @@ class newstudentm1Controller extends Controller
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
-            "status_report" => $request->get('status_report'),
-            "status_tranfer" => $request->get('status_tranfer'),
-        ]);
-
-    } elseif (
-            $request->hasFile('id_card_father')  && $request->hasFile('house_father') 
+                "status_report" => $request->get('status_report'),
+                "status_tranfer" => $request->get('status_tranfer'),
+            ]);
+        } elseif (
+            $request->hasFile('id_card_father')  && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('disability_certificate')
         ) {
@@ -1051,14 +1041,13 @@ class newstudentm1Controller extends Controller
                     "status_disability_certificate" => $request->get('status_disability_certificate'),
                     "status_idcard_father" => $request->get('status_idcard_father'),
                     "status_house_father" => $request->get('status_house_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
-        }elseif (
+        } elseif (
             $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
             && $request->hasFile('birth_certificate') && $request->hasFile('disability_certificate')
@@ -1108,17 +1097,16 @@ class newstudentm1Controller extends Controller
                     "status_disability_certificate" => $request->get('status_disability_certificate'),
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
-        }elseif (
-            $request->hasFile('id_card_father') && $request->hasFile('house_father')  
+        } elseif (
+            $request->hasFile('id_card_father') && $request->hasFile('house_father')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
-            && $request->hasFile('birth_certificate') 
+            && $request->hasFile('birth_certificate')
         ) {
             $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
             $compPic1 = str_replace(' ', '_', $request->get('idNumber') . '.' . $id_card_father);
@@ -1158,17 +1146,16 @@ class newstudentm1Controller extends Controller
                     "status_birth_certificate" => $request->get('status_birth_certificate'),
                     "status_idcard_father" => $request->get('status_idcard_father'),
                     "status_house_father" => $request->get('status_house_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
-        }elseif (
-            $request->hasFile('id_card_mother')&& $request->hasFile('house_mother')
+        } elseif (
+            $request->hasFile('id_card_mother') && $request->hasFile('house_mother')
             && $request->hasFile('front_grade')  && $request->hasFile('back_grade')
-            && $request->hasFile('birth_certificate') 
+            && $request->hasFile('birth_certificate')
         ) {
 
             $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
@@ -1209,13 +1196,12 @@ class newstudentm1Controller extends Controller
                     "status_birth_certificate" => $request->get('status_birth_certificate'),
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('front_grade') && $request->hasFile('back_grade')) {
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
@@ -1238,13 +1224,12 @@ class newstudentm1Controller extends Controller
                 ->update([
                     "status_front_grade" => $request->get('status_front_grade'),
                     "status_back_grade" => $request->get('status_back_grade'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('id_card_father')) {
 
             $id_card_father = $request->file('id_card_father')->getClientOriginalExtension();
@@ -1261,13 +1246,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_idcard_father" => $request->get('status_idcard_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('id_card_mother')) {
 
             $id_card_mother = $request->file('id_card_mother')->getClientOriginalExtension();
@@ -1284,13 +1268,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_idcard_mother" => $request->get('status_idcard_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('house_father')) {
 
             $house_father = $request->file('house_father')->getClientOriginalExtension();
@@ -1307,13 +1290,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_house_father" => $request->get('status_house_father'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('house_mother')) {
 
             $house_mother = $request->file('house_mother')->getClientOriginalExtension();
@@ -1330,13 +1312,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_house_mother" => $request->get('status_house_mother'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('front_grade')) {
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
@@ -1353,14 +1334,13 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_front_grade" => $request->get('status_front_grade'),
-                    
-            ]);
+
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('back_grade')) {
 
             $back_grade = $request->file('back_grade')->getClientOriginalExtension();
@@ -1377,13 +1357,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_back_grade" => $request->get('status_back_grade'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('birth_certificate')) {
 
             $birth_certificate = $request->file('birth_certificate')->getClientOriginalExtension();
@@ -1396,17 +1375,16 @@ class newstudentm1Controller extends Controller
                     "birth_certificate" => $compPic1
                 ]);
 
-             $statusPic = DB::table('status_pic')
+            $statusPic = DB::table('status_pic')
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_birth_certificate" => $request->get('status_birth_certificate'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('id_card_parent')) {
 
             $id_card_parent = $request->file('id_card_parent')->getClientOriginalExtension();
@@ -1423,13 +1401,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_idcard_parent" => $request->get('status_idcard_parent'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('house_parent')) {
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
@@ -1446,13 +1423,12 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_house_parent" => $request->get('status_house_parent'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
                 "status_tranfer" => $request->get('status_tranfer'),
             ]);
-
         } elseif ($request->hasFile('disability_certificate')) {
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
@@ -1469,7 +1445,7 @@ class newstudentm1Controller extends Controller
                 ->where('student_idcard', '=', $request->get('idNumber'))
                 ->update([
                     "status_disability_certificate" => $request->get('status_disability_certificate'),
-            ]);
+                ]);
 
             $data->update([
                 "status_report" => $request->get('status_report'),
@@ -1477,7 +1453,7 @@ class newstudentm1Controller extends Controller
             ]);
         }
 
-        
+
 
         return redirect('/Newstudent/documentM1');
     }
@@ -1506,29 +1482,29 @@ class newstudentm1Controller extends Controller
             ->where('idNumber', '=', $request->get('idNumber'))
             ->first();
 
-        if($data == NULL){
+        if ($data == NULL) {
 
             if (
                 $request->hasFile('profile_img') && $request->hasFile('id_card_student')
                 && $request->hasFile('house_student')  && $request->hasFile('student_submit')
             ) {
-    
+
                 $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $profile_img);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
-    
+
                 $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-    
+
                 $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
-    
+
                 $student_submit = $request->file('student_submit')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->idNumber . '.' . $student_submit);
                 $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic4);
-    
+
                 $pic2 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "profile_img" => $compPic1,
@@ -1537,7 +1513,7 @@ class newstudentm1Controller extends Controller
                     "student_submit" => $compPic4,
                 ]);
                 $pic2->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_profile" => $request->get('status_profile'),
@@ -1545,26 +1521,25 @@ class newstudentm1Controller extends Controller
                     "status_house_student" => $request->get('status_house_student'),
                     "status_submit_student" => $request->get('status_submit_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif (
                 $request->hasFile('profile_img') && $request->hasFile('id_card_student')
                 && $request->hasFile('house_student')
             ) {
-    
+
                 $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $profile_img);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
-    
+
                 $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-    
+
                 $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
-    
+
                 $pic2 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "profile_img" => $compPic1,
@@ -1572,33 +1547,32 @@ class newstudentm1Controller extends Controller
                     "house_student" => $compPic3,
                 ]);
                 $pic2->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_profile" => $request->get('status_profile'),
                     "status_idcard_student" => $request->get('status_idcard_student'),
                     "status_house_student" => $request->get('status_house_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif (
-                 $request->hasFile('id_card_student') && $request->hasFile('house_student')  
-                 && $request->hasFile('student_submit')
+                $request->hasFile('id_card_student') && $request->hasFile('house_student')
+                && $request->hasFile('student_submit')
             ) {
-    
+
                 $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-    
+
                 $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic3 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
-    
+
                 $student_submit = $request->file('student_submit')->getClientOriginalExtension();
                 $compPic4 = str_replace(' ', '_', $request->idNumber . '.' . $student_submit);
                 $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic4);
-    
+
                 $pic2 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "id_card_student" => $compPic2,
@@ -1606,142 +1580,136 @@ class newstudentm1Controller extends Controller
                     "student_submit" => $compPic4,
                 ]);
                 $pic2->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_idcard_student" => $request->get('status_idcard_student'),
                     "status_house_student" => $request->get('status_house_student'),
                     "status_submit_student" => $request->get('status_submit_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif (
                 $request->hasFile('id_card_student') && $request->hasFile('house_student')
-           ) {
-    
-               $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
-               $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
-               $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-    
-               $house_student = $request->file('house_student')->getClientOriginalExtension();
-               $compPic3 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
-               $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
-    
-               $pic2 = new photostudentModel([
-                   "student_idcard" => $request->get('idNumber'),
-                   "id_card_student" => $compPic2,
-                   "house_student" => $compPic3,
-               ]);
-               $pic2->save();
-    
-               $datastatus  = new statuspicModel([
-                   "student_idcard" => $request->get('idNumber'),
-                   "status_idcard_student" => $request->get('status_idcard_student'),
-                   "status_house_student" => $request->get('status_house_student'),
-               ]);
-       
-               $datastatus->save();
-    
-           } elseif ($request->hasFile('profile_img')  && $request->hasFile('id_card_student')) {
-    
-                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
-                $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $profile_img);
-                $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
-    
+            ) {
+
                 $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
-    
+
+                $house_student = $request->file('house_student')->getClientOriginalExtension();
+                $compPic3 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
+                $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic3);
+
+                $pic2 = new photostudentModel([
+                    "student_idcard" => $request->get('idNumber'),
+                    "id_card_student" => $compPic2,
+                    "house_student" => $compPic3,
+                ]);
+                $pic2->save();
+
+                $datastatus  = new statuspicModel([
+                    "student_idcard" => $request->get('idNumber'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                ]);
+
+                $datastatus->save();
+            } elseif ($request->hasFile('profile_img')  && $request->hasFile('id_card_student')) {
+
+                $profile_img = $request->file('profile_img')->getClientOriginalExtension();
+                $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $profile_img);
+                $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
+
+                $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
+                $compPic2 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
+                $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic2);
+
                 $pic2 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "profile_img" => $compPic1,
                     "id_card_student" => $compPic2,
                 ]);
                 $pic2->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_profile" => $request->get('status_profile'),
                     "status_idcard_student" => $request->get('status_idcard_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif ($request->hasFile('profile_img')) {
-    
+
                 $profile_img = $request->file('profile_img')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $profile_img);
                 $path = $request->file('profile_img')->storeAs('ImgAll/profile_img', $compPic1);
-    
+
                 $pic1 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "profile_img" => $compPic1,
                 ]);
                 $pic1->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_profile" => $request->get('status_profile'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif ($request->hasFile('id_card_student')) {
-    
+
                 $id_card_student = $request->file('id_card_student')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $id_card_student);
                 $path = $request->file('id_card_student')->storeAs('ImgAll/id_card/id_card_student', $compPic1);
-    
+
                 $pic1 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "id_card_student" => $compPic1,
                 ]);
                 $pic1->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_idcard_student" => $request->get('status_idcard_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif ($request->hasFile('house_student')) {
-    
+
                 $house_student = $request->file('house_student')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $house_student);
                 $path = $request->file('house_student')->storeAs('ImgAll/house_regis/house_student', $compPic1);
-    
+
                 $pic1 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "house_student" => $compPic1,
                 ]);
                 $pic1->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_house_student" => $request->get('status_house_student'),
                 ]);
-        
+
                 $datastatus->save();
-    
             } elseif ($request->hasFile('student_submit')) {
-    
+
                 $student_submit = $request->file('student_submit')->getClientOriginalExtension();
                 $compPic1 = str_replace(' ', '_', $request->idNumber . '.' . $student_submit);
                 $path = $request->file('student_submit')->storeAs('ImgAll/student_submit', $compPic1);
-    
+
                 $pic1 = new photostudentModel([
                     "student_idcard" => $request->get('idNumber'),
                     "student_submit" => $compPic1,
                 ]);
                 $pic1->save();
-    
+
                 $datastatus  = new statuspicModel([
                     "student_idcard" => $request->get('idNumber'),
                     "status_submit_student" => $request->get('status_submit_student'),
                 ]);
-        
+
                 $datastatus->save();
             }
 
@@ -1749,7 +1717,7 @@ class newstudentm1Controller extends Controller
             $mounth = date('m');
             $year = date('y');
             $date = ($year . '/' . $mounth . '/' . $day);
-    
+
             newstudentm1Model::create([
                 "prename" => $request->get('prename'),
                 "fname" => $request->get('fname'),
@@ -1808,14 +1776,11 @@ class newstudentm1Controller extends Controller
                 "student_year" => $register_year->register_year,
                 "date" => $date
             ]);
-    
-            return redirect('/Success/RegisterM1');
 
+            return redirect('/Success/RegisterM1');
         } else {
             return redirect('/Unsuccess/RegisterM1');
         }
-
-        
     }
 
 
@@ -2248,14 +2213,14 @@ class newstudentm1Controller extends Controller
 
         $status_pic = DB::table('status_pic')
             ->where('student_idcard', '=', $findIdCard);
-        
+
         $photo_student = DB::table('photo_student')
             ->where('student_idcard', '=', $findIdCard);
 
         $newstudentm1->delete();
         $status_pic->delete();
         $photo_student->delete();
-        
+
         return redirect('SortNewstudentM1');
     }
 
@@ -2281,10 +2246,16 @@ class newstudentm1Controller extends Controller
         $status = DB::table('status_pic')
             ->where('student_idcard', 'like', '%' . $search . '%')
             ->first();
-        return view('Newstudent.success-statuscheck.check-statusM1-onsubmit', [
-            'datas' => $datas,
-            'status' => $status
-        ]);
+
+        if ($datas !== NULL && $status !== NULL) {
+
+            return view('Newstudent.success-statuscheck.check-statusM1-onsubmit', [
+                'datas' => $datas,
+                'status' => $status
+            ]);
+        } else {
+            return view('Newstudent.success-statuscheck.check-statusM1-notsubmit');
+        }
     }
 
     //ส่งเอกสารรายงานตัว

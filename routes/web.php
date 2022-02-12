@@ -105,6 +105,10 @@ Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 Route::get('/check/statusM1onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM1-onsubmit');
 });
+
+Route::get('/check/statusM1notsubmit', function () {
+    return view('Newstudent.success-statuscheck.check-statusM1-notsubmit');
+});
 //---------------------------------------------------------------------
 
 //แก้ไขหลักฐานการสมัคร
@@ -166,6 +170,10 @@ Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 
 Route::get('/check/statusM4onsubmit', function () {
     return view('Newstudent.success-statuscheck.check-statusM4-onsubmit');
+});
+
+Route::get('/check/statusM4notsubmit', function () {
+    return view('Newstudent.success-statuscheck.check-statusM4-notsubmit');
 });
 //---------------------------------------------------------------------
 

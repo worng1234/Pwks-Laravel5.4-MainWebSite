@@ -2186,10 +2186,18 @@ class newstudentm4Controller extends Controller
         $status = DB::table('status_pic')
             ->where('student_idcard', 'like', '%' . $search . '%')
             ->first();
-        return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', [
-            'datas' => $datas,
-            'status' => $status
-        ]);
+        
+        if($datas !== NULL && $status !== NULL){
+                
+            return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', [
+                'datas' => $datas,
+                'status' => $status
+            ]);
+
+        } else {
+            return view('Newstudent.success-statuscheck.check-statusM4-notsubmit');
+        }
+        
     }
 
     //ส่งเอกสารรายงานตัว
