@@ -8,6 +8,7 @@ use App\Academic;
 use App\Affair;
 use App\Admin;
 use App\Models\schoolyearModel;
+use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
@@ -305,7 +306,12 @@ class AdminController extends Controller
     public function AcademicAccountEdit(Request $request, $id)
     {
         $data = Academic::find($id);
-        $data->update($request->all());
+        $data->update([
+            "username" => $request->get('username'),
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "surname" => $request->get('surname'),
+        ]);
 
         return redirect('/AdminAll/Academic');
     }
@@ -371,7 +377,12 @@ class AdminController extends Controller
     public function AffairAccountEdit(Request $request, $id)
     {
         $data = Affair::find($id);
-        $data->update($request->all());
+        $data->update([
+            "username" => $request->get('username'),
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "surname" => $request->get('surname'),
+        ]);
 
         return redirect('/AdminAll/Affair');
     }
@@ -437,7 +448,12 @@ class AdminController extends Controller
     public function AdminAccountEdit(Request $request, $id)
     {
         $data = Admin::find($id);
-        $data->update($request->all());
+        $data->update([
+            "username" => $request->get('username'),
+            "prename" => $request->get('prename'),
+            "fname" => $request->get('fname'),
+            "surname" => $request->get('surname'),
+        ]);
 
         return redirect('/AdminAll/Admin');
     }

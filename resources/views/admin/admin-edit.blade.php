@@ -244,7 +244,7 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัส</label>
-                                                        <input id="Name" type="text" class="form-control" placeholder="" name="password" readonly>
+                                                        <input id="Name" type="text" class="form-control" name="password"  readonly>
                                                     </div>
                                                 </div>
                                             </div>
