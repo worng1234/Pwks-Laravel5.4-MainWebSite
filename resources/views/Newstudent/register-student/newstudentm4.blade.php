@@ -271,18 +271,18 @@
 													<label>เดือน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
 														<option>เลือก</option>
-														<option value="มกราคม">มกราคม</option>
-														<option value="กุมภาพันธ์">กุมภาพันธ์</option>
-														<option value="มีนาคม">มีนาคม</option>
-														<option value="เมษายน">เมษายน</option>
-														<option value="พฤษภาคม">พฤษภาคม</option>
-														<option value="มิถุนายน">มิถุนายน</option>
-														<option value="กรกฎาคม">กรกฎาคม</option>
-														<option value="สิงหาคม">สิงหาคม</option>
-														<option value="กันยายน">กันยายน</option>
-														<option value="ตุลาคม">ตุลาคม</option>
-														<option value="พฤษจิกายน">พฤษจิกายน</option>
-														<option value="ธันวาคม">ธันวาคม</option>
+														<option value="01">มกราคม</option>
+														<option value="02">กุมภาพันธ์</option>
+														<option value="03">มีนาคม</option>
+														<option value="04">เมษายน</option>
+														<option value="05">พฤษภาคม</option>
+														<option value="06">มิถุนายน</option>
+														<option value="07">กรกฎาคม</option>
+														<option value="08">สิงหาคม</option>
+														<option value="09">กันยายน</option>
+														<option value="10">ตุลาคม</option>
+														<option value="11">พฤษจิกายน</option>
+														<option value="12">ธันวาคม</option>
 													</select>
 												</div>
 											</div>
@@ -291,15 +291,15 @@
 													<label>วัน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="day">
 														<option>เลือก</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
+														<option value="01">1</option>
+														<option value="02">2</option>
+														<option value="03">3</option>
+														<option value="04">4</option>
+														<option value="05">5</option>
+														<option value="06">6</option>
+														<option value="07">7</option>
+														<option value="08">8</option>
+														<option value="09">9</option>
 														<option value="10">10</option>
 														<option value="11">11</option>
 														<option value="12">12</option>

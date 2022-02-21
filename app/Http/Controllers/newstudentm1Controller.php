@@ -375,7 +375,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('idNumber') . '.' . $disability_certificate);
@@ -456,7 +456,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('idNumber'))
@@ -635,7 +635,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('idNumber') . '.' . $front_grade);
@@ -685,7 +685,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('idNumber') . '.' . $front_grade);
@@ -761,7 +761,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('idNumber') . '.' . $disability_certificate);
@@ -831,7 +831,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('idNumber') . '.' . $disability_certificate);
@@ -899,7 +899,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('idNumber'))
@@ -962,7 +962,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('idNumber'))
@@ -1411,7 +1411,7 @@ class newstudentm1Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic1 = str_replace(' ', '_', $request->get('idNumber') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic1);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic1);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $findID)
@@ -1713,10 +1713,7 @@ class newstudentm1Controller extends Controller
                 $datastatus->save();
             }
 
-            $day = date('d');
-            $mounth = date('m');
-            $year = date('y');
-            $date = ($year . '/' . $mounth . '/' . $day);
+            $date = date("y-m-d");
 
             newstudentm1Model::create([
                 "prename" => $request->get('prename'),

@@ -446,7 +446,7 @@ class studentcoreController extends Controller
 
                 $house_parent = $request->file('house_parent')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
-                $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic5);
+                $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic5);
 
                 $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
@@ -500,7 +500,7 @@ class studentcoreController extends Controller
 
                 $house_parent = $request->file('house_parent')->getClientOriginalExtension();
                 $compPic5 = str_replace(' ', '_', $request->student_id_card);
-                $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic5);
+                $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic5);
 
                 $front_grade = $request->file('front_grade')->getClientOriginalExtension();
                 $compPic6 = str_replace(' ', '_', $request->student_id_card);
@@ -892,7 +892,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('username') . '.' . $disability_certificate);
@@ -973,7 +973,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('username'))
@@ -1098,7 +1098,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('username') . '.' . $front_grade);
@@ -1133,7 +1133,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('username') . '.' . $front_grade);
@@ -1193,7 +1193,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('username') . '.' . $disability_certificate);
@@ -1245,7 +1245,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('username') . '.' . $disability_certificate);
@@ -1295,7 +1295,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('username'))
@@ -1341,7 +1341,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('username'))
@@ -1610,7 +1610,7 @@ class studentcoreController extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic1 = str_replace(' ', '_', $request->get('username') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic1);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic1);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('username'))

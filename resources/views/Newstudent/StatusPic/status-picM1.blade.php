@@ -504,14 +504,23 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
+                                        <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->profile_img !== NULL)
                                                 <a href='{{ url("/ProfileStudentM1/{$data2->id}")}}' target="_blank" > 
-                                                    <img src="../ImgAll/profile_img/{{$data2->profile_img}}"  width="70" height="80" class="bor"> 
+                                                    <img src="../ImgAll/profile_img/{{$data2->profile_img}}"  width="50" height="45" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="50" height="45" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->profile_img !== NULL)
+                                                <a href='{{ url("/DownloadProfile", $data2->profile_img)}}' class="btn btn-dark " ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadProfile", $data2->profile_img)}}' class="btn btn-dark disabled" ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -538,14 +547,23 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
+                                        <div class="col-sm-3 col-md-1">
                                             <div class="form-group">
                                                 @if ($data2->id_card_student !== NULL)
                                                 <a href='{{ url("/IdCardStudentM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/id_card/id_card_student/{{$data2->id_card_student}}"  width="70" height="80" class="bor"> 
+                                                    <img src="../ImgAll/id_card/id_card_student/{{$data2->id_card_student}}"  width="50" height="45" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="50" height="45" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->id_card_student !== NULL)
+                                                <a href='{{ url("/DownloadIdStudent", $data2->id_card_student)}}' class="btn btn-dark " ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadIdStudent", $data2->id_card_student)}}' class="btn btn-dark disabled" ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -572,14 +590,23 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
+                                        <div class="col-sm-3 col-md-1">
                                             <div class="form-group">
                                                 @if ($data2->house_student !== NULL)
                                                 <a href='{{ url("/HouseStudentM1/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_student/{{$data2->house_student}}"  width="70" height="80" class="bor"> 
+                                                    <img src="../ImgAll/house_regis/house_student/{{$data2->house_student}}"  width="50" height="45" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="50" height="45" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->house_student !== NULL)
+                                                <a href='{{ url("/DownloadHouseStudent", $data2->house_student)}}' class="btn btn-dark " ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadHouseStudent", $data2->house_student)}}' class="btn btn-dark disabled" ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -606,14 +633,23 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
+                                        <div class="col-sm-3 col-md-1">
                                             <div class="form-group">
                                                 @if ($data2->student_submit !== NULL)
                                                 <a href='{{ url("/SubmitStudentM1/{$data1->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/student_submit/{{$data2->student_submit}}"  width="70" height="80" class="bor"> 
+                                                    <img src="../ImgAll/student_submit/{{$data2->student_submit}}"  width="50" height="45" class="bor"> 
                                                 </a>
                                                 @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
+                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="50" height="45" class="bor">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->student_submit !== NULL)
+                                                <a href='{{ url("/DownloadStudentSubmite", $data2->student_submit)}}' class="btn btn-dark " ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadStudentSubmite", $data2->student_submit)}}' class="btn btn-dark disabled" ><i class="fa fa-file-pdf" style="margin-right:5;"></i></a>
                                                 @endif
                                             </div>
                                         </div>

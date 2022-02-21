@@ -2687,6 +2687,80 @@ class AcademicsController extends Controller
         ]);
     }
 
+    //download Document
+
+    public function profileDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/profile_img/'.$file));
+    }
+
+    public function StudentSubmitDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/student_submit/'.$file));
+    }
+
+    public function IdStudentDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/id_card/id_card_student/'.$file));
+    }
+
+    public function IdFatherDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/id_card/id_card_father/'.$file));
+    }
+
+    public function IdMotherDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/id_card/id_card_mother/'.$file));
+    }
+
+    public function IdParentDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/id_card/id_card_parent/'.$file));
+    }
+
+    public function HouseStudentDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/house_regis/house_student/'.$file));
+    }
+
+    public function HouseFatherDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/house_regis/house_father/'.$file));
+    }
+
+    public function HouseMotherDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/house_regis/house_mother/'.$file));
+    }
+
+    public function HouseParentDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/house_regis/house_parent/'.$file));
+    }
+
+    public function FrontGradeDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/front_grade/'.$file));
+    }
+
+    public function BackGradeDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/back_grade/'.$file));
+    }
+
+    public function BirthCertificateDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/birth_certificate/'.$file));
+    }
+
+    public function DisabilityCertificateDownload (Request $request, $file){
+
+        return response()->download(public_path('ImgAll/disability_certificate/'.$file));
+    }
+
+    
+
     //ออกเอกสาร
 
     public function ReportStudentAll(Request $request)

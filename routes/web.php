@@ -496,3 +496,20 @@ Route::get('/AdminAccountDelete/{id}', 'AdminController@AdminAccountDelete');
 Route::get('/AdminSchoolYear/{id}', 'AdminController@EditSchoolYear');
 Route::post('/EditSchoolYearUp/{id}', 'AdminController@EditSchoolYearUp');
 
+//download file
+
+Route::get('/DownloadProfile/{file}', 'AcademicsController@profileDownload');
+Route::get('/DownloadStudentSubmite/{file}', 'AcademicsController@StudentSubmitDownload');
+Route::get('/DownloadIdStudent/{file}', 'AcademicsController@IdStudentDownload');
+Route::get('/DownloadHouseStudent/{file}', 'AcademicsController@HouseStudentDownload');
+Route::get('/DownloadIdFather/{file}', 'AcademicsController@IdFatherDownload');
+Route::get('/DownloadIdMother/{file}', 'AcademicsController@IdMotherDownload');
+Route::get('/DownloadIdParent/{file}', 'AcademicsController@IdParentDownload');
+Route::get('/DownloadHouseFather/{file}', 'AcademicsController@HouseFatherDownload');
+Route::get('/DownloadHouseMother/{file}', 'AcademicsController@HouseMotherDownload');
+Route::get('/DownloadHouseParent/{file}', 'AcademicsController@HouseParentDownload');
+Route::get('/DownloadFrontGrade/{file}', 'AcademicsController@FrontGradeDownload');
+Route::get('/DownloadBackGrade/{file}', 'AcademicsController@BackGradeDownload');
+Route::get('/DownloadBirth/{file}', 'AcademicsController@BirthCertificateDownload');
+Route::get('/DownloadDisability/{file}', 'AcademicsController@DisabilityCertificateDownload');
+

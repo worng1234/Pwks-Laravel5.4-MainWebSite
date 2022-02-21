@@ -29,6 +29,10 @@
 
 <body>
 
+    <?php
+    echo "Today is " . date("Y-m-d") . "<br>";
+    ?>
+
     <div>
         <input type="submit" value="submit" class="btn" onclick="event.preventDefault(); document.getElementById('submit-change').submit();">
     </div>

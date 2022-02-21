@@ -116,7 +116,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('id_number') . '.' . $disability_certificate);
@@ -197,7 +197,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('id_number'))
@@ -376,7 +376,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('id_number') . '.' . $front_grade);
@@ -426,7 +426,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic2 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic2);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic2);
 
             $front_grade = $request->file('front_grade')->getClientOriginalExtension();
             $compPic3 = str_replace(' ', '_', $request->get('id_number') . '.' . $front_grade);
@@ -502,7 +502,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('id_number') . '.' . $disability_certificate);
@@ -572,7 +572,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $disability_certificate = $request->file('disability_certificate')->getClientOriginalExtension();
             $compPic10 = str_replace(' ', '_', $request->get('id_number') . '.' . $disability_certificate);
@@ -640,7 +640,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('id_number'))
@@ -703,7 +703,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic9 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic9);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic9);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $request->get('id_number'))
@@ -1152,7 +1152,7 @@ class newstudentm4Controller extends Controller
 
             $house_parent = $request->file('house_parent')->getClientOriginalExtension();
             $compPic1 = str_replace(' ', '_', $request->get('id_number') . '.' . $house_parent);
-            $path = $request->file('house_parent')->storeAs('ImgAll/house_rigis/house_parent', $compPic1);
+            $path = $request->file('house_parent')->storeAs('ImgAll/house_regis/house_parent', $compPic1);
 
             $photo = DB::table('photo_student')
                 ->where('student_idcard', '=', $findID)
@@ -1694,10 +1694,8 @@ class newstudentm4Controller extends Controller
                 $datastatus->save();
             }
 
-            $day = date('d');
-            $mounth = date('m');
-            $year = date('y');
-            $date = ($year . '/' . $mounth . '/' . $day);
+            
+            $date = date("y-m-d");
 
             $post = new newstudentm4Model([
                 "prename" => $request->get('prename'),
