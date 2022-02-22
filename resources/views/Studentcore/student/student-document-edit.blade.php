@@ -204,7 +204,7 @@
 						<div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; เอกสารประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+                                        <div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; เอกสารประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
                                     </div>
                                 </div>
                                 <div class="card-body" style="min-height: 400px">

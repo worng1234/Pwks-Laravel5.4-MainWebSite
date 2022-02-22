@@ -227,7 +227,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-book"></i> &nbsp;&nbsp; กำหนดปีการศึกษา</div>
+                                        <div class="card-title"><i class="fas fa-book fa-lg"></i> &nbsp;&nbsp; กำหนดปีการศึกษา</div>
                                     </div>
                                 </div>
                                 <div class="card-body">

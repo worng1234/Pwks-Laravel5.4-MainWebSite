@@ -174,7 +174,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; แบบฟอร์มการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 4</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; แบบฟอร์มการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 4</div>
 									</div>
 								</div>
 								<form method="post" action="{{ url('/insertnewstudentm4')}}" enctype="multipart/form-data">

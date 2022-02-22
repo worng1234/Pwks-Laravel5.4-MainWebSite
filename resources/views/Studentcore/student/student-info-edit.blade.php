@@ -202,7 +202,7 @@
 						<div class="col-md-12">
 							<div class="wizard-container wizard-round ">
 								<div class="wizard-header">
-									<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> แก้ไขข้อมูลพื้นฐานนักเรียน</div>
+									<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> แก้ไขข้อมูลพื้นฐานนักเรียน</div>
 								</div>
 
 								<form method="post" action="{{ url('/upStudent', $data->id)}}" enctype="multipart/form-data">

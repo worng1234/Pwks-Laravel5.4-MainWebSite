@@ -314,7 +314,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลนักเรียน </div>
+										<div class="card-title"><i class="fas fa-user-graduate fa-lg"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลนักเรียน </div>
 										<a href="{{ url('/academic/allAccount')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
 									</div>
 								</div>

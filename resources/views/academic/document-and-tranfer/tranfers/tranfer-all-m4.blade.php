@@ -475,7 +475,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; รายชื่อนักเรียนที่โอนย้ายข้อมูลแล้ว </div>
+										<div class="card-title"><i class="fas fa-user-graduate fa-lg"></i> &nbsp;&nbsp; รายชื่อนักเรียนที่โอนย้ายข้อมูลแล้ว </div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">

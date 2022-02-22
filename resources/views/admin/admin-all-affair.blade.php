@@ -227,7 +227,7 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-user"></i> &nbsp;&nbsp; แอคเค้าท์ทั้งหมดฝ่ายกิจการ</div>
+                                        <div class="card-title"><i class="fas fa-user fa-lg"></i> &nbsp;&nbsp; แอคเค้าท์ทั้งหมดฝ่ายกิจการ</div>
                                     </div>
                                 </div>
                                 <div class="card-body">

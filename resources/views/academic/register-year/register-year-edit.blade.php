@@ -452,7 +452,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-calendar-alt"></i> &nbsp;&nbsp; กำหนดปีการศึกษาสำหรับสมัครเข้าเรียน</div>
+										<div class="card-title"><i class="fas fa-calendar-alt fa-lg"></i> &nbsp;&nbsp; กำหนดปีการศึกษาสำหรับสมัครเข้าเรียน</div>
 
 									</div>
 								</div>

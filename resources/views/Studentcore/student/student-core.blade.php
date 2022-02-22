@@ -171,7 +171,7 @@
 								<div class="wizard-container wizard-round">
 									<div class="card-header">
 										<div class="card-head-row">
-											<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; แบบฟอร์มเพิ่มข้อมูลพื้นฐานนักเรียน</div>
+											<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; แบบฟอร์มเพิ่มข้อมูลพื้นฐานนักเรียน</div>
 										</div>
 									</div>
 									<form method="post" action="{{ url('/addstudentcore')}}" enctype="multipart/form-data">

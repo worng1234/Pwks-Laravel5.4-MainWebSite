@@ -176,7 +176,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 									</div>
 								</div>
 								<form action="{{ url('/editDocumentM4', $data->id)}}" method="POST" enctype="multipart/form-data">

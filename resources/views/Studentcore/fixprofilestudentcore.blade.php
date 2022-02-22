@@ -293,7 +293,7 @@
                                     <div class="card full-height">
                                         <div class="card-header">
                                             <div class="card-head-row">
-                                                <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; ข้อมูลนักเรียนพื้นฐาน <i class="flaticon-right-arrow"></i> แสดงข้อมูลนักเรียน</div>
+                                                <div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; ข้อมูลนักเรียนพื้นฐาน <i class="flaticon-right-arrow"></i> แสดงข้อมูลนักเรียน</div>
                                             </div>
                                         </div>
 

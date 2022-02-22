@@ -204,7 +204,7 @@
 						<div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; เอกสารประจำตัวของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
+                                        <div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; เอกสารประจำตัวของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
 										<a class="btn btn-success" style="margin-left: auto;" href='{{ url("/DocumentStudent/{$data1->id}")}}'>แก้ไขเอกสาร</a>
                                     </div>
 									
@@ -214,30 +214,102 @@
                                         <p style="margin-left: 25px;  font-size: 15px;"><b>รูประจำตัว หนังสือรับรอง สำเนาบัตรประชาชนและสำเนาทะเบียนบ้านของผู้เรียน</b></p>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/ProfileStudentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-circle" style="margin-right:5px;"></i>รูปประจำตัว</a>
+                                                @if($data2->profile_img !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->profile_img !== NULL)
+                                                <a href='{{ url("ImgAll/profile_img", $data2->profile_img)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-user fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadProfile", $data2->profile_img)}}' class="btn btn-secondary disabled"><i class="fa fa-user fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="รูปประจำตัวนักเรียน" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardStudentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาประจำประชาชน</a>
+                                                @if($data2->id_card_student !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->id_card_student !== NULL )
+                                                <a href='{{ url("ImgAll/id_card/id_card_student", $data2->id_card_student)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadIdStudent", $data2->id_card_student)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาบัตรประชาชน" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseStudentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้าน</a>
+                                                @if($data2->house_student !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->house_student !== NULL)
+                                                <a href='{{ url("ImgAll/house_regis/house_student", $data2->house_student)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadHouseStudent", $data2->house_student)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาทะเบียนบ้าน" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/SubmitStudentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ. หรือหนังสือรับรอง</a>
+                                                @if($data2->student_submit !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->student_submit !== NULL)
+                                                <a href='{{ url("ImgAll/student_submit", $data2->student_submit)}}' class="btn btn-secondary "><i class="fa fa-user-graduate fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadStudentSubmite", $data2->student_submit)}}' class="btn btn-secondary disabled"><i class="fa fa-user-graduate fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="ใบ ปพ.1 หรือหนังสือรับรอง" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -245,17 +317,53 @@
                                         <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชน บิดา มารดา</b></p>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardFatherAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนบิดา</a>
+                                                @if($data2->id_card_father !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->id_card_father !== NULL)
+                                                <a href='{{ url("ImgAll/id_card/id_card_father", $data2->id_card_father)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadIdFather", $data2->id_card_father)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาบัตรประชาชนบิดา" class="form-control" readonly>
                                             </div>
                                         </div>
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardMotherAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนมารดา</a>
+                                                @if($data2->id_card_mother !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->id_card_mother !== NULL)
+                                                <a href='{{ url("ImgAll/id_card/id_card_mother", $data2->id_card_mother)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadIdMother", $data2->id_card_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาบัตรประชาชนมารดา" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -264,16 +372,52 @@
                                         <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้าน บิดา มารดา</b></p>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseFatherAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านบิดา</a>
+                                                @if($data2->house_father !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->house_father !== NULL)
+                                                <a href='{{ url("ImgAll/house_regis/house_father", $data2->house_father)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadHouseFather", $data2->house_father)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาทะเบียนบ้านบิดา" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseMotherAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านมารดา</a>
+                                                @if($data2->house_mother !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->house_mother !== NULL)
+                                                <a href='{{ url("ImgAll/house_regis/house_mother", $data2->house_mother)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadHouseMother", $data2->house_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาทะเบียนบ้านมารดา" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -283,16 +427,52 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/IdCardParentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-card" style="margin-right:5px;"></i>สำเนาบัตรประชาชนผู้ปกครอง</a>
+                                                @if($data2->id_card_parent !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->id_card_parent !== NULL)
+                                                <a href='{{ url("ImgAll/id_card/id_card_parent", $data2->id_card_parent)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadIdParent", $data2->id_card_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาบัตรประชาชนผู้ปกครอง" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/HouseParentAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-id-badge" style="margin-right:5px;"></i>สำเนาทะเบียนบ้านผู้ปกครอง</a>
+                                                @if($data2->house_parent !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->house_parent !== NULL)
+                                                <a href='{{ url("ImgAll/house_regis/house_parent", $data2->house_parent)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadHouseParent", $data2->house_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="สำเนาทะเบียนบ้านผู้ปกครอง" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -302,23 +482,77 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/FrontGradeAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหน้า)</a>
+                                                @if($data2->front_grade !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->front_grade !== NULL)
+                                                <a href='{{ url("ImgAll/front_grade", $data2->front_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadFrontGrade", $data2->front_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="ใบ ปพ.1 (ด้านหน้า)" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/BackGradeAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-user-graduate" style="margin-right:5px;"></i>ใบ ปพ.1 (ด้านหลัง)</a>
+                                                @if($data2->back_grade !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->back_grade !== NULL)
+                                                <a href='{{ url("ImgAll/back_grade", $data2->back_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadBackGrade", $data2->back_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="ใบ ปพ.1 (ด้านหลัง)" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/BirthCertificateAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt" style="margin-right:5px;"></i>ใบสูติบัตร</a>
+                                                @if($data2->birth_certificate !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->birth_certificate !== NULL)
+                                                <a href='{{ url("ImgAll/birth_certificate", $data2->birth_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-alt fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadBirth", $data2->birth_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-alt fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="ใบสูติบัตร" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -328,9 +562,27 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-3 col-md-3">
+                                        <div align="center" style="margin-left:20px;">
                                             <div class="form-group">
-                                                <a href='{{ url("/DisabilityCertificateAll/{$data1->id}")}}' class="btn btn-secondary" target="_blank"><i class="fas fa-file-contract" style="margin-right:5px;"></i>หนังสือรับรองความพิการ</a>
+                                                @if($data2->disability_certificate !== NULL)
+                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                @else
+                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-1">
+                                            <div class="form-group ">
+                                                @if ($data2->disability_certificate !== NULL)
+                                                <a href='{{ url("ImgAll/disability_certificate", $data2->disability_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-medical-alt fa-lg"></i></a>
+                                                @else
+                                                <a href='{{ url("/DownloadDisability", $data2->disability_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-medical-alt fa-lg"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <div class="form-group ">
+                                                <input type="text" value="หนังสือรับรองความพิการ" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>

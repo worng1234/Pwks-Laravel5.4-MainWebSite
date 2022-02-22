@@ -46,8 +46,9 @@
             background-position: center;
             position: relative;
         }
-        .bor{
-            border: 3px solid ;
+
+        .bor {
+            border: 3px solid;
             border-color: #cd8fff;
             border-radius: 3px;
         }
@@ -128,8 +129,8 @@
                         <div class="info">
 
                             <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('academic')->user()->prename}}{{ Auth::guard('academic')->user()->fname}} </br>{{ Auth::guard('academic')->user()->surname}}</label>
-							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
-							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ผ่ายวิชาการ</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
                             <div class="clearfix"></div>
@@ -148,63 +149,63 @@
                         </li>
 
                         <li class="nav-item ">
-							<a href='{{ url("/RegisterYear/1")}}'>
-								<i class="fas fa-calendar-alt"></i>
-								<p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
-							</a>
-						</li>
+                            <a href='{{ url("/RegisterYear/1")}}'>
+                                <i class="fas fa-calendar-alt"></i>
+                                <p>กำหนดปีการศึกษา</br>สำหรับสมัครเข้าเรียน</p>
+                            </a>
+                        </li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="agree">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#formob1">
-											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob1">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/UnsubmitObject/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/UnsubmitObject/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob2">
-											<span class="sub-item">ตรวจสอบแล้ว</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/SubmitObject/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/SubmitObject/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="#agree">
+                                <i class="fas fa-id-card-alt"></i>
+                                <p>หลักฐานและข้อมูล</br>การสมัครเข้าเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="agree">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob1">
+                                            <span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob1">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/UnsubmitObject/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/UnsubmitObject/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob2">
+                                            <span class="sub-item">ตรวจสอบแล้ว</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/SubmitObject/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/SubmitObject/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li class="nav-item active submenu">
                             <a data-toggle="collapse" href="#move">
@@ -227,220 +228,220 @@
                                                     </a>
                                                 </li>
                                                 <li>
-													<a href="{{ url('/documentUnsubmit/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob4">
-											<span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/submitNotTranfer/M1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/submitNotTranfer/M4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#formob5">
-											<span class="sub-item">โอนย้ายแล้ว</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="formob5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/tranferAllM1')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/tranferAllM4')}}">
-														<span class="sub-item">มัธยมศึกษาปีที่ 4</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                                                    <a href="{{ url('/documentUnsubmit/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob4">
+                                            <span class="sub-item">ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob4">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/submitNotTranfer/M1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/submitNotTranfer/M4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#formob5">
+                                            <span class="sub-item">โอนย้ายแล้ว</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="formob5">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/tranferAllM1')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/tranferAllM4')}}">
+                                                        <span class="sub-item">มัธยมศึกษาปีที่ 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-user-graduate"></i>
-								<p>จัดการข้อมูลนักเรียน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#forms2">
-											<span class="sub-item">เลื่อนชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/class')}}">
-														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classChange')}}">
-														<span class="sub-item">เลื่อนชั้นเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms3">
-											<span class="sub-item">จบการศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms3">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/final')}}">
-														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/finalChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms4">
-											<span class="sub-item">ย้ายสถานศึกษา</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms4">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/move')}}">
-														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/moveChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#forms5">
-											<span class="sub-item">ออกกลางคัน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms5">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/out')}}">
-														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/outChange')}}">
-														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#forms">
+                                <i class="fas fa-user-graduate"></i>
+                                <p>จัดการข้อมูลนักเรียน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="forms">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms2">
+                                            <span class="sub-item">เลื่อนชั้นเรียน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms2">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/class')}}">
+                                                        <span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/classChange')}}">
+                                                        <span class="sub-item">เลื่อนชั้นเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms3">
+                                            <span class="sub-item">จบการศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms3">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/final')}}">
+                                                        <span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/finalChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms4">
+                                            <span class="sub-item">ย้ายสถานศึกษา</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms4">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/move')}}">
+                                                        <span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/moveChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms5">
+                                            <span class="sub-item">ออกกลางคัน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms5">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/out')}}">
+                                                        <span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/outChange')}}">
+                                                        <span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#basic">
-								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="basic">
-								<ul class="nav nav-collapse">
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#basic">
+                                <i class="fas fa-sliders-h"></i>
+                                <p>จัดการข้อมูลพื้นฐาน</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="basic">
+                                <ul class="nav nav-collapse">
 
-									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#forms6">
+                                            <span class="sub-item">กำหนดชั้นเรียน</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="forms6">
+                                            <ul class="nav nav-collapse subnav">
+                                                <li>
+                                                    <a href="{{ url('/academic/classRoom')}}">
+                                                        <span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('/academic/classMajor')}}">
+                                                        <span class="sub-item">กำหนดสายการเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-						<li class="nav-item ">
-							<a data-toggle="collapse" href="#files">
-								<i class="fas fa-folder-open"></i>
-								<p>ออกเอกสารทั้งหมด</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="files">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="{{ url('/export/newstudentm1')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/export/newstudentm4')}}" target="_blank">
-											<span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StudentAll')}}">
-											<span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
-											<span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
-										</a>
-									</li>
-									<li>
-										<a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
-											<span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+                        <li class="nav-item ">
+                            <a data-toggle="collapse" href="#files">
+                                <i class="fas fa-folder-open"></i>
+                                <p>ออกเอกสารทั้งหมด</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="files">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="{{ url('/export/newstudentm1')}}" target="_blank">
+                                            <span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/export/newstudentm4')}}" target="_blank">
+                                            <span class="sub-item">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 4</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/StudentAll')}}">
+                                            <span class="sub-item">รายชื่อนักเรียนทั้งหมด </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/StatStudent')}}" target="_blank">
+                                            <span class="sub-item">จำนวนนักเรียนทั้งหมด </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/AcademicReport/ReportStudyM4')}}" target="_blank">
+                                            <span class="sub-item">เอกสารประกอบการคัดนักเรียน ม.4 </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li class="nav-item ">
                             <a href="#">
@@ -480,388 +481,438 @@
                             <div class="card full-height">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; เอกสารประกอบการสมัครเรียนของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
+                                        <div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; เอกสารประกอบการสมัครเรียนของ {{$data1->prename}}{{$data1->fname}} {{$data1->surname}}</div>
                                         <a href='{{ url("/tranferM1/{$data1->id}")}}' class="btn btn-primary" style="margin-left: auto;">โอนย้ายข้อมูล</a>
                                     </div>
                                 </div>
 
                                 <form method="post" action="{{ url('/upDocumentStatusM1', $data1->id)}}" enctype="multipart/form-data">
-									{{csrf_field()}}
-                                <div class="card-body" style="min-height: 400px">
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ บิดา</b></p>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_idcard_father == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_father == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_father == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
+                                    {{csrf_field()}}
+                                    <div class="card-body" style="min-height: 400px">
+                                        <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                            <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ บิดา</b></p>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->id_card_father !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->id_card_father !== NULL)
+                                                    <a href='{{ url("ImgAll/id_card/id_card_father", $data2->id_card_father)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadIdFather", $data2->id_card_father)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาบัตรประชาชนบิดา" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_idcard_father !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_father">
+                                                        <option value="01" <?php if ($data3->status_idcard_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_idcard_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_idcard_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_idcard_father == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_father" disabled></select>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-1 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->id_card_father !== NULL)
-                                                <a href='{{ url("/IdCardFatherM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/id_card/id_card_father/{{$data2->id_card_father}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_father">
-                                                    <option value="01" <?php if ($data3->status_idcard_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_idcard_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_idcard_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_idcard_father == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_house_father == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_father == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_father == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->house_father !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->house_father !== NULL)
+                                                    <a href='{{ url("ImgAll/house_regis/house_father", $data2->house_father)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadHouseFather", $data2->house_father)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาทะเบียนบ้านบิดา" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_house_father !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_father">
+                                                        <option value="01" <?php if ($data3->status_house_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_house_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_house_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_house_father == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_father" disabled></select>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->house_father !== NULL)
-                                                <a href='{{ url("/HouseFatherM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_father/{{$data2->house_father}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_father">
-                                                    <option value="01" <?php if ($data3->status_house_father == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_house_father == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_house_father == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_house_father == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    
 
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ มารดา</b></p>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_idcard_mother == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_mother == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_mother == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->id_card_mother !== NULL)
-                                                <a href='{{ url("/IdCardMotherM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/id_card/id_card_mother/{{$data2->id_card_mother}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_mother">
-                                                    <option value="01" <?php if ($data3->status_idcard_mother == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_idcard_mother == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_idcard_mother == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_idcard_mother == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_house_mother == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_mother == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_mother == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->house_mother !== NULL)
-                                                <a href='{{ url("/HouseMotherM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_mother/{{$data2->house_mother}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_mother">
-                                                    <option value="01" <?php if ($data3->status_house_mother == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_house_mother == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_house_mother == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_house_mother == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนผู้ปกครอง (ในกรณีที่ไม่ได้อยู่กับบิดา มารดา)</b></p>
-                                    </div>
+                                        <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                            <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาบัตรประชาชนและทะเบียนบ้านของ มารดา</b></p>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->id_card_mother !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->id_card_mother !== NULL)
+                                                    <a href='{{ url("ImgAll/id_card/id_card_mother", $data2->id_card_mother)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadIdMother", $data2->id_card_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาบัตรประชาชนมารดา" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_idcard_mother !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_mother">
+                                                        <option value="01" <?php if ($data3->status_idcard_mother == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_idcard_mother == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_idcard_mother == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_idcard_mother == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_mother" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->house_mother !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->house_mother !== NULL)
+                                                    <a href='{{ url("ImgAll/house_regis/house_mother", $data2->house_mother)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadHouseMother", $data2->house_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาทะเบียนบ้านมารดา" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_house_mother !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_mother">
+                                                        <option value="01" <?php if ($data3->status_house_mother == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_house_mother == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_house_mother == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_house_mother == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_mother" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_idcard_parent == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_parent == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_idcard_parent == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
+                                        <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                            <p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนผู้ปกครอง (ในกรณีที่ไม่ได้อยู่กับบิดา มารดา)</b></p>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->id_card_parent !== NULL)
-                                                <a href='{{ url("/IdCardParentM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/id_card/id_card_parent/{{$data2->id_card_parent}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_parent">
-                                                    <option value="01" <?php if ($data3->status_idcard_parent == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_idcard_parent == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_idcard_parent == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_idcard_parent == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_house_parent == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_parent == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_house_parent == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->house_parent !== NULL)
-                                                <a href='{{ url("/HouseParentM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/house_regis/house_parent/{{$data2->house_parent}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_house_parent">
-                                                    <option value="01" <?php if ($data3->status_house_parent == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_house_parent == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_house_parent == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_house_parent == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร </b></p>
-                                    </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->id_card_parent !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->id_card_parent !== NULL)
+                                                    <a href='{{ url("ImgAll/id_card/id_card_parent", $data2->id_card_parent)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadIdParent", $data2->id_card_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาบัตรประชาชนผู้ปกครอง" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_idcard_parent !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_parent">
+                                                        <option value="01" <?php if ($data3->status_idcard_parent == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_idcard_parent == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_idcard_parent == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_idcard_parent == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_idcard_parent" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->house_parent !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->house_parent !== NULL)
+                                                    <a href='{{ url("ImgAll/house_regis/house_parent", $data2->house_parent)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadHouseParent", $data2->house_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="สำเนาทะเบียนบ้านผู้ปกครอง" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_house_parent !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_parent">
+                                                        <option value="01" <?php if ($data3->status_house_parent == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_house_parent == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_house_parent == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_house_parent == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_house_parent" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_front_grade == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_front_grade == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_front_grade == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
+                                        <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                            <p style="margin-left: 25px;  font-size: 15px;"><b>ใบ ปพ.1 และใบสูติบัตร </b></p>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->front_grade !== NULL)
-                                                <a href='{{ url("/FrontGradeM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/front_grade/{{$data2->front_grade}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_front_grade">
-                                                    <option value="01" <?php if ($data3->status_front_grade == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_front_grade == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_front_grade == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_front_grade == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_back_grade == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_back_grade == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_back_grade == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->back_grade !== NULL)
-                                                <a href='{{ url("/BackGradeM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/back_grade/{{$data2->back_grade}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_back_grade">
-                                                    <option value="01" <?php if ($data3->status_back_grade == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_back_grade == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_back_grade == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_back_grade == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_birth_certificate == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_birth_certificate == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_birth_certificate == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->birth_certificate !== NULL)
-                                                <a href='{{ url("/BirthCertificateM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/birth_certificate/{{$data2->birth_certificate}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_birth_certificate">
-                                                    <option value="01" <?php if ($data3->status_birth_certificate == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_birth_certificate == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_birth_certificate == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_birth_certificate == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                                        <p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง) </b></p>
-                                    </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->front_grade !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->front_grade !== NULL)
+                                                    <a href='{{ url("ImgAll/front_grade", $data2->front_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadFrontGrade", $data2->front_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="ใบ ปพ.1 (ด้านหน้า)" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_front_grade !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_front_grade">
+                                                        <option value="01" <?php if ($data3->status_front_grade == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_front_grade == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_front_grade == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_front_grade == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_front_grade" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->back_grade !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->back_grade !== NULL)
+                                                    <a href='{{ url("ImgAll/back_grade", $data2->back_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadBackGrade", $data2->back_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="ใบ ปพ.1 (ด้านหลัง)" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_back_grade !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_back_grade">
+                                                        <option value="01" <?php if ($data3->status_back_grade == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_back_grade == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_back_grade == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_back_grade == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_back_grade" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->birth_certificate !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->birth_certificate !== NULL)
+                                                    <a href='{{ url("ImgAll/birth_certificate", $data2->birth_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-alt fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadBirth", $data2->birth_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-alt fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="ใบสูติบัตร" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_birth_certificate !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_birth_certificate">
+                                                        <option value="01" <?php if ($data3->status_birth_certificate == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_birth_certificate == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_birth_certificate == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_birth_certificate == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_birth_certificate" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <div class="row">
-                                        <div align="center" style="margin-left:20px;">
-                                            <div class="form-group">
-                                                @if($data3->status_disability_certificate == "02")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_disability_certificate == "01")
-                                                <p><i class="fas fa-circle" style="color:green;"></i></p>
-                                                @elseif($data3->status_disability_certificate == NULL)
-                                                <p><i class="fas fa-circle" style="color:red;"></i></p>
-                                                @endif
-                                            </div>
+                                        <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+                                            <p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง) </b></p>
                                         </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <div class="form-group">
-                                                @if ($data2->disability_certificate !== NULL)
-                                                <a href='{{ url("/DisabilityCertificateM1/{$data2->id}")}}' target="_blank"> 
-                                                    <img src="../ImgAll/disability_certificate/{{$data2->disability_certificate}}"  width="70" height="80" class="bor"> 
-                                                </a>
-                                                @else
-                                                <img id="mainContentPlaceHolder_signinImage" src="../ImgAll/no-image.png" width="70" height="80" class="bor">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-md-3">
-                                            <div class="form-group">
-                                                <select class="form-control" id="formGroupDefaultSelect" name="status_disability_certificate">
-                                                    <option value="01" <?php if ($data3->status_disability_certificate == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
-                                                    <option value="02" <?php if ($data3->status_disability_certificate == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
-                                                    <option value="03" <?php if ($data3->status_disability_certificate == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
-                                                    <option value="NULL" <?php if ($data3->status_disability_certificate == NULL) { ?> selected="selected" <?php } ?>></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div hidden>
-                                        <input type="text" name="idNumber" value="{{$data1->idNumber}}">
-                                    </div>
 
-                                    <div class="card-footer" align="center">
-                                        <button type="submit" class="btn btn-success" style="margin-right: 20px;"><i class="fas fa-save"></i>  ยืนยัน</button>
-                                        <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-times"></i> ย้อนกลับ</a>
-                                    </div><br>
-                                </div>
+                                        <div class="row">
+                                            <div align="center" style="margin-left:20px;">
+                                                <div class="form-group">
+                                                    @if($data2->disability_certificate !== NULL)
+                                                    <p><i class="fas fa-circle" style="color:green;"></i></p>
+                                                    @else
+                                                    <p><i class="fas fa-circle" style="color:red;"></i></p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-1">
+                                                <div class="form-group ">
+                                                    @if ($data2->disability_certificate !== NULL)
+                                                    <a href='{{ url("ImgAll/disability_certificate", $data2->disability_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-medical-alt fa-lg"></i></a>
+                                                    @else
+                                                    <a href='{{ url("/DownloadDisability", $data2->disability_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-medical-alt fa-lg"></i></a>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3">
+                                                <div class="form-group ">
+                                                    <input type="text" value="ใบรับรองความพิการ" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-md-3">
+                                                <div class="form-group">
+                                                    @if ($data3->status_disability_certificate !== NULL)
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_disability_certificate">
+                                                        <option value="01" <?php if ($data3->status_disability_certificate == "01") { ?> selected="selected" <?php } ?>>ผ่าน</option>
+                                                        <option value="02" <?php if ($data3->status_disability_certificate == "02") { ?> selected="selected" <?php } ?>>รอตรวจสอบ</option>
+                                                        <option value="03" <?php if ($data3->status_disability_certificate == "03") { ?> selected="selected" <?php } ?>>ไม่ผ่าน</option>
+                                                        <option value="NULL" <?php if ($data3->status_disability_certificate == NULL) { ?> selected="selected" <?php } ?>></option>
+                                                    </select>
+                                                    @else
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="status_disability_certificate" disabled></select>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div hidden>
+                                            <input type="text" name="idNumber" value="{{$data1->idNumber}}">
+                                        </div>
+
+                                        <div class="card-footer" align="center">
+                                            <button type="submit" class="btn btn-success" style="margin-right: 20px;"><i class="fas fa-save"></i> ยืนยัน</button>
+                                            <a href="{{url('/documentIndex/M1')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-times"></i> ย้อนกลับ</a>
+                                        </div><br>
+                                    </div>
                             </div>
                         </div>
                         </form>

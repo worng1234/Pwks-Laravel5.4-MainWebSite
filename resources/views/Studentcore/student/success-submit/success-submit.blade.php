@@ -195,7 +195,7 @@
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     
-                                <h1><i class="fas fa-check-circle" style="color:green;"></i> ทำการบันทึกข้อมูลพื้นฐานเรียบร้อยแล้ว</h1>
+                                <h1><i class="fas fa-check-circle fa-lg" style="color:green;"></i> ทำการบันทึกข้อมูลพื้นฐานเรียบร้อยแล้ว</h1>
 
                                 <div>
                                     <h4>สามารถล็อกอินเพื่อเข้าใช้งานระบบได้แล้ว กดปุ่มด้านล่างเพื่อไปหน้าล็อกอิน</h4> 

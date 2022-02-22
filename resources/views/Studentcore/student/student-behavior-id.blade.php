@@ -203,7 +203,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;ข้อมูลความประพฤติ 
+										<div class="card-title"><i class="fas fa-medal fa-lg"></i> &nbsp;ข้อมูลความประพฤติ 
 									</div>
 									</div>
 								</div>

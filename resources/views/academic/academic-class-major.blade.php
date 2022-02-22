@@ -460,7 +460,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-sliders-h"></i> &nbsp;จัดการข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> กำหนดสายการเรียน </div>
+										<div class="card-title"><i class="fas fa-sliders-h fa-lg"></i> &nbsp;จัดการข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> กำหนดสายการเรียน </div>
 									</div>
 								</div>
                                 <div class="card-body" style="min-height: auto">

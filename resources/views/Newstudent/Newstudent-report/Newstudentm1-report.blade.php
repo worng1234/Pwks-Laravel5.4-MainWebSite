@@ -70,7 +70,7 @@
                 {{csrf_field()}}
                 <div>
                     <div>
-                        <label class="saraban">วันที่ (ตัวอย่างการกรอกวันที่ xxxx-xx-xx , 2021-11-28 )</label>
+                        <label class="saraban">วันที่ (ตัวอย่างการกรอกวันที่ วัน-เดือน-ปี(ปีการศึกษาที่ใช้รับสมัคร คศ.), xx-xx-xx , 01-01-22 )</label>
                     </div>
                     <div class="input-group mb-3">
                         <input type="search" name="search" aria-label="Recipient's username" aria-describedby="basic-addon2">

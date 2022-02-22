@@ -210,7 +210,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report <i class="flaticon-right-arrow"></i> ออกเอกสารแบบรายเดือน</div>
+										<div class="card-title"><i class="fas fa-medal fa-lg"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน<i class="flaticon-right-arrow"></i> Report <i class="flaticon-right-arrow"></i> ออกเอกสารแบบรายเดือน</div>
 
 									</div>
 								</div>

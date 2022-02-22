@@ -195,7 +195,7 @@
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     
-                                <h1><i class="fas fa-check-circle" style="color:green;"></i> ทำการสมัครเรียบร้อยแล้ว</h1>
+                                <h1><i class="fas fa-check-circle fa-lg" style="color:green;"></i> ทำการสมัครเรียบร้อยแล้ว</h1>
 
                                 <div>
                                     <h4>สามารถตรวจสอบผลการสมัครได้ภายใน 2 - 3 วันนับจากวันที่สมัคร 

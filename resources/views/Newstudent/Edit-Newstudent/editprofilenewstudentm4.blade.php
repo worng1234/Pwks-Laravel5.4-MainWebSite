@@ -173,7 +173,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; ข้อมูลประจำตัวของ {{$newstudentm4Model->prename}}{{$newstudentm4Model->fname}} {{$newstudentm4Model->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ข้อมูลประจำตัวของ {{$newstudentm4Model->prename}}{{$newstudentm4Model->fname}} {{$newstudentm4Model->surname}}</div>
 									</div>
 								</div>
 								<form action="{{ url('/updateNewstudentM4', $newstudentm4Model->id)}}" method="POST" enctype="multipart/form-data">

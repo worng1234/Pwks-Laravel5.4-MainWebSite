@@ -1713,7 +1713,7 @@ class newstudentm1Controller extends Controller
                 $datastatus->save();
             }
 
-            $date = date("y-m-d");
+            $date = date("d-m-y");
 
             newstudentm1Model::create([
                 "prename" => $request->get('prename'),

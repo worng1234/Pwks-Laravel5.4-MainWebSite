@@ -477,7 +477,7 @@
 								<div class="card full-height">
 									<div class="card-header">
 										<div class="card-head-row">
-											<div class="card-title"><i class="fas fa-sliders-h"></i> &nbsp;&nbsp; จัดการข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลห้องเรียน </div>
+											<div class="card-title"><i class="fas fa-sliders-h fa-lg"></i> &nbsp;&nbsp; จัดการข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลห้องเรียน </div>
 										</div>
 									</div>
 									<div class="card-body"><br>

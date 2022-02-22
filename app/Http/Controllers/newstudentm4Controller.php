@@ -1695,7 +1695,7 @@ class newstudentm4Controller extends Controller
             }
 
             
-            $date = date("y-m-d");
+            $date = date("d-m-y");
 
             $post = new newstudentm4Model([
                 "prename" => $request->get('prename'),

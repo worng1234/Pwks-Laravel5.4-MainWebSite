@@ -205,7 +205,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการความประพฤติ <i class="flaticon-right-arrow"></i> ข้อมูลความประพฤติ </div>
+										<div class="card-title"><i class="fas fa-medal fa-lg"></i> &nbsp;จัดการความประพฤติ <i class="flaticon-right-arrow"></i> ข้อมูลความประพฤติ </div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: auto">

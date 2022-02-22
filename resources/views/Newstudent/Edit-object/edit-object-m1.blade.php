@@ -173,7 +173,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-file-alt"></i>&nbsp; แก้ไขหลักฐานการสมัครของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-file-alt fa-lg"></i>&nbsp; แก้ไขหลักฐานการสมัครของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 									</div>
 								</div>
 								<form action="{{ url('/upEditObjectM1', $data->id)}}" method="POST" enctype="multipart/form-data">

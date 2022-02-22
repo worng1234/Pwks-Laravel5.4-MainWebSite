@@ -173,7 +173,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 										<a href='{{ url("/EditNewstudentM4/{$data->id}" )}}' class="btn btn-warning " style="margin-left:auto;"><strong>แก้ไขข้อมูล</strong></a>
 									</div>
 								</div>

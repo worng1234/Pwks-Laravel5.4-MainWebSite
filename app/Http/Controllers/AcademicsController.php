@@ -1212,6 +1212,7 @@ class AcademicsController extends Controller
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('status_report', '=', '02')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -1225,6 +1226,7 @@ class AcademicsController extends Controller
         ->first();
 
         $data = DB::table('new_student_register_m1')
+            ->where('status_report', '=', '02')
             ->where('status_tranfer', '=', '02')
             ->get();
 
@@ -1699,6 +1701,7 @@ class AcademicsController extends Controller
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
                 ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -1740,6 +1743,7 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m1')
                 ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -1891,7 +1895,7 @@ class AcademicsController extends Controller
             'password' => bcrypt($request->get('student_id')),
         ]);
 
-        return redirect('/documentIndex/M1');
+        return redirect('/tranferAllM1');
     }
 
     public function documentUnsubmitM4(Request $request)
@@ -1902,6 +1906,7 @@ class AcademicsController extends Controller
             $search = $request->get('search');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search . '%')
+                ->where('status_report', '=', '02')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -1915,6 +1920,7 @@ class AcademicsController extends Controller
             ->first();
 
         $data = DB::table('new_student_register_m4')
+            ->where('status_report', '=', '02')
             ->where('status_tranfer', '=', '02')
             ->get();
 
@@ -2390,6 +2396,7 @@ class AcademicsController extends Controller
             $search = $request->get('search');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -2403,6 +2410,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $data = DB::table('new_student_register_m4')
                 ->where('status_report', 'like', '%' . $search2 . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -2418,6 +2426,7 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m4')
                 ->where('status_report', 'like', '%' . $search2 . '%')
                 ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -2431,6 +2440,7 @@ class AcademicsController extends Controller
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m4')
                 ->where('student_year', 'like', '%' . $search3 . '%')
+                ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
 
@@ -2584,7 +2594,7 @@ class AcademicsController extends Controller
             'password' => bcrypt($request->get('student_id')),
         ]);
 
-        return redirect('/documentIndex/M4');
+        return redirect('/tranferAllM4');
     }
 
     //โอนย้ายข้อมูลแล้ว
@@ -2631,9 +2641,14 @@ class AcademicsController extends Controller
             ->where('student_idcard', '=', $findID)
             ->first();
 
+        $data3 = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID)
+            ->first();
+
         return view('academic.document-and-tranfer.all-document-tranfer-m1', [
             'data1' => $data1,
             'data2' => $data2,
+            'data3' => $data3,
             'school_year' => $school_year,
         ]);
     }
@@ -2680,9 +2695,14 @@ class AcademicsController extends Controller
             ->where('student_idcard', '=', $findID)
             ->first();
 
+        $data3 = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID)
+            ->first();
+
         return view('academic.document-and-tranfer.all-document-tranfer-m4', [
             'data1' => $data1,
             'data2' => $data2,
+            'data3' => $data3,
             'school_year' => $school_year,
         ]);
     }
@@ -2692,6 +2712,7 @@ class AcademicsController extends Controller
     public function profileDownload (Request $request, $file){
 
         return response()->download(public_path('ImgAll/profile_img/'.$file));
+        
     }
 
     public function StudentSubmitDownload (Request $request, $file){

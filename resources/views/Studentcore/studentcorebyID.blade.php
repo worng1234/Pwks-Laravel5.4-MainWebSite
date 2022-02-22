@@ -477,7 +477,7 @@
                         <div class="col-md-12">
                             <div class="wizard-container wizard-round ">
                                 <div class="wizard-header">
-                                    <div class="card-title"><i class="fas fa-file-archive"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> ข้อมูลประจำตัวของ {{$studentcore->prename}}{{$studentcore->fname}} {{$studentcore->surname}}</div>
+                                    <div class="card-title"><i class="fas fa-file-archive fa-lg"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน <i class="flaticon-right-arrow"></i> ข้อมูลประจำตัวของ {{$studentcore->prename}}{{$studentcore->fname}} {{$studentcore->surname}}</div>
                                 </div>
 
                                 <div class="wizard-body">

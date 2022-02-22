@@ -475,7 +475,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; หลักฐานและข้อมูลการสมัครเข้าเรียน <i class="flaticon-right-arrow"></i> ตรวจสอบแล้ว <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; หลักฐานและข้อมูลการสมัครเข้าเรียน <i class="flaticon-right-arrow"></i> ตรวจสอบแล้ว <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
 											<div class="card-tools">
 												<a href="{{url('/export/newstudentm1')}}" class="btn btn-info btn-border btn-round btn-sm" target="_blank">
 													<span class="btn-label">

@@ -195,7 +195,7 @@
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     
-                                <h1><i class="fas fa-times-circle" style="color:red;"></i> ทำการลงทะเบียนผิดพลาด</h1>
+                                <h1><i class="fas fa-times-circle fa-lg" style="color:red;"></i> ทำการลงทะเบียนผิดพลาด</h1>
 
                                 <div>
                                     <h4>ท่านได้ทำการลงทะเบียนไปแล้ว เนื่องจากระบบได้ตรวจสอบพบว่า </br>"หมายเลขบัตรประจำตัวประชาชน" ของท่านได้มีการลงทะเบียนบันทึกลงสู่ระบบแล้ว

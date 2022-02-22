@@ -475,7 +475,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-file-alt"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-file-alt fa-lg"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> ตรวจสอบแล้วแต่ยังไม่ได้โอนย้าย <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 1</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">

@@ -173,7 +173,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i>&nbsp; คำแนะนำและข้อตกลงการกรอกข้อมูลพื้นฐานนักเรียน</div>
+										<div class="card-title"><i class="fas fa-thumbtack fa-lg"></i>&nbsp; คำแนะนำและข้อตกลงการกรอกข้อมูลพื้นฐานนักเรียน</div>
 									</div>
 								</div>
 								<div class="card-body">

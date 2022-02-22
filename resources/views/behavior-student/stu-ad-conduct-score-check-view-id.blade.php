@@ -207,7 +207,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-medal"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน 
+										<div class="card-title"><i class="fas fa-medal fa-lg"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน 
 									</div>
 									<a href="{{ url('/behavior/index')}}" class="btn btn-danger" style="margin-left: auto;"><i class="fas fa-angle-left"></i> ย้อนกลับ</a>
 									</div>

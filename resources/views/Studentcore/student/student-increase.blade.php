@@ -203,7 +203,7 @@
 						<div class="col-md-12">
 							<div class="wizard-container wizard-round ">
 								<div class="wizard-header">
-									<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;กรอกข้อมูลพื้นฐานนักเรียนเพิ่มเติม (เฉพาะ ม.1 และ ม.4)</div>
+									<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;กรอกข้อมูลพื้นฐานนักเรียนเพิ่มเติม (เฉพาะ ม.1 และ ม.4)</div>
 								</div>
 
 								<form method="post" action="{{ url('/increaseStudentAdd', $data->id)}}" enctype="multipart/form-data">

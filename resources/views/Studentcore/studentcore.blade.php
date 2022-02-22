@@ -471,7 +471,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-file-archive"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน </div>
+										<div class="card-title"><i class="fas fa-file-archive fa-lg"></i> &nbsp;&nbsp; ข้อมูลพื้นฐานนักเรียน </div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">

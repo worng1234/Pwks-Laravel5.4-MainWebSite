@@ -478,7 +478,7 @@
                                 <div class="card full-height">
                                     <div class="card-header">
                                         <div class="card-head-row">
-                                            <div class="card-title"><i class="fas fa-file-alt"></i> &nbsp;&nbsp; โอนย้ายข้อมูลของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+                                            <div class="card-title"><i class="fas fa-file-alt fa-lg"></i> &nbsp;&nbsp; โอนย้ายข้อมูลของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
                                             <a href='{{ url("/documentAllM1/{$data->id}" )}}' class="btn btn-danger" style="margin-left: auto;">ย้อมกลับ</a>
                                         </div>
 

@@ -185,7 +185,7 @@
 						<div class="col-md-12">
 							<div class="wizard-container wizard-round ">
 								<div class="wizard-header">
-									<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;ระบบบันทึกข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูล</div>
+									<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;ระบบบันทึกข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูล</div>
 								</div>
 
 								<form method="post" action="{{ url('/addstudentcore')}}" enctype="multipart/form-data">
