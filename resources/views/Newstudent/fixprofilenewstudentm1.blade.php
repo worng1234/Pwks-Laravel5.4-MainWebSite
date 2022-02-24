@@ -539,13 +539,58 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>เดือน:</label>
-												<input name="mounth" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->mounth}}">
+												<select class="form-control" id="formGroupDefaultSelect" name="mounth">
+                                                        <option value="01" <?php if ($newstudentm1Model->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
+                                                        <option value="02" <?php if ($newstudentm1Model->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
+                                                        <option value="03" <?php if ($newstudentm1Model->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
+														<option value="04" <?php if ($newstudentm1Model->mounth == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
+														<option value="05" <?php if ($newstudentm1Model->mounth == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
+														<option value="06" <?php if ($newstudentm1Model->mounth == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
+														<option value="07" <?php if ($newstudentm1Model->mounth == "07") { ?> selected="selected" <?php } ?>>กรกฎาคม</option>
+														<option value="08" <?php if ($newstudentm1Model->mounth == "08") { ?> selected="selected" <?php } ?>>สิงหาคม</option>
+														<option value="09" <?php if ($newstudentm1Model->mounth == "09") { ?> selected="selected" <?php } ?>>กันยายน</option>
+														<option value="10" <?php if ($newstudentm1Model->mounth == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
+														<option value="11" <?php if ($newstudentm1Model->mounth == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
+														<option value="12" <?php if ($newstudentm1Model->mounth == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
+                                                    </select>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>วัน:</label>
-												<input name="day" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->day}}">
+												<select class="form-control" id="formGroupDefaultSelect" name="day">
+                                                        <option value="01" <?php if ($newstudentm1Model->day == "01") { ?> selected="selected" <?php } ?>>1</option>
+                                                        <option value="02" <?php if ($newstudentm1Model->day == "02") { ?> selected="selected" <?php } ?>>2</option>
+                                                        <option value="03" <?php if ($newstudentm1Model->day == "03") { ?> selected="selected" <?php } ?>>3</option>
+														<option value="04" <?php if ($newstudentm1Model->day == "04") { ?> selected="selected" <?php } ?>>4</option>
+														<option value="05" <?php if ($newstudentm1Model->day == "05") { ?> selected="selected" <?php } ?>>5</option>
+														<option value="06" <?php if ($newstudentm1Model->day == "06") { ?> selected="selected" <?php } ?>>6</option>
+														<option value="07" <?php if ($newstudentm1Model->day == "07") { ?> selected="selected" <?php } ?>>7</option>
+														<option value="08" <?php if ($newstudentm1Model->day == "08") { ?> selected="selected" <?php } ?>>8</option>
+														<option value="09" <?php if ($newstudentm1Model->day == "09") { ?> selected="selected" <?php } ?>>9</option>
+														<option value="10" <?php if ($newstudentm1Model->day == "10") { ?> selected="selected" <?php } ?>>10</option>
+														<option value="11" <?php if ($newstudentm1Model->day == "11") { ?> selected="selected" <?php } ?>>11</option>
+														<option value="12" <?php if ($newstudentm1Model->day == "12") { ?> selected="selected" <?php } ?>>12</option>
+														<option value="13" <?php if ($newstudentm1Model->day == "13") { ?> selected="selected" <?php } ?>>13</option>
+														<option value="14" <?php if ($newstudentm1Model->day == "14") { ?> selected="selected" <?php } ?>>14</option>
+														<option value="15" <?php if ($newstudentm1Model->day == "15") { ?> selected="selected" <?php } ?>>15</option>
+														<option value="16" <?php if ($newstudentm1Model->day == "16") { ?> selected="selected" <?php } ?>>16</option>
+														<option value="17" <?php if ($newstudentm1Model->day == "17") { ?> selected="selected" <?php } ?>>17</option>
+														<option value="18" <?php if ($newstudentm1Model->day == "18") { ?> selected="selected" <?php } ?>>18</option>
+														<option value="19" <?php if ($newstudentm1Model->day == "19") { ?> selected="selected" <?php } ?>>19</option>
+														<option value="20" <?php if ($newstudentm1Model->day == "20") { ?> selected="selected" <?php } ?>>20</option>
+														<option value="21" <?php if ($newstudentm1Model->day == "21") { ?> selected="selected" <?php } ?>>21</option>
+														<option value="22" <?php if ($newstudentm1Model->day == "22") { ?> selected="selected" <?php } ?>>22</option>
+														<option value="23" <?php if ($newstudentm1Model->day == "23") { ?> selected="selected" <?php } ?>>23</option>
+														<option value="24" <?php if ($newstudentm1Model->day == "24") { ?> selected="selected" <?php } ?>>24</option>
+														<option value="25" <?php if ($newstudentm1Model->day == "25") { ?> selected="selected" <?php } ?>>25</option>
+														<option value="26" <?php if ($newstudentm1Model->day == "26") { ?> selected="selected" <?php } ?>>26</option>
+														<option value="27" <?php if ($newstudentm1Model->day == "27") { ?> selected="selected" <?php } ?>>27</option>
+														<option value="28" <?php if ($newstudentm1Model->day == "28") { ?> selected="selected" <?php } ?>>28</option>
+														<option value="29" <?php if ($newstudentm1Model->day == "29") { ?> selected="selected" <?php } ?>>29</option>
+														<option value="30" <?php if ($newstudentm1Model->day == "30") { ?> selected="selected" <?php } ?>>30</option>
+														<option value="31" <?php if ($newstudentm1Model->day == "31") { ?> selected="selected" <?php } ?>>31</option>
+                                                    </select>
 											</div>
 										</div>
 									</div>

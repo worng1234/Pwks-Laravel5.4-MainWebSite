@@ -101,10 +101,10 @@
 					<div class="user">
 						<div class="info">
 
-						<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
-                            <label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
-                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
-                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
+							<label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
+							<label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -145,26 +145,26 @@
 							</div>
 						</li>
 						<li class="nav-item ">
-                            <a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-pencil-alt"></i>
-                                <p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
-                            </a>
-                        </li>
+							<a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-pencil-alt"></i>
+								<p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
+							</a>
+						</li>
 
 						<li class="nav-item ">
-                            <a href='{{ url("/BehaviorStudent", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-medal"></i>
-                                <p>ข้อมูลความประพฤติ</p>
-                            </a>
-                        </li>
+							<a href='{{ url("/BehaviorStudent", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-medal"></i>
+								<p>ข้อมูลความประพฤติ</p>
+							</a>
+						</li>
 
 						<li class="nav-item ">
-                            <a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-file-alt"></i>
-                                <p>เอกสารประจำตัว</p>
-                            </a>
-                        </li>
-						
+							<a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-file-alt"></i>
+								<p>เอกสารประจำตัว</p>
+							</a>
+						</li>
+
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
@@ -285,7 +285,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ระดับชั้น</label>
-															<select class="form-control" id="formGroupDefaultSelect"  readonly>
+															<select class="form-control" id="formGroupDefaultSelect" readonly>
 																<option>มัธยมศึกษาปีที่ {{$data->student_class}}</option>
 															</select>
 														</div>
@@ -293,7 +293,7 @@
 													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>ห้อง</label>
-															<select class="form-control" id="formGroupDefaultSelect"  readonly>
+															<select class="form-control" id="formGroupDefaultSelect" readonly>
 																<option>{{$data->student_room}}</option>
 															</select>
 														</div>
@@ -415,59 +415,57 @@
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>เดือน:</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="birth_month">
-																<option>{{$data->birth_month}}</option>
-																<option value="มกราคม">มกราคม</option>
-																<option value="กุมภาพันธ์">กุมภาพันธ์</option>
-																<option value="มีนาคม">มีนาคม</option>
-																<option value="เมษายน">เมษายน</option>
-																<option value="พฤษภาคม">พฤษภาคม</option>
-																<option value="มิถุนายน">มิถุนายน</option>
-																<option value="กรกฎาคม">กรกฎาคม</option>
-																<option value="สิงหาคม">สิงหาคม</option>
-																<option value="กันยายน">กันยายน</option>
-																<option value="ตุลาคม">ตุลาคม</option>
-																<option value="พฤษจิกายน">พฤษจิกายน</option>
-																<option value="ธันวาคม">ธันวาคม</option>
+															<select class="form-control" id="formGroupDefaultSelect" name="mounth">
+																<option value="01" <?php if ($data->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
+																<option value="02" <?php if ($data->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
+																<option value="03" <?php if ($data->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
+																<option value="04" <?php if ($data->mounth == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
+																<option value="05" <?php if ($data->mounth == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
+																<option value="06" <?php if ($data->mounth == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
+																<option value="07" <?php if ($data->mounth == "07") { ?> selected="selected" <?php } ?>>กรกฎาคม</option>
+																<option value="08" <?php if ($data->mounth == "08") { ?> selected="selected" <?php } ?>>สิงหาคม</option>
+																<option value="09" <?php if ($data->mounth == "09") { ?> selected="selected" <?php } ?>>กันยายน</option>
+																<option value="10" <?php if ($data->mounth == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
+																<option value="11" <?php if ($data->mounth == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
+																<option value="12" <?php if ($data->mounth == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
 															</select>
 														</div>
 													</div>
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>วัน:</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="birth_day">
-																<option>{{$data->birth_day}}</option>
-																<option value="1">1</option>
-																<option value="2">2</option>
-																<option value="3">3</option>
-																<option value="4">4</option>
-																<option value="5">5</option>
-																<option value="6">6</option>
-																<option value="7">7</option>
-																<option value="8">8</option>
-																<option value="9">9</option>
-																<option value="10">10</option>
-																<option value="11">11</option>
-																<option value="12">12</option>
-																<option value="13">13</option>
-																<option value="14">14</option>
-																<option value="15">15</option>
-																<option value="16">16</option>
-																<option value="17">17</option>
-																<option value="18">18</option>
-																<option value="19">19</option>
-																<option value="20">20</option>
-																<option value="21">21</option>
-																<option value="22">22</option>
-																<option value="23">23</option>
-																<option value="24">24</option>
-																<option value="25">25</option>
-																<option value="26">26</option>
-																<option value="27">27</option>
-																<option value="28">28</option>
-																<option value="29">29</option>
-																<option value="30">30</option>
-																<option value="31">31</option>
+															<select class="form-control" id="formGroupDefaultSelect" name="day">
+																<option value="01" <?php if ($data->day == "01") { ?> selected="selected" <?php } ?>>1</option>
+																<option value="02" <?php if ($data->day == "02") { ?> selected="selected" <?php } ?>>2</option>
+																<option value="03" <?php if ($data->day == "03") { ?> selected="selected" <?php } ?>>3</option>
+																<option value="04" <?php if ($data->day == "04") { ?> selected="selected" <?php } ?>>4</option>
+																<option value="05" <?php if ($data->day == "05") { ?> selected="selected" <?php } ?>>5</option>
+																<option value="06" <?php if ($data->day == "06") { ?> selected="selected" <?php } ?>>6</option>
+																<option value="07" <?php if ($data->day == "07") { ?> selected="selected" <?php } ?>>7</option>
+																<option value="08" <?php if ($data->day == "08") { ?> selected="selected" <?php } ?>>8</option>
+																<option value="09" <?php if ($data->day == "09") { ?> selected="selected" <?php } ?>>9</option>
+																<option value="10" <?php if ($data->day == "10") { ?> selected="selected" <?php } ?>>10</option>
+																<option value="11" <?php if ($data->day == "11") { ?> selected="selected" <?php } ?>>11</option>
+																<option value="12" <?php if ($data->day == "12") { ?> selected="selected" <?php } ?>>12</option>
+																<option value="13" <?php if ($data->day == "13") { ?> selected="selected" <?php } ?>>13</option>
+																<option value="14" <?php if ($data->day == "14") { ?> selected="selected" <?php } ?>>14</option>
+																<option value="15" <?php if ($data->day == "15") { ?> selected="selected" <?php } ?>>15</option>
+																<option value="16" <?php if ($data->day == "16") { ?> selected="selected" <?php } ?>>16</option>
+																<option value="17" <?php if ($data->day == "17") { ?> selected="selected" <?php } ?>>17</option>
+																<option value="18" <?php if ($data->day == "18") { ?> selected="selected" <?php } ?>>18</option>
+																<option value="19" <?php if ($data->day == "19") { ?> selected="selected" <?php } ?>>19</option>
+																<option value="20" <?php if ($data->day == "20") { ?> selected="selected" <?php } ?>>20</option>
+																<option value="21" <?php if ($data->day == "21") { ?> selected="selected" <?php } ?>>21</option>
+																<option value="22" <?php if ($data->day == "22") { ?> selected="selected" <?php } ?>>22</option>
+																<option value="23" <?php if ($data->day == "23") { ?> selected="selected" <?php } ?>>23</option>
+																<option value="24" <?php if ($data->day == "24") { ?> selected="selected" <?php } ?>>24</option>
+																<option value="25" <?php if ($data->day == "25") { ?> selected="selected" <?php } ?>>25</option>
+																<option value="26" <?php if ($data->day == "26") { ?> selected="selected" <?php } ?>>26</option>
+																<option value="27" <?php if ($data->day == "27") { ?> selected="selected" <?php } ?>>27</option>
+																<option value="28" <?php if ($data->day == "28") { ?> selected="selected" <?php } ?>>28</option>
+																<option value="29" <?php if ($data->day == "29") { ?> selected="selected" <?php } ?>>29</option>
+																<option value="30" <?php if ($data->day == "30") { ?> selected="selected" <?php } ?>>30</option>
+																<option value="31" <?php if ($data->day == "31") { ?> selected="selected" <?php } ?>>31</option>
 															</select>
 														</div>
 													</div>
@@ -1935,221 +1933,221 @@
 											</div>
 											<div class="clearfix"></div>
 										</div>
-								
+
+									</div>
+								</form>
 							</div>
-							</form>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- สิ้นสุดเนื้อหา -->
-			<!-- เริ่ม Footer -->
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
+				<!-- สิ้นสุดเนื้อหา -->
+				<!-- เริ่ม Footer -->
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
 
-							<li class="nav-item">
-								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+								<li class="nav-item">
+									<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+						</div>
 					</div>
-				</div>
-			</footer>
+				</footer>
+			</div>
+			<!-- สิ้นสุด Footter -->
 		</div>
-		<!-- สิ้นสุด Footter -->
-	</div>
-	<!--   Core JS Files   -->
-	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
-	<!-- jQuery UI -->
-	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-	<!-- Moment JS -->
-	<script src="../assets/js/plugin/moment/moment.min.js"></script>
-	<!-- Bootstrap Toggle -->
-	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-	<!-- jQuery Scrollbar -->
-	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-	<!-- DateTimePicker -->
-	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
-	<!-- Select2 -->
-	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
-	<!-- Bootstrap Wizard -->
-	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
-	<!-- jQuery Validation -->
-	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
-	<!-- Atlantis JS -->
-	<script src="../assets/js/atlantis.min.js"></script>
-	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="../assets/js/setting-demo2.js"></script>
+		<!--   Core JS Files   -->
+		<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+		<script src="../assets/js/core/popper.min.js"></script>
+		<script src="../assets/js/core/bootstrap.min.js"></script>
+		<!-- jQuery UI -->
+		<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<!-- Moment JS -->
+		<script src="../assets/js/plugin/moment/moment.min.js"></script>
+		<!-- Bootstrap Toggle -->
+		<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+		<!-- jQuery Scrollbar -->
+		<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+		<!-- DateTimePicker -->
+		<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+		<!-- Select2 -->
+		<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+		<!-- Bootstrap Wizard -->
+		<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+		<!-- jQuery Validation -->
+		<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+		<!-- Atlantis JS -->
+		<script src="../assets/js/atlantis.min.js"></script>
+		<!-- Atlantis DEMO methods, don't include it in your project! -->
+		<script src="../assets/js/setting-demo2.js"></script>
 
-	<script>
-		var $validator = $('.wizard-container form').validate({
-			validClass: "success",
-			highlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-			},
-			success: function(element) {
-				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-			}
-		})
-
-		Circles.create({
-			id: 'circles-1',
-			radius: 45,
-			value: 60,
-			maxValue: 100,
-			width: 7,
-			text: 5,
-			colors: ['#f1f1f1', '#FF9E27'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		Circles.create({
-			id: 'circles-2',
-			radius: 45,
-			value: 70,
-			maxValue: 100,
-			width: 7,
-			text: 36,
-			colors: ['#f1f1f1', '#2BB930'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		Circles.create({
-			id: 'circles-3',
-			radius: 45,
-			value: 40,
-			maxValue: 100,
-			width: 7,
-			text: 12,
-			colors: ['#f1f1f1', '#F25961'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets: [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
+		<script>
+			var $validator = $('.wizard-container form').validate({
+				validClass: "success",
+				highlight: function(element) {
+					$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
 				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
+				success: function(element) {
+					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				}
+			})
+
+			Circles.create({
+				id: 'circles-1',
+				radius: 45,
+				value: 60,
+				maxValue: 100,
+				width: 7,
+				text: 5,
+				colors: ['#f1f1f1', '#FF9E27'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
+
+			Circles.create({
+				id: 'circles-2',
+				radius: 45,
+				value: 70,
+				maxValue: 100,
+				width: 7,
+				text: 36,
+				colors: ['#f1f1f1', '#2BB930'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
+
+			Circles.create({
+				id: 'circles-3',
+				radius: 45,
+				value: 40,
+				maxValue: 100,
+				width: 7,
+				text: 12,
+				colors: ['#f1f1f1', '#F25961'],
+				duration: 400,
+				wrpClass: 'circles-wrp',
+				textClass: 'circles-text',
+				styleWrapper: true,
+				styleText: true
+			})
+
+			var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+			var mytotalIncomeChart = new Chart(totalIncomeChart, {
+				type: 'bar',
+				data: {
+					labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+					datasets: [{
+						label: "Total Income",
+						backgroundColor: '#ff9e27',
+						borderColor: 'rgb(23, 125, 255)',
+						data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
 					}],
-					xAxes: [{
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
-					}]
 				},
-			}
-		});
-
-		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
-	<script>
-		//== Class definition
-		var SweetAlert2Demo = function() {
-
-			//== Demos
-			var initDemos = function() {
-
-				$('#alert_demo_7').click(function(e) {
-					swal({
-						title: 'ยืนยันการแก้ไขข้อมูล ?',
-						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
-						type: 'warning',
-						buttons: {
-							confirm: {
-								text: 'ตกลง',
-								className: 'btn btn-success'
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					legend: {
+						display: false,
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								display: false //this will remove only the label
 							},
-							cancel: {
-								text: 'ย้อนกลับ',
-								visible: true,
-								className: 'btn btn-danger'
+							gridLines: {
+								drawBorder: false,
+								display: false
 							}
-						}
-					}).then((Delete) => {
-						if (Delete) {
-							swal({
-								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'กลับไปสู่หน้าหลัก',
-								type: 'success',
-								buttons: {
-									confirm: {
-										className: 'btn btn-success'
-									}
+						}],
+						xAxes: [{
+							gridLines: {
+								drawBorder: false,
+								display: false
+							}
+						}]
+					},
+				}
+			});
+
+			$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+				type: 'line',
+				height: '70',
+				width: '100%',
+				lineWidth: '2',
+				lineColor: '#ffa534',
+				fillColor: 'rgba(255, 165, 52, .14)'
+			});
+		</script>
+		<script>
+			//== Class definition
+			var SweetAlert2Demo = function() {
+
+				//== Demos
+				var initDemos = function() {
+
+					$('#alert_demo_7').click(function(e) {
+						swal({
+							title: 'ยืนยันการแก้ไขข้อมูล ?',
+							text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+							type: 'warning',
+							buttons: {
+								confirm: {
+									text: 'ตกลง',
+									className: 'btn btn-success'
+								},
+								cancel: {
+									text: 'ย้อนกลับ',
+									visible: true,
+									className: 'btn btn-danger'
 								}
-							}).then(function() {
-							window.location = '/student';
+							}
+						}).then((Delete) => {
+							if (Delete) {
+								swal({
+									title: 'บันทึกข้อมูลเรียบร้อย!',
+									text: 'กลับไปสู่หน้าหลัก',
+									type: 'success',
+									buttons: {
+										confirm: {
+											className: 'btn btn-success'
+										}
+									}
+								}).then(function() {
+									window.location = '/student';
+								});
+							} else {
+								swal.close();
+							}
 						});
-						} else {
-							swal.close();
-						}
-					});
-				})
+					})
 
-			};
+				};
 
-			return {
-				//== Init
-				init: function() {
-					initDemos();
-				},
-			};
-		}();
+				return {
+					//== Init
+					init: function() {
+						initDemos();
+					},
+				};
+			}();
 
-		//== Class Initialization
-		jQuery(document).ready(function() {
-			SweetAlert2Demo.init();
-		});
-	</script>
+			//== Class Initialization
+			jQuery(document).ready(function() {
+				SweetAlert2Demo.init();
+			});
+		</script>
 </body>
 
 </html>

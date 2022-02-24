@@ -185,16 +185,18 @@
 											<h5><i class="fas fa-info-circle"></i>
 												กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
 											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												ช่องที่มีเครื่อง * จำเป็นต้องกรอกข้อมูลห้ามปล่อยว่างเด็ดขาด </h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
 												หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
 										</div>
 
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลส่วนตัว</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลส่วนตัว</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>คำนำหน้าชื่อ</label>
+													<label>*คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
 														<option>เลือก</option>
 														<option value="เด็กชาย">เด็กชาย</option>
@@ -204,7 +206,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ชื่อภาษาไทย</label>
+													<label>*ชื่อภาษาไทย</label>
 													<input name="fname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -216,7 +218,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>นามสกุลภาษาไทย</label>
+													<label>*นามสกุลภาษาไทย</label>
 													<input name="surname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -224,7 +226,7 @@
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
-													<label>เลขประจำตัวประชาชน</label>
+													<label>*เลขประจำตัวประชาชน</label>
 													<input name="idNumber" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -237,7 +239,7 @@
 										<div class="row">
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ปี พุทธศักราช:</label>
+													<label>*ปี พุทธศักราช:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="year">
 														<option>เลือก</option>
 														<option value="2540">2540</option>
@@ -266,7 +268,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>เดือน:</label>
+													<label>*เดือน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
 														<option>เลือก</option>
 														<option value="01">มกราคม</option>
@@ -286,7 +288,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>วัน:</label>
+													<label>*วัน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="day">
 														<option>เลือก</option>
 														<option value="01">1</option>
@@ -327,7 +329,7 @@
 										<div class="row">
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>เพศสภาพ</label>
+													<label>*เพศสภาพ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="sex" required>
 														<option>เลือก</option>
 														<option value="ชาย">ชาย</option>
@@ -343,19 +345,19 @@
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>เชื้อชาติ</label>
+													<label>*เชื้อชาติ</label>
 													<input name="origin" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>สัญชาติ</label>
+													<label>*สัญชาติ</label>
 													<input name="nationality" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+													<label>*หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
 													<input name="tel" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -363,18 +365,18 @@
 
 										<!-- ข้อมูลที่อยู่ตามทะเบียนบ้าน -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>บ้านเลขที่</label>
+													<label>*บ้านเลขที่</label>
 													<input name="houseNumber" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>หมู่</label>
+													<label>*หมู่</label>
 													<input name="bloc" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
@@ -394,25 +396,25 @@
 										<div class="row">
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>ตำบล/แขวง</label>
+													<label>*ตำบล/แขวง</label>
 													<input name="subDistrict" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>อำเภอ/เขต</label>
+													<label>*อำเภอ/เขต</label>
 													<input name="district" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>จังหวัด</label>
+													<label>*จังหวัด</label>
 													<input name="province" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>รหัสไปรษณีย์</label>
+													<label>*รหัสไปรษณีย์</label>
 													<input name="post" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
@@ -420,7 +422,7 @@
 
 										<!-- ข้อมูลครอบครัว -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัว</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลครอบครัว</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
@@ -536,7 +538,7 @@
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล ผู้ปกครอง</small></label>
+												<label style="margin-bottom: 5px;"><small>*ชื่อ/นามสกุล ผู้ปกครอง</small></label>
 
 												<div class="form-check">
 													<label class="form-check-label">
@@ -618,38 +620,40 @@
 
 										<!-- ข้อมูลทางการศึกษา -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลทางการศึกษา</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลทางการศึกษา</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ ๖ จากโรงเรียน</small></label>
+												<label style="margin-bottom: 5px;">กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ ๖ จากโรงเรียน</label> <br>
+												<p style="color:red;"> <small>***ให้ใส่โรงเรียนไปด้วย เช่น โรงเรียนบ้านแจ่งกู่เรือง โรงเรียนบ้านสันปง เป็นต้น </small></p>
+												<p style="color:red;"> <small>***ให้ตรวจสอบชื่อโรงเรียนของตนเองให้ดีหากผิดพลาดจะเกิดข้อมูลขาดหาย</small></p>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
-													<label>ชื่อโรงเรียนเดิม </label>
-													<input name="finalSchool" type="text" class="form-control" placeholder="">
+													<label>*ชื่อโรงเรียนเดิม </label>
+													<input name="finalSchool" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ตำบล/แขวง</label>
-													<input name="finalSchoolSubDistrict" type="text" class="form-control" placeholder="">
+													<label>*ตำบล/แขวง</label>
+													<input name="finalSchoolSubDistrict" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>อำเภอ/เขต</label>
-													<input name="finalSchoolDistrict" type="text" class="form-control" placeholder="">
+													<label>*อำเภอ/เขต</label>
+													<input name="finalSchoolDistrict" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>จังหวัด</label>
-													<input name="finalSchoolProvince" type="text" class="form-control" placeholder="">
+													<label>*จังหวัด</label>
+													<input name="finalSchoolProvince" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -657,13 +661,13 @@
 
 										<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>ความพิการ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+													<label>*ความพิการ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="การมองเห็น">การมองเห็น</option>
@@ -680,8 +684,8 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>ความด้อยโอกาส</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson">
+													<label>*ความด้อยโอกาส</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
@@ -702,7 +706,7 @@
 
 										<!-- อัพโหลดรูปภาพ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*อัพโหลดข้อมูลหลักฐานที่ใช้ประกอบการสมัคร &nbsp;&nbsp;( นามสกุลไฟล์ .pdf หากไม่สะดวกให้ใช้เป็นไฟล์รูปภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-3">
@@ -758,9 +762,18 @@
 										</div>
 									</div>
 									<div class="card-footer" align="center">
+										
+										<div class="form-check">
 										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
 											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-										<button type="submit" class="btn btn-primary" ><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+											<label class="form-check-label ml-1">
+												<input class="form-check-input" type="checkbox" id="chksubmit">
+												<span class="form-check-sign">ข้าพเจ้าได้ตรวจสอบข้อมูลทุกอย่างเรียบร้อยแล้ว ข้อมูลที่ใช้ในการสมัครเป็นความจริงทุกประการ</span>
+											</label>
+										</div>
+										<div id="dvsubmit" style="display: none">
+											<button type="submit" class="btn btn-primary"><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+										</div>
 									</div><br>
 							</div>
 						</div>
@@ -866,6 +879,19 @@
 			});
 		});
 	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chksubmit").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvsubmit").show();
+				} else {
+					$("#dvsubmit").hide();
+				}
+			});
+		});
+	</script>
+	
 	<script>
 		Circles.create({
 			id: 'circles-1',

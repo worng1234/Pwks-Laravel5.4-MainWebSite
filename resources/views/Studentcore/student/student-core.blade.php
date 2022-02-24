@@ -89,7 +89,7 @@
 								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
-						<li class="nav-item submenu ">
+						<li class="nav-item  ">
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-user-follow"></i>
 								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
@@ -182,6 +182,10 @@
 											<div class="alert alert-info" role="alert" align="center">
 												<h5><i class="fas fa-info-circle"></i>
 													กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
+												<h5><i class="fas fa-info-circle" style="color:red;"></i>
+													ช่องที่มีเครื่อง * จำเป็นต้องกรอกข้อมูลห้ามปล่อยว่างเด็ดขาด </h5>
+												<h5><i class="fas fa-info-circle" style="color:red;"></i>
+													หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
 											</div>
 
 											<div class="wizard-body">
@@ -217,7 +221,7 @@
 														<div class="row">
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>รหัสนักเรียน</label>
+																	<label>*รหัสนักเรียน</label>
 																	<input id="Name" type="text" class="form-control" name="student_id" required>
 																</div>
 															</div>
@@ -234,7 +238,7 @@
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>ระดับชั้น</label>
+																	<label>*ระดับชั้น</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="student_class" required>
 																		<option>เลือก</option>
 																		<option value="1">มัธยมศึกษาปีที่ 1</option>
@@ -248,7 +252,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>ลำดับห้อง</label>
+																	<label>*ลำดับห้อง</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="student_room" required>
 																		<option>เลือก</option>
 																		@foreach ($classroom as $key => $value)
@@ -267,7 +271,7 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
 																<div class="form-group form-group-default">
-																	<label>เลขประจำตัวประชาชน</label>
+																	<label>*เลขประจำตัวประชาชน</label>
 																	<input id="Name" type="text" class="form-control" name="student_id_card" required>
 																</div>
 															</div>
@@ -275,7 +279,7 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>คำนำหน้าชื่อ</label>
+																	<label>*คำนำหน้าชื่อ</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
 																		<option>เลือก</option>
 																		<option value="เด็กชาย">เด็กชาย</option>
@@ -287,7 +291,7 @@
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ชื่อภาษาไทย</label>
+																	<label>*ชื่อภาษาไทย</label>
 																	<input id="Name" type="text" class="form-control" name="fname" required>
 																</div>
 															</div>
@@ -299,7 +303,7 @@
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>นามสกุลภาษาไทย</label>
+																	<label>*นามสกุลภาษาไทย</label>
 																	<input id="Name" type="text" class="form-control" name="surname" required>
 																</div>
 															</div>
@@ -307,8 +311,8 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="prename_eng" required>
+																	<label>*คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
+																	<select class="form-control" id="formGroupDefaultSelect" name="prename_eng" >
 																		<option>เลือก</option>
 																		<option value="master">Master.</option>
 																		<option value="mr">Mr.</option>
@@ -318,7 +322,7 @@
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ชื่อ(ภาษาอังกฤษ)</label>
+																	<label>*ชื่อ(ภาษาอังกฤษ)</label>
 																	<input id="Name" type="text" class="form-control" name="name_eng" required>
 																</div>
 															</div>
@@ -330,7 +334,7 @@
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>นามสกุล(ภาษาอังกฤษ)</label>
+																	<label>*นามสกุล(ภาษาอังกฤษ)</label>
 																	<input id="Name" type="text" class="form-control" name="surname_eng" required>
 																</div>
 															</div>
@@ -344,7 +348,7 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ปี พุทธศักราช:</label>
+																	<label>*ปี พุทธศักราช:</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="birth_year" required>
 																		<option>เลือก</option>
 																		<option value="2540">2540</option>
@@ -373,27 +377,27 @@
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>เดือน:</label>
+																	<label>*เดือน:</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="birth_month" required>
 																		<option>เลือก</option>
-																		<option value="มกราคม">มกราคม</option>
-																		<option value="กุมภาพันธ์">กุมภาพันธ์</option>
-																		<option value="มีนาคม">มีนาคม</option>
-																		<option value="เมษายน">เมษายน</option>
-																		<option value="พฤษภาคม">พฤษภาคม</option>
-																		<option value="มิถุนายน">มิถุนายน</option>
-																		<option value="กรกฎาคม">กรกฎาคม</option>
-																		<option value="สิงหาคม">สิงหาคม</option>
-																		<option value="กันยายน">กันยายน</option>
-																		<option value="ตุลาคม">ตุลาคม</option>
-																		<option value="พฤษจิกายน">พฤษจิกายน</option>
-																		<option value="ธันวาคม">ธันวาคม</option>
+																		<option value="01">มกราคม</option>
+																		<option value="02">กุมภาพันธ์</option>
+																		<option value="03">มีนาคม</option>
+																		<option value="04">เมษายน</option>
+																		<option value="05">พฤษภาคม</option>
+																		<option value="06">มิถุนายน</option>
+																		<option value="07">กรกฎาคม</option>
+																		<option value="08">สิงหาคม</option>
+																		<option value="09">กันยายน</option>
+																		<option value="10">ตุลาคม</option>
+																		<option value="11">พฤษจิกายน</option>
+																		<option value="12">ธันวาคม</option>
 																	</select>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>วัน:</label>
+																	<label>*วัน:</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="birth_day" required>
 																		<option>เลือก</option>
 																		<option value="1">1</option>
@@ -435,12 +439,12 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ชื่อเล่น</label>
-																	<input id="Name" type="text" class="form-control" name="nickname" required>
+																	<input id="Name" type="text" class="form-control" name="nickname" >
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>เพศสภาพ</label>
+																	<label>*เพศสภาพ</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="gender" required>
 																		<option>เลือก</option>
 																		<option value="ชาย">ชาย</option>
@@ -450,7 +454,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>หมู่เลือด</label>
+																	<label>*หมู่เลือด</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="bloodgroup" required>
 																		<option>เลือก</option>
 																		<option value="A">A</option>
@@ -463,18 +467,18 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ศาสนา</label>
-																	<input id="Name" type="text" class="form-control" name="religion" required>
+																	<input id="Name" type="text" class="form-control" name="religion" >
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>เชื้อชาติ</label>
+																	<label>*เชื้อชาติ</label>
 																	<input id="Name" type="text" class="form-control" name="origin" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>สัญชาติ</label>
+																	<label>*สัญชาติ</label>
 																	<input id="Name" type="text" class="form-control" name="nationality" required>
 																</div>
 															</div>
@@ -482,20 +486,20 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น</label>
+																	<label>*ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น</label>
 																	<input id="Name" type="text" class="form-control" name="language" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+																	<label>*หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
 																	<input id="Name" type="text" class="form-control" name="tel_s" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>อีเมล์ (name@example.com)</label>
-																	<input id="Name" type="text" class="form-control" name="email">
+																	<label>*อีเมล์ (name@example.com)</label>
+																	<input id="Name" type="text" class="form-control" name="email" required>
 																</div>
 															</div>
 														</div>
@@ -505,24 +509,24 @@
 													<!-- Step 2 ที่อยู่ -->
 													<div class="tab-pane" id="address">
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ที่อยู่ตามทะเบียนบ้าน</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ที่อยู่ตามทะเบียนบ้าน</b></p>
 														</div>
 														<div class="row">
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>บ้านเลขที่</label>
+																	<label>*บ้านเลขที่</label>
 																	<input id="Name" type="text" class="form-control" name="house_number" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>หมู่</label>
+																	<label>*หมู่</label>
 																	<input id="Name" type="text" class="form-control" name="group" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>ชื่อหมู่บ้าน</label>
+																	<label>*ชื่อหมู่บ้าน</label>
 																	<input id="Name" type="text" class="form-control" name="village" required>
 																</div>
 															</div>
@@ -542,25 +546,25 @@
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>ตำบล/แขวง</label>
+																	<label>*ตำบล/แขวง</label>
 																	<input id="Name" type="text" class="form-control" name="subdistrict" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>อำเภอ/เขต</label>
+																	<label>*อำเภอ/เขต</label>
 																	<input id="Name" type="text" class="form-control" name="district" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>จังหวัด</label>
+																	<label>*จังหวัด</label>
 																	<input id="Name" type="text" class="form-control" name="province" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>รหัสไปรษณีย์</label>
+																	<label>*รหัสไปรษณีย์</label>
 																	<input id="Name" type="text" class="form-control" name="post" required>
 																</div>
 															</div>
@@ -568,7 +572,7 @@
 
 														<!-- ข้อมูลที่อยู่ปัจจุบัน -->
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ที่อยู่ปัจจุบัน</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ที่อยู่ปัจจุบัน</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
@@ -649,7 +653,7 @@
 													<!-- Step 3 ความสามารถ -->
 													<div class="tab-pane" id="ability">
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ด้านความสามารถ</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ด้านความสามารถ</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
@@ -659,13 +663,13 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ชื่อโรงเรียนเดิม</label>
+																	<label>*ชื่อโรงเรียนเดิม</label>
 																	<input id="Name" type="text" class="form-control" name="final_school" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>จบชั้น</label>
+																	<label>*จบชั้น</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="final_class" required>
 																		<option>เลือก</option>
 																		<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
@@ -679,7 +683,7 @@
 															</div>
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ผลการเรียนเฉลี่ย</label>
+																	<label>*ผลการเรียนเฉลี่ย</label>
 																	<input id="Name" type="text" class="form-control" name="avg_grade" required>
 																</div>
 															</div>
@@ -687,19 +691,19 @@
 														<div class="row">
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>ตำบล/แขวง</label>
+																	<label>*ตำบล/แขวง</label>
 																	<input id="Name" type="text" class="form-control" name="f_subdistrict" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>อำเภอ/เขต</label>
+																	<label>*อำเภอ/เขต</label>
 																	<input id="Name" type="text" class="form-control" name="f_district" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>จังหวัด</label>
+																	<label>*จังหวัด</label>
 																	<input id="Name" type="text" class="form-control" name="f_province" required>
 																</div>
 															</div>
@@ -713,25 +717,25 @@
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>1)</label>
+																	<label>*1)</label>
 																	<input id="Name" type="text" class="form-control" name="like_subject1" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>2)</label>
+																	<label>*2)</label>
 																	<input id="Name" type="text" class="form-control" name="like_subject2" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>3)</label>
+																	<label>*3)</label>
 																	<input id="Name" type="text" class="form-control" name="like_subject3" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>4)</label>
+																	<label>*4)</label>
 																	<input id="Name" type="text" class="form-control" name="like_subject4" required>
 																</div>
 															</div>
@@ -744,25 +748,25 @@
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>1)</label>
+																	<label>*1)</label>
 																	<input id="Name" type="text" class="form-control" name="unlike_subject1" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>2)</label>
+																	<label>*2)</label>
 																	<input id="Name" type="text" class="form-control" name="unlike_subject2" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>3)</label>
+																	<label>*3)</label>
 																	<input id="Name" type="text" class="form-control" name="unlike_subject3" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>4)</label>
+																	<label>*4)</label>
 																	<input id="Name" type="text" class="form-control" name="unlike_subject4" required>
 																</div>
 															</div>
@@ -794,7 +798,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-6">
-																<label style="margin-bottom: 5px;"><small>การอ่านเขียน (เลือก 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*การอ่านเขียน (เลือก 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -817,7 +821,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-6">
-																<label style="margin-bottom: 5px;"><small>นักเรียนไม่เข้าใจบทเรียนทุกวิชา (เลือก 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนไม่เข้าใจบทเรียนทุกวิชา (เลือก 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -837,12 +841,12 @@
 													<!-- Step 4 รายละเอียด -->
 													<div class="tab-pane" id="infostu">
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>การเดินทาง</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*การเดินทาง</b></p>
 														</div>
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>การเดินทางมาโรงเรียน</label>
+																	<label>*การเดินทางมาโรงเรียน</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="go_school" required>
 																		<option>เลือก</option>
 																		<option value="เดินเท้า">เดินเท้า</option>
@@ -873,11 +877,11 @@
 															</div>
 														</div>
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>การเรียนออนไลน์</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*การเรียนออนไลน์</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-6">
-																<label style="margin-bottom: 5px;"><small>อุปกรณ์ที่มี (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*อุปกรณ์ที่มี (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -900,7 +904,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-6">
-																<label style="margin-bottom: 5px;"><small>อินเตอร์เน็ตที่ใช้ (เลือก 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*อินเตอร์เน็ตที่ใช้ (เลือก 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -916,12 +920,12 @@
 															</div>
 														</div>
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลด้านอื่นๆ</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลด้านอื่นๆ</b></p>
 														</div>
 														<div class="row">
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>ความพิการ</label>
+																	<label>*ความพิการ</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
 																		<option>เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
@@ -939,7 +943,7 @@
 															</div>
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>ความด้อยโอกาส</label>
+																	<label>*ความด้อยโอกาส</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="unfortuned" required>
 																		<option>เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
@@ -960,7 +964,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
-																<label style="margin-bottom: 5px;"><small>ความขาดแคลน (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*ความขาดแคลน (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -989,7 +993,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนคบเพื่อนที่เกี่ยวข้องกับสิ่งเสพติด</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนคบเพื่อนที่เกี่ยวข้องกับสิ่งเสพติด</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1004,7 +1008,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมเสพยาหรือจำหน่ายสิ่งเสพติด</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนมีพฤติกรรมเสพยาหรือจำหน่ายสิ่งเสพติด</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1019,7 +1023,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมส่อไปในทางชู้สาว</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนมีพฤติกรรมส่อไปในทางชู้สาว</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1034,7 +1038,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนพักหรืออาศัยอยู่กับเพื่อนต่างเพศที่มิใช่ญาติพี่น้อง</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนพักหรืออาศัยอยู่กับเพื่อนต่างเพศที่มิใช่ญาติพี่น้อง</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1049,7 +1053,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนชอบเที่ยวกลางคืน</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนชอบเที่ยวกลางคืน</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1064,7 +1068,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนเคยถูกล่วงละเมิดทางเพศ</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนเคยถูกล่วงละเมิดทางเพศ</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1081,7 +1085,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าโลกนี้ (เลือก 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนรู้สึกว่าโลกนี้ (เลือก 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1096,7 +1100,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
-																<label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าตัวเอง (เลือก 1 หัวข้อ)</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนรู้สึกว่าตัวเอง (เลือก 1 หัวข้อ)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1114,20 +1118,20 @@
 														<div class="row">
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
-																	<input id="Name" type="text" class="form-control" name="good_guy">
+																	<label>*นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
+																	<input id="Name" type="text" class="form-control" name="good_guy" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
-																	<input id="Name" type="text" class="form-control" name="social_good">
+																	<label>*นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
+																	<input id="Name" type="text" class="form-control" name="social_good" required>
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
-																<label style="margin-bottom: 5px;"><small>ปัญหาเรื่องใด ที่นักเรียนกำลังประสบอยู่ในขณะนี้ (เลือกได้มากกว่า 1 อย่าง)</small></label>
+																<label style="margin-bottom: 5px;"><small>*ปัญหาเรื่องใด ที่นักเรียนกำลังประสบอยู่ในขณะนี้ (เลือกได้มากกว่า 1 อย่าง)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1176,7 +1180,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
-																<label style="margin-bottom: 5px;"><small>ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษา จากใคร (เลือกได้มากกว่า 1 อย่าง)</small></label>
+																<label style="margin-bottom: 5px;"><small>*ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษา จากใคร (เลือกได้มากกว่า 1 อย่าง)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1212,19 +1216,19 @@
 													<!-- Step 5 สุขภาพ -->
 													<div class="tab-pane" id="health">
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลสุขภาพ</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลสุขภาพ</b></p>
 														</div>
 
 														<div class="row">
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>น้ำหนัก</label>
+																	<label>*น้ำหนัก</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="weight" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>ส่วนสูง</label>
+																	<label>*ส่วนสูง</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="height" required>
 																</div>
 															</div>
@@ -1232,32 +1236,32 @@
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>โรคประจำตัว</label>
+																	<label>*โรคประจำตัว</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="disease">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>ยาที่แพ้</label>
+																	<label>*ยาที่แพ้</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="medicine_lose">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>ยาที่ต้องรับประทานประจำ</label>
+																	<label>*ยาที่ต้องรับประทานประจำ</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="medicine">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>วิธีแก้ไขเมื่อเกิดอาการ</label>
+																	<label>*วิธีแก้ไขเมื่อเกิดอาการ</label>
 																	<input id="Name" type="text" class="form-control" placeholder="" name="remedy">
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
-																<label style="margin-bottom: 5px;"><small>นักเรียนมีภาวะทางสายตา (เลือกได้มากกว่า 1 อย่าง เช่น สายตาสั้น-เอียง)</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนมีภาวะทางสายตา (เลือกได้มากกว่า 1 อย่าง เช่น สายตาสั้น-เอียง)</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1290,7 +1294,7 @@
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-3">
-																<label style="margin-bottom: 5px;"><small>นักเรียนสวมแว่นตา</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนสวมแว่นตา</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1305,7 +1309,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
-																<label style="margin-bottom: 5px;"><small>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1320,7 +1324,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
-																<label style="margin-bottom: 5px;"><small>นักเรียนมีความบกพร่องทางการได้ยิน</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนมีความบกพร่องทางการได้ยิน</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1335,7 +1339,7 @@
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
-																<label style="margin-bottom: 5px;"><small>นักเรียนมีความบกพร่องทางร่างกาย</small></label>
+																<label style="margin-bottom: 5px;"><small>*นักเรียนมีความบกพร่องทางร่างกาย</small></label>
 																<div class="form-group">
 																	<div class="selectgroup selectgroup-secondary selectgroup-pills">
 																		<label class="selectgroup-item">
@@ -1875,14 +1879,14 @@
 														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัวเบื้องต้น</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลครอบครัวเบื้องต้น</b></p>
 														</div>
 
 														<div class="row">
 															<div class="col-6 col-md-8">
 																<div class="form-group form-group-default">
-																	<label>สถานภาพสมรสของบิดามารดา</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="status_parent">
+																	<label>*สถานภาพสมรสของบิดามารดา</label>
+																	<select class="form-control" id="formGroupDefaultSelect" name="status_parent" required>
 																		<option>เลือก</option>
 																		<option value="สมรส">สมรส</option>
 																		<option value="หย่าร้าง">หย่าร้าง</option>
@@ -1893,7 +1897,7 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่น้อง ร่วมสายโลหิต</label>
+																	<label>*จำนวนพี่น้อง ร่วมสายโลหิต</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_blood" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -1912,7 +1916,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่ชาย</label>
+																	<label>*จำนวนพี่ชาย</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_brother" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -1931,7 +1935,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>จำนวนน้องชาย</label>
+																	<label>*จำนวนน้องชาย</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_son" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -1950,7 +1954,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่สาว</label>
+																	<label>*จำนวนพี่สาว</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_sister" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -1969,7 +1973,7 @@
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>จำนวนน้องสาว</label>
+																	<label>*จำนวนน้องสาว</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_son2" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -1990,7 +1994,7 @@
 														<div class="row">
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>นักเรียนเป็นบุตรคนที่</label>
+																	<label>*นักเรียนเป็นบุตรคนที่</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_parent" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -2009,7 +2013,7 @@
 															</div>
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่น้องที่ศึกษาอยู่ (ไม่นับรวมนักเรียน)</label>
+																	<label>*จำนวนพี่น้องที่ศึกษาอยู่ (ไม่นับรวมนักเรียน)</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_study" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -2028,7 +2032,7 @@
 															</div>
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่น้องที่ประกอบอาชีพแล้ว</label>
+																	<label>*จำนวนพี่น้องที่ประกอบอาชีพแล้ว</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_job" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -2047,7 +2051,7 @@
 															</div>
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว</label>
+																	<label>*จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="no_house" required>
 																		<option>เลือก</option>
 																		<option value="0">0</option>
@@ -2068,14 +2072,14 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-9">
 																<div class="form-group form-group-default">
-																	<label>นักเรียนมีหน้าที่รับผิดชอบภายในบ้าน นอกเหนือจากการเรียน</label>
-																	<input id="Name" type="text" class="form-control" name="student_job">
+																	<label>*นักเรียนมีหน้าที่รับผิดชอบภายในบ้าน นอกเหนือจากการเรียน</label>
+																	<input id="Name" type="text" class="form-control" name="student_job" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
-																	<label>นักเรียนนำเงินมาโรงเรียนวันละ (บาท)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="student_money">
+																	<label>*นักเรียนนำเงินมาโรงเรียนวันละ (บาท)</label>
+																	<select class="form-control" id="formGroupDefaultSelect" name="student_money" required>
 																		<option>เลือก</option>
 																		<option value="0 - 20">0 - 20</option>
 																		<option value="21 - 40">21 - 40</option>
@@ -2090,8 +2094,8 @@
 														<div class="row">
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
-																	<label>รายได้ของครอบครัวต่อเดือน (รายได้รวมกัน)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="parent_money">
+																	<label>*รายได้ของครอบครัวต่อเดือน (รายได้รวมกัน)</label>
+																	<select class="form-control" id="formGroupDefaultSelect" name="parent_money" required>
 																		<option>เลือก</option>
 																		<option value="0 - 9000">0 - 9000</option>
 																		<option value="9,001 - 15,000">9,001 - 15,000</option>
@@ -2105,20 +2109,20 @@
 															</div>
 															<div class="col-sm-6 col-md-6">
 																<div class="form-group form-group-default">
-																	<label>ผู้ออกค่าใช้จ่ายให้นักเรียน (ชื่อ-นามสกุล)</label>
-																	<input id="Name" type="text" class="form-control" name="parent_total">
+																	<label>*ผู้ออกค่าใช้จ่ายให้นักเรียน (ชื่อ-นามสกุล)</label>
+																	<input id="Name" type="text" class="form-control" name="parent_total" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
-																	<label>เกี่ยวข้องเป็น</label>
-																	<input id="Name" type="text" class="form-control" name="parent_house">
+																	<label>*เกี่ยวข้องเป็น</label>
+																	<input id="Name" type="text" class="form-control" name="parent_house" required>
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col-sm-6 col-md-12">
-																<label style="margin-bottom: 5px;"><small>การหารายได้ด้วยตนเอง</small></label>
+																<label style="margin-bottom: 5px;"><small>*การหารายได้ด้วยตนเอง</small></label>
 																<div class="form-check">
 																	<label class="form-radio-label">
 																		<input class="form-radio-input" type="radio" name="job_study" value="ไม่มี">
@@ -2152,13 +2156,13 @@
 													<!-- อัพโหลดรูปภาพ -->
 													<div class="tab-pane" id="photo">
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ ( นามสกุลไฟล์ภาพ .jpg หรือ.pngขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*อัพโหลดข้อมูลรูปภาพ ( นามสกุลไฟล์ภาพ .jpg หรือ.pngขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-4 col-md-4">
 																<div class="form-group">
 																	<label for="exampleFormControlFile1">รูปประจำตัวรักเรียน</label>
-																	<input type="file" class="form-control-file" id="profile_img" name="profile_img" required>
+																	<input type="file" class="form-control-file" id="profile_img" name="profile_img" >
 																</div>
 															</div>
 															<div class="col-sm-4 col-md-4">
@@ -2176,7 +2180,7 @@
 														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของบิดา</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-4 col-md-4">
@@ -2185,36 +2189,35 @@
 																	<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
 																</div>
 															</div>
-															<div class="row">
 																<div class="col-sm-4 col-md-4">
 																	<div class="form-group">
 																		<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
 																		<input type="file" class="form-control-file" id="house_father" name="house_father">
 																	</div>
 																</div>
-																<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-																	<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
-																</div>
+															</div>
 
+																<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+																	<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
+																</div>
+															<div class="row">
 																<div class="col-sm-4 col-md-4">
 																	<div class="form-group">
 																		<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
 																		<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
 																	</div>
 																</div>
-															</div>
 
-
-															<div class="col-sm-4 col-md-4">
-																<div class="form-group">
-																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
-																	<input type="file" class="form-control-file" id="house_mother" name="house_mother">
+																<div class="col-sm-4 col-md-4">
+																	<div class="form-group">
+																		<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
+																		<input type="file" class="form-control-file" id="house_mother" name="house_mother">
+																	</div>
 																</div>
 															</div>
-														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-4 col-md-4">
@@ -2257,7 +2260,7 @@
 															</div>
 														</div>
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-															<p style="margin-left: 25px;  font-size: 15px;"><b>หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าพิการจริง)</b></p>
 														</div>
 														<div class="row">
 															<div class="col-sm-4 col-md-4">

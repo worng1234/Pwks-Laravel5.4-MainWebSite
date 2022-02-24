@@ -76,12 +76,12 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" href="{{ route('student.logout') }}" aria-expanded="false" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <i class="fas fa-unlock"></i> ออกระบบ
-                            </a>
+								<i class="fas fa-unlock"></i> ออกระบบ
+							</a>
 
-                            <form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+							<form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
+								{{ csrf_field() }}
+							</form>
 						</li>
 
 					</ul>
@@ -101,10 +101,10 @@
 					<div class="user">
 						<div class="info">
 
-						<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
-                            <label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
-                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
-                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
+							<label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
+							<label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -140,31 +140,31 @@
 											<span class="sub-item">ตรวจสอบข้อมูล</span>
 										</a>
 									</li>
-									
+
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item ">
-                            <a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-pencil-alt"></i>
-                                <p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
-                            </a>
-                        </li>
+							<a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-pencil-alt"></i>
+								<p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
+							</a>
+						</li>
 
 						<li class="nav-item ">
-                            <a href='{{ url("/BehaviorStudent", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-medal"></i>
-                                <p>ข้อมูลความประพฤติ</p>
-                            </a>
-                        </li>
+							<a href='{{ url("/BehaviorStudent", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-medal"></i>
+								<p>ข้อมูลความประพฤติ</p>
+							</a>
+						</li>
 
 						<li class="nav-item ">
-                            <a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
-                                <i class="fas fa-file-alt"></i>
-                                <p>เอกสารประจำตัว</p>
-                            </a>
-                        </li>
-						
+							<a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
+								<i class="fas fa-file-alt"></i>
+								<p>เอกสารประจำตัว</p>
+							</a>
+						</li>
+
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
@@ -239,7 +239,7 @@
 													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>เลขประจำตัวนักเรียน</label>
-															<input readonly type="text" class="form-control"  name="student_id" value="{{$data->student_id}}"readonly>
+															<input readonly type="text" class="form-control" name="student_id" value="{{$data->student_id}}" readonly>
 														</div>
 													</div>
 													<div class="col-6 col-md-5">
@@ -412,21 +412,31 @@
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>เดือน:</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="birth_month" readonly>
-																<option>{{$data->birth_month}}</option>
-																<option value="มกราคม">มกราคม</option>
-																<option value="กุมภาพันธ์">กุมภาพันธ์</option>
-																<option value="มีนาคม">มีนาคม</option>
-																<option value="เมษายน">เมษายน</option>
-																<option value="พฤษภาคม">พฤษภาคม</option>
-																<option value="มิถุนายน">มิถุนายน</option>
-																<option value="กรกฎาคม">กรกฎาคม</option>
-																<option value="สิงหาคม">สิงหาคม</option>
-																<option value="กันยายน">กันยายน</option>
-																<option value="ตุลาคม">ตุลาคม</option>
-																<option value="พฤษจิกายน">พฤษจิกายน</option>
-																<option value="ธันวาคม">ธันวาคม</option>
-															</select>
+															@if ($data->mounth == '01')
+															<input id="Name" type="text" class="form-control" placeholder="" value="มกราคม" readonly>
+															@elseif ($data->mounth == '02')
+															<input id="Name" type="text" class="form-control" placeholder="" value="กุมภาพันธ์" readonly>
+															@elseif ($data->mounth == '03')
+															<input id="Name" type="text" class="form-control" placeholder="" value="มีนาคม" readonly>
+															@elseif ($data->mounth == '04')
+															<input id="Name" type="text" class="form-control" placeholder="" value="เมษายน" readonly>
+															@elseif ($data->mounth == '05')
+															<input id="Name" type="text" class="form-control" placeholder="" value="พฤษภาคม" readonly>
+															@elseif ($data->mounth == '06')
+															<input id="Name" type="text" class="form-control" placeholder="" value="มิถุนายน" readonly>
+															@elseif ($data->mounth == '07')
+															<input id="Name" type="text" class="form-control" placeholder="" value="กรกฎาคม" readonly>
+															@elseif ($data->mounth == '08')
+															<input id="Name" type="text" class="form-control" placeholder="" value="สิงหาคม" readonly>
+															@elseif ($data->mounth == '09')
+															<input id="Name" type="text" class="form-control" placeholder="" value="กันยายน" readonly>
+															@elseif ($data->mounth == '10')
+															<input id="Name" type="text" class="form-control" placeholder="" value="ตุลาคม" readonly>
+															@elseif ($data->mounth == '11')
+															<input id="Name" type="text" class="form-control" placeholder="" value="พฤษจิกายน" readonly>
+															@elseif ($data->mounth == '12')
+															<input id="Name" type="text" class="form-control" placeholder="" value="ธันวาคม" readonly>
+															@endif
 														</div>
 													</div>
 													<div class="col-sm-6 col-md-4">
@@ -843,7 +853,7 @@
 												</div>
 												<div class="row">
 													<div class="col-6 col-md-3">
-														<div class="form-group form-group-default" >
+														<div class="form-group form-group-default">
 															<label>การเดินทางมาโรงเรียน</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="go_school" readonly>
 																<option>{{$data->go_school}}</option>
@@ -1884,46 +1894,46 @@
 															<input value="{{$data->job_study}}" type="text" class="form-control" name="job_study" readonly>
 														</div>
 													</div>
-														<div class="col-sm-6 col-md-4">
-															<div class="form-group form-group-default">
-																<label>โปรดระบุ (หารายได้จากอะไร)</label>
-																<input value="{{$data->job_detail}}" type="text" class="form-control" name="job_detail" readonly>
-															</div>
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group form-group-default">
+															<label>โปรดระบุ (หารายได้จากอะไร)</label>
+															<input value="{{$data->job_detail}}" type="text" class="form-control" name="job_detail" readonly>
 														</div>
-														<div class="col-sm-6 col-md-4">
-															<div class="form-group form-group-default">
-																<label>รายได้เฉลี่ยวันละ (บาท)</label>
-																<select class="form-control" id="formGroupDefaultSelect" name="total_study" readonly>
-																	<option>{{$data->total_study}}</option>
-																	<option value="0 - 100">0 - 100</option>
-																	<option value="101 - 150">101 - 150</option>
-																	<option value="151 - 200">151 - 200</option>
-																	<option value="201 - 250">201 - 250</option>
-																	<option value="251 - 300">251 - 300</option>
-																	<option value="มากกว่า 300">มากกว่า 300</option>
-																</select>
-															</div>
-															</div>
+													</div>
+													<div class="col-sm-6 col-md-4">
+														<div class="form-group form-group-default">
+															<label>รายได้เฉลี่ยวันละ (บาท)</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="total_study" readonly>
+																<option>{{$data->total_study}}</option>
+																<option value="0 - 100">0 - 100</option>
+																<option value="101 - 150">101 - 150</option>
+																<option value="151 - 200">151 - 200</option>
+																<option value="201 - 250">201 - 250</option>
+																<option value="251 - 300">251 - 300</option>
+																<option value="มากกว่า 300">มากกว่า 300</option>
+															</select>
 														</div>
-											
+													</div>
+												</div>
 
 
-										</div>
-									</div>
 
-									<div class="wizard-action">
-										<div class="pull-left">
-											<input type="button" class="btn btn-previous btn-fill btn-black" name="previous" value="ย้อนกลับ">
+											</div>
 										</div>
-										<div class="pull-right">
-											<input type="button" class="btn btn-next btn-info" name="next" value="ถัดไป">
-											
+
+										<div class="wizard-action">
+											<div class="pull-left">
+												<input type="button" class="btn btn-previous btn-fill btn-black" name="previous" value="ย้อนกลับ">
+											</div>
+											<div class="pull-right">
+												<input type="button" class="btn btn-next btn-info" name="next" value="ถัดไป">
+
+											</div>
+											<div class="clearfix"></div>
 										</div>
-										<div class="clearfix"></div>
-									</div>
 								</form>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>

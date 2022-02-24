@@ -186,17 +186,19 @@
 											<h5><i class="fas fa-info-circle"></i>
 												กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
 											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												ช่องที่มีเครื่อง * จำเป็นต้องกรอกข้อมูลห้ามปล่อยว่างเด็ดขาด </h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
 												หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
 										</div>
 
 
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลส่วนตัว</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลส่วนตัว</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>คำนำหน้าชื่อ</label>
+													<label>*คำนำหน้าชื่อ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
 														<option>เลือก</option>
 														<option value="นาย">นาย</option>
@@ -206,7 +208,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ชื่อภาษาไทย</label>
+													<label>*ชื่อภาษาไทย</label>
 													<input name="fname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -218,7 +220,7 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>นามสกุลภาษาไทย</label>
+													<label>*นามสกุลภาษาไทย</label>
 													<input name="surname" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -226,7 +228,7 @@
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
-													<label>เลขประจำตัวประชาชน</label>
+													<label>*เลขประจำตัวประชาชน</label>
 													<input name="id_number" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -239,8 +241,8 @@
 										<div class="row">
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ปี พุทธศักราช:</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="year">
+													<label>*ปี พุทธศักราช:</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="year" required>
 														<option>เลือก</option>
 														<option value="2540">2540</option>
 														<option value="2541">2541</option>
@@ -268,8 +270,8 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>เดือน:</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
+													<label>*เดือน:</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="mounth" required>
 														<option>เลือก</option>
 														<option value="01">มกราคม</option>
 														<option value="02">กุมภาพันธ์</option>
@@ -288,8 +290,8 @@
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>วัน:</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="day">
+													<label>*วัน:</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="day" required>
 														<option>เลือก</option>
 														<option value="01">1</option>
 														<option value="02">2</option>
@@ -329,7 +331,7 @@
 										<div class="row">
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>เพศสภาพ</label>
+													<label>*เพศสภาพ</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="sex" required>
 														<option>เลือก</option>
 														<option value="ชาย">ชาย</option>
@@ -345,19 +347,19 @@
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>เชื้อชาติ</label>
+													<label>*เชื้อชาติ</label>
 													<input name="origin" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
-													<label>สัญชาติ</label>
+													<label>*สัญชาติ</label>
 													<input name="nationality" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+													<label>*หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
 													<input name="tel" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
@@ -365,19 +367,19 @@
 
 										<!-- ข้อมูลที่อยู่ตามทะเบียนบ้าน -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>บ้านเลขที่</label>
-													<input name="house_number" type="text" class="form-control" placeholder="">
+													<label>*บ้านเลขที่</label>
+													<input name="house_number" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>หมู่</label>
-													<input name="bloc" type="text" class="form-control" placeholder="">
+													<label>*หมู่</label>
+													<input name="bloc" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
@@ -396,33 +398,33 @@
 										<div class="row">
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>ตำบล/แขวง</label>
-													<input name="sub_district" type="text" class="form-control" placeholder="">
+													<label>*ตำบล/แขวง</label>
+													<input name="sub_district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>อำเภอ/เขต</label>
-													<input name="district" type="text" class="form-control" placeholder="">
+													<label>*อำเภอ/เขต</label>
+													<input name="district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>จังหวัด</label>
-													<input name="province" type="text" class="form-control" placeholder="">
+													<label>*จังหวัด</label>
+													<input name="province" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
-													<label>รหัสไปรษณีย์</label>
-													<input name="post" type="text" class="form-control" placeholder="">
+													<label>*รหัสไปรษณีย์</label>
+													<input name="post" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
 
 										<!-- ข้อมูลครอบครัว -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลครอบครัว</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลครอบครัว</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
@@ -620,38 +622,40 @@
 
 										<!-- ข้อมูลทางการศึกษา -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลทางการศึกษา</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลทางการศึกษา</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
-												<label style="margin-bottom: 5px;"><small>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</small></label>
+											<label style="margin-bottom: 5px;">กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ ๖ จากโรงเรียน</label> <br>
+												<p style="color:red;"> <small>***ให้ใส่โรงเรียนไปด้วย เช่น โรงเรียนพร้าววิทยาคม โรงเรียนบ้านสันปง เป็นต้น </small></p>
+												<p style="color:red;"> <small>***ให้ตรวจสอบชื่อโรงเรียนของตนเองให้ดีหากผิดพลาดจะเกิดข้อมูลขาดหาย</small></p>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
-													<label>ชื่อโรงเรียนเดิม</label>
-													<input name="final_school" type="text" class="form-control" placeholder="">
+													<label>*ชื่อโรงเรียนเดิม</label>
+													<input name="final_school" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>ตำบล/แขวง</label>
-													<input name="final_school_sub_district" type="text" class="form-control" placeholder="">
+													<label>*ตำบล/แขวง</label>
+													<input name="final_school_sub_district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>อำเภอ/เขต</label>
-													<input name="final_school_district" type="text" class="form-control" placeholder="">
+													<label>*อำเภอ/เขต</label>
+													<input name="final_school_district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
-													<label>จังหวัด</label>
-													<input name="final_school_province" type="text" class="form-control" placeholder="">
+													<label>*จังหวัด</label>
+													<input name="final_school_province" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -671,13 +675,13 @@
 
 										<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>ความพิการ</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+													<label>*ความพิการ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="การมองเห็น">การมองเห็น</option>
@@ -694,8 +698,8 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>ความด้อยโอกาส</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson">
+													<label>*ความด้อยโอกาส</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
@@ -716,12 +720,12 @@
 
 										<!-- เลือกเรียนแผนการเรียนรู้ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 9 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 9 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 1</label>
+													<label>*อันดับที่ 1</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name1" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -732,7 +736,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 2</label>
+													<label>*อันดับที่ 2</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name2" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -743,7 +747,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 3</label>
+													<label>*อันดับที่ 3</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name3" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -754,7 +758,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 4</label>
+													<label>*อันดับที่ 4</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name4" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -765,7 +769,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 5</label>
+													<label>*อันดับที่ 5</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name5" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -776,7 +780,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 6</label>
+													<label>*อันดับที่ 6</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name6" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -787,7 +791,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 7</label>
+													<label>*อันดับที่ 7</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name7" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -798,7 +802,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 8</label>
+													<label>*อันดับที่ 8</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name8" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -809,7 +813,7 @@
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>อันดับที่ 9</label>
+													<label>*อันดับที่ 9</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="major_name9" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
@@ -822,7 +826,7 @@
 
 										<!-- อัพโหลดรูปภาพ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp; ขนาดไม่เกิน 2 mb(megabyte) เท่านั้น )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*อัพโหลดข้อมูลหลักฐานที่ใช้ประกอบการสมัคร &nbsp;&nbsp;( นามสกุลไฟล์ .pdf หากไม่สะดวกให้ใช้เป็นไฟล์รูปภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
 										</div>
 										<div class="row">
 											<div class="col-sm-6 col-md-3">
@@ -879,9 +883,18 @@
 
 									</div>
 									<div class="card-footer" align="center">
+										
+										<div class="form-check">
 										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
 											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-										<button type="submit" class="btn btn-primary" ><strong>ยืนยันข้อมูล</strong></button>
+											<label class="form-check-label ml-1">
+												<input class="form-check-input" type="checkbox" id="chksubmit">
+												<span class="form-check-sign">ข้าพเจ้าได้ตรวจสอบข้อมูลทุกอย่างเรียบร้อยแล้ว ข้อมูลที่ใช้ในการสมัครเป็นความจริงทุกประการ</span>
+											</label>
+										</div>
+										<div id="dvsubmit" style="display: none">
+											<button type="submit" class="btn btn-primary"><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+										</div>
 									</div><br>
 							</div>
 						</div>
@@ -983,6 +996,18 @@
 					$("#dvparent").show();
 				} else {
 					$("#dvparent").hide();
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chksubmit").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvsubmit").show();
+				} else {
+					$("#dvsubmit").hide();
 				}
 			});
 		});
