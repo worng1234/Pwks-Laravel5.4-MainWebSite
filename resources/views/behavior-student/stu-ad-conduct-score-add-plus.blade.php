@@ -237,7 +237,7 @@
 												<div class="form-group">
 													<label>หัวข้อความประพฤติ</label>
 													<div class="select2-input">
-														<select id="basic" name="behavior_history" class="form-control">
+														<select id="basic" name="behavior_history" class="form-control" onchange="populate(this.id,'slct2')">
 															<option value="">&nbsp;</option>
 															<optgroup label="หมวดที่ 1 สร้างชื่อเสียงให้กับสถานศึกษา">
 																<option value="001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ">001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ (+10)</option>
@@ -261,15 +261,15 @@
 												<div class="form-group">
 													<label>หักคะแนน</label>
 													<div class="select2-input">
-														<select id="basic2" name="plus_score" class="form-control">
-															<option value="">&nbsp;</option>
+														<select id="slct2" name="plus_score" class="form-control">
+															<!-- <option value="">&nbsp;</option>
 															<optgroup label="เพิ่มคะแนน">
 																<option value="5">+5</option>
 																<option value="10">+10</option>
 																<option value="20">+20</option>
 																<option value="30">+30</option>
 																<option value="50">+50</option>
-															</optgroup>
+															</optgroup> -->
 														</select>
 													</div>
 												</div>
@@ -478,6 +478,81 @@
 			theme: "bootstrap"
 		});
 	</script>
+
+<script>
+		function populate(s1,s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHtml = "";
+
+			if (s1.value == "001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ"){
+				var optionArray = ["10|+10"];
+
+			} else if (s1.value == "002 สร้างชื่อเสียงให้กับสถานศึกษา ระดับจังหวัด"){
+				var optionArray = ["20|+20"];
+
+			} else if (s1.value == "003 สร้างชื่อเสียงให้กับสถานศึกษา ระดับภาค"){
+				var optionArray = ["30|+30"];
+
+			} else if (s1.value == "004 สร้างชื่อเสียงให้กับสถานศึกษา ระดับประเทศ"){
+				var optionArray = ["50|+50"];
+
+			} else if (s1.value == "005 ช่วยเหลือผู้ประสบอุบัติเหตุ"){
+				var optionArray = ["50|+50"];
+
+			} else if (s1.value == "006 แจ้งเบาะแสให้ครู เจ้าหน้าที่ตำรวจ"){
+				var optionArray = ["20|+20"];
+
+			} 
+
+			for (var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newOption = document.createElement("option");
+				newOption.value = pair[0];
+				newOption.innerHTML = pair[1];
+				s2.options.add(newOption);
+			};
+		}
+		$('#basic').select2({
+			theme: "bootstrap"
+		},function populate(s1,s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHtml = "";
+
+			if (s1.value == "001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ"){
+				var optionArray = ["10|+10"];
+
+			} else if (s1.value == "002 สร้างชื่อเสียงให้กับสถานศึกษา ระดับจังหวัด"){
+				var optionArray = ["20|+20"];
+
+			} else if (s1.value == "003 สร้างชื่อเสียงให้กับสถานศึกษา ระดับภาค"){
+				var optionArray = ["30|+30"];
+
+			} else if (s1.value == "004 สร้างชื่อเสียงให้กับสถานศึกษา ระดับประเทศ"){
+				var optionArray = ["50|+50"];
+
+			} else if (s1.value == "005 ช่วยเหลือผู้ประสบอุบัติเหตุ"){
+				var optionArray = ["50|+50"];
+
+			} else if (s1.value == "006 แจ้งเบาะแสให้ครู เจ้าหน้าที่ตำรวจ"){
+				var optionArray = ["20|+20"];
+
+			} 
+
+			for (var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newOption = document.createElement("option");
+				newOption.value = pair[0];
+				newOption.innerHTML = pair[1];
+				s2.options.add(newOption);
+			};
+		}
+		);
+	</script>
+
 </body>
 
 </html>

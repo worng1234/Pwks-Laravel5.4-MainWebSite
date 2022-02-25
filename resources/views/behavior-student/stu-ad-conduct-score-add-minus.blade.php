@@ -31,6 +31,9 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
+
+	
+
 </head>
 
 <body>
@@ -238,10 +241,10 @@
 												<div class="form-group">
 													<label>หัวข้อความประพฤติ</label>
 													<div class="select2-input">
-														<select id="basic" name="behavior_history" class="form-control">
+														<select id="basic" name="behavior_history"  class="form-control" onchange="populate(this.id,'slct2')">
 															<option value="">&nbsp;</option>
 															<optgroup label="หมวดที่ 1 พฤติกรรมการแต่งกาย">
-																<option value="101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน">101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน (-5)</option>
+																<option value="101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน" >101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน (-5)</option>
 																<option value="102 สวมเสื้อนักเรียนของผู้อื่นมาโรงเรียน">102 สวมเสื้อนักเรียนของผู้อื่นมาโรงเรียน (-5)</option>
 																<option value="103 สักตามร่างกาย">103 สักตามร่างกาย (-20)</option>
 															</optgroup>
@@ -271,11 +274,10 @@
 												<div class="form-group">
 													<label>หักคะแนน</label>
 													<div class="select2-input">
-														<select id="basic2" name="minus_score" class="form-control">
-															<option value="">&nbsp;</option>
+														<select id="slct2" name="minus_score" class="form-control" >
+															<!-- <option value="">&nbsp;</option>
 															<optgroup label="ลดคะแนน">
-																<option value="0">ตักเตือน</option>
-																<option value="5">-5</option>
+																<option id="inputBe" value="5">-5</option>
 																<option value="10">-10</option>
 																<option value="20">-20</option>
 																<option value="30">-30</option>
@@ -283,7 +285,7 @@
 																<option value="50">-50</option>
 																<option value="80">-80</option>
 																<option value="100">-100</option>
-															</optgroup>
+															</optgroup> -->
 														</select>
 													</div>
 												</div>
@@ -382,6 +384,8 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/setting-demo2.js"></script>
+
+	
 
 	<script>
 		Circles.create({
@@ -491,6 +495,125 @@
 			theme: "bootstrap"
 		});
 	</script>
+	
+	<script>
+		function populate(s1,s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHtml = "";
+
+			if (s1.value == "101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "102 สวมเสื้อนักเรียนของผู้อื่นมาโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "103 สักตามร่างกาย"){
+				var optionArray = ["20|-20"];
+
+			} else if (s1.value == "201 มาสายไม่ทันเคารพธงชาติ"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "202 ขาดเรียนเกิน 3 วัน ติดต่อกัน โดยไม่ทราบสาเหตุ"){
+				var optionArray = ["10|-10"];
+
+			} else if (s1.value == "301 หนีคาบเรียนอยู่ในโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "302 ไม่เข้าร่วมกิจกรรมของโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "303 หนีคาบเรียนอยู่นอกโรงเรียน (กิจการนักเรียน)"){
+				var optionArray = ["20|-20"];
+
+			} else if (s1.value == "401 อยู่ในที่ลับสองต่อสองหรือสถานที่ไม่เหมาะสม"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "402 กระทำอนาจารในที่สาธารณะ"){
+				var optionArray = ["20|-20"];
+
+			} else if (s1.value == "403 ไปด้วยกันบ่อยๆ ส่อไปในทางเป็นชู้สาวพยายามล่วงเกินทางเพศ"){
+				var optionArray = ["80|-80"];
+
+			} else if (s1.value == "404 ชาย-หญิง อยู่กินเป็นสามีภรรยา (-100)"){
+				var optionArray = ["100|-100"];
+
+			} else if (s1.value == "405 เป็นผู้จัดหาบริการทางเพศ (-100)"){
+				var optionArray = ["100|-100"];
+
+			} 
+
+			for (var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newOption = document.createElement("option");
+				newOption.value = pair[0];
+				newOption.innerHTML = pair[1];
+				s2.options.add(newOption);
+			};
+		}
+		$('#basic').select2({
+			theme: "bootstrap"
+		},function populate(s1,s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHtml = "";
+
+			if (s1.value == "101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "102 สวมเสื้อนักเรียนของผู้อื่นมาโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "103 สักตามร่างกาย"){
+				var optionArray = ["|","20|-20"];
+
+			} else if (s1.value == "201 มาสายไม่ทันเคารพธงชาติ"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "202 ขาดเรียนเกิน 3 วัน ติดต่อกัน โดยไม่ทราบสาเหตุ"){
+				var optionArray = ["|","10|-10"];
+
+			} else if (s1.value == "301 หนีคาบเรียนอยู่ในโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "302 ไม่เข้าร่วมกิจกรรมของโรงเรียน"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "303 หนีคาบเรียนอยู่นอกโรงเรียน (กิจการนักเรียน)"){
+				var optionArray = ["|","20|-20"];
+
+			} else if (s1.value == "401 อยู่ในที่ลับสองต่อสองหรือสถานที่ไม่เหมาะสม"){
+				var optionArray = ["|","0|ตักเตือน","5|-5"];
+
+			} else if (s1.value == "402 กระทำอนาจารในที่สาธารณะ"){
+				var optionArray = ["|","20|-20"];
+
+			} else if (s1.value == "403 ไปด้วยกันบ่อยๆ ส่อไปในทางเป็นชู้สาวพยายามล่วงเกินทางเพศ"){
+				var optionArray = ["|","80|-80"];
+
+			} else if (s1.value == "404 ชาย-หญิง อยู่กินเป็นสามีภรรยา (-100)"){
+				var optionArray = ["|","100|-100"];
+
+			} else if (s1.value == "405 เป็นผู้จัดหาบริการทางเพศ (-100)"){
+				var optionArray = ["|","100|-100"];
+
+			} 
+
+			for (var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newOption = document.createElement("option");
+				newOption.value = pair[0];
+				newOption.innerHTML = pair[1];
+				s2.options.add(newOption);
+			};
+		}
+		);
+	</script>
+	
+	
+
 </body>
 
 </html>

@@ -324,8 +324,11 @@
 														<td align="center">{{$value->fullname}}</td>
 														<td align="center">{{$value->behavior_class}}/{{$value->behavior_room}}</td>
 														<td align="center">{{$value->behavior_history}}</td>
-														<td align="center">{{$value->etc}}</td>
-														<td align="center">{{$value->minus_score}}</td>
+														@if ($value->minus_score == "0")
+															<td align="center">ตักเตือน</td>
+														@else
+															<td align="center">{{$value->minus_score}}</td>
+														@endif
 														<td align="center">{{$value->plus_score}}</td>
 														<td align="center">{{$value->behavior_term}}</td>
 														<td align="center">{{$value->behavior_study_year}}</td>
