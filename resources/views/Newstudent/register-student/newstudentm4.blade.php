@@ -720,13 +720,13 @@
 
 										<!-- เลือกเรียนแผนการเรียนรู้ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>*เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 9 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*เลือกแผนการเรียนรู้ &nbsp;&nbsp;( เลือกแผนการเรียนรู้อันดับ 1 - 9 ตามลำดับที่ต้องการจะเรียนมากสุดไปน้อยสุด )</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 1</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name1" required>
+													<select class="form-control" id="slct1" name="major_name1" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -737,7 +737,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 2</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name2" required>
+													<select class="form-control" id="slct2" name="major_name2" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -748,7 +748,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 3</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name3" required>
+													<select class="form-control" id="slct3" name="major_name3" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -759,7 +759,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 4</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name4" required>
+													<select class="form-control" id="slct4" name="major_name4" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -770,7 +770,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 5</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name5" required>
+													<select class="form-control" id="slct5" name="major_name5" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -781,7 +781,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 6</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name6" required>
+													<select class="form-control" id="slct6" name="major_name6" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -792,7 +792,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 7</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name7" required>
+													<select class="form-control" id="slct7" name="major_name7" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -803,7 +803,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 8</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name8" required>
+													<select class="form-control" id="slct8" name="major_name8" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -814,7 +814,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*อันดับที่ 9</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="major_name9" required>
+													<select class="form-control" id="slct9" name="major_name9" onchange="getSelectValue(this.value);" required>
 														<option>เลือก</option>
 														@foreach ($data as $key => $value)
 														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
@@ -1014,6 +1014,36 @@
 	</script>
 
 	<script>
+		function getSelectValue(slct1){ 
+			if(slct1 != ''){
+				$("#slct2 option[value='"+slct1+"']").hide();
+
+			} if(slct1 != '' && slct2 != ''){ 
+				$("#slct3 option[value='"+slct1+"'], option[value='"+slct2+"']").hide();
+
+			} if(slct1 != '' && slct2 != '' && slct3 != ''){ 
+				$("#slct4 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"']").hide();
+
+			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != ''){ 
+				$("#slct5 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"']").hide();
+
+			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != ''){ 
+				$("#slct6 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"']").hide();
+				
+			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != ''){ 
+				$("#slct7 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"']").hide();
+				
+			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != '' && slct7 != ''){ 
+				$("#slct8 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"'], option[value='"+slct7+"']").hide();
+				
+			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != '' && slct7 != '' && slct8 != ''){ 
+				$("#slct9 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"'], option[value='"+slct7+"'], option[value='"+slct8+"']").hide();
+				
+			}
+		}
+	</script>
+
+	<script>
 		Circles.create({
 			id: 'circles-1',
 			radius: 45,
@@ -1107,6 +1137,9 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
+
+	
+	
 	
 </body>
 
