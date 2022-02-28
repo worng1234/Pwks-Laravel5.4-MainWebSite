@@ -29,8 +29,9 @@
 
 <body>
 
+    <h2>{{$nall}}</h2>
     <?php
-    echo "Today is " . date("Y-m-d") . "<br>";
+    echo "".gettype($nall)."";
     ?>
 
     <div>

@@ -190,11 +190,11 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
-                                    <div class="card-title fw-mediumbold">ตรวจสอบสถานะการสมัครเข้าเรียน</div>
+                                    <div class="card-title fw-mediumbold">สถานะการสมัครเข้าเรียน</div>
                                     <p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน ระดับชั้นมัธยมศึกษาปีที่ 4 โรงเรียนพร้าววิทยาคม</p><br><br>
                                    
-                                    <div class="table-responsive" >
-                                            <table class="table table-bordered table-striped table-hover" style="width:100%">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover" style="width:50%">
                                             <thead>
                                                 <th>
                                                     <center>เลขบัตรประจำตัวประชาชน</center>
@@ -205,19 +205,12 @@
                                                 <th>
                                                     <center>สถานะ</center>
                                                 </th>
-                                                <th>
-                                                    <center>ข้อมูล</center>
-                                                </th>
-                                                <th>
-                                                    <center>แก้ไขข้อมูล</center>
-                                                </th>
                                             </thead>
-                                                <tbody>
-                                                    @foreach ($datas as $data)
-                                                    <tr>
-                                                        <td align="center">{{$data->id_number}}</td>
-                                                        <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
-                                                        <td align="center">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center">{{$data->id_number}}</td>
+                                                    <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
+                                                    <td align="center">
                                                         @if ($data->status_rigis == '01')
                                                         <p style="color:green;">มีสิทธิ์สอบ</p>
                                                         @elseif ($data->status_rigis == '02')
@@ -226,18 +219,16 @@
                                                         <p style="color:red;">ไม่ผ่าน</p>
                                                         @endif
                                                     </td>
-                                                        <td align="center"><a href='{{ url("/ShowNewstudentM4/{$data->id}" )}}' class="btn btn-primary btn-xs" type="button"><i class="fas fa-file-alt btn-xs"></i></a></td>
-                                                        <td align="center"><a href='{{ url("/EditNewstudentM4/{$data->id}" )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
 
                                         </br>
                                     </br>
                                     <div class="card-title fw-mediumbold">สถานะหลักฐานการสมัคร</div>
-                                    <p class="card-category">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานชิ้นนั้นใหม่</p><br><br>
+                                    <p class="card-category" style="color:red;">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานชิ้นนั้นใหม่</p><br><br>
                                     </br>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover" style="width:100%">

@@ -175,7 +175,7 @@
 									<p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน </p>
 								</div>
 								<div class="card-footer" align="center"><br>
-									<a type="button" class="btn btn-info" href="{{ url('/check/statusM1')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+									<a type="button" class="btn btn-info" href="{{ url('/RegisM1/login')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
 								</div>
 							</div>
 						</div>

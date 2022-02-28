@@ -13,7 +13,7 @@ class talentstudentModel extends Model
         'final_school',
         'final_class',
         'avg_grade',
-        'f_subdistrict',
+        'f_sub_district',
         'f_district',
         'f_province',
         'like_subject1',

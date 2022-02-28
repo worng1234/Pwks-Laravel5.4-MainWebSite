@@ -126,7 +126,7 @@
                                         <a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+                                        <a href="{{ url('/check/status')}}">ตรวจสอบสถานะ</a>
                                     </li>
                                 </ul>
                             </div>
@@ -190,133 +190,52 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <div class="card-body" align="center" style="min-height: 450px">
-                                    <div class="card-title fw-mediumbold">สถานะการสมัครเข้าเรียน</div>
-                                    <p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน ระดับชั้นมัธยมศึกษาปีที่ 1 โรงเรียนพร้าววิทยาคม</p><br><br>
+                                <div class="card-body"  style="min-height: 450px">
+                                    <div class="card-title fw-mediumbold" align="center">ตรวจสอบสถานะการสมัครเข้าเรียนในระดับชั้นมัธยมศึกษาปีที่ 4</div>
+                                    <p class="card-category" align="center">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน โรงเรียนพร้าววิทยาคม</p><br><br>
 
-
-
-                                    <div class="table-responsive">
+                                    <div class="table-responsive" align="center">
                                         <table class="table table-bordered table-striped table-hover" style="width:50%">
                                             <thead>
-                                                <th>
+                                                <th width="10%">
                                                     <center>เลขบัตรประจำตัวประชาชน</center>
                                                 </th>
-                                                <th>
+                                                <th width="10%">
                                                     <center>ชื่อนาม-สกุล</center>
                                                 </th>
-                                                <th>
-                                                    <center>สถานะ</center>
+                                                <th width="5%">
+                                                    <center>สถานะการสมัคร</center>
+                                                </th>
+                                                <th width="5%">
+                                                    <center>สถานะการรายงานตัว</center>
+                                                </th>
+                                                <th width="5%">
+                                                    <center>ข้อมูลส่วนตัว</center>
                                                 </th>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td align="center">{{$data->id_number}}</td>
-                                                    <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
-                                                    <td align="center">
-                                                        @if ($data->status_rigis == '01')
-                                                        <p style="color:green;">มีสิทธิ์สอบ</p>
-                                                        @elseif ($data->status_rigis == '02')
-                                                        <p style="color:blue;">รอตรวจสอบ</p>
-                                                        @else
-                                                        <p style="color:red;">ไม่ผ่าน</p>
-                                                        @endif
-                                                    </td>
-                                                    
+                                                <tr align="center">
+                                                    <td>{{ Auth::guard('registerlogin_m4')->user()->username}}</td>
+                                                    <td>{{ Auth::guard('registerlogin_m4')->user()->prename}}{{ Auth::guard('registerlogin_m4')->user()->fname}} {{ Auth::guard('registerlogin_m4')->user()->surname}}</td>
+                                                    <td align="center"><a href='{{ url("/checkstatusM4", Auth::guard('registerlogin_m4')->user()->id )}}' class="btn btn-primary btn-xs" type="button"><i class="fa fa-file-alt fa-lg"></i></a></td>
+                                                    <td align="center"><a href='{{ url("/NewstudentdocumentM4", Auth::guard('registerlogin_m4')->user()->id )}}' class="btn btn-info btn-xs" type="button"><i class="fa fa-file-alt fa-lg"></i></a></td>
+                                                    <td align="center"><a href='{{ url("/EditNewstudentM4", Auth::guard('registerlogin_m4')->user()->id )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit fa-lg"></i></a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
 
-                                    </br>
-                                    </br>
-                                    <div class="card-title fw-mediumbold">สถานะหลักฐานการสมัคร</div>
-                                    <p class="card-category" style="color:red;">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานชิ้นนั้นใหม่</p><br><br>
-                                    </br>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-striped table-hover" style="width:100%">
-                                            <thead>
-                                                <th>
-                                                    <center>หลักฐาน</center>
-                                                </th>
-                                                <th>
-                                                    <center>รปูประจำตัว</center>
-                                                </th>
-                                                <th>
-                                                    <center>สำเนาบัตรประชาชน</center>
-                                                </th>
-                                                <th>
-                                                    <center>สำเนาทะเบียนบ้าน</center>
-                                                </th>
-                                                <th>
-                                                    <center>ใบ ปพ.1 หรือหนังสือรับรอง</br>การเป็นนักเรียน</center>
-                                                </th>
-                                                <th>
-                                                    <center>แก้ไขหลักฐาน</center>
-                                                </th>
-                                            </thead>
-                                            <tbody>
-                                                <td align="center">
-                                                    @if ($data->status_picall == '01')
-                                                    <p style="color:green;">ผ่าน</p>
-                                                    @elseif ($data->status_picall == '02')
-                                                    <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @elseif ($data->status_picall == '03')
-                                                    <p style="color:red;">ไม่ผ่าน</p>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td align="center">
-                                                    @if ($status->status_profile == '01')
-                                                    <p style="color:green;">ผ่าน</p>
-                                                    @elseif ($status->status_profile == '02')
-                                                    <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @elseif ($status->status_profile == '03')
-                                                    <p style="color:red;">ไม่ผ่าน</p>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td align="center">
-                                                    @if ($status->status_idcard_student == '01')
-                                                    <p style="color:green;">ผ่าน</p>
-                                                    @elseif ($status->status_idcard_student == '02')
-                                                    <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @elseif ($status->status_idcard_student == '03')
-                                                    <p style="color:red;">ไม่ผ่าน</p>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td align="center">
-                                                    @if ($status->status_house_student == '01')
-                                                    <p style="color:green;">ผ่าน</p>
-                                                    @elseif ($status->status_house_student == '02')
-                                                    <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @elseif ($status->status_house_student == '03')
-                                                    <p style="color:red;">ไม่ผ่าน</p>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td align="center">
-                                                    @if ($status->status_submit_student == '01')
-                                                    <p style="color:green;">ผ่าน</p>
-                                                    @elseif ($status->status_submit_student == '02')
-                                                    <p style="color:blue;">รอตรวจสอบ</p>
-                                                    @elseif ($status->status_submit_student == '03')
-                                                    <p style="color:red;">ไม่ผ่าน</p>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                                <td align="center"><a href='{{ url("/EditObjectM1/{$data->id}" )}}' class="btn btn-warning btn-xs" type="button"><i class="fas fa-edit btn-xs"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <br>
+                                    <div align="center">
+                                        <a class="btn btn-danger" href="{{ route('RegisM4.logout') }}" aria-expanded="false" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();" >
+                                            <i class="fas fa-unlock" ></i> ออกระบบ
+                                        </a>
+                                        <form id="logout-form" action="{{ route('RegisM4.logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
                                     </div>
-
+                                    
                                 </div>
                             </div>
                         </div>

@@ -36,9 +36,7 @@ Route::get('/Newstudent/documentIndex', function () {
 });
 
 //ส่งเอกสารรายงานตัว ม.1
-Route::get('/Newstudent/documentM1', function () {
-    return view('Newstudent.Newstudent-document.document-statusM1');
-});
+Route::get('/NewstudentdocumentM1/{id}', 'newstudentm1Controller@checkdocument');
 Route::post('/search/documentM1', 'newstudentm1Controller@searchdocument');
 
 Route::get('/Newstudent/documentM1onsubmit', function () {
@@ -49,9 +47,7 @@ Route::get('/documentPhotoM1/{id}', 'newstudentm1Controller@documentM1');
 Route::post('/editDocumentM1/{id}', 'newstudentm1Controller@editDocument');
 
 //ส่งเอกสารรายงานตัว ม.4
-Route::get('/Newstudent/documentM4', function () {
-    return view('Newstudent.Newstudent-document.document-statusM4');
-});
+Route::get('/NewstudentdocumentM4/{id}', 'newstudentm4Controller@checkdocument');
 Route::post('/search/documentM4', 'newstudentm4Controller@searchdocument');
 
 Route::get('/Newstudent/documentM4onsubmit', function () {
@@ -97,9 +93,7 @@ Route::get('/success/rigisM1', function () {
 });
 
 //ตรวจสอบสถานะการสมัครเข้าเรียน
-Route::get('/check/statusM1', function () {
-    return view('Newstudent.success-statuscheck.check-statusM1');
-});
+Route::get('/checkstatusM1/{id}', 'newstudentm1Controller@checkstatusM1');
 Route::post('/search/statusM1', 'newstudentm1Controller@searchstatus');
 
 Route::get('/check/statusM1onsubmit', function () {
@@ -162,9 +156,7 @@ Route::get('/success/rigisM4', function () {
 });
 
 //ตรวจสอบสถานะการสมัครเข้าเรียน
-Route::get('/check/statusM4', function () {
-    return view('Newstudent.success-statuscheck.check-statusM4');
-});
+Route::get('/checkstatusM4/{id}', 'newstudentm4Controller@checkstatusM4');
 
 Route::post('/search/statusM4', 'newstudentm4Controller@searchstatus');
 
@@ -289,6 +281,18 @@ Route::get('/student', 'StudentController@index')->name('student.dashboard');
 Route::get('/student/login', 'Auth\StudentLoginController@showLogin')->name('student.login');
 Route::post('/student/login', 'Auth\StudentLoginController@login')->name('student.login.submit');
 Route::post('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
+
+//RegisterLoginM1
+Route::get('/RegisM1', 'RegisterloginM1Controller@index')->name('RegisM1.dashboard');
+Route::get('/RegisM1/login', 'Auth\RegisterloginsM1Controller@showLogin')->name('RegisM1.login');
+Route::post('/RegisM1/login', 'Auth\RegisterloginsM1Controller@login')->name('RegisM1.login.submit');
+Route::post('/RegisM1/logout', 'Auth\RegisterloginsM1Controller@logout')->name('RegisM1.logout');
+
+//RegisterLoginM4
+Route::get('/RegisM4', 'RegisterloginM4Controller@index')->name('RegisM4.dashboard');
+Route::get('/RegisM4/login', 'Auth\RegisterloginsM4Controller@showLogin')->name('RegisM4.login');
+Route::post('/RegisM4/login', 'Auth\RegisterloginsM4Controller@login')->name('RegisM4.login.submit');
+Route::post('/RegisM4/logout', 'Auth\RegisterloginsM4Controller@logout')->name('RegisM4.logout');
 
 
 //AffairLogin

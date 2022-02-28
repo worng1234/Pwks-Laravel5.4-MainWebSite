@@ -905,7 +905,7 @@
                                             </div>
                                         </div>
                                         <div hidden>
-                                            <input type="text" name="idNumber" value="{{$data1->idNumber}}">
+                                            <input type="text" name="id_number" value="{{$data1->id_number}}">
                                         </div>
 
                                         <div class="card-footer" align="center">

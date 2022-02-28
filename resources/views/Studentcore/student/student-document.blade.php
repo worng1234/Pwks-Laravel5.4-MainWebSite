@@ -276,7 +276,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->house_student !== NULL)
-                                                <a href='{{ url("ImgAll/house_regis/house_student", $data2->house_student)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/house_regis/house_student", $data2->house_student)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadHouseStudent", $data2->house_student)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
                                                 @endif
@@ -301,7 +301,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->student_submit !== NULL)
-                                                <a href='{{ url("ImgAll/student_submit", $data2->student_submit)}}' class="btn btn-secondary "><i class="fa fa-user-graduate fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/student_submit", $data2->student_submit)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-user-graduate fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadStudentSubmite", $data2->student_submit)}}' class="btn btn-secondary disabled"><i class="fa fa-user-graduate fa-lg"></i></a>
                                                 @endif
@@ -329,7 +329,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->id_card_father !== NULL)
-                                                <a href='{{ url("ImgAll/id_card/id_card_father", $data2->id_card_father)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/id_card/id_card_father", $data2->id_card_father)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadIdFather", $data2->id_card_father)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @endif
@@ -355,7 +355,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->id_card_mother !== NULL)
-                                                <a href='{{ url("ImgAll/id_card/id_card_mother", $data2->id_card_mother)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/id_card/id_card_mother", $data2->id_card_mother)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadIdMother", $data2->id_card_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @endif
@@ -384,7 +384,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->house_father !== NULL)
-                                                <a href='{{ url("ImgAll/house_regis/house_father", $data2->house_father)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/house_regis/house_father", $data2->house_father)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadHouseFather", $data2->house_father)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
                                                 @endif
@@ -409,7 +409,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->house_mother !== NULL)
-                                                <a href='{{ url("ImgAll/house_regis/house_mother", $data2->house_mother)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/house_regis/house_mother", $data2->house_mother)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadHouseMother", $data2->house_mother)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
                                                 @endif
@@ -439,7 +439,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->id_card_parent !== NULL)
-                                                <a href='{{ url("ImgAll/id_card/id_card_parent", $data2->id_card_parent)}}' class="btn btn-secondary "><i class="fa fa-id-badge fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/id_card/id_card_parent", $data2->id_card_parent)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadIdParent", $data2->id_card_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-id-badge fa-lg"></i></a>
                                                 @endif
@@ -464,7 +464,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->house_parent !== NULL)
-                                                <a href='{{ url("ImgAll/house_regis/house_parent", $data2->house_parent)}}' class="btn btn-secondary "><i class="fa fa-file fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/house_regis/house_parent", $data2->house_parent)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadHouseParent", $data2->house_parent)}}' class="btn btn-secondary disabled"><i class="fa fa-file fa-lg"></i></a>
                                                 @endif
@@ -494,7 +494,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->front_grade !== NULL)
-                                                <a href='{{ url("ImgAll/front_grade", $data2->front_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/front_grade", $data2->front_grade)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file-contract fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadFrontGrade", $data2->front_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
                                                 @endif
@@ -519,7 +519,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->back_grade !== NULL)
-                                                <a href='{{ url("ImgAll/back_grade", $data2->back_grade)}}' class="btn btn-secondary "><i class="fa fa-file-contract fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/back_grade", $data2->back_grade)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file-contract fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadBackGrade", $data2->back_grade)}}' class="btn btn-secondary disabled"><i class="fa fa-file-contract fa-lg"></i></a>
                                                 @endif
@@ -544,7 +544,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->birth_certificate !== NULL)
-                                                <a href='{{ url("ImgAll/birth_certificate", $data2->birth_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-alt fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/birth_certificate", $data2->birth_certificate)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file-alt fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadBirth", $data2->birth_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-alt fa-lg"></i></a>
                                                 @endif
@@ -574,7 +574,7 @@
                                         <div class="col-sm-3 col-md-1">
                                             <div class="form-group ">
                                                 @if ($data2->disability_certificate !== NULL)
-                                                <a href='{{ url("ImgAll/disability_certificate", $data2->disability_certificate)}}' class="btn btn-secondary "><i class="fa fa-file-medical-alt fa-lg"></i></a>
+                                                <a href='{{ url("ImgAll/disability_certificate", $data2->disability_certificate)}}' class="btn btn-secondary " target="_blank"><i class="fa fa-file-medical-alt fa-lg"></i></a>
                                                 @else
                                                 <a href='{{ url("/DownloadDisability", $data2->disability_certificate)}}' class="btn btn-secondary disabled"><i class="fa fa-file-medical-alt fa-lg"></i></a>
                                                 @endif

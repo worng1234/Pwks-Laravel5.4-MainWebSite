@@ -103,11 +103,9 @@
 										<a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
 									</li>
 									<li>
-										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะ</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
+									
 								</ul>
 							</div>
 						</li>

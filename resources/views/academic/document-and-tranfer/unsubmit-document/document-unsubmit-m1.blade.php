@@ -521,7 +521,7 @@
 											<tbody>
 												@foreach ($data as $key => $value)
 												<tr>
-													<td align="center">{{$value->idNumber}}</td>
+													<td align="center">{{$value->id_number}}</td>
 													<td>{{$value->prename}}{{$value->fname}} {{$value->surname}}</td>
 													<td align="center">
                                                         @if ($value->status_report == '02')

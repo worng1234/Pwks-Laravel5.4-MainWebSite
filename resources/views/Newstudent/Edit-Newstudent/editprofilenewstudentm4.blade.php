@@ -235,9 +235,9 @@
 												<div class="form-group form-group-default">
 													<label>เดือน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
-                                                        <option value="01" <?php if ($newstudentm4Model->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
-                                                        <option value="02" <?php if ($newstudentm4Model->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
-                                                        <option value="03" <?php if ($newstudentm4Model->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
+														<option value="01" <?php if ($newstudentm4Model->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
+														<option value="02" <?php if ($newstudentm4Model->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
+														<option value="03" <?php if ($newstudentm4Model->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
 														<option value="04" <?php if ($newstudentm4Model->mounth == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
 														<option value="05" <?php if ($newstudentm4Model->mounth == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
 														<option value="06" <?php if ($newstudentm4Model->mounth == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
@@ -247,16 +247,16 @@
 														<option value="10" <?php if ($newstudentm4Model->mounth == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
 														<option value="11" <?php if ($newstudentm4Model->mounth == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
 														<option value="12" <?php if ($newstudentm4Model->mounth == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
-                                                    </select>
+													</select>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>วัน:</label>
 													<select class="form-control" id="formGroupDefaultSelect" name="day">
-                                                        <option value="01" <?php if ($newstudentm4Model->day == "01") { ?> selected="selected" <?php } ?>>1</option>
-                                                        <option value="02" <?php if ($newstudentm4Model->day == "02") { ?> selected="selected" <?php } ?>>2</option>
-                                                        <option value="03" <?php if ($newstudentm4Model->day == "03") { ?> selected="selected" <?php } ?>>3</option>
+														<option value="01" <?php if ($newstudentm4Model->day == "01") { ?> selected="selected" <?php } ?>>1</option>
+														<option value="02" <?php if ($newstudentm4Model->day == "02") { ?> selected="selected" <?php } ?>>2</option>
+														<option value="03" <?php if ($newstudentm4Model->day == "03") { ?> selected="selected" <?php } ?>>3</option>
 														<option value="04" <?php if ($newstudentm4Model->day == "04") { ?> selected="selected" <?php } ?>>4</option>
 														<option value="05" <?php if ($newstudentm4Model->day == "05") { ?> selected="selected" <?php } ?>>5</option>
 														<option value="06" <?php if ($newstudentm4Model->day == "06") { ?> selected="selected" <?php } ?>>6</option>
@@ -285,7 +285,7 @@
 														<option value="29" <?php if ($newstudentm4Model->day == "29") { ?> selected="selected" <?php } ?>>29</option>
 														<option value="30" <?php if ($newstudentm4Model->day == "30") { ?> selected="selected" <?php } ?>>30</option>
 														<option value="31" <?php if ($newstudentm4Model->day == "31") { ?> selected="selected" <?php } ?>>31</option>
-                                                    </select>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -611,14 +611,38 @@
 												<div class="form-check">
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
-															<label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
-															<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->poor_person}}" name="poor_person">
+															<label>*ความพิการ</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+																<option value="ไม่มี" <?php if ($newstudentm1Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="การมองเห็น" <?php if ($newstudentm1Model->disabled == "การมองเห็น") { ?> selected="selected" <?php } ?>>การมองเห็น</option>
+																<option value="การได้ยิน" <?php if ($newstudentm1Model->disabled == "การได้ยิน") { ?> selected="selected" <?php } ?>>การได้ยิน</option>
+																<option value="สติปัญญา" <?php if ($newstudentm1Model->disabled == "สติปัญญา") { ?> selected="selected" <?php } ?>>สติปัญญา</option>
+																<option value="ร่างกาย/สุขภาพ" <?php if ($newstudentm1Model->disabled == "ร่างกาย/สุขภาพ") { ?> selected="selected" <?php } ?>>ร่างกาย/สุขภาพ</option>
+																<option value="การเรียนรู้" <?php if ($newstudentm1Model->disabled == "การเรียนรู้") { ?> selected="selected" <?php } ?>>การเรียนรู้</option>
+																<option value="การพูด/ภาษา" <?php if ($newstudentm1Model->disabled == "การพูด/ภาษา") { ?> selected="selected" <?php } ?>>การพูด/ภาษา</option>
+																<option value="พฤติกรรม/อารมณ์" <?php if ($newstudentm1Model->disabled == "พฤติกรรม/อารมณ์") { ?> selected="selected" <?php } ?>>พฤติกรรม/อารมณ์</option>
+																<option value="ออทิสติค" <?php if ($newstudentm1Model->disabled == "ออทิสติค") { ?> selected="selected" <?php } ?>>ออทิสติค</option>
+																<option value="พิการซ้ำซ้อน" <?php if ($newstudentm1Model->disabled == "พิการซ้ำซ้อน") { ?> selected="selected" <?php } ?>>พิการซ้ำซ้อน</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
-															<label>ผู้พิการ/เด็กพิเศษ</label>
-															<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->disabled}}" name="disabled">
+															<label>*ความด้อยโอกาส</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
+																<option value="ไม่มี" <?php if ($newstudentm1Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="ถูกบังคับขายแรงงาน" <?php if ($newstudentm1Model->disabled == "ถูกบังคับขายแรงงาน") { ?> selected="selected" <?php } ?>>ถูกบังคับขายแรงงาน</option>
+																<option value="อยู่ในธุรกิจทางเพศ" <?php if ($newstudentm1Model->disabled == "อยู่ในธุรกิจทางเพศ") { ?> selected="selected" <?php } ?>>อยู่ในธุรกิจทางเพศ</option>
+																<option value="ถูกทอดทิ้ง" <?php if ($newstudentm1Model->disabled == "ถูกทอดทิ้ง") { ?> selected="selected" <?php } ?>>ถูกทอดทิ้ง</option>
+																<option value="เด็กเร่ร่อน" <?php if ($newstudentm1Model->disabled == "เด็กเร่ร่อน") { ?> selected="selected" <?php } ?>>เด็กเร่ร่อน</option>
+																<option value="ได้รับผลกระทบจากเอดส์" <?php if ($newstudentm1Model->disabled == "ได้รับผลกระทบจากเอดส์") { ?> selected="selected" <?php } ?>>ได้รับผลกระทบจากเอดส์</option>
+																<option value="ชนกลุ่มน้อย" <?php if ($newstudentm1Model->disabled == "ชนกลุ่มน้อย") { ?> selected="selected" <?php } ?>>ชนกลุ่มน้อย</option>
+																<option value="ถูกทำร้ายทารุณ" <?php if ($newstudentm1Model->disabled == "ถูกทำร้ายทารุณ") { ?> selected="selected" <?php } ?>>ถูกทำร้ายทารุณ</option>
+																<option value="เด็กยากจน" <?php if ($newstudentm1Model->disabled == "เด็กยากจน") { ?> selected="selected" <?php } ?>>เด็กยากจน</option>
+																<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด" <?php if ($newstudentm1Model->disabled == "เด็กที่มีปัญหาเกี่ยวกับยาเสพติด") { ?> selected="selected" <?php } ?>>เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+																<option value="เด็กกำพร้า" <?php if ($newstudentm1Model->disabled == "เด็กกำพร้า") { ?> selected="selected" <?php } ?>>เด็กกำพร้า</option>
+																<option value="ทำงานรับผิดชอบตนเองและครอบครัว" <?php if ($newstudentm1Model->disabled == "ทำงานรับผิดชอบตนเองและครอบครัว") { ?> selected="selected" <?php } ?>>ทำงานรับผิดชอบตนเองและครอบครัว</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
@@ -640,23 +664,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 1</label>
 													@if ($newstudentm4Model->major_name1 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name1 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name1 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name1 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name1 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name1 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name1 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name1 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name1 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -664,23 +688,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 2</label>
 													@if ($newstudentm4Model->major_name2 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name2 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name2 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name2 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name2 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name2 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name2 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name2 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name2 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -688,23 +712,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 3</label>
 													@if ($newstudentm4Model->major_name3 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name3 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name3 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name3 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name3 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name3 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name3 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name3 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name3 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -712,23 +736,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 4</label>
 													@if ($newstudentm4Model->major_name4 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name4 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name4 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name4 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name4 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name4 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name4 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name4 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name4 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -736,23 +760,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 5</label>
 													@if ($newstudentm4Model->major_name5 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name5 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name5 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name5 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name5 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name5 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name5 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name5 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name5 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -760,23 +784,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 6</label>
 													@if ($newstudentm4Model->major_name6 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name6 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name6 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name6 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name6 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name6 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name6 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name6 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name6 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -784,23 +808,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 7</label>
 													@if ($newstudentm4Model->major_name7 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name7 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name7 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name7 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name7 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name7 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name7 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name7 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name7 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -808,23 +832,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 8</label>
 													@if ($newstudentm4Model->major_name8 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name8 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name8 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name8 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name8 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name8 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name8 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name8 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name8 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -832,23 +856,23 @@
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 9</label>
 													@if ($newstudentm4Model->major_name9 == '01')
-													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์" >
 													@elseif ($newstudentm4Model->major_name9 == '02')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ" >
 													@elseif ($newstudentm4Model->major_name9 == '03')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน" >
 													@elseif ($newstudentm4Model->major_name9 == '04')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)" >
 													@elseif ($newstudentm4Model->major_name9 == '05')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)" >
 													@elseif ($newstudentm4Model->major_name9 == '06')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)" >
 													@elseif ($newstudentm4Model->major_name9 == '07')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)" >
 													@elseif ($newstudentm4Model->major_name9 == '08')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)" >
 													@elseif ($newstudentm4Model->major_name9 == '09')
-													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)" >
 													@endif
 												</div>
 											</div>
@@ -857,7 +881,7 @@
 										<div class="card-footer" align="center">
 											<p style="text-align:center">หากทำการแก้ไขข้อมูลเรียบร้อยแล้ว<br>
 												ให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-											<button type="submit" class="btn btn-success" ><strong>ยืนยัน</strong></button>
+											<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
 											<a href='{{ url("/ShowNewstudentM4/{$newstudentm4Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 										</div><br>
 									</div>
@@ -1082,8 +1106,8 @@
 									}
 								}
 							}).then(function() {
-							window.location = '/check/statusM4';
-						});
+								window.location = '/check/statusM4';
+							});
 						} else {
 							swal.close();
 						}

@@ -213,7 +213,7 @@
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ชื่อกลาง</label>
-													<input name="nameCen" type="text" class="form-control" placeholder="(ถ้ามี)">
+													<input name="name_cen" type="text" class="form-control" placeholder="(ถ้ามี)">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
@@ -227,7 +227,7 @@
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
 													<label>*เลขประจำตัวประชาชน</label>
-													<input name="idNumber" type="text" class="form-control" placeholder="" required>
+													<input name="id_number" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -263,6 +263,11 @@
 														<option value="2558">2558</option>
 														<option value="2559">2559</option>
 														<option value="2560">2560</option>
+														<option value="2561">2561</option>
+														<option value="2562">2562</option>
+														<option value="2563">2563</option>
+														<option value="2564">2564</option>
+														<option value="2565">2565</option>
 													</select>
 												</div>
 											</div>
@@ -371,7 +376,7 @@
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
 													<label>*บ้านเลขที่</label>
-													<input name="houseNumber" type="text" class="form-control" placeholder="">
+													<input name="house_number" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
@@ -397,7 +402,7 @@
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
 													<label>*ตำบล/แขวง</label>
-													<input name="subDistrict" type="text" class="form-control" placeholder="">
+													<input name="sub_district" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
@@ -444,19 +449,19 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input name="fatherName" type="text" class="form-control" placeholder="">
+													<input name="father_name" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ชื่อกลาง</label>
-													<input name="fatherNamecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+													<input name="father_namecen" type="text" class="form-control" placeholder="(ถ้ามี)">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input name="fatherSurname" type="text" class="form-control" placeholder="">
+													<input name="father_surname" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 										</div>
@@ -464,19 +469,19 @@
 											<div class="col-sm-6 col-md-5">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input name="fatherId" type="text" class="form-control" placeholder="">
+													<input name="father_id" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
 													<label>อาชีพ</label>
-													<input name="fatherJob" type="text" class="form-control" placeholder="">
+													<input name="father_job" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="fatherTel" type="text" class="form-control" placeholder="">
+													<input name="father_tel" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 										</div>
@@ -500,19 +505,19 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input name="motherName" type="text" class="form-control" placeholder="">
+													<input name="mother_name" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ชื่อกลาง</label>
-													<input name="motherNamecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+													<input name="mother_namecen" type="text" class="form-control" placeholder="(ถ้ามี)">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input name="motherSurname" type="text" class="form-control" placeholder="">
+													<input name="mother_surname" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 										</div>
@@ -520,19 +525,19 @@
 											<div class="col-sm-6 col-md-5">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input name="motherId" type="text" class="form-control" placeholder="">
+													<input name="mother_id" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-3">
 												<div class="form-group form-group-default">
 													<label>อาชีพ</label>
-													<input name="motherJob" type="text" class="form-control" placeholder="">
+													<input name="mother_job" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="motherTel" type="text" class="form-control" placeholder="">
+													<input name="mother_tel" type="text" class="form-control" placeholder="">
 												</div>
 											</div>
 										</div>
@@ -572,19 +577,19 @@
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group form-group-default">
 														<label>ชื่อภาษาไทย</label>
-														<input name="parentName" type="text" class="form-control" placeholder="">
+														<input name="parent_name" type="text" class="form-control" placeholder="">
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-2">
 													<div class="form-group form-group-default">
 														<label>ชื่อกลาง</label>
-														<input name="parentNamecen" type="text" class="form-control" placeholder="(ถ้ามี)">
+														<input name="parent_namecen" type="text" class="form-control" placeholder="(ถ้ามี)">
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group form-group-default">
 														<label>นามสกุลภาษาไทย</label>
-														<input name="parentSurname" type="text" class="form-control" placeholder="">
+														<input name="parent_surname" type="text" class="form-control" placeholder="">
 													</div>
 												</div>
 											</div>
@@ -592,7 +597,7 @@
 												<div class="col-sm-6 col-md-12">
 													<div class="form-group form-group-default">
 														<label>เลขประจำตัวประชาชน</label>
-														<input name="parentId" type="text" class="form-control" placeholder="">
+														<input name="parent_id" type="text" class="form-control" placeholder="">
 													</div>
 												</div>
 											</div>
@@ -606,13 +611,13 @@
 												<div class="col-6 col-md-4">
 													<div class="form-group form-group-default">
 														<label>อาชีพ</label>
-														<input name="parentJob" type="text" class="form-control" placeholder="">
+														<input name="parent_job" type="text" class="form-control" placeholder="">
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group form-group-default">
 														<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-														<input name="parentTel" type="text" class="form-control" placeholder="">
+														<input name="parent_tel" type="text" class="form-control" placeholder="">
 													</div>
 												</div>
 											</div>
@@ -633,7 +638,7 @@
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
 													<label>*ชื่อโรงเรียนเดิม </label>
-													<input name="finalSchool" type="text" class="form-control" placeholder="" required>
+													<input name="final_school" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -641,19 +646,19 @@
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>*ตำบล/แขวง</label>
-													<input name="finalSchoolSubDistrict" type="text" class="form-control" placeholder="" required>
+													<input name="final_school_sub_district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>*อำเภอ/เขต</label>
-													<input name="finalSchoolDistrict" type="text" class="form-control" placeholder="" required>
+													<input name="final_school_district" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>*จังหวัด</label>
-													<input name="finalSchoolProvince" type="text" class="form-control" placeholder="" required>
+													<input name="final_school_province" type="text" class="form-control" placeholder="" required>
 												</div>
 											</div>
 										</div>
@@ -685,7 +690,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*ความด้อยโอกาส</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson" required>
+													<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>

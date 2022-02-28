@@ -532,8 +532,8 @@
 											<tbody>
 												@foreach ($datas->all() as $data)
 												<tr>
-													<td>{{$data->prename}}{{$data->fname}} {{$data->nameCen}} {{$data->surname}}</td>
-													<td align="center">{{$data->finalSchool}}</td>
+													<td>{{$data->prename}}{{$data->fname}} {{$data->name_cen}} {{$data->surname}}</td>
+													<td align="center">{{$data->final_school}}</td>
 													<td align="center">
 														@if ($data->status_picall == '01')
 															<p style="color:green;">ผ่าน</p>

@@ -1211,7 +1211,7 @@ class AcademicsController extends Controller
             ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('id_number', 'like', '%' . $search . '%')
                 ->where('status_report', '=', '02')
                 ->where('status_tranfer', '=', '02')
                 ->get();
@@ -1242,7 +1242,7 @@ class AcademicsController extends Controller
             ->first();
 
         $data1 = newstudentm1Model::find($id);
-        $findID = $data1->idNumber;
+        $findID = $data1->id_number;
 
         $data2 = DB::table('photo_student')
             ->where('student_idcard', '=', $findID)
@@ -1273,7 +1273,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1290,7 +1290,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1304,7 +1304,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1320,7 +1320,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1333,7 +1333,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1348,7 +1348,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1361,7 +1361,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1375,7 +1375,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1389,7 +1389,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1405,7 +1405,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1417,7 +1417,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
                     'status_house_parent' => $request->get('status_house_parent'),
@@ -1430,7 +1430,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1442,7 +1442,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_parent' => $request->get('status_idcard_parent'),
                     'status_house_parent' => $request->get('status_house_parent'),
@@ -1454,7 +1454,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1467,7 +1467,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1482,7 +1482,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1495,7 +1495,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1509,7 +1509,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1521,7 +1521,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1534,7 +1534,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1546,7 +1546,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
                     'status_house_mother' => $request->get('status_house_mother'),
@@ -1558,7 +1558,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1571,7 +1571,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1585,7 +1585,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1598,7 +1598,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1612,7 +1612,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1624,7 +1624,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1637,7 +1637,7 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
@@ -1649,7 +1649,7 @@ class AcademicsController extends Controller
         ) {
 
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_house_father' => $request->get('status_house_father'),
@@ -1661,14 +1661,14 @@ class AcademicsController extends Controller
             $status_report = "01";
             $status_tranfer = "02";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                     'status_tranfer' => $status_tranfer,
                 ]);
         } else {
             $status = DB::table('status_pic')
-                ->where('student_idcard', '=', $request->get('idNumber'))
+                ->where('student_idcard', '=', $request->get('id_number'))
                 ->update([
                     'status_idcard_father' => $request->get('status_idcard_father'),
                     'status_idcard_mother' => $request->get('status_idcard_mother'),
@@ -1684,7 +1684,7 @@ class AcademicsController extends Controller
 
             $status_report = "03";
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', '=', $request->get('idNumber'))
+                ->where('id_number', '=', $request->get('id_number'))
                 ->update([
                     'status_report' => $status_report,
                 ]);
@@ -1700,7 +1700,7 @@ class AcademicsController extends Controller
             ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('id_number', 'like', '%' . $search . '%')
                 ->where('status_report', '=', '01')
                 ->where('status_tranfer', '=', '02')
                 ->get();
@@ -1758,7 +1758,7 @@ class AcademicsController extends Controller
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('id_number', 'like', '%' . $search . '%')
                 ->where('status_report', 'like', '%' . $search2 . '%')
                 ->where('student_year', 'like', '%' . $search3 . '%')
                 ->where('status_tranfer', '=', '02')
@@ -1834,7 +1834,7 @@ class AcademicsController extends Controller
             "group" => $request->get('group'),
             "alley" => $request->get('alley'),
             "street" => $request->get('street'),
-            "subdistrict" => $request->get('subdistrict'),
+            "sub_district" => $request->get('sub_district'),
             "district" => $request->get('district'),
             "province" => $request->get('province'),
             "post" => $request->get('post'),
@@ -1847,7 +1847,7 @@ class AcademicsController extends Controller
         talentstudentModel::create([
             "student_idcard_t" => $request->get('student_id_card'),
             "final_school" => $request->get('final_school'),
-            "f_subdistrict" => $request->get('f_subdistrict'),
+            "f_sub_district" => $request->get('f_sub_district'),
             "f_district" => $request->get('f_district'),
             "f_province" => $request->get('f_province'),
         ]);
@@ -2533,7 +2533,7 @@ class AcademicsController extends Controller
             "group" => $request->get('group'),
             "alley" => $request->get('alley'),
             "street" => $request->get('street'),
-            "subdistrict" => $request->get('subdistrict'),
+            "sub_district" => $request->get('sub_district'),
             "district" => $request->get('district'),
             "province" => $request->get('province'),
             "post" => $request->get('post'),
@@ -2546,7 +2546,7 @@ class AcademicsController extends Controller
         talentstudentModel::create([
             "student_idcard_t" => $request->get('student_id_card'),
             "final_school" => $request->get('final_school'),
-            "f_subdistrict" => $request->get('f_subdistrict'),
+            "f_sub_district" => $request->get('f_sub_district'),
             "f_district" => $request->get('f_district'),
             "f_province" => $request->get('f_province'),
         ]);
@@ -2605,7 +2605,7 @@ class AcademicsController extends Controller
             ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
-                ->where('idNumber', 'like', '%' . $search . '%')
+                ->where('id_number', 'like', '%' . $search . '%')
                 ->where('status_tranfer', '=', '01')
                 ->get();
 
@@ -2635,7 +2635,7 @@ class AcademicsController extends Controller
             ->first();
 
         $data1 = newstudentm1Model::find($id);
-        $findID = $data1->idNumber;
+        $findID = $data1->id_number;
 
         $data2 = DB::table('photo_student')
             ->where('student_idcard', '=', $findID)

@@ -190,8 +190,9 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
-                                <div class="card-title fw-mediumbold">กรอกเลขประจำตัวประชาชน</div>
-                                    <p class="card-category">เพื่อตรวจสอบสิทธิ์ในการยื่นเอกสารรายงานตัวเพื่อเข้าเป็นนักเรียนในระดับชั้นมัธยมศึกษาปีที่ 1</p><br><br><br><br>
+                                <div class="card-title fw-mediumbold">สถานะหลักฐานรายงานตัว</div>
+                                    <p class="card-category">เพื่อตรวจสอบสิทธิ์ในการยื่นเอกสารรายงานตัวเพื่อเข้าเป็นนักเรียนในระดับชั้นมัธยมศึกษาปีที่ 1</p>
+                                    <p class="card-category" style="color:red;">*หากสถานะขึ้นว่า "ยังไม่ได้ส่งหลักฐาน" หรือยังไม่ได้ทำการส่งหลักฐานรายงานตัว ให้กดที่ปุ่มในหัวข้อ "ส่งหลักฐาน"</p><br><br><br><br>
                                    
                                     <div class="table-responsive" >
                                             <table class="table table-bordered table-striped table-hover" style="width:100%">
@@ -203,9 +204,8 @@
                                                     <th><center>ส่งหลักฐาน</center></th>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($datas as $data)
                                                     <tr>
-                                                        <td align="center">{{$data->idNumber}}</td>
+                                                        <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
                                                         <td align="center">
                                                             @if ($data->status_tranfer == '01')
@@ -231,7 +231,6 @@
                                                         </td>
                                                         <td align="center"><a href='{{ url("/documentPhotoM1/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
                                                     </tr>
-                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -239,7 +238,7 @@
                                     </br>
                                     </br>
                                     <div class="card-title fw-mediumbold">สถานะหลักฐานการรายงานตัว</div>
-                                    <p class="card-category">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" แล้วทำการอัพโหลดหลักฐานที่ไม่ผ่านใหม่</p><br><br>
+                                    <p class="card-category" style="color:red;">*หากมีหลักฐานที่ตรวจสอบแล้วไม่ผ่านให้ทำการกด ปุ่มในช่อง "แก้ไขหลักฐาน" (ช่องหลักสุดของตารางนี้) แล้วทำการอัพโหลดหลักฐานที่ไม่ผ่านใหม่</p><br><br>
                                     </br>
 
 

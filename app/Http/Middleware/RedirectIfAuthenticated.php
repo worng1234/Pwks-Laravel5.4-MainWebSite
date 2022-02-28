@@ -41,6 +41,16 @@ class RedirectIfAuthenticated
                     return redirect()->route('student.dashboard');
                 }
                 break;
+            case 'registerlogin_m1':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('RegisM1.dashboard');
+                }
+                break;
+            case 'registerlogin_m4':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('RegisM4.dashboard');
+                }
+                break;
 
             default:
                 if (Auth::guard($guard)->check()) {

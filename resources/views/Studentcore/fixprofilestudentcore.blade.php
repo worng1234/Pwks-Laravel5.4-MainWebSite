@@ -516,7 +516,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict" value="{{$addressstudent->subdistrict}}">
+                                                        <input type="text" class="form-control" placeholder="" name="sub_district" value="{{$addressstudent->sub_district}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
@@ -588,7 +588,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_n" value="{{$addressstudent->subdistrict_n}}">
+                                                        <input type="text" class="form-control" placeholder="" name="sub_district_n" value="{{$addressstudent->sub_district_n}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
@@ -642,7 +642,7 @@
                                                 <div class="col-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="f_subdistrict" value="{{$talentstudent->f_subdistrict}}">
+                                                        <input type="text" class="form-control" placeholder="" name="f_sub_district" value="{{$talentstudent->f_sub_district}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4">
@@ -1103,7 +1103,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_f" value="{{$parentstudentModel->subdistrict_f}}">
+                                                        <input type="text" class="form-control" placeholder="" name="sub_district_f" value="{{$parentstudentModel->sub_district_f}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
@@ -1238,7 +1238,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_m" value="{{$parentstudentModel->subdistrict_m}}">
+                                                        <input type="text" class="form-control" placeholder="" name="sub_district_m" value="{{$parentstudentModel->sub_district_m}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">
@@ -1381,7 +1381,7 @@
                                                 <div class="col-6 col-md-3">
                                                     <div class="form-group form-group-default">
                                                         <label>ตำบล/แขวง</label>
-                                                        <input type="text" class="form-control" placeholder="" name="subdistrict_p" value="{{$parentstudentModel->subdistrict_p}}">
+                                                        <input type="text" class="form-control" placeholder="" name="sub_district_p" value="{{$parentstudentModel->sub_district_p}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-3">

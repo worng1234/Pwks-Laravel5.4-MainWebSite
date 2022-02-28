@@ -661,7 +661,7 @@
                                             <div class="col-6 col-md-3">
                                                 <div class="form-group form-group-default">
                                                     <label>ตำบล/แขวง</label>
-                                                    <input name="subdistrict" type="text" class="form-control" placeholder="" value="{{$data->sub_district}}" readonly>
+                                                    <input name="sub_district" type="text" class="form-control" placeholder="" value="{{$data->sub_district}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-6 col-md-3">
@@ -876,7 +876,7 @@
                                             <div class="col-6 col-md-4">
                                                 <div class="form-group form-group-default">
                                                     <label>ตำบล/แขวง</label>
-                                                    <input name="f_subdistrict" type="text" class="form-control" placeholder="" value="{{$data->final_school_sub_district}}" readonly>
+                                                    <input name="f_sub_district" type="text" class="form-control" placeholder="" value="{{$data->final_school_sub_district}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-6 col-md-4">

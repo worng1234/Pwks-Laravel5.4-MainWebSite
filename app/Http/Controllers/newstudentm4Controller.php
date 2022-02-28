@@ -6,6 +6,7 @@ use App\Models\newstudentm4Model;
 use App\Models\photostudentModel;
 use App\Models\statuspicModel;
 use App\Models\classmajorModel;
+use App\RegisterloginM4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -1766,6 +1767,14 @@ class newstudentm4Controller extends Controller
                 "date" => $date
             ]);
             $post->save();
+
+            RegisterloginM4::create([
+                'prename' => $request->get('prename'),
+                'fname' => $request->get('fname'),
+                'surname' => $request->get('surname'),
+                'username' => $request->get('id_number'),
+                'password' => bcrypt($request->get('day').$request->get('mounth').$request->get('year')),
+            ]);
             return redirect('/Success/RegisterM1');
         } else {
             return redirect('/Unsuccess/RegisterM1');
@@ -2196,6 +2205,40 @@ class newstudentm4Controller extends Controller
             return view('Newstudent.success-statuscheck.check-statusM4-notsubmit');
         }
         
+    }
+
+    public function checkstatusM4($id)
+    {
+        $findID = RegisterloginM4::find($id);
+        $data = DB::table('new_student_register_m4')
+            ->where('id_number', '=', $findID->username)
+            ->first();
+
+        $status = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID->username)
+            ->first();
+
+        return view('Newstudent.success-statuscheck.check-statusM4-onsubmit', [
+             'data' => $data,
+             'status' => $status
+        ]);
+    }
+
+    //ส่งเอกสารรายงานตัว
+    public function checkdocument($id)
+    {
+        $findID = RegisterloginM4::find($id);
+        $data = DB::table('new_student_register_m4')
+            ->where('id_number', '=', $findID->username)
+            ->first();
+
+        $status = DB::table('status_pic')
+            ->where('student_idcard', '=', $findID->username)
+            ->first();
+        return view('Newstudent.Newstudent-document.document-statusM4-onsubmit', [
+            'data' => $data,
+            'status' => $status
+        ]);
     }
 
     //ส่งเอกสารรายงานตัว

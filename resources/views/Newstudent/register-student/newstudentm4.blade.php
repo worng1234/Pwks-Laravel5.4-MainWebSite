@@ -699,7 +699,7 @@
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>*ความด้อยโอกาส</label>
-													<select class="form-control" id="formGroupDefaultSelect" name="poorPerson" required>
+													<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
 														<option>เลือก</option>
 														<option value="ไม่มี">ไม่มี</option>
 														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>

@@ -17,8 +17,12 @@ class TestUPController extends Controller
      */
     public function index()
     {
+        $n1 = "07";
+        $n2 = "06";
+        $n3 = "2541";
+        $nall = $n1.$n2.$n3;
         $data = test2::all();
-        return view('testall.index', ['data' => $data]);
+        return view('testall.index', ['data' => $data, 'nall' => $nall]);
     }
     public function testmultiup(Request $request){
 

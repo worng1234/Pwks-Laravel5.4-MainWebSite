@@ -103,11 +103,9 @@
 										<a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
 									</li>
 									<li>
-										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะ</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
+
 								</ul>
 							</div>
 						</li>
@@ -167,112 +165,58 @@
 		<div class="main-panel">
 			<div class="container">
 				<div class="page-inner">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title fw-mediumbold" align="center">ตรวจสอบสถานะการสมัครเข้าเรียนในระดับชั้นมัธยมศึกษาปีที่ 1</div>
+							<p class="card-category" align="center">กรอกชื่อผู้ใช้เป็นเลขบัตรประจำตัวของผู้สมัคร และรหัสผ่านเป็นวันเดือนปีเกิด เช่น เกิดวันที่ 7 มิถุนายน 2541 ให้กรอกเป็น 07062541 </p>
+						</div>
 
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-file-alt fa-lg"></i>&nbsp; แก้ไขหลักฐานการสมัครของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+						<form class="form-horizontal" method="POST" action="{{ route('RegisM1.login.submit') }}">
+                        {{ csrf_field() }}
+						<div class="card" align="center">
+							<div class="card-body">
+								<div class="login-form">
+									<div class="col-md-4 col-md-4">
+										<div class="form-group">
+											<input id="username" name="username" type="text" class="form-control" placeholder="เลขประจำตัวประชาชน" value="{{ old('username') }}" required autofocus>
+										</div>
+									</div>
+									<div class="col-md-4 col-md-4">
+										<div class="form-group">
+											<div class="position-relative">
+												<input id="password" name="password" type="password" class="form-control" placeholder="กรอกวันเดือนปีเกิด" required>
+											</div>
+										</div>
+									</div>
+
+									<br>
+									<div class="col-md-4">
+										<button type="submit"class="btn btn-secondary btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold" style="margin-right:auto;">ตรวจสอบ</button>
 									</div>
 								</div>
-								<form action="{{ url('/upEditObjectM4', $data->id)}}" method="POST" enctype="multipart/form-data">
-									{{csrf_field()}}
-									{{ method_field('POST') }}
-									<!-- ข้อมูลส่วนตัว -->
-									<div class="card-body">
-
-										<!-- อัพโหลดรูปภาพ -->
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-													<input type="file" class="form-control-file" id="house_student" name="house_student">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
-													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
-												</div>
-											</div>
-
-											<div hidden>
-												<input type="text" name="id_number" value="{{$data->id_number}}">
-											</div>
-
-
-
-										<!-- สถานะการสมัคร -->
-										<div hidden>
-											<input type="text" name="status_rigis" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_picall" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_profile" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_idcard_student" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_house_student" value="02">
-										</div>
-										<div hidden>
-											<input type="text" name="status_submit_student" value="02">
-										</div>
-									</div>
+							</div>
 						</div>
-						<div class="card-footer" align="center">
-							<p style="text-align:center">หากทำการอัพโหลดหลักฐานเรียบร้อย<br>
-											ให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
-							<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
-						</div><br>
+						</form>
+
 					</div>
 				</div>
 			</div>
-			</form>
 		</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	<footer class="footer">
-		<div class="container">
-			<nav class="pull-left">
-				<ul class="nav">
-					<li class="nav-item">
-						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="copyright ml-auto">
-				พัฒนาโดย PWK40 & CSMJU23
+
+		<footer class="footer">
+			<div class="container">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="copyright ml-auto">
+					พัฒนาโดย PWK40 & CSMJU23
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
@@ -435,65 +379,6 @@
 			lineWidth: '2',
 			lineColor: '#ffa534',
 			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
-	<script>
-		//== Class definition
-		var SweetAlert2Demo = function() {
-
-			//== Demos
-			var initDemos = function() {
-
-				$('#alert_demo_7').click(function(e) {
-					swal({
-						title: 'ยืนยันข้อมูล ?',
-						text: "ยืนยันการแก้ไขข้อมูล",
-						type: 'warning',
-						buttons: {
-							confirm: {
-								text: 'ตกลง',
-								className: 'btn btn-success',
-								type: 'submit'
-							},
-							cancel: {
-								text: 'ย้อนกลับ',
-								visible: true,
-								className: 'btn btn-danger'
-							}
-						}
-					}).then((Delete) => {
-						if (Delete) {
-							swal({
-								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'สามารถตรวจสอบการแก้ไขข้อมูลได้ที่น้าตรวจสอบข้อมูล',
-								type: 'success',
-								buttons: {
-									confirm: {
-										className: 'btn btn-success'
-									}
-								}
-							}).then(function() {
-								window.location = '/check/statusM1';
-							});
-						} else {
-							swal.close();
-						}
-					});
-				})
-
-			};
-
-			return {
-				//== Init
-				init: function() {
-					initDemos();
-				},
-			};
-		}();
-
-		//== Class Initialization
-		jQuery(document).ready(function() {
-			SweetAlert2Demo.init();
 		});
 	</script>
 

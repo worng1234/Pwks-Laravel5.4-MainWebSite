@@ -203,7 +203,7 @@
                                 </div>
                                 </br>
                                 <div>
-                                    <a type="button" class="btn btn-info" href="{{ url('/check/status')}}"><i class="fas fa-search"></i> ตรวจสอบสถานะการสมัครเข้าเรียน</a><br><br>
+                                    <a type="button" class="btn btn-info" href="{{ url('/Regis/login')}}"><i class="fas fa-search"></i> ตรวจสอบสถานะการสมัครเข้าเรียน</a><br><br>
                                 </div>
 
                                 </div>

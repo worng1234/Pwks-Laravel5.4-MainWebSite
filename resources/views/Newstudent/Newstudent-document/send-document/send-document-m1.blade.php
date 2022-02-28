@@ -279,7 +279,7 @@
 										</div>
 
 										<div hidden>
-											<input type="text" name="idNumber" value="{{$data->idNumber}}">
+											<input type="text" name="id_number" value="{{$data->id_number}}">
 										</div>
 
 									<!-- สถานะการสมัคร -->
