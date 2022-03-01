@@ -105,9 +105,6 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
 								</ul>
 							</div>
 						</li>
@@ -186,7 +183,7 @@
 									<p class="card-category">เพื่อตรวจสอบความถูกต้องครบถ้วนของข้อมูลที่ใช้ในการสมัครเข้าเรียน </p>
 								</div>
 								<div class="card-footer" align="center"><br>
-									<a type="button" class="btn btn-info" href="{{ url('/check/statusM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
+									<a type="button" class="btn btn-info" href="{{ url('/RegisM4/login')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
 								</div>
 							</div>
 						</div>

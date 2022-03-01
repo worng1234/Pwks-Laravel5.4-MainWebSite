@@ -124,9 +124,6 @@
                                     <li>
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
-                                    <li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
                                 </ul>
                             </div>
                         </li>
@@ -204,7 +201,6 @@
                                                     <th><center>ส่งเอกสาร</center></th>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($datas as $data)
                                                     <tr>
                                                         <td align="center">{{$data->id_number}}</td>
                                                         <td align="center">{{$data->prename}}{{$data->fname}} {{$data->surname}}</td>
@@ -232,7 +228,6 @@
                                                         </td>
                                                         <td align="center"><a href='{{ url("/documentPhotoM4/{$data->id}" )}}' class="btn btn-secondary btn-xs" type="button"><i class="fas fa-file-invoice"></i></a></td>
                                                     </tr>
-                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

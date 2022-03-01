@@ -106,9 +106,6 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
-									<li>
-										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-									</li>
 								</ul>
 							</div>
 						</li>
