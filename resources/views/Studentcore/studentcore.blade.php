@@ -485,10 +485,9 @@
 											{{csrf_field()}}
 											<div class="row">
 												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" name="search1" type="search">
-															<option value="">เลือก</option>
+															<option value="" >ระดับชั้น</option>
 															<option value="1">ชั้นมัธยมศึกษาปีที่ 1</option>
 															<option value="2">ชั้นมัธยมศึกษาปีที่ 2</option>
 															<option value="3">ชั้นมัธยมศึกษาปีที่ 3</option>
@@ -496,26 +495,36 @@
 															<option value="5">ชั้นมัธยมศึกษาปีที่ 5</option>
 															<option value="6">ชั้นมัธยมศึกษาปีที่ 6</option>
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" name="search2" type="search">
-															<option value="">เลือก</option>
+															<option value="" >ลำดับห้อง</option>
 															@foreach ($class_room as $key => $value)
 																<option value="{{$value->class_room}}">{{$value->class_room}}</option>
 															@endforeach
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-5">
-													<div class="form-group form-group-default">
-														<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
-														<input name="search3" type="search" class="form-control" placeholder="">
+													<div class="input-icon">
+														<input name="search3" type="search" class="form-control" placeholder="สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+												<div class="col-sm-4 col-md-2">
+														<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+													
+												</div>
 											</div>
 									</div>
 									</form>
@@ -665,7 +674,8 @@
 				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
-				"ordering": false
+				"ordering": false,
+				"searching": false
 			});
 		});
 	</script>

@@ -123,8 +123,8 @@
 						<div class="info">
 
 							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('affair')->user()->prename}}{{ Auth::guard('affair')->user()->fname}} </br>{{ Auth::guard('affair')->user()->surname}}</label>
-                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
-                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -164,7 +164,7 @@
 							</div>
 						</li>
 
-						
+
 
 						<li class="nav-item ">
 							<a href="#">
@@ -205,6 +205,7 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-medal fa-lg"></i> &nbsp;จัดการข้อมูลความประพฤติ <i class="flaticon-right-arrow"></i> ตรวจสอบความประพฤตินักเรียน </div>
+										<a href="{{ url('/behaviorReport/all')}}" class="btn btn-success  " style="margin-left:auto;"><i class="fas fa-sticky-note"></i>Report</a>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: auto">
@@ -212,14 +213,17 @@
 										<form role="form" method="post" action="{{ url('/SearchBehavior/all')}}">
 											{{csrf_field()}}
 											<div class="row">
-												<div class="col-sm-4 col-md-4">
-													<div class="form-group form-group-default">
-														<label>เลขประจำตัวนักเรียน</label>
-														<input name="search" type="search" class="form-control" placeholder="">
+												<div class="col-6 col-md-3">
+													<div class="input-icon ">
+														<input name="search" type="search" class="form-control" placeholder="เลขประจำตัวนักเรียน">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2"><i class="fas fa-search"></i> แสดง</button>
-												<a href="{{ url('/behaviorReport/all')}}" class="btn btn-success  form-group form-group-default col-sm-2 col-sm-1" style="margin-left:auto;"><i class="fas fa-sticky-note"></i>Report</a>
+												<div class="col-6 col-md-6">
+													<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+												</div>
 											</div>
 										</form>
 									</div>

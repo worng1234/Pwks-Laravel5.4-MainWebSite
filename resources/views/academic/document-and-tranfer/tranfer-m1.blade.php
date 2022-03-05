@@ -274,6 +274,13 @@
 						</li>
 
 						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
@@ -370,31 +377,20 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -494,20 +490,14 @@
                                             <div class="col-sm-6 col-md-2">
                                                 <div class="form-group form-group-default">
                                                     <label>รหัสนักเรียน</label>
-                                                    <input name="student_id" type="text" class="form-control" placeholder="">
+                                                    <input name="student_id" type="text" class="form-control" placeholder="" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="form-group form-group-default">
                                                     <label>ระดับชั้น</label>
-                                                    <select class="form-control" id="formGroupDefaultSelect" name="student_class" required>
-                                                        <option>เลือก</option>
+                                                    <select class="form-control" id="formGroupDefaultSelect" name="student_class" readonly>
                                                         <option value="1">มัธยมศึกษาปีที่ 1</option>
-                                                        <option value="2">มัธยมศึกษาปีที่ 2</option>
-                                                        <option value="3">มัธยมศึกษาปีที่ 3</option>
-                                                        <option value="4">มัธยมศึกษาปีที่ 4</option>
-                                                        <option value="5">มัธยมศึกษาปีที่ 5</option>
-                                                        <option value="6">มัธยมศึกษาปีที่ 6</option>
                                                     </select>
                                                 </div>
                                             </div>

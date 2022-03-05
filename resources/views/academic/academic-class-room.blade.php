@@ -261,6 +261,13 @@
 						</li>
 
 						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
@@ -352,36 +359,25 @@
 							</div>
 						</li>
 
-						
 
-						<li class="nav-item active submenu">
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="basic">
+							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse show" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li class="active">
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -475,7 +471,6 @@
 													<table id="" class="table table-bordered table-striped table-hover" style="width:50%">
 														<thead>
 															<tr>
-																<th scope="col" width="15%"><center>รหัส</center></th>
 																<th scope="col" width="15%"><center>ห้องเรียนที่</center></th>
 																<th scope="col" width="15%"><center>จัดการ</center></th>
 																<th scope="col" width="15%"><center>ลบข้อมูล</center></th>
@@ -485,7 +480,6 @@
 														<tbody>
 															@foreach ($data as $key => $value)
 															<tr>
-																<td align="center">{{$value->class_id}}</td>
 																<td>{{$value->class_room}}</td></td>
 																<td align="center">
 																		<a href='{{ url("/classRoomShow/{$value->id}")}}' class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a>

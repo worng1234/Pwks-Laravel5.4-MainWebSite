@@ -274,6 +274,13 @@
 						</li>
 
 						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
@@ -370,31 +377,20 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -475,7 +471,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate fa-lg"></i> &nbsp;&nbsp; รายชื่อนักเรียนที่โอนย้ายข้อมูลแล้ว </div>
+										<div class="card-title"><i class="fas fa-file-alt fa-lg"></i> &nbsp;&nbsp; หลักฐานรายงานตัวและโอนย้ายข้อมูล <i class="flaticon-right-arrow"></i> โอนย้ายแล้ว <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 4</div>
 									</div>
 								</div>
 								<div class="card-body" style="min-height: 370px">
@@ -485,13 +481,17 @@
 										<div class="form-group">
 
 											<div class="row">
-												<div class="col-sm-4 col-md-4">
-													<div class="form-group form-group-default">
-														<label>เลขประจำตัวประชาชน</label>
-														<input type="search" class="form-control" placeholder="" name="search1">
+											<div class="col-sm-4 col-md-4">
+													<div class="input-icon">
+														<input type="search" class="form-control" placeholder="เลขประจำตัวประชาชน" name="search1">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+												<div class="col-12 col-md-6">
+													<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+												</div>
 											</div>
 										</form>
 									</div>
@@ -622,7 +622,8 @@
 				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
-				"ordering": false
+				"ordering": false,
+				"searching": false
 			});
 		});
 	</script>

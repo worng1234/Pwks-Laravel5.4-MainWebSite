@@ -42,7 +42,8 @@
                 dom: 'Bfrtip',
                 buttons: [
                     'excelHtml5',
-                ]
+                ],
+                "searching": false
             });
         });
     </script>
@@ -63,7 +64,8 @@
         </div>
 
         <div class="container" align="center" style="margin-top: 30px;">
-            <h3 class="saraban">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1</h3>
+            <h3 class="saraban">สรุปสถิติรายวันการรับสมัครนักเรียนใหม่ประจำชั้นมัธยมศึกษาปีที่ 1 </h3>
+            <h3 class="saraban">ประจำปีการศึกษา {{$register_year->register_year}}</h3>
         </div>
         <div style="margin-top: 30px;">
             <form role="form" method="post" action="{{ url('/search/reportM1')}}">

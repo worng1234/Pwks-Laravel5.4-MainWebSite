@@ -41,7 +41,8 @@
                 "language": {
                     "search": "ค้นหาข้อมูล :"
                 },
-                "ordering": false
+                "ordering": false,
+                "searching": false
             });
         });
     </script>
@@ -57,7 +58,8 @@
                 "language": {
                     "search": "ค้นหาข้อมูล :"
                 },
-                "ordering": false
+                "ordering": false,
+                "searching": false
             });
         });
     </script>

@@ -30,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;600&display=swap" rel="stylesheet">
 
 
+
     <script type="text/javascript" class="init">
         $(document).ready(function() {
             $('#example').DataTable({
@@ -41,7 +42,8 @@
                 "language": {
                     "search": "ค้นหาข้อมูล :"
                 },
-                "ordering": false
+                "ordering": false,
+                "searching": false
             });
         });
     </script>
@@ -63,6 +65,7 @@
 
         <div class="container" align="center" style="margin-top: 30px;">
             <h3 class="saraban">เอกสารประกอบการคัดนักเรียนตามสายการเรียนที่เลือกแต่ละอันดับ ม.4</h3>
+            <h3 class="saraban">ประจำปีการศึกษา {{$register_year->register_year}}</h3>
         </div>
         <div style="margin-top: 30px;">
             <form role="form" method="post" action="{{ url('/SearchAcademicReport/ReportStudyM4')}}">
@@ -74,10 +77,10 @@
                             <input type="search" class="form-control" placeholder="" name="search1">
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-5 col-md-3">
                         <div class="form-group form-group-default">
                             <label>อันดับ 1</label>
-                            <select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
+                            <select class="form-control" id="slct1" type="search" name="search2" >
                                 <option value="">เลือก</option>
                                 <option value="01">วิทยาศาสตร์ - คณิตศาสตร์ (วค.)</option>
                                 <option value="02">ศิลป์ทั่วไป(อังกฤษ)</option>
@@ -91,10 +94,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-5 col-md-3">
                         <div class="form-group form-group-default">
                             <label>อันดับ 2</label>
-                            <select class="form-control" id="formGroupDefaultSelect" type="search" name="search3">
+                            <select class="form-control" id="slct2" type="search" name="search3" >
                                 <option value="">เลือก</option>
                                 <option value="01">วิทยาศาสตร์ - คณิตศาสตร์ (วค.)</option>
                                 <option value="02">ศิลป์ทั่วไป(อังกฤษ)</option>
@@ -108,10 +111,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-5 col-md-3">
                         <div class="form-group form-group-default">
                             <label>อันดับ 3</label>
-                            <select class="form-control" id="formGroupDefaultSelect" type="search" name="search4">
+                            <select class="form-control" id="slct3" type="search" name="search4" >
                                 <option value="">เลือก</option>
                                 <option value="01">วิทยาศาสตร์ - คณิตศาสตร์ (วค.)</option>
                                 <option value="02">ศิลป์ทั่วไป(อังกฤษ)</option>
@@ -125,7 +128,9 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-md form-group  "><i class="fas fa-search"></i> แสดง</button>
+                    <div class="col-12 col-md-3">
+                        <button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+                    </div>
                 </div>
             </form>
         </div>

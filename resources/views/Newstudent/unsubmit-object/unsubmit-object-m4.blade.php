@@ -5,14 +5,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['../assets/css/fonts.min.css']
+			},
 
 			active: function() {
 				sessionStorage.fonts = true;
@@ -131,7 +136,7 @@
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
 
-					<li class="nav-item">
+						<li class="nav-item">
 							<a href="{{ url('/academic')}}">
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
@@ -153,14 +158,14 @@
 							</a>
 							<div class="collapse show" id="agree">
 								<ul class="nav nav-collapse">
-									<li >
+									<li>
 										<a data-toggle="collapse" href="#formob1">
 											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
 										</a>
 										<div class="collapse show" id="formob1">
 											<ul class="nav nav-collapse subnav">
-												<li >
+												<li>
 													<a href="{{ url('/UnsubmitObject/M1')}}">
 														<span class="sub-item">มัธยมศึกษาปีที่ 1</span>
 													</a>
@@ -205,7 +210,7 @@
 							</a>
 							<div class="collapse" id="move">
 								<ul class="nav nav-collapse">
-								<li>
+									<li>
 										<a data-toggle="collapse" href="#formob3">
 											<span class="sub-item">ยังไม่ได้ตรวจสอบ</span>
 											<span class="caret"></span>
@@ -267,6 +272,13 @@
 									</li>
 								</ul>
 							</div>
+						</li>
+
+						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
 						</li>
 
 						<li class="nav-item">
@@ -366,31 +378,20 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -471,30 +472,33 @@
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;&nbsp; หลักฐานและข้อมูลการสมัครเข้าเรียน <i class="flaticon-right-arrow"></i> ยังไม่ได้ตรวจสอบ <i class="flaticon-right-arrow"></i> มัธยมศึกษาปีที่ 4</div>
-											<div class="card-tools">
-												<a href="{{url('/export/newstudentm4')}}" class="btn btn-info btn-border btn-round btn-sm" target="_blank">
-													<span class="btn-label">
-														<i class="fas fa-file-alt"></i>
-													</span>
-													Report
-												</a>
-											</div>
+										<div class="card-tools">
+											<a href="{{url('/export/newstudentm4')}}" class="btn btn-info btn-border btn-round btn-sm" target="_blank">
+												<span class="btn-label">
+													<i class="fas fa-file-alt"></i>
+												</span>
+												Report
+											</a>
+										</div>
 									</div>
 								</div>
 
 								<div class="card-body" style="min-height: 400px">
 									<div class="form-group">
 										<form role="form" method="post" action="{{ url('/searchM4')}}">
-										{{csrf_field()}}
+											{{csrf_field()}}
 											<div class="row">
 												<div class="col-12 col-md-6">
-													<div class="form-group form-group-default">
-														<label>ชื่อ-นามสกุล, โรงเรียน, สถานะหลักฐาน ( รอตรวจสอบ )</label>
-														<input type="search" class="form-control" name="search" placeholder="">
-													</div> 
+													<div class="input-icon">
+														<input type="search" class="form-control" name="search" placeholder="ชื่อ-นามสกุล, โรงเรียน, สถานะหลักฐาน ( รอตรวจสอบ )">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
-											</div>
+												<div class="col-12 col-md-6">
+													<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+												</div>
 										</form>
 									</div>
 
@@ -531,16 +535,16 @@
 													<td align="center">{{$value->final_school}}</td>
 													<td align="center">
 														@if ($value->status_picall == '01')
-															<p style="color:green;">ผ่าน</p>
+														<p style="color:green;">ผ่าน</p>
 														@elseif ($value->status_picall == '02')
-															<p style="color:blue;">รอตรวจสอบ</p>
+														<p style="color:blue;">รอตรวจสอบ</p>
 														@else
-															<p style="color:red;">ไม่ผ่าน</p>
+														<p style="color:red;">ไม่ผ่าน</p>
 														@endif
 													</td>
 													<td align="center"><a href='{{ url("/SortNewstudentM4/{$value->id}" )}}' class="btn btn-primary btn-xs"><i class="fas fa-file-archive"></i></a></td>
 													<td align="center"><a href='{{ url("/statusM4pic/{$value->id}" )}}' class="btn btn-warning btn-xs"><i class="fas fa-images"></i></a></td>
-													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs"><i class="fas fa-trash" style="color:white;"></i></a></td>
+													<td align="center"><a href='{{ url("/deletem4/{$value->id}" )}}' class="btn btn-danger btn-xs" onclick="return confirm('ยืนยันที่จะลบข้อมูลนี้หรือไม่')"><i class="fas fa-trash" style="color:white;"></i></a></td>
 												</tr>
 												@endforeach
 

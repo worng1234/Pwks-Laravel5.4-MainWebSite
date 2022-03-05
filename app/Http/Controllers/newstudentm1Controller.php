@@ -7,6 +7,7 @@ use App\Http\Livewire\NewstudnetM1;
 use App\Models\newstudentm1Model;
 use App\Models\photostudentModel;
 use App\Models\statuspicModel;
+use App\Models\registeryearModel;
 use App\RegisterloginM1;
 use Illuminate\Http\Request;
 use App\Models\File;
@@ -1770,6 +1771,7 @@ class newstudentm1Controller extends Controller
                 "province" => $request->get('province'),
                 "post" => $request->get('post'),
                 "final_school" => $request->get('final_school'),
+                "final_school_etc" => $request->get('final_school_etc'),
                 "final_school_sub_district" => $request->get('final_school_sub_district'),
                 "final_school_district" => $request->get('final_school_district'),
                 "final_school_province" => $request->get('final_school_province'),
@@ -2324,34 +2326,42 @@ class newstudentm1Controller extends Controller
     //Report
     public function reportExel(Request $request)
     {
+        $register_year = DB::table('register_year')
+            ->first();
+
         //โรงเรียนในเขต
         $search = $request->get('search');
         $partition1 = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
             ->where('final_school', '=', 'โรงเรียนบ้านแจ่งกู่เรือง')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionCount1 = $partition1->count();
 
         $partition2 = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
             ->where('final_school', '=', 'โรงเรียนบ้านป่าตุ้ม')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionCount2 = $partition2->count();
 
         $partition3 = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
             ->where('final_school', '=', 'โรงเรียนชุมชนสหกรนิคมวิทยา')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionCount3 = $partition3->count();
 
         $partition4 = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
             ->where('final_school', '=', 'โรงเรียนบ้านห้วยบง')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionCount4 = $partition4->count();
 
         $dateM1 = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
+            ->where('student_year', '=', $register_year->register_year)
             ->first();
 
         //โรงเรียนในเขตทั้งหมด
@@ -2360,30 +2370,35 @@ class newstudentm1Controller extends Controller
         //โรงเรียนทั้งหมด
         $dataAll = DB::table('new_student_register_m1')
             ->where('date', 'like', '%' . $search . '%')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $dataCountAll = $dataAll->count();
 
         //โรงเรียนนอกเขต
         $sum = $dataCountAll - $partitionAll;
 
-        //ดรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
+        //โรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
         $partitionAll1 = DB::table('new_student_register_m1')
             ->where('final_school', '=', 'โรงเรียนบ้านแจ่งกู่เรือง')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionAllCount1 = $partitionAll1->count();
 
         $partitionAll2 = DB::table('new_student_register_m1')
             ->where('final_school', '=', 'โรงเรียนบ้านป่าตุ้ม')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionAllCount2 = $partitionAll2->count();
 
         $partitionAll3 = DB::table('new_student_register_m1')
             ->where('final_school', '=', 'โรงเรียนชุมชนสหกรนิคมวิทยา')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionAllCount3 = $partitionAll3->count();
 
         $partitionAll4 = DB::table('new_student_register_m1')
             ->where('final_school', '=', 'โรงเรียนบ้านห้วยบง')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionAllCount4 = $partitionAll4->count();
 
@@ -2392,11 +2407,19 @@ class newstudentm1Controller extends Controller
 
         //โรงเรียนทั้งหมด
         $dataAlls = DB::table('new_student_register_m1')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $dataCountAlls = $dataAlls->count();
 
+        $dataAllsETC = DB::table('new_student_register_m1')
+            ->whereNotNull('final_school_etc')
+            ->get();
+        $dataCountAllsETC = $dataAllsETC->count();
+
+        $dataOutAlls = $dataCountAlls + $dataCountAllsETC;
+
         //โรงเรียนนอกเขต
-        $sumAll = $dataCountAlls - $partitionAlls;
+        $sumAll = $dataOutAlls - $partitionAlls;
 
         return view(
             'Newstudent.Newstudent-report.Newstudentm1-report',
@@ -2407,7 +2430,8 @@ class newstudentm1Controller extends Controller
                 'partitionAlls' => $partitionAlls,
                 'sumAll' => $sumAll,
                 'dataCountAlls' => $dataCountAlls,
-                'dateM1' => $dateM1
+                'dateM1' => $dateM1,
+                'register_year' => $register_year
             ]
         );
     }

@@ -280,131 +280,127 @@
                         </li>
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#forms">
-                                <i class="fas fa-user-graduate"></i>
-                                <p>จัดการข้อมูลนักเรียน</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="forms">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a data-toggle="collapse" href="#forms2">
-                                            <span class="sub-item">เลื่อนชั้นเรียน</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="forms2">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('/academic/class')}}">
-                                                        <span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/academic/classChange')}}">
-                                                        <span class="sub-item">เลื่อนชั้นเรียน</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="collapse" href="#forms3">
-                                            <span class="sub-item">จบการศึกษา</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="forms3">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('/academic/final')}}">
-                                                        <span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/academic/finalChange')}}">
-                                                        <span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="collapse" href="#forms4">
-                                            <span class="sub-item">ย้ายสถานศึกษา</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="forms4">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('/academic/move')}}">
-                                                        <span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/academic/moveChange')}}">
-                                                        <span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="collapse" href="#forms5">
-                                            <span class="sub-item">ออกกลางคัน</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="forms5">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('/academic/out')}}">
-                                                        <span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/academic/outChange')}}">
-                                                        <span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#forms">
+								<i class="fas fa-user-graduate"></i>
+								<p>จัดการข้อมูลนักเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="forms">
+								<ul class="nav nav-collapse">
+									<li>
+										<a data-toggle="collapse" href="#forms2">
+											<span class="sub-item">เลื่อนชั้นเรียน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/class')}}">
+														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/classChange')}}">
+														<span class="sub-item">เลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#forms3">
+											<span class="sub-item">จบการศึกษา</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms3">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/final')}}">
+														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/finalChange')}}">
+														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#forms4">
+											<span class="sub-item">ย้ายสถานศึกษา</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms4">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/move')}}">
+														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/moveChange')}}">
+														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a data-toggle="collapse" href="#forms5">
+											<span class="sub-item">ออกกลางคัน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms5">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="{{ url('/academic/out')}}">
+														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ url('/academic/outChange')}}">
+														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
 
 
 
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#basic">
-                                <i class="fas fa-sliders-h"></i>
-                                <p>จัดการข้อมูลพื้นฐาน</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="basic">
-                                <ul class="nav nav-collapse">
-
-                                    <li>
-                                        <a data-toggle="collapse" href="#forms6">
-                                            <span class="sub-item">กำหนดชั้นเรียน</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="forms6">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="{{ url('/academic/classRoom')}}">
-                                                        <span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/academic/classMajor')}}">
-                                                        <span class="sub-item">กำหนดสายการเรียน</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#basic">
+								<i class="fas fa-sliders-h"></i>
+								<p>กำหนดชั้นเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="basic">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 
                         <li class="nav-item ">
                             <a data-toggle="collapse" href="#files">

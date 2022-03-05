@@ -274,6 +274,13 @@
 						</li>
 
 						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
@@ -365,34 +372,25 @@
 							</div>
 						</li>
 
-						<li class="nav-item active submenu">
+
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="basic">
+							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse show" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li class="active">
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -483,14 +481,14 @@
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>รหัสสายการเรียน</label>
-													<input id="Name" type="text" class="form-control" name="class_id">
+													<label>*รหัสสายการเรียน</label>
+													<input id="Name" type="text" class="form-control" name="class_id" required>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
-													<label>สายการเรียน</label>
-													<input id="Name" type="text" class="form-control" name="class_major_name">
+													<label>*สายการเรียน</label>
+													<input id="Name" type="text" class="form-control" name="class_major_name" required>
 												</div>
 											</div>
 										</div>

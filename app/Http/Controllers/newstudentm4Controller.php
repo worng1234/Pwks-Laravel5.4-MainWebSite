@@ -6,6 +6,7 @@ use App\Models\newstudentm4Model;
 use App\Models\photostudentModel;
 use App\Models\statuspicModel;
 use App\Models\classmajorModel;
+use App\Models\registeryearModel;
 use App\RegisterloginM4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -2260,40 +2261,49 @@ class newstudentm4Controller extends Controller
     //Report
     public function reportExel(Request $request)
     {
+        $register_year = DB::table('register_year')
+            ->first();
+
         //โรงเรียนในเขต
         $search = $request->get('search');
 
         $partition = DB::table('new_student_register_m4')
             ->where('date', 'like', '%' . $search . '%')
             ->where('final_school', '=', 'โรงเรียนพร้าววิทยาคม')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionCount = $partition->count();
 
         $dateM4 = DB::table('new_student_register_m4')
             ->where('date', 'like', '%' . $search . '%')
+            ->where('student_year', '=', $register_year->register_year)
             ->first();
 
 
         //โรงเรียนทั้งหมด
         $dataAll = DB::table('new_student_register_m4')
             ->where('date', 'like', '%' . $search . '%')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $dataCountAll = $dataAll->count();
 
         //โรงเรียนนอกเขต
         $sum = $dataCountAll - $partitionCount;
 
-        //ดรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
+        //โรงเรียนทั้งหมดโดยไม่ต้องกดค้นหา
 
 
         $partitionAll = DB::table('new_student_register_m4')
             ->where('final_school', '=', 'โรงเรียนพร้าววิทยาคม')
+            ->orWhereNotNull('student_id')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $partitionAllCount = $partitionAll->count();
 
 
         //โรงเรียนทั้งหมด
         $dataAlls = DB::table('new_student_register_m4')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
         $dataCountAlls = $dataAlls->count();
 
@@ -2310,7 +2320,8 @@ class newstudentm4Controller extends Controller
                 'sumAll' => $sumAll,
                 'partitionAllCount' => $partitionAllCount,
                 'dataCountAlls' => $dataCountAlls,
-                'dateM4' => $dateM4
+                'dateM4' => $dateM4,
+                'register_year' => $register_year
             ]
         );
     }

@@ -344,7 +344,10 @@ class behaviorstudentController extends Controller
                 ->where('behavior_term', 'like', '%' . $search2 . '%')
                 ->where('behavior_study_year', 'like', '%' . $search3 . '%')
                 ->get();
-            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+            return view('behavior-student.behavior-report.behavior-report-all', [
+                'school_year' => $school_year,
+                'data' => $data
+            ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -352,13 +355,39 @@ class behaviorstudentController extends Controller
                 ->where('behavior_term', 'like', '%' . $search2 . '%')
                 ->where('behavior_study_year', 'like', '%' . $search3 . '%')
                 ->get();
-            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+            return view('behavior-student.behavior-report.behavior-report-all', [
+                'school_year' => $school_year,
+                'data' => $data
+            ]);
         } elseif ($request->get('search3') !== null) {
             $search3 = $request->get('search3');
             $data = DB::table('behavior_student')
                 ->where('behavior_study_year', 'like', '%' . $search3 . '%')
                 ->get();
-            return view('behavior-student.behavior-report.behavior-report-all', ['data' => $data]);
+            return view('behavior-student.behavior-report.behavior-report-all', [
+                'school_year' => $school_year,
+                'data' => $data
+            ]);
+
+        } elseif ($request->get('search1') !== null) {
+            $search1 = $request->get('search1');
+            $data = DB::table('behavior_student')
+                ->where('behavior_mount', 'like', '%' . $search1 . '%')
+                ->get();
+            return view('behavior-student.behavior-report.behavior-report-all', [
+                'school_year' => $school_year,
+                'data' => $data
+            ]);
+
+        } elseif ($request->get('search2') !== null) {
+            $search2 = $request->get('search2');
+            $data = DB::table('behavior_student')
+                ->where('behavior_term', 'like', '%' . $search2 . '%')
+                ->get();
+            return view('behavior-student.behavior-report.behavior-report-all', [
+                'school_year' => $school_year,
+                'data' => $data
+            ]);
         }
 
         $data = DB::table('behavior_student')->get();

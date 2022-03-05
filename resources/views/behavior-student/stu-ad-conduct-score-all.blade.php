@@ -123,8 +123,8 @@
 						<div class="info">
 
 							<label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('affair')->user()->prename}}{{ Auth::guard('affair')->user()->fname}} </br>{{ Auth::guard('affair')->user()->surname}}</label>
-                            <label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
-                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
+							<label><b>ตำแหน่ง :</b> เจ้าหน้าที่ฝ่ายกิจการ</label>
+							<label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
 							<div class="clearfix"></div>
@@ -165,7 +165,7 @@
 							</div>
 						</li>
 
-						
+
 
 						<li class="nav-item ">
 							<a href="#">
@@ -213,12 +213,16 @@
 										{{csrf_field()}}
 										<div class="row">
 											<div class="col-6 col-md-3">
-												<div class="form-group form-group-default">
-													<label>รหัสนักเรียน</label>
-													<input name="search" type="search" class="form-control" placeholder="">
+												<div class="input-icon">
+													<input name="search" type="search" class="form-control" placeholder="เลขประจำตัวนักเรียน">
+													<span class="input-icon-addon">
+														<i class="fa fa-search"></i>
+													</span>
 												</div>
 											</div>
-											<button type="submit" class="btn btn-primary ml-1 mb-4"><i class="fas fa-search"></i> ค้นหา</button>
+											<div class="col-6 col-md-3">
+												<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+											</div>
 										</div>
 									</form>
 

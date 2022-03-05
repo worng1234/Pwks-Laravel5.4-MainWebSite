@@ -237,7 +237,7 @@
 												<div class="form-group">
 													<label>หัวข้อความประพฤติ</label>
 													<div class="select2-input">
-														<select id="basic" name="behavior_history" class="form-control" onchange="populate(this.id,'slct2')">
+														<select id="basic" name="behavior_history" class="form-control" onchange="populate(this.id,'slct2')" required>
 															<option value="">&nbsp;</option>
 															<optgroup label="หมวดที่ 1 สร้างชื่อเสียงให้กับสถานศึกษา">
 																<option value="001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ">001 สร้างชื่อเสียงให้กับสถานศึกษา ระดับอำเภอ (+10)</option>
@@ -261,7 +261,7 @@
 												<div class="form-group">
 													<label>หักคะแนน</label>
 													<div class="select2-input">
-														<select id="slct2" name="plus_score" class="form-control">
+														<select id="slct2" name="plus_score" class="form-control" required>
 															<!-- <option value="">&nbsp;</option>
 															<optgroup label="เพิ่มคะแนน">
 																<option value="5">+5</option>

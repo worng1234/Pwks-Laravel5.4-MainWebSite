@@ -241,7 +241,7 @@
 												<div class="form-group">
 													<label>หัวข้อความประพฤติ</label>
 													<div class="select2-input">
-														<select id="basic" name="behavior_history"  class="form-control" onchange="populate(this.id,'slct2')">
+														<select id="basic" name="behavior_history"  class="form-control" onchange="populate(this.id,'slct2')" required>
 															<option value="">&nbsp;</option>
 															<optgroup label="หมวดที่ 1 พฤติกรรมการแต่งกาย">
 																<option value="101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน" >101 สวมเสื้อ นักเรียนไม่ปัก ชื่อโรงเรียน (-5)</option>
@@ -274,7 +274,7 @@
 												<div class="form-group">
 													<label>หักคะแนน</label>
 													<div class="select2-input">
-														<select id="slct2" name="minus_score" class="form-control" >
+														<select id="slct2" name="minus_score" class="form-control" required>
 															<!-- <option value="">&nbsp;</option>
 															<optgroup label="ลดคะแนน">
 																<option id="inputBe" value="5">-5</option>

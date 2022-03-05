@@ -220,10 +220,9 @@
 											{{csrf_field()}}
 											<div class="row">
 												<div class="col-sm-4 col-md-3">
-													<div class="form-group form-group-default">
-														<label>เดือน</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" name="search1" type="search">
-															<option value="">เลือก</option>
+															<option value="">เดือน</option>
 															<option value="1">มกราคม</option>
 															<option value="2">กุมภาพันธ์</option>
 															<option value="3">มีนาคม</option>
@@ -237,25 +236,36 @@
 															<option value="11">พฤษจิกายน</option>
 															<option value="12">ธันวาคม</option>
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-sm-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ภาคเรียนที่</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" name="search2" type="search">
-															<option value="">เลือก</option>
+															<option value="">ภาคเรียน</option>
 															<option value="1"> 1</option>
 															<option value="2"> 2</option>
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-sm-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ปีการศึกษา</label>
-														<input name="search3" type="search" class="form-control" placeholder="">
+													<div class="input-icon">
+														<input name="search3" type="search" class="form-control" placeholder="ปีการศึกษา">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-4 col-md-2"><i class="fas fa-search"></i> แสดง</button>
+												<div class="col-sm-4 col-md-2">
+													<div class="form-group ">
+														<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+													</div>
+												</div>
 											</div>
 										</form>
 									</div>

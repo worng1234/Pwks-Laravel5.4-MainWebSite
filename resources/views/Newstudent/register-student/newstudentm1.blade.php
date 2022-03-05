@@ -629,13 +629,45 @@
 												<label style="margin-bottom: 5px;">กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ ๖ จากโรงเรียน</label> <br>
 												<p style="color:red;"> <small>***ให้ใส่โรงเรียนไปด้วย เช่น โรงเรียนบ้านแจ่งกู่เรือง โรงเรียนบ้านสันปง เป็นต้น </small></p>
 												<p style="color:red;"> <small>***ให้ตรวจสอบชื่อโรงเรียนของตนเองให้ดีหากผิดพลาดจะเกิดข้อมูลขาดหาย</small></p>
+												<p style="color:red;"> <small>***หากมาจากโรงเรียนอื่นที่ไม่มีในเมนู ให้เลือก "อื่นๆ" แล้วจะปรากฎช่องให้กรอกชื่อโรงเรียน</small></p>
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-sm-6 col-md-12">
+											<div class="col-6 col-md-5">
 												<div class="form-group form-group-default">
-													<label>*ชื่อโรงเรียนเดิม </label>
-													<input name="final_school" type="text" class="form-control" placeholder="" required>
+													<label>*ชื่อโรงเรียนเดิม</label>
+													<select class="form-control" id="" name="final_school" onchange="yesnoCheck(this)" required>
+														<option disabled selected>เลือก</option>
+														<option value="โรงเรียนบ้านแจ่งกู่เรือง">โรงเรียนบ้านแจ่งกู่เรือง</option>
+														<option value="โรงเรียนบ้านป่าตุ้ม">โรงเรียนบ้านป่าตุ้ม</option>
+														<option value="โรงเรียนชุมชนสหกรนิคมวิทยา">โรงเรียนชุมชนสหกรนิคมวิทยา</option>
+														<option value="โรงเรียนบ้านห้วยบง">โรงเรียนบ้านห้วยบง</option>
+														<option value="โรงเรียนชุมชนบ้านโป่ง">โรงเรียนชุมชนบ้านโป่ง</option>
+														<option value="โรงเรียนบ้านขุนแจ๋">โรงเรียนบ้านขุนแจ๋</option>
+														<option value="โรงเรียนบ้านต้นรุง">โรงเรียนบ้านต้นรุง</option>
+														<option value="โรงเรียนบ้านท่ามะเกี๋ยง">โรงเรียนบ้านท่ามะเกี๋ยง</option>
+														<option value="โรงเรียนบ้านนาบุญโหล่งขอด">โรงเรียนบ้านนาบุญโหล่งขอด</option>
+														<option value="โรงเรียนบ้านป่าไหน่">โรงเรียนบ้านป่าไหน่</option>
+														<option value="โรงเรียนบ้านแม่ปั๋ง">โรงเรียนบ้านแม่ปั๋ง</option>
+														<option value="โรงเรียนบ้านแม่ปั๋ง สาขาบ้านขุนปั๋ง">โรงเรียนบ้านแม่ปั๋ง สาขาบ้านขุนปั๋ง</option>
+														<option value="โรงเรียนบ้านแม่ปาคี">โรงเรียนบ้านแม่ปาคี</option>
+														<option value="โรงเรียนบ้านแม่เหียะ">โรงเรียนบ้านแม่เหียะ</option>
+														<option value="โรงเรียนบ้านสันกลาง">โรงเรียนบ้านสันกลาง</option>
+														<option value="โรงเรียนบ้านสันปง">โรงเรียนบ้านสันปง</option>
+														<option value="โรงเรียนบ้านหนองปิด">โรงเรียนบ้านหนองปิด</option>
+														<option value="โรงเรียนบ้านหลวง">โรงเรียนบ้านหลวง</option>
+														<option value="โรงเรียนประชาสามัคคีวิทยา">โรงเรียนประชาสามัคคีวิทยา</option>
+														<option value="โรงเรียนประดู่วิทยา">โรงเรียนประดู่วิทยา</option>
+														<option value="โรงเรียนพร้าวบูรพา">โรงเรียนพร้าวบูรพา</option>
+														<option value="โรงเรียนสหกรณ์ดำริ">โรงเรียนสหกรณ์ดำริ</option>
+														<option value="other">อื่นๆ</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-7">
+												<div class="form-group form-group-default" style="display: none;" id="ifYes">
+													<label>โรงเรียนอื่น (ให้ใส่โรงเรียนนำหน้าด้วย เช่นโรงเรียนบ้าสามแสน เป็นต้น) </label>
+													<input name="final_school_etc" type="text" class="form-control" >
 												</div>
 											</div>
 										</div>
@@ -764,10 +796,10 @@
 										</div>
 									</div>
 									<div class="card-footer" align="center">
-										
+
 										<div class="form-check">
-										<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
-											เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+											<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
+												เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
 											<label class="form-check-label ml-1">
 												<input class="form-check-input" type="checkbox" id="chksubmit">
 												<span class="form-check-sign">ข้าพเจ้าได้ตรวจสอบข้อมูลทุกอย่างเรียบร้อยแล้ว ข้อมูลที่ใช้ในการสมัครเป็นความจริงทุกประการ</span>
@@ -893,7 +925,17 @@
 			});
 		});
 	</script>
-	
+
+	<script>
+		function yesnoCheck(that) {
+			if (that.value == "other") {
+				document.getElementById("ifYes").style.display = "block";
+			} else {
+				document.getElementById("ifYes").style.display = "none";
+			}
+		}
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',

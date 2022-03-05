@@ -356,7 +356,7 @@ Route::post('/Searchacademic/move', 'AcademicsController@academicMoveAll');
 
 Route::get('/academic/moveChange', 'AcademicsController@academicMoveChange');
 Route::post('/Searchacademic/moveChange', 'AcademicsController@academicMoveChange');
-Route::post('/academic/classChangeMove/{id}', 'AcademicsController@academicChangeMove');
+Route::post('/academic/classChangeMove', 'AcademicsController@academicChangeMove');
 
 //-->ออกกลางคัน
 Route::get('/academic/out', 'AcademicsController@academicOutAll');
@@ -364,7 +364,7 @@ Route::post('/Searchacademic/out', 'AcademicsController@academicOutAll');
 
 Route::get('/academic/outChange', 'AcademicsController@academicOutChange');
 Route::post('/Searchacademic/outChange', 'AcademicsController@academicOutChange');
-Route::post('/academic/classChangeOut/{id}', 'AcademicsController@academicChangeOut');
+Route::post('/academic/classChangeOut', 'AcademicsController@academicChangeOut');
 
 //เพิ่มแอคเค้านักเรียน
 Route::get('/academic/allAccount', 'AcademicsController@showAccountStudent');

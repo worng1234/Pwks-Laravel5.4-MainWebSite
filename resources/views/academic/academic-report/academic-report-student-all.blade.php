@@ -280,6 +280,13 @@
 						</li>
 
 						<li class="nav-item">
+							<a href="{{ url('/StudentCore')}}">
+								<i class="fas fa-file-archive"></i>
+								<p>ข้อมูลพื้นฐานนักเรียน</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-user-graduate"></i>
 								<p>จัดการข้อมูลนักเรียน</p>
@@ -376,31 +383,20 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#basic">
 								<i class="fas fa-sliders-h"></i>
-								<p>จัดการข้อมูลพื้นฐาน</p>
+								<p>กำหนดชั้นเรียน</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="basic">
 								<ul class="nav nav-collapse">
-
 									<li>
-										<a data-toggle="collapse" href="#forms6">
-											<span class="sub-item">กำหนดชั้นเรียน</span>
-											<span class="caret"></span>
+										<a href="{{ url('/academic/classRoom')}}">
+											<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
 										</a>
-										<div class="collapse" id="forms6">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="{{ url('/academic/classRoom')}}">
-														<span class="sub-item">กำหนดจำนวนห้องเรียน</span>
-													</a>
-												</li>
-												<li>
-													<a href="{{ url('/academic/classMajor')}}">
-														<span class="sub-item">กำหนดสายการเรียน</span>
-													</a>
-												</li>
-											</ul>
-										</div>
+									</li>
+									<li>
+										<a href="{{ url('/academic/classMajor')}}">
+											<span class="sub-item">กำหนดสายการเรียน</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -491,16 +487,17 @@
 
 											<div class="row">
 												<div class="col-sm-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>รหัสนักเรียน</label>
-														<input type="search" class="form-control" placeholder="" name="search1">
+													<div class="input-icon">
+														<input type="search" class="form-control" placeholder="รหัสนักเรียน" name="search1">
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-6 col-md-3">
-													<div class="form-group form-group-default">
-														<label>ระดับชั้น</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search2">
-															<option value="">เลือก</option>
+															<option value="">ระดับชั้น</option>
 															<option value="1">มัธยมศึกษาปีที่ 1</option>
 															<option value="2">มัธยมศึกษาปีที่ 2</option>
 															<option value="3">มัธยมศึกษาปีที่ 3</option>
@@ -508,13 +505,15 @@
 															<option value="5">มัธยมศึกษาปีที่ 5</option>
 															<option value="6">มัธยมศึกษาปีที่ 6</option>
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
 												<div class="col-4 col-md-2">
-													<div class="form-group form-group-default">
-														<label>ลำดับห้อง</label>
+													<div class="input-icon">
 														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search3">
-															<option value="">เลือก</option>
+															<option value="">ลำดับห้อง</option>
 															<option value="1">1</option>
 															<option value="2">2</option>
 															<option value="3">3</option>
@@ -526,9 +525,14 @@
 															<option value="9">9</option>
 															<option value="10">10</option>
 														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
 													</div>
 												</div>
-												<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1"><i class="fas fa-search"></i> แสดง</button>
+												<div class="col-12 col-md-3">
+													<button type="submit" class="btn btn-primary "><i class="fas fa-search"></i> ค้นหา</button>
+												</div>
 											</div>
 										</form>
 									</div>
@@ -666,7 +670,8 @@
 				"language": {
 					"search": "ค้นหาข้อมูล :"
 				},
-				"ordering": false
+				"ordering": false,
+				"searching": false
 			});
 		});
 	</script>

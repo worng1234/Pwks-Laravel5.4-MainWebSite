@@ -610,16 +610,16 @@
 														<div class="form-group form-group-default">
 															<label>*ความพิการ</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="disabled">
-																<option value="ไม่มี" <?php if ($newstudentm1Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
-																<option value="การมองเห็น" <?php if ($newstudentm1Model->disabled == "การมองเห็น") { ?> selected="selected" <?php } ?>>การมองเห็น</option>
-																<option value="การได้ยิน" <?php if ($newstudentm1Model->disabled == "การได้ยิน") { ?> selected="selected" <?php } ?>>การได้ยิน</option>
-																<option value="สติปัญญา" <?php if ($newstudentm1Model->disabled == "สติปัญญา") { ?> selected="selected" <?php } ?>>สติปัญญา</option>
-																<option value="ร่างกาย/สุขภาพ" <?php if ($newstudentm1Model->disabled == "ร่างกาย/สุขภาพ") { ?> selected="selected" <?php } ?>>ร่างกาย/สุขภาพ</option>
-																<option value="การเรียนรู้" <?php if ($newstudentm1Model->disabled == "การเรียนรู้") { ?> selected="selected" <?php } ?>>การเรียนรู้</option>
-																<option value="การพูด/ภาษา" <?php if ($newstudentm1Model->disabled == "การพูด/ภาษา") { ?> selected="selected" <?php } ?>>การพูด/ภาษา</option>
-																<option value="พฤติกรรม/อารมณ์" <?php if ($newstudentm1Model->disabled == "พฤติกรรม/อารมณ์") { ?> selected="selected" <?php } ?>>พฤติกรรม/อารมณ์</option>
-																<option value="ออทิสติค" <?php if ($newstudentm1Model->disabled == "ออทิสติค") { ?> selected="selected" <?php } ?>>ออทิสติค</option>
-																<option value="พิการซ้ำซ้อน" <?php if ($newstudentm1Model->disabled == "พิการซ้ำซ้อน") { ?> selected="selected" <?php } ?>>พิการซ้ำซ้อน</option>
+																<option value="ไม่มี" <?php if ($newstudentm4Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="การมองเห็น" <?php if ($newstudentm4Model->disabled == "การมองเห็น") { ?> selected="selected" <?php } ?>>การมองเห็น</option>
+																<option value="การได้ยิน" <?php if ($newstudentm4Model->disabled == "การได้ยิน") { ?> selected="selected" <?php } ?>>การได้ยิน</option>
+																<option value="สติปัญญา" <?php if ($newstudentm4Model->disabled == "สติปัญญา") { ?> selected="selected" <?php } ?>>สติปัญญา</option>
+																<option value="ร่างกาย/สุขภาพ" <?php if ($newstudentm4Model->disabled == "ร่างกาย/สุขภาพ") { ?> selected="selected" <?php } ?>>ร่างกาย/สุขภาพ</option>
+																<option value="การเรียนรู้" <?php if ($newstudentm4Model->disabled == "การเรียนรู้") { ?> selected="selected" <?php } ?>>การเรียนรู้</option>
+																<option value="การพูด/ภาษา" <?php if ($newstudentm4Model->disabled == "การพูด/ภาษา") { ?> selected="selected" <?php } ?>>การพูด/ภาษา</option>
+																<option value="พฤติกรรม/อารมณ์" <?php if ($newstudentm4Model->disabled == "พฤติกรรม/อารมณ์") { ?> selected="selected" <?php } ?>>พฤติกรรม/อารมณ์</option>
+																<option value="ออทิสติค" <?php if ($newstudentm4Model->disabled == "ออทิสติค") { ?> selected="selected" <?php } ?>>ออทิสติค</option>
+																<option value="พิการซ้ำซ้อน" <?php if ($newstudentm4Model->disabled == "พิการซ้ำซ้อน") { ?> selected="selected" <?php } ?>>พิการซ้ำซ้อน</option>
 															</select>
 														</div>
 													</div>
@@ -627,18 +627,18 @@
 														<div class="form-group form-group-default">
 															<label>*ความด้อยโอกาส</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
-																<option value="ไม่มี" <?php if ($newstudentm1Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
-																<option value="ถูกบังคับขายแรงงาน" <?php if ($newstudentm1Model->disabled == "ถูกบังคับขายแรงงาน") { ?> selected="selected" <?php } ?>>ถูกบังคับขายแรงงาน</option>
-																<option value="อยู่ในธุรกิจทางเพศ" <?php if ($newstudentm1Model->disabled == "อยู่ในธุรกิจทางเพศ") { ?> selected="selected" <?php } ?>>อยู่ในธุรกิจทางเพศ</option>
-																<option value="ถูกทอดทิ้ง" <?php if ($newstudentm1Model->disabled == "ถูกทอดทิ้ง") { ?> selected="selected" <?php } ?>>ถูกทอดทิ้ง</option>
-																<option value="เด็กเร่ร่อน" <?php if ($newstudentm1Model->disabled == "เด็กเร่ร่อน") { ?> selected="selected" <?php } ?>>เด็กเร่ร่อน</option>
-																<option value="ได้รับผลกระทบจากเอดส์" <?php if ($newstudentm1Model->disabled == "ได้รับผลกระทบจากเอดส์") { ?> selected="selected" <?php } ?>>ได้รับผลกระทบจากเอดส์</option>
-																<option value="ชนกลุ่มน้อย" <?php if ($newstudentm1Model->disabled == "ชนกลุ่มน้อย") { ?> selected="selected" <?php } ?>>ชนกลุ่มน้อย</option>
-																<option value="ถูกทำร้ายทารุณ" <?php if ($newstudentm1Model->disabled == "ถูกทำร้ายทารุณ") { ?> selected="selected" <?php } ?>>ถูกทำร้ายทารุณ</option>
-																<option value="เด็กยากจน" <?php if ($newstudentm1Model->disabled == "เด็กยากจน") { ?> selected="selected" <?php } ?>>เด็กยากจน</option>
-																<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด" <?php if ($newstudentm1Model->disabled == "เด็กที่มีปัญหาเกี่ยวกับยาเสพติด") { ?> selected="selected" <?php } ?>>เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
-																<option value="เด็กกำพร้า" <?php if ($newstudentm1Model->disabled == "เด็กกำพร้า") { ?> selected="selected" <?php } ?>>เด็กกำพร้า</option>
-																<option value="ทำงานรับผิดชอบตนเองและครอบครัว" <?php if ($newstudentm1Model->disabled == "ทำงานรับผิดชอบตนเองและครอบครัว") { ?> selected="selected" <?php } ?>>ทำงานรับผิดชอบตนเองและครอบครัว</option>
+																<option value="ไม่มี" <?php if ($newstudentm4Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="ถูกบังคับขายแรงงาน" <?php if ($newstudentm4Model->disabled == "ถูกบังคับขายแรงงาน") { ?> selected="selected" <?php } ?>>ถูกบังคับขายแรงงาน</option>
+																<option value="อยู่ในธุรกิจทางเพศ" <?php if ($newstudentm4Model->disabled == "อยู่ในธุรกิจทางเพศ") { ?> selected="selected" <?php } ?>>อยู่ในธุรกิจทางเพศ</option>
+																<option value="ถูกทอดทิ้ง" <?php if ($newstudentm4Model->disabled == "ถูกทอดทิ้ง") { ?> selected="selected" <?php } ?>>ถูกทอดทิ้ง</option>
+																<option value="เด็กเร่ร่อน" <?php if ($newstudentm4Model->disabled == "เด็กเร่ร่อน") { ?> selected="selected" <?php } ?>>เด็กเร่ร่อน</option>
+																<option value="ได้รับผลกระทบจากเอดส์" <?php if ($newstudentm4Model->disabled == "ได้รับผลกระทบจากเอดส์") { ?> selected="selected" <?php } ?>>ได้รับผลกระทบจากเอดส์</option>
+																<option value="ชนกลุ่มน้อย" <?php if ($newstudentm4Model->disabled == "ชนกลุ่มน้อย") { ?> selected="selected" <?php } ?>>ชนกลุ่มน้อย</option>
+																<option value="ถูกทำร้ายทารุณ" <?php if ($newstudentm4Model->disabled == "ถูกทำร้ายทารุณ") { ?> selected="selected" <?php } ?>>ถูกทำร้ายทารุณ</option>
+																<option value="เด็กยากจน" <?php if ($newstudentm4Model->disabled == "เด็กยากจน") { ?> selected="selected" <?php } ?>>เด็กยากจน</option>
+																<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด" <?php if ($newstudentm4Model->disabled == "เด็กที่มีปัญหาเกี่ยวกับยาเสพติด") { ?> selected="selected" <?php } ?>>เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+																<option value="เด็กกำพร้า" <?php if ($newstudentm4Model->disabled == "เด็กกำพร้า") { ?> selected="selected" <?php } ?>>เด็กกำพร้า</option>
+																<option value="ทำงานรับผิดชอบตนเองและครอบครัว" <?php if ($newstudentm4Model->disabled == "ทำงานรับผิดชอบตนเองและครอบครัว") { ?> selected="selected" <?php } ?>>ทำงานรับผิดชอบตนเองและครอบครัว</option>
 															</select>
 														</div>
 													</div>

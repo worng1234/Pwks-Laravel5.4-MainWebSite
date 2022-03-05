@@ -16,6 +16,8 @@ use App\Models\registeryearModel;
 use App\Student;
 use App\Models\classroomModel;
 use App\Models\classmajorModel;
+use App\RegisterloginM1;
+use App\RegisterloginM4;
 
 
 
@@ -457,16 +459,16 @@ class AcademicsController extends Controller
             $data1[$i] = $request->student_class[$i];
             $data2[$i] = $request->student_room[$i];
             $id = $i + 1;
-            $data = studentcoreModels::find($id);
-            $datastudent = Student::find($id);
-            $student = $datastudent->student_id;
-            $data->update([
-                'student_class' => $data1[$i],
-                'student_room' => $data2[$i],
-            ]);
+            
+            $upStudentCore = DB::table('student_core')
+                ->where('student_id', '=', $request->student_id[$i])
+                ->update([
+                    'student_class' => $data1[$i],
+                    'student_room' => $data2[$i],
+                ]);
 
             $upStudent = DB::table('students')
-                ->where('student_id', '=', $student)
+                ->where('student_id', '=', $request->student_id[$i])
                 ->update([
                     'student_class' => $data1[$i],
                     'student_room' => $data2[$i],
@@ -480,38 +482,55 @@ class AcademicsController extends Controller
         for ($i = 0; $i < count($request->status); $i++) {
             $data1[$i] = $request->status[$i];
             $id = $i + 1;
-            $data = studentcoreModels::find($id);
-            $data->update([
-                'status' => $data1[$i],
-            ]);
+
+            $upStudentCore = DB::table('student_core')
+                ->where('student_id', '=', $request->student_id[$i])
+                ->update([
+                    'status' => $data1[$i],
+                ]);
         }
 
         return redirect('/academic/final');
     }
 
-    public function academicChangeMove(Request $request, $id)
+    public function academicChangeMove(Request $request)
     {
         $day = date('d');
         $mounth = date('m');
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
 
-        $change = studentcoreModels::find($id);
-        $change->date = $date;
-        $change->update($request->all());
+        for ($i = 0; $i < count($request->status); $i++) {
+            $data1[$i] = $request->status[$i];
+            $id = $i + 1;
+
+            $upStudentCore = DB::table('student_core')
+                ->where('student_id', '=', $request->student_id[$i])
+                ->update([
+                    'status' => $data1[$i],
+                ]);
+        }
         return redirect('/academic/move');
     }
 
-    public function academicChangeOut(Request $request, $id)
+    public function academicChangeOut(Request $request)
     {
         $day = date('d');
         $mounth = date('m');
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
 
-        $change = studentcoreModels::find($id);
-        $change->date = $date;
-        $change->update($request->all());
+        for ($i = 0; $i < count($request->status); $i++) {
+            $data1[$i] = $request->status[$i];
+            $id = $i + 1;
+
+            $upStudentCore = DB::table('student_core')
+                ->where('student_id', '=', $request->student_id[$i])
+                ->update([
+                    'status' => $data1[$i],
+                ]);
+        }
+
         return redirect('/academic/out');
     }
 
@@ -1895,6 +1914,10 @@ class AcademicsController extends Controller
             'password' => bcrypt($request->get('student_id')),
         ]);
 
+        $destroyAcc = DB::table('registerlogin_m1s')
+            ->where('username', '=', $request->get('student_id_card'))
+            ->delete();
+
         return redirect('/tranferAllM1');
     }
 
@@ -2594,6 +2617,10 @@ class AcademicsController extends Controller
             'password' => bcrypt($request->get('student_id')),
         ]);
 
+        $destroyAcc = DB::table('registerlogin_m4s')
+            ->where('username', '=', $request->get('student_id_card'))
+            ->delete();
+
         return redirect('/tranferAllM4');
     }
 
@@ -2851,41 +2878,52 @@ class AcademicsController extends Controller
 
     public function ReportStudyM4(Request $request)
     {
+        $register_year = DB::table('register_year')
+            ->first();
+
         if ($request->get('search1') !== null) {
             $search1 = $request->get('search1');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search1 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         } elseif ($request->get('search2') !== null) {
             $search2 = $request->get('search2');
             $data = DB::table('new_student_register_m4')
                 ->where('major_name1', 'like', '%' . $search2 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         } elseif ($request->get('search3') !== null) {
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m4')
                 ->where('major_name2', 'like', '%' . $search3 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         } elseif ($request->get('search4') !== null) {
             $search4 = $request->get('search4');
             $data = DB::table('new_student_register_m4')
                 ->where('major_name3', 'like', '%' . $search4 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $search2 = $request->get('search2');
@@ -2893,10 +2931,12 @@ class AcademicsController extends Controller
             $data = DB::table('new_student_register_m4')
                 ->where('major_name1', 'like', '%' . $search2 . '%')
                 ->where('major_name2', 'like', '%' . $search3 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         } elseif (
             $request->get('search2') !== null && $request->get('search3') !== null
@@ -2909,19 +2949,22 @@ class AcademicsController extends Controller
                 ->where('major_name1', 'like', '%' . $search2 . '%')
                 ->where('major_name2', 'like', '%' . $search3 . '%')
                 ->where('major_name3', 'like', '%' . $search4 . '%')
+                ->where('student_year', '=', $register_year->register_year)
                 ->get();
 
             return view('academic.academic-report.academic-report-study-m4', [
                 'data' => $data,
+                'register_year' => $register_year
             ]);
         }
 
         $data = DB::table('new_student_register_m4')
-            ->where('status_tranfer', '=', '02')
+            ->where('student_year', '=', $register_year->register_year)
             ->get();
 
         return view('academic.academic-report.academic-report-study-m4', [
             'data' => $data,
+            'register_year' => $register_year
         ]);
     }
 
