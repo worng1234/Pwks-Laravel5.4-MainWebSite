@@ -25,6 +25,10 @@ use Illuminate\Routing\RouteGroup;
 
 Route::get('/', 'indexController@index');
 
+Route::get('/Contact', function () {
+    return view('contact');
+});
+
 //ตรวจสอบสถานะการสมัครเข้าเรียน(หน้าหลัก)
 Route::get('/check/status', function () {
     return view('Newstudent.success-statuscheck.form-check-index');

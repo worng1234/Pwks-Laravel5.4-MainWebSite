@@ -81,15 +81,15 @@
 						เมนู
 						<div class="close-menu"> <i class="flaticon-cross"></i></div>
 					</h3>
-					<ul class="nav page-navigation page-navigation-info bg-white">
+					<ul class="nav page-navigation page-navigation-info bg-white" >
 
-						<li class="nav-item">
+						<li class="nav-item" style="width:15%;">
 							<a class="nav-link" href="{{ url('/')}}">
 								<i class="link-icon icon-home"></i>
 								<span class="menu-title">หน้าแรก</span>
 							</a>
 						</li>
-						<li class="nav-item submenu active">
+						<li class="nav-item submenu" >
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-user-follow"></i>
 								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
@@ -105,10 +105,11 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
+									
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item submenu">
+						<li class="nav-item submenu" >
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-folder-alt"></i>
 								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
@@ -121,7 +122,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item submenu">
+						<li class="nav-item submenu" >
 							<a class="nav-link" href="#">
 								<i class="link-icon icon-lock"></i>
 								<span class="menu-title">เข้าระบบ</span>
@@ -143,7 +144,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item " >
+						<li class="nav-item submenu active" >
 							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
@@ -170,30 +171,23 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack fa-lg"></i> &nbsp; คำแนะนำและข้อตกลงการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 4</div>
+										<div class="card-title"><i class="link-icon icon-bubbles fa-lg"></i>&nbsp; ติดต่อเรา</div>
 									</div>
 								</div>
 								<div class="card-body">
-									<ol>
-										<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของผู้สมัครเอง</li>
-										<li>เอกสารที่ใช้ประกอบการสมัครให้ใช้เป็นไฟล์ .pdf หากไม่สะดวกให้ใช้เป็นไฟลร์รูปภาพ .jpg หรือ .png </li>
-										<li>เอกสารที่ใช้ประกอบการสมัครมีดังนี้
-											</br>&nbsp;- ไฟล์หน้าตรงขนาด 2 นิ้ว
-											</br>&nbsp;- ไฟล์สำเนาบัตรประจำตัวประชาชนของผู้สมัคร
-											</br>&nbsp;- ไฟล์สำเนาทะเบียนบ้านของผู้สมัคร
-											</br>&nbsp;- ไฟล์ใบ ปพ.1(ด้านหน้า) หรือหนังสือรับรองการเป็นนักเรียนของผู้สมัคร
-										</li>
-									</ol>
-								</div>
-								<div class="card-footer" align="center">
-									<div class="form-check">
-										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox" id="chkagreement">
-											<span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
-										</label>
+									<div align="center">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.67092205996!2d99.1915023143807!3d19.340080948645333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d7555439093085%3A0x7a6b395d00a99774!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lie4Lij4LmJ4Liy4Lin4Lin4Li04LiX4Lii4Liy4LiE4Lih!5e0!3m2!1sth!2sth!4v1646626879691!5m2!1sth!2sth" 
+										width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 									</div>
-									<div id="dvagreement" style="display: none">
-										<a type="button" class="btn btn-info" href="{{ url('/NewstudentM4')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+
+									
+									<br>
+									<div class="card-footer">
+										<h3><span style="color: purple;">ที่อยู่ :</span> โรงเรียนพร้าววิทยาคม 196 หมู่ 1 ตำบลเขื่อนผาก อำเภอพร้าว จังหวัดเชียงใหม่ 50190 </h3>
+										<br>
+										<h3><span style="color: purple;">เบอร์โทรศัพท์ :</span> 0-5347-5303 &nbsp;&nbsp;&nbsp;<span style="color: purple;">โทรสาร :</span> 0-5347-4140</h3>
+										<br>
+										<h3><span style="color: purple;"><i class="fab fa-facebook-square fa-lg"></i> : </span> <a href="https://www.facebook.com/phraowittayakom/">https://www.facebook.com/phraowittayakom/</a></h3>
 									</div>
 								</div>
 							</div>
@@ -287,19 +281,6 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
-
-	<script type="text/javascript">
-		$(function() {
-			$("#chkagreement").click(function() {
-				if ($(this).is(":checked")) {
-					$("#dvagreement").show();
-				} else {
-					$("#dvagreement").hide();
-				}
-			});
-		});
-	</script>
-
 	<script>
 		Circles.create({
 			id: 'circles-1',
@@ -345,55 +326,9 @@
 			styleWrapper: true,
 			styleText: true
 		})
-
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets: [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
-					}],
-					xAxes: [{
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
-					}]
-				},
-			}
-		});
-
-		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
 	</script>
+
+
 
 </body>
 
