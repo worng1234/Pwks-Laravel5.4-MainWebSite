@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class RegisterloginsM4Controller extends Controller
+class RegisterNewstudentM4Controller extends Controller
 {
     public function __construct()
     {

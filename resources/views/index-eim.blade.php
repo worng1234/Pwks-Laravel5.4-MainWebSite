@@ -144,12 +144,6 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
 						<li class="nav-item " >
 							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>

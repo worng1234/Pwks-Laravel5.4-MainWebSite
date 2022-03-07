@@ -287,16 +287,16 @@ Route::post('/student/login', 'Auth\StudentLoginController@login')->name('studen
 Route::post('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
 
 //RegisterLoginM1
-Route::get('/RegisM1', 'RegisterloginM1Controller@index')->name('RegisM1.dashboard');
-Route::get('/RegisM1/login', 'Auth\RegisterloginsM1Controller@showLogin')->name('RegisM1.login');
-Route::post('/RegisM1/login', 'Auth\RegisterloginsM1Controller@login')->name('RegisM1.login.submit');
-Route::post('/RegisM1/logout', 'Auth\RegisterloginsM1Controller@logout')->name('RegisM1.logout');
+Route::get('/RegisM1', 'RegisterM1Controller@index')->name('RegisM1.dashboard');
+Route::get('/RegisM1/login', 'Auth\RegisterLoginM1Controller@showLogin')->name('RegisM1.login');
+Route::post('/RegisM1/login', 'Auth\RegisterLoginM1Controller@login')->name('RegisM1.login.submit');
+Route::post('/RegisM1/logout', 'Auth\RegisterLoginM1Controller@logout')->name('RegisM1.logout');
 
 //RegisterLoginM4
-Route::get('/RegisM4', 'RegisterloginM4Controller@index')->name('RegisM4.dashboard');
-Route::get('/RegisM4/login', 'Auth\RegisterloginsM4Controller@showLogin')->name('RegisM4.login');
-Route::post('/RegisM4/login', 'Auth\RegisterloginsM4Controller@login')->name('RegisM4.login.submit');
-Route::post('/RegisM4/logout', 'Auth\RegisterloginsM4Controller@logout')->name('RegisM4.logout');
+Route::get('/RegisM4', 'RegisterM4Controller@index')->name('RegisM4.dashboard');
+Route::get('/RegisM4/login', 'Auth\RegisterNewstudentM4Controller@showLogin')->name('RegisM4.login');
+Route::post('/RegisM4/login', 'Auth\RegisterNewstudentM4Controller@login')->name('RegisM4.login.submit');
+Route::post('/RegisM4/logout', 'Auth\RegisterNewstudentM4Controller@logout')->name('RegisM4.logout');
 
 
 //AffairLogin

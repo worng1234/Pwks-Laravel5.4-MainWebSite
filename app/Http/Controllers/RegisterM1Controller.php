@@ -14,7 +14,7 @@ use App\Models\talentstudentModel;
 use App\Models\classmajorModel;
 
 
-class RegisterloginM1Controller extends Controller
+class RegisterM1Controller extends Controller
 {
     /**
      * Create a new controller instance.
