@@ -415,57 +415,57 @@
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>เดือน:</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="mounth">
-																<option value="01" <?php if ($data->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
-																<option value="02" <?php if ($data->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
-																<option value="03" <?php if ($data->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
-																<option value="04" <?php if ($data->mounth == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
-																<option value="05" <?php if ($data->mounth == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
-																<option value="06" <?php if ($data->mounth == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
-																<option value="07" <?php if ($data->mounth == "07") { ?> selected="selected" <?php } ?>>กรกฎาคม</option>
-																<option value="08" <?php if ($data->mounth == "08") { ?> selected="selected" <?php } ?>>สิงหาคม</option>
-																<option value="09" <?php if ($data->mounth == "09") { ?> selected="selected" <?php } ?>>กันยายน</option>
-																<option value="10" <?php if ($data->mounth == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
-																<option value="11" <?php if ($data->mounth == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
-																<option value="12" <?php if ($data->mounth == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
+															<select class="form-control" id="formGroupDefaultSelect" name="birth_month">
+																<option value="01" <?php if ($data->birth_month == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
+																<option value="02" <?php if ($data->birth_month == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
+																<option value="03" <?php if ($data->birth_month == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
+																<option value="04" <?php if ($data->birth_month == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
+																<option value="05" <?php if ($data->birth_month == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
+																<option value="06" <?php if ($data->birth_month == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
+																<option value="07" <?php if ($data->birth_month == "07") { ?> selected="selected" <?php } ?>>กรกฎาคม</option>
+																<option value="08" <?php if ($data->birth_month == "08") { ?> selected="selected" <?php } ?>>สิงหาคม</option>
+																<option value="09" <?php if ($data->birth_month == "09") { ?> selected="selected" <?php } ?>>กันยายน</option>
+																<option value="10" <?php if ($data->birth_month == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
+																<option value="11" <?php if ($data->birth_month == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
+																<option value="12" <?php if ($data->birth_month == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
 															</select>
 														</div>
 													</div>
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>วัน:</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="day">
-																<option value="01" <?php if ($data->day == "01") { ?> selected="selected" <?php } ?>>1</option>
-																<option value="02" <?php if ($data->day == "02") { ?> selected="selected" <?php } ?>>2</option>
-																<option value="03" <?php if ($data->day == "03") { ?> selected="selected" <?php } ?>>3</option>
-																<option value="04" <?php if ($data->day == "04") { ?> selected="selected" <?php } ?>>4</option>
-																<option value="05" <?php if ($data->day == "05") { ?> selected="selected" <?php } ?>>5</option>
-																<option value="06" <?php if ($data->day == "06") { ?> selected="selected" <?php } ?>>6</option>
-																<option value="07" <?php if ($data->day == "07") { ?> selected="selected" <?php } ?>>7</option>
-																<option value="08" <?php if ($data->day == "08") { ?> selected="selected" <?php } ?>>8</option>
-																<option value="09" <?php if ($data->day == "09") { ?> selected="selected" <?php } ?>>9</option>
-																<option value="10" <?php if ($data->day == "10") { ?> selected="selected" <?php } ?>>10</option>
-																<option value="11" <?php if ($data->day == "11") { ?> selected="selected" <?php } ?>>11</option>
-																<option value="12" <?php if ($data->day == "12") { ?> selected="selected" <?php } ?>>12</option>
-																<option value="13" <?php if ($data->day == "13") { ?> selected="selected" <?php } ?>>13</option>
-																<option value="14" <?php if ($data->day == "14") { ?> selected="selected" <?php } ?>>14</option>
-																<option value="15" <?php if ($data->day == "15") { ?> selected="selected" <?php } ?>>15</option>
-																<option value="16" <?php if ($data->day == "16") { ?> selected="selected" <?php } ?>>16</option>
-																<option value="17" <?php if ($data->day == "17") { ?> selected="selected" <?php } ?>>17</option>
-																<option value="18" <?php if ($data->day == "18") { ?> selected="selected" <?php } ?>>18</option>
-																<option value="19" <?php if ($data->day == "19") { ?> selected="selected" <?php } ?>>19</option>
-																<option value="20" <?php if ($data->day == "20") { ?> selected="selected" <?php } ?>>20</option>
-																<option value="21" <?php if ($data->day == "21") { ?> selected="selected" <?php } ?>>21</option>
-																<option value="22" <?php if ($data->day == "22") { ?> selected="selected" <?php } ?>>22</option>
-																<option value="23" <?php if ($data->day == "23") { ?> selected="selected" <?php } ?>>23</option>
-																<option value="24" <?php if ($data->day == "24") { ?> selected="selected" <?php } ?>>24</option>
-																<option value="25" <?php if ($data->day == "25") { ?> selected="selected" <?php } ?>>25</option>
-																<option value="26" <?php if ($data->day == "26") { ?> selected="selected" <?php } ?>>26</option>
-																<option value="27" <?php if ($data->day == "27") { ?> selected="selected" <?php } ?>>27</option>
-																<option value="28" <?php if ($data->day == "28") { ?> selected="selected" <?php } ?>>28</option>
-																<option value="29" <?php if ($data->day == "29") { ?> selected="selected" <?php } ?>>29</option>
-																<option value="30" <?php if ($data->day == "30") { ?> selected="selected" <?php } ?>>30</option>
-																<option value="31" <?php if ($data->day == "31") { ?> selected="selected" <?php } ?>>31</option>
+															<select class="form-control" id="formGroupDefaultSelect" name="birth_day">
+																<option value="01" <?php if ($data->birth_day == "01") { ?> selected="selected" <?php } ?>>1</option>
+																<option value="02" <?php if ($data->birth_day == "02") { ?> selected="selected" <?php } ?>>2</option>
+																<option value="03" <?php if ($data->birth_day == "03") { ?> selected="selected" <?php } ?>>3</option>
+																<option value="04" <?php if ($data->birth_day == "04") { ?> selected="selected" <?php } ?>>4</option>
+																<option value="05" <?php if ($data->birth_day == "05") { ?> selected="selected" <?php } ?>>5</option>
+																<option value="06" <?php if ($data->birth_day == "06") { ?> selected="selected" <?php } ?>>6</option>
+																<option value="07" <?php if ($data->birth_day == "07") { ?> selected="selected" <?php } ?>>7</option>
+																<option value="08" <?php if ($data->birth_day == "08") { ?> selected="selected" <?php } ?>>8</option>
+																<option value="09" <?php if ($data->birth_day == "09") { ?> selected="selected" <?php } ?>>9</option>
+																<option value="10" <?php if ($data->birth_day == "10") { ?> selected="selected" <?php } ?>>10</option>
+																<option value="11" <?php if ($data->birth_day == "11") { ?> selected="selected" <?php } ?>>11</option>
+																<option value="12" <?php if ($data->birth_day == "12") { ?> selected="selected" <?php } ?>>12</option>
+																<option value="13" <?php if ($data->birth_day == "13") { ?> selected="selected" <?php } ?>>13</option>
+																<option value="14" <?php if ($data->birth_day == "14") { ?> selected="selected" <?php } ?>>14</option>
+																<option value="15" <?php if ($data->birth_day == "15") { ?> selected="selected" <?php } ?>>15</option>
+																<option value="16" <?php if ($data->birth_day == "16") { ?> selected="selected" <?php } ?>>16</option>
+																<option value="17" <?php if ($data->birth_day == "17") { ?> selected="selected" <?php } ?>>17</option>
+																<option value="18" <?php if ($data->birth_day == "18") { ?> selected="selected" <?php } ?>>18</option>
+																<option value="19" <?php if ($data->birth_day == "19") { ?> selected="selected" <?php } ?>>19</option>
+																<option value="20" <?php if ($data->birth_day == "20") { ?> selected="selected" <?php } ?>>20</option>
+																<option value="21" <?php if ($data->birth_day == "21") { ?> selected="selected" <?php } ?>>21</option>
+																<option value="22" <?php if ($data->birth_day == "22") { ?> selected="selected" <?php } ?>>22</option>
+																<option value="23" <?php if ($data->birth_day == "23") { ?> selected="selected" <?php } ?>>23</option>
+																<option value="24" <?php if ($data->birth_day == "24") { ?> selected="selected" <?php } ?>>24</option>
+																<option value="25" <?php if ($data->birth_day == "25") { ?> selected="selected" <?php } ?>>25</option>
+																<option value="26" <?php if ($data->birth_day == "26") { ?> selected="selected" <?php } ?>>26</option>
+																<option value="27" <?php if ($data->birth_day == "27") { ?> selected="selected" <?php } ?>>27</option>
+																<option value="28" <?php if ($data->birth_day == "28") { ?> selected="selected" <?php } ?>>28</option>
+																<option value="29" <?php if ($data->birth_day == "29") { ?> selected="selected" <?php } ?>>29</option>
+																<option value="30" <?php if ($data->birth_day == "30") { ?> selected="selected" <?php } ?>>30</option>
+																<option value="31" <?php if ($data->birth_day == "31") { ?> selected="selected" <?php } ?>>31</option>
 															</select>
 														</div>
 													</div>

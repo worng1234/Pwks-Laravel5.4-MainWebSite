@@ -412,29 +412,29 @@
 													<div class="col-sm-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>เดือน:</label>
-															@if ($data->mounth == '01')
+															@if ($data->birth_month == '01')
 															<input id="Name" type="text" class="form-control" placeholder="" value="มกราคม" readonly>
-															@elseif ($data->mounth == '02')
+															@elseif ($data->birth_month == '02')
 															<input id="Name" type="text" class="form-control" placeholder="" value="กุมภาพันธ์" readonly>
-															@elseif ($data->mounth == '03')
+															@elseif ($data->birth_month == '03')
 															<input id="Name" type="text" class="form-control" placeholder="" value="มีนาคม" readonly>
-															@elseif ($data->mounth == '04')
+															@elseif ($data->birth_month == '04')
 															<input id="Name" type="text" class="form-control" placeholder="" value="เมษายน" readonly>
-															@elseif ($data->mounth == '05')
+															@elseif ($data->birth_month == '05')
 															<input id="Name" type="text" class="form-control" placeholder="" value="พฤษภาคม" readonly>
-															@elseif ($data->mounth == '06')
+															@elseif ($data->birth_month == '06')
 															<input id="Name" type="text" class="form-control" placeholder="" value="มิถุนายน" readonly>
-															@elseif ($data->mounth == '07')
+															@elseif ($data->birth_month == '07')
 															<input id="Name" type="text" class="form-control" placeholder="" value="กรกฎาคม" readonly>
-															@elseif ($data->mounth == '08')
+															@elseif ($data->birth_month == '08')
 															<input id="Name" type="text" class="form-control" placeholder="" value="สิงหาคม" readonly>
-															@elseif ($data->mounth == '09')
+															@elseif ($data->birth_month == '09')
 															<input id="Name" type="text" class="form-control" placeholder="" value="กันยายน" readonly>
-															@elseif ($data->mounth == '10')
+															@elseif ($data->birth_month == '10')
 															<input id="Name" type="text" class="form-control" placeholder="" value="ตุลาคม" readonly>
-															@elseif ($data->mounth == '11')
+															@elseif ($data->birth_month == '11')
 															<input id="Name" type="text" class="form-control" placeholder="" value="พฤษจิกายน" readonly>
-															@elseif ($data->mounth == '12')
+															@elseif ($data->birth_month == '12')
 															<input id="Name" type="text" class="form-control" placeholder="" value="ธันวาคม" readonly>
 															@endif
 														</div>
