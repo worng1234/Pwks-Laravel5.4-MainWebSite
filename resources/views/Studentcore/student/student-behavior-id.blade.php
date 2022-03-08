@@ -242,15 +242,15 @@
 																<tr>
 																	<td style="text-align: left; vertical-align: top;">เลขที่
 																	<td>
-																		<input value="{{$data_student->student_number}}" type="text" readonly="readonly" id="TextBox04" class="textboxReadOnly" style="width:100%;" />
+																		<input value="{{$scoreData->student_number}}" type="text" readonly="readonly" id="TextBox04" class="textboxReadOnly" style="width:100%;" />
 																	</td>
 																</tr>
 																<tr>
 																	<td style="text-align: left; vertical-align: top;">คะแนนล่าสุด
 																	</td>
 																	<td>
-																		@if ($data_student->score !== NULL || $data_student->score != 0)
-																		<input value="{{$data_student->score}}" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
+																		@if ($scoreData->score !== NULL )
+																		<input value="{{$scoreData->score}}" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
 																		@else 
 																		<input value="-" type="text" readonly="readonly" id="TextBox05" class="textboxReadOnly" style="width:100%;" />
 																		@endif

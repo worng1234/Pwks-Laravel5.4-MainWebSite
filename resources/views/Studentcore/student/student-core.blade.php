@@ -143,16 +143,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
 							</a>
 						</li>
 
@@ -672,6 +672,7 @@
 																	<label>*จบชั้น</label>
 																	<select class="form-control" id="formGroupDefaultSelect" name="final_class" required>
 																		<option>เลือก</option>
+																		<option value="ประถมศึกษาปีที่ 6">ประถมศึกษาปีที่ 6</option>
 																		<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
 																		<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
 																		<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
@@ -2129,9 +2130,10 @@
 																		<span class="form-radio-sign">ไม่มี</span>
 																	</label><br><br>
 																	<label class="form-radio-label">
-																		<input class="form-radio-input" type="radio" name="job_study" value="มี">
+																		<input class="form-radio-input" type="radio" name="job_study" value="มี" id="chktotal">
 																		<span class="form-radio-sign">มี</span>
 																	</label>
+																	<div id="dvtotal" style="display: none">
 																	<div class="form-group form-group-default">
 																		<label>โปรดระบุ (หารายได้จากอะไร)</label>
 																		<input id="Name" type="text" class="form-control" name="job_detail">
@@ -2147,6 +2149,7 @@
 																			<option value="251 - 300">251 - 300</option>
 																			<option value="มากกว่า 300">มากกว่า 300</option>
 																		</select>
+																	</div>
 																	</div>
 																</div>
 															</div>
@@ -2404,6 +2407,18 @@
 					$("#dvparent").show();
 				} else {
 					$("#dvparent").hide();
+				}
+			});
+		});
+	</script>
+
+<script type="text/javascript">
+		$(function() {
+			$("#chktotal").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvtotal").show();
+				} else {
+					$("#dvtotal").hide();
 				}
 			});
 		});

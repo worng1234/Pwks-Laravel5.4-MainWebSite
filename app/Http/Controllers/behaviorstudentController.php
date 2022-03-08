@@ -213,13 +213,15 @@ class behaviorstudentController extends Controller
 
         $data_student = Student::find($id);
         $stid = $data_student->username;
-        $photo_id = $data_student->student_id_card;
+        $photo_id = $data_student->username;
+        
 
         $student = DB::table('student_core')
             ->join('behavior_student', 'student_core.student_id', '=', 'behavior_student.student_id_behavior')
             ->select(
                 'student_core.student_id',
                 'student_core.student_number',
+                'student_core.score',
                 'behavior_student.fullname',
                 'behavior_student.behavior_class',
                 'behavior_student.behavior_room',
@@ -247,6 +249,9 @@ class behaviorstudentController extends Controller
             $photo = $photo_id;
         }
 
+        $scoreData = DB::table('student_core')
+            ->where('student_id_card', '=', $stid)
+            ->first();
 
 
         return view(
@@ -257,7 +262,8 @@ class behaviorstudentController extends Controller
 
                 "data_student" => $data_student,
                 "student" => $student,
-                "photo" => $photo
+                "photo" => $photo,
+                "scoreData" => $scoreData
             ]
         );
     }

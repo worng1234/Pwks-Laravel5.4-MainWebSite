@@ -126,11 +126,8 @@
                                         <a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
-                                    </li>
+										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+									</li>
                                 </ul>
                             </div>
                         </li>
@@ -169,18 +166,18 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="link-icon icon-book-open"></i>
-                                <span class="menu-title">คู่มือการใช้งาน</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="link-icon icon-bubbles"></i>
-                                <span class="menu-title">ติดต่อเรา</span>
-                            </a>
-                        </li>
+                        <li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
+								<i class="link-icon icon-bubbles"></i>
+								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
+							</a>
+						</li>
 
                     </ul>
                 </div>
