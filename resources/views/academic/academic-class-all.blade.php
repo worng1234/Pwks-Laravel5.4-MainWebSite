@@ -563,8 +563,8 @@
 													<td align="center">มัธยมศึกษาปีที่ {{$value->student_class}}</td>
 													<td align="center">{{$value->student_room}}</td>
 													<td align="center">
-														@if ($value->status == '03')
-															จบการศึกษา
+														@if ($value->status == '01')
+															กำลังศึกษาอยู่
 														@endif
 													</td>
 												</tr>

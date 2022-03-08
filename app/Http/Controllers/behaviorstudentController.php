@@ -212,7 +212,8 @@ class behaviorstudentController extends Controller
             ->first();
 
         $data_student = Student::find($id);
-        $stid = $data_student->username;
+        $stcid = $data_student->username;
+        $stid = $data_student->student_id;
         $photo_id = $data_student->username;
         
 
@@ -250,7 +251,7 @@ class behaviorstudentController extends Controller
         }
 
         $scoreData = DB::table('student_core')
-            ->where('student_id_card', '=', $stid)
+            ->where('student_id_card', '=', $stcid)
             ->first();
 
 

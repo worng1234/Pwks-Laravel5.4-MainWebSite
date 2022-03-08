@@ -259,7 +259,7 @@
 										<div class="row">
 											<div class=" col-6 col-md-5">
 												<div class="form-group">
-													<label>หักคะแนน</label>
+													<label>เพิ่มคะแนน</label>
 													<div class="select2-input">
 														<select id="slct2" name="plus_score" class="form-control" required>
 															<!-- <option value="">&nbsp;</option>
