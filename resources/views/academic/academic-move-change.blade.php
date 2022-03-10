@@ -434,11 +434,11 @@
 						</li>
 
 						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-book-open"></i>
-								<p>คู่มือการใช้งาน</p>
-							</a>
-						</li>
+                            <a href="/Manual/manual.pdf" target="_blank">
+                                <i class="fas fa-book-open"></i>
+                                <p>คู่มือการใช้งาน</p>
+                            </a>
+                        </li>
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-comments"></i>
@@ -471,7 +471,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-user-graduate fa-lg"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> ย้ายสถานศึกษา <i class="flaticon-right-arrow"></i> แสดงข้อมูลย้ายสถานศึกษา</div>
+										<div class="card-title"><i class="fas fa-user-graduate fa-lg"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> ย้ายสถานศึกษา <i class="flaticon-right-arrow"></i> เพิ่มข้อมูลย้ายสถานศึกษา</div>
 
 									</div>
 								</div>

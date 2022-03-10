@@ -467,11 +467,11 @@
 						</li>
 
 						<li class="nav-item ">
-							<a href="#">
-								<i class="fas fa-book-open"></i>
-								<p>คู่มือการใช้งาน</p>
-							</a>
-						</li>
+                            <a href="/Manual/manual.pdf" target="_blank">
+                                <i class="fas fa-book-open"></i>
+                                <p>คู่มือการใช้งาน</p>
+                            </a>
+                        </li>
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-comments"></i>
@@ -553,6 +553,18 @@
 															<option value="8">8</option>
 															<option value="9">9</option>
 															<option value="10">10</option>
+														</select>
+														<span class="input-icon-addon">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<div class="col-4 col-md-2">
+													<div class="input-icon">
+														<select class="form-control" id="formGroupDefaultSelect" type="search" name="search4">
+															<option value="">สถานะ</option>
+															<option value="01">กำลังศึกษาอยู่</option>
+															<option value="02">จบการศึกษา</option>
 														</select>
 														<span class="input-icon-addon">
 															<i class="fa fa-search"></i>

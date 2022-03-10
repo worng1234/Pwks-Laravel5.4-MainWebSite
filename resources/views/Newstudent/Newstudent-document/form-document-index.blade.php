@@ -165,46 +165,31 @@
 		</div>
 
 		<div class="main-panel">
-			<div class="container">
-				<div class="page-inner">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="card-title fw-mediumbold">ส่งเอกสารรายงานตัว ชั้นมัธยมศึกษาปีที่ 1</div>
-									<p class="card-category">1.สำเนาบัตรประจำตัวประชาชนของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
-									<p class="card-category">2.สำเนาทะเบียนบ้านของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
-									<p class="card-category">3.ใบสูติบัตร </p>
-									<p class="card-category">4.ใบ ปพ.1 (ถ่ายรูปทั้งด้านหน้าและด้านหลัง) </p>
-									<p class="card-category">5.หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าเป็นผู้พิการจริง)</p>
-									<p class="card-category">6.เอกสารทั้งหมดที่ใช้รายงานตัวเพื่อยืนยันความประสงค์ที่จะเข้าศึกษาต่อให้ถ่ายเป็นรูป นามสกุลไฟล์ .jpg หรือ .png </p>
-									
-								</div>
-								<div class="card-footer" align="center"><br>
-									<a type="button" class="btn btn-info" href="{{ url('/Newstudent/documentM1')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="card-title fw-mediumbold">ส่งเอกสารรายงานตัว ชั้นมัธยมศึกษาปีที่ 4</div>
-									<p class="card-category">1.สำเนาบัตรประจำตัวประชาชนของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
-									<p class="card-category">2.สำเนาทะเบียนบ้านของบิดาและมารดา (ในกรณีที่ไม่ได้อยู่กับบิดา มารดาให้ใช้ของผู้ปกครองแทน) </p>
-									<p class="card-category">3.ใบสูติบัตร </p>
-									<p class="card-category">4.ใบ ปพ.1 (ถ่ายรูปทั้งด้านหน้าและด้านหลัง) </p>
-									<p class="card-category">5.หนังสือรับรองความพิการ (ในกรณีที่แพทย์รับรองว่าเป็นผู้พิการจริง)</p>
-									<p class="card-category">6.เอกสารทั้งหมดที่ใช้รายงานตัวเพื่อยืนยันความประสงค์ที่จะเข้าศึกษาต่อให้ถ่ายเป็นรูป นามสกุลไฟล์ .jpg หรือ .png</p>
-								</div>
-								<div class="card-footer" align="center"><br>
-									<a type="button" class="btn btn-info" href="{{ url('/Newstudent/documentM4')}}"><i class="fas fa-search"></i> ตรวจสอบ</a><br><br>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            <div class="container">
+                <div class="page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body" align="center" style="min-height: 450px">
+                                    
+                                <h1><i class="fas fa-check-circle fa-lg" style="color:green;"></i> ส่งเอกสารรายงานตัวเรียบร้อยแล้ว</h1>
+
+                                <div>
+                                    <h4>สามารถตรวจสอบผลการส่งเอกสารายงานตัวได้แล้ว
+                                    </br> เข้าไปที่ เมนู "รับสมัครนักเรียนใหม่" เลือก "ตรวจสอบสถานะการสมัครเข้าเรียน" หรือกดปุ่มด้านล่าง</h4> 
+                                </div>
+                                </br>
+                                <div>
+                                    <a type="button" class="btn btn-info" href="{{ url('/check/status')}}"><i class="fas fa-search"></i> ตรวจสอบสถานะการสมัครเข้าเรียน</a><br><br>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		<footer class="footer">
 			<div class="container">

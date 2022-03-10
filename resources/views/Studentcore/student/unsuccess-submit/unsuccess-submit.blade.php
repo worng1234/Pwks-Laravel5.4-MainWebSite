@@ -192,7 +192,7 @@
                             <div class="card">
                                 <div class="card-body" align="center" style="min-height: 450px">
                                     
-                                <h1><i class="fas fa-times-circle fa-lg" style="color:red;"></i> บันทึกข้อมูลผิดพลาดผิดพลาด</h1>
+                                <h1><i class="fas fa-times-circle fa-lg" style="color:red;"></i> บันทึกข้อมูลผิดพลาด</h1>
 
                                 <div>
                                     <h4>ท่านได้ทำการบันทึกข้อมูลไปแล้ว 

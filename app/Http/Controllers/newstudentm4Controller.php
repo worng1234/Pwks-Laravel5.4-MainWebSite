@@ -1198,7 +1198,7 @@ class newstudentm4Controller extends Controller
 
 
 
-        return redirect('/Newstudent/documentM4');
+        return redirect('/Newstudent/documentSuccess');
     }
 
     public function shownewstudentm4($id)
@@ -1422,6 +1422,342 @@ class newstudentm4Controller extends Controller
                 ]);
 
             $status_success1 = "01";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '01' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '03'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '03' && $request->get('status_idcard_student') == '03'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '03' 
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '03' 
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '01' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_idcard_student') == '03'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_idcard_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_house_student') == '01' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+           
+            $request->get('status_house_student') == '03' 
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '01'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '01'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '01' && $request->get('status_idcard_student') == '03'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '01'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_profile') == '03' && $request->get('status_idcard_student') == '03'
+            && $request->get('status_house_student') == '03' && $request->get('status_submit_student') == '01'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
+
+            $data->update([
+                "status_rigis" => $status_success1,
+                "status_picall" => $status_success1,
+            ]);
+        }elseif (
+            $request->get('status_submit_student') == '03'
+        ) {
+            $add1 = DB::table('status_pic')
+                ->where('student_idcard', '=', $student)
+                ->update([
+                    "status_profile" => $request->get('status_profile'),
+                    "status_idcard_student" => $request->get('status_idcard_student'),
+                    "status_house_student" => $request->get('status_house_student'),
+                    "status_submit_student" => $request->get('status_submit_student'),
+                ]);
+
+            $status_success1 = "03";
 
             $data->update([
                 "status_rigis" => $status_success1,

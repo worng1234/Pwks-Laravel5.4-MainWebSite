@@ -35,6 +35,10 @@ Route::get('/check/status', function () {
 });
 
 //ส่งเอกสารรายงานตัว(หน้าหลัก)
+Route::get('/Newstudent/documentSuccess', function () {
+    return view('Newstudent.Newstudent-document.form-document-index');
+});
+
 Route::get('/Newstudent/documentIndex', function () {
     return view('Newstudent.Newstudent-document.form-document-index');
 });
@@ -217,7 +221,7 @@ Route::get('/success/Addstudentcore', function () {
 });
 
 Route::get('/Unsuccess/Addstudentcore', function () {
-    return view('Studentcore.student.success-submit.unsuccess-submit');
+    return view('Studentcore.student.unsuccess-submit.unsuccess-submit');
 });
 
 Route::get('/StudentCore/{id}', 'studentcoreController@show');

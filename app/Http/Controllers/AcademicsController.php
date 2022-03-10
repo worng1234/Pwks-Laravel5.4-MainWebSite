@@ -154,38 +154,38 @@ class AcademicsController extends Controller
 
         //ปวช.1
         $m4_9m = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->where('student_major', '=', '09')
-        ->get();
+            ->where('student_class', '=', '4')
+            ->where('student_major', '=', '09')
+            ->get();
         $m4_9m_all = count($m4_9m);
 
         $m4_9 = DB::table('student_core')
-        ->where('student_class', '=', '4')
-        ->get();
+            ->where('student_class', '=', '4')
+            ->get();
         $m4_9_all = count($m4_9);
 
         //ปวช.2
-       $m5_9m = DB::table('student_core')
-       ->where('student_class', '=', '5')
-       ->where('student_major', '=', '09')
-       ->get();
-       $m5_9m_all = count($m5_9m);
+        $m5_9m = DB::table('student_core')
+            ->where('student_class', '=', '5')
+            ->where('student_major', '=', '09')
+            ->get();
+        $m5_9m_all = count($m5_9m);
 
-       $m5_9 = DB::table('student_core')
-       ->where('student_class', '=', '5')
-       ->get();
-       $m5_9_all = count($m5_9);
+        $m5_9 = DB::table('student_core')
+            ->where('student_class', '=', '5')
+            ->get();
+        $m5_9_all = count($m5_9);
 
         //ปวช.3
         $m6_9m = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->where('student_major', '=', '09')
-        ->get();
+            ->where('student_class', '=', '6')
+            ->where('student_major', '=', '09')
+            ->get();
         $m6_9m_all = count($m6_9m);
 
         $m6_9 = DB::table('student_core')
-        ->where('student_class', '=', '6')
-        ->get();
+            ->where('student_class', '=', '6')
+            ->get();
         $m6_9_all = count($m6_9);
 
         $m123_m_all = $m1_m_all + $m2_m_all + $m3_m_all;
@@ -193,9 +193,9 @@ class AcademicsController extends Controller
         $m123_all = $m123_m_all + $m123_fm_all;
 
         //จำนวนผูชายที่เอา ปวช. ออกแล้ว
-        $m4_m_all_09 = $m4_m_all - $m4_9m_all; 
-        $m5_m_all_09 = $m5_m_all - $m5_9m_all; 
-        $m6_m_all_09 = $m6_m_all - $m6_9m_all; 
+        $m4_m_all_09 = $m4_m_all - $m4_9m_all;
+        $m5_m_all_09 = $m5_m_all - $m5_9m_all;
+        $m6_m_all_09 = $m6_m_all - $m6_9m_all;
 
         $m456_m_all = $m4_m_all + $m5_fm_all + $m6_m_all;
         $m456_fm_all = $m4_fm_all + $m5_fm_all + $m6_fm_all;
@@ -242,10 +242,10 @@ class AcademicsController extends Controller
             'm4_fm_all' => $m4_fm_all,
             'm4_all' => $m4_all,
 
-             //ม.5
-           'm5_m_all_09' => $m5_m_all_09,
-           'm5_fm_all' => $m5_fm_all,
-           'm5_all' => $m5_all,
+            //ม.5
+            'm5_m_all_09' => $m5_m_all_09,
+            'm5_fm_all' => $m5_fm_all,
+            'm5_all' => $m5_all,
 
             //ม.6
             'm6_m_all_09' => $m6_m_all_09,
@@ -288,10 +288,12 @@ class AcademicsController extends Controller
     //เลื่อนชั้นเรียน
     public function academicClassAll(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -307,7 +309,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -321,7 +323,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -333,7 +335,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -345,7 +347,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -371,10 +373,12 @@ class AcademicsController extends Controller
 
     public function academicClassChange(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -390,7 +394,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -404,7 +408,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -416,7 +420,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -428,7 +432,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -459,7 +463,7 @@ class AcademicsController extends Controller
             $data1[$i] = $request->student_class[$i];
             $data2[$i] = $request->student_room[$i];
             $id = $i + 1;
-            
+
             $upStudentCore = DB::table('student_core')
                 ->where('student_id', '=', $request->student_id[$i])
                 ->update([
@@ -539,10 +543,12 @@ class AcademicsController extends Controller
     //จบการศึกษา
     public function academicFinalAll(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -558,7 +564,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -572,7 +578,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -584,7 +590,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -596,7 +602,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -622,19 +628,21 @@ class AcademicsController extends Controller
 
     public function academicFinalChange(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null && $request->get('search4') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
+            $search4 = $request->get('search4');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', '01')
-                ->orWhere('status', '=', '02')
+                ->where('status', 'like', '%' . $search4 . '%')
                 ->get();
             return view('academic.academic-final-change', [
                 'data' => $data,
@@ -642,14 +650,12 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', '01')
-                ->orWhere('status', '=', '02')
                 ->get();
             return view('academic.academic-final-change', [
                 'data' => $data,
@@ -657,12 +663,10 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
-                ->where('status', '=', '01')
-                ->orWhere('status', '=', '02')
                 ->get();
             return view('academic.academic-final-change', [
                 'data' => $data,
@@ -670,12 +674,10 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
-                ->where('status', '=', '01')
-                ->orWhere('status', '=', '02')
                 ->get();
             return view('academic.academic-final-change', [
                 'data' => $data,
@@ -683,12 +685,65 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
-                ->where('status', '=', '01')
-                ->orWhere('status', '=', '02')
+                ->get();
+            return view('academic.academic-final-change', [
+                'data' => $data,
+                'school_year' => $school_year,
+            ]);
+        } elseif (
+            $request->get('search2') !== null
+            && $request->get('search3') !== null && $request->get('search4') !== null
+        ) {
+            $school_year = DB::table('school_year')
+                ->first();
+            $search2 = $request->get('search2');
+            $search3 = $request->get('search3');
+            $search4 = $request->get('search4');
+            $data = DB::table('student_core')
+                ->where('student_class', 'like', '%' . $search2 . '%')
+                ->where('student_room', 'like', '%' . $search3 . '%')
+                ->where('status', 'like', '%' . $search4 . '%')
+                ->get();
+            return view('academic.academic-final-change', [
+                'data' => $data,
+                'school_year' => $school_year,
+            ]);
+        } elseif ($request->get('search3') !== null && $request->get('search4') !== null) {
+            $school_year = DB::table('school_year')
+                ->first();
+            $search3 = $request->get('search3');
+            $search4 = $request->get('search4');
+            $data = DB::table('student_core')
+                ->where('student_room', 'like', '%' . $search3 . '%')
+                ->where('status', 'like', '%' . $search4 . '%')
+                ->get();
+            return view('academic.academic-final-change', [
+                'data' => $data,
+                'school_year' => $school_year,
+            ]);
+        } elseif ($request->get('search2') !== null && $request->get('search4') !== null) {
+            $school_year = DB::table('school_year')
+                ->first();
+            $search2 = $request->get('search2');
+            $search4 = $request->get('search4');
+            $data = DB::table('student_core')
+                ->where('student_class', 'like', '%' . $search2 . '%')
+                ->where('status', 'like', '%' . $search4 . '%')
+                ->get();
+            return view('academic.academic-final-change', [
+                'data' => $data,
+                'school_year' => $school_year,
+            ]);
+        } elseif ($request->get('search4') !== null) {
+            $school_year = DB::table('school_year')
+                ->first();
+            $search4 = $request->get('search4');
+            $data = DB::table('student_core')
+                ->where('status', 'like', '%' . $search4 . '%')
                 ->get();
             return view('academic.academic-final-change', [
                 'data' => $data,
@@ -712,10 +767,12 @@ class AcademicsController extends Controller
     //ย้ายสถานศึกษา
     public function academicMoveAll(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -731,7 +788,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -745,7 +802,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -757,7 +814,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -769,7 +826,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -795,10 +852,12 @@ class AcademicsController extends Controller
 
     public function academicMoveChange(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -815,7 +874,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -830,7 +889,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -843,7 +902,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -856,7 +915,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -885,10 +944,12 @@ class AcademicsController extends Controller
     //ออกกลางคัน
     public function academicOutAll(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -904,7 +965,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -918,7 +979,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -930,7 +991,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -942,7 +1003,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -968,10 +1029,12 @@ class AcademicsController extends Controller
 
     public function academicOutChange(Request $request)
     {
-        if ($request->get('search1') !== null && $request->get('search2') !== null 
-        && $request->get('search3') !== null) {
+        if (
+            $request->get('search1') !== null && $request->get('search2') !== null
+            && $request->get('search3') !== null
+        ) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -988,7 +1051,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
@@ -1003,7 +1066,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -1016,7 +1079,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -1029,7 +1092,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -1120,7 +1183,7 @@ class AcademicsController extends Controller
     public function classRoomAdd()
     {
         $school_year = DB::table('school_year')
-        ->first();
+            ->first();
 
         return view('academic.academic-class-room-add', ['school_year' => $school_year,]);
     }
@@ -1227,7 +1290,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -1242,7 +1305,7 @@ class AcademicsController extends Controller
         }
 
         $school_year = DB::table('school_year')
-        ->first();
+            ->first();
 
         $data = DB::table('new_student_register_m1')
             ->where('status_report', '=', '02')
@@ -1716,7 +1779,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -1730,7 +1793,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('new_student_register_m1')
                 ->where('status_report', 'like', '%' . $search2 . '%')
@@ -1743,7 +1806,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m1')
@@ -1758,7 +1821,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m1')
                 ->where('student_year', 'like', '%' . $search3 . '%')
@@ -1772,7 +1835,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -1925,7 +1988,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -2415,7 +2478,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -2429,7 +2492,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('new_student_register_m4')
                 ->where('status_report', 'like', '%' . $search2 . '%')
@@ -2443,7 +2506,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m4')
@@ -2459,7 +2522,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('new_student_register_m4')
                 ->where('student_year', 'like', '%' . $search3 . '%')
@@ -2473,7 +2536,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search') !== null && $request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
@@ -2629,7 +2692,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m1')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -2684,7 +2747,7 @@ class AcademicsController extends Controller
     {
         if ($request->get('search') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search = $request->get('search');
             $data = DB::table('new_student_register_m4')
                 ->where('id_number', 'like', '%' . $search . '%')
@@ -2736,87 +2799,100 @@ class AcademicsController extends Controller
 
     //download Document
 
-    public function profileDownload (Request $request, $file){
+    public function profileDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/profile_img/'.$file));
-        
+        return response()->download(public_path('ImgAll/profile_img/' . $file));
     }
 
-    public function StudentSubmitDownload (Request $request, $file){
+    public function StudentSubmitDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/student_submit/'.$file));
+        return response()->download(public_path('ImgAll/student_submit/' . $file));
     }
 
-    public function IdStudentDownload (Request $request, $file){
+    public function IdStudentDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/id_card/id_card_student/'.$file));
+        return response()->download(public_path('ImgAll/id_card/id_card_student/' . $file));
     }
 
-    public function IdFatherDownload (Request $request, $file){
+    public function IdFatherDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/id_card/id_card_father/'.$file));
+        return response()->download(public_path('ImgAll/id_card/id_card_father/' . $file));
     }
 
-    public function IdMotherDownload (Request $request, $file){
+    public function IdMotherDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/id_card/id_card_mother/'.$file));
+        return response()->download(public_path('ImgAll/id_card/id_card_mother/' . $file));
     }
 
-    public function IdParentDownload (Request $request, $file){
+    public function IdParentDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/id_card/id_card_parent/'.$file));
+        return response()->download(public_path('ImgAll/id_card/id_card_parent/' . $file));
     }
 
-    public function HouseStudentDownload (Request $request, $file){
+    public function HouseStudentDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/house_regis/house_student/'.$file));
+        return response()->download(public_path('ImgAll/house_regis/house_student/' . $file));
     }
 
-    public function HouseFatherDownload (Request $request, $file){
+    public function HouseFatherDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/house_regis/house_father/'.$file));
+        return response()->download(public_path('ImgAll/house_regis/house_father/' . $file));
     }
 
-    public function HouseMotherDownload (Request $request, $file){
+    public function HouseMotherDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/house_regis/house_mother/'.$file));
+        return response()->download(public_path('ImgAll/house_regis/house_mother/' . $file));
     }
 
-    public function HouseParentDownload (Request $request, $file){
+    public function HouseParentDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/house_regis/house_parent/'.$file));
+        return response()->download(public_path('ImgAll/house_regis/house_parent/' . $file));
     }
 
-    public function FrontGradeDownload (Request $request, $file){
+    public function FrontGradeDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/front_grade/'.$file));
+        return response()->download(public_path('ImgAll/front_grade/' . $file));
     }
 
-    public function BackGradeDownload (Request $request, $file){
+    public function BackGradeDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/back_grade/'.$file));
+        return response()->download(public_path('ImgAll/back_grade/' . $file));
     }
 
-    public function BirthCertificateDownload (Request $request, $file){
+    public function BirthCertificateDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/birth_certificate/'.$file));
+        return response()->download(public_path('ImgAll/birth_certificate/' . $file));
     }
 
-    public function DisabilityCertificateDownload (Request $request, $file){
+    public function DisabilityCertificateDownload(Request $request, $file)
+    {
 
-        return response()->download(public_path('ImgAll/disability_certificate/'.$file));
+        return response()->download(public_path('ImgAll/disability_certificate/' . $file));
     }
 
-    
+
 
     //ออกเอกสาร
 
     public function ReportStudentAll(Request $request)
     {
-        
+
         if ($request->get('search1') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search1 = $request->get('search1');
             $data = DB::table('student_core')
                 ->where('student_id', 'like', '%' . $search1 . '%')
@@ -2828,7 +2904,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $data = DB::table('student_core')
                 ->where('student_class', 'like', '%' . $search2 . '%')
@@ -2840,7 +2916,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
                 ->where('student_room', 'like', '%' . $search3 . '%')
@@ -2852,7 +2928,7 @@ class AcademicsController extends Controller
             ]);
         } elseif ($request->get('search2') !== null && $request->get('search3') !== null) {
             $school_year = DB::table('school_year')
-            ->first();
+                ->first();
             $search2 = $request->get('search2');
             $search3 = $request->get('search3');
             $data = DB::table('student_core')
