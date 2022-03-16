@@ -168,7 +168,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="card-title fw-mediumbold" align="center">ตรวจสอบสถานะการสมัครเข้าเรียนในระดับชั้นมัธยมศึกษาปีที่ 4</div>
-							<p class="card-category" align="center">กรอกชื่อผู้ใช้เป็นเลขบัตรประจำตัวของผู้สมัคร และรหัสผ่านเป็นวันเดือนปีเกิด เช่น เกิดวันที่ 7 มิถุนายน 2541 ให้กรอกเป็น 07062541 </p>
+							<p class="card-category" align="center" style="color:red;">กรอกชื่อผู้ใช้เป็นเลขบัตรประจำตัวของผู้สมัคร และรหัสผ่านเป็นวันเดือนปีเกิด เช่น เกิดวันที่ 7 มิถุนายน 2541 ให้กรอกเป็น 07062541 </p>
 						</div>
 
 						<form class="form-horizontal" method="POST" action="{{ route('RegisM4.login.submit') }}">
@@ -184,7 +184,7 @@
 									<div class="col-md-4 col-md-4">
 										<div class="form-group">
 											<div class="position-relative">
-												<input id="password" name="password" type="password" class="form-control" placeholder="กรอกวันเดือนปีเกิด" required>
+												<input id="password" name="password" type="password" class="form-control" trequired>
 											</div>
 										</div>
 									</div>

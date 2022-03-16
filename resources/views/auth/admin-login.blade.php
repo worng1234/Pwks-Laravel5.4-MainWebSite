@@ -45,12 +45,12 @@
       <div class="login-form">
         <div class="form-group">
           <label for="username" class="placeholder"><b>ชื่อผู้ใช้</b></label>
-          <input id="username" name="username" type="text" class="form-control" placeholder="กรอกชื่อผู้ใช้" value="{{ old('username') }}" required autofocus>
+          <input id="username" name="username" type="text" class="form-control" placeholder="กรอกชื่อผู้ใช้" value="{{ old('username') }}" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง" required autofocus>
         </div>
         <div class="form-group">
           <label for="password" class="placeholder"><b>รหัสผ่าน</b></label>
           <div class="position-relative">
-            <input id="password" name="password" type="password" class="form-control" placeholder="กรอกรหัสผ่าน" required>
+            <input id="password" name="password" type="password" class="form-control" placeholder="กรอกรหัสผ่าน" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง" required>
             <div class="show-password">
               <i class="icon-eye"></i>
             </div>

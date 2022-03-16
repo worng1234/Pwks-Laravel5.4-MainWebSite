@@ -748,6 +748,10 @@ class studentcoreController extends Controller
                 "password" => bcrypt($request->get('student_id')),
             ]);
 
+            photostudentModel::create([
+                "student_idcard" => $request->get('student_id_card')
+            ]);
+
             $addressstudent->save();
             $healtystudent->save();
             $parentstudent->save();

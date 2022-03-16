@@ -239,13 +239,13 @@
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อผู้ใช้ ( Username )</label>
-                                                        <input id="Name" type="text" class="form-control" placeholder="" name="username">
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="username" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง">
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-6">
                                                     <div class="form-group form-group-default">
                                                         <label>รหัส</label>
-                                                        <input id="Name" type="text" class="form-control" placeholder="" name="password">
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="password" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง">
                                                     </div>
                                                 </div>
                                             </div>
@@ -264,14 +264,14 @@
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>ชื่อภาษาไทย</label>
-                                                        <input id="Name" type="text" class="form-control" placeholder="" name="fname">
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="fname" pattern="^[a-zA-z||ก-๏\s]+$" title="กรุณากรอกให้ถูกต้อง">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-6 col-md-4">
                                                     <div class="form-group form-group-default">
                                                         <label>นามสกุลภาษาไทย</label>
-                                                        <input id="Name" type="text" class="form-control" placeholder="" name="surname">
+                                                        <input id="Name" type="text" class="form-control" placeholder="" name="surname" pattern="^[a-zA-z||ก-๏\s]+$" title="กรุณากรอกให้ถูกต้อง">
                                                     </div>
                                                 </div>
                                             </div>

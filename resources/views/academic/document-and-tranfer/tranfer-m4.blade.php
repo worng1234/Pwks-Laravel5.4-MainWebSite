@@ -489,8 +489,8 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-md-2">
                                                 <div class="form-group form-group-default">
-                                                    <label>รหัสนักเรียน</label>
-                                                    <input name="student_id" type="text" class="form-control" value="{{$data->student_id}}" required>
+                                                    <label>*รหัสนักเรียน</label>
+                                                    <input name="student_id" type="text" class="form-control" value="{{$data->student_id}}" pattern="^[0-9\s]+$" title="กรุณากรอกเป็นตัวเลข" maxlength="6" required>
                                                 </div>
                                             </div>
                                             <div class="col-6 col-md-4">

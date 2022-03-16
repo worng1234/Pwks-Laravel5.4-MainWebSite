@@ -2188,6 +2188,15 @@ class newstudentm4Controller extends Controller
                 'username' => $request->get('id_number'),
                 'password' => bcrypt($request->get('day').$request->get('mounth').$request->get('year')),
             ]);
+
+            statuspicModel::create([
+                "student_idcard" => $request->get('id_number'),
+            ]);
+
+            photostudentModel::create([
+                "student_idcard" => $request->get('id_number'),
+            ]);
+            
             return redirect('/Success/RegisterM1');
         } else {
             return redirect('/Unsuccess/RegisterM1');

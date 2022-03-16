@@ -187,25 +187,25 @@
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>คำนำหน้าชื่อ</label>
-													<input name="prename" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->prename}}">
+													<input name="prename" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->prename}}">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ชื่อภาษาไทย</label>
-													<input name="fname" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->fname}}">
+													<input name="fname" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->fname}}">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ชื่อกลาง</label>
-													<input name="name_cen" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$newstudentm1Model->name_cen}}">
+													<input name="name_cen" type="text" class="form-control" placeholder="(ถ้ามี)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->name_cen}}">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>นามสกุลภาษาไทย</label>
-													<input name="surname" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->surname}}">
+													<input name="surname" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->surname}}">
 												</div>
 											</div>
 										</div>
@@ -213,7 +213,7 @@
 											<div class="col-sm-6 col-md-12">
 												<div class="form-group form-group-default">
 													<label>เลขประจำตัวประชาชน</label>
-													<input name="id_number" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->id_number}}">
+													<input name="id_number" type="text" class="form-control" placeholder="" pattern="^[gG||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง" maxlength="13" value="{{$newstudentm1Model->id_number}}">
 												</div>
 											</div>
 										</div>
@@ -226,7 +226,7 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>ปี พุทธศักราช:</label>
-													<input name="year" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->year}}">
+													<input name="year" type="text" class="form-control" placeholder="" pattern="^[0-9\s]+$" title="กรุณากรอกเป็นตัวเลข" maxlength="4" value="{{$newstudentm1Model->year}}">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
@@ -291,31 +291,31 @@
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>เพศสภาพ</label>
-													<input name="sex" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->sex}}">
+													<input name="sex" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->sex}}">
 												</div>
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>ศาสนา</label>
-													<input name="religion" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->religion}}">
+													<input name="religion" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->religion}}">
 												</div>
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>เชื้อชาติ</label>
-													<input name="origin" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->origin}}">
+													<input name="origin" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->origin}}">
 												</div>
 											</div>
 											<div class="col-6 col-md-2">
 												<div class="form-group form-group-default">
 													<label>สัญชาติ</label>
-													<input name="nationality" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->nationality}}">
+													<input name="nationality" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->nationality}}">
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-													<input name="tel" type="text" class="form-control" placeholder="" value="{{$newstudentm1Model->tel}}">
+													<input name="tel" type="text" class="form-control" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" value="{{$newstudentm1Model->tel}}">
 												</div>
 											</div>
 										</div>

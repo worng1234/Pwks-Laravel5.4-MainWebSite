@@ -168,6 +168,8 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
+								
+								@if ($data->status_rigis == "01" && $data->status_picall == "01")
 								<div class="card-header">
 									<div class="card-head-row">
 										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; เอกสารรายงานตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
@@ -323,6 +325,13 @@
 									</div><br>
 							</div>
 							</form>
+							@else
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ระบบยังไม่เปิดให้ทำการส่งเอกสารรายงานตัว</div>
+									</div>
+								</div>
+							@endif
 						</div>
 					</div>
 
