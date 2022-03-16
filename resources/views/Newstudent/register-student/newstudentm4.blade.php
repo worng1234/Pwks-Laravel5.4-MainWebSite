@@ -717,7 +717,7 @@
 
 										<!-- เลือกเรียนแผนการเรียนรู้ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>*เลือกแผนการเรียนรู้ &nbsp;&nbsp;( เลือกแผนการเรียนรู้อันดับ 1 - 9 ตามลำดับที่ต้องการจะเรียนมากสุดไปน้อยสุด )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*เลือกแผนการเรียนรู้ &nbsp;&nbsp;( เลือกแผนการเรียนรู้อันดับ 1 - 7 ตามลำดับที่ต้องการจะเรียนมากสุดไปน้อยสุด )</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
@@ -797,28 +797,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>*อันดับที่ 8</label>
-													<select class="form-control" id="slct8" name="major_name8" onchange="getSelectValue(this.value);" required>
-														<option>เลือก</option>
-														@foreach ($data as $key => $value)
-														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
-														@endforeach
-													</select>
-												</div>
-											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>*อันดับที่ 9</label>
-													<select class="form-control" id="slct9" name="major_name9" onchange="getSelectValue(this.value);" required>
-														<option>เลือก</option>
-														@foreach ($data as $key => $value)
-														<option value="{{$value->class_id}}">{{$value->class_major_name}}</option>
-														@endforeach
-													</select>
-												</div>
-											</div>
+											
 										</div>
 
 										<!-- อัพโหลดรูปภาพ -->
@@ -1030,13 +1009,7 @@
 			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != ''){ 
 				$("#slct7 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"']").hide();
 				
-			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != '' && slct7 != ''){ 
-				$("#slct8 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"'], option[value='"+slct7+"']").hide();
-				
-			} if(slct1 != '' && slct2 != '' && slct3 != '' && slct4 != '' && slct5 != '' && slct6 != '' && slct7 != '' && slct8 != ''){ 
-				$("#slct9 option[value='"+slct1+"'], option[value='"+slct2+"'], option[value='"+slct3+"'], option[value='"+slct4+"'], option[value='"+slct5+"'], option[value='"+slct6+"'], option[value='"+slct7+"'], option[value='"+slct8+"']").hide();
-				
-			}
+			} 
 		}
 	</script>
 

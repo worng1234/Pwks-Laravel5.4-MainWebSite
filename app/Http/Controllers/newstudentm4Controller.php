@@ -19,9 +19,45 @@ class newstudentm4Controller extends Controller
             ->first();
 
         $newstudentm4Model = newstudentm4Model::findOrFail($id);
+
+        $m4major1 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name1)
+            ->first();
+        
+        $m4major2 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name2)
+            ->first();
+
+        $m4major3 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name3)
+            ->first();
+
+        $m4major4 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name4)
+            ->first();
+
+        $m4major5 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name5)
+            ->first();
+
+        $m4major6 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name6)
+            ->first();
+
+        $m4major7 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name7)
+            ->first();
+            
         return view('Newstudent.fixprofilenewstudentm4', [
             'newstudentm4Model' => $newstudentm4Model,
             'school_year' => $school_year,
+            'm4major1' => $m4major1,
+            'm4major2' => $m4major2,
+            'm4major3' => $m4major3,
+            'm4major4' => $m4major4,
+            'm4major5' => $m4major5,
+            'm4major6' => $m4major6,
+            'm4major7' => $m4major7,
         ]);
     }
 
@@ -61,8 +97,48 @@ class newstudentm4Controller extends Controller
 
     public function editnewstudentm4($id)
     {
+        
+
         $newstudentm4Model = newstudentm4Model::findOrFail($id);
-        return view('Newstudent.Edit-Newstudent.editprofilenewstudentm4', compact('newstudentm4Model'));
+
+        $m4major1 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name1)
+            ->first();
+        
+        $m4major2 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name2)
+            ->first();
+
+        $m4major3 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name3)
+            ->first();
+
+        $m4major4 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name4)
+            ->first();
+
+        $m4major5 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name5)
+            ->first();
+
+        $m4major6 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name6)
+            ->first();
+
+        $m4major7 = DB::table('class_major_m4')
+            ->where('class_id', '=', $newstudentm4Model->major_name7)
+            ->first();
+
+        return view('Newstudent.Edit-Newstudent.editprofilenewstudentm4', [
+            'newstudentm4Model' => $newstudentm4Model,
+            'm4major1' => $m4major1,
+            'm4major2' => $m4major2,
+            'm4major3' => $m4major3,
+            'm4major4' => $m4major4,
+            'm4major5' => $m4major5,
+            'm4major6' => $m4major6,
+            'm4major7' => $m4major7,
+        ]);
     }
 
     //ส่งเอกสารรายงานตัว
@@ -2129,10 +2205,45 @@ class newstudentm4Controller extends Controller
         $data = newstudentm4Model::findOrFail($id);
         $school_year = DB::table('school_year')
             ->first();
+
+        $m4major1 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name1)
+            ->first();
+        
+        $m4major2 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name2)
+            ->first();
+
+        $m4major3 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name3)
+            ->first();
+
+        $m4major4 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name4)
+            ->first();
+
+        $m4major5 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name5)
+            ->first();
+
+        $m4major6 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name6)
+            ->first();
+
+        $m4major7 = DB::table('class_major_m4')
+            ->where('class_id', '=', $data->major_name7)
+            ->first();
             
         return view('Newstudent.newstudentm4byID', [
             'data' => $data,
             'school_year' => $school_year,
+            'm4major1' => $m4major1,
+            'm4major2' => $m4major2,
+            'm4major3' => $m4major3,
+            'm4major4' => $m4major4,
+            'm4major5' => $m4major5,
+            'm4major6' => $m4major6,
+            'm4major7' => $m4major7,
         ]);
     }
 

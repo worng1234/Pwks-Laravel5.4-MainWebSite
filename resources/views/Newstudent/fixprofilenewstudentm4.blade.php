@@ -439,7 +439,7 @@
 						</li>
 
 						<li class="nav-item ">
-                            <a href="/Manual/manual.pdf" target="_blank">
+                            <a href="{{ url('Manual/manual.pdf')}}" target="_blank">
                                 <i class="fas fa-book-open"></i>
                                 <p>คู่มือการใช้งาน</p>
                             </a>
@@ -943,61 +943,49 @@
 
 										<!-- เลือกเรียนแผนการเรียนรู้ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 10 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 7 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 1</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name1}}" name="major_name1">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major1->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 2</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name2}}" name="major_name2">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major2->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 3</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name3}}" name="major_name3">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major3->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 4</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name4}}" name="major_name4">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major4->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 5</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name5}}" name="major_name5">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major5->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 6</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name6}}" name="major_name6">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major6->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 7</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name7}}" name="major_name7">
-												</div>
-											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>อันดับที่ 8</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name8}}" name="major_name8">
-												</div>
-											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>อันดับที่ 9</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name9}}" name="major_name9">
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major7->class_major_name}}" readonly>
 												</div>
 											</div>
 										</div>

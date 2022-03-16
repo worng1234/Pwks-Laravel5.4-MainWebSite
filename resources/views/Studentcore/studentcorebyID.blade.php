@@ -438,7 +438,7 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a href="/Manual/manual.pdf" target="_blank">
+                            <a href="{{ url('Manual/manual.pdf')}}" target="_blank">
                                 <i class="fas fa-book-open"></i>
                                 <p>คู่มือการใช้งาน</p>
                             </a>
