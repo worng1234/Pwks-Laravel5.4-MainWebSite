@@ -292,7 +292,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*ชื่อภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" name="fname" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="fname" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
@@ -304,7 +304,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*นามสกุลภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" name="surname" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="surname" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -323,7 +323,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*ชื่อ(ภาษาอังกฤษ)</label>
-																	<input id="Name" type="text" class="form-control" name="name_eng" pattern="^[a-zA-Z\s]+$" title="กรุณากรอกชื่อเป็นภาษาอังกฤษ" required>
+																	<input id="Name" type="text" class="form-control" name="name_eng" onblur="checktextEng(this)" pattern="^[a-zA-Z\s]+$" title="กรุณากรอกชื่อเป็นภาษาอังกฤษ" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
@@ -335,7 +335,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*นามสกุล(ภาษาอังกฤษ)</label>
-																	<input id="Name" type="text" class="form-control" name="surname_eng" pattern="^[a-zA-Z\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาอังกฤษ" required>
+																	<input id="Name" type="text" class="form-control" name="surname_eng" onblur="checktextEng(this)" pattern="^[a-zA-Z\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาอังกฤษ" required>
 																</div>
 															</div>
 														</div>
@@ -408,7 +408,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ชื่อเล่น</label>
-																	<input id="Name" type="text" class="form-control" name="nickname" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเล่นเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" name="nickname" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเล่นเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -436,19 +436,19 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ศาสนา</label>
-																	<input id="Name" type="text" class="form-control" name="religion" pattern="^[ก-๏\s]+$" title="กรุณากรอกศาสนาเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="religion" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกศาสนาเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>*เชื้อชาติ</label>
-																	<input id="Name" type="text" class="form-control" name="origin" pattern="^[ก-๏\s]+$" title="กรุณากรอกเชื่อชาติเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="origin" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเชื่อชาติเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>*สัญชาติ</label>
-																	<input id="Name" type="text" class="form-control" name="nationality" pattern="^[ก-๏\s]+$" title="กรุณากรอกสัญชาติเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="nationality" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกสัญชาติเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -496,7 +496,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" name="village" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="village" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -508,7 +508,7 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ถนน</label>
-																	<input id="Name" type="text" class="form-control" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย" name="street">
+																	<input id="Name" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย" name="street">
 																</div>
 															</div>
 														</div>
@@ -516,19 +516,19 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" name="sub_district" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="sub_district" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" name="district" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="district" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" name="province" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="province" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
@@ -574,7 +574,7 @@
 																<div class="col-sm-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ชื่อหมู่บ้าน</label>
-																		<input id="Name" type="text" class="form-control" name="village_n" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" name="village_n" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-2">
@@ -586,7 +586,7 @@
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ถนน</label>
-																		<input id="Name" type="text" class="form-control" name="street_n" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" name="street_n" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย">
 																	</div>
 																</div>
 															</div>
@@ -594,19 +594,19 @@
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ตำบล/แขวง</label>
-																		<input id="Name" type="text" class="form-control" name="sub_district_n" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" name="sub_district_n" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>อำเภอ/เขต</label>
-																		<input id="Name" type="text" class="form-control" name="district_n" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" name="district_n" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>จังหวัด</label>
-																		<input id="Name" type="text" class="form-control" name="province_n" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" name="province_n" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
@@ -633,7 +633,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*ชื่อโรงเรียนเดิม</label>
-																	<input id="Name" type="text" class="form-control" name="final_school" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อโรงเรียนเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="final_school" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อโรงเรียนเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-4">
@@ -662,19 +662,19 @@
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" name="f_sub_district" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="f_sub_district" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" name="f_district" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="f_district" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" name="f_province" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="f_province" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -688,25 +688,25 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*1)</label>
-																	<input id="Name" type="text" class="form-control" name="like_subject1" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="like_subject1" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*2)</label>
-																	<input id="Name" type="text" class="form-control" name="like_subject2" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="like_subject2" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*3)</label>
-																	<input id="Name" type="text" class="form-control" name="like_subject3" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="like_subject3" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*4)</label>
-																	<input id="Name" type="text" class="form-control" name="like_subject4" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="like_subject4" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -719,25 +719,25 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*1)</label>
-																	<input id="Name" type="text" class="form-control" name="unlike_subject1" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="unlike_subject1" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*2)</label>
-																	<input id="Name" type="text" class="form-control" name="unlike_subject2" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="unlike_subject2" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*3)</label>
-																	<input id="Name" type="text" class="form-control" name="unlike_subject3" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="unlike_subject3" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*4)</label>
-																	<input id="Name" type="text" class="form-control" name="unlike_subject4" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="unlike_subject4" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -750,19 +750,19 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>อยากประกอบอาชีพอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="dream_job" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" name="dream_job" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>เพราะอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="because" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" name="because" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>ความสามารถพิเศษ</label>
-																	<input id="Name" type="text" class="form-control" name="talent" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" name="talent" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 														</div>
@@ -1089,13 +1089,13 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>*นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
-																	<input id="Name" type="text" class="form-control" name="good_guy" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="good_guy" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>*นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
-																	<input id="Name" type="text" class="form-control" name="social_good" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="social_good" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -1225,7 +1225,7 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*วิธีแก้ไขเมื่อเกิดอาการ</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="remedy" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" maxlength="3">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="remedy" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" maxlength="3">
 																</div>
 															</div>
 														</div>
@@ -1342,7 +1342,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>ชื่อภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="name_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="name_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
@@ -1354,7 +1354,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>นามสกุลภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="surname_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="surname_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
 																</div>
 															</div>
 														</div>
@@ -1448,7 +1448,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="village_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="village_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -1468,19 +1468,19 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="district_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="district_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="province_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="province_f" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
@@ -1505,7 +1505,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>ชื่อภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="name_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="name_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
@@ -1517,7 +1517,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>นามสกุลภาษาไทย</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="surname_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="surname_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
 																</div>
 															</div>
 														</div>
@@ -1611,7 +1611,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="village_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="village_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -1631,19 +1631,19 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ตำบล/แขวง</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>อำเภอ/เขต</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="district_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="district_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>จังหวัด</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="province_m" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																	<input id="Name" type="text" class="form-control" placeholder="" name="province_m" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
@@ -1689,7 +1689,7 @@
 																<div class="col-sm-6 col-md-4">
 																	<div class="form-group form-group-default">
 																		<label>ชื่อภาษาไทย</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="name_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="name_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-sm-6 col-md-2">
@@ -1701,7 +1701,7 @@
 																<div class="col-sm-6 col-md-4">
 																	<div class="form-group form-group-default">
 																		<label>นามสกุลภาษาไทย</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="surname_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="surname_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย">
 																	</div>
 																</div>
 															</div>
@@ -1732,7 +1732,7 @@
 																<div class="col-sm-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ความสัมพันธ์ผู้ปกครอง</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="relationship_parent" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="relationship_parent" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																	</div>
 																</div>
 															</div>
@@ -1789,7 +1789,7 @@
 																<div class="col-sm-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ชื่อหมู่บ้าน</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="village_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="village_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-2">
@@ -1809,19 +1809,19 @@
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>ตำบล/แขวง</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>อำเภอ/เขต</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="district_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="district_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
 																	<div class="form-group form-group-default">
 																		<label>จังหวัด</label>
-																		<input id="Name" type="text" class="form-control" placeholder="" name="province_p" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
+																		<input id="Name" type="text" class="form-control" placeholder="" name="province_p" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																	</div>
 																</div>
 																<div class="col-6 col-md-3">
@@ -2028,7 +2028,7 @@
 															<div class="col-sm-6 col-md-9">
 																<div class="form-group form-group-default">
 																	<label>*นักเรียนมีหน้าที่รับผิดชอบภายในบ้าน นอกเหนือจากการเรียน</label>
-																	<input id="Name" type="text" class="form-control" name="student_job" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="student_job" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-3">
@@ -2065,13 +2065,13 @@
 															<div class="col-sm-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>*ผู้ออกค่าใช้จ่ายให้นักเรียน (ชื่อ-นามสกุล)</label>
-																	<input id="Name" type="text" class="form-control" name="parent_total" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="parent_total"  pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>*เกี่ยวข้องเป็น</label>
-																	<input id="Name" type="text" class="form-control" name="parent_house" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
+																	<input id="Name" type="text" class="form-control" name="parent_house" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
 																</div>
 															</div>
 														</div>
@@ -2090,7 +2090,7 @@
 																	<div id="dvtotal" style="display: none">
 																		<div class="form-group form-group-default">
 																			<label>โปรดระบุ (หารายได้จากอะไร)</label>
-																			<input id="Name" type="text" class="form-control" name="job_detail" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+																			<input id="Name" type="text" class="form-control" name="job_detail" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
 																		</div>
 																		<div class="form-group form-group-default">
 																			<label>รายได้เฉลี่ยวันละ (บาท)</label>
@@ -2422,6 +2422,24 @@
 		function checkLengthSlct3(el) {
 			if (el.value == "00") {
 				alert("กรุณาเลือกข้อมูล")
+			}
+		}
+	</script>
+
+	<script>
+		function checktext(el) {
+			var test = el.value;
+			if (!test.match(/^([ก-๏\s])+$/i)) {
+				alert("กรอกได้เฉพาะภาษาไทยเท่านั้น");
+			}
+		}
+	</script>
+
+	<script>
+		function checktextEng(el) {
+			var test = el.value;
+			if (!test.match(/^([a-zA-Z\s])+$/i)) {
+				alert("กรอกได้เฉพาะภาษาไทยเท่านั้น");
 			}
 		}
 	</script>
