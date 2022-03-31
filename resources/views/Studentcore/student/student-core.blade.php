@@ -143,13 +143,13 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item " >
+						<li class="nav-item ">
 							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
 							</a>
 						</li>
-						<li class="nav-item " >
+						<li class="nav-item ">
 							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
 								<i class="link-icon icon-star"></i>
 								<span class="menu-title">Go Pwks!</span>
@@ -272,7 +272,7 @@
 															<div class="col-sm-6 col-md-12">
 																<div class="form-group form-group-default">
 																	<label>*เลขประจำตัวประชาชน</label>
-																	<input id="Name" type="text" class="form-control" name="student_id_card" onblur="checkLength(this)"  maxlength="13" pattern="^[gG||0-9\s]+$" title="กรุณากรอกข้อมูลประจำตัวประชาชนให้ถูกต้อง"  required>
+																	<input id="Name" type="text" class="form-control" name="student_id_card" onblur="checkLength(this)" maxlength="13" pattern="^[gG||0-9\s]+$" title="กรุณากรอกข้อมูลประจำตัวประชาชนให้ถูกต้อง" required>
 																</div>
 															</div>
 														</div>
@@ -280,8 +280,8 @@
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>*คำนำหน้าชื่อ</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="prename" required>
-																		<option>เลือก</option>
+																	<select class="form-control" id="select123" name="prename" onblur="checkLengthSlct(this)" required>
+																		<option value="00">เลือก</option>
 																		<option value="เด็กชาย">เด็กชาย</option>
 																		<option value="เด็กหญิง">เด็กหญิง</option>
 																		<option value="นาย">นาย</option>
@@ -312,7 +312,7 @@
 															<div class="col-sm-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>*คำนำหน้าชื่อ(ภาษาอังกฤษ)</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="prename_eng" >
+																	<select class="form-control" id="formGroupDefaultSelect" name="prename_eng">
 																		<option>เลือก</option>
 																		<option value="master">Master.</option>
 																		<option value="mr">Mr.</option>
@@ -408,7 +408,7 @@
 															<div class="col-6 col-md-2">
 																<div class="form-group form-group-default">
 																	<label>ชื่อเล่น</label>
-																	<input id="Name" type="text" class="form-control" name="nickname" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเล่นเป็นภาษาไทย" >
+																	<input id="Name" type="text" class="form-control" name="nickname" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเล่นเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -468,7 +468,7 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>*อีเมล์ (name@example.com)</label>
-																	<input  type="email" class="form-control" name="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="กรุณากรอกข้อมูลให้ถูกต้อง"required>
+																	<input type="email" class="form-control" name="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="กรุณากรอกข้อมูลให้ถูกต้อง" required>
 																</div>
 															</div>
 														</div>
@@ -496,7 +496,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>*ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" name="village" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย"  required>
+																	<input id="Name" type="text" class="form-control" name="village" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อหมู่บ้านเป็นภาษาไทย" required>
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -508,7 +508,7 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ถนน</label>
-																	<input id="Name" type="text" class="form-control" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย"  name="street">
+																	<input id="Name" type="text" class="form-control" pattern="^[ก-๏\s]+$" title="กรุณากรอกถนนเป็นภาษาไทย" name="street">
 																</div>
 															</div>
 														</div>
@@ -750,13 +750,13 @@
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>อยากประกอบอาชีพอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="dream_job" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" >
+																	<input id="Name" type="text" class="form-control" name="dream_job" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
 																<div class="form-group form-group-default">
 																	<label>เพราะอะไร</label>
-																	<input id="Name" type="text" class="form-control" name="because" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" >
+																	<input id="Name" type="text" class="form-control" name="because" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-sm-6 col-md-4">
@@ -830,7 +830,7 @@
 															<div class="col-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ระยะเวลาเดินทาง (นาที)</label>
-																	<input id="Name" type="text" class="form-control" name="go_school_time" pattern="^[0-9\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นตัวเลข(นาที)" >
+																	<input id="Name" type="text" class="form-control" name="go_school_time" pattern="^[0-9\s]+$" title="กรุณากรอกวิชาที่ไม่ชอบเป็นตัวเลข(นาที)">
 																</div>
 															</div>
 															<div class="col-6 col-md-3">
@@ -896,8 +896,8 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>*ความพิการ</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
-																		<option>เลือก</option>
+																	<select class="form-control" id="select1234" onblur="checkLengthSlct2(this)" name="disabled" required>
+																		<option value="00">เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
 																		<option value="การมองเห็น">การมองเห็น</option>
 																		<option value="การได้ยิน">การได้ยิน</option>
@@ -914,8 +914,8 @@
 															<div class="col-6 col-md-6">
 																<div class="form-group form-group-default">
 																	<label>*ความด้อยโอกาส</label>
-																	<select class="form-control" id="formGroupDefaultSelect" name="unfortuned" required>
-																		<option>เลือก</option>
+																	<select class="form-control" id="select1234" onblur="checkLengthSlct3(this)"name="unfortuned" required>
+																		<option value="00">เลือก</option>
 																		<option value="ไม่มี">ไม่มี</option>
 																		<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
 																		<option value="อยู่ในธุรกิจทางเพศ">อยู่ในธุรกิจทางเพศ</option>
@@ -1448,7 +1448,7 @@
 															<div class="col-sm-6 col-md-3">
 																<div class="form-group form-group-default">
 																	<label>ชื่อหมู่บ้าน</label>
-																	<input id="Name" type="text" class="form-control" placeholder="" name="village_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย" >
+																	<input id="Name" type="text" class="form-control" placeholder="" name="village_f" pattern="^[ก-๏\s]+$" title="กรุณากรอกเป็นภาษาไทย">
 																</div>
 															</div>
 															<div class="col-6 col-md-2">
@@ -2088,22 +2088,22 @@
 																		<span class="form-radio-sign">มี</span>
 																	</label>
 																	<div id="dvtotal" style="display: none">
-																	<div class="form-group form-group-default">
-																		<label>โปรดระบุ (หารายได้จากอะไร)</label>
-																		<input id="Name" type="text" class="form-control" name="job_detail" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
-																	</div>
-																	<div class="form-group form-group-default">
-																		<label>รายได้เฉลี่ยวันละ (บาท)</label>
-																		<select class="form-control" id="formGroupDefaultSelect" name="total_study">
-																			<option>เลือก</option>
-																			<option value="0 - 100">0 - 100</option>
-																			<option value="101 - 150">101 - 150</option>
-																			<option value="151 - 200">151 - 200</option>
-																			<option value="201 - 250">201 - 250</option>
-																			<option value="251 - 300">251 - 300</option>
-																			<option value="มากกว่า 300">มากกว่า 300</option>
-																		</select>
-																	</div>
+																		<div class="form-group form-group-default">
+																			<label>โปรดระบุ (หารายได้จากอะไร)</label>
+																			<input id="Name" type="text" class="form-control" name="job_detail" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+																		</div>
+																		<div class="form-group form-group-default">
+																			<label>รายได้เฉลี่ยวันละ (บาท)</label>
+																			<select class="form-control" id="formGroupDefaultSelect" name="total_study">
+																				<option>เลือก</option>
+																				<option value="0 - 100">0 - 100</option>
+																				<option value="101 - 150">101 - 150</option>
+																				<option value="151 - 200">151 - 200</option>
+																				<option value="201 - 250">201 - 250</option>
+																				<option value="251 - 300">251 - 300</option>
+																				<option value="มากกว่า 300">มากกว่า 300</option>
+																			</select>
+																		</div>
 																	</div>
 																</div>
 															</div>
@@ -2119,7 +2119,7 @@
 															<div class="col-sm-4 col-md-4">
 																<div class="form-group">
 																	<label for="exampleFormControlFile1">รูปประจำตัวรักเรียน</label>
-																	<input type="file" class="form-control-file" id="profile_img" name="profile_img" >
+																	<input type="file" class="form-control-file" id="profile_img" name="profile_img">
 																</div>
 															</div>
 															<div class="col-sm-4 col-md-4">
@@ -2146,32 +2146,32 @@
 																	<input type="file" class="form-control-file" id="id_card_father" name="id_card_father">
 																</div>
 															</div>
-																<div class="col-sm-4 col-md-4">
-																	<div class="form-group">
-																		<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
-																		<input type="file" class="form-control-file" id="house_father" name="house_father">
-																	</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านบิดา</label>
+																	<input type="file" class="form-control-file" id="house_father" name="house_father">
+																</div>
+															</div>
+														</div>
+
+														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+															<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
+														</div>
+														<div class="row">
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
+																	<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
 																</div>
 															</div>
 
-																<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-																	<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของมารดา</b></p>
-																</div>
-															<div class="row">
-																<div class="col-sm-4 col-md-4">
-																	<div class="form-group">
-																		<label for="exampleFormControlFile1">สำเนาบัตรประชาชนมารดา</label>
-																		<input type="file" class="form-control-file" id="id_card_mother" name="id_card_mother">
-																	</div>
-																</div>
-
-																<div class="col-sm-4 col-md-4">
-																	<div class="form-group">
-																		<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
-																		<input type="file" class="form-control-file" id="house_mother" name="house_mother">
-																	</div>
+															<div class="col-sm-4 col-md-4">
+																<div class="form-group">
+																	<label for="exampleFormControlFile1">สำเนาทะเบียนบ้านมารดา</label>
+																	<input type="file" class="form-control-file" id="house_mother" name="house_mother">
 																</div>
 															</div>
+														</div>
 
 														<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
 															<p style="margin-left: 25px;  font-size: 15px;"><b>*สำเนาทะเบียนบ้านและสำเนาบัตรประชาชนของผู้ปกครอง (ในกรณีไม่ได้อยู่กับบิดา มารดา)</b></p>
@@ -2366,7 +2366,7 @@
 		});
 	</script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(function() {
 			$("#chktotal").click(function() {
 				if ($(this).is(":checked")) {
@@ -2378,7 +2378,7 @@
 		});
 	</script>
 
-<script>
+	<script>
 		function checkLengthStudent(el) {
 			if (el.value.length != 5) {
 				alert("กรุณากรอกรหัสนักเรียนให้ครบ 5 หลัก")
@@ -2386,7 +2386,7 @@
 		}
 	</script>
 
-<script>
+	<script>
 		function checkLength(el) {
 			if (el.value.length != 13) {
 				alert("กรุณากรอกเลขบัตรประจำตัวประชาชนให้ครบ 13 หลัก")
@@ -2394,7 +2394,7 @@
 		}
 	</script>
 
-<script>
+	<script>
 		function checkLengthTel(el) {
 			if (el.value.length != 10) {
 				alert("กรุณากรอกหมายเลขโทรศัพท์ให้ครบ 10 หลัก")
@@ -2402,7 +2402,31 @@
 		}
 	</script>
 
+	<script>
+		function checkLengthSlct(el) {
+			if (el.value == "00") {
+				alert("กรุณาเลือกคำนำหน้าชื่อของนักเรียน")
+			}
+		}
+	</script>
+
 <script>
+		function checkLengthSlct2(el) {
+			if (el.value == "00") {
+				alert("กรุณาเลือกข้อมูล")
+			}
+		}
+	</script>
+
+<script>
+		function checkLengthSlct3(el) {
+			if (el.value == "00") {
+				alert("กรุณาเลือกข้อมูล")
+			}
+		}
+	</script>
+
+	<script>
 		function populate(s1, s2) {
 			var s1 = document.getElementById(s1);
 			var s2 = document.getElementById(s2);

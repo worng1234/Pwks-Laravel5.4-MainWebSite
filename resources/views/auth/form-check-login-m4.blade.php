@@ -177,14 +177,16 @@
 							<div class="card-body">
 								<div class="login-form">
 									<div class="col-md-4 col-md-4">
-										<div class="form-group">
-											<input id="username" name="username" type="text" class="form-control" placeholder="เลขประจำตัวประชาชน" value="{{ old('username') }}" required autofocus>
+										<div class="form-group" align="left">
+											<label for="username">เลขประจำตัวประชาชนของผู้สมัคร</label>
+											<input id="username" name="username" type="text" class="form-control" placeholder="เลขประจำตัวประชาชน"  value="{{ old('username') }}" required autofocus>
 										</div>
 									</div>
 									<div class="col-md-4 col-md-4">
-										<div class="form-group">
+										<div class="form-group" align="left">
 											<div class="position-relative">
-												<input id="password" name="password" type="password" class="form-control" trequired>
+												<label for="username">วันเดือนปีเกิดของผู้สมัคร <span style="color: red;">(อย่างเช่นวันที่ 7 มิถุนายน 2541 ให้กรอกเป็น 07062541)</span> </label>
+												<input id="password" name="password" type="password" placeholder="วันเดือนปีเกิด"  class="form-control" trequired>
 											</div>
 										</div>
 									</div>
@@ -287,6 +289,8 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
+
+
 	<script>
 		Circles.create({
 			id: 'circles-1',

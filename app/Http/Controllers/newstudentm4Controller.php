@@ -2622,10 +2622,14 @@ class newstudentm4Controller extends Controller
         
         $photo_student = DB::table('photo_student')
             ->where('student_idcard', '=', $findIdCard);
+        
+        $deleteLogin = DB::table('registerlogin_m1s') 
+            ->where('username', '=', $findIdCard);
 
         $newstudentm4->delete();
         $status_pic->delete();
         $photo_student->delete();
+        $deleteLogin->delete();
 
         return redirect('SortNewstudentM4');
     }
