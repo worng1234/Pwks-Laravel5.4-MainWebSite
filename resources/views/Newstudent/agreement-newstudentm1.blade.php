@@ -46,8 +46,8 @@
 					</button>
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
-					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="/eim/public/assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -110,6 +110,19 @@
 						</li>
 						<li class="nav-item submenu">
 							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
 								<i class="link-icon icon-lock"></i>
 								<span class="menu-title">เข้าระบบ</span>
 							</a>
@@ -130,16 +143,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
 							</a>
 						</li>
 
@@ -157,30 +170,32 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-thumbtack"></i>&nbsp; คำแนะนำและข้อตกลงการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 1</div>
+										<div class="card-title"><i class="fas fa-thumbtack fa-lg"></i>&nbsp; คำแนะนำและข้อตกลงการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 1</div>
 									</div>
 								</div>
 								<div class="card-body">
 									<ol>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-										<li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
+										<li>กรอกข้อมูลในแบบฟอร์มตามข้อมูลจริงเพื่อผลประโยชน์ของผู้สมัครเอง</li>
+										<li>เอกสารที่ใช้ประกอบการสมัครให้ใช้เป็นไฟล์ .pdf หากไม่สะดวกให้ใช้เป็นไฟลร์รูปภาพ .jpg หรือ .png </li>
+										<li>เอกสารที่ใช้ประกอบการสมัครมีดังนี้
+											</br>&nbsp;- ไฟล์รูปหน้าตรงขนาด 2 นิ้ว
+											</br>&nbsp;- ไฟล์สำเนาบัตรประจำตัวประชาชนของผู้สมัคร
+											</br>&nbsp;- ไฟล์สำเนาทะเบียนบ้านของผู้สมัคร
+											</br>&nbsp;- ไฟล์ใบ ปพ.1(ด้านหน้า) หรือหนังสือรับรองการเป็นนักเรียนของผู้สมัคร
+										</li>
+
 									</ol>
 								</div>
 								<div class="card-footer" align="center">
 									<div class="form-check">
 										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox">
+											<input class="form-check-input" type="checkbox" id="chkagreement">
 											<span class="form-check-sign">ข้าพเจ้าได้อ่าน และตกลงยินยอมตามรายละเอียดข้อตกลงและความยินยอมข้างต้น</span>
 										</label>
 									</div>
-									<a type="button" class="btn btn-info" href="{{ url('/NewstudentM1')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+									<div id="dvagreement" style="display: none">
+										<a type="button" class="btn btn-info" href="{{ url('/NewstudentM1')}}"><i class="fas fa-file-signature"></i> สมัครเข้าเรียน</a><br><br>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -272,7 +287,20 @@
 	<script src="/eim/public/assets/js/atlantis2.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="/eim/public/assets/js/demo.js"></script>
+	<script src="../assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chkagreement").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvagreement").show();
+				} else {
+					$("#dvagreement").hide();
+				}
+			});
+		});
+	</script>
+
 	<script>
 		Circles.create({
 			id: 'circles-1',

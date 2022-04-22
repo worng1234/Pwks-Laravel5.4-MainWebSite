@@ -47,8 +47,8 @@
 					</button>
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
-					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="/eim/public/assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -111,6 +111,19 @@
 						</li>
 						<li class="nav-item submenu">
 							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
 								<i class="link-icon icon-lock"></i>
 								<span class="menu-title">เข้าระบบ</span>
 							</a>
@@ -131,16 +144,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
 							</a>
 						</li>
 
@@ -158,7 +171,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; ข้อมูลประจำตัวของ {{$newstudentm4Model->prename}}{{$newstudentm4Model->fname}} {{$newstudentm4Model->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ข้อมูลประจำตัวของ {{$newstudentm4Model->prename}}{{$newstudentm4Model->fname}} {{$newstudentm4Model->surname}}</div>
 									</div>
 								</div>
 								<form action="{{ url('/updateNewstudentM4', $newstudentm4Model->id)}}" method="POST" enctype="multipart/form-data">
@@ -219,13 +232,58 @@
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>เดือน:</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->mounth}}" name="mounth">
+													<select class="form-control" id="formGroupDefaultSelect" name="mounth">
+														<option value="01" <?php if ($newstudentm4Model->mounth == "01") { ?> selected="selected" <?php } ?>>มกราคม</option>
+														<option value="02" <?php if ($newstudentm4Model->mounth == "02") { ?> selected="selected" <?php } ?>>กุมภาพันธ์</option>
+														<option value="03" <?php if ($newstudentm4Model->mounth == "03") { ?> selected="selected" <?php } ?>>มีนาคม</option>
+														<option value="04" <?php if ($newstudentm4Model->mounth == "04") { ?> selected="selected" <?php } ?>>เมษายน</option>
+														<option value="05" <?php if ($newstudentm4Model->mounth == "05") { ?> selected="selected" <?php } ?>>พฤษภาคม</option>
+														<option value="06" <?php if ($newstudentm4Model->mounth == "06") { ?> selected="selected" <?php } ?>>มิถุนายน</option>
+														<option value="07" <?php if ($newstudentm4Model->mounth == "07") { ?> selected="selected" <?php } ?>>กรกฎาคม</option>
+														<option value="08" <?php if ($newstudentm4Model->mounth == "08") { ?> selected="selected" <?php } ?>>สิงหาคม</option>
+														<option value="09" <?php if ($newstudentm4Model->mounth == "09") { ?> selected="selected" <?php } ?>>กันยายน</option>
+														<option value="10" <?php if ($newstudentm4Model->mounth == "10") { ?> selected="selected" <?php } ?>>ตุลาคม</option>
+														<option value="11" <?php if ($newstudentm4Model->mounth == "11") { ?> selected="selected" <?php } ?>>พฤษจิกายน</option>
+														<option value="12" <?php if ($newstudentm4Model->mounth == "12") { ?> selected="selected" <?php } ?>>ธันวาคม</option>
+													</select>
 												</div>
 											</div>
 											<div class="col-sm-6 col-md-4">
 												<div class="form-group form-group-default">
 													<label>วัน:</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->day}}" name="day">
+													<select class="form-control" id="formGroupDefaultSelect" name="day">
+														<option value="01" <?php if ($newstudentm4Model->day == "01") { ?> selected="selected" <?php } ?>>1</option>
+														<option value="02" <?php if ($newstudentm4Model->day == "02") { ?> selected="selected" <?php } ?>>2</option>
+														<option value="03" <?php if ($newstudentm4Model->day == "03") { ?> selected="selected" <?php } ?>>3</option>
+														<option value="04" <?php if ($newstudentm4Model->day == "04") { ?> selected="selected" <?php } ?>>4</option>
+														<option value="05" <?php if ($newstudentm4Model->day == "05") { ?> selected="selected" <?php } ?>>5</option>
+														<option value="06" <?php if ($newstudentm4Model->day == "06") { ?> selected="selected" <?php } ?>>6</option>
+														<option value="07" <?php if ($newstudentm4Model->day == "07") { ?> selected="selected" <?php } ?>>7</option>
+														<option value="08" <?php if ($newstudentm4Model->day == "08") { ?> selected="selected" <?php } ?>>8</option>
+														<option value="09" <?php if ($newstudentm4Model->day == "09") { ?> selected="selected" <?php } ?>>9</option>
+														<option value="10" <?php if ($newstudentm4Model->day == "10") { ?> selected="selected" <?php } ?>>10</option>
+														<option value="11" <?php if ($newstudentm4Model->day == "11") { ?> selected="selected" <?php } ?>>11</option>
+														<option value="12" <?php if ($newstudentm4Model->day == "12") { ?> selected="selected" <?php } ?>>12</option>
+														<option value="13" <?php if ($newstudentm4Model->day == "13") { ?> selected="selected" <?php } ?>>13</option>
+														<option value="14" <?php if ($newstudentm4Model->day == "14") { ?> selected="selected" <?php } ?>>14</option>
+														<option value="15" <?php if ($newstudentm4Model->day == "15") { ?> selected="selected" <?php } ?>>15</option>
+														<option value="16" <?php if ($newstudentm4Model->day == "16") { ?> selected="selected" <?php } ?>>16</option>
+														<option value="17" <?php if ($newstudentm4Model->day == "17") { ?> selected="selected" <?php } ?>>17</option>
+														<option value="18" <?php if ($newstudentm4Model->day == "18") { ?> selected="selected" <?php } ?>>18</option>
+														<option value="19" <?php if ($newstudentm4Model->day == "19") { ?> selected="selected" <?php } ?>>19</option>
+														<option value="20" <?php if ($newstudentm4Model->day == "20") { ?> selected="selected" <?php } ?>>20</option>
+														<option value="21" <?php if ($newstudentm4Model->day == "21") { ?> selected="selected" <?php } ?>>21</option>
+														<option value="22" <?php if ($newstudentm4Model->day == "22") { ?> selected="selected" <?php } ?>>22</option>
+														<option value="23" <?php if ($newstudentm4Model->day == "23") { ?> selected="selected" <?php } ?>>23</option>
+														<option value="24" <?php if ($newstudentm4Model->day == "24") { ?> selected="selected" <?php } ?>>24</option>
+														<option value="25" <?php if ($newstudentm4Model->day == "25") { ?> selected="selected" <?php } ?>>25</option>
+														<option value="26" <?php if ($newstudentm4Model->day == "26") { ?> selected="selected" <?php } ?>>26</option>
+														<option value="27" <?php if ($newstudentm4Model->day == "27") { ?> selected="selected" <?php } ?>>27</option>
+														<option value="28" <?php if ($newstudentm4Model->day == "28") { ?> selected="selected" <?php } ?>>28</option>
+														<option value="29" <?php if ($newstudentm4Model->day == "29") { ?> selected="selected" <?php } ?>>29</option>
+														<option value="30" <?php if ($newstudentm4Model->day == "30") { ?> selected="selected" <?php } ?>>30</option>
+														<option value="31" <?php if ($newstudentm4Model->day == "31") { ?> selected="selected" <?php } ?>>31</option>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -551,14 +609,38 @@
 												<div class="form-check">
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
-															<label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
-															<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->poor_person}}" name="poor_person">
+															<label>*ความพิการ</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="disabled">
+																<option value="ไม่มี" <?php if ($newstudentm4Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="การมองเห็น" <?php if ($newstudentm4Model->disabled == "การมองเห็น") { ?> selected="selected" <?php } ?>>การมองเห็น</option>
+																<option value="การได้ยิน" <?php if ($newstudentm4Model->disabled == "การได้ยิน") { ?> selected="selected" <?php } ?>>การได้ยิน</option>
+																<option value="สติปัญญา" <?php if ($newstudentm4Model->disabled == "สติปัญญา") { ?> selected="selected" <?php } ?>>สติปัญญา</option>
+																<option value="ร่างกาย/สุขภาพ" <?php if ($newstudentm4Model->disabled == "ร่างกาย/สุขภาพ") { ?> selected="selected" <?php } ?>>ร่างกาย/สุขภาพ</option>
+																<option value="การเรียนรู้" <?php if ($newstudentm4Model->disabled == "การเรียนรู้") { ?> selected="selected" <?php } ?>>การเรียนรู้</option>
+																<option value="การพูด/ภาษา" <?php if ($newstudentm4Model->disabled == "การพูด/ภาษา") { ?> selected="selected" <?php } ?>>การพูด/ภาษา</option>
+																<option value="พฤติกรรม/อารมณ์" <?php if ($newstudentm4Model->disabled == "พฤติกรรม/อารมณ์") { ?> selected="selected" <?php } ?>>พฤติกรรม/อารมณ์</option>
+																<option value="ออทิสติค" <?php if ($newstudentm4Model->disabled == "ออทิสติค") { ?> selected="selected" <?php } ?>>ออทิสติค</option>
+																<option value="พิการซ้ำซ้อน" <?php if ($newstudentm4Model->disabled == "พิการซ้ำซ้อน") { ?> selected="selected" <?php } ?>>พิการซ้ำซ้อน</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
-															<label>ผู้พิการ/เด็กพิเศษ</label>
-															<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->disabled}}" name="disabled">
+															<label>*ความด้อยโอกาส</label>
+															<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
+																<option value="ไม่มี" <?php if ($newstudentm4Model->disabled == "ไม่มี") { ?> selected="selected" <?php } ?>>ไม่มี</option>
+																<option value="ถูกบังคับขายแรงงาน" <?php if ($newstudentm4Model->disabled == "ถูกบังคับขายแรงงาน") { ?> selected="selected" <?php } ?>>ถูกบังคับขายแรงงาน</option>
+																<option value="อยู่ในธุรกิจทางเพศ" <?php if ($newstudentm4Model->disabled == "อยู่ในธุรกิจทางเพศ") { ?> selected="selected" <?php } ?>>อยู่ในธุรกิจทางเพศ</option>
+																<option value="ถูกทอดทิ้ง" <?php if ($newstudentm4Model->disabled == "ถูกทอดทิ้ง") { ?> selected="selected" <?php } ?>>ถูกทอดทิ้ง</option>
+																<option value="เด็กเร่ร่อน" <?php if ($newstudentm4Model->disabled == "เด็กเร่ร่อน") { ?> selected="selected" <?php } ?>>เด็กเร่ร่อน</option>
+																<option value="ได้รับผลกระทบจากเอดส์" <?php if ($newstudentm4Model->disabled == "ได้รับผลกระทบจากเอดส์") { ?> selected="selected" <?php } ?>>ได้รับผลกระทบจากเอดส์</option>
+																<option value="ชนกลุ่มน้อย" <?php if ($newstudentm4Model->disabled == "ชนกลุ่มน้อย") { ?> selected="selected" <?php } ?>>ชนกลุ่มน้อย</option>
+																<option value="ถูกทำร้ายทารุณ" <?php if ($newstudentm4Model->disabled == "ถูกทำร้ายทารุณ") { ?> selected="selected" <?php } ?>>ถูกทำร้ายทารุณ</option>
+																<option value="เด็กยากจน" <?php if ($newstudentm4Model->disabled == "เด็กยากจน") { ?> selected="selected" <?php } ?>>เด็กยากจน</option>
+																<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด" <?php if ($newstudentm4Model->disabled == "เด็กที่มีปัญหาเกี่ยวกับยาเสพติด") { ?> selected="selected" <?php } ?>>เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+																<option value="เด็กกำพร้า" <?php if ($newstudentm4Model->disabled == "เด็กกำพร้า") { ?> selected="selected" <?php } ?>>เด็กกำพร้า</option>
+																<option value="ทำงานรับผิดชอบตนเองและครอบครัว" <?php if ($newstudentm4Model->disabled == "ทำงานรับผิดชอบตนเองและครอบครัว") { ?> selected="selected" <?php } ?>>ทำงานรับผิดชอบตนเองและครอบครัว</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
@@ -573,117 +655,56 @@
 
 										<!-- เลือกเรียนแผนการเรียนรู้ -->
 										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 10 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
+											<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 7 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
 										</div>
 										<div class="row">
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 1</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name1}}" name="major_name1" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major1->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 2</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name2}}" name="major_name2" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major2->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 3</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name3}}" name="major_name3" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major3->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 4</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name4}}" name="major_name4" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major4->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 5</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name5}}" name="major_name5" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major5->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 6</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name6}}" name="major_name6" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major6->class_major_name}}" readonly>
 												</div>
 											</div>
 											<div class="col-6 col-md-6">
 												<div class="form-group form-group-default">
 													<label>อันดับที่ 7</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name7}}" name="major_name7" readonly>
+													<input id="Name" type="text" class="form-control" placeholder="" value="{{$m4major7->class_major_name}}" readonly>
 												</div>
 											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>อันดับที่ 8</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name8}}" name="major_name8" readonly>
-												</div>
-											</div>
-											<div class="col-6 col-md-6">
-												<div class="form-group form-group-default">
-													<label>อันดับที่ 9</label>
-													<input id="Name" type="text" class="form-control" placeholder="" value="{{$newstudentm4Model->major_name9}}" name="major_name9" readonly>
-												</div>
-											</div>
-										</div>
-
-										<!-- อัพโหลดรูปภาพ -->
-										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-											<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
-										</div>
-										<div class="row">
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-													<input type="file" class="form-control-file" id="pic" name="pic">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-													<input type="file" class="form-control-file" id="id_number_pic" name="id_number_pic">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-													<input type="file" class="form-control-file" id="house_pic" name="house_pic">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-4">
-												<div class="form-group">
-													<label for="exampleFormControlFile1">ใบ ปพ.</label>
-													<input type="file" class="form-control-file" id="grade_pic" name="grade_pic">
-												</div>
-											</div>
-										</div><br><br>
-
-										<!-- สถานะการสมัคร -->
-										<div hidden>
-											<input type="text" name="status_rigis" value="รอยืนยันการสมัคร">
-										</div>
-										<div hidden>
-											<input type="text" name="status_picall" value="รอตรวจสอบ">
-										</div>
-										<div hidden>
-											<input type="text" name="status_pic" value="รอตรวจสอบ">
-										</div>
-										<div hidden>
-											<input type="text" name="status_idnumber_pic" value="รอตรวจสอบ">
-										</div>
-										<div hidden>
-											<input type="text" name="status_house_pic" value="รอตรวจสอบ">
-										</div>
-										<div hidden>
-											<input type="text" name="status_grade_pic" value="รอตรวจสอบ">
 										</div>
 
 										<div class="card-footer" align="center">
+											<p style="text-align:center">หากทำการแก้ไขข้อมูลเรียบร้อยแล้ว<br>
+												ให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
 											<button type="submit" class="btn btn-success"><strong>ยืนยัน</strong></button>
 											<a href='{{ url("/ShowNewstudentM4/{$newstudentm4Model->id}" )}}' class="btn btn-danger" style="margin-left: 20px;"><strong>ย้อนกลับ</strong></a>
 										</div><br>
@@ -884,12 +905,13 @@
 				$('#alert_demo_7').click(function(e) {
 					swal({
 						title: 'ยืนยันข้อมูล ?',
-						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+						text: "ยืนยันการแก้ไขข้อมูล",
 						type: 'warning',
 						buttons: {
 							confirm: {
 								text: 'ตกลง',
-								className: 'btn btn-success'
+								className: 'btn btn-success',
+								type: 'submit'
 							},
 							cancel: {
 								text: 'ย้อนกลับ',
@@ -901,13 +923,15 @@
 						if (Delete) {
 							swal({
 								title: 'บันทึกข้อมูลเรียบร้อย!',
-								text: 'สามารถติดตามสถานะการสมัครเข้าเรียน ได้ภายใน 1-3 วัน',
+								text: 'สามารถตรวจสอบการแก้ไขข้อมูลได้ที่น้าตรวจสอบข้อมูล',
 								type: 'success',
 								buttons: {
 									confirm: {
 										className: 'btn btn-success'
 									}
 								}
+							}).then(function() {
+								window.location = '/check/statusM4';
 							});
 						} else {
 							swal.close();

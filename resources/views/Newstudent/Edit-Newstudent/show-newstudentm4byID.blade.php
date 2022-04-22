@@ -46,8 +46,8 @@
 					</button>
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
-					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="/eim/public/assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -105,6 +105,22 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
+									<li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -130,16 +146,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
 							</a>
 						</li>
 
@@ -157,7 +173,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 										<a href='{{ url("/EditNewstudentM4/{$data->id}" )}}' class="btn btn-warning " style="margin-left:auto;"><strong>แก้ไขข้อมูล</strong></a>
 									</div>
 								</div>
@@ -218,7 +234,31 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>เดือน:</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mounth}}" readonly>
+												@if ($data->mounth == '01')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มกราคม" readonly>
+												@elseif ($data->mounth == '02')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กุมภาพันธ์" readonly>
+												@elseif ($data->mounth == '03')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มีนาคม" readonly>
+												@elseif ($data->mounth == '04')
+												<input id="Name" type="text" class="form-control" placeholder="" value="เมษายน" readonly>
+												@elseif ($data->mounth == '05')
+												<input id="Name" type="text" class="form-control" placeholder="" value="พฤษภาคม" readonly>
+												@elseif ($data->mounth == '06')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มิถุนายน" readonly>
+												@elseif ($data->mounth == '07')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กรกฎาคม" readonly>
+												@elseif ($data->mounth == '08')
+												<input id="Name" type="text" class="form-control" placeholder="" value="สิงหาคม" readonly>
+												@elseif ($data->mounth == '09')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กันยายน" readonly>
+												@elseif ($data->mounth == '10')
+												<input id="Name" type="text" class="form-control" placeholder="" value="ตุลาคม" readonly>
+												@elseif ($data->mounth == '11')
+												<input id="Name" type="text" class="form-control" placeholder="" value="พฤษจิกายน" readonly>
+												@elseif ($data->mounth == '12')
+												<input id="Name" type="text" class="form-control" placeholder="" value="ธันวาคม" readonly>
+												@endif
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
@@ -580,91 +620,223 @@
 										<p style="margin-left: 25px;  font-size: 15px;"><b>เลือกเรียนแผนการเรียนรู้ &nbsp;&nbsp;( เลือกอันดับ 1 - 10 ตามลำดับแผนการเรียนรู้ที่เลือก )</b></p>
 									</div>
 									<div class="row">
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 1</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name1}}" readonly>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 1</label>
+													@if ($data->major_name1 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name1 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name1 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name1 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name1 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name1 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name1 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name1 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name1 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 2</label>
+													@if ($data->major_name2 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name2 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name2 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name2 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name2 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name2 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name2 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name2 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name2 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 3</label>
+													@if ($data->major_name3 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name3 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name3 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name3 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name3 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name3 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name3 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name3 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name3 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 4</label>
+													@if ($data->major_name4 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name4 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name4 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name4 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name4 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name4 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name4 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name4 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name4 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 5</label>
+													@if ($data->major_name5 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name5 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name5 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name5 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name5 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name5 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name5 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name5 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name5 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 6</label>
+													@if ($data->major_name6 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name6 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name6 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name6 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name6 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name6 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name6 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name6 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name6 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 7</label>
+													@if ($data->major_name7 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name7 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name7 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name7 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name7 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name7 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name7 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name7 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name7 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 8</label>
+													@if ($data->major_name8 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name8 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name8 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name8 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name8 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name8 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name8 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name8 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name8 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>อันดับที่ 9</label>
+													@if ($data->major_name9 == '01')
+													<input id="Name" type="text" class="form-control" placeholder="" value="วิทยาศาสตร์-คณิตศาสตร์"  readonly>
+													@elseif ($data->major_name9 == '02')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาอังกฤษ"  readonly>
+													@elseif ($data->major_name9 == '03')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ภาษาอังกฤษ-ภาษาจีน"  readonly>
+													@elseif ($data->major_name9 == '04')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พาณิชยกรรม)"  readonly>
+													@elseif ($data->major_name9 == '05')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(ศิลปะ)"  readonly>
+													@elseif ($data->major_name9 == '06')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(เกษตร)"  readonly>
+													@elseif ($data->major_name9 == '07')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(คหกรรม)"  readonly>
+													@elseif ($data->major_name9 == '08')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ศิลป์ทั่วไป(พลศึกษา)"  readonly>
+													@elseif ($data->major_name9 == '09')
+													<input id="Name" type="text" class="form-control" placeholder="" value="ปวช.(ช่างเชื่อมโลหะ)"  readonly>
+													@endif
+												</div>
 											</div>
 										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 2</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name2}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 3</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name3}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 4</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name4}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 5</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name5}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 6</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name6}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 7</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name7}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 8</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name8}}" readonly>
-											</div>
-										</div>
-										<div class="col-6 col-md-6">
-											<div class="form-group form-group-default">
-												<label>อันดับที่ 9</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->major_name9}}" readonly>
-											</div>
-										</div>
-									</div>
-									<!-- อัพโหลดรูปภาพ -->
-									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-										<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
-									</div>
-									<div class="row">
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-												<input type="text" class="form-control-file" id="pic" name="pic" value="{{$data->status_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-												<input type="text" class="form-control-file" id="id_number_pic" name="id_number_pic" value="{{$data->status_idnumber_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-												<input type="text" class="form-control-file" id="house_pic" name="house_pic" value="{{$data->status_house_pic}}" readonly>
-											</div>
-										</div>
-										<div class="col-sm-6 col-md-4">
-											<div class="form-group">
-												<label for="exampleFormControlFile1">ใบ ปพ.</label>
-												<input type="text" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$data->status_grade_pic}}" readonly>
-											</div>
-										</div>
-									</div>
 								</div>
 								<div class="card-footer" align="center">
 									<a href='{{ url("/check/statusM4" )}}' class="btn btn-danger "><strong>ย้อนกลับ</strong></a>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <link rel="icon" href="/eim/public/assets/img/logo3.png" type="image/x-icon" />
+  <link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
   <!-- Fonts and icons -->
   <script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -45,12 +45,12 @@
       <div class="login-form">
         <div class="form-group">
           <label for="username" class="placeholder"><b>ชื่อผู้ใช้</b></label>
-          <input id="username" name="username" type="text" class="form-control" placeholder="กรอกเลขบัตรประจำตัวประชาชน" value="{{ old('username') }}" required autofocus>
+          <input id="username" name="username" type="text" class="form-control" placeholder="กรอกเลขบัตรประจำตัวประชาชน" value="{{ old('username') }}" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง" required autofocus>
         </div>
         <div class="form-group">
           <label for="password" class="placeholder"><b>รหัสผ่าน</b></label>
           <div class="position-relative">
-            <input id="password" name="password" type="password" class="form-control" placeholder="กรอกเลขประจำตัวนักเรียน" required>
+            <input id="password" name="password" type="password" class="form-control" placeholder="กรอกเลขประจำตัวนักเรียน" pattern="^[a-zA-z||0-9\s]+$" title="กรุณากรอกให้ถูกต้อง" required>
             <div class="show-password">
               <i class="icon-eye"></i>
             </div>
@@ -64,7 +64,8 @@
         </div>
 
         <div class="form-action mb-3">
-          <button type="submit"class="btn btn-success btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold">เข้าสู่ระบบ</button>
+          <button type="submit"class="btn btn-success btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold" style="margin-right:auto;">เข้าสู่ระบบ</button>
+          <a href="{{ url('/')}}" class="btn btn-danger btn-rounded col-md-5 mt-3 mt-sm-0 fw-bold" style="margin-left:auto;"><strong>ย้อนกลับ</strong></a>
         </div>
       </div>
     </div>

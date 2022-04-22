@@ -17,8 +17,41 @@ class TestUPController extends Controller
      */
     public function index()
     {
-        $data = test::all();
-        return view('testall.index', compact('data'));
+        $n1 = "07";
+        $n2 = "06";
+        $n3 = "2541";
+        $nall = $n1.$n2.$n3;
+        $data = test2::all();
+        return view('testall.index', ['data' => $data, 'nall' => $nall]);
+    }
+    public function testmultiup(Request $request){
+
+        
+        //$data1[] = $request->id_number2;
+        
+        for ($i=0; $i < count($request->id_number2); $i++) { 
+            $data1[$i] = $request->id_number2[$i];
+            $data2[$i] = $request->score[$i];
+            $id = $i+1;
+            $data = test2::find($id);
+            $data->update([
+                'id_number2' => $data1[$i],
+                'score' => $data2[$i],
+            ]);
+        }
+        return redirect('/testall');
+        // return redirect('/testall');
+        // $test1 = test2::all();
+        // $c1 = count($request->id_number2);
+        // // return json_encode(gettype($c1));
+
+        // for ($i=1; $i <= $c1; $i++) { 
+        //     //$id = $i;
+        //     //$data = test2::find($id);
+        //     echo $i;
+        // }
+
+        
     }
 
     /**
@@ -34,13 +67,22 @@ class TestUPController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'student_id' => 'mimes:jpeg,bmp,png,gif|max:8192'
+        ]);
+
+        $pic = $request->file('student_id')->getClientOriginalName();
+        $compPic1 = str_replace(' ', '_' ,$pic);
+        $path = $request->file('student_id')->storeAs('test', $compPic1);
+
         $day = date('d');
         $mounth = date('m');
         $year = date('y');
         $date = ($year . '/' . $mounth . '/' . $day);
+
         $data = new test([
             "name" => $request->get('name'),
-            "student_id" => $request->get('student_id'),
+            "student_id" => $compPic1,
             "score" => $score = (int)$request->get('score')
         ]);
         $data->save();
@@ -96,8 +138,8 @@ class TestUPController extends Controller
      */
     public function edit($id)
     {
-        $student_id = test::find($id);
-        return view('testall.edit', compact('student_id'));
+        $data = test2::find($id);
+        return view('testall.edit', ['data' => $data]);
     }
 
     /**
@@ -109,27 +151,17 @@ class TestUPController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $day = date('d');
-        $mounth = date('m');
-        $year = date('y');
-        $date = ($year . '/' . $mounth . '/' . $day);
-
-        $data2 = new test2([
-            "id_number2" => $request->get('id_number2'),
-            "name" => $request->get('name'),
+        $testup = test2::find($id);
+        $dt = $testup->id_number2;
+        
+        $data = DB::table('test2')
+        ->where('id_number2', '=', $dt)
+        ->update([
             "student_id" => $request->get('student_id'),
-            "date" => $date,
+            "name" => $request->get('name'),
             "score" => $request->get('score'),
         ]);
-        $data2->save();
-
-        $data1 = test::find($id);
-        $sumscore = $data1->score;
-        $sum = (int)$sumscore - (int)$request->score;
-        $data1->score = $sum;
-        $data1->save();
-
+        
         return redirect('/testall');
     }
 

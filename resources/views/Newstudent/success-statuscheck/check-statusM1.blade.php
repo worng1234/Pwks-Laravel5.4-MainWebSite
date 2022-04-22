@@ -47,8 +47,8 @@
                     </button>
                     <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
                     <!-- Logo Header -->
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <img src="/eim/public/assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+                    <a href="{{ url('/')}}" class="logo d-flex align-items-center">
+                        <img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
                     </a>
                     <!-- End Logo Header -->
 
@@ -106,9 +106,25 @@
                                     <li>
                                         <a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
                                     </li>
+                                    <li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+                                    <li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
                         <li class="nav-item submenu">
                             <a class="nav-link" href="#">
                                 <i class="link-icon icon-lock"></i>
@@ -131,18 +147,18 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="link-icon icon-book-open"></i>
-                                <span class="menu-title">คู่มือการใช้งาน</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="link-icon icon-bubbles"></i>
-                                <span class="menu-title">ติดต่อเรา</span>
-                            </a>
-                        </li>
+                        <li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
+								<i class="link-icon icon-bubbles"></i>
+								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
+							</a>
+						</li>
 
                     </ul>
                 </div>

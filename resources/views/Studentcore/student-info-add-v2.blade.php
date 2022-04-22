@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/eim/public/assets/img/icon.ico" type="image/x-icon" />
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -185,7 +185,7 @@
 						<div class="col-md-12">
 							<div class="wizard-container wizard-round ">
 								<div class="wizard-header">
-									<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;ระบบบันทึกข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูล</div>
+									<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i> &nbsp;ระบบบันทึกข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูล</div>
 								</div>
 
 								<form method="post" action="{{ url('/addstudentcore')}}" enctype="multipart/form-data">
@@ -219,16 +219,16 @@
 										<div class="tab-content">
 											<div class="tab-pane active" id="info">
 												<div class="row">
-													<div class="col-6 col-md-5">
+													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>เลขประจำตัวนักเรียน</label>
-															<input id="Name" type="text" class="form-control" required name="studentID">
+															<input id="Name" type="text" class="form-control" required name="student_id">
 														</div>
 													</div>
-													<div class="col-6 col-md-3">
+													<div class="col-6 col-md-5">
 														<div class="form-group form-group-default">
 															<label>แผนการเรียน (กรอกเฉพาะนักเรียนระดับชั้น ม.4 - ม.6)</label>
-															<select class="form-control" id="formGroupDefaultSelect" name="student_major" required>
+															<select class="form-control" id="formGroupDefaultSelect" name="student_major" >
 																<option>เลือก</option>
 																<option value="วิทยาศาสตร์ - คณิตศาสตร์">วิทยาศาสตร์ - คณิตศาสตร์</option>
 																<option value="ศิลป์ - คำนวณ">ศิลป์ - คำนวณ</option>
@@ -243,7 +243,7 @@
 															</select>
 														</div>
 													</div>
-													<div class="col-6 col-md-2">
+													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ระดับชั้น</label>
 															<select class="form-control" id="formGroupDefaultSelect" name="student_class" required>
@@ -272,6 +272,12 @@
 																<option value="8">8</option>
 																<option value="9">9</option>
 															</select>
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-2">
+														<div class="form-group form-group-default">
+															<label>เลขที่</label>
+															<input id="Name" type="text" class="form-control" name="student_number" required>
 														</div>
 													</div>
 												</div>
@@ -511,6 +517,8 @@
 													</div>
 												</div>
 											</div>
+											<input name="score" value="100" hidden>
+											<input name="status" value="กำลังศึกษาอยู่" hidden>
 
 											<!-- Step 2 ที่อยู่ -->
 											<div class="tab-pane" id="address">
@@ -553,7 +561,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" name="subdistrict" required>
+															<input id="Name" type="text" class="form-control" name="sub_district" required>
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -630,7 +638,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" name="subdistrict_n">
+															<input id="Name" type="text" class="form-control" name="sub_district_n">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -674,7 +682,15 @@
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>จบชั้น</label>
-															<input id="Name" type="text" class="form-control" name="final_class" required>
+															<select class="form-control" id="formGroupDefaultSelect" name="final_class" required>
+																<option>เลือก</option>
+																<option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
+																<option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
+																<option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
+																<option value="มัธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
+																<option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
+																<option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
@@ -688,7 +704,7 @@
 													<div class="col-6 col-md-4">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" name="f_subdistrict" required>
+															<input id="Name" type="text" class="form-control" name="f_sub_district" required>
 														</div>
 													</div>
 													<div class="col-6 col-md-4">
@@ -1499,7 +1515,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" placeholder="" name="subdistrict_f">
+															<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_f">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -1667,7 +1683,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" placeholder="" name="subdistrict_m">
+															<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_m">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -1848,7 +1864,7 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ตำบล/แขวง</label>
-															<input id="Name" type="text" class="form-control" placeholder="" name="subdistrict_p">
+															<input id="Name" type="text" class="form-control" placeholder="" name="sub_district_p">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -2207,30 +2223,30 @@
 		<!-- สิ้นสุด Footter -->
 	</div>
 	<!--   Core JS Files   -->
-	<script src="..//eim/public/assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="..//eim/public/assets/js/core/popper.min.js"></script>
-	<script src="..//eim/public/assets/js/core/bootstrap.min.js"></script>
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
 	<!-- jQuery UI -->
-	<script src="..//eim/public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="..//eim/public/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 	<!-- Moment JS -->
-	<script src="..//eim/public/assets/js/plugin/moment/moment.min.js"></script>
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
 	<!-- Bootstrap Toggle -->
-	<script src="..//eim/public/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 	<!-- jQuery Scrollbar -->
-	<script src="..//eim/public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 	<!-- DateTimePicker -->
-	<script src="..//eim/public/assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
 	<!-- Select2 -->
-	<script src="..//eim/public/assets/js/plugin/select2/select2.full.min.js"></script>
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
 	<!-- Bootstrap Wizard -->
-	<script src="..//eim/public/assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
 	<!-- jQuery Validation -->
-	<script src="..//eim/public/assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
 	<!-- Atlantis JS -->
-	<script src="..//eim/public/assets/js/atlantis.min.js"></script>
+	<script src="../assets/js/atlantis.min.js"></script>
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="..//eim/public/assets/js/setting-demo2.js"></script>
+	<script src="../assets/js/setting-demo2.js"></script>
 
 	<script>
 		var $validator = $('.wizard-container form').validate({

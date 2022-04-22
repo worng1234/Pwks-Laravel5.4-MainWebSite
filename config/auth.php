@@ -56,6 +56,14 @@ return [
             'driver' => 'session',
             'provider' => 'students',
         ],
+        'registerlogin_m1' => [
+            'driver' => 'session',
+            'provider' => 'registerlogin_m1s',
+        ],
+        'registerlogin_m4' => [
+            'driver' => 'session',
+            'provider' => 'registerlogin_m4s',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -100,6 +108,14 @@ return [
         'students' => [
             'driver' => 'eloquent',
             'model' => App\Student::class,
+        ],
+        'registerlogin_m1s' => [
+            'driver' => 'eloquent',
+            'model' => App\RegisterloginM1::class,
+        ],
+        'registerlogin_m4s' => [
+            'driver' => 'eloquent',
+            'model' => App\RegisterloginM4::class,
         ],
 
         // 'users' => [
@@ -146,6 +162,16 @@ return [
         ],
         'students' => [
             'provider' => 'students',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'registerlogin_m1s' => [
+            'provider' => 'registerlogin_m1s',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'registerlogin_m4s' => [
+            'provider' => 'registerlogin_m4s',
             'table' => 'password_resets',
             'expire' => 15,
         ],

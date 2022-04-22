@@ -13,7 +13,7 @@ class studentcoreModels extends Model
     protected $table = "student_core";
     protected $fillable = [
         'student_id_card',
-        'studentID',
+        'student_id',
         'student_major',
         'student_class',
         'student_room',
@@ -38,6 +38,9 @@ class studentcoreModels extends Model
         'fname',
         'name_cen',
         'surname',
+        'score',
+        'status',
+        'date',
         'rememberToken',
     ];
 

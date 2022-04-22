@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
+
+	<!-- Fonts and icons -->
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				"families": ["Prompt:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['../assets/css/fonts.min.css']
+			},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis2.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+
+<body>
+	<div class="wrapper horizontal-layout-2">
+
+		<div class="main-header" style="background-color: #8B469B;">
+			<div class="nav-top">
+				<div class="container d-flex flex-row">
+					<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon">
+							<i class="icon-menu"></i>
+						</span>
+					</button>
+					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+					<!-- Logo Header -->
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					</a>
+					<!-- End Logo Header -->
+
+					<!-- Navbar Header -->
+					<nav class="navbar navbar-header navbar-expand-lg p-0">
+
+						<div class="container-fluid p-0">
+							<div class="collapse" id="search-nav">
+								<p class="card-title" style="font-size: 17px;"><b>
+										<font color='#ffffff'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font>
+									</b></p>
+								<label><small>
+										<font color='#ffffff'>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่</font>
+									</small></label>
+							</div>
+							<!-- <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+								<li class="nav-item toggle-nav-search hidden-caret">
+									<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+										<i class="fas fa-school"></i>
+									</a>
+								</li>					
+							</ul> -->
+						</div>
+					</nav>
+					<!-- End Navbar -->
+				</div>
+			</div>
+			<div class="nav-bottom">
+				<div class="container">
+					<h3 class="title-menu d-flex d-lg-none">
+						เมนู
+						<div class="close-menu"> <i class="flaticon-cross"></i></div>
+					</h3>
+					<ul class="nav page-navigation page-navigation-info bg-white">
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url('/')}}">
+								<i class="link-icon icon-home"></i>
+								<span class="menu-title">หน้าแรก</span>
+							</a>
+						</li>
+						<li class="nav-item submenu active">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-user-follow"></i>
+								<span class="menu-title">รับสมัครนักเรียนใหม่</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{ url('/AgreeMentNewstudentRegisterM1')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a>
+									</li>
+									<li>
+										<a href="{{ url('/AgreeMentNewstudentRegisterM4')}}">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a>
+									</li>
+									<li>
+										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-lock"></i>
+								<span class="menu-title">เข้าระบบ</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{ url('/student/login')}}">นักเรียน</a>
+									</li>
+									<li>
+										<a href="{{ url('/academic/login')}}">ฝ่ายวิชาการ</a>
+									</li>
+									<li>
+										<a href="{{ url('/affair/login')}}">ฝ่ายกิจการนักเรียน</a>
+									</li>
+									<li>
+										<a href="{{ url('/admin/login')}}">ผู้ดูแลระบบ</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="{{ url('/Contact')}}">
+								<i class="link-icon icon-bubbles"></i>
+								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-panel">
+			<div class="container">
+				<div class="page-inner">
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; แบบฟอร์มการรับสมัครเข้าเรียน ชั้นมัธยมศึกษาปีที่ 1</div>
+									</div>
+								</div>
+								<form id="myform1" method="post" action="{{ url('/insertnewstudentm1')}}" enctype="multipart/form-data">
+									{{csrf_field()}}
+									{{ method_field('POST') }}
+									<!-- ข้อมูลส่วนตัว -->
+									<div class="card-body">
+										<div class="alert alert-info" role="alert" align="center">
+											<h5><i class="fas fa-info-circle"></i>
+												กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนเอง หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												ช่องที่มีเครื่อง * จำเป็นต้องกรอกข้อมูลห้ามปล่อยว่างเด็ดขาด แต่หากไม่มีข้อมูลจริงๆให้ใส่เครื่องหมาย - </h5>
+											<h5><i class="fas fa-info-circle" style="color:red;"></i>
+												หากช่องไหนไม่มีข้อมูลให้ปล่อยว่าง</h5>
+										</div>
+
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลส่วนตัว</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>*คำนำหน้าชื่อ</label>
+													<select class="form-control" id="select1234" onblur="checkLengthSlct(this)" name="prename" required>
+														<option value="00">เลือก</option>
+														<option value="เด็กชาย">เด็กชาย</option>
+														<option value="เด็กหญิง">เด็กหญิง</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*ชื่อภาษาไทย</label>
+													<input name="fname" type="text" class="form-control" placeholder="" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" required>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>ชื่อกลาง</label>
+													<input name="name_cen" type="text" class="form-control" placeholder="(ถ้ามี)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อกลางเป็นภาษาไทย">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*นามสกุลภาษาไทย</label>
+													<input name="surname" type="text" class="form-control" placeholder="" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" required>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<div class="form-group form-group-default">
+													<label>*เลขประจำตัวประชาชน</label>
+													<input name="id_number" type="text" class="form-control" placeholder="" onblur="checkLength(this)" maxlength="13" pattern="^[gG||0-9\s]+$" title="กรุณากรอกข้อมูลประจำตัวประชาชนให้ถูกต้อง" required>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<label style="margin-bottom: 5px;"><small>วัน/เดือน/ปีเกิด ที่ปรากฏในบัตรประชาชน</small></label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*ปี พุทธศักราช:</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="year">
+														<option>เลือก</option>
+														<option value="2540">2540</option>
+														<option value="2541">2541</option>
+														<option value="2542">2542</option>
+														<option value="2543">2543</option>
+														<option value="2544">2544</option>
+														<option value="2545">2545</option>
+														<option value="2546">2546</option>
+														<option value="2547">2547</option>
+														<option value="2548">2548</option>
+														<option value="2549">2549</option>
+														<option value="2550">2550</option>
+														<option value="2551">2551</option>
+														<option value="2552">2552</option>
+														<option value="2553">2553</option>
+														<option value="2554">2554</option>
+														<option value="2555">2555</option>
+														<option value="2556">2556</option>
+														<option value="2557">2557</option>
+														<option value="2558">2558</option>
+														<option value="2559">2559</option>
+														<option value="2560">2560</option>
+														<option value="2561">2561</option>
+														<option value="2562">2562</option>
+														<option value="2563">2563</option>
+														<option value="2564">2564</option>
+														<option value="2565">2565</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*เดือน:</label>
+													<select class="form-control" id="slctMounth" name="mounth" onchange="populate(this.id,'slct2')">
+														<option>เลือก</option>
+														<option value="01">มกราคม</option>
+														<option value="02">กุมภาพันธ์</option>
+														<option value="03">มีนาคม</option>
+														<option value="04">เมษายน</option>
+														<option value="05">พฤษภาคม</option>
+														<option value="06">มิถุนายน</option>
+														<option value="07">กรกฎาคม</option>
+														<option value="08">สิงหาคม</option>
+														<option value="09">กันยายน</option>
+														<option value="10">ตุลาคม</option>
+														<option value="11">พฤษจิกายน</option>
+														<option value="12">ธันวาคม</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*วัน:</label>
+													<select class="form-control" id="slct2" name="day">
+														<!-- <option>เลือก</option> -->
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>*เพศสภาพ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="sex" required>
+														<option>เลือก</option>
+														<option value="ชาย">ชาย</option>
+														<option value="หญิง">หญิง</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>ศาสนา</label>
+													<input name="religion" type="text" class="form-control" placeholder="" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกศาสนาเป็นภาษาไทย" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>*เชื้อชาติ</label>
+													<input name="origin" type="text" class="form-control" placeholder="" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกเชื่อชาติเป็นภาษาไทย" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>*สัญชาติ</label>
+													<input name="nationality" type="text" class="form-control" placeholder="" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกสัญชาติเป็นภาษาไทย" required>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+													<input name="tel" type="text" class="form-control" placeholder="" onblur="checkLengthTel(this)" pattern="^[0-9\s]+$" title="กรุณากรอกเบอร์โทรเป็นตัวเลข" maxlength="10" required>
+												</div>
+											</div>
+										</div>
+
+										<!-- ข้อมูลที่อยู่ตามทะเบียนบ้าน -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*บ้านเลขที่</label>
+													<input name="house_number" type="text" class="form-control" pattern="^[/||0-9\s]+$" title="กรุณากรอกข้อมูลให้ถูกต้อง" maxlength="10" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*หมู่</label>
+													<input name="bloc" type="text" class="form-control" placeholder="" pattern="^[/||0-9\s]+$" title="กรุณากรอกข้อมูลให้ถูกต้อง" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>ซอย</label>
+													<input name="street" type="text" class="form-control" pattern="^[-||/||0-9\s]+$" title="กรุณากรอกข้อมูลให้ถูกต้อง" maxlength="10" placeholder="">
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>ถนน</label>
+													<input name="road" type="text" class="form-control" pattern="^[-||/||0-9\s]+$" title="กรุณากรอกข้อมูลให้ถูกต้อง" maxlength="10" placeholder="">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*ตำบล/แขวง</label>
+													<input name="sub_district" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*อำเภอ/เขต</label>
+													<input name="district" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*จังหวัด</label>
+													<input name="province" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>*รหัสไปรษณีย์</label>
+													<input name="post" type="text" class="form-control" pattern="^[0-9\s]+$" title="กรุณากรอกรหัสไปรษณีย์เป็นตัวเลข" maxlength="6" placeholder="" required>
+												</div>
+											</div>
+										</div>
+
+										<!-- ข้อมูลครอบครัว -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลครอบครัว</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล บิดา</small></label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>คำนำหน้าชื่อ</label>
+													<input name="father_prename" type="text" class="form-control" pattern="^[.||ก-๏\s]+$" title="กรุณากรอกคำนำหน้าชื่อเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>ชื่อภาษาไทย</label>
+													<input name="father_name" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>ชื่อกลาง</label>
+													<input name="father_namecen" type="text" class="form-control" placeholder="(ถ้ามี)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อกลางเป็นภาษาไทย">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>นามสกุลภาษาไทย</label>
+													<input name="father_surname" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-5">
+												<div class="form-group form-group-default">
+													<label>เลขประจำตัวประชาชน</label>
+													<input name="father_id" type="text" class="form-control" pattern="^[gG||0-9\s]+$" title="กรุณากรอกเลขบัตรประจำตัวประชาชนให้ถูกต้อง" maxlength="13" placeholder="">
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>อาชีพ</label>
+													<input name="father_job" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอาชีพเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+													<input name="father_tel" type="text" class="form-control" pattern="^[0-9\s]+$" title="กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก" maxlength="10" placeholder="">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<label style="margin-bottom: 5px;"><small>ชื่อ/นามสกุล มารดา</small></label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>คำนำหน้าชื่อ</label>
+													<input name="mother_prename" type="text" class="form-control" pattern="^[.||ก-๏\s]+$" title="กรุณากรอกคำนำหน้าชื่อเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>ชื่อภาษาไทย</label>
+													<input name="mother_name" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-2">
+												<div class="form-group form-group-default">
+													<label>ชื่อกลาง</label>
+													<input name="mother_namecen" type="text" class="form-control" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อกลางเป็นภาษาไทย" placeholder="(ถ้ามี)">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>นามสกุลภาษาไทย</label>
+													<input name="mother_surname" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-5">
+												<div class="form-group form-group-default">
+													<label>เลขประจำตัวประชาชน</label>
+													<input name="mother_id" type="text" class="form-control" pattern="^[gG||0-9\s]+$" title="กรุณากรอกเลขบัตรประจำตัวประชาชนให้ถูกต้อง" maxlength="13" placeholder="">
+												</div>
+											</div>
+											<div class="col-6 col-md-3">
+												<div class="form-group form-group-default">
+													<label>อาชีพ</label>
+													<input name="mother_job" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอาชีพเป็นภาษาไทย" placeholder="">
+												</div>
+											</div>
+											<div class="col-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+													<input name="mother_tel" type="text" class="form-control" pattern="^[0-9\s]+$" title="กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก" maxlength="10" placeholder="">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<label style="margin-bottom: 5px;"><small>*ชื่อ/นามสกุล ผู้ปกครอง</small></label>
+
+												<div class="form-check">
+													<label class="form-check-label">
+														<input class="form-check-input" type="checkbox" value="บิดา" name="parent">
+														<span class="form-check-sign">บิดา</span>
+													</label>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="มารดา" name="parent">
+														<span class="form-check-sign">มารดา</span>
+													</label>
+													<label class="form-check-label ml-1">
+														<input class="form-check-input" type="checkbox" value="บุคคลอื่น" name="parent" id="chkparent">
+														<span class="form-check-sign">บุคคลอื่น</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div id="dvparent" style="display: none">
+											<div class="row">
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>คำนำหน้าชื่อ</label>
+														<input name="parent_prename" type="text" class="form-control" pattern="^[.||ก-๏\s]+$" title="กรุณากรอกคำนำหน้าชื่อเป็นภาษาไทย" placeholder="">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ชื่อภาษาไทย</label>
+														<input name="parent_name" type="text" class="form-control" onblur="checktext(this)" placeholder="" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อเป็นภาษาไทย">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-2">
+													<div class="form-group form-group-default">
+														<label>ชื่อกลาง</label>
+														<input name="parent_namecen" type="text" class="form-control" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อกลางเป็นภาษาไทย" placeholder="(ถ้ามี)">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>นามสกุลภาษาไทย</label>
+														<input name="parent_surname" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลเป็นภาษาไทย" placeholder="">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-6 col-md-12">
+													<div class="form-group form-group-default">
+														<label>เลขประจำตัวประชาชน</label>
+														<input name="parent_id" type="text" class="form-control" pattern="^[gG||0-9\s]+$" title="กรุณากรอกเลขบัตรประจำตัวประชาชนให้ถูกต้อง" maxlength="13" placeholder="">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>ความสัมพันธ์ผู้ปกครอง</label>
+														<input name="parent_status" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกความสัมพันธ์เป็นภาษาไทย" placeholder="">
+													</div>
+												</div>
+												<div class="col-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>อาชีพ</label>
+														<input name="parent_job" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอาชีพเป็นภาษาไทย" placeholder="">
+													</div>
+												</div>
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group form-group-default">
+														<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
+														<input name="parent_tel" type="text" class="form-control" pattern="^[0-9\s]+$" title="กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก" maxlength="10" placeholder="">
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- ข้อมูลทางการศึกษา -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ข้อมูลทางการศึกษา</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-12">
+												<label style="margin-bottom: 5px;">กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ ๖ จากโรงเรียน</label> <br>
+												<p style="color:red;"> <small>***ให้ใส่โรงเรียนไปด้วย เช่น โรงเรียนบ้านแจ่งกู่เรือง โรงเรียนบ้านสันปง เป็นต้น </small></p>
+												<p style="color:red;"> <small>***ให้ตรวจสอบชื่อโรงเรียนของตนเองให้ดีหากผิดพลาดจะเกิดข้อมูลขาดหาย</small></p>
+												<p style="color:red;"> <small>***หากมาจากโรงเรียนอื่นที่ไม่มีในเมนู ให้เลือก "อื่นๆ" แล้วจะปรากฎช่องให้กรอกชื่อโรงเรียน</small></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-5">
+												<div class="form-group form-group-default">
+													<label>*ชื่อโรงเรียนเดิม</label>
+													<select class="form-control" id="" name="final_school" onchange="yesnoCheck(this)" required>
+														<option disabled selected>เลือก</option>
+														<option value="โรงเรียนบ้านแจ่งกู่เรือง">โรงเรียนบ้านแจ่งกู่เรือง</option>
+														<option value="โรงเรียนบ้านป่าตุ้ม">โรงเรียนบ้านป่าตุ้ม</option>
+														<option value="โรงเรียนชุมชนสหกรนิคมวิทยา">โรงเรียนชุมชนสหกรนิคมวิทยา</option>
+														<option value="โรงเรียนบ้านห้วยบง">โรงเรียนบ้านห้วยบง</option>
+														<option value="โรงเรียนชุมชนบ้านโป่ง">โรงเรียนชุมชนบ้านโป่ง</option>
+														<option value="โรงเรียนบ้านขุนแจ๋">โรงเรียนบ้านขุนแจ๋</option>
+														<option value="โรงเรียนบ้านต้นรุง">โรงเรียนบ้านต้นรุง</option>
+														<option value="โรงเรียนบ้านท่ามะเกี๋ยง">โรงเรียนบ้านท่ามะเกี๋ยง</option>
+														<option value="โรงเรียนบ้านนาบุญโหล่งขอด">โรงเรียนบ้านนาบุญโหล่งขอด</option>
+														<option value="โรงเรียนบ้านป่าไหน่">โรงเรียนบ้านป่าไหน่</option>
+														<option value="โรงเรียนบ้านแม่ปั๋ง">โรงเรียนบ้านแม่ปั๋ง</option>
+														<option value="โรงเรียนบ้านแม่ปั๋ง สาขาบ้านขุนปั๋ง">โรงเรียนบ้านแม่ปั๋ง สาขาบ้านขุนปั๋ง</option>
+														<option value="โรงเรียนบ้านแม่ปาคี">โรงเรียนบ้านแม่ปาคี</option>
+														<option value="โรงเรียนบ้านแม่เหียะ">โรงเรียนบ้านแม่เหียะ</option>
+														<option value="โรงเรียนบ้านสันกลาง">โรงเรียนบ้านสันกลาง</option>
+														<option value="โรงเรียนบ้านสันปง">โรงเรียนบ้านสันปง</option>
+														<option value="โรงเรียนบ้านหนองปิด">โรงเรียนบ้านหนองปิด</option>
+														<option value="โรงเรียนบ้านหลวง">โรงเรียนบ้านหลวง</option>
+														<option value="โรงเรียนประชาสามัคคีวิทยา">โรงเรียนประชาสามัคคีวิทยา</option>
+														<option value="โรงเรียนประดู่วิทยา">โรงเรียนประดู่วิทยา</option>
+														<option value="โรงเรียนพร้าวบูรพา">โรงเรียนพร้าวบูรพา</option>
+														<option value="โรงเรียนสหกรณ์ดำริ">โรงเรียนสหกรณ์ดำริ</option>
+														<option value="other">อื่นๆ</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-7">
+												<div class="form-group form-group-default" style="display: none;" id="ifYes">
+													<label>โรงเรียนอื่น (ให้ใส่โรงเรียนนำหน้าด้วย เช่นโรงเรียนบ้าสามแสน เป็นต้น) </label>
+													<input name="final_school_etc" type="text" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อโรงเรียนเป็นภาษาไทย" class="form-control">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*ตำบล/แขวง</label>
+													<input name="final_school_sub_district" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกตำบลเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*อำเภอ/เขต</label>
+													<input name="final_school_district" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกอำเภอเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group form-group-default">
+													<label>*จังหวัด</label>
+													<input name="final_school_province" type="text" class="form-control" onblur="checktext(this)" pattern="^[ก-๏\s]+$" title="กรุณากรอกจังหวัดเป็นภาษาไทย" placeholder="" required>
+												</div>
+											</div>
+										</div>
+
+
+										<!-- ความต้องการความช่วยเหลือด้านการจัดการศึกษา -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*ความต้องการความช่วยเหลือด้านการจัดการศึกษา</b></p>
+										</div>
+										<div class="row">
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>*ความพิการ</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="disabled" required>
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="การมองเห็น">การมองเห็น</option>
+														<option value="การได้ยิน">การได้ยิน</option>
+														<option value="สติปัญญา">สติปัญญา</option>
+														<option value="ร่างกาย/สุขภาพ">ร่างกาย/สุขภาพ</option>
+														<option value="การเรียนรู้">การเรียนรู้</option>
+														<option value="การพูด/ภาษา">การพูด/ภาษา</option>
+														<option value="พฤติกรรม/อารมณ์">พฤติกรรม/อารมณ์</option>
+														<option value="ออทิสติค">ออทิสติค</option>
+														<option value="พิการซ้ำซ้อน">พิการซ้ำซ้อน</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6 col-md-6">
+												<div class="form-group form-group-default">
+													<label>*ความด้อยโอกาส</label>
+													<select class="form-control" id="formGroupDefaultSelect" name="poor_person" required>
+														<option>เลือก</option>
+														<option value="ไม่มี">ไม่มี</option>
+														<option value="ถูกบังคับขายแรงงาน">ถูกบังคับขายแรงงาน</option>
+														<option value="อยู่ในธุรกิจทางเพศ">อยู่ในธุรกิจทางเพศ</option>
+														<option value="ถูกทอดทิ้ง">ถูกทอดทิ้ง</option>
+														<option value="เด็กเร่ร่อน">เด็กเร่ร่อน</option>
+														<option value="ได้รับผลกระทบจากเอดส์">ได้รับผลกระทบจากเอดส์</option>
+														<option value="ชนกลุ่มน้อย">ชนกลุ่มน้อย</option>
+														<option value="ถูกทำร้ายทารุณ">ถูกทำร้ายทารุณ</option>
+														<option value="เด็กยากจน">เด็กยากจน</option>
+														<option value="เด็กที่มีปัญหาเกี่ยวกับยาเสพติด">เด็กที่มีปัญหาเกี่ยวกับยาเสพติด</option>
+														<option value="เด็กกำพร้า">เด็กกำพร้า</option>
+														<option value="ทำงานรับผิดชอบตนเองและครอบครัว">ทำงานรับผิดชอบตนเองและครอบครัว</option>
+													</select>
+												</div>
+											</div>
+										</div>
+
+										<!-- อัพโหลดรูปภาพ -->
+										<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
+											<p style="margin-left: 25px;  font-size: 15px;"><b>*อัพโหลดข้อมูลหลักฐานที่ใช้ประกอบการสมัคร &nbsp;&nbsp;( นามสกุลไฟล์ .pdf หากไม่สะดวกให้ใช้เป็นไฟล์รูปภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;)</b></p>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
+													<input type="file" class="form-control-file" id="profile_img" name="profile_img">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
+													<input type="file" class="form-control-file" id="id_card_student" name="id_card_student">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
+													<input type="file" class="form-control-file" id="house_student" name="house_student">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">ใบ ปพ. หรือหนังสือรับรองการเป็นนักเรียน</label>
+													<input type="file" class="form-control-file" id="student_submit" name="student_submit">
+												</div>
+											</div>
+										</div><br><br>
+
+										<!-- สถานะการสมัคร -->
+										<div hidden>
+											<input type="text" name="status_rigis" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_picall" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_profile" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_idcard_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_house_student" value="02">
+										</div>
+										<div hidden>
+											<input type="text" name="status_submit_student" value="02">
+										</div>
+									</div>
+									<div class="card-footer" align="center">
+
+										<div class="form-check">
+											<p style="text-align:center">นักเรียนโปรดตรวจสอบข้อมูลพื้นฐานนักเรียนที่กรอกให้ถูกต้อง<br>
+												เมื่อนักเรียนมั่นใจแล้วให้กดปุ่ม &nbsp;<b>&quot;ยืนยัน&quot;</b>&nbsp; ด้านล่าง</p>
+											<label class="form-check-label ml-1">
+												<input class="form-check-input" type="checkbox" id="chksubmit">
+												<span class="form-check-sign">ข้าพเจ้าได้ตรวจสอบข้อมูลทุกอย่างเรียบร้อยแล้ว ข้อมูลที่ใช้ในการสมัครเป็นความจริงทุกประการ</span>
+											</label>
+										</div>
+										<div id="dvsubmit" style="display: none">
+											<button type="submit" class="btn btn-primary"><strong><i class="fas fa-save"></i> ยืนยันข้อมูล</strong></button>
+										</div>
+									</div><br>
+							</div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<nav class="pull-left">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School.</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="copyright ml-auto">
+				พัฒนาโดย PWK40 & CSMJU23
+			</div>
+		</div>
+	</footer>
+	</div>
+	<!--   Core JS Files   -->
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+	<!-- Moment JS -->
+	<script src="../assets/js/plugin/moment/moment.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Toggle -->
+	<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Google Maps Plugin -->
+	<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+	<!-- Dropzone -->
+	<script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+
+	<!-- Fullcalendar -->
+	<script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- DateTimePicker -->
+	<script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Bootstrap Tagsinput -->
+	<script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+	<!-- jQuery Validation -->
+	<script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+	<!-- Summernote -->
+	<script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 -->
+	<script src="../assets/js/plugin/select2/select2.full.min.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="../assets/js/atlantis2.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="../assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chkparent").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvparent").show();
+				} else {
+					$("#dvparent").hide();
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#chksubmit").click(function() {
+				if ($(this).is(":checked")) {
+					$("#dvsubmit").show();
+				} else {
+					$("#dvsubmit").hide();
+				}
+			});
+		});
+	</script>
+
+	<script>
+		function yesnoCheck(that) {
+			if (that.value == "other") {
+				document.getElementById("ifYes").style.display = "block";
+			} else {
+				document.getElementById("ifYes").style.display = "none";
+			}
+		}
+	</script>
+
+	<script>
+		function checkLength(el) {
+			if (el.value.length != 13) {
+				alert("กรุณากรอกเลขบัตรประจำตัวประชาชนให้ครบ 13 หลัก")
+			}
+		}
+	</script>
+
+	<script>
+		function checkLengthTel(el) {
+			if (el.value.length != 10) {
+				alert("กรุณากรอกหมายเลขโทรศัพท์ให้ครบ 10 หลัก")
+			}
+		}
+	</script>
+
+	<script>
+		function checkLengthSlct(el) {
+			if (el.value == "00") {
+				alert("กรุณาเลือกคำนำหน้าชื่อของนักเรียน")
+			}
+		}
+	</script>
+
+	<script>
+		function checktext(el) {
+			var test = el.value;
+			if (!test.match(/^([ก-๏\s])+$/i)) {
+				alert("กรอกได้เฉพาะภาษาไทยเท่านั้น");
+			}
+		}
+	</script>
+
+
+	<script>
+		function populate(s1, s2) {
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+
+			s2.innerHtml = "";
+
+			if (s1.value == "01") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "02") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29"];
+
+			} else if (s1.value == "03") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "04") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30"];
+
+			} else if (s1.value == "05") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "06") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30"];
+
+			} else if (s1.value == "07") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "08") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "09") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30"];
+
+			} else if (s1.value == "10") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			} else if (s1.value == "11") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30"];
+
+			} else if (s1.value == "12") {
+				var optionArray = ["|เลือก", "01|1", "02|2", "03|3", "04|4", "05|5", "06|6", "07|7", "08|8", "09|9", "10|10", "11|11", "12|12", "13|13", "14|14", "15|15", "16|16", "17|17", "18|18", "19|19", "20|20", "21|21", "22|22", "23|23", "24|24", "25|25", "26|26", "27|27", "28|28", "29|29", "30|30", "31|31"];
+
+			}
+
+			for (var option in optionArray) {
+				var pair = optionArray[option].split("|");
+				var newOption = document.createElement("option");
+				newOption.value = pair[0];
+				newOption.innerHTML = pair[1];
+				s2.options.add(newOption);
+			};
+		}
+	</script>
+
+	<script>
+		Circles.create({
+			id: 'circles-1',
+			radius: 45,
+			value: 60,
+			maxValue: 100,
+			width: 7,
+			text: 5,
+			colors: ['#f1f1f1', '#FF9E27'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
+
+		Circles.create({
+			id: 'circles-2',
+			radius: 45,
+			value: 70,
+			maxValue: 100,
+			width: 7,
+			text: 36,
+			colors: ['#f1f1f1', '#2BB930'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
+
+		Circles.create({
+			id: 'circles-3',
+			radius: 45,
+			value: 40,
+			maxValue: 100,
+			width: 7,
+			text: 12,
+			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets: [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							drawBorder: false,
+							display: false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+	<script>
+		//== Class definition
+		var SweetAlert2Demo = function() {
+
+			//== Demos
+			var initDemos = function() {
+
+				$('#alert_demo_7').click(function(e) {
+					swal({
+						title: 'ยืนยันข้อมูล ?',
+						text: "ข้อมูลพื้นฐานนักเรียนที่กรอกถูกต้อง",
+						type: 'warning',
+						buttons: {
+							confirm: {
+								text: 'ตกลง',
+								className: 'btn btn-success',
+								type: 'submit'
+							},
+							cancel: {
+								text: 'ย้อนกลับ',
+								visible: true,
+								className: 'btn btn-danger'
+							}
+						}
+					}).then((Delete) => {
+						if (Delete) {
+							swal({
+								title: 'บันทึกข้อมูลเรียบร้อย!',
+								text: 'สามารถติดตามสถานะการสมัครเข้าเรียน ได้ภายใน 1-3 วัน',
+								type: 'success',
+								buttons: {
+									confirm: {
+										className: 'btn btn-success',
+										type: 'submit'
+									}
+								}
+							}).then(function() {
+								window.location = '/check/status';
+							});
+						} else {
+							swal.close();
+						}
+					});
+				})
+
+			};
+
+			return {
+				//== Init
+				init: function() {
+					initDemos();
+				},
+			};
+		}();
+
+		//== Class Initialization
+		jQuery(document).ready(function() {
+			SweetAlert2Demo.init();
+		});
+	</script>
+
+</body>
+
+</html>

@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/eim/public/assets/img/logo3.png" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
@@ -20,11 +20,11 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="/eim/public/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/eim/public/assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="/eim/public/assets/css/demo.css">
+	<link rel="stylesheet" href="../assets/css/demo.css">
     @livewireStyles
 </head>
 <body>
@@ -33,8 +33,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
 
-				<a href="/" class="logo">
-					<img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
+				<a href="student-index.html" class="logo">
+					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">

@@ -47,8 +47,8 @@
 					</button>
 					<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 					<!-- Logo Header -->
-					<a href="index.html" class="logo d-flex align-items-center">
-						<img src="/eim/public/assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
+					<a href="{{ url('/')}}" class="logo d-flex align-items-center">
+						<img src="../assets/img/logo2.png" alt="navbar brand" class="navbar-brand">
 					</a>
 					<!-- End Logo Header -->
 
@@ -106,6 +106,22 @@
 									<li>
 										<a href="{{ url('/check/status')}}">ตรวจสอบสถานะการสมัครเข้าเรียน</a>
 									</li>
+									<li>
+										<a href="{{ url('/Newstudent/documentIndex')}}">ส่งเอกสารรายงานตัว</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item submenu">
+							<a class="nav-link" href="#">
+								<i class="link-icon icon-folder-alt"></i>
+								<span class="menu-title">ข้อมูลนักเรียนพื้นฐาน</span>
+							</a>
+							<div class="navbar-dropdown animated fadeIn">
+								<ul>
+									<li>
+										<a href="{{url('/agreement/student')}}">เพิ่มข้อมูลนักเรียนพื้นฐาน</a>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -131,16 +147,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<i class="link-icon icon-book-open"></i>
-								<span class="menu-title">คู่มือการใช้งาน</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
+						<li class="nav-item " >
+							<a class="nav-link" href="{{ url('/Contact')}}">
 								<i class="link-icon icon-bubbles"></i>
 								<span class="menu-title">ติดต่อเรา</span>
+							</a>
+						</li>
+						<li class="nav-item " >
+							<a class="nav-link" href="https://www.pwks.ac.th/" target="_blank">
+								<i class="link-icon icon-star"></i>
+								<span class="menu-title">Go Pwks!</span>
 							</a>
 						</li>
 
@@ -158,7 +174,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
+										<div class="card-title"><i class="fas fa-id-card-alt fa-lg"></i>&nbsp; ข้อมูลประจำตัวของ {{$data->prename}}{{$data->fname}} {{$data->surname}}</div>
 										<a href='{{ url("/EditNewstudentM1/{$data->id}" )}}' class="btn btn-warning " style="margin-left:auto;"><strong>แก้ไขข้อมูล</strong></a>
 									</div>
 								</div>
@@ -185,7 +201,7 @@
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชื่อกลาง</label>
-												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->nameCen}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->name_cen}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
@@ -199,7 +215,7 @@
 										<div class="col-sm-6 col-md-12">
 											<div class="form-group form-group-default">
 												<label>เลขประจำตัวประชาชน</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->idNumber}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->id_number}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -218,7 +234,31 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>เดือน:</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mounth}}" readonly>
+												@if ($data->mounth == '01')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มกราคม" readonly>
+												@elseif ($data->mounth == '02')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กุมภาพันธ์" readonly>
+												@elseif ($data->mounth == '03')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มีนาคม" readonly>
+												@elseif ($data->mounth == '04')
+												<input id="Name" type="text" class="form-control" placeholder="" value="เมษายน" readonly>
+												@elseif ($data->mounth == '05')
+												<input id="Name" type="text" class="form-control" placeholder="" value="พฤษภาคม" readonly>
+												@elseif ($data->mounth == '06')
+												<input id="Name" type="text" class="form-control" placeholder="" value="มิถุนายน" readonly>
+												@elseif ($data->mounth == '07')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กรกฎาคม" readonly>
+												@elseif ($data->mounth == '08')
+												<input id="Name" type="text" class="form-control" placeholder="" value="สิงหาคม" readonly>
+												@elseif ($data->mounth == '09')
+												<input id="Name" type="text" class="form-control" placeholder="" value="กันยายน" readonly>
+												@elseif ($data->mounth == '10')
+												<input id="Name" type="text" class="form-control" placeholder="" value="ตุลาคม" readonly>
+												@elseif ($data->mounth == '11')
+												<input id="Name" type="text" class="form-control" placeholder="" value="พฤษจิกายน" readonly>
+												@elseif ($data->mounth == '12')
+												<input id="Name" type="text" class="form-control" placeholder="" value="ธันวาคม" readonly>
+												@endif
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
@@ -269,7 +309,7 @@
 										<div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>บ้านเลขที่</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->houseNumber}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->house_number}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-3">
@@ -295,7 +335,7 @@
 										<div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>ตำบล/แขวง</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->subDistrict}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->sub_district}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-3">
@@ -337,19 +377,19 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชื่อภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fatherName}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_name}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชื่อกลาง</label>
-												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->fatherNamecen}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->father_namecen}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>นามสกุลภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fatherSurname}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_surname}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -357,19 +397,19 @@
 										<div class="col-sm-6 col-md-5">
 											<div class="form-group form-group-default">
 												<label>เลขประจำตัวประชาชน</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fatherId}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_id}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>อาชีพ</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fatherJob}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_job}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->fatherTel}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->father_tel}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -388,19 +428,19 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชื่อภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->motherName}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_name}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชื่อกลาง</label>
-												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->motherNamecen}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->mother_namecen}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>นามสกุลภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->motherSurname}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_surname}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -408,19 +448,19 @@
 										<div class="col-sm-6 col-md-5">
 											<div class="form-group form-group-default">
 												<label>เลขประจำตัวประชาชน</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->motherId}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_id}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>อาชีพ</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->motherJob}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_job}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->motherTel}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->mother_tel}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -444,19 +484,19 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชื่อภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parentName}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_name}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชื่อกลาง</label>
-												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->parentNamecen}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)" value="{{$data->parent_namecen}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>นามสกุลภาษาไทย</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parentSurname}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_surname}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -464,7 +504,7 @@
 										<div class="col-sm-6 col-md-12">
 											<div class="form-group form-group-default">
 												<label>เลขประจำตัวประชาชน</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parentId}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_id}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -478,13 +518,13 @@
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>อาชีพ</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parentJob}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_job}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parentTel}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->parent_tel}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -502,7 +542,7 @@
 										<div class="col-sm-6 col-md-12">
 											<div class="form-group form-group-default">
 												<label>ชื่อโรงเรียนเดิม</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->finalSchool}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -510,19 +550,19 @@
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ตำบล/แขวง</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->finalSchoolSubDistrict}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_sub_district}}" readonly>
 											</div>
 										</div>
 										<div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>อำเภอ/เขต</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->finalSchoolDistrict}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_district}}" readonly>
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>จังหวัด</label>
-												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->finalSchoolProvince}}" readonly>
+												<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->final_school_province}}" readonly>
 											</div>
 										</div>
 									</div>
@@ -538,7 +578,7 @@
 												<div class="col-6 col-md-4">
 													<div class="form-group form-group-default">
 														<label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
-														<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->poorPerson}}" readonly>
+														<input id="Name" type="text" class="form-control" placeholder="" value="{{$data->poor_person}}" readonly>
 													</div>
 												</div>
 												<div class="col-6 col-md-4">
@@ -555,36 +595,7 @@
 												</div>
 											</div>
 
-											<!-- อัพโหลดรูปภาพ -->
-											<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-												<p style="margin-left: 25px;  font-size: 15px;"><b>อัพโหลดข้อมูลรูปภาพ &nbsp;&nbsp;( นามสกุลไฟล์ภาพ&nbsp;&nbsp;.jpg &nbsp;หรือ&nbsp; .png&nbsp;&nbsp;เท่านั้น )</b></p>
-											</div>
-											<div class="row">
-												<div class="col-sm-6 col-md-4">
-													<div class="form-group">
-														<label for="exampleFormControlFile1">รูปถ่ายหน้าตรงชุดนักเรียน ขนาด 1.5 นิ้ว</label>
-														<input type="text" class="form-control-file" id="pic" name="pic" value="{{$data->status_pic}}" readonly>
-													</div>
-												</div>
-												<div class="col-sm-6 col-md-4">
-													<div class="form-group">
-														<label for="exampleFormControlFile1">สำเนาบัตรประชาชน</label>
-														<input type="text" class="form-control-file" id="id_number_pic" name="id_number_pic" value="{{$data->status_idnumber_pic}}" readonly>
-													</div>
-												</div>
-												<div class="col-sm-6 col-md-4">
-													<div class="form-group">
-														<label for="exampleFormControlFile1">สำเนาทะเบียนบ้าน</label>
-														<input type="text" class="form-control-file" id="house_pic" name="house_pic" value="{{$data->status_house_pic}}" readonly>
-													</div>
-												</div>
-												<div class="col-sm-6 col-md-4">
-													<div class="form-group">
-														<label for="exampleFormControlFile1">ใบ ปพ.</label>
-														<input type="text" class="form-control-file" id="grade_pic" name="grade_pic" value="{{$data->status_grade_pic}}" readonly>
-													</div>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 								</div>

@@ -39,8 +39,8 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="white">
 
-                <a href="/" class="logo">
-                    <img src="/eim/public/assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
+                <a href="{{ url('/student')}}" class="logo">
+                    <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -100,10 +100,10 @@
                     <div class="user">
                         <div class="info">
 
-                            <label><b>ชื่อ-นามสกุล :</b> สวัสดี มีเมตตา</label>
-                            <label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
-                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
-                            <label><b>ภาคเรียนที่ :</b> 1/2565</label>
+                            <label><b>ชื่อ-นามสกุล :</b>{{ Auth::guard('student')->user()->prename}}{{ Auth::guard('student')->user()->fname}} </br>{{ Auth::guard('student')->user()->surname}}</label>
+                            <label><b>เลขประจำตัวนักเรียน :</b> {{ Auth::guard('student')->user()->student_id}}</label>
+                            <label><b>ชั้นมัธยมศึกษาปีที่ :</b> {{ Auth::guard('student')->user()->student_class}} <b>ห้อง:</b> {{ Auth::guard('student')->user()->student_room}}</label>
+                            <label><b>ภาคเรียนที่ :</b> {{$school_year->term}}/{{$school_year->study_year}}</label>
 
 
                             <div class="clearfix"></div>
@@ -115,7 +115,7 @@
                     <ul class="nav nav-primary">
 
                         <li class="nav-item active">
-                            <a href="student-index.html">
+                            <a href="{{ url('/student')}}">
                                 <i class="fas fa-home"></i>
                                 <p>หน้าหลัก</p>
                             </a>
@@ -124,36 +124,48 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#forms">
                                 <i class="fas fa-file-alt"></i>
-                                <p>ระบบบันทึกข้อมูลพื้นฐาน</p>
+                                <p>ข้อมูลพื้นฐานนักเรียน</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="forms">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="student-info-add-1.html">
-                                            <span class="sub-item">เพิ่มข้อมูล</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href='{{ url("/editStudentByID", Auth::guard('student')->user()->id )}}'>
                                             <span class="sub-item">แก้ไขข้อมูล</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href='{{ url("/showStudentByID", Auth::guard('student')->user()->id )}}'>
                                             <span class="sub-item">ตรวจสอบข้อมูล</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="student-info-add-v2.html">
-                                            <span class="sub-item">ทดสอบ</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
+
                         <li class="nav-item ">
-                            <a href="#">
+                            <a href='{{ url("/increaseStudent", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-pencil-alt"></i>
+                                <p>กรอกข้อมูลเพิ่มเติมเฉพาะ</br> ม.1 และ ม.4</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href='{{ url("/BehaviorStudent", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-medal"></i>
+                                <p>ข้อมูลความประพฤติ</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href='{{ url("/DocumentStudentAll", Auth::guard('student')->user()->id )}}'>
+                                <i class="fas fa-file-alt"></i>
+                                <p>เอกสารประจำตัว</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href="..{{ url('Manual/manual.pdf')}}" target="_blank">
                                 <i class="fas fa-book-open"></i>
                                 <p>คู่มือการใช้งาน</p>
                             </a>
@@ -194,18 +206,232 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p><u><strong>ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</strong></u></p>
-                                    <ol>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                        <li>Lorem ipsum dolor, sit amet consectet et adipis icing elit. Ab commodi iure minus laboriosam placeat quia, dolorem animi.</li>
-                                    </ol>
+                                    <h3><u><strong>ตารางแสดงจำนวนนักเรียนทั้งหมดของปีการศึกษา {{$school_year->study_year}} </strong></u></h3>
+                                    <div style="margin-top: 30px;">
+                                        <table class="table table-bordered table-hover table-condesed">
+                                            <thead style="background-color: #5c0099; color:white;">
+                                                <th width="5%" class="saraban">
+                                                    <center>ระดับชั้น</center>
+                                                </th>
+                                                <th width="5%" class="saraban">
+                                                    <center>ชาย</center>
+                                                </th>
+                                                <th width="5%" class="saraban">
+                                                    <center>หญิง</center>
+                                                </th>
+                                                <th width="5%" class="saraban">
+                                                    <center>รวม</center>
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"> <i class="fas fa-robot"></i> ม.1</td>
+                                                    @if ($m1_m_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m1_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m1_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m1_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m1_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m1_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"><i class="fas fa-robot"></i> ม.2</td>
+                                                    @if ($m2_m_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m2_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m2_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m2_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m2_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m2_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"><i class="fas fa-robot"></i> ม.3</td>
+                                                    @if ($m3_m_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m3_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m3_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m3_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m3_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m3_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"><i class="fas fa-vial"></i> ม.4</td>
+                                                    @if ($m4_m_all_09 != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m4_m_all_09}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m4_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m4_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m4_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m4_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"><i class="fas fa-vial"></i> ม.5</td>
+                                                    @if ($m5_m_all_09 != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m5_m_all_09}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m5_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m5_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m5_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m5_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#944dff; color:white;"><i class="fas fa-vial"></i> ม.6</td>
+                                                    @if ($m6_m_all_09 != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m6_m_all_09}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m6_fm_all != 0)
+                                                    <td align="center" style="background-color:#d1b3ff;">{{$m6_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#d1b3ff;">0</td>
+                                                    @endif
+                                                    @if ($m6_all != 0)
+                                                    <td align="center" style="background-color:#7979d2; color:white;">{{$m6_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7979d2; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#4040bf; color:white;"><i class="fas fa-wrench"></i> ปวช.1</td>
+                                                    @if ($m4_9m_all != 0)
+                                                    <td align="center" style="background-color:#c6c6ec;">{{$m4_9m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#c6c6ec;">0</td>
+                                                    @endif
+                                                    <td align="center" style="background-color:#c6c6ec;">-</td>
+                                                    @if ($m4_9_all != 0)
+                                                    <td align="center" style="background-color:#7575a3; color:white;">{{$m4_9_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7575a3; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#4040bf; color:white;"><i class="fas fa-wrench"></i> ปวช.2</td>
+                                                    @if ($m5_9m_all != 0)
+                                                    <td align="center" style="background-color:#c6c6ec;">{{$m5_9m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#c6c6ec;">0</td>
+                                                    @endif
+                                                    <td align="center" style="background-color:#c6c6ec;">-</td>
+                                                    @if ($m5_9_all != 0)
+                                                    <td align="center" style="background-color:#7575a3; color:white;">{{$m5_9_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7575a3; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#4040bf; color:white;"><i class="fas fa-wrench"></i> ปวช.3</td>
+                                                    @if ($m6_9m_all != 0)
+                                                    <td align="center" style="background-color:#c6c6ec;">{{$m6_9m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#c6c6ec;">0</td>
+                                                    @endif
+                                                    <td align="center" style="background-color:#c6c6ec;">-</td>
+                                                    @if ($m6_9_all != 0)
+                                                    <td align="center" style="background-color:#7575a3; color:white;">{{$m6_9_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#7575a3; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#00b36b; color:white;">ม.ต้น</td>
+                                                    @if ($m123_m_all != 0)
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m123_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
+                                                    @endif
+                                                    @if ($m123_fm_all != 0)
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m123_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
+                                                    @endif
+                                                    @if ($m123_all != 0)
+                                                    <td align="center" style="background-color:#669999; color:white;">{{$m123_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#669999; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#00b36b; color:white;">ม.ปลาย</td>
+                                                    @if ($m456_m_all != 0)
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m456_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
+                                                    @endif
+                                                    @if ($m456_fm_all != 0)
+                                                    <td align="center" style="background-color:#b3ffe0; ">{{$m456_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#b3ffe0; ">0</td>
+                                                    @endif
+                                                    @if ($m456_all != 0)
+                                                    <td align="center" style="background-color:#669999; color:white;">{{$m456_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#669999; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="background-color:#e68a00; color:white;">ม.ต้น + ม.ปลาย</td>
+                                                    @if ($m_m_all != 0)
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
+                                                    @endif
+                                                    @if ($m_fm_all != 0)
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_fm_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
+                                                    @endif
+                                                    @if ($m_all != 0)
+                                                    <td align="center" style="background-color:#e68a00; color:white;">{{$m_all}}</td>
+                                                    @else
+                                                    <td align="center" style="background-color:#e68a00; color:white;">0</td>
+                                                    @endif
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -242,6 +468,8 @@
     <!-- jQuery Scrollbar -->
     <script src="/eim/public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
+    <!-- Moment JS -->
+    <script src="../assets/js/plugin/moment/moment.min.js"></script>
 
     <!-- Chart JS -->
     <script src="/eim/public/assets/js/plugin/chart.js/chart.min.js"></script>
@@ -255,19 +483,48 @@
     <!-- Datatables -->
     <script src="/eim/public/assets/js/plugin/datatables/datatables.min.js"></script>
 
+    <!-- Bootstrap Toggle -->
+    <script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
     <!-- jQuery Vector Maps -->
     <script src="/eim/public/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
     <script src="/eim/public/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+    <!-- Google Maps Plugin -->
+    <script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+    <!-- Dropzone -->
+    <script src="../assets/js/plugin/dropzone/dropzone.min.js"></script>
+
+    <!-- Fullcalendar -->
+    <script src="../assets/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+    <!-- DateTimePicker -->
+    <script src="../assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Bootstrap Tagsinput -->
+    <script src="../assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+    <!-- Bootstrap Wizard -->
+    <script src="../assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+    <!-- jQuery Validation -->
+    <script src="../assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+    <!-- Summernote -->
+    <script src="../assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="../assets/js/plugin/select2/select2.full.min.js"></script>
 
     <!-- Sweet Alert -->
     <script src="/eim/public/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
     <!-- Atlantis JS -->
-    <script src="/eim/public/assets/js/atlantis.min.js"></script>
+    <script src="../assets/js/atlantis2.min.js"></script>
 
     <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="/eim/public/assets/js/setting-demo.js"></script>
-    <script src="/eim/public/assets/js/demo.js"></script>
+    <script src="../assets/js/demo.js"></script>
     <script>
         Circles.create({
             id: 'circles-1',
@@ -314,42 +571,65 @@
             styleText: true
         })
 
-        var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-        var mytotalIncomeChart = new Chart(totalIncomeChart, {
-            type: 'bar',
+        var myLineChart = new Chart(lineChart, {
+            type: 'line',
             data: {
-                labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+                labels: ["2021-11-28", "2021-11-29", ],
                 datasets: [{
-                    label: "Total Income",
-                    backgroundColor: '#ff9e27',
-                    borderColor: 'rgb(23, 125, 255)',
-                    data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-                }],
+                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 1",
+                    borderColor: "#1d7af3",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#1d7af3",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [num, num2, ]
+                }, {
+                    label: "นักเรียนที่มาสมัครในระดับชั้นมัธยมศึกษาปีที่ 4",
+                    borderColor: "#59d05d",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#59d05d",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: 'transparent',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [num4, num5, ]
+                }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 legend: {
-                    display: false,
+                    position: 'bottom',
+                    labels: {
+                        padding: 10,
+                        fontColor: '#1d7af3',
+                    }
                 },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            display: false //this will remove only the label
-                        },
-                        gridLines: {
-                            drawBorder: false,
-                            display: false
-                        }
-                    }],
-                    xAxes: [{
-                        gridLines: {
-                            drawBorder: false,
-                            display: false
-                        }
-                    }]
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
                 },
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15,
+                        top: 15,
+                        bottom: 15
+                    }
+                }
             }
         });
 
