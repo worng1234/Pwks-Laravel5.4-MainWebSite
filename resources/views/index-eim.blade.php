@@ -10,7 +10,7 @@
 	<link rel="icon" href="../assets/img/icon2.ico" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="/eim/public/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -27,11 +27,11 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="/eim/public/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/eim/public/assets/css/atlantis2.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/atlantis2.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="/eim/public/assets/css/demo.css">
+	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
 
 <body>
